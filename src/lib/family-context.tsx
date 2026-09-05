@@ -32,7 +32,6 @@ import { bandFromBirthdate } from "@/lib/band";
 import { normalizeActivity } from "@/lib/seed/week1";
 import {
   getWeekTheme,
-  parseProgramWeek,
   PROGRAM_AGE_BAND,
   PROGRAM_WEEK,
   type ProgramWeek,
@@ -77,14 +76,6 @@ function readChildCookie() {
 
 function writeChildCookie(childId: string) {
   document.cookie = `${CHILD_COOKIE}=${childId}; path=/; max-age=31536000; samesite=lax`;
-}
-
-function readWeekCookie() {
-  if (typeof document === "undefined") return null;
-  const match = document.cookie
-    .split("; ")
-    .find((row) => row.startsWith(`${WEEK_COOKIE}=`));
-  return match?.split("=")[1] ?? null;
 }
 
 function writeWeekCookie(week: ProgramWeek) {
@@ -428,19 +419,6 @@ export function FamilyProvider({
   );
 
   const selectWeek = useCallback((week: ProgramWeek) => {
-    setSelectedWeek(week);
-    writeWeekCookie(week);
-  }, []);
-
-  useEffect(() => {
-    const cookieRaw = readWeekCookie();
-    let stored: string | null = null;
-    try {
-      stored = window.localStorage.getItem(WEEK_STORAGE_KEY);
-    } catch {
-      stored = null;
-    }
-    const week = parseProgramWeek(cookieRaw ?? stored);
     setSelectedWeek(week);
     writeWeekCookie(week);
   }, []);
