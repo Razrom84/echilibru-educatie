@@ -48,10 +48,12 @@ export default function SaptamanaPage() {
               )}
             >
               <div className="flex items-baseline justify-between gap-3">
-                <h2 className="font-heading text-xl">
-                  {getDayName(day)}
+                <h2 className="flex items-baseline gap-2 font-heading text-xl">
+                  {day === today ? `${getDayName(day)}\u00A0` : getDayName(day)}
                   {day === today ? (
-                    <span className="ml-2 text-sm font-sans font-medium text-primary">azi</span>
+                    <span className="text-sm font-sans font-medium text-primary">
+                      azi
+                    </span>
                   ) : null}
                 </h2>
                 <p className="text-sm text-muted-foreground">
