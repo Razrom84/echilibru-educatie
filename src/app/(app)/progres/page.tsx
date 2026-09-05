@@ -4,11 +4,11 @@ import { EmptyState } from "@/components/status-blocks";
 import { Progress } from "@/components/ui/progress";
 import { useFamily } from "@/lib/family-context";
 import { PILLAR_META, PILLARS } from "@/lib/pillars";
-import { getDayName, PROGRAM_WEEK } from "@/lib/week";
+import { getDayName } from "@/lib/week";
 import type { Pillar } from "@/lib/types";
 
 export default function ProgresPage() {
-  const { activities, completions, selectedChild } = useFamily();
+  const { activities, completions, selectedChild, selectedWeek } = useFamily();
 
   if (!selectedChild) {
     return (
@@ -16,12 +16,14 @@ export default function ProgresPage() {
     );
   }
 
-  const weekActs = activities.filter((activity) => activity.week_number === PROGRAM_WEEK);
-  const doneIds = new Set(completions.map((row) => row.activity_id));
-  const approved = completions.filter(
+  const weekActs = activities.filter((activity) => activity.week_number === selectedWeek);
+  const weekIds = new Set(weekActs.map((activity) => activity.id));
+  const weekCompletions = completions.filter((row) => weekIds.has(row.activity_id));
+  const doneIds = new Set(weekCompletions.map((row) => row.activity_id));
+  const approved = weekCompletions.filter(
     (row) => row.mode === "A" || row.parent_approved === true,
   ).length;
-  const pending = completions.filter(
+  const pending = weekCompletions.filter(
     (row) => row.mode === "B" && row.parent_approved === false,
   ).length;
 
@@ -50,7 +52,7 @@ export default function ProgresPage() {
       <div>
         <h1 className="font-heading text-3xl">Progres</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          {selectedChild.name} · săptămâna {PROGRAM_WEEK} · {doneIds.size}/
+          {selectedChild.name} · săptămâna {selectedWeek} · {doneIds.size}/
           {weekActs.length} activități
         </p>
       </div>

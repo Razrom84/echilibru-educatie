@@ -6,6 +6,7 @@ import { AppHeader } from "@/components/app-header";
 import { NavBar, SideNav } from "@/components/nav-bar";
 import { ErrorState, LoadingState } from "@/components/status-blocks";
 import { FamilyProvider, useFamily } from "@/lib/family-context";
+import type { ProgramWeek } from "@/lib/week";
 
 function Gate({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -40,13 +41,15 @@ function Gate({ children }: { children: React.ReactNode }) {
 
 export function AppShell({
   isDemo,
+  initialWeek,
   children,
 }: {
   isDemo: boolean;
+  initialWeek: ProgramWeek;
   children: React.ReactNode;
 }) {
   return (
-    <FamilyProvider isDemo={isDemo}>
+    <FamilyProvider isDemo={isDemo} initialWeek={initialWeek}>
       <div className="mx-auto flex min-h-dvh w-full max-w-5xl gap-8 px-4 pb-28 pt-6 md:pb-10">
         <SideNav />
         <div className="min-w-0 flex-1">

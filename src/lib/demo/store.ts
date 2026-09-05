@@ -1,7 +1,8 @@
 import { CHILD_COOKIE, DEMO_COOKIE, DEMO_STORAGE_KEY } from "@/lib/config";
 import { bandFromBirthdate } from "@/lib/band";
-import { getWeek1Activities } from "@/lib/seed/week1";
+import { getSeedActivities } from "@/lib/seed/week1";
 import type { Child, Completion, CompletionMode, Family } from "@/lib/types";
+import { PROGRAM_WEEK } from "@/lib/week";
 
 export type DemoState = {
   family: Family;
@@ -63,8 +64,8 @@ export function clearDemoSession() {
   document.cookie = `${CHILD_COOKIE}=; path=/; max-age=0`;
 }
 
-export function demoActivities() {
-  return getWeek1Activities();
+export function demoActivities(week = PROGRAM_WEEK) {
+  return getSeedActivities(week);
 }
 
 export function addDemoChild(

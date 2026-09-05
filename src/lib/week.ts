@@ -1,5 +1,29 @@
+/** Default program week when the parent has not chosen another. */
 export const PROGRAM_WEEK = 1;
 export const PROGRAM_AGE_BAND = "2-3";
+
+export const PROGRAM_WEEKS = [1, 2, 3, 4] as const;
+export type ProgramWeek = (typeof PROGRAM_WEEKS)[number];
+
+export const WEEK_THEMES: Record<ProgramWeek, string> = {
+  1: "Casa și curtea",
+  2: "Apa în casă și afară",
+  3: "Sunete și liniște",
+  4: "Mâini și degete",
+};
+
+export function isProgramWeek(value: number): value is ProgramWeek {
+  return (PROGRAM_WEEKS as readonly number[]).includes(value);
+}
+
+export function parseProgramWeek(raw: string | null | undefined): ProgramWeek {
+  const n = Number(raw);
+  return isProgramWeek(n) ? n : PROGRAM_WEEK;
+}
+
+export function getWeekTheme(week: number): string {
+  return isProgramWeek(week) ? WEEK_THEMES[week] : WEEK_THEMES[PROGRAM_WEEK];
+}
 
 const DAY_NAMES = [
   "",
