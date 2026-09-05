@@ -4,7 +4,12 @@
   "banda": "2-3",
   "saptamana": 1,
   "tema": "Casa și curtea",
-  "piloni": ["fizic", "mental", "resurse", "social"],
+  "piloni": [
+    "fizic",
+    "mental",
+    "resurse",
+    "social"
+  ],
   "activitati": [
     {
       "id": "s1-2-3-z1-fizic",
@@ -16,7 +21,9 @@
       "titlu": "Pași în curte",
       "durata_min": 5,
       "mod_default": "A",
-      "materiale": ["curte"],
+      "materiale": [
+        "curte"
+      ],
       "pasi": [
         "Ieșiți în curte.",
         "Mergeți împreună 10–20 de pași.",
@@ -36,10 +43,12 @@
       "titlu": "Uite copacul",
       "durata_min": 4,
       "mod_default": "A",
-      "materiale": ["curte"],
+      "materiale": [
+        "curte"
+      ],
       "pasi": [
         "Arătați un copac/plantă.",
-        "Ziceți: Copac. Verde. Sus.",
+        "Ziceți: „Copac. Verde. Sus.”",
         "Lăsați-l să arate și el."
       ],
       "gata_cand": "A privit / arătat obiectul numit.",
@@ -56,10 +65,12 @@
       "titlu": "Piatra mea",
       "durata_min": 3,
       "mod_default": "A",
-      "materiale": ["o piatră/frunză"],
+      "materiale": [
+        "o piatră/frunză"
+      ],
       "pasi": [
         "Alegeți împreună o piatră sau frunză.",
-        "Ziceți: Asta e a ta să o ții puțin.",
+        "Ziceți: „Asta e a ta să o ții puțin.”",
         "La final o puneți la loc."
       ],
       "gata_cand": "A ținut obiectul și l-a pus la loc.",
@@ -78,7 +89,7 @@
       "mod_default": "A",
       "materiale": [],
       "pasi": [
-        "Practicați Bună, mama/tata! cu zâmbet.",
+        "Practicați „Bună, mama/tata!” cu zâmbet.",
         "Răspundeți cald când încearcă."
       ],
       "gata_cand": "A făcut un gest/salut (sau a încercat).",
@@ -90,12 +101,14 @@
       "banda": "2-3",
       "saptamana": 1,
       "zi": 2,
-      "zi_nume": "Marti",
+      "zi_nume": "Marți",
       "pilon": "fizic",
-      "titlu": "Sărițuri mici",
+      "titlu": "Sărituri mici",
       "durata_min": 4,
       "mod_default": "A",
-      "materiale": ["podea/curte"],
+      "materiale": [
+        "podea/curte"
+      ],
       "pasi": [
         "Țineți-i mâinile.",
         "2–5 sărituri ușoare.",
@@ -110,15 +123,17 @@
       "banda": "2-3",
       "saptamana": 1,
       "zi": 2,
-      "zi_nume": "Marti",
+      "zi_nume": "Marți",
       "pilon": "mental",
       "titlu": "Carte 5 minute",
       "durata_min": 5,
       "mod_default": "A",
-      "materiale": ["o carte cartonată"],
+      "materiale": [
+        "o carte cartonată"
+      ],
       "pasi": [
         "Stați împreună.",
-        "Arătați 3 imagini: Minge. Apă. Câine.",
+        "Arătați 3 imagini: „Minge. Apă. Câine.”",
         "Nu forțați să stea mai mult."
       ],
       "gata_cand": "A rămas la 2–3 pagini.",
@@ -130,15 +145,17 @@
       "banda": "2-3",
       "saptamana": 1,
       "zi": 2,
-      "zi_nume": "Marti",
+      "zi_nume": "Marți",
       "pilon": "resurse",
       "titlu": "Paharul gol / plin",
       "durata_min": 4,
       "mod_default": "A",
-      "materiale": ["pahar, apă"],
+      "materiale": [
+        "pahar, apă"
+      ],
       "pasi": [
         "Arătați pahar gol, apoi turnați puțin.",
-        "Gol. Plin.",
+        "„Gol. Plin.”",
         "El toarnă cu ajutor."
       ],
       "gata_cand": "A văzut / ajutat la turnat.",
@@ -150,14 +167,14 @@
       "banda": "2-3",
       "saptamana": 1,
       "zi": 2,
-      "zi_nume": "Marti",
+      "zi_nume": "Marți",
       "pilon": "social",
       "titlu": "Mulțumesc",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
       "pasi": [
-        "După o gustare: Mulțumesc.",
+        "După o gustare: „Mulțumesc.”",
         "Modelați voi; el imită dacă vrea."
       ],
       "gata_cand": "A auzit și/sau a încercat cuvântul.",
@@ -174,7 +191,9 @@
       "titlu": "Dans 2 minute",
       "durata_min": 3,
       "mod_default": "A",
-      "materiale": ["muzică opțională"],
+      "materiale": [
+        "muzică opțională"
+      ],
       "pasi": [
         "Puneți o melodie scurtă sau bateți din palme.",
         "Mișcați-vă împreună."
@@ -193,10 +212,12 @@
       "titlu": "Unde e mingea?",
       "durata_min": 4,
       "mod_default": "A",
-      "materiale": ["minge"],
+      "materiale": [
+        "minge"
+      ],
       "pasi": [
         "Ascundeți mingea la vedere (sub pernă pe jumătate).",
-        "Unde e mingea?",
+        "„Unde e mingea?”",
         "Bucurați-vă când o găsește."
       ],
       "gata_cand": "A căutat / găsit mingea.",
@@ -213,10 +234,12 @@
       "titlu": "Strângem 3 jucării",
       "durata_min": 5,
       "mod_default": "A",
-      "materiale": ["jucării"],
+      "materiale": [
+        "jucării"
+      ],
       "pasi": [
         "Alegeți 3 jucării de pe jos.",
-        "Una. Două. Trei. Gata.",
+        "„Una. Două. Trei. Gata.”",
         "Puneți-le în cutie împreună."
       ],
       "gata_cand": "A ajutat la cel puțin 1 jucărie în cutie.",
@@ -236,7 +259,7 @@
       "materiale": [],
       "pasi": [
         "Oferiți îmbrățișare; nu forțați.",
-        "Vrei îmbrățișare?"
+        "„Vrei o îmbrățișare? Sau un pup?” — fără forțare."
       ],
       "gata_cand": "A acceptat sau a refuzat clar (oricare e ok).",
       "tema_saptamana": "Casa și curtea",
@@ -252,10 +275,12 @@
       "titlu": "Cărăm ceva ușor",
       "durata_min": 4,
       "mod_default": "A",
-      "materiale": ["găleată/jucărie"],
+      "materiale": [
+        "găleată/jucărie"
+      ],
       "pasi": [
         "Dați-i ceva ușor de cărat 5–10 pași.",
-        "Tu porți asta."
+        "„Tu porți asta.”"
       ],
       "gata_cand": "A cărat obiectul câțiva pași.",
       "tema_saptamana": "Casa și curtea",
@@ -271,10 +296,12 @@
       "titlu": "Cald / rece",
       "durata_min": 3,
       "mod_default": "A",
-      "materiale": ["apă sau mână"],
+      "materiale": [
+        "apă sau mână"
+      ],
       "pasi": [
-        "Atingeți ceva cald-safe și ceva rece.",
-        "Cald. Rece."
+        "Atingeți ceva cald (fără să arzi) și ceva rece.",
+        "„Cald. Rece.”"
       ],
       "gata_cand": "A reacționat la diferență.",
       "tema_saptamana": "Casa și curtea",
@@ -290,10 +317,12 @@
       "titlu": "Apa e importantă",
       "durata_min": 3,
       "mod_default": "A",
-      "materiale": ["pahar apă"],
+      "materiale": [
+        "pahar apă"
+      ],
       "pasi": [
         "Beți împreună apă.",
-        "Beau apă. E bine."
+        "„Beau apă. E bine.”"
       ],
       "gata_cand": "A băut sau a gustat apă.",
       "tema_saptamana": "Casa și curtea",
@@ -309,9 +338,11 @@
       "titlu": "Joacă de-a rândul",
       "durata_min": 5,
       "mod_default": "A",
-      "materiale": ["minge"],
+      "materiale": [
+        "minge"
+      ],
       "pasi": [
-        "Dați mingea: Acum tu. Acum eu.",
+        "Dați mingea: „Acum tu. Acum eu.”",
         "2–4 schimburi."
       ],
       "gata_cand": "A dat / primit mingea măcar o dată.",
@@ -328,7 +359,9 @@
       "titlu": "Urcăm / coborâm trepte",
       "durata_min": 5,
       "mod_default": "A",
-      "materiale": ["1–3 trepte safe"],
+      "materiale": [
+        "1–3 trepte sigure"
+      ],
       "pasi": [
         "Țineți mâna.",
         "Una-două trepte.",
@@ -350,7 +383,7 @@
       "mod_default": "A",
       "materiale": [],
       "pasi": [
-        "Arătați: Usa. Fereastra. Scaun.",
+        "Arătați: „Ușă. Fereastră. Scaun.”",
         "El arată dacă vrea."
       ],
       "gata_cand": "A privit cele 3 obiecte numite.",
@@ -367,10 +400,12 @@
       "titlu": "Lumina aprins / stins",
       "durata_min": 3,
       "mod_default": "A",
-      "materiale": ["întrerupător"],
+      "materiale": [
+        "întrerupător"
+      ],
       "pasi": [
-        "Aprindeți/stingeți cu ajutorul lui (safe).",
-        "Aprins. Stins.",
+        "Aprindeți/stingeți cu ajutorul lui (doar cu adult).",
+        "„Aprins. Stins.”",
         "Nu lăsați nesupravegheat."
       ],
       "gata_cand": "A văzut / apăsat cu ajutor.",
@@ -387,7 +422,9 @@
       "titlu": "Vizită scurtă / telefon bunica",
       "durata_min": 5,
       "mod_default": "A",
-      "materiale": ["opțional apel"],
+      "materiale": [
+        "opțional apel"
+      ],
       "pasi": [
         "Salut scurt unei persoane dragi.",
         "2 minute max."
@@ -401,15 +438,17 @@
       "banda": "2-3",
       "saptamana": 1,
       "zi": 6,
-      "zi_nume": "Sambata",
+      "zi_nume": "Sâmbătă",
       "pilon": "fizic",
       "titlu": "Nisip / iarbă / pietre",
       "durata_min": 6,
       "mod_default": "A",
-      "materiale": ["curte"],
+      "materiale": [
+        "curte"
+      ],
       "pasi": [
-        "Descălțați dacă e safe sau atingeți texturi.",
-        "Moale. Aspru."
+        "Descălțați dacă e în siguranță sau atingeți texturi.",
+        "„Moale. Aspru.”"
       ],
       "gata_cand": "A explorat 2 texturi.",
       "tema_saptamana": "Casa și curtea",
@@ -420,15 +459,17 @@
       "banda": "2-3",
       "saptamana": 1,
       "zi": 6,
-      "zi_nume": "Sambata",
+      "zi_nume": "Sâmbătă",
       "pilon": "mental",
       "titlu": "Sunete: pasăre / mașină",
       "durata_min": 4,
       "mod_default": "A",
-      "materiale": ["afară"],
+      "materiale": [
+        "afară"
+      ],
       "pasi": [
         "Ascultați 20 sec.",
-        "Auzi? Pasăre. Mașină."
+        "„Auzi? Pasăre. Mașină.”"
       ],
       "gata_cand": "A orientat atenția spre sunet.",
       "tema_saptamana": "Casa și curtea",
@@ -439,15 +480,17 @@
       "banda": "2-3",
       "saptamana": 1,
       "zi": 6,
-      "zi_nume": "Sambata",
+      "zi_nume": "Sâmbătă",
       "pilon": "resurse",
       "titlu": "Udăm o plantă",
       "durata_min": 5,
       "mod_default": "A",
-      "materiale": ["apă, plantă"],
+      "materiale": [
+        "apă, plantă"
+      ],
       "pasi": [
         "Turnați puțin împreună.",
-        "Dăm apă plantei."
+        "„Dăm apă plantei.”"
       ],
       "gata_cand": "A ajutat la udat.",
       "tema_saptamana": "Casa și curtea",
@@ -458,12 +501,14 @@
       "banda": "2-3",
       "saptamana": 1,
       "zi": 6,
-      "zi_nume": "Sambata",
+      "zi_nume": "Sâmbătă",
       "pilon": "social",
       "titlu": "Joacă paralel cu adultul",
       "durata_min": 8,
       "mod_default": "A",
-      "materiale": ["2 seturi jucării"],
+      "materiale": [
+        "2 seturi jucării"
+      ],
       "pasi": [
         "Stați lângă el, jucați-vă cu ale voastre.",
         "Comentați ce face el, fără a prelua jocul."
@@ -477,17 +522,19 @@
       "banda": "2-3",
       "saptamana": 1,
       "zi": 7,
-      "zi_nume": "Duminica",
+      "zi_nume": "Duminică",
       "pilon": "fizic",
       "titlu": "Plimbare liberă scurtă",
       "durata_min": 8,
       "mod_default": "A",
-      "materiale": ["curte/parc"],
+      "materiale": [
+        "curte/parc"
+      ],
       "pasi": [
         "El dictează ritmul.",
         "Voi doar supravegheați și numiți ce arată."
       ],
-      "gata_cand": "A explorat liber >=5 min.",
+      "gata_cand": "A explorat liber ≥5 min.",
       "tema_saptamana": "Casa și curtea",
       "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
     },
@@ -496,12 +543,14 @@
       "banda": "2-3",
       "saptamana": 1,
       "zi": 7,
-      "zi_nume": "Duminica",
+      "zi_nume": "Duminică",
       "pilon": "mental",
       "titlu": "Cartea preferată (repetare)",
       "durata_min": 5,
       "mod_default": "A",
-      "materiale": ["carte"],
+      "materiale": [
+        "carte"
+      ],
       "pasi": [
         "Aceeași carte ca în săptămână.",
         "Lăsați-l să întoarcă pagina."
@@ -515,15 +564,17 @@
       "banda": "2-3",
       "saptamana": 1,
       "zi": 7,
-      "zi_nume": "Duminica",
+      "zi_nume": "Duminică",
       "pilon": "resurse",
       "titlu": "Punem hainele la loc",
       "durata_min": 4,
       "mod_default": "A",
-      "materiale": ["haină"],
+      "materiale": [
+        "haină"
+      ],
       "pasi": [
         "După ieșire: haina pe cârlig/scaun.",
-        "La loc."
+        "„La loc.”"
       ],
       "gata_cand": "A ajutat să pună haina undeva.",
       "tema_saptamana": "Casa și curtea",
@@ -534,14 +585,14 @@
       "banda": "2-3",
       "saptamana": 1,
       "zi": 7,
-      "zi_nume": "Duminica",
+      "zi_nume": "Duminică",
       "pilon": "social",
       "titlu": "Ziua e gata — pup de noapte",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
       "pasi": [
-        "Ritual scurt: Noapte bună.",
+        "Ritual scurt: „Noapte bună.”",
         "Lumină mică, calm."
       ],
       "gata_cand": "A participat la ritualul de somn.",
