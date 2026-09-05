@@ -63,8 +63,9 @@ export default function LoginPage() {
 
   function enterDemo() {
     startDemoSession();
-    router.replace("/onboarding");
-    router.refresh();
+    // Full navigation so proxy.ts sees echilibru_demo on the next request.
+    // eslint-disable-next-line @next/next/no-location-assign-relative-destination -- demo cookie must ride a real document request
+    window.location.assign("/onboarding");
   }
 
   return (
