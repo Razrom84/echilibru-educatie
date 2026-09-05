@@ -2,7 +2,7 @@
 export const PROGRAM_WEEK = 1;
 export const PROGRAM_AGE_BAND = "2-3";
 
-export const PROGRAM_WEEKS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] as const;
+export const PROGRAM_WEEKS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16] as const;
 export type ProgramWeek = (typeof PROGRAM_WEEKS)[number];
 
 export const WEEK_THEMES: Record<ProgramWeek, string> = {
@@ -18,6 +18,10 @@ export const WEEK_THEMES: Record<ProgramWeek, string> = {
   10: "Colectăm și sortăm",
   11: "Lumină și umbră",
   12: "Cald și rece (repetare)",
+  13: "Haine pe vreme",
+  14: "Pași pe drumul scurt",
+  15: "Mâncare împreună",
+  16: "Apă și sete",
 };
 
 export function isProgramWeek(value: number): value is ProgramWeek {
