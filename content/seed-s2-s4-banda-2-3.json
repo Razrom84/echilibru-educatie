@@ -649,8 +649,8 @@
         "jucărie sonoră"
       ],
       "pasi": [
-        "Un sunet, apoi stop.",
-        "„Sunet. Stop.”"
+        "Un sunet, apoi ne oprim.",
+        "„Sunet. Gata.”"
       ],
       "gata_cand": "A reacționat la sunet.",
       "tema_saptamana": "Sunete și liniște",
@@ -770,7 +770,7 @@
       ],
       "pasi": [
         "30–60 sec muzică.",
-        "Stop."
+        "Ne oprim."
       ],
       "gata_cand": "S-a mișcat pe ritm.",
       "tema_saptamana": "Sunete și liniște",
@@ -809,7 +809,7 @@
         "telefon/boxă"
       ],
       "pasi": [
-        "Apăsați stop împreună.",
+        "Apăsați oprirea împreună.",
         "„Oprit.”"
       ],
       "gata_cand": "A văzut oprirea.",
@@ -962,14 +962,14 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "resurse",
-      "titlu": "Telefonul pe silent (model)",
+      "titlu": "Telefonul pe silențios (model)",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
         "telefon"
       ],
       "pasi": [
-        "Puneți pe silent vizibil.",
+        "Puneți pe silențios, vizibil.",
         "„Liniște acum.”"
       ],
       "gata_cand": "A văzut gestul.",
@@ -1296,7 +1296,7 @@
       ],
       "pasi": [
         "Una câte una.",
-        "Stop la oboseală."
+        "Ne oprim la oboseală."
       ],
       "gata_cand": "A turnat ≥1.",
       "tema_saptamana": "Mâini și degete",
@@ -1335,7 +1335,7 @@
       "mod_default": "A",
       "materiale": [],
       "pasi": [
-        "Taptap ușor.",
+        "Bateți ușor cu degetele.",
         "El imită."
       ],
       "gata_cand": "A atins masa ritmic.",
@@ -1470,7 +1470,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "social",
-      "titlu": "High-five blând",
+      "titlu": "Palmă pe palmă, blând",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -1719,7 +1719,7 @@
       "mod_default": "A",
       "materiale": [],
       "pasi": [
-        "Oferiți; acceptă/refuză ok.",
+        "Oferiți; acceptă sau refuză — în regulă.",
         "„Noapte bună.”"
       ],
       "gata_cand": "A participat la ritual.",
