@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useFamily } from "@/lib/family-context";
+import { WEEK_THEME } from "@/lib/seed/week1";
 import { PROGRAM_WEEK } from "@/lib/week";
 
 export function AppHeader() {
@@ -18,7 +19,7 @@ export function AppHeader() {
           {selectedChild ? selectedChild.name : family?.display_name || "Familia ta"}
         </p>
         <p className="mt-1 text-sm text-muted-foreground">
-          Săptămâna {PROGRAM_WEEK} · 2–3 ani
+          Săptămâna {PROGRAM_WEEK} · {WEEK_THEME} · 2–3 ani
           {isDemo ? " · demonstrație" : ""}
         </p>
       </div>

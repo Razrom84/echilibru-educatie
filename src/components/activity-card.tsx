@@ -36,11 +36,9 @@ export function ActivityCard({
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
             <PillarMark pillar={activity.pillar} />
-            {activity.is_placeholder ? (
-              <span className="text-[11px] uppercase tracking-wider text-muted-foreground">
-                text provizoriu
-              </span>
-            ) : null}
+            <span className="text-[11px] text-muted-foreground">
+              {activity.durata_min} min
+            </span>
           </div>
           <h2 className="mt-2 font-heading text-xl leading-tight">
             <Link href={`/activitate/${activity.id}`} className="hover:underline">
@@ -48,7 +46,7 @@ export function ActivityCard({
             </Link>
           </h2>
           <p className="mt-1 line-clamp-2 text-sm leading-6 text-muted-foreground">
-            {activity.body}
+            {activity.gata_cand}
           </p>
           {pending ? (
             <p className="mt-2 text-xs font-medium text-amber-800">

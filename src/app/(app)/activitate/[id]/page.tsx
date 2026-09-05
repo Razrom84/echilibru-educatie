@@ -72,17 +72,35 @@ export default function ActivitatePage({
         <div className="flex flex-wrap items-center gap-2">
           <PillarMark pillar={activity.pillar} />
           <span className="text-sm text-muted-foreground">
-            {getDayName(activity.day_of_week)} · {PILLAR_META[activity.pillar].hint}
+            {getDayName(activity.day_of_week)} · {activity.durata_min} min ·{" "}
+            {PILLAR_META[activity.pillar].hint}
           </span>
         </div>
         <h1 className="mt-3 font-heading text-3xl leading-tight">{activity.title}</h1>
-        {activity.is_placeholder ? (
-          <p className="mt-2 rounded-xl bg-amber-50 px-3 py-2 text-xs leading-5 text-amber-950">
-            PLACEHOLDER — Cristina înlocuiește titlul și corpul cu textul final RO.
-            Nu schimba stâlpul, ziua, săptămâna sau banda de vârstă.
+        <p className="mt-1 text-sm text-muted-foreground">{activity.tema_saptamana}</p>
+
+        {activity.materiale.length > 0 ? (
+          <p className="mt-4 text-sm">
+            <span className="font-medium">Materiale: </span>
+            {activity.materiale.join(", ")}
           </p>
+        ) : (
+          <p className="mt-4 text-sm text-muted-foreground">Fără materiale extra.</p>
+        )}
+
+        <ol className="mt-4 list-decimal space-y-2 pl-5 text-base leading-7">
+          {activity.pasi.map((step) => (
+            <li key={step}>{step}</li>
+          ))}
+        </ol>
+
+        <p className="mt-5 rounded-xl bg-muted px-3 py-2 text-sm leading-6">
+          <span className="font-medium">Gata când: </span>
+          {activity.gata_cand}
+        </p>
+        {activity.nota ? (
+          <p className="mt-3 text-xs leading-5 text-muted-foreground">{activity.nota}</p>
         ) : null}
-        <p className="mt-4 text-base leading-7 text-foreground/90">{activity.body}</p>
       </div>
 
       <div className="flex items-center justify-between gap-3 rounded-2xl border border-border bg-card px-4 py-3">
@@ -95,8 +113,8 @@ export default function ActivitatePage({
               : "Încă nefăcut"}
           </p>
           <p className="text-xs text-muted-foreground">
-            Mod {family?.default_mode ?? "A"}
-            {family?.default_mode === "B"
+            Mod {family?.default_mode ?? activity.mod_default}
+            {(family?.default_mode ?? activity.mod_default) === "B"
               ? " — copilul face, părintele aprobă"
               : " — părintele face împreună / pentru copil"}
           </p>

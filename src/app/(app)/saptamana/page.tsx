@@ -5,6 +5,7 @@ import { PillarMark } from "@/components/pillar-mark";
 import { EmptyState } from "@/components/status-blocks";
 import { useFamily } from "@/lib/family-context";
 import { PILLARS } from "@/lib/pillars";
+import { WEEK_THEME } from "@/lib/seed/week1";
 import { getDayName, getDayOfWeek, PROGRAM_WEEK } from "@/lib/week";
 import { cn } from "@/lib/utils";
 
@@ -25,7 +26,7 @@ export default function SaptamanaPage() {
       <div>
         <h1 className="font-heading text-3xl">Săptămâna {PROGRAM_WEEK}</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          4 stâlpi × 7 zile. Conținutul real pentru săptămânile 2–52 lipsește încă.
+          {WEEK_THEME} · 4 stâlpi × 7 zile. Săptămânile 2–52 urmează.
         </p>
       </div>
 

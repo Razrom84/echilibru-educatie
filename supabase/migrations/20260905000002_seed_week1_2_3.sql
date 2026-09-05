@@ -1,5 +1,6 @@
+-- SUPERSEDED by 20260905000003 + content/seed-s1-banda-2-3.json
 -- =============================================================================
--- CRISTINA SEED SWAP
+-- CRISTINA SEED SWAP (historical placeholders — do not use)
 -- Replace ONLY `title` and `body` below with the final Romanian copy.
 -- Keep week_number, day_of_week, pillar, age_band, is_placeholder shape stable.
 -- After the real text lands, set is_placeholder = false for those rows.

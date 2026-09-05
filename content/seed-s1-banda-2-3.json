@@ -1,0 +1,552 @@
+{
+  "version": 1,
+  "locale": "ro",
+  "banda": "2-3",
+  "saptamana": 1,
+  "tema": "Casa și curtea",
+  "piloni": ["fizic", "mental", "resurse", "social"],
+  "activitati": [
+    {
+      "id": "s1-2-3-z1-fizic",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "fizic",
+      "titlu": "Pași în curte",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": ["curte"],
+      "pasi": [
+        "Ieșiți în curte.",
+        "Mergeți împreună 10–20 de pași.",
+        "Numărați cu voce tare: unu, doi…"
+      ],
+      "gata_cand": "A făcut câțiva pași afară fără forțare.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z1-mental",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "mental",
+      "titlu": "Uite copacul",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": ["curte"],
+      "pasi": [
+        "Arătați un copac/plantă.",
+        "Ziceți: Copac. Verde. Sus.",
+        "Lăsați-l să arate și el."
+      ],
+      "gata_cand": "A privit / arătat obiectul numit.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z1-resurse",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "resurse",
+      "titlu": "Piatra mea",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": ["o piatră/frunză"],
+      "pasi": [
+        "Alegeți împreună o piatră sau frunză.",
+        "Ziceți: Asta e a ta să o ții puțin.",
+        "La final o puneți la loc."
+      ],
+      "gata_cand": "A ținut obiectul și l-a pus la loc.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z1-social",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "social",
+      "titlu": "Salut mamei/tatălui",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Practicați Bună, mama/tata! cu zâmbet.",
+        "Răspundeți cald când încearcă."
+      ],
+      "gata_cand": "A făcut un gest/salut (sau a încercat).",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z2-fizic",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 2,
+      "zi_nume": "Marti",
+      "pilon": "fizic",
+      "titlu": "Sărițuri mici",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": ["podea/curte"],
+      "pasi": [
+        "Țineți-i mâinile.",
+        "2–5 sărituri ușoare.",
+        "Stop când e gata."
+      ],
+      "gata_cand": "A sărit sau a încercat de câteva ori.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z2-mental",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 2,
+      "zi_nume": "Marti",
+      "pilon": "mental",
+      "titlu": "Carte 5 minute",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": ["o carte cartonată"],
+      "pasi": [
+        "Stați împreună.",
+        "Arătați 3 imagini: Minge. Apă. Câine.",
+        "Nu forțați să stea mai mult."
+      ],
+      "gata_cand": "A rămas la 2–3 pagini.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z2-resurse",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 2,
+      "zi_nume": "Marti",
+      "pilon": "resurse",
+      "titlu": "Paharul gol / plin",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": ["pahar, apă"],
+      "pasi": [
+        "Arătați pahar gol, apoi turnați puțin.",
+        "Gol. Plin.",
+        "El toarnă cu ajutor."
+      ],
+      "gata_cand": "A văzut / ajutat la turnat.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z2-social",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 2,
+      "zi_nume": "Marti",
+      "pilon": "social",
+      "titlu": "Mulțumesc",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "După o gustare: Mulțumesc.",
+        "Modelați voi; el imită dacă vrea."
+      ],
+      "gata_cand": "A auzit și/sau a încercat cuvântul.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z3-fizic",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "fizic",
+      "titlu": "Dans 2 minute",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": ["muzică opțională"],
+      "pasi": [
+        "Puneți o melodie scurtă sau bateți din palme.",
+        "Mișcați-vă împreună."
+      ],
+      "gata_cand": "S-a mișcat pe ritm măcar 30 sec.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z3-mental",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "mental",
+      "titlu": "Unde e mingea?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": ["minge"],
+      "pasi": [
+        "Ascundeți mingea la vedere (sub pernă pe jumătate).",
+        "Unde e mingea?",
+        "Bucurați-vă când o găsește."
+      ],
+      "gata_cand": "A căutat / găsit mingea.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z3-resurse",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "resurse",
+      "titlu": "Strângem 3 jucării",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": ["jucării"],
+      "pasi": [
+        "Alegeți 3 jucării de pe jos.",
+        "Una. Două. Trei. Gata.",
+        "Puneți-le în cutie împreună."
+      ],
+      "gata_cand": "A ajutat la cel puțin 1 jucărie în cutie.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z3-social",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "social",
+      "titlu": "Îmbrățișare la cerere",
+      "durata_min": 2,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Oferiți îmbrățișare; nu forțați.",
+        "Vrei îmbrățișare?"
+      ],
+      "gata_cand": "A acceptat sau a refuzat clar (oricare e ok).",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z4-fizic",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "fizic",
+      "titlu": "Cărăm ceva ușor",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": ["găleată/jucărie"],
+      "pasi": [
+        "Dați-i ceva ușor de cărat 5–10 pași.",
+        "Tu porți asta."
+      ],
+      "gata_cand": "A cărat obiectul câțiva pași.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z4-mental",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "mental",
+      "titlu": "Cald / rece",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": ["apă sau mână"],
+      "pasi": [
+        "Atingeți ceva cald-safe și ceva rece.",
+        "Cald. Rece."
+      ],
+      "gata_cand": "A reacționat la diferență.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z4-resurse",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "resurse",
+      "titlu": "Apa e importantă",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": ["pahar apă"],
+      "pasi": [
+        "Beți împreună apă.",
+        "Beau apă. E bine."
+      ],
+      "gata_cand": "A băut sau a gustat apă.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z4-social",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "social",
+      "titlu": "Joacă de-a rândul",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": ["minge"],
+      "pasi": [
+        "Dați mingea: Acum tu. Acum eu.",
+        "2–4 schimburi."
+      ],
+      "gata_cand": "A dat / primit mingea măcar o dată.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z5-fizic",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "fizic",
+      "titlu": "Urcăm / coborâm trepte",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": ["1–3 trepte safe"],
+      "pasi": [
+        "Țineți mâna.",
+        "Una-două trepte.",
+        "Stop la oboseală."
+      ],
+      "gata_cand": "A urcat sau coborât cu ajutor.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z5-mental",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "mental",
+      "titlu": "Numește 3 lucruri din cameră",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Arătați: Usa. Fereastra. Scaun.",
+        "El arată dacă vrea."
+      ],
+      "gata_cand": "A privit cele 3 obiecte numite.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z5-resurse",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "resurse",
+      "titlu": "Lumina aprins / stins",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": ["întrerupător"],
+      "pasi": [
+        "Aprindeți/stingeți cu ajutorul lui (safe).",
+        "Aprins. Stins.",
+        "Nu lăsați nesupravegheat."
+      ],
+      "gata_cand": "A văzut / apăsat cu ajutor.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z5-social",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "social",
+      "titlu": "Vizită scurtă / telefon bunica",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": ["opțional apel"],
+      "pasi": [
+        "Salut scurt unei persoane dragi.",
+        "2 minute max."
+      ],
+      "gata_cand": "A participat la salut (vizual/audio).",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z6-fizic",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 6,
+      "zi_nume": "Sambata",
+      "pilon": "fizic",
+      "titlu": "Nisip / iarbă / pietre",
+      "durata_min": 6,
+      "mod_default": "A",
+      "materiale": ["curte"],
+      "pasi": [
+        "Descălțați dacă e safe sau atingeți texturi.",
+        "Moale. Aspru."
+      ],
+      "gata_cand": "A explorat 2 texturi.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z6-mental",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 6,
+      "zi_nume": "Sambata",
+      "pilon": "mental",
+      "titlu": "Sunete: pasăre / mașină",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": ["afară"],
+      "pasi": [
+        "Ascultați 20 sec.",
+        "Auzi? Pasăre. Mașină."
+      ],
+      "gata_cand": "A orientat atenția spre sunet.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z6-resurse",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 6,
+      "zi_nume": "Sambata",
+      "pilon": "resurse",
+      "titlu": "Udăm o plantă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": ["apă, plantă"],
+      "pasi": [
+        "Turnați puțin împreună.",
+        "Dăm apă plantei."
+      ],
+      "gata_cand": "A ajutat la udat.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z6-social",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 6,
+      "zi_nume": "Sambata",
+      "pilon": "social",
+      "titlu": "Joacă paralel cu adultul",
+      "durata_min": 8,
+      "mod_default": "A",
+      "materiale": ["2 seturi jucării"],
+      "pasi": [
+        "Stați lângă el, jucați-vă cu ale voastre.",
+        "Comentați ce face el, fără a prelua jocul."
+      ],
+      "gata_cand": "A jucat lângă voi 3–5 min.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z7-fizic",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 7,
+      "zi_nume": "Duminica",
+      "pilon": "fizic",
+      "titlu": "Plimbare liberă scurtă",
+      "durata_min": 8,
+      "mod_default": "A",
+      "materiale": ["curte/parc"],
+      "pasi": [
+        "El dictează ritmul.",
+        "Voi doar supravegheați și numiți ce arată."
+      ],
+      "gata_cand": "A explorat liber >=5 min.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z7-mental",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 7,
+      "zi_nume": "Duminica",
+      "pilon": "mental",
+      "titlu": "Cartea preferată (repetare)",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": ["carte"],
+      "pasi": [
+        "Aceeași carte ca în săptămână.",
+        "Lăsați-l să întoarcă pagina."
+      ],
+      "gata_cand": "A ales / rămas la carte scurt.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z7-resurse",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 7,
+      "zi_nume": "Duminica",
+      "pilon": "resurse",
+      "titlu": "Punem hainele la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": ["haină"],
+      "pasi": [
+        "După ieșire: haina pe cârlig/scaun.",
+        "La loc."
+      ],
+      "gata_cand": "A ajutat să pună haina undeva.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s1-2-3-z7-social",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 7,
+      "zi_nume": "Duminica",
+      "pilon": "social",
+      "titlu": "Ziua e gata — pup de noapte",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Ritual scurt: Noapte bună.",
+        "Lumină mică, calm."
+      ],
+      "gata_cand": "A participat la ritualul de somn.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    }
+  ]
+}

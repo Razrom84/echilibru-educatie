@@ -23,7 +23,7 @@ export default function CopiiPage() {
     setBusy(true);
     setError(null);
     try {
-      await addChild({ name, birthdate: birthdate || null });
+      await addChild({ name, birthdate });
       setName("");
       setBirthdate("");
       setOpen(false);
@@ -99,17 +99,18 @@ export default function CopiiPage() {
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="new-birth">Data nașterii (opțional)</Label>
+            <Label htmlFor="new-birth">Data nașterii</Label>
             <Input
               id="new-birth"
               type="date"
+              required
               value={birthdate}
               onChange={(event) => setBirthdate(event.target.value)}
               className="h-11"
             />
           </div>
           {error ? <p className="text-sm text-destructive">{error}</p> : null}
-          <Button type="submit" className="h-11 w-full" disabled={busy || !name.trim()}>
+          <Button type="submit" className="h-11 w-full" disabled={busy || !name.trim() || !birthdate}>
             {busy ? "Salvez…" : "Adaugă copilul"}
           </Button>
         </form>

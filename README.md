@@ -44,7 +44,8 @@ Cheile se iau din Supabase → Project Settings → Data API / API Keys.
 3. Pentru test local, în Authentication → Providers → Email, oprește **Confirm email**. Altfel signup-ul cere inbox.
 4. SQL Editor: rulează, în ordine:
    - `supabase/migrations/20260905000001_init.sql`
-   - `supabase/migrations/20260905000002_seed_week1_2_3.sql`
+   - `supabase/migrations/20260905000002_seed_week1_2_3.sql` (înlocuit de 0003)
+   - `supabase/migrations/20260905000003_official_activitate_schema.sql`
 5. Copiază URL + anon key în `.env.local`.
 
 Sau, cu [Supabase CLI](https://supabase.com/docs/guides/cli):
@@ -62,30 +63,28 @@ Service role e nevoie doar pentru CLI / operații admin, nu în browser.
 ## Model de date
 
 - **families**: un părinte (`auth.users`) → o familie; `default_mode` A sau B
-- **children**: nume, data nașterii (opțional), `age_band` (`2-3`), `active`
-- **activities**: catalog (`week_number` 1–52, `day_of_week` 1 lună–7 duminică, `pillar`, text RO)
-- **completions**: `child_id` + `activity_id`, `mode` A/B, `parent_approved` (mod B: `false` = așteaptă, `true` = aprobat)
+- **children**: nume, data nașterii → banda V1 `2-3`, `active`
+- **activities**: catalog Cristina (`id` slug, `banda`, `saptamana`, `zi`, `pilon`, `titlu`, `durata_min`, `mod_default`, `materiale[]`, `pasi[]`, `gata_cand`, `nota`, `tema_saptamana`)
+- **completions**: `child_id` + `activity_id` (slug), `mode` A/B, `parent_approved` (mod B: `false` = așteaptă, `true` = aprobat)
 
 Stâlpi: `fizic`, `mental`, `resurse`, `social`.
 
 Săptămâna din V1 este **săptămâna 1 de program**, nu săptămâna ISO din calendar. Azi folosește ziua reală a săptămânii (luni–duminică) din săptămâna 1.
 
-## Unde schimbă Cristina textul
+## Seed oficial (Cristina)
 
-1. `supabase/migrations/20260905000002_seed_week1_2_3.sql` — sursa pentru baza de date  
-2. `src/lib/seed/week1.ts` — aceleași placeholder-e pentru demonstrația locală  
+Sursa de adevăr: `content/seed-s1-banda-2-3.json` (28 de activități, săptămâna 1, banda 2–3, tema **Casa și curtea**).  
+Schema câmpurilor: `content/schema-activitate.json`.
 
-Înlocuiește **doar** `title` și `body`. Nu schimba `week_number`, `day_of_week`, `pillar`, `age_band`.  
-După textul final, pune `is_placeholder = false`.  
-În UI, rândurile placeholder au eticheta „text provizoriu”.
+Import în Postgres:
 
-Dacă seed-ul e deja aplicat, update în SQL Editor:
-
-```sql
-update public.activities
-set title = '…', body = '…', is_placeholder = false
-where week_number = 1 and day_of_week = 1 and pillar = 'fizic' and age_band = '2-3';
+```bash
+node scripts/import-seed.mjs
+# sau rulează supabase/migrations/20260905000003_official_activitate_schema.sql
 ```
+
+Aplicația citește același JSON în demonstrație. Nu mai există text lorem / placeholder.  
+Dacă Cristina înlocuiește fișierul JSON, re-rulează importul (`on conflict (id) do update`).
 
 ## Deploy Vercel
 

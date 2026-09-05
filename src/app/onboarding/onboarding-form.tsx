@@ -29,7 +29,7 @@ export function OnboardingForm() {
     try {
       await addChild({
         name,
-        birthdate: birthdate || null,
+        birthdate,
       });
       router.replace("/azi");
     } catch (err) {
@@ -57,21 +57,26 @@ export function OnboardingForm() {
         />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="birthdate">Data nașterii (opțional)</Label>
+        <Label htmlFor="birthdate">Data nașterii</Label>
         <Input
           id="birthdate"
           type="date"
+          required
           value={birthdate}
           onChange={(event) => setBirthdate(event.target.value)}
           className="h-11"
         />
       </div>
       <p className="text-sm leading-6 text-muted-foreground">
-        Banda de vârstă pentru V1 este <strong>2–3 ani</strong>. Restul săptămânilor
-        și benzilor vor veni ulterior.
+        Din data de naștere, V1 pune copilul pe banda <strong>2–3 ani</strong> și
+        deschide săptămâna 1 — Casa și curtea. Celelalte benzi vin ulterior.
       </p>
       {error ? <p className="text-sm text-destructive">{error}</p> : null}
-      <Button type="submit" className="h-11 w-full text-base" disabled={busy || !name.trim()}>
+      <Button
+        type="submit"
+        className="h-11 w-full text-base"
+        disabled={busy || !name.trim() || !birthdate}
+      >
         {busy ? "Salvez…" : "Începe săptămâna 1"}
       </Button>
     </form>

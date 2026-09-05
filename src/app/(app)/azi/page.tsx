@@ -6,6 +6,7 @@ import { EmptyState } from "@/components/status-blocks";
 import { useFamily } from "@/lib/family-context";
 import { PILLARS } from "@/lib/pillars";
 import Link from "next/link";
+import { WEEK_THEME } from "@/lib/seed/week1";
 import { formatRoDate, getDayName, getDayOfWeek, PROGRAM_WEEK } from "@/lib/week";
 
 export default function AziPage() {
@@ -44,7 +45,7 @@ export default function AziPage() {
       <div>
         <h1 className="font-heading text-3xl capitalize">{formatRoDate()}</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          {getDayName(day)} · patru stâlpi, acasă sau în curte. Mod{" "}
+          {getDayName(day)} · {WEEK_THEME} · săptămâna {PROGRAM_WEEK}. Mod{" "}
           {family?.default_mode === "B" ? "B (autonomie + aprobare)" : "A (împreună)"}.
         </p>
       </div>

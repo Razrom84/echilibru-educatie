@@ -1,4 +1,5 @@
 import { CHILD_COOKIE, DEMO_COOKIE, DEMO_STORAGE_KEY } from "@/lib/config";
+import { bandFromBirthdate } from "@/lib/band";
 import { getWeek1Activities } from "@/lib/seed/week1";
 import type { Child, Completion, CompletionMode, Family } from "@/lib/types";
 
@@ -75,7 +76,7 @@ export function addDemoChild(
     family_id: state.family.id,
     name: input.name.trim(),
     birthdate: input.birthdate,
-    age_band: "2-3",
+    age_band: bandFromBirthdate(input.birthdate),
     active: true,
     created_at: nowIso(),
   };

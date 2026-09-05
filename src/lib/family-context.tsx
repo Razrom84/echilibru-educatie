@@ -28,7 +28,10 @@ import type {
   CompletionMode,
   Family,
 } from "@/lib/types";
+import { bandFromBirthdate } from "@/lib/band";
+import { normalizeActivity } from "@/lib/seed/week1";
 import { PROGRAM_AGE_BAND, PROGRAM_WEEK } from "@/lib/week";
+import type { SeedActivity } from "@/lib/types";
 
 type Status = "loading" | "ready" | "error";
 
@@ -162,9 +165,9 @@ export function FamilyProvider({
         supabase
           .from("activities")
           .select("*")
-          .eq("week_number", PROGRAM_WEEK)
-          .eq("age_band", PROGRAM_AGE_BAND)
-          .order("day_of_week", { ascending: true }),
+          .eq("saptamana", PROGRAM_WEEK)
+          .eq("banda", PROGRAM_AGE_BAND)
+          .order("zi", { ascending: true }),
       ]);
 
     if (childError) {
@@ -189,7 +192,7 @@ export function FamilyProvider({
     setSelectedChildId(nextSelected);
     if (nextSelected) writeChildCookie(nextSelected);
 
-    const catalog = (activityRows ?? []) as Activity[];
+    const catalog = ((activityRows ?? []) as SeedActivity[]).map(normalizeActivity);
     setActivities(catalog);
 
     if (nextSelected) {
@@ -258,7 +261,7 @@ export function FamilyProvider({
           family_id: family.id,
           name: input.name.trim(),
           birthdate: input.birthdate,
-          age_band: PROGRAM_AGE_BAND,
+          age_band: bandFromBirthdate(input.birthdate),
           active: true,
         })
         .select("*")

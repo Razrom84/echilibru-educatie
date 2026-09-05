@@ -20,8 +20,24 @@ export type Child = {
   created_at: string;
 };
 
-export type Activity = {
+export type SeedActivity = {
   id: string;
+  banda: string;
+  saptamana: number;
+  zi: number;
+  zi_nume?: string;
+  pilon: Pillar;
+  titlu: string;
+  durata_min: number;
+  mod_default: CompletionMode;
+  materiale: string[];
+  pasi: string[];
+  gata_cand: string;
+  tema_saptamana: string;
+  nota?: string | null;
+};
+
+export type Activity = SeedActivity & {
   week_number: number;
   day_of_week: number;
   pillar: Pillar;
