@@ -112,7 +112,7 @@
       "pasi": [
         "Țineți-i mâinile.",
         "2–5 sărituri ușoare.",
-        "Stop când e gata."
+        "Ne oprim când e gata."
       ],
       "gata_cand": "A sărit sau a încercat de câteva ori.",
       "tema_saptamana": "Casa și curtea",
@@ -261,7 +261,7 @@
         "Oferiți îmbrățișare; nu forțați.",
         "„Vrei o îmbrățișare? Sau un pup?” — fără forțare."
       ],
-      "gata_cand": "A acceptat sau a refuzat clar (oricare e ok).",
+      "gata_cand": "A acceptat sau a refuzat clar (oricare e în regulă).",
       "tema_saptamana": "Casa și curtea",
       "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
     },
@@ -365,7 +365,7 @@
       "pasi": [
         "Țineți mâna.",
         "Una-două trepte.",
-        "Stop la oboseală."
+        "Ne oprim la oboseală."
       ],
       "gata_cand": "A urcat sau coborât cu ajutor.",
       "tema_saptamana": "Casa și curtea",

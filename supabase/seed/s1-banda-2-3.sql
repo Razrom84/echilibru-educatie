@@ -72,7 +72,7 @@ insert into public.activities (
     4,
     'A'::public.completion_mode,
     ARRAY['podea/curte']::text[],
-    ARRAY['Țineți-i mâinile.', '2–5 sărituri ușoare.', 'Stop când e gata.']::text[],
+    ARRAY['Țineți-i mâinile.', '2–5 sărituri ușoare.', 'Ne oprim când e gata.']::text[],
     'A sărit sau a încercat de câteva ori.',
     'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
     'Casa și curtea'
@@ -178,7 +178,7 @@ insert into public.activities (
     'A'::public.completion_mode,
     '{}'::text[],
     ARRAY['Oferiți îmbrățișare; nu forțați.', '„Vrei o îmbrățișare? Sau un pup?” — fără forțare.']::text[],
-    'A acceptat sau a refuzat clar (oricare e ok).',
+    'A acceptat sau a refuzat clar (oricare e în regulă).',
     'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
     'Casa și curtea'
   ),
@@ -252,7 +252,7 @@ insert into public.activities (
     5,
     'A'::public.completion_mode,
     ARRAY['1–3 trepte sigure']::text[],
-    ARRAY['Țineți mâna.', 'Una-două trepte.', 'Stop la oboseală.']::text[],
+    ARRAY['Țineți mâna.', 'Una-două trepte.', 'Ne oprim la oboseală.']::text[],
     'A urcat sau coborât cu ajutor.',
     'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
     'Casa și curtea'
