@@ -9,7 +9,7 @@ import {
   useState,
 } from "react";
 import { useRouter } from "next/navigation";
-import { CHILD_COOKIE, isSupabaseConfigured } from "@/lib/config";
+import { CHILD_COOKIE, isSupabaseConfigured, WEEK_COOKIE, WEEK_STORAGE_KEY } from "@/lib/config";
 import {
   addDemoChild,
   clearDemoSession,
@@ -30,7 +30,12 @@ import type {
 } from "@/lib/types";
 import { bandFromBirthdate } from "@/lib/band";
 import { normalizeActivity } from "@/lib/seed/week1";
-import { PROGRAM_AGE_BAND, PROGRAM_WEEK } from "@/lib/week";
+import {
+  getWeekTheme,
+  PROGRAM_AGE_BAND,
+  PROGRAM_WEEK,
+  type ProgramWeek,
+} from "@/lib/week";
 import type { SeedActivity } from "@/lib/types";
 
 type Status = "loading" | "ready" | "error";
@@ -42,9 +47,12 @@ type FamilyContextValue = {
   family: Family | null;
   children: Child[];
   selectedChild: Child | null;
+  selectedWeek: ProgramWeek;
+  weekTheme: string;
   activities: Activity[];
   completions: Completion[];
   refresh: () => Promise<void>;
+  selectWeek: (week: ProgramWeek) => void;
   selectChild: (childId: string) => Promise<void>;
   addChild: (input: { name: string; birthdate: string | null }) => Promise<void>;
   updateFamily: (input: {
@@ -70,11 +78,22 @@ function writeChildCookie(childId: string) {
   document.cookie = `${CHILD_COOKIE}=${childId}; path=/; max-age=31536000; samesite=lax`;
 }
 
+function writeWeekCookie(week: ProgramWeek) {
+  document.cookie = `${WEEK_COOKIE}=${week}; path=/; max-age=31536000; samesite=lax`;
+  try {
+    window.localStorage.setItem(WEEK_STORAGE_KEY, String(week));
+  } catch {
+    /* ignore quota / private mode */
+  }
+}
+
 export function FamilyProvider({
   isDemo,
+  initialWeek = PROGRAM_WEEK,
   children: tree,
 }: {
   isDemo: boolean;
+  initialWeek?: ProgramWeek;
   children: React.ReactNode;
 }) {
   const router = useRouter();
@@ -83,6 +102,7 @@ export function FamilyProvider({
   const [family, setFamily] = useState<Family | null>(null);
   const [kids, setKids] = useState<Child[]>([]);
   const [selectedChildId, setSelectedChildId] = useState<string | null>(null);
+  const [selectedWeek, setSelectedWeek] = useState<ProgramWeek>(initialWeek);
   const [activities, setActivities] = useState<Activity[]>([]);
   const [completions, setCompletions] = useState<Completion[]>([]);
 
@@ -91,18 +111,21 @@ export function FamilyProvider({
     [kids, selectedChildId],
   );
 
-  const applyDemo = useCallback((state: DemoState) => {
-    setFamily(state.family);
-    setKids(state.children.filter((child) => child.active));
-    setSelectedChildId(state.selectedChildId);
-    setActivities(demoActivities());
-    setCompletions(state.completions);
-  }, []);
+  const applyDemo = useCallback(
+    (state: DemoState, week: ProgramWeek) => {
+      setFamily(state.family);
+      setKids(state.children.filter((child) => child.active));
+      setSelectedChildId(state.selectedChildId);
+      setActivities(demoActivities(week));
+      setCompletions(state.completions);
+    },
+    [],
+  );
 
   const refresh = useCallback(async () => {
     setError(null);
     if (isDemo) {
-      applyDemo(readDemoState());
+      applyDemo(readDemoState(), selectedWeek);
       setStatus("ready");
       return;
     }
@@ -165,7 +188,7 @@ export function FamilyProvider({
         supabase
           .from("activities")
           .select("*")
-          .eq("saptamana", PROGRAM_WEEK)
+          .eq("saptamana", selectedWeek)
           .eq("banda", PROGRAM_AGE_BAND)
           .order("zi", { ascending: true }),
       ]);
@@ -211,7 +234,7 @@ export function FamilyProvider({
     }
 
     setStatus("ready");
-  }, [applyDemo, isDemo]);
+  }, [applyDemo, isDemo, selectedWeek]);
 
   useEffect(() => {
     const frame = requestAnimationFrame(() => {
@@ -250,7 +273,7 @@ export function FamilyProvider({
       if (isDemo) {
         const next = addDemoChild(readDemoState(), input);
         writeDemoState(next);
-        applyDemo(next);
+        applyDemo(next, selectedWeek);
         return;
       }
       const supabase = createBrowserSupabase();
@@ -273,7 +296,7 @@ export function FamilyProvider({
       writeChildCookie(child.id);
       setCompletions([]);
     },
-    [applyDemo, family, isDemo],
+    [applyDemo, family, isDemo, selectedWeek],
   );
 
   const updateFamily = useCallback(
@@ -395,6 +418,11 @@ export function FamilyProvider({
     [completions, isDemo, selectedChild],
   );
 
+  const selectWeek = useCallback((week: ProgramWeek) => {
+    setSelectedWeek(week);
+    writeWeekCookie(week);
+  }, []);
+
   const signOut = useCallback(async () => {
     if (isDemo) {
       clearDemoSession();
@@ -417,9 +445,12 @@ export function FamilyProvider({
       family,
       children: kids,
       selectedChild,
+      selectedWeek,
+      weekTheme: getWeekTheme(selectedWeek),
       activities,
       completions,
       refresh,
+      selectWeek,
       selectChild,
       addChild,
       updateFamily,
@@ -438,7 +469,9 @@ export function FamilyProvider({
       kids,
       refresh,
       selectChild,
+      selectWeek,
       selectedChild,
+      selectedWeek,
       signOut,
       status,
       toggleComplete,

@@ -6,15 +6,22 @@ import { EmptyState } from "@/components/status-blocks";
 import { useFamily } from "@/lib/family-context";
 import { PILLARS } from "@/lib/pillars";
 import Link from "next/link";
-import { WEEK_THEME } from "@/lib/seed/week1";
-import { formatRoDate, getDayName, getDayOfWeek, PROGRAM_WEEK } from "@/lib/week";
+import { formatRoDate, getDayName, getDayOfWeek } from "@/lib/week";
 
 export default function AziPage() {
-  const { activities, completions, selectedChild, toggleComplete, family } = useFamily();
+  const {
+    activities,
+    completions,
+    selectedChild,
+    selectedWeek,
+    weekTheme,
+    toggleComplete,
+    family,
+  } = useFamily();
   const [busyId, setBusyId] = useState<string | null>(null);
   const day = getDayOfWeek();
   const today = activities
-    .filter((activity) => activity.day_of_week === day && activity.week_number === PROGRAM_WEEK)
+    .filter((activity) => activity.day_of_week === day && activity.week_number === selectedWeek)
     .sort((a, b) => PILLARS.indexOf(a.pillar) - PILLARS.indexOf(b.pillar));
 
   async function onToggle(activityId: string) {
@@ -45,7 +52,7 @@ export default function AziPage() {
       <div>
         <h1 className="font-heading text-3xl capitalize">{formatRoDate()}</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          {getDayName(day)} · {WEEK_THEME} · săptămâna {PROGRAM_WEEK}. Mod{" "}
+          {getDayName(day)} · {weekTheme} · săptămâna {selectedWeek}. Mod{" "}
           {family?.default_mode === "B" ? "B (autonomie + aprobare)" : "A (împreună)"}.
         </p>
       </div>
@@ -53,7 +60,7 @@ export default function AziPage() {
       {today.length === 0 ? (
         <EmptyState
           title="Încă nu e conținut pentru ziua asta"
-          body="V1 are doar săptămâna 1, banda 2–3. Dacă vezi ecranul ăsta, seed-ul lipsește."
+          body="Nu am găsit activități pentru ziua asta în săptămâna selectată."
         />
       ) : (
         <div className="space-y-3">

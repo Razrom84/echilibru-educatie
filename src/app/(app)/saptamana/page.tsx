@@ -5,12 +5,11 @@ import { PillarMark } from "@/components/pillar-mark";
 import { EmptyState } from "@/components/status-blocks";
 import { useFamily } from "@/lib/family-context";
 import { PILLARS } from "@/lib/pillars";
-import { WEEK_THEME } from "@/lib/seed/week1";
-import { getDayName, getDayOfWeek, PROGRAM_WEEK } from "@/lib/week";
+import { getDayName, getDayOfWeek } from "@/lib/week";
 import { cn } from "@/lib/utils";
 
 export default function SaptamanaPage() {
-  const { activities, completions, selectedChild } = useFamily();
+  const { activities, completions, selectedChild, selectedWeek, weekTheme } = useFamily();
   const today = getDayOfWeek();
 
   if (!selectedChild) {
@@ -24,16 +23,19 @@ export default function SaptamanaPage() {
   return (
     <section className="space-y-5">
       <div>
-        <h1 className="font-heading text-3xl">Săptămâna {PROGRAM_WEEK}</h1>
+        <h1 className="font-heading text-3xl">Săptămâna {selectedWeek}</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          {WEEK_THEME} · 4 stâlpi × 7 zile. Săptămânile 2–52 urmează.
+          {weekTheme} · 4 stâlpi × 7 zile.
         </p>
       </div>
 
       <div className="space-y-4">
         {days.map((day) => {
           const items = activities
-            .filter((activity) => activity.day_of_week === day)
+            .filter(
+              (activity) =>
+                activity.day_of_week === day && activity.week_number === selectedWeek,
+            )
             .sort((a, b) => PILLARS.indexOf(a.pillar) - PILLARS.indexOf(b.pillar));
           const done = items.filter((activity) =>
             completions.some((row) => row.activity_id === activity.id),

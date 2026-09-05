@@ -1,17 +1,15 @@
 import seedS1 from "../../../content/seed-s1-banda-2-3.json";
 import seedS2S4 from "../../../content/seed-s2-s4-banda-2-3.json";
 import type { Activity, SeedActivity } from "@/lib/types";
-import { PROGRAM_WEEK } from "@/lib/week";
+import { getWeekTheme, PROGRAM_WEEK } from "@/lib/week";
 
 const ALL_SEED = [
   ...(seedS1.activitati as SeedActivity[]),
   ...(seedS2S4.activitati as SeedActivity[]),
 ];
 
-export const WEEK_THEME =
-  (seedS1 as { tema?: string }).tema ??
-  (seedS2S4 as { teme?: Record<string, string> }).teme?.[String(PROGRAM_WEEK)] ??
-  "Casa și curtea";
+/** Theme of the default week (S1). Prefer `getWeekTheme(selectedWeek)`. */
+export const WEEK_THEME = getWeekTheme(PROGRAM_WEEK);
 
 export function normalizeActivity(row: SeedActivity): Activity {
   return {

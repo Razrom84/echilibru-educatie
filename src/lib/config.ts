@@ -1,6 +1,8 @@
 export const DEMO_COOKIE = "echilibru_demo";
 export const CHILD_COOKIE = "echilibru_child";
+export const WEEK_COOKIE = "echilibru_week";
 export const DEMO_STORAGE_KEY = "echilibru-demo-v1";
+export const WEEK_STORAGE_KEY = "echilibru-week";
 
 export function isSupabaseConfigured(): boolean {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
