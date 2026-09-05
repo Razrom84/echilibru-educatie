@@ -1,0 +1,2292 @@
+{
+  "version": 1,
+  "locale": "ro",
+  "banda": "2-3",
+  "saptamani": [
+    9,
+    10,
+    11,
+    12
+  ],
+  "teme": {
+    "9": "Vânt și aer",
+    "10": "Colectăm și sortăm",
+    "11": "Lumină și umbră",
+    "12": "Cald și rece (repetare)"
+  },
+  "activitati": [
+    {
+      "id": "s9-2-3-z1-fizic",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "fizic",
+      "titlu": "Pași în aerul de afară",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Ieșiți scurt pe treaptă sau în curte.",
+        "Mergeți 5–8 pași: „Aer. Afară.”"
+      ],
+      "gata_cand": "A făcut câțiva pași afară.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z1-mental",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "mental",
+      "titlu": "Simțim aerul pe față",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Stați pe loc afară sau la fereastră deschisă.",
+        "Atingeți-i obrazul ușor: „Aer pe față.”"
+      ],
+      "gata_cand": "A simțit aerul pe față.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z1-resurse",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "resurse",
+      "titlu": "Șalul / haina la ușă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "șal sau haină ușoară"
+      ],
+      "pasi": [
+        "Luați șalul sau haina împreună.",
+        "Puneți-l lângă ușă: „La loc, la ușă.”"
+      ],
+      "gata_cand": "A ajutat să pună haina la loc.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z1-social",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "social",
+      "titlu": "Arătăm vântul cu mâna",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Ridicați mâna în aer: „Vânt?”",
+        "Spuneți împreună pe scurt: „Aer.”"
+      ],
+      "gata_cand": "A participat la arătat.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z2-fizic",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "fizic",
+      "titlu": "Alergăm scurt cu vântul",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Alergați 5–10 pași pe loc plat, ținându-l de mână dacă vrea.",
+        "Opriți-vă: „Gata. Aer.”"
+      ],
+      "gata_cand": "A alergat puțin și s-a oprit.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z2-mental",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "mental",
+      "titlu": "Frunza se mișcă",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "frunză pe jos sau pe crenguță"
+      ],
+      "pasi": [
+        "Arătați frunza care se mișcă.",
+        "„Vânt. Frunza se mișcă.”"
+      ],
+      "gata_cand": "A privit frunza mișcată.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z2-resurse",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "resurse",
+      "titlu": "Adunăm o frunză și o lăsăm",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "1 frunză"
+      ],
+      "pasi": [
+        "Luați o frunză de pe jos împreună.",
+        "Puneți-o înapoi pe pământ: „La loc.”"
+      ],
+      "gata_cand": "A luat și a lăsat frunza.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z2-social",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "social",
+      "titlu": "Suflăm ușor împreună",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Suflați ușor pe mâna lui: „Aer.”",
+        "Invitați-l să sufle pe mâna voastră, fără forțare."
+      ],
+      "gata_cand": "A simțit sau a încercat să sufle.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z3-fizic",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "fizic",
+      "titlu": "Brațele ca aripile",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Ridicați brațele lateral: „Aripi.”",
+        "Mișcați-le ușor ca în vânt, de 2–3 ori."
+      ],
+      "gata_cand": "A mișcat brațele.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z3-mental",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "mental",
+      "titlu": "Unde e vântul?",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Deschideți fereastra puțin sau ieșiți.",
+        "„Vânt aici. Uite.”"
+      ],
+      "gata_cand": "A observat locul cu aer.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z3-resurse",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "resurse",
+      "titlu": "Punga de hârtie se umflă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pungă de hârtie mică"
+      ],
+      "pasi": [
+        "Țineți punga deschisă la aer sau suflați ușor.",
+        "„Aer în pungă.” Apoi puneți punga la loc."
+      ],
+      "gata_cand": "A văzut punga și a ajutat la strâns.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z3-social",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "social",
+      "titlu": "Arătăm aerul mamei / tatei",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Duceți-l la adult: „Uite aer.”",
+        "Stați 1 minut, fără grabă."
+      ],
+      "gata_cand": "A participat la arătat.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z4-fizic",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "fizic",
+      "titlu": "Învârtim o eșarfă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "eșarfă ușoară"
+      ],
+      "pasi": [
+        "Țineți eșarfa și o mișcați în aer.",
+        "El poate ține un colț: „Se mișcă.”"
+      ],
+      "gata_cand": "A ținut sau a privit eșarfa.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z4-mental",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "mental",
+      "titlu": "Eșarfa zboară puțin",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "eșarfă"
+      ],
+      "pasi": [
+        "Lăsați eșarfa să cadă lent.",
+        "„Jos. Aer.”"
+      ],
+      "gata_cand": "A urmărit căderea.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z4-resurse",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "resurse",
+      "titlu": "Eșarfa pe cârlig",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "eșarfă",
+        "cârlig"
+      ],
+      "pasi": [
+        "Duceți eșarfa la cârlig împreună.",
+        "„La loc.”"
+      ],
+      "gata_cand": "A ajutat să agățe eșarfa.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z4-social",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "social",
+      "titlu": "Ținem eșarfa doi",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "eșarfă"
+      ],
+      "pasi": [
+        "Țineți fiecare un capăt.",
+        "Mișcați ușor: „Împreună.”"
+      ],
+      "gata_cand": "A ținut eșarfa cu adultul.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z5-fizic",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "fizic",
+      "titlu": "Suflăm pe o frunză",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "1 frunză uscată"
+      ],
+      "pasi": [
+        "Puneți frunza pe masă sau pe jos.",
+        "Suflați ușor: „Aer. Se mișcă.”"
+      ],
+      "gata_cand": "A văzut frunza mișcată de aer.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z5-mental",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "mental",
+      "titlu": "Aer cald, aer rece",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Suflați ușor pe mâna lui: „Cald.”",
+        "Apoi aer de la fereastră: „Rece.” pe scurt."
+      ],
+      "gata_cand": "A simțit diferența pe scurt.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z5-resurse",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "resurse",
+      "titlu": "Frunza înapoi afară",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "frunză"
+      ],
+      "pasi": [
+        "Duceți frunza la ușă sau afară.",
+        "Lăsați-o: „La loc afară.”"
+      ],
+      "gata_cand": "A dus frunza înapoi.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z5-social",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "social",
+      "titlu": "Suflăm pe rând",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "frunză"
+      ],
+      "pasi": [
+        "Voi suflați o dată. „Acum tu.”",
+        "Așteptați fără grabă."
+      ],
+      "gata_cand": "A încercat sau a privit rândul.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z6-fizic",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "fizic",
+      "titlu": "Plimbare scurtă cu vânt",
+      "durata_min": 6,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Ieșiți 2–3 minute. Mergeți liber.",
+        "Comentați doar dacă simte vânt: „Vânt.”"
+      ],
+      "gata_cand": "A mers scurt afară.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z6-mental",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "mental",
+      "titlu": "Copacul se mișcă",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Arătați crengile: „Copac. Vânt.”",
+        "Stați și priviți 20–30 de secunde."
+      ],
+      "gata_cand": "A privit crengile.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z6-resurse",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "resurse",
+      "titlu": "Găleata jos după joacă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "găleată mică"
+      ],
+      "pasi": [
+        "Duceți găleata afară pe scurt.",
+        "Apoi: „La loc.” în casă sau pe treaptă."
+      ],
+      "gata_cand": "A ajutat să pună găleata la loc.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z6-social",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "social",
+      "titlu": "Joacă paralel în aer",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Stați lângă el afară. Mișcați brațele ușor.",
+        "Comentați ce face el, fără a prelua."
+      ],
+      "gata_cand": "A jucat lângă adult.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z7-fizic",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "fizic",
+      "titlu": "Plimbare liberă cu aer",
+      "durata_min": 6,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "El dictează direcția pe scurt.",
+        "Voi numiți „aer” / „vânt” doar dacă arată ceva."
+      ],
+      "gata_cand": "A mers liber câteva minute.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z7-mental",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "mental",
+      "titlu": "Carte: cer și nori",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "carte cu imagini"
+      ],
+      "pasi": [
+        "El întoarce pagina.",
+        "Arătați cerul din imagine dacă e clar: „Cer. Aer.”"
+      ],
+      "gata_cand": "A întors pagina sau a privit.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z7-resurse",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "resurse",
+      "titlu": "Haina de afară pe cârlig",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "haină"
+      ],
+      "pasi": [
+        "Agățați haina pe cârlig împreună.",
+        "„La loc.”"
+      ],
+      "gata_cand": "A ajutat la agățat.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s9-2-3-z7-social",
+      "banda": "2-3",
+      "saptamana": 9,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "social",
+      "titlu": "Noapte bună",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "„Noapte bună.”",
+        "Lumină mică, fără grabă."
+      ],
+      "gata_cand": "A auzit ritualul de noapte.",
+      "tema_saptamana": "Vânt și aer",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z1-fizic",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "fizic",
+      "titlu": "Culegem 3 obiecte de pe jos",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "3 obiecte mici din casă"
+      ],
+      "pasi": [
+        "Căutați împreună trei lucruri de pe jos.",
+        "Le aduceți pe masă: „Unu. Doi. Trei.”"
+      ],
+      "gata_cand": "A adus cel puțin un obiect.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z1-mental",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "mental",
+      "titlu": "Trei pe masă",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "3 obiecte"
+      ],
+      "pasi": [
+        "Așezați cele trei obiecte pe masă.",
+        "Arătați: „Unu. Doi. Trei.”"
+      ],
+      "gata_cand": "A privit cele trei obiecte.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z1-resurse",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "resurse",
+      "titlu": "În cutie",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "cutie",
+        "3 obiecte"
+      ],
+      "pasi": [
+        "Puneți obiectele în cutie împreună.",
+        "„În cutie. La loc.”"
+      ],
+      "gata_cand": "A pus cel puțin un obiect în cutie.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z1-social",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "social",
+      "titlu": "Dăm un obiect",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "1 obiect"
+      ],
+      "pasi": [
+        "Oferiți obiectul: „Ține.”",
+        "Primiți înapoi blând, fără forțare."
+      ],
+      "gata_cand": "A ținut sau a dat obiectul.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z2-fizic",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "fizic",
+      "titlu": "Cărăm cutia 5 pași",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "cutie ușoară"
+      ],
+      "pasi": [
+        "El ține cutia (sau pe jumătate cu voi).",
+        "Mergeți 5 pași: „Cărăm.”"
+      ],
+      "gata_cand": "A cărat cutia puțin.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z2-mental",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "mental",
+      "titlu": "Mare și mic",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "1 obiect mare",
+        "1 obiect mic"
+      ],
+      "pasi": [
+        "Arătați: „Mare. Mic.”",
+        "Puneți-le unul lângă altul."
+      ],
+      "gata_cand": "A privit cele două mărimi.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z2-resurse",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "resurse",
+      "titlu": "Mari în cutie, mici pe masă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "cutie",
+        "2–3 obiecte"
+      ],
+      "pasi": [
+        "Puneți obiectul mare în cutie.",
+        "Lăsați pe scurt micuțul pe masă, apoi totul la loc."
+      ],
+      "gata_cand": "A ajutat la sortarea scurtă.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z2-social",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "social",
+      "titlu": "Alegem împreună ce e în cutie",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "cutie",
+        "2 obiecte"
+      ],
+      "pasi": [
+        "Oferiți două: „Pe care în cutie?”",
+        "Luați ce alege el, fără grabă."
+      ],
+      "gata_cand": "A ales sau a atins un obiect.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z3-fizic",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "fizic",
+      "titlu": "Culegem de pe jos șosete",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "2 șosete"
+      ],
+      "pasi": [
+        "Găsiți două șosete pe jos.",
+        "Le aduceți la sertar sau cutie."
+      ],
+      "gata_cand": "A adus cel puțin o șosetă.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z3-mental",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "mental",
+      "titlu": "Pereche de șosete",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "2 șosete"
+      ],
+      "pasi": [
+        "Puneți șosetele una lângă alta.",
+        "„La fel. Pereche.”"
+      ],
+      "gata_cand": "A văzut perechea.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z3-resurse",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "resurse",
+      "titlu": "Șosetele în sertar",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "șosete",
+        "sertar"
+      ],
+      "pasi": [
+        "Deschideți sertarul împreună.",
+        "Puneți șosetele: „La loc.”"
+      ],
+      "gata_cand": "A pus șosetele în sertar.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z3-social",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "social",
+      "titlu": "Arătăm perechea",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "2 șosete"
+      ],
+      "pasi": [
+        "Arătați șosetele cuiva din casă.",
+        "„Uite. La fel.”"
+      ],
+      "gata_cand": "A participat la arătat.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z4-fizic",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "fizic",
+      "titlu": "Adunăm cuburi de pe covor",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "3–4 cuburi / piese"
+      ],
+      "pasi": [
+        "Culegeți piesele de pe covor împreună.",
+        "Le duceți spre cutie."
+      ],
+      "gata_cand": "A cules cel puțin o piesă.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z4-mental",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "mental",
+      "titlu": "Cuburi pe rând",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "3 cuburi"
+      ],
+      "pasi": [
+        "Puneți cuburile în șir pe masă.",
+        "„Unu. Doi. Trei.”"
+      ],
+      "gata_cand": "A privit șirul.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z4-resurse",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "resurse",
+      "titlu": "Cuburile în cutie",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "cutie",
+        "cuburi"
+      ],
+      "pasi": [
+        "Puneți cuburile în cutie.",
+        "„În cutie. La loc.”"
+      ],
+      "gata_cand": "A pus cuburi în cutie.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z4-social",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "social",
+      "titlu": "Dăm un cub adultului",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "1 cub"
+      ],
+      "pasi": [
+        "El oferă cubul: „Ține.”",
+        "Voi primiți și mulțumiți pe scurt."
+      ],
+      "gata_cand": "A dat sau a atins cubul spre adult.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z5-fizic",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "fizic",
+      "titlu": "Sortăm pe două grămezi",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "4 obiecte (2 tipuri)"
+      ],
+      "pasi": [
+        "Faceți două grămezi pe masă.",
+        "Puneți fiecare obiect pe grămada lui, pe scurt."
+      ],
+      "gata_cand": "A mutat cel puțin un obiect.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z5-mental",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "mental",
+      "titlu": "Aici și aici",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "2 cutii sau 2 locuri"
+      ],
+      "pasi": [
+        "Arătați: „Aici. Aici.”",
+        "Puneți un obiect în fiecare loc."
+      ],
+      "gata_cand": "A văzut cele două locuri.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z5-resurse",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "resurse",
+      "titlu": "Totul la loc după sortare",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "cutie"
+      ],
+      "pasi": [
+        "Adunați totul într-o cutie.",
+        "„La loc.”"
+      ],
+      "gata_cand": "A ajutat la strâns.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z5-social",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "social",
+      "titlu": "Sortăm pe rând",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "2 obiecte"
+      ],
+      "pasi": [
+        "Voi puneți un obiect. „Acum tu.”",
+        "Așteptați fără grabă."
+      ],
+      "gata_cand": "A încercat rândul lui.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z6-fizic",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "fizic",
+      "titlu": "Culegem 3 pietre / frunze afară",
+      "durata_min": 6,
+      "mod_default": "A",
+      "materiale": [
+        "3 pietre mici sau frunze"
+      ],
+      "pasi": [
+        "Ieșiți scurt. Culegeți trei lucruri de pe jos.",
+        "Le puneți pe treaptă: „Unu. Doi. Trei.”"
+      ],
+      "gata_cand": "A cules cel puțin un obiect afară.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z6-mental",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "mental",
+      "titlu": "Piatră sau frunză",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "piatră",
+        "frunză"
+      ],
+      "pasi": [
+        "Arătați pe rând: „Piatră. Frunză.”",
+        "Atingeți ambele pe scurt."
+      ],
+      "gata_cand": "A atins sau a privit ambele.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z6-resurse",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "resurse",
+      "titlu": "Lăsăm afară ce am cules",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Puneți pietrele/frunzele înapoi pe jos.",
+        "„La loc afară.”"
+      ],
+      "gata_cand": "A lăsat obiectele afară.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z6-social",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "social",
+      "titlu": "Arătăm ce am cules",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "1 obiect cules"
+      ],
+      "pasi": [
+        "Arătați obiectul unui adult din casă.",
+        "„Uite.” pe scurt."
+      ],
+      "gata_cand": "A arătat obiectul.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z7-fizic",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "fizic",
+      "titlu": "Plimbare liberă, culegem dacă vrea",
+      "durata_min": 6,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "El dictează direcția.",
+        "Culegeți ceva doar dacă arată el."
+      ],
+      "gata_cand": "A mers liber câteva minute.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z7-mental",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "mental",
+      "titlu": "Carte: multe obiecte",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "carte cu imagini"
+      ],
+      "pasi": [
+        "El întoarce pagina.",
+        "Arătați două lucruri din imagine dacă e clar."
+      ],
+      "gata_cand": "A întors pagina sau a privit.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z7-resurse",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "resurse",
+      "titlu": "Jucăriile în cutie",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "cutie",
+        "2–3 jucării"
+      ],
+      "pasi": [
+        "Adunați două-trei jucării în cutie.",
+        "„La loc.”"
+      ],
+      "gata_cand": "A pus jucării în cutie.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s10-2-3-z7-social",
+      "banda": "2-3",
+      "saptamana": 10,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "social",
+      "titlu": "Noapte bună",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "„Noapte bună.”",
+        "Lumină mică, fără grabă."
+      ],
+      "gata_cand": "A auzit ritualul de noapte.",
+      "tema_saptamana": "Colectăm și sortăm",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z1-fizic",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "fizic",
+      "titlu": "Pași spre fereastră luminoasă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Mergeți împreună până la fereastră.",
+        "„Lumină. Uite.”"
+      ],
+      "gata_cand": "A mers spre lumină.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z1-mental",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "mental",
+      "titlu": "Lumină pe mână",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Puneți mâna în soare sau lângă fereastră.",
+        "„Lumină pe mână.”"
+      ],
+      "gata_cand": "A privit mâna în lumină.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z1-resurse",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "resurse",
+      "titlu": "Tragem perdeaua puțin",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "perdea"
+      ],
+      "pasi": [
+        "Trageți perdeaua împreună puțin.",
+        "„Lumină.” Apoi lăsați-o cum era dacă e nevoie."
+      ],
+      "gata_cand": "A atins perdeaua.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z1-social",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "social",
+      "titlu": "Arătăm lumina",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Arătați fereastra cuiva din casă.",
+        "„Uite lumină.”"
+      ],
+      "gata_cand": "A participat la arătat.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z2-fizic",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "fizic",
+      "titlu": "Mâna face umbră",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "lampă sau soare pe perete"
+      ],
+      "pasi": [
+        "Puneți mâna între lumină și perete.",
+        "Mișcați ușor: „Umbră.”"
+      ],
+      "gata_cand": "A văzut umbra mâinii.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z2-mental",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "mental",
+      "titlu": "Uite umbra",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Arătați umbra pe perete.",
+        "„Umbră. Mâna.”"
+      ],
+      "gata_cand": "A privit umbra.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z2-resurse",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "resurse",
+      "titlu": "Lampa pe locul ei",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "lampă de birou / lanternă"
+      ],
+      "pasi": [
+        "Aprindeți pe scurt dacă e cazul, apoi stingeți.",
+        "Puneți lampa: „La loc.”"
+      ],
+      "gata_cand": "A ajutat să pună lampa la loc.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z2-social",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "social",
+      "titlu": "Umbră împreună",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Țineți mâinile amândoi în lumină.",
+        "„Umbre. Împreună.”"
+      ],
+      "gata_cand": "A făcut umbră lângă adult.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z3-fizic",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "fizic",
+      "titlu": "Aprindem și stingem lampa",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "întrerupător sau lampă"
+      ],
+      "pasi": [
+        "Aprindeți: „Lumină.”",
+        "Stingeți: „Întuneric.” o dată, blând."
+      ],
+      "gata_cand": "A văzut aprins și stins.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z3-mental",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "mental",
+      "titlu": "Lumină sau întuneric",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Cu lumina aprinsă: „Lumină.”",
+        "Cu lumina stinsă puțin: „Întuneric.” pe scurt."
+      ],
+      "gata_cand": "A auzit cele două cuvinte.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z3-resurse",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "resurse",
+      "titlu": "Lanterna în sertar",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "lanternă"
+      ],
+      "pasi": [
+        "Aprindeți lanterna 10–20 de secunde.",
+        "Stingeți și puneți-o: „La loc.”"
+      ],
+      "gata_cand": "A văzut lanterna și a ajutat la strâns.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z3-social",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "social",
+      "titlu": "Ținem lanterna doi",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "lanternă"
+      ],
+      "pasi": [
+        "Țineți lanterna împreună pe scurt.",
+        "Indicați un loc: „Uite.”"
+      ],
+      "gata_cand": "A ținut lanterna cu adultul.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z4-fizic",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "fizic",
+      "titlu": "Urmărim un petec de soare",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Găsiți un petec de soare pe podea.",
+        "Pășiți spre el: „Lumină aici.”"
+      ],
+      "gata_cand": "A mers spre petece de lumină.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z4-mental",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "mental",
+      "titlu": "Umbră pe podea",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Arătați umbra corpului pe podea dacă e soare.",
+        "„Umbră. Tu.”"
+      ],
+      "gata_cand": "A privit umbra pe podea.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z4-resurse",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "resurse",
+      "titlu": "Jucăria din soare la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "1 jucărie"
+      ],
+      "pasi": [
+        "Puneți jucăria în petecul de soare pe scurt.",
+        "Apoi: „La loc.” în cutie."
+      ],
+      "gata_cand": "A mutat jucăria.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z4-social",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "social",
+      "titlu": "Stăm în lumină umăr lângă umăr",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Stați amândoi în petecul de soare.",
+        "„Lumină. Împreună.”"
+      ],
+      "gata_cand": "A stat lângă adult în lumină.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z5-fizic",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "fizic",
+      "titlu": "Dans scurt la lumină",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Mișcați-vă 20–30 de secunde lângă fereastră.",
+        "Opriți-vă calm."
+      ],
+      "gata_cand": "A mișcat corpul puțin.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z5-mental",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "mental",
+      "titlu": "Obiectul în lumină / în umbră",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "1 obiect"
+      ],
+      "pasi": [
+        "Puneți obiectul în lumină: „Lumină.”",
+        "Mutăți-l în umbră: „Umbră.”"
+      ],
+      "gata_cand": "A văzut obiectul în ambele.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z5-resurse",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "resurse",
+      "titlu": "Perdeaua la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "perdea"
+      ],
+      "pasi": [
+        "Așezați perdeaua cum era.",
+        "„La loc.”"
+      ],
+      "gata_cand": "A ajutat la perdea.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z5-social",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "social",
+      "titlu": "Arătăm umbra mamei / tatei",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Chemați adultul să vadă umbra pe perete.",
+        "„Uite umbră.”"
+      ],
+      "gata_cand": "A participat la arătat.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z6-fizic",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "fizic",
+      "titlu": "Umbră afară pe scurt",
+      "durata_min": 6,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Ieșiți 2–3 minute dacă e soare.",
+        "Arătați umbra pe trotuar sau pe iarbă."
+      ],
+      "gata_cand": "A văzut umbra afară.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z6-mental",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "mental",
+      "titlu": "Soare pe cer",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Priviți cerul fără a privi direct soarele.",
+        "„Lumină. Zi.”"
+      ],
+      "gata_cand": "A privit cerul pe scurt.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z6-resurse",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "resurse",
+      "titlu": "Pălăria / șapca la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pălărie sau șapcă"
+      ],
+      "pasi": [
+        "Puneți-o pe scurt pe cap dacă vrea.",
+        "Apoi pe cârlig: „La loc.”"
+      ],
+      "gata_cand": "A ajutat să pună pălăria la loc.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z6-social",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "social",
+      "titlu": "Joacă paralel în soare",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Stați lângă el afară.",
+        "Comentați ce face, fără a prelua jocul."
+      ],
+      "gata_cand": "A jucat lângă adult.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z7-fizic",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "fizic",
+      "titlu": "Plimbare liberă cu lumină",
+      "durata_min": 6,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "El dictează direcția.",
+        "Voi numiți „lumină” doar dacă arată ceva."
+      ],
+      "gata_cand": "A mers liber câteva minute.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z7-mental",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "mental",
+      "titlu": "Carte: zi și noapte",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "carte cu imagini"
+      ],
+      "pasi": [
+        "El întoarce pagina.",
+        "Arătați o imagine luminoasă dacă e clar: „Lumină.”"
+      ],
+      "gata_cand": "A întors pagina sau a privit.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z7-resurse",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "resurse",
+      "titlu": "Lumina mică de seară",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "lampă de veghe"
+      ],
+      "pasi": [
+        "Aprindeți lumina mică împreună.",
+        "„Lumină mică. La loc pe noptieră.”"
+      ],
+      "gata_cand": "A văzut lumina de seară.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s11-2-3-z7-social",
+      "banda": "2-3",
+      "saptamana": 11,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "social",
+      "titlu": "Noapte bună",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "„Noapte bună.”",
+        "Lumină mică, fără grabă."
+      ],
+      "gata_cand": "A auzit ritualul de noapte.",
+      "tema_saptamana": "Lumină și umbră",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z1-fizic",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "fizic",
+      "titlu": "Atingem ceva cald",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "cană cu ceai călduț (nu fierbinte) sau radiator acoperit"
+      ],
+      "pasi": [
+        "Atingeți împreună suprafața călduță, cu grijă.",
+        "„Cald.”"
+      ],
+      "gata_cand": "A atins ceva cald pe scurt.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z1-mental",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "mental",
+      "titlu": "Cald. Spunem cuvântul",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Țineți mâna pe obiectul cald.",
+        "„Cald. Uite.”"
+      ],
+      "gata_cand": "A auzit „cald”.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z1-resurse",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "resurse",
+      "titlu": "Cana pe masă la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "cană"
+      ],
+      "pasi": [
+        "Duceți cana pe masă împreună.",
+        "„La loc pe masă.”"
+      ],
+      "gata_cand": "A ajutat cu cana.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z1-social",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "social",
+      "titlu": "Arătăm: e cald",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Arătați adultului din casă.",
+        "„Cald.” pe scurt."
+      ],
+      "gata_cand": "A participat la arătat.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z2-fizic",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "fizic",
+      "titlu": "Atingem ceva rece",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "sticlă din frigider / fereastră rece"
+      ],
+      "pasi": [
+        "Atingeți împreună suprafața rece.",
+        "„Rece.”"
+      ],
+      "gata_cand": "A atins ceva rece.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z2-mental",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "mental",
+      "titlu": "Rece. Spunem cuvântul",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Țineți mâna pe obiectul rece.",
+        "„Rece. Uite.”"
+      ],
+      "gata_cand": "A auzit „rece”.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z2-resurse",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "resurse",
+      "titlu": "Sticla înapoi la frigider",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "sticlă"
+      ],
+      "pasi": [
+        "Duceți sticla la frigider împreună.",
+        "„La loc.”"
+      ],
+      "gata_cand": "A ajutat să pună sticla la loc.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z2-social",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "social",
+      "titlu": "Arătăm: e rece",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Arătați adultului.",
+        "„Rece.”"
+      ],
+      "gata_cand": "A participat la arătat.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z3-fizic",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "fizic",
+      "titlu": "Mâini calde, mâini reci",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "apă călduță",
+        "apă rece (boluri)"
+      ],
+      "pasi": [
+        "Atingeți pe scurt apa călduță: „Cald.”",
+        "Apoi apa rece: „Rece.” Ștergeți mâinile."
+      ],
+      "gata_cand": "A atins ambele pe scurt.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z3-mental",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "mental",
+      "titlu": "Cald sau rece?",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "2 obiecte"
+      ],
+      "pasi": [
+        "Arătați pe rând.",
+        "„Cald? Rece?” fără a forța răspunsul."
+      ],
+      "gata_cand": "A atins sau a privit obiectele.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z3-resurse",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "resurse",
+      "titlu": "Prosoapele la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "prosop mic"
+      ],
+      "pasi": [
+        "Ștergeți mâinile împreună.",
+        "Puneți prosopul: „La loc.”"
+      ],
+      "gata_cand": "A ajutat cu prosopul.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z3-social",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "social",
+      "titlu": "Ținem mâinile: cald",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Țineți mâinile lui între ale voastre pe scurt.",
+        "„Cald. Împreună.”"
+      ],
+      "gata_cand": "A acceptat ținerea mâinilor sau a refuzat calm.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z4-fizic",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "fizic",
+      "titlu": "Haina caldă pe corp",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "hanorac / pulover"
+      ],
+      "pasi": [
+        "Îmbrăcați pe scurt hanoracul dacă vrea.",
+        "„Cald. Haină.”"
+      ],
+      "gata_cand": "A atins sau a îmbrăcat haina.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z4-mental",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "mental",
+      "titlu": "Cu haină / fără haină",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "haină"
+      ],
+      "pasi": [
+        "Cu haina: „Cald.”",
+        "Fără (pe scurt, în casă): „Mai puțin cald.”"
+      ],
+      "gata_cand": "A simțit diferența pe scurt.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z4-resurse",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "resurse",
+      "titlu": "Haina pe cârlig",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "haină",
+        "cârlig"
+      ],
+      "pasi": [
+        "Agățați haina împreună.",
+        "„La loc.”"
+      ],
+      "gata_cand": "A ajutat la agățat.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z4-social",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "social",
+      "titlu": "Ajutăm la îmbrăcat",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "haină"
+      ],
+      "pasi": [
+        "Oferiți mânecă: „Mână aici.”",
+        "Fără forțare; un braț e de ajuns."
+      ],
+      "gata_cand": "A pus un braț sau a atins haina.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z5-fizic",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "fizic",
+      "titlu": "Suflăm pe mâini: cald",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Suflați pe mâinile lui: „Cald.”",
+        "Invitați-l să sufle pe ale voastre."
+      ],
+      "gata_cand": "A simțit aerul cald pe mâini.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z5-mental",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "mental",
+      "titlu": "Fereastră rece, cameră caldă",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Atingeți geamul: „Rece.”",
+        "Stați în cameră: „Cald.”"
+      ],
+      "gata_cand": "A atins geamul și a auzit cuvintele.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z5-resurse",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "resurse",
+      "titlu": "Mănușile în sertar",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "mănuși"
+      ],
+      "pasi": [
+        "Probați mănușile pe scurt dacă vrea.",
+        "Puneți-le în sertar: „La loc.”"
+      ],
+      "gata_cand": "A ajutat cu mănușile.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z5-social",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "social",
+      "titlu": "Încălzim mâinile împreună",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Frecați mâinile ușor împreună.",
+        "„Cald. Împreună.”"
+      ],
+      "gata_cand": "A frecat mâinile sau a privit.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z6-fizic",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "fizic",
+      "titlu": "Aer rece afară pe scurt",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "haină"
+      ],
+      "pasi": [
+        "Ieșiți 1–2 minute îmbrăcați.",
+        "„Rece afară. Cald în haină.”"
+      ],
+      "gata_cand": "A ieșit scurt afară.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z6-mental",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "mental",
+      "titlu": "Înăuntru cald, afară rece",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "La ușă: arătați afară „Rece.”",
+        "Intrați: „Cald. Înăuntru.”"
+      ],
+      "gata_cand": "A trecut pe scurt pragul.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z6-resurse",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "resurse",
+      "titlu": "Papucii calzi la ușă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "papuci"
+      ],
+      "pasi": [
+        "Schimbați papucii la intrare.",
+        "„Papuci. La loc la ușă.”"
+      ],
+      "gata_cand": "A ajutat cu papucii.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z6-social",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "social",
+      "titlu": "Intrăm împreună din frig",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Țineți mâna la intrare.",
+        "„Hai înăuntru. Cald.”"
+      ],
+      "gata_cand": "A intrat cu adultul.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z7-fizic",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "fizic",
+      "titlu": "Plimbare liberă cald-rece",
+      "durata_min": 6,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "El dictează direcția pe scurt.",
+        "Voi numiți „cald” / „rece” doar dacă atinge ceva."
+      ],
+      "gata_cand": "A mers liber câteva minute.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z7-mental",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "mental",
+      "titlu": "Carte: iarnă / toamnă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "carte cu imagini"
+      ],
+      "pasi": [
+        "El întoarce pagina.",
+        "Arătați o imagine cu haine groase dacă e clar: „Cald.”"
+      ],
+      "gata_cand": "A întors pagina sau a privit.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z7-resurse",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "resurse",
+      "titlu": "Hainele groase pe cârlig",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "haină groasă"
+      ],
+      "pasi": [
+        "Agățați haina împreună.",
+        "„La loc.”"
+      ],
+      "gata_cand": "A ajutat la agățat.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    },
+    {
+      "id": "s12-2-3-z7-social",
+      "banda": "2-3",
+      "saptamana": 12,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "social",
+      "titlu": "Noapte bună",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "„Noapte bună.”",
+        "Lumină mică, fără grabă."
+      ],
+      "gata_cand": "A auzit ritualul de noapte.",
+      "tema_saptamana": "Cald și rece (repetare)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+    }
+  ]
+}
