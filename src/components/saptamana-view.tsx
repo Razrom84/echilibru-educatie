@@ -13,7 +13,7 @@ import {
   midweekJoinHelper,
   saptamanaSubtitle,
   visibleProgramWeekDays,
-  weekDayName,
+  weekDayHeading,
   weekDaySectionId,
 } from "@/lib/saptamana";
 import { aziDayOfWeek } from "@/lib/azi";
@@ -93,7 +93,9 @@ export function SaptamanaView({
               >
                 <div className="flex items-baseline justify-between gap-3">
                   <h2 className="flex items-baseline gap-2 font-heading text-xl">
-                    {day === todayDow ? `${weekDayName(day)}\u00A0` : weekDayName(day)}
+                    {day === todayDow
+                      ? `${weekDayHeading(day)}\u00A0`
+                      : weekDayHeading(day)}
                     {day === todayDow ? (
                       <span className="text-sm font-sans font-medium text-primary">
                         azi

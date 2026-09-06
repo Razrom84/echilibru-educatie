@@ -12,6 +12,10 @@ import {
   weekDayChipLabel,
   weekDayCivilDate,
   weekDayHref,
+  SUNDAY_RECAP_CHIP,
+  weekDayAriaLabel,
+  weekDayChipSecondary,
+  weekDayHeading,
   weekDayName,
   weekDaySectionId,
 } from "./saptamana";
@@ -40,6 +44,18 @@ describe("Săptămâna asta copy (Cristina)", () => {
       "Sâmbătă",
       "Duminică",
     ]);
+  });
+
+  test("Sunday week chip is Duminică · recap; Mon–Sat stay plain", () => {
+    expect(SUNDAY_RECAP_CHIP).toBe("Duminică · recap");
+    expect(weekDayHeading(7)).toBe("Duminică · recap");
+    expect(weekDayChipSecondary(7, true)).toBe("Duminică · recap");
+    expect(weekDayChipSecondary(7, false)).toBe("Duminică · recap");
+    expect(weekDayAriaLabel(7, true)).toBe("Duminică · recap");
+    expect(weekDayHeading(1)).toBe("Luni");
+    expect(weekDayChipSecondary(1, true)).toBe("azi");
+    expect(weekDayChipSecondary(3, false)).toBe("Miercuri");
+    expect(weekDayAriaLabel(1, true)).toBe("Luni · azi");
   });
 
   test("header chips are L M Mi J V S D", () => {

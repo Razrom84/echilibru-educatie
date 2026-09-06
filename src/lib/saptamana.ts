@@ -96,6 +96,27 @@ export function weekDayName(dayOfWeek: number): string {
   return getDayName(dayOfWeek);
 }
 
+/** Sunday week-chip / section label — recap framing, not a new lesson day. */
+export const SUNDAY_RECAP_CHIP = "Duminică · recap";
+
+export function weekDayHeading(dayOfWeek: number): string {
+  return dayOfWeek === 7 ? SUNDAY_RECAP_CHIP : weekDayName(dayOfWeek);
+}
+
+export function weekDayChipSecondary(
+  dayOfWeek: number,
+  isToday: boolean,
+): string {
+  if (dayOfWeek === 7) return SUNDAY_RECAP_CHIP;
+  return isToday ? "azi" : weekDayName(dayOfWeek);
+}
+
+export function weekDayAriaLabel(dayOfWeek: number, isToday: boolean): string {
+  const base = weekDayHeading(dayOfWeek);
+  if (isToday && dayOfWeek !== 7) return `${base} · azi`;
+  return base;
+}
+
 /** Civil `YYYY-MM-DD` for weekday `1…7` in the ISO week of `weekMonday`. */
 export function weekDayCivilDate(weekMonday: DateInput, dayOfWeek: number): string {
   const monday = mondayOf(weekMonday);
