@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 import { AppShell } from "@/components/app-shell";
 import { DEMO_COOKIE, WEEK_COOKIE } from "@/lib/config";
-import { programWeekNumber } from "@/lib/program-week";
+import { bucharestToday, programWeekNumber } from "@/lib/program-week";
 import { isProgramWeek } from "@/lib/week";
 
 export default async function AppGroupLayout({
@@ -17,7 +17,7 @@ export default async function AppGroupLayout({
     isDemo && isProgramWeek(cookieWeek) ? cookieWeek : calendarWeek;
 
   return (
-    <AppShell isDemo={isDemo} initialWeek={initialWeek}>
+    <AppShell isDemo={isDemo} initialWeek={initialWeek} today={bucharestToday()}>
       {children}
     </AppShell>
   );

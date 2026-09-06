@@ -1,7 +1,9 @@
 "use client";
 
+import { Suspense } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { DayChips, DayChipsFallback } from "@/components/day-chips";
 import { useFamily } from "@/lib/family-context";
 import { cn } from "@/lib/utils";
 
@@ -10,10 +12,9 @@ const VIEW_LINKS = [
   { href: "/saptamana", label: "Săptămâna asta" },
 ] as const;
 
-export function AppHeader() {
+export function AppHeader({ today }: { today: string }) {
   const pathname = usePathname();
-  const { selectedChild, children, isDemo, family, selectedWeek, weekTheme } =
-    useFamily();
+  const { selectedChild, children, isDemo, family, weekTheme } = useFamily();
   const initial = selectedChild?.name.trim().charAt(0).toUpperCase() ?? "?";
 
   return (
@@ -27,7 +28,7 @@ export function AppHeader() {
             {selectedChild ? selectedChild.name : family?.display_name || "Familia ta"}
           </p>
           <p className="mt-1 text-sm text-muted-foreground">
-            Săptămâna {selectedWeek} · {weekTheme} · 2–3 ani
+            {weekTheme} · 2–3 ani
             {isDemo ? " · demonstrație" : ""}
           </p>
         </div>
@@ -62,6 +63,10 @@ export function AppHeader() {
           );
         })}
       </nav>
+
+      <Suspense fallback={<DayChipsFallback />}>
+        <DayChips today={today} />
+      </Suspense>
     </header>
   );
 }

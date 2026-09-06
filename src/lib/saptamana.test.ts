@@ -1,11 +1,19 @@
 import { describe, expect, test } from "vitest";
 import {
+  MIDWEEK_JOIN_GENERIC,
+  MIDWEEK_JOIN_SUNDAY,
   PROGRAM_WEEK_DAYS,
   SAPTAMANA_TITLE,
+  focusedWeekDay,
+  midweekJoinHelper,
+  parseWeekDayParam,
   saptamanaSubtitle,
   visibleProgramWeekDays,
+  weekDayChipLabel,
   weekDayCivilDate,
+  weekDayHref,
   weekDayName,
+  weekDaySectionId,
 } from "./saptamana";
 import { mondayOf, programWeekNumber } from "./program-week";
 import { PROGRAM_YEAR_START_MONDAY_2026_27 } from "./fixtures/program-year-2026-27";
@@ -32,6 +40,47 @@ describe("Săptămâna asta copy (Cristina)", () => {
       "Sâmbătă",
       "Duminică",
     ]);
+  });
+
+  test("header chips are L M Mi J V S D", () => {
+    expect(PROGRAM_WEEK_DAYS.map(weekDayChipLabel)).toEqual([
+      "L",
+      "M",
+      "Mi",
+      "J",
+      "V",
+      "S",
+      "D",
+    ]);
+  });
+});
+
+describe("day chip deep-links", () => {
+  test("href and section id stay on the current week", () => {
+    expect(weekDayHref(3)).toBe("/saptamana?zi=3");
+    expect(weekDaySectionId(7)).toBe("zi-7");
+  });
+
+  test("parseWeekDayParam accepts 1…7 only", () => {
+    expect(parseWeekDayParam("4")).toBe(4);
+    expect(parseWeekDayParam(["7"])).toBe(7);
+    expect(parseWeekDayParam("0")).toBeNull();
+    expect(parseWeekDayParam("8")).toBeNull();
+    expect(parseWeekDayParam("luni")).toBeNull();
+    expect(parseWeekDayParam(undefined)).toBeNull();
+  });
+
+  test("focusedWeekDay prefers a visible ?zi=, else today, else first visible", () => {
+    expect(
+      focusedWeekDay({ requestedDay: 5, todayDay: 3, visibleDays: [3, 4, 5, 6, 7] }),
+    ).toBe(5);
+    expect(
+      focusedWeekDay({ requestedDay: 1, todayDay: 3, visibleDays: [3, 4, 5, 6, 7] }),
+    ).toBe(3);
+    expect(
+      focusedWeekDay({ requestedDay: null, todayDay: 2, visibleDays: [4, 5, 6, 7] }),
+    ).toBe(4);
+    expect(focusedWeekDay({ requestedDay: 3, todayDay: 3, visibleDays: [] })).toBeNull();
   });
 });
 
@@ -87,6 +136,34 @@ describe("visibleProgramWeekDays — mid-week joined_at", () => {
         joinedAt: new Date("2026-09-06T21:30:00.000Z"),
       }),
     ).toEqual([]);
+  });
+});
+
+describe("midweekJoinHelper — Cristina RO copy", () => {
+  test("full week / Monday start is silent", () => {
+    expect(midweekJoinHelper([1, 2, 3, 4, 5, 6, 7])).toBeNull();
+    expect(midweekJoinHelper([1, 2, 3])).toBeNull();
+    expect(midweekJoinHelper([])).toBeNull();
+  });
+
+  test("Thursday join uses De la joi…", () => {
+    expect(midweekJoinHelper([4, 5, 6, 7])).toBe(
+      "De la joi până duminică. De luni, toată săptămâna.",
+    );
+  });
+
+  test("Sunday join uses Doar duminică…", () => {
+    expect(midweekJoinHelper([7])).toBe(MIDWEEK_JOIN_SUNDAY);
+  });
+
+  test("Wednesday join uses De la miercuri…", () => {
+    expect(midweekJoinHelper([3, 4, 5, 6, 7])).toBe(
+      "De la miercuri până duminică. De luni, toată săptămâna.",
+    );
+  });
+
+  test("unknown first day falls back", () => {
+    expect(midweekJoinHelper([8])).toBe(MIDWEEK_JOIN_GENERIC);
   });
 });
 

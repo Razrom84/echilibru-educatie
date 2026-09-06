@@ -41,10 +41,12 @@ function Gate({ children }: { children: React.ReactNode }) {
 export function AppShell({
   isDemo,
   initialWeek,
+  today,
   children,
 }: {
   isDemo: boolean;
   initialWeek: number;
+  today: string;
   children: React.ReactNode;
 }) {
   return (
@@ -52,7 +54,7 @@ export function AppShell({
       <div className="mx-auto flex min-h-dvh w-full max-w-5xl gap-8 px-4 pb-28 pt-6 md:pb-10">
         <SideNav />
         <div className="min-w-0 flex-1">
-          <AppHeader />
+          <AppHeader today={today} />
           <Gate>{children}</Gate>
         </div>
       </div>
