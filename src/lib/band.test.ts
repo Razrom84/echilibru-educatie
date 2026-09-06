@@ -1,9 +1,7 @@
 import { describe, expect, test } from "vitest";
-import { bandFromBirthdate, PROGRAM_AGE_BAND_LABEL } from "./band";
+import { bandFromBirthdate, LIVE_BAND_NOTE, PROGRAM_AGE_BAND_LABEL } from "./band";
 import { getSeedActivities } from "./seed/week1";
 import { PROGRAM_AGE_BAND, PROGRAM_WEEKS } from "./week";
-
-const LIVE_NOTE = "Vârsta 1–2: scurt, fără forțare; el poate refuza.";
 
 describe("M1+M2 live band 1–2", () => {
   test("app default and birthdate helper use 1-2", () => {
@@ -18,7 +16,12 @@ describe("M1+M2 live band 1–2", () => {
     expect(rows).toHaveLength(560);
     expect(rows.every((row) => row.banda === "1-2")).toBe(true);
     expect(rows.every((row) => row.age_band === "1-2")).toBe(true);
-    expect(rows.every((row) => row.nota === LIVE_NOTE)).toBe(true);
+    expect(LIVE_BAND_NOTE).toBe(
+      "Vârsta 1–2: scurt, fără forțare; el poate refuza.",
+    );
+    expect(rows.every((row) => row.nota === LIVE_BAND_NOTE)).toBe(true);
+    expect(rows.some((row) => (row.nota ?? "").includes("2–3"))).toBe(false);
+    expect(rows.some((row) => (row.nota ?? "").includes("2-3"))).toBe(false);
     expect(rows.every((row) => /-2-3-/.test(row.id))).toBe(true);
     expect(rows.find((row) => row.id === "s1-2-3-z1-fizic")?.titlu).toBe(
       "Pași în curte",
