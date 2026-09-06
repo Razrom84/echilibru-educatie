@@ -40,6 +40,7 @@ export async function updateSession(request: NextRequest) {
     PUBLIC_PATHS.has(path) ||
     path.startsWith("/_next") ||
     path.startsWith("/api/calendar") ||
+    path.startsWith("/api/cron") ||
     path === "/apple-icon";
 
   if (!authenticated && !isPublic && path !== "/") {

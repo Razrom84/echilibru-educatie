@@ -2,11 +2,20 @@
 
 import { FormEvent, useState } from "react";
 import { AddToCalendarButton } from "@/components/add-to-calendar-button";
+import { MondayDigestSettings } from "@/components/monday-digest-settings";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { useFamily } from "@/lib/family-context";
+import {
+  DIGEST_CC_HELP,
+  DIGEST_CC_INVALID,
+  DIGEST_CC_LABEL,
+  DIGEST_TOGGLE_HELP,
+  DIGEST_TOGGLE_LABEL,
+  parseOptionalEmail,
+} from "@/lib/monday-digest";
 import { PROGRAM_WEEKS, WEEK_THEMES } from "@/lib/week";
 import type { CompletionMode } from "@/lib/types";
 
@@ -16,6 +25,8 @@ export default function SetariPage() {
   const [draft, setDraft] = useState<{
     displayName: string;
     modeB: boolean;
+    mondayDigest: boolean;
+    secondParentEmail: string;
   } | null>(null);
   const [busy, setBusy] = useState(false);
   const [saved, setSaved] = useState(false);
@@ -23,6 +34,27 @@ export default function SetariPage() {
 
   const displayName = draft?.displayName ?? family?.display_name ?? "";
   const modeB = draft?.modeB ?? family?.default_mode === "B";
+  const mondayDigest =
+    draft?.mondayDigest ?? family?.monday_digest_email !== false;
+  const secondParentEmail =
+    draft?.secondParentEmail ?? family?.second_parent_email ?? "";
+
+  function patchDraft(
+    next: Partial<{
+      displayName: string;
+      modeB: boolean;
+      mondayDigest: boolean;
+      secondParentEmail: string;
+    }>,
+  ) {
+    setDraft({
+      displayName,
+      modeB,
+      mondayDigest,
+      secondParentEmail,
+      ...next,
+    });
+  }
 
   async function onSave(event: FormEvent) {
     event.preventDefault();
@@ -30,8 +62,18 @@ export default function SetariPage() {
     setError(null);
     setSaved(false);
     try {
+      const parsedCc = parseOptionalEmail(secondParentEmail);
+      if (!parsedCc.ok) {
+        setError(DIGEST_CC_INVALID);
+        return;
+      }
       const default_mode: CompletionMode = modeB ? "B" : "A";
-      await updateFamily({ display_name: displayName.trim(), default_mode });
+      await updateFamily({
+        display_name: displayName.trim(),
+        default_mode,
+        monday_digest_email: mondayDigest,
+        second_parent_email: parsedCc.email,
+      });
       setDraft(null);
       setSaved(true);
     } catch (err) {
@@ -56,9 +98,7 @@ export default function SetariPage() {
           <Input
             id="family-name"
             value={displayName}
-            onChange={(event) =>
-              setDraft({ displayName: event.target.value, modeB })
-            }
+            onChange={(event) => patchDraft({ displayName: event.target.value })}
             className="h-11"
           />
         </div>
@@ -74,10 +114,43 @@ export default function SetariPage() {
           <Switch
             checked={modeB}
             onCheckedChange={(checked) =>
-              setDraft({ displayName, modeB: Boolean(checked) })
+              patchDraft({ modeB: Boolean(checked) })
             }
             aria-label="Activează modul B"
           />
+        </div>
+
+        <div className="flex items-start justify-between gap-4 rounded-xl bg-muted/60 px-3 py-3">
+          <div>
+            <p className="text-sm font-medium">{DIGEST_TOGGLE_LABEL}</p>
+            <p className="mt-1 text-xs leading-5 text-muted-foreground">
+              {DIGEST_TOGGLE_HELP}
+            </p>
+          </div>
+          <Switch
+            checked={mondayDigest}
+            onCheckedChange={(checked) =>
+              patchDraft({ mondayDigest: Boolean(checked) })
+            }
+            aria-label={DIGEST_TOGGLE_LABEL}
+          />
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="second-parent-email">{DIGEST_CC_LABEL}</Label>
+          <Input
+            id="second-parent-email"
+            type="text"
+            inputMode="email"
+            autoComplete="email"
+            value={secondParentEmail}
+            onChange={(event) =>
+              patchDraft({ secondParentEmail: event.target.value })
+            }
+            className="h-11"
+            placeholder="ex. parinte@familie.ro"
+          />
+          <p className="text-xs leading-5 text-muted-foreground">{DIGEST_CC_HELP}</p>
         </div>
 
         <p className="text-xs text-muted-foreground">
@@ -92,6 +165,8 @@ export default function SetariPage() {
           {busy ? "Salvez…" : "Salvează familia"}
         </Button>
       </form>
+
+      <MondayDigestSettings />
 
       <AddToCalendarButton />
 
