@@ -4,10 +4,16 @@
  * S1 is the Mon–Sun ISO week that contains 1 September (Europe/Bucharest).
  * S = clamp(1..52, floor((monday(today) − program_year_start_monday) / 7) + 1)
  * If S would be >52, rollover to the next program_year_start_monday (never S53).
+ *
+ * 2026/27 lock (Cristina): `PROGRAM_YEAR_START_MONDAY_2026_27` = 2026-08-31.
+ * Functions stay year-generic; that constant is the published fixture.
  */
 
 export const PROGRAM_TIMEZONE = "Europe/Bucharest";
 export const PROGRAM_WEEKS_PER_YEAR = 52;
+
+/** Cristina lock: 2026/27 start Monday (ISO week containing 1 Sept 2026). */
+export { PROGRAM_YEAR_START_MONDAY_2026_27 } from "@/lib/fixtures/program-year-2026-27";
 
 const DATE_ONLY = /^(\d{4})-(\d{2})-(\d{2})$/;
 
