@@ -1,8 +1,11 @@
 import { describe, expect, test } from "vitest";
 import {
+  MIDWEEK_JOIN_GENERIC,
+  MIDWEEK_JOIN_SUNDAY,
   PROGRAM_WEEK_DAYS,
   SAPTAMANA_TITLE,
   focusedWeekDay,
+  midweekJoinHelper,
   parseWeekDayParam,
   saptamanaSubtitle,
   visibleProgramWeekDays,
@@ -133,6 +136,34 @@ describe("visibleProgramWeekDays — mid-week joined_at", () => {
         joinedAt: new Date("2026-09-06T21:30:00.000Z"),
       }),
     ).toEqual([]);
+  });
+});
+
+describe("midweekJoinHelper — Cristina RO copy", () => {
+  test("full week / Monday start is silent", () => {
+    expect(midweekJoinHelper([1, 2, 3, 4, 5, 6, 7])).toBeNull();
+    expect(midweekJoinHelper([1, 2, 3])).toBeNull();
+    expect(midweekJoinHelper([])).toBeNull();
+  });
+
+  test("Thursday join uses De la joi…", () => {
+    expect(midweekJoinHelper([4, 5, 6, 7])).toBe(
+      "De la joi până duminică. De luni, toată săptămâna.",
+    );
+  });
+
+  test("Sunday join uses Doar duminică…", () => {
+    expect(midweekJoinHelper([7])).toBe(MIDWEEK_JOIN_SUNDAY);
+  });
+
+  test("Wednesday join uses De la miercuri…", () => {
+    expect(midweekJoinHelper([3, 4, 5, 6, 7])).toBe(
+      "De la miercuri până duminică. De luni, toată săptămâna.",
+    );
+  });
+
+  test("unknown first day falls back", () => {
+    expect(midweekJoinHelper([8])).toBe(MIDWEEK_JOIN_GENERIC);
   });
 });
 

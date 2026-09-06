@@ -76,6 +76,22 @@ export function saptamanaSubtitle(week: number, theme: string): string {
   return trimmed ? `S${week} · ${trimmed}` : `S${week}`;
 }
 
+export const MIDWEEK_JOIN_SUNDAY =
+  "Doar duminică în săptămâna asta. De luni, toată săptămâna.";
+export const MIDWEEK_JOIN_GENERIC =
+  "Săptămâna asta începe de azi. De luni, zilele L–D.";
+
+/** Helper under the week title when `joined_at` trims Monday–… */
+export function midweekJoinHelper(visibleDays: readonly number[]): string | null {
+  const first = visibleDays[0];
+  if (first == null || first === 1) return null;
+  if (first === 7) return MIDWEEK_JOIN_SUNDAY;
+  if (first >= 2 && first <= 6) {
+    return `De la ${weekDayName(first).toLocaleLowerCase("ro-RO")} până duminică. De luni, toată săptămâna.`;
+  }
+  return MIDWEEK_JOIN_GENERIC;
+}
+
 export function weekDayName(dayOfWeek: number): string {
   return getDayName(dayOfWeek);
 }

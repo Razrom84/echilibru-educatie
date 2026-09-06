@@ -10,6 +10,7 @@ import { mondayOf } from "@/lib/program-week";
 import {
   SAPTAMANA_TITLE,
   focusedWeekDay,
+  midweekJoinHelper,
   saptamanaSubtitle,
   visibleProgramWeekDays,
   weekDayName,
@@ -37,6 +38,7 @@ export function SaptamanaView({
     todayDay: todayDow,
     visibleDays: days,
   });
+  const joinHelper = midweekJoinHelper(days);
 
   useEffect(() => {
     if (selectedDay == null) return;
@@ -57,6 +59,9 @@ export function SaptamanaView({
         <p className="mt-1 text-sm text-muted-foreground">
           {saptamanaSubtitle(selectedWeek, weekTheme)}
         </p>
+        {joinHelper ? (
+          <p className="mt-2 text-sm text-muted-foreground">{joinHelper}</p>
+        ) : null}
       </div>
 
       {days.length === 0 ? (
