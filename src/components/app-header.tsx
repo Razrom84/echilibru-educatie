@@ -1,9 +1,17 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useFamily } from "@/lib/family-context";
+import { cn } from "@/lib/utils";
+
+const VIEW_LINKS = [
+  { href: "/azi", label: "Azi" },
+  { href: "/saptamana", label: "Săptămâna asta" },
+] as const;
 
 export function AppHeader() {
+  const pathname = usePathname();
   const { selectedChild, children, isDemo, family, selectedWeek, weekTheme } =
     useFamily();
   const initial = selectedChild?.name.trim().charAt(0).toUpperCase() ?? "?";
@@ -33,6 +41,27 @@ export function AppHeader() {
           {initial}
         </Link>
       </div>
+
+      <nav aria-label="Azi și săptămâna asta" className="mt-3 flex flex-wrap gap-2">
+        {VIEW_LINKS.map((item) => {
+          const active =
+            pathname === item.href || pathname.startsWith(`${item.href}/`);
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={cn(
+                "rounded-full px-3 py-1.5 text-sm font-medium",
+                active
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-muted text-muted-foreground hover:text-foreground",
+              )}
+            >
+              {item.label}
+            </Link>
+          );
+        })}
+      </nav>
     </header>
   );
 }
