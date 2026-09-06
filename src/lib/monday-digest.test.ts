@@ -7,6 +7,7 @@ import {
   DIGEST_CC_HELP,
   DIGEST_CC_INVALID,
   DIGEST_CC_LABEL,
+  DIGEST_TEST_SKIPPED,
   DIGEST_TOGGLE_HELP,
   DIGEST_TOGGLE_LABEL,
   MONTHLY_INTRO,
@@ -65,6 +66,7 @@ describe("Cristina copy (V1.3)", () => {
       "Primește și el raportul de luni, în copie. Gol = fără copie.",
     );
     expect(DIGEST_CC_INVALID).toBe("Scrie un email valid, sau lasă gol.");
+    expect(DIGEST_TEST_SKIPPED).toBe("Nimic de raportat săptămâna trecută");
   });
 
   test("copy stays Romanian", () => {
@@ -75,6 +77,7 @@ describe("Cristina copy (V1.3)", () => {
       DIGEST_CC_LABEL,
       DIGEST_CC_HELP,
       DIGEST_CC_INVALID,
+      DIGEST_TEST_SKIPPED,
       WEEKLY_INTRO,
       MONTHLY_INTRO,
     ].join(" ");

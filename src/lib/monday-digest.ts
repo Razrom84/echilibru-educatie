@@ -33,7 +33,7 @@ export const DIGEST_TOGGLE_HELP =
 export const DIGEST_TEST_PREVIEW = "Arată un test";
 export const DIGEST_TEST_SEND = "Trimite un test";
 export const DIGEST_TEST_SENT = "Test trimis.";
-export const DIGEST_TEST_SKIPPED = "Nimic de trimis — fără progres și fără note.";
+export const DIGEST_TEST_SKIPPED = "Nimic de raportat săptămâna trecută";
 export const DIGEST_TEST_DEMO =
   "În demonstrație poți doar privi testul. Emailul real cere un cont.";
 export const DIGEST_CC_LABEL = "Email al doilea părinte (opțional)";
