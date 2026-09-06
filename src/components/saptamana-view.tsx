@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
+import { DayNoteEditor } from "@/components/day-note-editor";
 import { PillarMark } from "@/components/pillar-mark";
 import { EmptyState } from "@/components/status-blocks";
 import { useFamily } from "@/lib/family-context";
@@ -135,6 +136,11 @@ export function SaptamanaView({
                     );
                   })}
                 </ul>
+                <DayNoteEditor
+                  key={`${selectedChild.id}-${selectedWeek}-${day}`}
+                  dayOfWeek={day}
+                  embedded
+                />
               </section>
             );
           })}

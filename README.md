@@ -68,6 +68,7 @@ Service role e nevoie doar pentru CLI / operații admin, nu în browser.
 - **children**: nume, data nașterii → banda V1 `1-2`, `active`, `calendar_token` (secret ICS; lookup public prin `calendar_feed_for_token`)
 - **activities**: catalog Cristina (`id` slug, `banda`, `saptamana`, `zi`, `pilon`, `titlu`, `durata_min`, `mod_default`, `materiale[]`, `pasi[]`, `gata_cand`, `nota`, `tema_saptamana`)
 - **completions**: `child_id` + `activity_id` (slug), `mode` A/B, `parent_approved` (mod B: `false` = așteaptă, `true` = aprobat)
+- **day_notes**: notă liberă per `child_id` + `program_year_start` + `week_number` (S#) + `day_of_week` (1–7); text scurt; gol = fără rând
 
 Stâlpi: `fizic`, `mental`, `resurse`, `social`.
 
