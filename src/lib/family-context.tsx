@@ -14,9 +14,11 @@ import {
   addDemoChild,
   clearDemoSession,
   demoActivities,
+  demoDayNotesForWeek,
   readDemoState,
   removeDemoCompletion,
   upsertDemoCompletion,
+  upsertDemoDayNote,
   writeDemoState,
   type DemoState,
 } from "@/lib/demo/store";
@@ -26,12 +28,18 @@ import type {
   Child,
   Completion,
   CompletionMode,
+  DayNote,
   Family,
 } from "@/lib/types";
 import { bandFromBirthdate } from "@/lib/band";
+import { normalizeDayNoteBody } from "@/lib/day-note";
 import { normalizeActivity } from "@/lib/seed/week1";
 import { DEMO_CALENDAR_TOKEN, generateCalendarToken } from "@/lib/calendar";
-import { familyJoinFields, familyProgramWeek } from "@/lib/program-week";
+import {
+  familyJoinFields,
+  familyProgramWeek,
+  familyProgramYearStart,
+} from "@/lib/program-week";
 import { getWeekTheme, PROGRAM_AGE_BAND, PROGRAM_WEEK } from "@/lib/week";
 import type { SeedActivity } from "@/lib/types";
 
@@ -48,6 +56,7 @@ type FamilyContextValue = {
   weekTheme: string;
   activities: Activity[];
   completions: Completion[];
+  dayNotes: DayNote[];
   refresh: () => Promise<void>;
   selectWeek: (week: number) => void;
   selectChild: (childId: string) => Promise<void>;
@@ -58,6 +67,7 @@ type FamilyContextValue = {
   }) => Promise<void>;
   toggleComplete: (activityId: string) => Promise<void>;
   approveCompletion: (activityId: string) => Promise<void>;
+  saveDayNote: (dayOfWeek: number, body: string) => Promise<void>;
   ensureCalendarToken: () => Promise<string>;
   signOut: () => Promise<void>;
 };
@@ -103,6 +113,7 @@ export function FamilyProvider({
   const [demoWeek, setDemoWeek] = useState<number | null>(isDemo ? initialWeek : null);
   const [activities, setActivities] = useState<Activity[]>([]);
   const [completions, setCompletions] = useState<Completion[]>([]);
+  const [dayNotes, setDayNotes] = useState<DayNote[]>([]);
 
   const selectedChild = useMemo(
     () => kids.find((child) => child.id === selectedChildId) ?? kids[0] ?? null,
@@ -122,6 +133,7 @@ export function FamilyProvider({
       setSelectedChildId(state.selectedChildId);
       setActivities(demoActivities(week));
       setCompletions(state.completions);
+      setDayNotes(demoDayNotesForWeek(state, week));
     },
     [],
   );
@@ -232,18 +244,34 @@ export function FamilyProvider({
     setActivities(catalog);
 
     if (nextSelected) {
-      const { data: doneRows, error: doneError } = await supabase
-        .from("completions")
-        .select("*")
-        .eq("child_id", nextSelected);
+      const yearStart = familyProgramYearStart(currentFamily);
+      const [
+        { data: doneRows, error: doneError },
+        { data: noteRows, error: noteError },
+      ] = await Promise.all([
+        supabase.from("completions").select("*").eq("child_id", nextSelected),
+        supabase
+          .from("day_notes")
+          .select("*")
+          .eq("child_id", nextSelected)
+          .eq("program_year_start", yearStart)
+          .eq("week_number", selectedWeek),
+      ]);
       if (doneError) {
         setError(doneError.message);
         setStatus("error");
         return;
       }
+      if (noteError) {
+        setError(noteError.message);
+        setStatus("error");
+        return;
+      }
       setCompletions((doneRows ?? []) as Completion[]);
+      setDayNotes((noteRows ?? []) as DayNote[]);
     } else {
       setCompletions([]);
+      setDayNotes([]);
     }
 
     setStatus("ready");
@@ -261,24 +289,39 @@ export function FamilyProvider({
       setSelectedChildId(childId);
       writeChildCookie(childId);
       if (isDemo) {
-        const state = readDemoState();
-        writeDemoState({ ...state, selectedChildId: childId });
+        const state = { ...readDemoState(), selectedChildId: childId };
+        writeDemoState(state);
         setCompletions(state.completions);
+        setDayNotes(demoDayNotesForWeek(state, selectedWeek));
         return;
       }
       const supabase = createBrowserSupabase();
-      if (!supabase) return;
-      const { data, error: doneError } = await supabase
-        .from("completions")
-        .select("*")
-        .eq("child_id", childId);
+      if (!supabase || !family) return;
+      const yearStart = familyProgramYearStart(family);
+      const [
+        { data, error: doneError },
+        { data: noteRows, error: noteError },
+      ] = await Promise.all([
+        supabase.from("completions").select("*").eq("child_id", childId),
+        supabase
+          .from("day_notes")
+          .select("*")
+          .eq("child_id", childId)
+          .eq("program_year_start", yearStart)
+          .eq("week_number", selectedWeek),
+      ]);
       if (doneError) {
         setError(doneError.message);
         return;
       }
+      if (noteError) {
+        setError(noteError.message);
+        return;
+      }
       setCompletions((data ?? []) as Completion[]);
+      setDayNotes((noteRows ?? []) as DayNote[]);
     },
-    [isDemo],
+    [family, isDemo, selectedWeek],
   );
 
   const addChild = useCallback(
@@ -308,6 +351,7 @@ export function FamilyProvider({
       setSelectedChildId(child.id);
       writeChildCookie(child.id);
       setCompletions([]);
+      setDayNotes([]);
     },
     [applyDemo, family, isDemo, selectedWeek],
   );
@@ -397,6 +441,65 @@ export function FamilyProvider({
       setCompletions((current) => [...current, data as Completion]);
     },
     [completions, family, isDemo, selectedChild],
+  );
+
+  const saveDayNote = useCallback(
+    async (dayOfWeek: number, body: string) => {
+      if (!selectedChild || !family) return;
+      const programYearStart = familyProgramYearStart(family);
+      const normalized = normalizeDayNoteBody(body);
+      if (isDemo) {
+        const next = upsertDemoDayNote(readDemoState(), {
+          childId: selectedChild.id,
+          weekNumber: selectedWeek,
+          dayOfWeek,
+          body,
+        });
+        writeDemoState(next);
+        setDayNotes(demoDayNotesForWeek(next, selectedWeek));
+        return;
+      }
+      const supabase = createBrowserSupabase();
+      if (!supabase) return;
+      const existing = dayNotes.find((note) => note.day_of_week === dayOfWeek);
+      if (!normalized) {
+        if (existing) {
+          const { error: deleteError } = await supabase
+            .from("day_notes")
+            .delete()
+            .eq("id", existing.id);
+          if (deleteError) throw new Error(deleteError.message);
+        }
+        setDayNotes((current) =>
+          current.filter((note) => note.day_of_week !== dayOfWeek),
+        );
+        return;
+      }
+      const payload = {
+        child_id: selectedChild.id,
+        program_year_start: programYearStart,
+        week_number: selectedWeek,
+        day_of_week: dayOfWeek,
+        body: normalized,
+        updated_at: new Date().toISOString(),
+      };
+      const { data, error: upsertError } = await supabase
+        .from("day_notes")
+        .upsert(payload, {
+          onConflict: "child_id,program_year_start,week_number,day_of_week",
+        })
+        .select("*")
+        .single();
+      if (upsertError || !data) {
+        throw new Error(upsertError?.message ?? "Nu am putut salva.");
+      }
+      const saved = data as DayNote;
+      setDayNotes((current) => [
+        ...current.filter((note) => note.day_of_week !== dayOfWeek),
+        saved,
+      ]);
+    },
+    [dayNotes, family, isDemo, selectedChild, selectedWeek],
   );
 
   const approveCompletion = useCallback(
@@ -490,6 +593,7 @@ export function FamilyProvider({
       weekTheme: getWeekTheme(selectedWeek),
       activities,
       completions,
+      dayNotes,
       refresh,
       selectWeek,
       selectChild,
@@ -497,6 +601,7 @@ export function FamilyProvider({
       updateFamily,
       toggleComplete,
       approveCompletion,
+      saveDayNote,
       ensureCalendarToken,
       signOut,
     }),
@@ -505,12 +610,14 @@ export function FamilyProvider({
       addChild,
       approveCompletion,
       completions,
+      dayNotes,
       ensureCalendarToken,
       error,
       family,
       isDemo,
       kids,
       refresh,
+      saveDayNote,
       selectChild,
       selectWeek,
       selectedChild,

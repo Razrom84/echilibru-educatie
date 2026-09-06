@@ -65,3 +65,15 @@ export type Completion = {
 export type ActivityWithCompletion = Activity & {
   completion: Completion | null;
 };
+
+/** Optional free-text note for one weekday in a program week. */
+export type DayNote = {
+  id: string;
+  child_id: string;
+  program_year_start: string;
+  week_number: number;
+  day_of_week: number;
+  body: string;
+  created_at?: string;
+  updated_at?: string;
+};

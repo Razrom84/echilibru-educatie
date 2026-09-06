@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ActivityCard } from "@/components/activity-card";
+import { DayNoteEditor } from "@/components/day-note-editor";
 import { AddToCalendarButton } from "@/components/add-to-calendar-button";
 import { EmptyState } from "@/components/status-blocks";
 import {
@@ -103,8 +104,19 @@ export function AziView({ today }: { today: string }) {
               onToggle={() => void onToggle(activity.id)}
             />
           ))}
+          <DayNoteEditor
+            key={`${selectedChild.id}-${week}-${day}`}
+            dayOfWeek={day}
+          />
         </div>
       )}
+
+      {gate === "open" && todayActivities.length === 0 ? (
+        <DayNoteEditor
+          key={`${selectedChild.id}-${week}-${day}`}
+          dayOfWeek={day}
+        />
+      ) : null}
 
       <AddToCalendarButton />
     </section>

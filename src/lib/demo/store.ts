@@ -1,14 +1,16 @@
 import { CHILD_COOKIE, DEMO_COOKIE, DEMO_STORAGE_KEY } from "@/lib/config";
 import { bandFromBirthdate } from "@/lib/band";
 import { getSeedActivities } from "@/lib/seed/week1";
-import type { Child, Completion, CompletionMode, Family } from "@/lib/types";
-import { familyJoinFields } from "@/lib/program-week";
+import type { Child, Completion, CompletionMode, DayNote, Family } from "@/lib/types";
+import { dayNoteMatches, normalizeDayNoteBody } from "@/lib/day-note";
+import { familyJoinFields, familyProgramYearStart } from "@/lib/program-week";
 import { PROGRAM_WEEK } from "@/lib/week";
 
 export type DemoState = {
   family: Family;
   children: Child[];
   completions: Completion[];
+  dayNotes: DayNote[];
   selectedChildId: string | null;
 };
 
@@ -35,6 +37,7 @@ export function emptyDemoState(): DemoState {
     },
     children: [],
     completions: [],
+    dayNotes: [],
     selectedChildId: null,
   };
 }
@@ -50,6 +53,7 @@ export function readDemoState(): DemoState {
       ...defaults,
       ...parsed,
       family: { ...defaults.family, ...parsed.family },
+      dayNotes: parsed.dayNotes ?? [],
     };
   } catch {
     return emptyDemoState();
@@ -139,4 +143,48 @@ export function removeDemoCompletion(
       (row) => !(row.child_id === childId && row.activity_id === activityId),
     ),
   };
+}
+
+export function demoDayNotesForWeek(state: DemoState, week: number): DayNote[] {
+  const childId = state.selectedChildId;
+  if (!childId) return [];
+  const programYearStart = familyProgramYearStart(state.family);
+  return state.dayNotes.filter((note) =>
+    dayNoteMatches(note, {
+      childId,
+      programYearStart,
+      weekNumber: week,
+      dayOfWeek: note.day_of_week,
+    }),
+  );
+}
+
+export function upsertDemoDayNote(
+  state: DemoState,
+  input: { childId: string; weekNumber: number; dayOfWeek: number; body: string },
+): DemoState {
+  const programYearStart = familyProgramYearStart(state.family);
+  const key = {
+    childId: input.childId,
+    programYearStart,
+    weekNumber: input.weekNumber,
+    dayOfWeek: input.dayOfWeek,
+  };
+  const body = normalizeDayNoteBody(input.body);
+  const without = state.dayNotes.filter((note) => !dayNoteMatches(note, key));
+  if (!body) {
+    return { ...state, dayNotes: without };
+  }
+  const existing = state.dayNotes.find((note) => dayNoteMatches(note, key));
+  const row: DayNote = {
+    id: existing?.id ?? id("note"),
+    child_id: input.childId,
+    program_year_start: programYearStart,
+    week_number: input.weekNumber,
+    day_of_week: input.dayOfWeek,
+    body,
+    created_at: existing?.created_at ?? nowIso(),
+    updated_at: nowIso(),
+  };
+  return { ...state, dayNotes: [...without, row] };
 }
