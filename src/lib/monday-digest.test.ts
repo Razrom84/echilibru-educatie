@@ -4,6 +4,9 @@ import { WEEK_THEMES } from "@/lib/week";
 import {
   DIGEST_ANUL_URL,
   DIGEST_AZI_URL,
+  DIGEST_CC_HELP,
+  DIGEST_CC_INVALID,
+  DIGEST_CC_LABEL,
   DIGEST_TOGGLE_HELP,
   DIGEST_TOGGLE_LABEL,
   MONTHLY_INTRO,
@@ -15,6 +18,7 @@ import {
   capMonthlyNotes,
   closedWeekContext,
   countWeekProgress,
+  digestCcAddress,
   digestSelection,
   familyWantsMondayDigest,
   formatRoMonthYear,
@@ -23,6 +27,7 @@ import {
   monthlyProgressLine,
   monthlySubject,
   noteLine,
+  parseOptionalEmail,
   previousCalendarMonth,
   progressLine,
   selectDigestKind,
@@ -55,6 +60,11 @@ describe("Cristina copy (V1.3)", () => {
     expect(MONTHLY_INTRO).toContain("Luna trecută");
     expect(DIGEST_AZI_URL).toBe("https://educatie.echilibru-cartea.ro/azi");
     expect(DIGEST_ANUL_URL).toBe("https://educatie.echilibru-cartea.ro/anul");
+    expect(DIGEST_CC_LABEL).toBe("Email al doilea părinte (opțional)");
+    expect(DIGEST_CC_HELP).toBe(
+      "Primește și el raportul de luni, în copie. Gol = fără copie.",
+    );
+    expect(DIGEST_CC_INVALID).toBe("Scrie un email valid, sau lasă gol.");
   });
 
   test("copy stays Romanian", () => {
@@ -62,10 +72,42 @@ describe("Cristina copy (V1.3)", () => {
       weeklySubject("Casa și curtea"),
       monthlySubject("august 2026"),
       DIGEST_TOGGLE_LABEL,
+      DIGEST_CC_LABEL,
+      DIGEST_CC_HELP,
+      DIGEST_CC_INVALID,
       WEEKLY_INTRO,
       MONTHLY_INTRO,
     ].join(" ");
-    expect(copy).not.toMatch(/\b(Weekly|Monthly|Digest|Last week)\b/);
+    expect(copy).not.toMatch(/\b(Weekly|Monthly|Digest|Last week|optional)\b/);
+  });
+});
+
+describe("second-parent email (CC)", () => {
+  test("empty or whitespace is no CC", () => {
+    expect(parseOptionalEmail("")).toEqual({ ok: true, email: null });
+    expect(parseOptionalEmail("   ")).toEqual({ ok: true, email: null });
+    expect(parseOptionalEmail(null)).toEqual({ ok: true, email: null });
+    expect(digestCcAddress("", "ana@familie.ro")).toBeNull();
+  });
+
+  test("valid address is trimmed and lowercased", () => {
+    expect(parseOptionalEmail("  Tata@Familie.RO ")).toEqual({
+      ok: true,
+      email: "tata@familie.ro",
+    });
+    expect(digestCcAddress("Tata@Familie.RO", "ana@familie.ro")).toBe(
+      "tata@familie.ro",
+    );
+  });
+
+  test("invalid format is rejected", () => {
+    expect(parseOptionalEmail("nu-e-email")).toEqual({ ok: false });
+    expect(parseOptionalEmail("a@b")).toEqual({ ok: false });
+    expect(digestCcAddress("nu-e-email", "ana@familie.ro")).toBeNull();
+  });
+
+  test("same as primary To is not CC'd", () => {
+    expect(digestCcAddress("Ana@Familie.RO", "ana@familie.ro")).toBeNull();
   });
 });
 

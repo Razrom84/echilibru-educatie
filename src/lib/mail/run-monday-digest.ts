@@ -1,6 +1,7 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { renderDigestEmail } from "@/lib/monday-digest-email";
 import {
+  digestCcAddress,
   digestSelection,
   testPeriodKey,
   type DigestKind,
@@ -42,6 +43,7 @@ export type DigestFamilyOutcome = {
   kind?: DigestKind;
   subject?: string;
   to?: string;
+  cc?: string | null;
   error?: string;
 };
 
@@ -49,11 +51,18 @@ export type DigestRunResult = {
   asOf: string;
   dryRun: boolean;
   outcomes: DigestFamilyOutcome[];
-  preview?: { to: string; subject: string; text: string; html: string };
+  preview?: {
+    to: string;
+    cc?: string | null;
+    subject: string;
+    text: string;
+    html: string;
+  };
 };
 
 type FamilyRow = ComposeFamily & {
   parent_id: string;
+  second_parent_email?: string | null;
 };
 
 async function parentEmail(
@@ -101,7 +110,7 @@ export async function runMondayDigest(
   let familyQuery = opts.supabase
     .from("families")
     .select(
-      "id, parent_id, program_year_start, joined_at, created_at, monday_digest_email",
+      "id, parent_id, program_year_start, joined_at, created_at, monday_digest_email, second_parent_email",
     );
   if (opts.familyId) familyQuery = familyQuery.eq("id", opts.familyId);
   const { data: familyRows, error: familyError } = await familyQuery;
@@ -218,8 +227,15 @@ export async function runMondayDigest(
       continue;
     }
 
+    const cc = digestCcAddress(family.second_parent_email, to);
     const email = renderDigestEmail(model);
-    preview = { to, subject: email.subject, text: email.text, html: email.html };
+    preview = {
+      to,
+      cc,
+      subject: email.subject,
+      text: email.text,
+      html: email.html,
+    };
 
     if (opts.dryRun) {
       outcomes.push({
@@ -229,6 +245,7 @@ export async function runMondayDigest(
         kind: model.kind,
         subject: email.subject,
         to,
+        cc,
       });
       continue;
     }
@@ -259,6 +276,7 @@ export async function runMondayDigest(
       try {
         await opts.sender.send({
           to,
+          cc,
           subject: email.subject,
           html: email.html,
           text: email.text,
@@ -270,6 +288,7 @@ export async function runMondayDigest(
           kind: model.kind,
           subject: email.subject,
           to,
+          cc,
         });
       } catch (err) {
         await releaseClaim(opts.supabase, family.id, periodKey);

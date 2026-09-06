@@ -65,6 +65,7 @@ type FamilyContextValue = {
     display_name: string;
     default_mode: CompletionMode;
     monday_digest_email?: boolean;
+    second_parent_email?: string | null;
   }) => Promise<void>;
   toggleComplete: (activityId: string) => Promise<void>;
   approveCompletion: (activityId: string) => Promise<void>;
@@ -362,6 +363,7 @@ export function FamilyProvider({
       display_name: string;
       default_mode: CompletionMode;
       monday_digest_email?: boolean;
+      second_parent_email?: string | null;
     }) => {
       if (isDemo) {
         const state = readDemoState();
@@ -373,6 +375,10 @@ export function FamilyProvider({
             default_mode: input.default_mode,
             monday_digest_email:
               input.monday_digest_email ?? state.family.monday_digest_email ?? true,
+            second_parent_email:
+              input.second_parent_email !== undefined
+                ? input.second_parent_email
+                : state.family.second_parent_email ?? null,
           },
         };
         writeDemoState(next);
@@ -385,12 +391,16 @@ export function FamilyProvider({
         display_name: string;
         default_mode: CompletionMode;
         monday_digest_email?: boolean;
+        second_parent_email?: string | null;
       } = {
         display_name: input.display_name,
         default_mode: input.default_mode,
       };
       if (input.monday_digest_email !== undefined) {
         payload.monday_digest_email = input.monday_digest_email;
+      }
+      if (input.second_parent_email !== undefined) {
+        payload.second_parent_email = input.second_parent_email;
       }
       const { data, error: updateError } = await supabase
         .from("families")

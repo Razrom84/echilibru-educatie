@@ -13,7 +13,8 @@ Cron Vercel: **luni 08:00 Europe/Bucharest**.
 | **Prima luni** din luna calendaristică | Lunar (înlocuiește săptămânalul) | Luna calendaristică anterioară: teme / sezoane, progres agregat, note (max. ~10). |
 
 Nu se trimite dacă **zero progres ȘI zero note**.  
-Toggle Setări: **Raport luni pe email** (implicit pornit).
+Toggle Setări: **Raport luni pe email** (implicit pornit).  
+Câmp opțional: **Email al doilea părinte** — dacă e completat, Resend pune `cc:` pe săptămânal și lunar. Gol = fără copie.
 
 ### Subject
 
@@ -54,8 +55,9 @@ Nu inventa secrete — pune-le în dashboard / `vercel env add`.
 | `NEXT_PUBLIC_SUPABASE_URL` | Deja cerută de V1. |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Deja cerută de V1. |
 
-SQL nou: `supabase/migrations/20260906080000_monday_digest.sql`  
-(`families.monday_digest_email`, `mail_digest_sends` unic pe `(family_id, period_key)`).
+SQL: `supabase/migrations/20260906080000_monday_digest.sql`  
+(`families.monday_digest_email`, `mail_digest_sends` unic pe `(family_id, period_key)`).  
+Plus `20260906083000_second_parent_email.sql` (`families.second_parent_email`).
 
 ## Test / dry-run
 

@@ -52,7 +52,7 @@ Detalii cron, DST și cum trimiți un test: `docs/TICKETS-V1.3-MAIL-RAPORT-LUNI.
    - `supabase/migrations/20260905000001_init.sql`
    - `supabase/migrations/20260905000002_seed_week1_2_3.sql` (înlocuit de 0003)
    - `supabase/migrations/20260905000003_official_activitate_schema.sql`
-   - …apoi restul din `supabase/migrations/`, inclusiv `20260906060000_rename_banda_2_3_to_1_2.sql` (eticheta live `2-3` → `1-2`) și `20260906080000_monday_digest.sql` (toggle + jurnal trimiteri)
+   - …apoi restul din `supabase/migrations/`, inclusiv `20260906060000_rename_banda_2_3_to_1_2.sql` (eticheta live `2-3` → `1-2`), `20260906080000_monday_digest.sql` (toggle + jurnal trimiteri) și `20260906083000_second_parent_email.sql`
 5. Copiază URL + anon key în `.env.local`.
 
 Sau, cu [Supabase CLI](https://supabase.com/docs/guides/cli):
@@ -69,7 +69,7 @@ Service role nu e pentru browser. Cronul de luni îl folosește pe server ca să
 
 ## Model de date
 
-- **families**: un părinte (`auth.users`) → o familie; `default_mode` A sau B; `monday_digest_email` (raport luni, implicit pornit)
+- **families**: un părinte (`auth.users`) → o familie; `default_mode` A sau B; `monday_digest_email` (raport luni, implicit pornit); `second_parent_email` (CC opțional pe raportul de luni)
 - **children**: nume, data nașterii → banda V1 `1-2`, `active`, `calendar_token` (secret ICS; lookup public prin `calendar_feed_for_token`)
 - **activities**: catalog Cristina (`id` slug, `banda`, `saptamana`, `zi`, `pilon`, `titlu`, `durata_min`, `mod_default`, `materiale[]`, `pasi[]`, `gata_cand`, `nota`, `tema_saptamana`)
 - **completions**: `child_id` + `activity_id` (slug), `mode` A/B, `parent_approved` (mod B: `false` = așteaptă, `true` = aprobat)

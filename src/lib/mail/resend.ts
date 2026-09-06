@@ -3,6 +3,7 @@ import { DIGEST_FROM } from "@/lib/monday-digest";
 
 export type MailSendInput = {
   to: string;
+  cc?: string | null;
   subject: string;
   html: string;
   text: string;
@@ -27,6 +28,7 @@ export function createResendSender(
       const { data, error } = await resend.emails.send({
         from: DIGEST_FROM,
         to: input.to,
+        ...(input.cc ? { cc: [input.cc] } : {}),
         subject: input.subject,
         html: input.html,
         text: input.text,

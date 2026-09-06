@@ -42,6 +42,7 @@ export type ComposeFamily = {
   joined_at?: string | null;
   created_at?: string | null;
   monday_digest_email?: boolean | null;
+  second_parent_email?: string | null;
 };
 
 export type ComposeResult =

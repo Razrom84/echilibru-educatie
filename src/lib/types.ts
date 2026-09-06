@@ -14,6 +14,8 @@ export type Family = {
   program_year_start?: string | null;
   /** Raport luni pe email. Default on after V1.3. */
   monday_digest_email?: boolean | null;
+  /** Optional second parent — CC on Monday digests. Empty = no CC. */
+  second_parent_email?: string | null;
 };
 
 export type Child = {

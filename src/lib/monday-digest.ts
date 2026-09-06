@@ -36,6 +36,11 @@ export const DIGEST_TEST_SENT = "Test trimis.";
 export const DIGEST_TEST_SKIPPED = "Nimic de trimis — fără progres și fără note.";
 export const DIGEST_TEST_DEMO =
   "În demonstrație poți doar privi testul. Emailul real cere un cont.";
+export const DIGEST_CC_LABEL = "Email al doilea părinte (opțional)";
+export const DIGEST_CC_HELP =
+  "Primește și el raportul de luni, în copie. Gol = fără copie.";
+export const DIGEST_CC_INVALID = "Scrie un email valid, sau lasă gol.";
+export const DIGEST_CC_PREVIEW = "Copie";
 
 export const WEEKLY_INTRO = "Săptămâna trecută s-a închis. Iată ce ați făcut, pe scurt.";
 export const MONTHLY_INTRO = "Luna trecută, pe scurt — teme, progres și câteva note.";
@@ -195,6 +200,38 @@ export function familyWantsMondayDigest(family: {
   monday_digest_email?: boolean | null;
 }): boolean {
   return family.monday_digest_email !== false;
+}
+
+/** Practical address check — empty is allowed (no CC). */
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+export function isValidEmail(raw: string): boolean {
+  return EMAIL_RE.test(raw);
+}
+
+/**
+ * Trim + lowercase. Whitespace-only → null (no CC).
+ * Invalid non-empty → `{ ok: false }`.
+ */
+export function parseOptionalEmail(
+  raw: string | null | undefined,
+): { ok: true; email: string | null } | { ok: false } {
+  const trimmed = raw?.trim() ?? "";
+  if (!trimmed) return { ok: true, email: null };
+  const email = trimmed.toLowerCase();
+  if (!isValidEmail(email)) return { ok: false };
+  return { ok: true, email };
+}
+
+/** CC only when stored, valid, and different from the primary To. */
+export function digestCcAddress(
+  stored: string | null | undefined,
+  to: string,
+): string | null {
+  const parsed = parseOptionalEmail(stored);
+  if (!parsed.ok || !parsed.email) return null;
+  if (parsed.email === to.trim().toLowerCase()) return null;
+  return parsed.email;
 }
 
 /**
