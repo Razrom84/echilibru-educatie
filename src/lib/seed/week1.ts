@@ -11,6 +11,7 @@ import seedS33S36 from "../../../content/seed-s33-s36-banda-1-2.json";
 import seedS37S40 from "../../../content/seed-s37-s40-banda-1-2.json";
 import seedS41S44 from "../../../content/seed-s41-s44-banda-1-2.json";
 import seedS45S48 from "../../../content/seed-s45-s48-banda-1-2.json";
+import seedS49S52 from "../../../content/seed-s49-s52-banda-1-2.json";
 import type { Activity, SeedActivity } from "@/lib/types";
 import { getWeekTheme, PROGRAM_WEEK } from "@/lib/week";
 
@@ -28,6 +29,7 @@ const ALL_SEED = [
   ...(seedS37S40.activitati as SeedActivity[]),
   ...(seedS41S44.activitati as SeedActivity[]),
   ...(seedS45S48.activitati as SeedActivity[]),
+  ...(seedS49S52.activitati as SeedActivity[]),
 ];
 
 /** Theme of the default week (S1). Prefer `getWeekTheme(selectedWeek)`. */
