@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
 import { PillarMark } from "@/components/pillar-mark";
 import { EmptyState } from "@/components/status-blocks";
@@ -8,14 +9,22 @@ import { PILLARS } from "@/lib/pillars";
 import { mondayOf } from "@/lib/program-week";
 import {
   SAPTAMANA_TITLE,
+  focusedWeekDay,
   saptamanaSubtitle,
   visibleProgramWeekDays,
   weekDayName,
+  weekDaySectionId,
 } from "@/lib/saptamana";
 import { aziDayOfWeek } from "@/lib/azi";
 import { cn } from "@/lib/utils";
 
-export function SaptamanaView({ today }: { today: string }) {
+export function SaptamanaView({
+  today,
+  focusDay = null,
+}: {
+  today: string;
+  focusDay?: number | null;
+}) {
   const { activities, completions, selectedChild, selectedWeek, weekTheme, family } =
     useFamily();
   const todayDow = aziDayOfWeek(today);
@@ -23,6 +32,17 @@ export function SaptamanaView({ today }: { today: string }) {
     weekMonday: mondayOf(today),
     joinedAt: family?.joined_at ?? family?.created_at,
   });
+  const selectedDay = focusedWeekDay({
+    requestedDay: focusDay,
+    todayDay: todayDow,
+    visibleDays: days,
+  });
+
+  useEffect(() => {
+    if (selectedDay == null) return;
+    const section = document.getElementById(weekDaySectionId(selectedDay));
+    section?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [selectedDay]);
 
   if (!selectedChild) {
     return (
@@ -60,9 +80,10 @@ export function SaptamanaView({ today }: { today: string }) {
             return (
               <section
                 key={day}
+                id={weekDaySectionId(day)}
                 className={cn(
-                  "rounded-2xl border border-border bg-card p-4",
-                  day === todayDow && "ring-2 ring-primary/30",
+                  "scroll-mt-4 rounded-2xl border border-border bg-card p-4",
+                  day === selectedDay && "ring-2 ring-primary/30",
                 )}
               >
                 <div className="flex items-baseline justify-between gap-3">
