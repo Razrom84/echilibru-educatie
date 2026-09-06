@@ -27,8 +27,8 @@ export default function ActivitatePage({
   if (!activity) {
     return (
       <EmptyState
-        title="Activitatea nu e în săptămâna selectată"
-        body="Schimbă săptămâna din antet sau verifică linkul."
+        title="Activitatea nu e în săptămâna de azi"
+        body="Verifică linkul sau revino la Azi."
         action={
           <Link href="/azi" className="text-sm font-medium text-primary underline">
             Înapoi la Azi

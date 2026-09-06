@@ -4,7 +4,10 @@ import {
   PROGRAM_YEAR_START_MONDAY_2026_27,
 } from "@/lib/fixtures/program-year-2026-27";
 import {
+  bucharestToday,
+  civilDayOfWeek,
   familyJoinFields,
+  familyProgramWeek,
   familyProgramYearStart,
   formatCivilDate,
   mondayOf,
@@ -134,6 +137,29 @@ describe("programWeekTable — 2026/27 fixture", () => {
       week: 1,
       ...PROGRAM_YEAR_2026_27.s1,
     });
+  });
+});
+
+describe("civilDayOfWeek (Europe/Bucharest)", () => {
+  test("date-only strings use Monday=1 … Sunday=7", () => {
+    expect(civilDayOfWeek("2026-08-31")).toBe(1);
+    expect(civilDayOfWeek("2026-09-01")).toBe(2);
+    expect(civilDayOfWeek("2026-09-06")).toBe(7);
+    expect(civilDayOfWeek("2026-09-07")).toBe(1);
+  });
+
+  test("uses Bucharest civil date at the UTC Sunday/Monday edge", () => {
+    expect(civilDayOfWeek(new Date("2026-09-06T20:30:00.000Z"))).toBe(7);
+    expect(civilDayOfWeek(new Date("2026-09-06T21:30:00.000Z"))).toBe(1);
+    expect(bucharestToday(new Date("2026-09-06T21:30:00.000Z"))).toBe("2026-09-07");
+  });
+});
+
+describe("familyProgramWeek", () => {
+  test("maps a family on the 2026/27 lock to S1 / S2", () => {
+    const family = { program_year_start: START_2026_27 };
+    expect(familyProgramWeek(family, "2026-09-06")).toBe(1);
+    expect(familyProgramWeek(family, "2026-09-07")).toBe(2);
   });
 });
 

@@ -1,6 +1,8 @@
 /** Default program week when the parent has not chosen another.
  *  Civil date → S# mapping lives in `program-week.ts` (R1). This file is the content catalog. */
 
+import { civilDayOfWeek, PROGRAM_TIMEZONE } from "@/lib/program-week";
+
 export const PROGRAM_WEEK = 1;
 export const PROGRAM_AGE_BAND = "2-3";
 
@@ -54,10 +56,9 @@ const DAY_NAMES = [
   "Duminică",
 ] as const;
 
-/** Monday = 1 … Sunday = 7 (European / Romanian week). */
+/** Monday = 1 … Sunday = 7 (Europe/Bucharest civil day). */
 export function getDayOfWeek(date = new Date()): number {
-  const utcDay = date.getDay();
-  return utcDay === 0 ? 7 : utcDay;
+  return civilDayOfWeek(date);
 }
 
 export function getDayName(dayOfWeek: number): string {
@@ -75,6 +76,7 @@ export function getIsoWeek(date = new Date()): number {
 
 export function formatRoDate(date = new Date()): string {
   return new Intl.DateTimeFormat("ro-RO", {
+    timeZone: PROGRAM_TIMEZONE,
     weekday: "long",
     day: "numeric",
     month: "long",

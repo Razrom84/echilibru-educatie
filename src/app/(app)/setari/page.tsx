@@ -6,10 +6,12 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { useFamily } from "@/lib/family-context";
+import { PROGRAM_WEEKS, WEEK_THEMES } from "@/lib/week";
 import type { CompletionMode } from "@/lib/types";
 
 export default function SetariPage() {
-  const { family, isDemo, updateFamily, signOut, children } = useFamily();
+  const { family, isDemo, updateFamily, signOut, children, selectedWeek, selectWeek } =
+    useFamily();
   const [draft, setDraft] = useState<{
     displayName: string;
     modeB: boolean;
@@ -96,9 +98,29 @@ export default function SetariPage() {
           <span className="text-foreground">educatie.echilibru-cartea.ro</span>.
         </p>
         {isDemo ? (
-          <p className="mt-2">
-            Ești în demonstrație locală. Datele nu sunt în Supabase.
-          </p>
+          <div className="mt-3 space-y-2">
+            <p>Ești în demonstrație locală. Datele nu sunt în Supabase.</p>
+            <details className="rounded-xl bg-muted/60 px-3 py-2">
+              <summary className="cursor-pointer text-xs font-medium text-foreground">
+                Schimbă săptămâna (doar demonstrație)
+              </summary>
+              <label className="mt-2 block text-xs" htmlFor="demo-week">
+                Săptămâna de program
+              </label>
+              <select
+                id="demo-week"
+                className="mt-1 h-10 w-full rounded-lg border border-border bg-background px-2 text-sm"
+                value={selectedWeek}
+                onChange={(event) => selectWeek(Number(event.target.value))}
+              >
+                {PROGRAM_WEEKS.map((week) => (
+                  <option key={week} value={week}>
+                    S{week} · {WEEK_THEMES[week]}
+                  </option>
+                ))}
+              </select>
+            </details>
+          </div>
         ) : null}
       </div>
 

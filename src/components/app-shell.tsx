@@ -6,7 +6,6 @@ import { AppHeader } from "@/components/app-header";
 import { NavBar, SideNav } from "@/components/nav-bar";
 import { ErrorState, LoadingState } from "@/components/status-blocks";
 import { FamilyProvider, useFamily } from "@/lib/family-context";
-import type { ProgramWeek } from "@/lib/week";
 
 function Gate({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -45,7 +44,7 @@ export function AppShell({
   children,
 }: {
   isDemo: boolean;
-  initialWeek: ProgramWeek;
+  initialWeek: number;
   children: React.ReactNode;
 }) {
   return (
