@@ -3,6 +3,7 @@
 import { Suspense } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { BrandMark } from "@/components/brand-mark";
 import { DayChips, DayChipsFallback } from "@/components/day-chips";
 import { PROGRAM_AGE_BAND_LABEL } from "@/lib/band";
 import { useFamily } from "@/lib/family-context";
@@ -22,17 +23,20 @@ export function AppHeader({ today }: { today: string }) {
   return (
     <header className="pb-5">
       <div className="flex items-center justify-between gap-3">
-        <div>
-          <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
-            Echilibru educație
-          </p>
-          <p className="font-heading text-2xl leading-none">
-            {selectedChild ? selectedChild.name : family?.display_name || "Familia ta"}
-          </p>
-          <p className="mt-1 text-sm text-muted-foreground">
-            {weekTheme} · {PROGRAM_AGE_BAND_LABEL} ani
-            {isDemo ? " · demonstrație" : ""}
-          </p>
+        <div className="flex min-w-0 items-start gap-2.5">
+          <BrandMark className="mt-0.5 size-8" />
+          <div className="min-w-0">
+            <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
+              Echilibru educație
+            </p>
+            <p className="font-heading text-2xl leading-none">
+              {selectedChild ? selectedChild.name : family?.display_name || "Familia ta"}
+            </p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              {weekTheme} · {PROGRAM_AGE_BAND_LABEL} ani
+              {isDemo ? " · demonstrație" : ""}
+            </p>
+          </div>
         </div>
         <Link
           href="/copii"
