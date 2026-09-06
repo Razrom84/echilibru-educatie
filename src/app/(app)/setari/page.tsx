@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { AddToCalendarButton } from "@/components/add-to-calendar-button";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -91,6 +92,8 @@ export default function SetariPage() {
           {busy ? "Salvez…" : "Salvează familia"}
         </Button>
       </form>
+
+      <AddToCalendarButton />
 
       <div className="rounded-2xl border border-border bg-card p-4 text-sm leading-6 text-muted-foreground">
         <p>
