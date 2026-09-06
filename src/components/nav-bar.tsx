@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 const ITEMS = [
   { href: "/azi", label: "Azi", icon: House },
-  { href: "/saptamana", label: "Săptămână", icon: CalendarDays },
+  { href: "/saptamana", label: "Săptămâna asta", icon: CalendarDays },
   { href: "/progres", label: "Progres", icon: Sprout },
   { href: "/setari", label: "Setări", icon: Settings2 },
 ];
@@ -29,7 +29,7 @@ export function NavBar() {
               <Link
                 href={item.href}
                 className={cn(
-                  "flex flex-col items-center gap-1 rounded-xl px-2 py-2 text-[11px] font-medium",
+                  "flex flex-col items-center gap-1 rounded-xl px-2 py-2 text-center text-[11px] leading-tight font-medium",
                   active ? "text-primary" : "text-muted-foreground",
                 )}
               >
