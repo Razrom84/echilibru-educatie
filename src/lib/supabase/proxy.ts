@@ -39,7 +39,8 @@ export async function updateSession(request: NextRequest) {
   const isPublic =
     PUBLIC_PATHS.has(path) ||
     path.startsWith("/_next") ||
-    path.startsWith("/api/calendar");
+    path.startsWith("/api/calendar") ||
+    path.startsWith("/api/cron");
 
   if (!authenticated && !isPublic && path !== "/") {
     const url = request.nextUrl.clone();

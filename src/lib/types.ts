@@ -12,6 +12,8 @@ export type Family = {
   joined_at?: string | null;
   /** Monday (YYYY-MM-DD) of the program year in force at join. */
   program_year_start?: string | null;
+  /** Raport luni pe email. Default on after V1.3. */
+  monday_digest_email?: boolean | null;
 };
 
 export type Child = {

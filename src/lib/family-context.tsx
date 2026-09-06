@@ -64,6 +64,7 @@ type FamilyContextValue = {
   updateFamily: (input: {
     display_name: string;
     default_mode: CompletionMode;
+    monday_digest_email?: boolean;
   }) => Promise<void>;
   toggleComplete: (activityId: string) => Promise<void>;
   approveCompletion: (activityId: string) => Promise<void>;
@@ -357,7 +358,11 @@ export function FamilyProvider({
   );
 
   const updateFamily = useCallback(
-    async (input: { display_name: string; default_mode: CompletionMode }) => {
+    async (input: {
+      display_name: string;
+      default_mode: CompletionMode;
+      monday_digest_email?: boolean;
+    }) => {
       if (isDemo) {
         const state = readDemoState();
         const next = {
@@ -366,6 +371,8 @@ export function FamilyProvider({
             ...state.family,
             display_name: input.display_name,
             default_mode: input.default_mode,
+            monday_digest_email:
+              input.monday_digest_email ?? state.family.monday_digest_email ?? true,
           },
         };
         writeDemoState(next);
@@ -374,12 +381,20 @@ export function FamilyProvider({
       }
       const supabase = createBrowserSupabase();
       if (!supabase || !family) return;
+      const payload: {
+        display_name: string;
+        default_mode: CompletionMode;
+        monday_digest_email?: boolean;
+      } = {
+        display_name: input.display_name,
+        default_mode: input.default_mode,
+      };
+      if (input.monday_digest_email !== undefined) {
+        payload.monday_digest_email = input.monday_digest_email;
+      }
       const { data, error: updateError } = await supabase
         .from("families")
-        .update({
-          display_name: input.display_name,
-          default_mode: input.default_mode,
-        })
+        .update(payload)
         .eq("id", family.id)
         .select("*")
         .single();

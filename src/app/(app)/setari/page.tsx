@@ -2,11 +2,13 @@
 
 import { FormEvent, useState } from "react";
 import { AddToCalendarButton } from "@/components/add-to-calendar-button";
+import { MondayDigestSettings } from "@/components/monday-digest-settings";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { useFamily } from "@/lib/family-context";
+import { DIGEST_TOGGLE_HELP, DIGEST_TOGGLE_LABEL } from "@/lib/monday-digest";
 import { PROGRAM_WEEKS, WEEK_THEMES } from "@/lib/week";
 import type { CompletionMode } from "@/lib/types";
 
@@ -16,6 +18,7 @@ export default function SetariPage() {
   const [draft, setDraft] = useState<{
     displayName: string;
     modeB: boolean;
+    mondayDigest: boolean;
   } | null>(null);
   const [busy, setBusy] = useState(false);
   const [saved, setSaved] = useState(false);
@@ -23,6 +26,8 @@ export default function SetariPage() {
 
   const displayName = draft?.displayName ?? family?.display_name ?? "";
   const modeB = draft?.modeB ?? family?.default_mode === "B";
+  const mondayDigest =
+    draft?.mondayDigest ?? family?.monday_digest_email !== false;
 
   async function onSave(event: FormEvent) {
     event.preventDefault();
@@ -31,7 +36,11 @@ export default function SetariPage() {
     setSaved(false);
     try {
       const default_mode: CompletionMode = modeB ? "B" : "A";
-      await updateFamily({ display_name: displayName.trim(), default_mode });
+      await updateFamily({
+        display_name: displayName.trim(),
+        default_mode,
+        monday_digest_email: mondayDigest,
+      });
       setDraft(null);
       setSaved(true);
     } catch (err) {
@@ -57,7 +66,7 @@ export default function SetariPage() {
             id="family-name"
             value={displayName}
             onChange={(event) =>
-              setDraft({ displayName: event.target.value, modeB })
+              setDraft({ displayName: event.target.value, modeB, mondayDigest })
             }
             className="h-11"
           />
@@ -74,9 +83,25 @@ export default function SetariPage() {
           <Switch
             checked={modeB}
             onCheckedChange={(checked) =>
-              setDraft({ displayName, modeB: Boolean(checked) })
+              setDraft({ displayName, modeB: Boolean(checked), mondayDigest })
             }
             aria-label="Activează modul B"
+          />
+        </div>
+
+        <div className="flex items-start justify-between gap-4 rounded-xl bg-muted/60 px-3 py-3">
+          <div>
+            <p className="text-sm font-medium">{DIGEST_TOGGLE_LABEL}</p>
+            <p className="mt-1 text-xs leading-5 text-muted-foreground">
+              {DIGEST_TOGGLE_HELP}
+            </p>
+          </div>
+          <Switch
+            checked={mondayDigest}
+            onCheckedChange={(checked) =>
+              setDraft({ displayName, modeB, mondayDigest: Boolean(checked) })
+            }
+            aria-label={DIGEST_TOGGLE_LABEL}
           />
         </div>
 
@@ -92,6 +117,8 @@ export default function SetariPage() {
           {busy ? "Salvez…" : "Salvează familia"}
         </Button>
       </form>
+
+      <MondayDigestSettings />
 
       <AddToCalendarButton />
 

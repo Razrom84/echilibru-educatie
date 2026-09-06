@@ -31,6 +31,7 @@ export function emptyDemoState(): DemoState {
       parent_id: "demo-parent",
       display_name: "Familia mea",
       default_mode: "A",
+      monday_digest_email: true,
       created_at: createdAt,
       joined_at: join.joined_at,
       program_year_start: join.program_year_start,
