@@ -6,7 +6,7 @@ import { civilDayOfWeek, PROGRAM_TIMEZONE } from "@/lib/program-week";
 export const PROGRAM_WEEK = 1;
 export const PROGRAM_AGE_BAND = "1-2";
 
-export const PROGRAM_WEEKS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40] as const;
+export const PROGRAM_WEEKS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44] as const;
 export type ProgramWeek = (typeof PROGRAM_WEEKS)[number];
 
 export const WEEK_THEMES: Record<ProgramWeek, string> = {
@@ -50,6 +50,10 @@ export const WEEK_THEMES: Record<ProgramWeek, string> = {
   38: "Piciorul pe iarbă",
   39: "Fructe pe care le vedem",
   40: "Ajutor la treabă scurtă",
+  41: "Drumul până la poartă",
+  42: "Vânt și frunze din nou",
+  43: "Coșul și strânsul",
+  44: "Prieteni și familie",
 };
 
 export function isProgramWeek(value: number): value is ProgramWeek {
