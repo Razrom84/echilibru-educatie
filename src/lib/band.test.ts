@@ -13,7 +13,7 @@ describe("M1+M2 live band 1–2", () => {
 
   test("demo seeds are labeled 1-2; ids and titles stay put", () => {
     const rows = PROGRAM_WEEKS.flatMap((week) => getSeedActivities(week));
-    expect(rows).toHaveLength(560);
+    expect(rows).toHaveLength(672);
     expect(rows.every((row) => row.banda === "1-2")).toBe(true);
     expect(rows.every((row) => row.age_band === "1-2")).toBe(true);
     expect(LIVE_BAND_NOTE).toBe(
