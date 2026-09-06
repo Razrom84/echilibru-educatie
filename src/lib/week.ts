@@ -1,4 +1,6 @@
-/** Default program week when the parent has not chosen another. */
+/** Default program week when the parent has not chosen another.
+ *  Civil date → S# mapping lives in `program-week.ts` (R1). This file is the content catalog. */
+
 export const PROGRAM_WEEK = 1;
 export const PROGRAM_AGE_BAND = "2-3";
 

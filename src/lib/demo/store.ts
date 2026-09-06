@@ -2,6 +2,7 @@ import { CHILD_COOKIE, DEMO_COOKIE, DEMO_STORAGE_KEY } from "@/lib/config";
 import { bandFromBirthdate } from "@/lib/band";
 import { getSeedActivities } from "@/lib/seed/week1";
 import type { Child, Completion, CompletionMode, Family } from "@/lib/types";
+import { familyJoinFields } from "@/lib/program-week";
 import { PROGRAM_WEEK } from "@/lib/week";
 
 export type DemoState = {
@@ -20,13 +21,17 @@ function id(prefix: string) {
 }
 
 export function emptyDemoState(): DemoState {
+  const createdAt = nowIso();
+  const join = familyJoinFields(createdAt);
   return {
     family: {
       id: "demo-family",
       parent_id: "demo-parent",
       display_name: "Familia mea",
       default_mode: "A",
-      created_at: nowIso(),
+      created_at: createdAt,
+      joined_at: join.joined_at,
+      program_year_start: join.program_year_start,
     },
     children: [],
     completions: [],
@@ -39,7 +44,13 @@ export function readDemoState(): DemoState {
   try {
     const raw = window.localStorage.getItem(DEMO_STORAGE_KEY);
     if (!raw) return emptyDemoState();
-    return { ...emptyDemoState(), ...JSON.parse(raw) } as DemoState;
+    const parsed = JSON.parse(raw) as DemoState;
+    const defaults = emptyDemoState();
+    return {
+      ...defaults,
+      ...parsed,
+      family: { ...defaults.family, ...parsed.family },
+    };
   } catch {
     return emptyDemoState();
   }
