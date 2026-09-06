@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
+import { BrandMark } from "@/components/brand-mark";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -73,7 +74,10 @@ export default function LoginPage() {
       <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
         educatie.echilibru-cartea.ro
       </p>
-      <h1 className="mt-3 font-heading text-4xl leading-tight">Echilibru educație</h1>
+      <div className="mt-3 flex items-center gap-3">
+        <BrandMark className="size-11" />
+        <h1 className="font-heading text-4xl leading-tight">Echilibru educație</h1>
+      </div>
       <p className="mt-3 text-base leading-7 text-muted-foreground">
         Platformă de familie, în română. V1: banda 1–2 ani, o săptămână de activități
         în curte și în casă — fără fișe, fără școală.
