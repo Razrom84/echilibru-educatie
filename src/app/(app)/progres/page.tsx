@@ -60,7 +60,7 @@ export default function ProgresPage() {
       {weekActs.length === 0 ? (
         <EmptyState
           title="Nu sunt activități de numărat"
-          body="Rulează seed-ul pentru săptămâna 1, banda 2–3."
+          body="Rulează seed-ul pentru săptămâna 1, banda 1–2."
         />
       ) : (
         <>

@@ -1,9 +1,9 @@
-import seedS1 from "../../../content/seed-s1-banda-2-3.json";
-import seedS2S4 from "../../../content/seed-s2-s4-banda-2-3.json";
-import seedS5S8 from "../../../content/seed-s5-s8-banda-2-3.json";
-import seedS9S12 from "../../../content/seed-s9-s12-banda-2-3.json";
-import seedS13S16 from "../../../content/seed-s13-s16-banda-2-3.json";
-import seedS17S20 from "../../../content/seed-s17-s20-banda-2-3.json";
+import seedS1 from "../../../content/seed-s1-banda-1-2.json";
+import seedS2S4 from "../../../content/seed-s2-s4-banda-1-2.json";
+import seedS5S8 from "../../../content/seed-s5-s8-banda-1-2.json";
+import seedS9S12 from "../../../content/seed-s9-s12-banda-1-2.json";
+import seedS13S16 from "../../../content/seed-s13-s16-banda-1-2.json";
+import seedS17S20 from "../../../content/seed-s17-s20-banda-1-2.json";
 import type { Activity, SeedActivity } from "@/lib/types";
 import { getWeekTheme, PROGRAM_WEEK } from "@/lib/week";
 

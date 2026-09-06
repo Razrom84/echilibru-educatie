@@ -75,7 +75,7 @@ export default function LoginPage() {
       </p>
       <h1 className="mt-3 font-heading text-4xl leading-tight">Echilibru educație</h1>
       <p className="mt-3 text-base leading-7 text-muted-foreground">
-        Platformă de familie, în română. V1: banda 2–3 ani, o săptămână de activități
+        Platformă de familie, în română. V1: banda 1–2 ani, o săptămână de activități
         în curte și în casă — fără fișe, fără școală.
       </p>
 

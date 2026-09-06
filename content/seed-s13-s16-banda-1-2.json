@@ -1,7 +1,7 @@
 {
   "version": 1,
   "locale": "ro",
-  "banda": "2-3",
+  "banda": "1-2",
   "saptamani": [
     13,
     14,
@@ -17,7 +17,7 @@
   "activitati": [
     {
       "id": "s13-2-3-z1-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 1,
       "zi_nume": "Luni",
@@ -34,11 +34,11 @@
       ],
       "gata_cand": "A ținut sau a simțit haina pe umeri.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z1-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 1,
       "zi_nume": "Luni",
@@ -55,11 +55,11 @@
       ],
       "gata_cand": "A privit sau a atins haina.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z1-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 1,
       "zi_nume": "Luni",
@@ -77,11 +77,11 @@
       ],
       "gata_cand": "A ajutat să pună haina la loc.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z1-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 1,
       "zi_nume": "Luni",
@@ -98,11 +98,11 @@
       ],
       "gata_cand": "A participat la arătat.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z2-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 2,
       "zi_nume": "Marți",
@@ -119,11 +119,11 @@
       ],
       "gata_cand": "A ajutat la o șosetă sau a privit.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z2-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 2,
       "zi_nume": "Marți",
@@ -140,11 +140,11 @@
       ],
       "gata_cand": "A auzit și a văzut ambele.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z2-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 2,
       "zi_nume": "Marți",
@@ -161,11 +161,11 @@
       ],
       "gata_cand": "A ajutat cu șosetele în sertar.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z2-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 2,
       "zi_nume": "Marți",
@@ -182,11 +182,11 @@
       ],
       "gata_cand": "A încercat sau a privit ajutorul.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z3-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 3,
       "zi_nume": "Miercuri",
@@ -203,11 +203,11 @@
       ],
       "gata_cand": "A pus un picior în papuc sau a încercat.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z3-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 3,
       "zi_nume": "Miercuri",
@@ -225,11 +225,11 @@
       ],
       "gata_cand": "A privit ambele încălțări.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z3-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 3,
       "zi_nume": "Miercuri",
@@ -246,11 +246,11 @@
       ],
       "gata_cand": "A ajutat să așeze papucii.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z3-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 3,
       "zi_nume": "Miercuri",
@@ -267,11 +267,11 @@
       ],
       "gata_cand": "A schimbat sau a acceptat ajutor.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z4-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 4,
       "zi_nume": "Joi",
@@ -288,11 +288,11 @@
       ],
       "gata_cand": "A simțit căciula sau a refuzat clar.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z4-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 4,
       "zi_nume": "Joi",
@@ -309,11 +309,11 @@
       ],
       "gata_cand": "A arătat sau a privit căciula.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z4-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 4,
       "zi_nume": "Joi",
@@ -330,11 +330,11 @@
       ],
       "gata_cand": "A ajutat să agățe căciula.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z4-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 4,
       "zi_nume": "Joi",
@@ -351,11 +351,11 @@
       ],
       "gata_cand": "A participat la arătat.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z5-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 5,
       "zi_nume": "Vineri",
@@ -372,11 +372,11 @@
       ],
       "gata_cand": "A simțit mănușa sau a privit.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z5-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 5,
       "zi_nume": "Vineri",
@@ -393,11 +393,11 @@
       ],
       "gata_cand": "A văzut diferența pe scurt.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z5-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 5,
       "zi_nume": "Vineri",
@@ -414,11 +414,11 @@
       ],
       "gata_cand": "A ajutat cu mănușile.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z5-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 5,
       "zi_nume": "Vineri",
@@ -435,11 +435,11 @@
       ],
       "gata_cand": "A ținut mâna sau a privit.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z6-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 6,
       "zi_nume": "Sâmbătă",
@@ -456,11 +456,11 @@
       ],
       "gata_cand": "A ieșit scurt îmbrăcat.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z6-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 6,
       "zi_nume": "Sâmbătă",
@@ -477,11 +477,11 @@
       ],
       "gata_cand": "A trecut pragul cu haina.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z6-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 6,
       "zi_nume": "Sâmbătă",
@@ -498,11 +498,11 @@
       ],
       "gata_cand": "A ajutat la agățat.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z6-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 6,
       "zi_nume": "Sâmbătă",
@@ -517,11 +517,11 @@
       ],
       "gata_cand": "A intrat cu adultul.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z7-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 7,
       "zi_nume": "Duminică",
@@ -536,11 +536,11 @@
       ],
       "gata_cand": "A mers liber câteva minute.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z7-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 7,
       "zi_nume": "Duminică",
@@ -557,11 +557,11 @@
       ],
       "gata_cand": "A întors pagina sau a privit.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z7-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 7,
       "zi_nume": "Duminică",
@@ -578,11 +578,11 @@
       ],
       "gata_cand": "A ajutat la agățat.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s13-2-3-z7-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 13,
       "zi": 7,
       "zi_nume": "Duminică",
@@ -597,11 +597,11 @@
       ],
       "gata_cand": "A auzit ritualul de noapte.",
       "tema_saptamana": "Haine pe vreme",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z1-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 1,
       "zi_nume": "Luni",
@@ -616,11 +616,11 @@
       ],
       "gata_cand": "A făcut câțiva pași pe hol.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z1-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 1,
       "zi_nume": "Luni",
@@ -635,11 +635,11 @@
       ],
       "gata_cand": "A privit direcția sau a făcut un pas.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z1-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 1,
       "zi_nume": "Luni",
@@ -656,11 +656,11 @@
       ],
       "gata_cand": "A ajutat cu pantofii.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z1-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 1,
       "zi_nume": "Luni",
@@ -675,11 +675,11 @@
       ],
       "gata_cand": "A ținut mâna sau a mers alături.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z2-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 2,
       "zi_nume": "Marți",
@@ -694,11 +694,11 @@
       ],
       "gata_cand": "A ajuns la ușă.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z2-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 2,
       "zi_nume": "Marți",
@@ -713,11 +713,11 @@
       ],
       "gata_cand": "A auzit cuvintele pe scurt.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z2-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 2,
       "zi_nume": "Marți",
@@ -734,11 +734,11 @@
       ],
       "gata_cand": "A ajutat să pună obiectul la loc.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z2-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 2,
       "zi_nume": "Marți",
@@ -753,11 +753,11 @@
       ],
       "gata_cand": "A bătut sau a privit.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z3-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 3,
       "zi_nume": "Miercuri",
@@ -772,11 +772,11 @@
       ],
       "gata_cand": "A făcut un pas pe treaptă cu ajutor.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z3-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 3,
       "zi_nume": "Miercuri",
@@ -791,11 +791,11 @@
       ],
       "gata_cand": "A auzit sus și jos la treaptă.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z3-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 3,
       "zi_nume": "Miercuri",
@@ -812,11 +812,11 @@
       ],
       "gata_cand": "A ajutat cu găleata.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z3-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 3,
       "zi_nume": "Miercuri",
@@ -831,11 +831,11 @@
       ],
       "gata_cand": "A ținut mâna pe treaptă.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z4-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 4,
       "zi_nume": "Joi",
@@ -850,11 +850,11 @@
       ],
       "gata_cand": "A ajuns la poartă sau gard.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z4-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 4,
       "zi_nume": "Joi",
@@ -869,11 +869,11 @@
       ],
       "gata_cand": "A mers pe drumul scurt.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z4-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 4,
       "zi_nume": "Joi",
@@ -890,11 +890,11 @@
       ],
       "gata_cand": "A luat și a lăsat piatra.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z4-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 4,
       "zi_nume": "Joi",
@@ -909,11 +909,11 @@
       ],
       "gata_cand": "A participat la arătat.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z5-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 5,
       "zi_nume": "Vineri",
@@ -928,11 +928,11 @@
       ],
       "gata_cand": "A alergat puțin și s-a oprit.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z5-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 5,
       "zi_nume": "Vineri",
@@ -947,11 +947,11 @@
       ],
       "gata_cand": "A simțit ritmul pe scurt.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z5-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 5,
       "zi_nume": "Vineri",
@@ -968,11 +968,11 @@
       ],
       "gata_cand": "A ajutat cu pantofii.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z5-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 5,
       "zi_nume": "Vineri",
@@ -987,11 +987,11 @@
       ],
       "gata_cand": "A făcut un pas pe rând.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z6-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 6,
       "zi_nume": "Sâmbătă",
@@ -1006,11 +1006,11 @@
       ],
       "gata_cand": "A mers pe drum câteva minute.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z6-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 6,
       "zi_nume": "Sâmbătă",
@@ -1025,11 +1025,11 @@
       ],
       "gata_cand": "A privit ceva de pe drum.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z6-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 6,
       "zi_nume": "Sâmbătă",
@@ -1046,11 +1046,11 @@
       ],
       "gata_cand": "A ajutat să pună obiectul la loc.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z6-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 6,
       "zi_nume": "Sâmbătă",
@@ -1065,11 +1065,11 @@
       ],
       "gata_cand": "A mers cu adultul alături.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z7-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 7,
       "zi_nume": "Duminică",
@@ -1084,11 +1084,11 @@
       ],
       "gata_cand": "A mers liber câteva minute.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z7-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 7,
       "zi_nume": "Duminică",
@@ -1105,11 +1105,11 @@
       ],
       "gata_cand": "A întors pagina sau a privit.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z7-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 7,
       "zi_nume": "Duminică",
@@ -1126,11 +1126,11 @@
       ],
       "gata_cand": "A ajutat cu pantofii.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s14-2-3-z7-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 14,
       "zi": 7,
       "zi_nume": "Duminică",
@@ -1145,11 +1145,11 @@
       ],
       "gata_cand": "A auzit ritualul de noapte.",
       "tema_saptamana": "Pași pe drumul scurt",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z1-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 1,
       "zi_nume": "Luni",
@@ -1166,11 +1166,11 @@
       ],
       "gata_cand": "S-a așezat la masă sau a încercat.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z1-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 1,
       "zi_nume": "Luni",
@@ -1187,11 +1187,11 @@
       ],
       "gata_cand": "A privit farfuria pe masă.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z1-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 1,
       "zi_nume": "Luni",
@@ -1208,11 +1208,11 @@
       ],
       "gata_cand": "A ajutat cu farfuria.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z1-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 1,
       "zi_nume": "Luni",
@@ -1227,11 +1227,11 @@
       ],
       "gata_cand": "A stat pe scurt la masă cu adultul.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z2-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 2,
       "zi_nume": "Marți",
@@ -1248,11 +1248,11 @@
       ],
       "gata_cand": "A luat sau a gustat pe scurt.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z2-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 2,
       "zi_nume": "Marți",
@@ -1270,11 +1270,11 @@
       ],
       "gata_cand": "A văzut mâncarea pe farfurie.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z2-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 2,
       "zi_nume": "Marți",
@@ -1291,11 +1291,11 @@
       ],
       "gata_cand": "A ajutat cu șervețelul.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z2-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 2,
       "zi_nume": "Marți",
@@ -1312,11 +1312,11 @@
       ],
       "gata_cand": "A primit sau a oferit gustarea.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z3-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 3,
       "zi_nume": "Miercuri",
@@ -1334,11 +1334,11 @@
       ],
       "gata_cand": "A ținut lingura sau a gustat.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z3-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 3,
       "zi_nume": "Miercuri",
@@ -1356,11 +1356,11 @@
       ],
       "gata_cand": "A privit ambele obiecte.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z3-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 3,
       "zi_nume": "Miercuri",
@@ -1377,11 +1377,11 @@
       ],
       "gata_cand": "A ajutat cu lingura.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z3-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 3,
       "zi_nume": "Miercuri",
@@ -1398,11 +1398,11 @@
       ],
       "gata_cand": "A participat pe rând sau a privit.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z4-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 4,
       "zi_nume": "Joi",
@@ -1419,11 +1419,11 @@
       ],
       "gata_cand": "A cărat paharul câțiva pași.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z4-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 4,
       "zi_nume": "Joi",
@@ -1441,11 +1441,11 @@
       ],
       "gata_cand": "A văzut paharul lângă farfurie.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z4-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 4,
       "zi_nume": "Joi",
@@ -1462,11 +1462,11 @@
       ],
       "gata_cand": "A ajutat cu paharul.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z4-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 4,
       "zi_nume": "Joi",
@@ -1481,11 +1481,11 @@
       ],
       "gata_cand": "A auzit și/sau a încercat cuvântul.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z5-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 5,
       "zi_nume": "Vineri",
@@ -1503,11 +1503,11 @@
       ],
       "gata_cand": "A spălat mâinile sau a încercat.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z5-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 5,
       "zi_nume": "Vineri",
@@ -1522,11 +1522,11 @@
       ],
       "gata_cand": "A auzit înainte și după.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z5-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 5,
       "zi_nume": "Vineri",
@@ -1543,11 +1543,11 @@
       ],
       "gata_cand": "A ajutat cu prosopul.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z5-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 5,
       "zi_nume": "Vineri",
@@ -1562,11 +1562,11 @@
       ],
       "gata_cand": "A mers spre masă sau a auzit chemarea.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z6-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 6,
       "zi_nume": "Sâmbătă",
@@ -1584,11 +1584,11 @@
       ],
       "gata_cand": "A gustat sau a stat la gustare.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z6-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 6,
       "zi_nume": "Sâmbătă",
@@ -1605,11 +1605,11 @@
       ],
       "gata_cand": "A privit și a auzit numele.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z6-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 6,
       "zi_nume": "Sâmbătă",
@@ -1626,11 +1626,11 @@
       ],
       "gata_cand": "A ajutat la strâns.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z6-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 6,
       "zi_nume": "Sâmbătă",
@@ -1647,11 +1647,11 @@
       ],
       "gata_cand": "A primit o parte sau a privit.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z7-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 7,
       "zi_nume": "Duminică",
@@ -1666,11 +1666,11 @@
       ],
       "gata_cand": "A mers liber câteva minute.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z7-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 7,
       "zi_nume": "Duminică",
@@ -1687,11 +1687,11 @@
       ],
       "gata_cand": "A întors pagina sau a privit.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z7-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 7,
       "zi_nume": "Duminică",
@@ -1708,11 +1708,11 @@
       ],
       "gata_cand": "A ajutat cu farfuria.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s15-2-3-z7-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 15,
       "zi": 7,
       "zi_nume": "Duminică",
@@ -1727,11 +1727,11 @@
       ],
       "gata_cand": "A auzit ritualul de noapte.",
       "tema_saptamana": "Mâncare împreună",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z1-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 1,
       "zi_nume": "Luni",
@@ -1749,11 +1749,11 @@
       ],
       "gata_cand": "A băut sau a gustat apă.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z1-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 1,
       "zi_nume": "Luni",
@@ -1771,11 +1771,11 @@
       ],
       "gata_cand": "A privit paharul cu apă.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z1-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 1,
       "zi_nume": "Luni",
@@ -1792,11 +1792,11 @@
       ],
       "gata_cand": "A ajutat cu paharul.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z1-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 1,
       "zi_nume": "Luni",
@@ -1814,11 +1814,11 @@
       ],
       "gata_cand": "A văzut sau a băut împreună.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z2-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 2,
       "zi_nume": "Marți",
@@ -1836,11 +1836,11 @@
       ],
       "gata_cand": "A ajutat la turnat sau a privit.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z2-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 2,
       "zi_nume": "Marți",
@@ -1858,11 +1858,11 @@
       ],
       "gata_cand": "A văzut gol și cu apă.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z2-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 2,
       "zi_nume": "Marți",
@@ -1879,11 +1879,11 @@
       ],
       "gata_cand": "A ajutat cu cana.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z2-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 2,
       "zi_nume": "Marți",
@@ -1901,11 +1901,11 @@
       ],
       "gata_cand": "A turnat sau a ținut paharul.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z3-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 3,
       "zi_nume": "Miercuri",
@@ -1922,11 +1922,11 @@
       ],
       "gata_cand": "A cărat paharul câțiva pași.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z3-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 3,
       "zi_nume": "Miercuri",
@@ -1943,11 +1943,11 @@
       ],
       "gata_cand": "A arătat sau a privit paharul.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z3-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 3,
       "zi_nume": "Miercuri",
@@ -1964,11 +1964,11 @@
       ],
       "gata_cand": "A ajutat să așeze paharul.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z3-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 3,
       "zi_nume": "Miercuri",
@@ -1985,11 +1985,11 @@
       ],
       "gata_cand": "A dat sau a primit paharul.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z4-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 4,
       "zi_nume": "Joi",
@@ -2007,11 +2007,11 @@
       ],
       "gata_cand": "A spălat mâinile sau a atins apa.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z4-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 4,
       "zi_nume": "Joi",
@@ -2026,11 +2026,11 @@
       ],
       "gata_cand": "A văzut apa de la robinet.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z4-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 4,
       "zi_nume": "Joi",
@@ -2047,11 +2047,11 @@
       ],
       "gata_cand": "A ajutat cu prosopul.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z4-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 4,
       "zi_nume": "Joi",
@@ -2068,11 +2068,11 @@
       ],
       "gata_cand": "A spălat pe rând sau a privit.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z5-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 5,
       "zi_nume": "Vineri",
@@ -2090,11 +2090,11 @@
       ],
       "gata_cand": "A băut sau a refuzat clar.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z5-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 5,
       "zi_nume": "Vineri",
@@ -2112,11 +2112,11 @@
       ],
       "gata_cand": "A auzit sete și apă.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z5-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 5,
       "zi_nume": "Vineri",
@@ -2134,11 +2134,11 @@
       ],
       "gata_cand": "A băut și a ajutat cu paharul.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z5-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 5,
       "zi_nume": "Vineri",
@@ -2156,11 +2156,11 @@
       ],
       "gata_cand": "A participat la oferit.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z6-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 6,
       "zi_nume": "Sâmbătă",
@@ -2177,11 +2177,11 @@
       ],
       "gata_cand": "A băut afară sau a ținut paharul.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z6-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 6,
       "zi_nume": "Sâmbătă",
@@ -2199,11 +2199,11 @@
       ],
       "gata_cand": "A privit udatul plantei.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z6-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 6,
       "zi_nume": "Sâmbătă",
@@ -2220,11 +2220,11 @@
       ],
       "gata_cand": "A ajutat să pună paharul la loc.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z6-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 6,
       "zi_nume": "Sâmbătă",
@@ -2242,11 +2242,11 @@
       ],
       "gata_cand": "A băut sau a acceptat paharul.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z7-fizic",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 7,
       "zi_nume": "Duminică",
@@ -2261,11 +2261,11 @@
       ],
       "gata_cand": "A mers liber câteva minute.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z7-mental",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 7,
       "zi_nume": "Duminică",
@@ -2282,11 +2282,11 @@
       ],
       "gata_cand": "A întors pagina sau a privit.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z7-resurse",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 7,
       "zi_nume": "Duminică",
@@ -2303,11 +2303,11 @@
       ],
       "gata_cand": "A ajutat cu paharul.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
       "id": "s16-2-3-z7-social",
-      "banda": "2-3",
+      "banda": "1-2",
       "saptamana": 16,
       "zi": 7,
       "zi_nume": "Duminică",
@@ -2322,7 +2322,7 @@
       ],
       "gata_cand": "A auzit ritualul de noapte.",
       "tema_saptamana": "Apă și sete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     }
   ]
 }

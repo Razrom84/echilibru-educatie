@@ -1,11 +1,11 @@
--- seed S2–S4 banda 2–3 (84 activities). Does not touch S1.
+-- seed S2–S4 banda 1–2 (84 activities). Does not touch S1.
 insert into public.activities (
   id, banda, saptamana, zi, pilon, titlu, durata_min, mod_default,
   materiale, pasi, gata_cand, nota, tema_saptamana
 ) values
 (
     's2-2-3-z1-fizic',
-    '2-3',
+    '1-2',
     2,
     1,
     'fizic'::public.pillar,
@@ -15,12 +15,12 @@ insert into public.activities (
     ARRAY['baie/bucătărie']::text[],
     ARRAY['Mergeți împreună până la apă.', 'Arătați robinetul: „Apă.”']::text[],
     'A mers până la sursa de apă.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z1-mental',
-    '2-3',
+    '1-2',
     2,
     1,
     'mental'::public.pillar,
@@ -30,12 +30,12 @@ insert into public.activities (
     ARRAY['pahar/chiuvetă']::text[],
     ARRAY['Arătați apa curgând puțin.', '„Apă. Curge.”']::text[],
     'A privit apa.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z1-resurse',
-    '2-3',
+    '1-2',
     2,
     1,
     'resurse'::public.pillar,
@@ -45,12 +45,12 @@ insert into public.activities (
     ARRAY['pahar']::text[],
     ARRAY['Turnați puțin împreună.', '„Beau apă.”']::text[],
     'A ținut paharul sau a gustat.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z1-social',
-    '2-3',
+    '1-2',
     2,
     1,
     'social'::public.pillar,
@@ -60,12 +60,12 @@ insert into public.activities (
     '{}'::text[],
     ARRAY['Modelați: „Vreau apă.”', 'Răspundeți când încearcă.']::text[],
     'A auzit / încercat cererea.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z2-fizic',
-    '2-3',
+    '1-2',
     2,
     2,
     'fizic'::public.pillar,
@@ -75,12 +75,12 @@ insert into public.activities (
     ARRAY['pahar, apă']::text[],
     ARRAY['Țineți mâna lui pe pahar.', 'Turnați puțin pe jos într-un vas.']::text[],
     'A ajutat la turnat.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z2-mental',
-    '2-3',
+    '1-2',
     2,
     2,
     'mental'::public.pillar,
@@ -90,12 +90,12 @@ insert into public.activities (
     ARRAY['două pahare']::text[],
     ARRAY['Arătați gol, apoi plin.', '„Gol. Plin.”']::text[],
     'A văzut diferența.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z2-resurse',
-    '2-3',
+    '1-2',
     2,
     2,
     'resurse'::public.pillar,
@@ -105,12 +105,12 @@ insert into public.activities (
     ARRAY['plantă, apă']::text[],
     ARRAY['Turnați puțin la rădăcină.', '„Dăm apă plantei.”']::text[],
     'A ajutat la udat.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z2-social',
-    '2-3',
+    '1-2',
     2,
     2,
     'social'::public.pillar,
@@ -120,12 +120,12 @@ insert into public.activities (
     ARRAY['pahar']::text[],
     ARRAY['Beți împreună.', 'Zâmbiți, fără grabă.']::text[],
     'A băut lângă voi.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z3-fizic',
-    '2-3',
+    '1-2',
     2,
     3,
     'fizic'::public.pillar,
@@ -135,12 +135,12 @@ insert into public.activities (
     ARRAY['apă']::text[],
     ARRAY['Udați-i puțin dosul mâinii.', '„Ud. Rece.”']::text[],
     'A simțit stropii.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z3-mental',
-    '2-3',
+    '1-2',
     2,
     3,
     'mental'::public.pillar,
@@ -150,12 +150,12 @@ insert into public.activities (
     ARRAY['pahar']::text[],
     ARRAY['Pahar la vedere pe jumătate ascuns.', '„Unde e paharul?”']::text[],
     'A arătat / găsit paharul.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z3-resurse',
-    '2-3',
+    '1-2',
     2,
     3,
     'resurse'::public.pillar,
@@ -165,12 +165,12 @@ insert into public.activities (
     ARRAY['cârpă']::text[],
     ARRAY['Ștergeți o picătură împreună.', '„Ștergem.”']::text[],
     'A atins cârpa.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z3-social',
-    '2-3',
+    '1-2',
     2,
     3,
     'social'::public.pillar,
@@ -180,12 +180,12 @@ insert into public.activities (
     '{}'::text[],
     ARRAY['După băut: „Mulțumesc.”', 'Modelați voi.']::text[],
     'A auzit mulțumesc.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z4-fizic',
-    '2-3',
+    '1-2',
     2,
     4,
     'fizic'::public.pillar,
@@ -195,12 +195,12 @@ insert into public.activities (
     ARRAY['pahar gol plastic']::text[],
     ARRAY['Cărati 5 pași paharul gol.', '„Tu porți.”']::text[],
     'A cărat paharul.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z4-mental',
-    '2-3',
+    '1-2',
     2,
     4,
     'mental'::public.pillar,
@@ -210,12 +210,12 @@ insert into public.activities (
     ARRAY['cârpă udă/uscată']::text[],
     ARRAY['Atingeți ambele.', '„Ud. Uscat.”']::text[],
     'A reacționat la diferență.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z4-resurse',
-    '2-3',
+    '1-2',
     2,
     4,
     'resurse'::public.pillar,
@@ -225,12 +225,12 @@ insert into public.activities (
     ARRAY['pahar']::text[],
     ARRAY['Pahar pe masă/locul lui.', '„La loc.”']::text[],
     'A ajutat să pună paharul.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z4-social',
-    '2-3',
+    '1-2',
     2,
     4,
     'social'::public.pillar,
@@ -240,12 +240,12 @@ insert into public.activities (
     ARRAY['pahar']::text[],
     ARRAY['Voi beți, apoi el — fără forțare.', 'Rândul lui / rândul vostru.']::text[],
     'A acceptat sau refuzat clar.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z5-fizic',
-    '2-3',
+    '1-2',
     2,
     5,
     'fizic'::public.pillar,
@@ -255,12 +255,12 @@ insert into public.activities (
     ARRAY['geam, pulverizator opțional']::text[],
     ARRAY['Stropiți ușor geamul.', 'Mișcați degetul pe urmă.']::text[],
     'A atins geamul.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z5-mental',
-    '2-3',
+    '1-2',
     2,
     5,
     'mental'::public.pillar,
@@ -270,12 +270,12 @@ insert into public.activities (
     ARRAY['robinet']::text[],
     ARRAY['Deschideți un fir de apă.', '„Auzi apa?”']::text[],
     'A orientat atenția.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z5-resurse',
-    '2-3',
+    '1-2',
     2,
     5,
     'resurse'::public.pillar,
@@ -285,12 +285,12 @@ insert into public.activities (
     ARRAY['robinet']::text[],
     ARRAY['Închideți împreună.', '„Oprit.”']::text[],
     'A văzut / ajutat la închis.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z5-social',
-    '2-3',
+    '1-2',
     2,
     5,
     'social'::public.pillar,
@@ -300,12 +300,12 @@ insert into public.activities (
     ARRAY['opțional video scurt']::text[],
     ARRAY['Arătați paharul cuiva drag 1–2 min.', 'Salut scurt.']::text[],
     'A participat la arătat.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z6-fizic',
-    '2-3',
+    '1-2',
     2,
     6,
     'fizic'::public.pillar,
@@ -315,12 +315,12 @@ insert into public.activities (
     ARRAY['curte']::text[],
     ARRAY['Dacă e ud afară, pășiți lângă baltă (nu în adânc).', '„Apă jos.”']::text[],
     'A explorat zona udă cu adult.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z6-mental',
-    '2-3',
+    '1-2',
     2,
     6,
     'mental'::public.pillar,
@@ -330,12 +330,12 @@ insert into public.activities (
     ARRAY['afară']::text[],
     ARRAY['Arătați cerul.', '„Nor. / Soare.”']::text[],
     'A privit cerul.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z6-resurse',
-    '2-3',
+    '1-2',
     2,
     6,
     'resurse'::public.pillar,
@@ -345,12 +345,12 @@ insert into public.activities (
     ARRAY['frunze']::text[],
     ARRAY['Luați 2 frunze, puneți-le jos la loc.', 'Numărați: una, două.']::text[],
     'A ținut o frunză.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z6-social',
-    '2-3',
+    '1-2',
     2,
     6,
     'social'::public.pillar,
@@ -360,12 +360,12 @@ insert into public.activities (
     ARRAY['vas mic apă']::text[],
     ARRAY['Voi turnați, el stă lângă.', 'Comentați ce face, fără a prelua.']::text[],
     'A stat lângă joc 2–3 min.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z7-fizic',
-    '2-3',
+    '1-2',
     2,
     7,
     'fizic'::public.pillar,
@@ -375,12 +375,12 @@ insert into public.activities (
     ARRAY['curte']::text[],
     ARRAY['El dictează.', 'Voi numiți apa/plantă dacă arată.']::text[],
     'A explorat ≥5 min.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z7-mental',
-    '2-3',
+    '1-2',
     2,
     7,
     'mental'::public.pillar,
@@ -390,12 +390,12 @@ insert into public.activities (
     ARRAY['carte']::text[],
     ARRAY['Pagini cu apă dacă aveți; altfel orice carte.', 'El întoarce.']::text[],
     'A rămas scurt la carte.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z7-resurse',
-    '2-3',
+    '1-2',
     2,
     7,
     'resurse'::public.pillar,
@@ -405,12 +405,12 @@ insert into public.activities (
     ARRAY['prosop']::text[],
     ARRAY['După baie/mână: prosopul pe cârlig.', '„La loc.”']::text[],
     'A ajutat cu prosopul.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's2-2-3-z7-social',
-    '2-3',
+    '1-2',
     2,
     7,
     'social'::public.pillar,
@@ -420,12 +420,12 @@ insert into public.activities (
     '{}'::text[],
     ARRAY['„Noapte bună.”', 'Lumină mică.']::text[],
     'A participat la ritual.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Apa în casă și afară'
   ),
 (
     's3-2-3-z1-fizic',
-    '2-3',
+    '1-2',
     3,
     1,
     'fizic'::public.pillar,
@@ -435,12 +435,12 @@ insert into public.activities (
     ARRAY['podea']::text[],
     ARRAY['Mergeți apăsat puțin.', '„Auzi pașii?”']::text[],
     'A mers și a auzit.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z1-mental',
-    '2-3',
+    '1-2',
     3,
     1,
     'mental'::public.pillar,
@@ -450,12 +450,12 @@ insert into public.activities (
     '{}'::text[],
     ARRAY['Stați liniștiți scurt.', '„Liniște.”']::text[],
     'A tolerat liniștea scurt.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z1-resurse',
-    '2-3',
+    '1-2',
     3,
     1,
     'resurse'::public.pillar,
@@ -465,12 +465,12 @@ insert into public.activities (
     ARRAY['jucărie sonoră']::text[],
     ARRAY['Un sunet, apoi stop.', '„Sunet. Stop.”']::text[],
     'A reacționat la sunet.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z1-social',
-    '2-3',
+    '1-2',
     3,
     1,
     'social'::public.pillar,
@@ -480,12 +480,12 @@ insert into public.activities (
     '{}'::text[],
     ARRAY['Spuneți numele lui blând.', 'Așteptați privirea.']::text[],
     'A întors privirea.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z2-fizic',
-    '2-3',
+    '1-2',
     3,
     2,
     'fizic'::public.pillar,
@@ -495,12 +495,12 @@ insert into public.activities (
     '{}'::text[],
     ARRAY['Bateți din palme împreună.', '2–5 bătăi.']::text[],
     'A încercat să bată.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z2-mental',
-    '2-3',
+    '1-2',
     3,
     2,
     'mental'::public.pillar,
@@ -510,12 +510,12 @@ insert into public.activities (
     ARRAY['telefon/jucărie']::text[],
     ARRAY['Sunet din altă parte a camerei.', '„Unde?”']::text[],
     'A orientat spre sunet.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z2-resurse',
-    '2-3',
+    '1-2',
     3,
     2,
     'resurse'::public.pillar,
@@ -525,12 +525,12 @@ insert into public.activities (
     ARRAY['jucărie']::text[],
     ARRAY['După joacă: în cutie.', '„La loc.”']::text[],
     'A ajutat la pus.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z2-social',
-    '2-3',
+    '1-2',
     3,
     2,
     'social'::public.pillar,
@@ -540,12 +540,12 @@ insert into public.activities (
     '{}'::text[],
     ARRAY['Stați ureche la ureche pe o fereastră.', '„Auzim.”']::text[],
     'A stat lângă voi scurt.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z3-fizic',
-    '2-3',
+    '1-2',
     3,
     3,
     'fizic'::public.pillar,
@@ -555,12 +555,12 @@ insert into public.activities (
     ARRAY['muzică']::text[],
     ARRAY['30–60 sec muzică.', 'Stop.']::text[],
     'S-a mișcat pe ritm.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z3-mental',
-    '2-3',
+    '1-2',
     3,
     3,
     'mental'::public.pillar,
@@ -570,12 +570,12 @@ insert into public.activities (
     '{}'::text[],
     ARRAY['Spuneți același cuvânt tare, apoi încet.', '„Tare. Încet.”']::text[],
     'A reacționat.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z3-resurse',
-    '2-3',
+    '1-2',
     3,
     3,
     'resurse'::public.pillar,
@@ -585,12 +585,12 @@ insert into public.activities (
     ARRAY['telefon/boxă']::text[],
     ARRAY['Apăsați stop împreună.', '„Oprit.”']::text[],
     'A văzut oprirea.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z3-social',
-    '2-3',
+    '1-2',
     3,
     3,
     'social'::public.pillar,
@@ -600,12 +600,12 @@ insert into public.activities (
     '{}'::text[],
     ARRAY['Un refren cunoscut, 1 min.', 'Fără forțare să cânte.']::text[],
     'A auzit cântecul.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z4-fizic',
-    '2-3',
+    '1-2',
     3,
     4,
     'fizic'::public.pillar,
@@ -615,12 +615,12 @@ insert into public.activities (
     '{}'::text[],
     ARRAY['Bateți din palme, săritură mică.', '2–4.']::text[],
     'A sărit sau a încercat.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z4-mental',
-    '2-3',
+    '1-2',
     3,
     4,
     'mental'::public.pillar,
@@ -630,12 +630,12 @@ insert into public.activities (
     ARRAY['afară']::text[],
     ARRAY['Ascultați.', '„Pasăre? Mașină?”']::text[],
     'A orientat atenția afară.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z4-resurse',
-    '2-3',
+    '1-2',
     3,
     4,
     'resurse'::public.pillar,
@@ -645,12 +645,12 @@ insert into public.activities (
     ARRAY['ușă']::text[],
     ARRAY['Închideți fără trântit.', '„Încet.”']::text[],
     'A participat la închis.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z4-social',
-    '2-3',
+    '1-2',
     3,
     4,
     'social'::public.pillar,
@@ -660,12 +660,12 @@ insert into public.activities (
     ARRAY['tobe/jucărie']::text[],
     ARRAY['Tu o dată, el o dată.', '„Acum tu.”']::text[],
     'A încercat rândul.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z5-fizic',
-    '2-3',
+    '1-2',
     3,
     5,
     'fizic'::public.pillar,
@@ -675,12 +675,12 @@ insert into public.activities (
     '{}'::text[],
     ARRAY['Arătați mers ușor.', 'Câțiva pași.']::text[],
     'A încercat mers ușor.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z5-mental',
-    '2-3',
+    '1-2',
     3,
     5,
     'mental'::public.pillar,
@@ -690,12 +690,12 @@ insert into public.activities (
     '{}'::text[],
     ARRAY['Frigider, apă, voce — ce aveți.', 'Arătați sursa.']::text[],
     'A privit sursele.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z5-resurse',
-    '2-3',
+    '1-2',
     3,
     5,
     'resurse'::public.pillar,
@@ -705,12 +705,12 @@ insert into public.activities (
     ARRAY['telefon']::text[],
     ARRAY['Puneți pe silent vizibil.', '„Liniște acum.”']::text[],
     'A văzut gestul.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z5-social',
-    '2-3',
+    '1-2',
     3,
     5,
     'social'::public.pillar,
@@ -720,12 +720,12 @@ insert into public.activities (
     '{}'::text[],
     ARRAY['„Bună!” cu zâmbet.', 'Așteptați răspunsul lui.']::text[],
     'A reacționat la salut.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z6-fizic',
-    '2-3',
+    '1-2',
     3,
     6,
     'fizic'::public.pillar,
@@ -735,12 +735,12 @@ insert into public.activities (
     ARRAY['curte']::text[],
     ARRAY['Texturi care sună diferit.', '„Auzi?”']::text[],
     'A pășit pe 2 texturi.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z6-mental',
-    '2-3',
+    '1-2',
     3,
     6,
     'mental'::public.pillar,
@@ -750,12 +750,12 @@ insert into public.activities (
     ARRAY['afară']::text[],
     ARRAY['Stați 15 sec.', '„Vânt.” / „Liniște.”']::text[],
     'A ascultat afară.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z6-resurse',
-    '2-3',
+    '1-2',
     3,
     6,
     'resurse'::public.pillar,
@@ -765,12 +765,12 @@ insert into public.activities (
     ARRAY['piatră']::text[],
     ARRAY['Comparați cu jucăria sonoră.', 'Piatra la loc.']::text[],
     'A ținut piatra.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z6-social',
-    '2-3',
+    '1-2',
     3,
     6,
     'social'::public.pillar,
@@ -780,12 +780,12 @@ insert into public.activities (
     ARRAY['jucării']::text[],
     ARRAY['Comentați sunetele pe care le face el.', 'Nu preluați jocul.']::text[],
     'A jucat lângă voi.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z7-fizic',
-    '2-3',
+    '1-2',
     3,
     7,
     'fizic'::public.pillar,
@@ -795,12 +795,12 @@ insert into public.activities (
     ARRAY['curte']::text[],
     ARRAY['El dictează.', 'Voi numiți sunete dacă apar.']::text[],
     'A explorat ≥5 min.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z7-mental',
-    '2-3',
+    '1-2',
     3,
     7,
     'mental'::public.pillar,
@@ -810,12 +810,12 @@ insert into public.activities (
     ARRAY['carte']::text[],
     ARRAY['Fără ecrane.', 'Pagini încet.']::text[],
     'A rămas la carte scurt.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z7-resurse',
-    '2-3',
+    '1-2',
     3,
     7,
     'resurse'::public.pillar,
@@ -825,12 +825,12 @@ insert into public.activities (
     ARRAY['întrerupător']::text[],
     ARRAY['Stingeți cu adult.', '„Stins. Liniște.”']::text[],
     'A văzut stingerea.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's3-2-3-z7-social',
-    '2-3',
+    '1-2',
     3,
     7,
     'social'::public.pillar,
@@ -840,12 +840,12 @@ insert into public.activities (
     '{}'::text[],
     ARRAY['Șoaptă: „Noapte bună.”', 'Calm.']::text[],
     'A participat la ritual.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Sunete și liniște'
   ),
 (
     's4-2-3-z1-fizic',
-    '2-3',
+    '1-2',
     4,
     1,
     'fizic'::public.pillar,
@@ -855,12 +855,12 @@ insert into public.activities (
     '{}'::text[],
     ARRAY['Arătați.', 'Repetați de 3 ori.']::text[],
     'A mișcat degetele.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z1-mental',
-    '2-3',
+    '1-2',
     4,
     1,
     'mental'::public.pillar,
@@ -870,12 +870,12 @@ insert into public.activities (
     '{}'::text[],
     ARRAY['„Uite degetul.”', 'Atingeți-i palma.']::text[],
     'A privit mâna.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z1-resurse',
-    '2-3',
+    '1-2',
     4,
     1,
     'resurse'::public.pillar,
@@ -885,12 +885,12 @@ insert into public.activities (
     ARRAY['cutie/capac mare']::text[],
     ARRAY['Capac pe cutie împreună.', 'Fără frustrare.']::text[],
     'A atins capacul.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z1-social',
-    '2-3',
+    '1-2',
     4,
     1,
     'social'::public.pillar,
@@ -900,12 +900,12 @@ insert into public.activities (
     '{}'::text[],
     ARRAY['Oferiți mâna.', 'Nu forțați.']::text[],
     'A acceptat sau refuzat.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z2-fizic',
-    '2-3',
+    '1-2',
     4,
     2,
     'fizic'::public.pillar,
@@ -915,12 +915,12 @@ insert into public.activities (
     ARRAY['jucării mici sigure']::text[],
     ARRAY['Una, două, trei în cutie.', 'El ia ce poate.']::text[],
     'A pus ≥1 obiect.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z2-mental',
-    '2-3',
+    '1-2',
     4,
     2,
     'mental'::public.pillar,
@@ -930,12 +930,12 @@ insert into public.activities (
     ARRAY['2 obiecte']::text[],
     ARRAY['„Mare. Mic.”', 'El arată.']::text[],
     'A văzut diferența.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z2-resurse',
-    '2-3',
+    '1-2',
     4,
     2,
     'resurse'::public.pillar,
@@ -945,12 +945,12 @@ insert into public.activities (
     ARRAY['boabe/piese mari, bol']::text[],
     ARRAY['Una câte una.', 'Stop la oboseală.']::text[],
     'A turnat ≥1.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z2-social',
-    '2-3',
+    '1-2',
     4,
     2,
     'social'::public.pillar,
@@ -960,12 +960,12 @@ insert into public.activities (
     ARRAY['jucărie']::text[],
     ARRAY['„Ține. Dă înapoi.”', '2 schimburi.']::text[],
     'A dat / primit.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z3-fizic',
-    '2-3',
+    '1-2',
     4,
     3,
     'fizic'::public.pillar,
@@ -975,12 +975,12 @@ insert into public.activities (
     '{}'::text[],
     ARRAY['Taptap ușor.', 'El imită.']::text[],
     'A atins masa ritmic.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z3-mental',
-    '2-3',
+    '1-2',
     4,
     3,
     'mental'::public.pillar,
@@ -990,12 +990,12 @@ insert into public.activities (
     ARRAY['mănușă/mână sub cârpă']::text[],
     ARRAY['„Unde e mânuța?”', 'Descoperiți.']::text[],
     'A căutat.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z3-resurse',
-    '2-3',
+    '1-2',
     4,
     3,
     'resurse'::public.pillar,
@@ -1005,12 +1005,12 @@ insert into public.activities (
     ARRAY['haină cu fermoar']::text[],
     ARRAY['Trageți împreună puțin.', '„Sus. Jos.”']::text[],
     'A ținut fermoarul.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z3-social',
-    '2-3',
+    '1-2',
     4,
     3,
     'social'::public.pillar,
@@ -1020,12 +1020,12 @@ insert into public.activities (
     '{}'::text[],
     ARRAY['Blând, oprire imediat dacă nu vrea.']::text[],
     'A râs sau a retras mâna clar.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z4-fizic',
-    '2-3',
+    '1-2',
     4,
     4,
     'fizic'::public.pillar,
@@ -1035,12 +1035,12 @@ insert into public.activities (
     ARRAY['cutie']::text[],
     ARRAY['5 pași.', '„Împinge.”']::text[],
     'A împins cutia.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z4-mental',
-    '2-3',
+    '1-2',
     4,
     4,
     'mental'::public.pillar,
@@ -1050,12 +1050,12 @@ insert into public.activities (
     '{}'::text[],
     ARRAY['Arătați 1, apoi 2 degete.', '„Unu. Doi.”']::text[],
     'A privit degetele.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z4-resurse',
-    '2-3',
+    '1-2',
     4,
     4,
     'resurse'::public.pillar,
@@ -1065,12 +1065,12 @@ insert into public.activities (
     ARRAY['cârpă']::text[],
     ARRAY['Mișcări scurte.', '„Curat.”']::text[],
     'A ținut cârpa.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z4-social',
-    '2-3',
+    '1-2',
     4,
     4,
     'social'::public.pillar,
@@ -1080,12 +1080,12 @@ insert into public.activities (
     '{}'::text[],
     ARRAY['Oferiți palma.', 'Fără forțare.']::text[],
     'A atins palma sau a refuzat.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z5-fizic',
-    '2-3',
+    '1-2',
     4,
     5,
     'fizic'::public.pillar,
@@ -1095,12 +1095,12 @@ insert into public.activities (
     ARRAY['pernă/saltea']::text[],
     ARRAY['Târâit pe pernă.', 'Scurt.']::text[],
     'A încercat târâitul.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z5-mental',
-    '2-3',
+    '1-2',
     4,
     5,
     'mental'::public.pillar,
@@ -1110,12 +1110,12 @@ insert into public.activities (
     ARRAY['două texturi']::text[],
     ARRAY['„Moale. Aspru.”']::text[],
     'A atins ambele.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z5-resurse',
-    '2-3',
+    '1-2',
     4,
     5,
     'resurse'::public.pillar,
@@ -1125,12 +1125,12 @@ insert into public.activities (
     ARRAY['șosetă']::text[],
     ARRAY['În sertar/coș.', '„La loc.”']::text[],
     'A ajutat cu șoseta.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z5-social',
-    '2-3',
+    '1-2',
     4,
     5,
     'social'::public.pillar,
@@ -1140,12 +1140,12 @@ insert into public.activities (
     '{}'::text[],
     ARRAY['El pune mâna pe umărul vostru.', 'Modelați.']::text[],
     'A atins umărul.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z6-fizic',
-    '2-3',
+    '1-2',
     4,
     6,
     'fizic'::public.pillar,
@@ -1155,12 +1155,12 @@ insert into public.activities (
     ARRAY['curte/nisip']::text[],
     ARRAY['Săpați puțin împreună.', 'Fără murdărie în ochi.']::text[],
     'A săpat / atins pământul.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z6-mental',
-    '2-3',
+    '1-2',
     4,
     6,
     'mental'::public.pillar,
@@ -1170,12 +1170,12 @@ insert into public.activities (
     ARRAY['piatră, frunză']::text[],
     ARRAY['„Piatră. Frunză.”']::text[],
     'A ținut pe rând.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z6-resurse',
-    '2-3',
+    '1-2',
     4,
     6,
     'resurse'::public.pillar,
@@ -1185,12 +1185,12 @@ insert into public.activities (
     ARRAY['găleată']::text[],
     ARRAY['După joacă: găleata pe locul ei.']::text[],
     'A împins / dus găleata.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z6-social',
-    '2-3',
+    '1-2',
     4,
     6,
     'social'::public.pillar,
@@ -1200,12 +1200,12 @@ insert into public.activities (
     ARRAY['nisip/jucării']::text[],
     ARRAY['Voi săpați lângă.', 'Comentați mâinile lui.']::text[],
     'A jucat lângă voi.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z7-fizic',
-    '2-3',
+    '1-2',
     4,
     7,
     'fizic'::public.pillar,
@@ -1215,12 +1215,12 @@ insert into public.activities (
     ARRAY['curte, obiect ușor']::text[],
     ARRAY['El ține ceva ușor în mână.', 'Voi supravegheați.']::text[],
     'A mers ținând obiectul scurt.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z7-mental',
-    '2-3',
+    '1-2',
     4,
     7,
     'mental'::public.pillar,
@@ -1230,12 +1230,12 @@ insert into public.activities (
     ARRAY['carte']::text[],
     ARRAY['Ajutați doar dacă blochează.']::text[],
     'A întors ≥1 pagină.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z7-resurse',
-    '2-3',
+    '1-2',
     4,
     7,
     'resurse'::public.pillar,
@@ -1245,12 +1245,12 @@ insert into public.activities (
     ARRAY['haină']::text[],
     ARRAY['După afară.', '„La loc.”']::text[],
     'A ajutat cu haina.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   ),
 (
     's4-2-3-z7-social',
-    '2-3',
+    '1-2',
     4,
     7,
     'social'::public.pillar,
@@ -1260,7 +1260,7 @@ insert into public.activities (
     '{}'::text[],
     ARRAY['Oferiți; acceptă/refuză ok.', '„Noapte bună.”']::text[],
     'A participat la ritual.',
-    'Vârsta 2–3: scurt, fără forțare; el poate refuza.',
+    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'
   )
 on conflict (id) do update set
