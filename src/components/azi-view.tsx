@@ -5,13 +5,13 @@ import { ActivityCard } from "@/components/activity-card";
 import { AddToCalendarButton } from "@/components/add-to-calendar-button";
 import { EmptyState } from "@/components/status-blocks";
 import {
-  AZI_ALL_DONE,
   AZI_BEFORE_JOIN,
-  AZI_SUBTITLE,
   aziAllDone,
+  aziAllDoneMessage,
   aziDayOfWeek,
   aziFutureLocked,
   aziGate,
+  aziSubtitle,
   aziTitle,
 } from "@/lib/azi";
 import { useFamily } from "@/lib/family-context";
@@ -72,14 +72,14 @@ export function AziView({ today }: { today: string }) {
   return (
     <section className="space-y-4">
       <div>
-        <h1 className="font-heading text-3xl">{aziTitle(weekTheme)}</h1>
-        <p className="mt-1 text-sm text-muted-foreground">{AZI_SUBTITLE}</p>
+        <h1 className="font-heading text-3xl">{aziTitle(weekTheme, day)}</h1>
+        <p className="mt-1 text-sm text-muted-foreground">{aziSubtitle(day)}</p>
       </div>
 
       {gate === "before_join" ? (
-        <EmptyState title={AZI_BEFORE_JOIN} body={AZI_SUBTITLE} />
+        <EmptyState title={AZI_BEFORE_JOIN} body={aziSubtitle(day)} />
       ) : gate === "locked" ? (
-        <EmptyState title={aziFutureLocked(day)} body={AZI_SUBTITLE} />
+        <EmptyState title={aziFutureLocked(day)} body={aziSubtitle(day)} />
       ) : todayActivities.length === 0 ? (
         <EmptyState
           title="Încă nu e conținut pentru ziua asta"
@@ -88,7 +88,9 @@ export function AziView({ today }: { today: string }) {
       ) : (
         <div className="space-y-3">
           {allDone ? (
-            <p className="rounded-2xl bg-muted px-4 py-3 text-sm font-medium">{AZI_ALL_DONE}</p>
+            <p className="rounded-2xl bg-muted px-4 py-3 text-sm font-medium">
+              {aziAllDoneMessage(day)}
+            </p>
           ) : null}
           {todayActivities.map((activity) => (
             <ActivityCard

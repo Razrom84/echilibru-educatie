@@ -1,13 +1,18 @@
 import { describe, expect, test } from "vitest";
 import {
   AZI_ALL_DONE,
+  AZI_ALL_DONE_RECAP,
   AZI_BEFORE_JOIN,
   AZI_SUBTITLE,
+  AZI_SUBTITLE_RECAP,
   aziAllDone,
+  aziAllDoneMessage,
   aziDayOfWeek,
   aziFutureLocked,
   aziGate,
+  aziSubtitle,
   aziTitle,
+  isRecapDay,
 } from "./azi";
 import {
   bucharestToday,
@@ -20,15 +25,31 @@ import { PROGRAM_YEAR_START_MONDAY_2026_27 } from "./fixtures/program-year-2026-
 describe("Azi copy (Cristina)", () => {
   test("title is Azi · week theme", () => {
     expect(aziTitle("Casa și curtea")).toBe("Azi · Casa și curtea");
+    expect(aziTitle("Casa și curtea", 1)).toBe("Azi · Casa și curtea");
     expect(aziTitle("  ")).toBe("Azi");
+  });
+
+  test("Sunday title is Azi · recap · theme", () => {
+    expect(aziTitle("Casa și curtea", 7)).toBe("Azi · recap · Casa și curtea");
+    expect(aziTitle("  ", 7)).toBe("Azi · recap");
+    expect(isRecapDay(7)).toBe(true);
+    expect(isRecapDay(6)).toBe(false);
   });
 
   test("locks the published strings", () => {
     expect(AZI_SUBTITLE).toBe("Patru lucruri scurte — când vreți.");
+    expect(AZI_SUBTITLE_RECAP).toBe(
+      "Patru lucruri blânde — ce ați făcut săptămâna asta, fără grabă.",
+    );
     expect(AZI_BEFORE_JOIN).toBe("Astăzi începe de aici.");
     expect(AZI_ALL_DONE).toBe("Gata pe azi. Mâine continuăm.");
+    expect(AZI_ALL_DONE_RECAP).toBe("Recap gata. Luni începem iar.");
     expect(aziFutureLocked(5)).toBe("Se deschide Vineri.");
     expect(aziFutureLocked(1)).toBe("Se deschide Luni.");
+    expect(aziSubtitle(3)).toBe(AZI_SUBTITLE);
+    expect(aziSubtitle(7)).toBe(AZI_SUBTITLE_RECAP);
+    expect(aziAllDoneMessage(2)).toBe(AZI_ALL_DONE);
+    expect(aziAllDoneMessage(7)).toBe(AZI_ALL_DONE_RECAP);
   });
 });
 

@@ -12,9 +12,10 @@ import {
   focusedWeekDay,
   parseWeekDayParam,
   visibleProgramWeekDays,
+  weekDayAriaLabel,
   weekDayChipLabel,
+  weekDayChipSecondary,
   weekDayHref,
-  weekDayName,
 } from "@/lib/saptamana";
 import { cn } from "@/lib/utils";
 
@@ -123,9 +124,9 @@ export function DayChips({ today }: { today: string }) {
               href={weekDayHref(day)}
               role="tab"
               aria-selected={active}
-              aria-label={isToday ? `${weekDayName(day)} · azi` : weekDayName(day)}
+              aria-label={weekDayAriaLabel(day, isToday)}
               className={cn(
-                "w-[7.25rem] min-w-[7.25rem] shrink-0 rounded-2xl border px-3 py-2 text-left",
+                "w-[8.25rem] min-w-[8.25rem] shrink-0 rounded-2xl border px-3 py-2 text-left",
                 active
                   ? "border-primary bg-primary text-primary-foreground"
                   : "border-border bg-card text-foreground",
@@ -138,7 +139,7 @@ export function DayChips({ today }: { today: string }) {
                   active ? "text-primary-foreground/80" : "text-muted-foreground",
                 )}
               >
-                {isToday ? "azi" : weekDayName(day)}
+                {weekDayChipSecondary(day, isToday)}
               </span>
             </Link>
           );

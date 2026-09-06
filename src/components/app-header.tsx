@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 const VIEW_LINKS = [
   { href: "/azi", label: "Azi" },
   { href: "/saptamana", label: "Săptămâna asta" },
+  { href: "/anul", label: "Anul" },
 ] as const;
 
 export function AppHeader({ today }: { today: string }) {
@@ -44,7 +45,7 @@ export function AppHeader({ today }: { today: string }) {
         </Link>
       </div>
 
-      <nav aria-label="Azi și săptămâna asta" className="mt-3 flex flex-wrap gap-2">
+      <nav aria-label="Azi, săptămâna asta și anul" className="mt-3 flex flex-wrap gap-2">
         {VIEW_LINKS.map((item) => {
           const active =
             pathname === item.href || pathname.startsWith(`${item.href}/`);
@@ -65,9 +66,11 @@ export function AppHeader({ today }: { today: string }) {
         })}
       </nav>
 
-      <Suspense fallback={<DayChipsFallback />}>
-        <DayChips today={today} />
-      </Suspense>
+      {pathname === "/anul" || pathname.startsWith("/anul/") ? null : (
+        <Suspense fallback={<DayChipsFallback />}>
+          <DayChips today={today} />
+        </Suspense>
+      )}
     </header>
   );
 }
