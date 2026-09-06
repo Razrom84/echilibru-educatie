@@ -97,7 +97,7 @@ export default function SetariPage() {
 
       <div className="rounded-2xl border border-border bg-card p-4 text-sm leading-6 text-muted-foreground">
         <p>
-          V1 publică doar banda 2–3, săptămâna 1. Gazda țintă:{" "}
+          V1 publică doar banda 1–2, săptămâna 1. Gazda țintă:{" "}
           <span className="text-foreground">educatie.echilibru-cartea.ro</span>.
         </p>
         {isDemo ? (

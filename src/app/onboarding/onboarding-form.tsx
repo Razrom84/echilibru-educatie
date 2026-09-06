@@ -68,7 +68,7 @@ export function OnboardingForm() {
         />
       </div>
       <p className="text-sm leading-6 text-muted-foreground">
-        Din data de naștere, V1 pune copilul pe banda <strong>2–3 ani</strong> și
+        Din data de naștere, V1 pune copilul pe banda <strong>1–2 ani</strong> și
         deschide săptămâna 1 — Casa și curtea. Celelalte benzi vin ulterior.
       </p>
       {error ? <p className="text-sm text-destructive">{error}</p> : null}

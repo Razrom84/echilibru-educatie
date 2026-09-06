@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { DayChips, DayChipsFallback } from "@/components/day-chips";
+import { PROGRAM_AGE_BAND_LABEL } from "@/lib/band";
 import { useFamily } from "@/lib/family-context";
 import { cn } from "@/lib/utils";
 
@@ -28,7 +29,7 @@ export function AppHeader({ today }: { today: string }) {
             {selectedChild ? selectedChild.name : family?.display_name || "Familia ta"}
           </p>
           <p className="mt-1 text-sm text-muted-foreground">
-            {weekTheme} · 2–3 ani
+            {weekTheme} · {PROGRAM_AGE_BAND_LABEL} ani
             {isDemo ? " · demonstrație" : ""}
           </p>
         </div>

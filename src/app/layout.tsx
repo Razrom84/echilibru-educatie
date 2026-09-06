@@ -15,7 +15,7 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   title: "Echilibru educație",
   description:
-    "Platformă de educație în familie, în română. Banda 2–3 ani, săptămâna 1.",
+    "Platformă de educație în familie, în română. Banda 1–2 ani, săptămâna 1.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

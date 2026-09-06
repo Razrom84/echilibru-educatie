@@ -4,7 +4,7 @@
 import { civilDayOfWeek, PROGRAM_TIMEZONE } from "@/lib/program-week";
 
 export const PROGRAM_WEEK = 1;
-export const PROGRAM_AGE_BAND = "2-3";
+export const PROGRAM_AGE_BAND = "1-2";
 
 export const PROGRAM_WEEKS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20] as const;
 export type ProgramWeek = (typeof PROGRAM_WEEKS)[number];

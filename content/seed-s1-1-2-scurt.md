@@ -1,6 +1,6 @@
-SEED V1 · S1 · bandă 2–3 · tema: Casa și curtea
+SEED V1 · S1 · bandă 1–2 · tema: Casa și curtea
 Format: titlu — ce face părintele cu copilul (RO). Mod A.
-JSON complet: /workspace/echilibru-educatie/seed-s1-banda-2-3.json
+JSON complet: /workspace/echilibru-educatie/seed-s1-banda-1-2.json
 
 ### Luni (zi 1)
 - **Fizic — Pași în curte:** Ieșiți în curte. Mergeți împreună 10–20 de pași.

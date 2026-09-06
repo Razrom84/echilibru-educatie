@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Reads content/seed-s1-banda-2-3.json and prints UPSERT SQL for activities.
+ * Reads content/seed-s1-banda-1-2.json and prints UPSERT SQL for activities.
  * Usage: node scripts/import-seed.mjs > /tmp/seed.sql
  */
 import { readFileSync } from "node:fs";
@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const seed = JSON.parse(
-  readFileSync(join(root, "content/seed-s1-banda-2-3.json"), "utf8"),
+  readFileSync(join(root, "content/seed-s1-banda-1-2.json"), "utf8"),
 );
 
 function lit(value) {

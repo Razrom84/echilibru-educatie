@@ -1,6 +1,6 @@
 # Echilibru educație
 
-Platformă de educație în familie, **doar în română**. V1: banda de vârstă **2–3 ani**, **săptămâna 1** (28 de activități: 4 stâlpi × 7 zile).
+Platformă de educație în familie, **doar în română**. V1: banda de vârstă **1–2 ani** (12–24 luni), **săptămâna 1** (28 de activități: 4 stâlpi × 7 zile).
 
 Gazda țintă, mai târziu: `educatie.echilibru-cartea.ro`.  
 Nu atinge site-ul englez EQUILIBRIUM / `equilibriumthebook.com`.
@@ -47,6 +47,7 @@ Cheile se iau din Supabase → Project Settings → Data API / API Keys.
    - `supabase/migrations/20260905000001_init.sql`
    - `supabase/migrations/20260905000002_seed_week1_2_3.sql` (înlocuit de 0003)
    - `supabase/migrations/20260905000003_official_activitate_schema.sql`
+   - …apoi restul din `supabase/migrations/`, inclusiv `20260906060000_rename_banda_2_3_to_1_2.sql` (eticheta live `2-3` → `1-2`)
 5. Copiază URL + anon key în `.env.local`.
 
 Sau, cu [Supabase CLI](https://supabase.com/docs/guides/cli):
@@ -64,7 +65,7 @@ Service role e nevoie doar pentru CLI / operații admin, nu în browser.
 ## Model de date
 
 - **families**: un părinte (`auth.users`) → o familie; `default_mode` A sau B
-- **children**: nume, data nașterii → banda V1 `2-3`, `active`, `calendar_token` (secret ICS; lookup public prin `calendar_feed_for_token`)
+- **children**: nume, data nașterii → banda V1 `1-2`, `active`, `calendar_token` (secret ICS; lookup public prin `calendar_feed_for_token`)
 - **activities**: catalog Cristina (`id` slug, `banda`, `saptamana`, `zi`, `pilon`, `titlu`, `durata_min`, `mod_default`, `materiale[]`, `pasi[]`, `gata_cand`, `nota`, `tema_saptamana`)
 - **completions**: `child_id` + `activity_id` (slug), `mode` A/B, `parent_approved` (mod B: `false` = așteaptă, `true` = aprobat)
 
@@ -76,7 +77,7 @@ Săptămâna din V1 este **săptămâna 1 de program**, nu săptămâna ISO din 
 
 ## Seed oficial (Cristina)
 
-Sursa de adevăr: `content/seed-s1-banda-2-3.json` (28 de activități, săptămâna 1, banda 2–3, tema **Casa și curtea**).  
+Sursa de adevăr: `content/seed-s1-banda-1-2.json` (28 de activități, săptămâna 1, banda 1–2, tema **Casa și curtea**).  
 Schema câmpurilor: `content/schema-activitate.json`.
 
 Import în Postgres:
