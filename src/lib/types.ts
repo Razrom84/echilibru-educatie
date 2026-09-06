@@ -22,6 +22,8 @@ export type Child = {
   age_band: string;
   active: boolean;
   created_at: string;
+  /** Secret ICS subscribe token. Null until the parent copies the feed URL. */
+  calendar_token?: string | null;
 };
 
 export type SeedActivity = {

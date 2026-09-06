@@ -12,6 +12,7 @@ Nu atinge site-ul englez EQUILIBRIUM / `equilibriumthebook.com`.
 - 8 ecrane: Login, Onboarding, Azi, Săptămână, Detaliu activitate, Progres, Copii, Setări
 - Mod A (părintele face împreună / pentru copil) și mod B (bifa copilului + aprobare)
 - Completările se salvează per copil
+- Calendar ICS: **Adaugă în calendar** copiază un link de abonament (`/api/calendar/{token}.ics`); Apple / Google se abonează, fără OAuth
 - RLS: părintele vede doar familia, copiii și completările lui
 - Demonstrație locală, fără cont, dacă lipsesc cheile Supabase
 
@@ -63,11 +64,13 @@ Service role e nevoie doar pentru CLI / operații admin, nu în browser.
 ## Model de date
 
 - **families**: un părinte (`auth.users`) → o familie; `default_mode` A sau B
-- **children**: nume, data nașterii → banda V1 `2-3`, `active`
+- **children**: nume, data nașterii → banda V1 `2-3`, `active`, `calendar_token` (secret ICS; lookup public prin `calendar_feed_for_token`)
 - **activities**: catalog Cristina (`id` slug, `banda`, `saptamana`, `zi`, `pilon`, `titlu`, `durata_min`, `mod_default`, `materiale[]`, `pasi[]`, `gata_cand`, `nota`, `tema_saptamana`)
 - **completions**: `child_id` + `activity_id` (slug), `mode` A/B, `parent_approved` (mod B: `false` = așteaptă, `true` = aprobat)
 
 Stâlpi: `fizic`, `mental`, `resurse`, `social`.
+
+Feed ICS (R5): `GET /api/calendar/{token}.ics` — 1 eveniment/zi, 14 zile din azi (Europe/Bucharest), zilele dinainte de `joined_at` tăiate ca în R3. Demonstrație: `/api/calendar/demo.ics`.
 
 Săptămâna din V1 este **săptămâna 1 de program**, nu săptămâna ISO din calendar. Azi folosește ziua reală a săptămânii (luni–duminică) din săptămâna 1.
 

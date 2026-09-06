@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ActivityCard } from "@/components/activity-card";
+import { AddToCalendarButton } from "@/components/add-to-calendar-button";
 import { EmptyState } from "@/components/status-blocks";
 import {
   AZI_ALL_DONE,
@@ -102,6 +103,8 @@ export function AziView({ today }: { today: string }) {
           ))}
         </div>
       )}
+
+      <AddToCalendarButton />
     </section>
   );
 }

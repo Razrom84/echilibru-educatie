@@ -30,6 +30,7 @@ import type {
 } from "@/lib/types";
 import { bandFromBirthdate } from "@/lib/band";
 import { normalizeActivity } from "@/lib/seed/week1";
+import { DEMO_CALENDAR_TOKEN, generateCalendarToken } from "@/lib/calendar";
 import { familyJoinFields, familyProgramWeek } from "@/lib/program-week";
 import { getWeekTheme, PROGRAM_AGE_BAND, PROGRAM_WEEK } from "@/lib/week";
 import type { SeedActivity } from "@/lib/types";
@@ -57,6 +58,7 @@ type FamilyContextValue = {
   }) => Promise<void>;
   toggleComplete: (activityId: string) => Promise<void>;
   approveCompletion: (activityId: string) => Promise<void>;
+  ensureCalendarToken: () => Promise<string>;
   signOut: () => Promise<void>;
 };
 
@@ -429,6 +431,30 @@ export function FamilyProvider({
     [completions, isDemo, selectedChild],
   );
 
+  const ensureCalendarToken = useCallback(async () => {
+    if (isDemo) return DEMO_CALENDAR_TOKEN;
+    if (!selectedChild) throw new Error("Alege un copil mai întâi.");
+    if (selectedChild.calendar_token) return selectedChild.calendar_token;
+
+    const token = generateCalendarToken();
+    const supabase = createBrowserSupabase();
+    if (!supabase) throw new Error("Supabase nu este configurat.");
+    const { data, error: updateError } = await supabase
+      .from("children")
+      .update({ calendar_token: token })
+      .eq("id", selectedChild.id)
+      .select("*")
+      .single();
+    if (updateError || !data) {
+      throw new Error(updateError?.message ?? "Nu am putut crea linkul de calendar.");
+    }
+    const child = data as Child;
+    setKids((current) =>
+      current.map((row) => (row.id === child.id ? child : row)),
+    );
+    return child.calendar_token ?? token;
+  }, [isDemo, selectedChild]);
+
   const selectWeek = useCallback(
     (week: number) => {
       if (!isDemo) return;
@@ -471,6 +497,7 @@ export function FamilyProvider({
       updateFamily,
       toggleComplete,
       approveCompletion,
+      ensureCalendarToken,
       signOut,
     }),
     [
@@ -478,6 +505,7 @@ export function FamilyProvider({
       addChild,
       approveCompletion,
       completions,
+      ensureCalendarToken,
       error,
       family,
       isDemo,
