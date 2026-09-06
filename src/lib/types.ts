@@ -8,6 +8,10 @@ export type Family = {
   display_name: string | null;
   default_mode: CompletionMode;
   created_at: string;
+  /** When the family joined the program (timestamptz). Ready after R1 migration. */
+  joined_at?: string | null;
+  /** Monday (YYYY-MM-DD) of the program year in force at join. */
+  program_year_start?: string | null;
 };
 
 export type Child = {

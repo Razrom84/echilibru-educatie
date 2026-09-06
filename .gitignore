@@ -43,3 +43,6 @@ next-env.d.ts
 
 # local agent scratch
 /agent-tools/
+
+# supabase CLI
+supabase/.temp/
