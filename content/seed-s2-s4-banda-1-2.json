@@ -275,7 +275,7 @@
         "pahar gol plastic"
       ],
       "pasi": [
-        "Cărati 5 pași paharul gol.",
+        "Cărați 5 pași paharul gol.",
         "„Tu porți.”"
       ],
       "gata_cand": "A cărat paharul.",
@@ -289,7 +289,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "mental",
-      "titlu": "Apă vs uscat",
+      "titlu": "Apă sau uscat",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -415,7 +415,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "social",
-      "titlu": "Arătăm apei bunicii",
+      "titlu": "Arătăm apa bunicii",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
@@ -962,7 +962,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "resurse",
-      "titlu": "Telefonul pe silențios (model)",
+      "titlu": "Telefonul pe silențios (exemplu)",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
