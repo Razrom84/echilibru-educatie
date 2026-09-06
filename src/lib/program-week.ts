@@ -60,6 +60,32 @@ export function formatCivilDate(date: Date): string {
   return date.toISOString().slice(0, 10);
 }
 
+export function formatCivilParts(civil: CivilDate): string {
+  const pad = (value: number) => String(value).padStart(2, "0");
+  return `${civil.year}-${pad(civil.month)}-${pad(civil.day)}`;
+}
+
+/** YYYY-MM-DD in Europe/Bucharest for instants; date-only strings stay as-is. */
+export function toDateOnlyString(input: DateInput): string {
+  if (typeof input === "string" && DATE_ONLY.test(input)) return input;
+  return formatCivilParts(toCivilDate(input));
+}
+
+export function compareCivilDates(a: DateInput, b: DateInput): number {
+  return toDateOnlyString(a).localeCompare(toDateOnlyString(b));
+}
+
+/** Monday = 1 … Sunday = 7 for the Bucharest civil date of `input`. */
+export function civilDayOfWeek(input: DateInput): number {
+  const civil = toCivilDate(input);
+  return isoDowMonday1(utcDate(civil.year, civil.month, civil.day));
+}
+
+/** Today's civil date in Europe/Bucharest (`YYYY-MM-DD`). */
+export function bucharestToday(now: Date = new Date()): string {
+  return formatCivilParts(civilDateInBucharest(now));
+}
+
 export function civilDateInBucharest(instant: Date): CivilDate {
   const [year, month, day] = BUCHAREST_CIVIL.format(instant).split("-").map(Number);
   return { year, month, day };
@@ -182,4 +208,16 @@ export function familyProgramYearStart(family: {
   if (family.program_year_start) return family.program_year_start;
   const source = family.joined_at ?? family.created_at ?? new Date();
   return formatCivilDate(resolveProgramYearStartMonday(source));
+}
+
+/** S# for `now` using the family's stored / derived program year start. */
+export function familyProgramWeek(
+  family: {
+    program_year_start?: string | null;
+    joined_at?: string | null;
+    created_at?: string | null;
+  } | null,
+  now: DateInput = new Date(),
+): number {
+  return programWeekNumber(now, family ? familyProgramYearStart(family) : undefined);
 }

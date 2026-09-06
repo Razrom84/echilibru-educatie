@@ -30,12 +30,8 @@ import type {
 } from "@/lib/types";
 import { bandFromBirthdate } from "@/lib/band";
 import { normalizeActivity } from "@/lib/seed/week1";
-import {
-  getWeekTheme,
-  PROGRAM_AGE_BAND,
-  PROGRAM_WEEK,
-  type ProgramWeek,
-} from "@/lib/week";
+import { familyJoinFields, familyProgramWeek } from "@/lib/program-week";
+import { getWeekTheme, PROGRAM_AGE_BAND, PROGRAM_WEEK } from "@/lib/week";
 import type { SeedActivity } from "@/lib/types";
 
 type Status = "loading" | "ready" | "error";
@@ -47,12 +43,12 @@ type FamilyContextValue = {
   family: Family | null;
   children: Child[];
   selectedChild: Child | null;
-  selectedWeek: ProgramWeek;
+  selectedWeek: number;
   weekTheme: string;
   activities: Activity[];
   completions: Completion[];
   refresh: () => Promise<void>;
-  selectWeek: (week: ProgramWeek) => void;
+  selectWeek: (week: number) => void;
   selectChild: (childId: string) => Promise<void>;
   addChild: (input: { name: string; birthdate: string | null }) => Promise<void>;
   updateFamily: (input: {
@@ -78,7 +74,7 @@ function writeChildCookie(childId: string) {
   document.cookie = `${CHILD_COOKIE}=${childId}; path=/; max-age=31536000; samesite=lax`;
 }
 
-function writeWeekCookie(week: ProgramWeek) {
+function writeWeekCookie(week: number) {
   document.cookie = `${WEEK_COOKIE}=${week}; path=/; max-age=31536000; samesite=lax`;
   try {
     window.localStorage.setItem(WEEK_STORAGE_KEY, String(week));
@@ -93,7 +89,7 @@ export function FamilyProvider({
   children: tree,
 }: {
   isDemo: boolean;
-  initialWeek?: ProgramWeek;
+  initialWeek?: number;
   children: React.ReactNode;
 }) {
   const router = useRouter();
@@ -102,7 +98,7 @@ export function FamilyProvider({
   const [family, setFamily] = useState<Family | null>(null);
   const [kids, setKids] = useState<Child[]>([]);
   const [selectedChildId, setSelectedChildId] = useState<string | null>(null);
-  const [selectedWeek, setSelectedWeek] = useState<ProgramWeek>(initialWeek);
+  const [demoWeek, setDemoWeek] = useState<number | null>(isDemo ? initialWeek : null);
   const [activities, setActivities] = useState<Activity[]>([]);
   const [completions, setCompletions] = useState<Completion[]>([]);
 
@@ -111,8 +107,14 @@ export function FamilyProvider({
     [kids, selectedChildId],
   );
 
+  const selectedWeek = useMemo(() => {
+    if (isDemo && demoWeek != null) return demoWeek;
+    if (family) return familyProgramWeek(family);
+    return initialWeek;
+  }, [demoWeek, family, initialWeek, isDemo]);
+
   const applyDemo = useCallback(
-    (state: DemoState, week: ProgramWeek) => {
+    (state: DemoState, week: number) => {
       setFamily(state.family);
       setKids(state.children.filter((child) => child.active));
       setSelectedChildId(state.selectedChildId);
@@ -161,11 +163,20 @@ export function FamilyProvider({
 
     let currentFamily = familyRow as Family | null;
     if (!currentFamily) {
-      const { data: created, error: createError } = await supabase
+      const base = {
+        parent_id: user.id,
+        display_name: user.email?.split("@")[0],
+      };
+      let { data: created, error: createError } = await supabase
         .from("families")
-        .insert({ parent_id: user.id, display_name: user.email?.split("@")[0] })
+        .insert({ ...base, ...familyJoinFields() })
         .select("*")
         .single();
+      if (createError) {
+        const retry = await supabase.from("families").insert(base).select("*").single();
+        created = retry.data;
+        createError = retry.error;
+      }
       if (createError || !created) {
         setError(createError?.message ?? "Nu am putut crea familia.");
         setStatus("error");
@@ -418,10 +429,14 @@ export function FamilyProvider({
     [completions, isDemo, selectedChild],
   );
 
-  const selectWeek = useCallback((week: ProgramWeek) => {
-    setSelectedWeek(week);
-    writeWeekCookie(week);
-  }, []);
+  const selectWeek = useCallback(
+    (week: number) => {
+      if (!isDemo) return;
+      setDemoWeek(week);
+      writeWeekCookie(week);
+    },
+    [isDemo],
+  );
 
   const signOut = useCallback(async () => {
     if (isDemo) {
