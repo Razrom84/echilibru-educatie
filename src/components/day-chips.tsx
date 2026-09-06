@@ -51,19 +51,23 @@ export function DayChips({ today }: { today: string }) {
   }, []);
 
   useEffect(() => {
+    if (status !== "ready") return;
     const scroller = scrollerRef.current;
     if (!scroller) return;
     updateScrollButtons();
     scroller.addEventListener("scroll", updateScrollButtons, { passive: true });
+    window.addEventListener("resize", updateScrollButtons);
     const observer = new ResizeObserver(updateScrollButtons);
     observer.observe(scroller);
     return () => {
       scroller.removeEventListener("scroll", updateScrollButtons);
+      window.removeEventListener("resize", updateScrollButtons);
       observer.disconnect();
     };
-  }, [days.length, updateScrollButtons]);
+  }, [days.length, status, updateScrollButtons]);
 
   useEffect(() => {
+    if (status !== "ready") return;
     const scroller = scrollerRef.current;
     if (!scroller) return;
     const active = scroller.querySelector<HTMLElement>(
@@ -77,7 +81,8 @@ export function DayChips({ today }: { today: string }) {
       scrollerBox.left -
       (scroller.clientWidth - activeBox.width) / 2;
     scroller.scrollBy({ left: delta, behavior: "smooth" });
-  }, [selectedDay]);
+    requestAnimationFrame(updateScrollButtons);
+  }, [selectedDay, status, updateScrollButtons]);
 
   const scrollDays = (direction: -1 | 1) => {
     const scroller = scrollerRef.current;
@@ -120,7 +125,7 @@ export function DayChips({ today }: { today: string }) {
               aria-selected={active}
               aria-label={isToday ? `${weekDayName(day)} · azi` : weekDayName(day)}
               className={cn(
-                "min-w-[7.25rem] shrink-0 rounded-2xl border px-3 py-2 text-left",
+                "w-[7.25rem] min-w-[7.25rem] shrink-0 rounded-2xl border px-3 py-2 text-left",
                 active
                   ? "border-primary bg-primary text-primary-foreground"
                   : "border-border bg-card text-foreground",
