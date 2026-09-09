@@ -3,6 +3,10 @@
     {
       "path": "/api/cron/raport-luni",
       "schedule": "0 5 * * 1"
+    },
+    {
+      "path": "/api/cron/raport-an",
+      "schedule": "0 6 2 1 *"
     }
   ]
 }

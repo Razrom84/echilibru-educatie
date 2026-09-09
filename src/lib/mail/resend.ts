@@ -7,6 +7,11 @@ export type MailSendInput = {
   subject: string;
   html: string;
   text: string;
+  attachments?: {
+    filename: string;
+    content: Buffer | Uint8Array;
+    contentType?: string;
+  }[];
 };
 
 export type MailSender = {
@@ -32,6 +37,16 @@ export function createResendSender(
         subject: input.subject,
         html: input.html,
         text: input.text,
+        ...(input.attachments?.length
+          ? {
+              attachments: input.attachments.map((file) => ({
+                filename: file.filename,
+                content: Buffer.isBuffer(file.content)
+                  ? file.content
+                  : Buffer.from(file.content),
+              })),
+            }
+          : {}),
       });
       if (error) {
         throw new Error(error.message || "Resend a refuzat trimiterea.");

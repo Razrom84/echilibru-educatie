@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ActivityCard } from "@/components/activity-card";
 import { DayNoteEditor } from "@/components/day-note-editor";
+import { DayPhotoPicker } from "@/components/day-photo-picker";
 import { AddToCalendarButton } from "@/components/add-to-calendar-button";
 import { EmptyState } from "@/components/status-blocks";
 import {
@@ -28,6 +29,8 @@ export function AziView({ today }: { today: string }) {
     weekTheme,
     toggleComplete,
     family,
+    todayArchive,
+    todayPhotoUrl,
   } = useFamily();
   const [busyId, setBusyId] = useState<string | null>(null);
 
@@ -108,14 +111,26 @@ export function AziView({ today }: { today: string }) {
             key={`${selectedChild.id}-${week}-${day}`}
             dayOfWeek={day}
           />
+          <DayPhotoPicker
+            civilDate={today}
+            photoUrl={todayPhotoUrl}
+            hasPhoto={Boolean(todayArchive?.photo_path)}
+          />
         </div>
       )}
 
       {gate === "open" && todayActivities.length === 0 ? (
-        <DayNoteEditor
-          key={`${selectedChild.id}-${week}-${day}`}
-          dayOfWeek={day}
-        />
+        <>
+          <DayNoteEditor
+            key={`${selectedChild.id}-${week}-${day}`}
+            dayOfWeek={day}
+          />
+          <DayPhotoPicker
+            civilDate={today}
+            photoUrl={todayPhotoUrl}
+            hasPhoto={Boolean(todayArchive?.photo_path)}
+          />
+        </>
       ) : null}
 
       <AddToCalendarButton />

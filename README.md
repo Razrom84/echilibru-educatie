@@ -10,10 +10,11 @@ Nu atinge site-ul englez EQUILIBRIUM / `equilibriumthebook.com`.
 - Autentificare părinte: email + parolă (Supabase Auth)
 - Onboarding: primul copil
 - 8 ecrane: Login, Onboarding, Azi, Săptămână, Detaliu activitate, Progres, Copii, Setări
+- **Arhivă de creștere**: o fotografie comprimată pe zi civilă (Europe/Bucharest), pagină privată, caiet PDF (săptămână / lună / an)
 - Mod A (părintele face împreună / pentru copil) și mod B (bifa copilului + aprobare)
 - Completările se salvează per copil
 - Calendar ICS: **Adaugă în calendar** copiază un link de abonament (`/api/calendar/{token}.ics`); Apple / Google se abonează, fără OAuth
-- Raport luni pe email (V1.3): cron Resend, săptămânal (în afară de prima luni) sau lunar (prima luni); toggle în Setări
+- Raport luni pe email: mesaj scurt că ai caietul PDF gata, cu PDF atașat; săptămânal (în afară de prima luni) sau lunar (prima luni); pe 2 ianuarie: caietul anului trecut
 - RLS: părintele vede doar familia, copiii și completările lui
 - Demonstrație locală, fără cont, dacă lipsesc cheile Supabase
 
@@ -52,7 +53,7 @@ Detalii cron, DST și cum trimiți un test: `docs/TICKETS-V1.3-MAIL-RAPORT-LUNI.
    - `supabase/migrations/20260905000001_init.sql`
    - `supabase/migrations/20260905000002_seed_week1_2_3.sql` (înlocuit de 0003)
    - `supabase/migrations/20260905000003_official_activitate_schema.sql`
-   - …apoi restul din `supabase/migrations/`, inclusiv `20260906060000_rename_banda_2_3_to_1_2.sql` (eticheta live `2-3` → `1-2`), `20260906080000_monday_digest.sql` (toggle + jurnal trimiteri) și `20260906083000_second_parent_email.sql`
+   - …apoi restul din `supabase/migrations/`, inclusiv `20260906060000_rename_banda_2_3_to_1_2.sql` (eticheta live `2-3` → `1-2`), `20260906080000_monday_digest.sql` (toggle + jurnal trimiteri), `20260906083000_second_parent_email.sql` și **`20260909080000_cezar_growth_archive.sql`** (tabel `archive_days` + bucket privat `archive-photos`)
 5. Copiază URL + anon key în `.env.local`.
 
 Sau, cu [Supabase CLI](https://supabase.com/docs/guides/cli):
@@ -74,7 +75,9 @@ Service role nu e pentru browser. Cronul de luni îl folosește pe server ca să
 - **activities**: catalog Cristina (`id` slug, `banda`, `saptamana`, `zi`, `pilon`, `titlu`, `durata_min`, `mod_default`, `materiale[]`, `pasi[]`, `gata_cand`, `nota`, `tema_saptamana`)
 - **completions**: `child_id` + `activity_id` (slug), `mode` A/B, `parent_approved` (mod B: `false` = așteaptă, `true` = aprobat)
 - **day_notes**: notă liberă per `child_id` + `program_year_start` + `week_number` (S#) + `day_of_week` (1–7); text scurt; gol = fără rând
-- **mail_digest_sends**: jurnal idempotent `(family_id, period_key)` pentru raportul de luni
+- **archive_days**: snapshot pe zi civilă (Europe/Bucharest) per copil: etichetă de bandă copiată la scriere, notă, titluri bifate, cale foto. Nu se unește cu catalogul live.
+- **mail_digest_sends**: jurnal idempotent `(family_id, period_key)` pentru raportul de luni / an (`weekly:…`, `monthly:YYYY-MM`, `yearly:YYYY`)
+- **storage `archive-photos`**: bucket privat, JPEG comprimat, o poză / zi; cale `{child_id}/{yyyy-mm-dd}.jpg`. RLS: doar părintele copilului.
 
 Stâlpi: `fizic`, `mental`, `resurse`, `social`.
 
@@ -110,7 +113,27 @@ Origin nu e legat de Vercel din acest agent. Pași:
    - `RESEND_API_KEY`
    - `CRON_SECRET`
 4. Authentication → URL Configuration în Supabase: adaugă domeniul Vercel (și, mai târziu, `educatie.echilibru-cartea.ro`) la Site URL / Redirect URLs.
-5. Deploy. `vercel.json` definește cronul `0 5 * * 1` → `/api/cron/raport-luni` (luni 08:00 EEST / 07:00 EET). Vezi `docs/TICKETS-V1.3-MAIL-RAPORT-LUNI.md`.
+5. Deploy. `vercel.json` definește:
+   - cronul `0 5 * * 1` → `/api/cron/raport-luni` (luni 08:00 EEST / 07:00 EET)
+   - cronul `0 6 2 1 *` → `/api/cron/raport-an` (2 ianuarie 08:00 EET)
+
+## Arhivă de creștere (foto + caiet PDF)
+
+Pe **Azi**: o fotografie pe ziua civilă (Europe/Bucharest), din galerie sau de pe calculator. Se comprimă în browser (JPEG, latură max. 1600px). Originalul rămâne pe dispozitiv. O poză / zi; se poate înlocui sau șterge. Fără video.
+
+**Arhivă** (`/arhiva`): aceeași autentificare, privată pe copil. Deschizi o zi trecută: nota, ce a fost bifat, fotografia dacă există. Descarci manual caietul PDF pentru săptămâna civilă (luni–duminică), luna calendaristică sau anul calendaristic. Același stil: dată, ce ați făcut, notă, thumbnail.
+
+Mailul de luni nu mai pune scoruri în corp: e un mesaj scurt că ai caietul gata, cu PDF-ul atașat. Prima luni din lună = caietul lunii trecute. 2 ianuarie 08:00 Europe/Bucharest = caietul anului calendaristic trecut (cron separat, ca să nu se amestece cu luni).
+
+### SQL de rulat în Supabase (dacă nu faci `db push`)
+
+Dashboard → **SQL Editor** → New query. Lipește tot fișierul:
+
+`supabase/migrations/20260909080000_cezar_growth_archive.sql`
+
+Run. Asta creează `public.archive_days` (RLS) și bucket-ul privat **archive-photos** (Storage → Buckets). Nu bifa Public pe bucket.
+
+Verificare: Storage → Buckets → `archive-photos` → Public = off; Policies pe `storage.objects` pentru `archive_photos_*_own`.
 
 ## Ce nu e în V1
 
