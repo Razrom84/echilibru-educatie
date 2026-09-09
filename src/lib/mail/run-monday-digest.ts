@@ -283,6 +283,7 @@ export async function runMondayDigest(
           children: kids,
           days,
           today: toDateOnlyString(opts.now),
+          family,
         });
         await opts.sender.send({
           to,

@@ -236,6 +236,86 @@ describe("archive periods", () => {
     expect(days[1]?.photo_path).toBe("c1/2026-09-08.jpg");
     expect(days[2]?.photo_path).toBeNull();
   });
+
+  test("expand reads done titles from live completions, not only photo-stamped archive rows", () => {
+    const days = expandBookletDays({
+      period: { start: "2026-09-07", end: "2026-09-09" },
+      today: "2026-09-09",
+      children: [{ id: "c1", age_band_label: "1–2" }],
+      days: [
+        {
+          child_id: "c1",
+          civil_date: "2026-09-09",
+          age_band_label: "1–2",
+          day_note: "Imita aspiratorul.",
+          done_titles: ["Udăm planta"],
+          photo_path: "c1/2026-09-09.jpg",
+        },
+      ],
+      live: {
+        programYearStart: PROGRAM_YEAR_START_MONDAY_2026_27,
+        completions: [
+          {
+            child_id: "c1",
+            activity_id: "mon",
+            completed_at: "2026-09-07T07:00:00.000Z",
+          },
+          {
+            child_id: "c1",
+            activity_id: "wed",
+            completed_at: "2026-09-09T07:00:00.000Z",
+          },
+        ],
+        activities: [
+          { id: "mon", title: "Pași în curte" },
+          { id: "wed", title: "Udăm planta" },
+        ],
+      },
+    });
+    expect(days.map((day) => day.civil_date)).toEqual([
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+    ]);
+    expect(days[0]?.done_titles).toEqual(["Pași în curte"]);
+    expect(days[0]?.photo_path).toBeNull();
+    expect(days[1]?.done_titles).toEqual([]);
+    expect(days[1]?.day_note).toBe("");
+    expect(days[2]?.done_titles).toEqual(["Udăm planta"]);
+    expect(days[2]?.photo_path).toBe("c1/2026-09-09.jpg");
+  });
+
+  test("expand fills done titles onto a photo row that stored none", () => {
+    const days = expandBookletDays({
+      period: { start: "2026-09-07", end: "2026-09-07" },
+      today: "2026-09-09",
+      children: [{ id: "c1", age_band_label: "1–2" }],
+      days: [
+        {
+          child_id: "c1",
+          civil_date: "2026-09-07",
+          age_band_label: "1–2",
+          day_note: "",
+          done_titles: [],
+          photo_path: "c1/2026-09-07.jpg",
+        },
+      ],
+      live: {
+        programYearStart: PROGRAM_YEAR_START_MONDAY_2026_27,
+        completions: [
+          {
+            child_id: "c1",
+            activity_id: "mon",
+            completed_at: "2026-09-07T08:00:00.000Z",
+          },
+        ],
+        activities: [{ id: "mon", title: "Gol și plin" }],
+      },
+    });
+    expect(days).toHaveLength(1);
+    expect(days[0]?.done_titles).toEqual(["Gol și plin"]);
+    expect(days[0]?.photo_path).toBe("c1/2026-09-07.jpg");
+  });
 });
 
 describe("photo file guards", () => {

@@ -22,6 +22,7 @@ import {
   clipArchivePeriodToToday,
   expandBookletDays,
   type ArchivePeriod,
+  type BookletLiveSources,
 } from "@/lib/archive";
 import { formatRoLongDate } from "@/lib/monday-digest";
 import { getDayName } from "@/lib/week";
@@ -315,6 +316,7 @@ export async function buildArchiveBookletPdf(args: {
   photos?: ReadonlyMap<string, ArchivePdfPhoto>;
   fontBytes?: Uint8Array;
   today: string;
+  live?: BookletLiveSources;
 }): Promise<Uint8Array> {
   const pdf = await PDFDocument.create();
   pdf.registerFontkit(fontkit);
@@ -329,6 +331,7 @@ export async function buildArchiveBookletPdf(args: {
     today: args.today,
     children: args.children,
     days: args.days,
+    live: args.live,
   });
 
   if (visible.length === 0) {

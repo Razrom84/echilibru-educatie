@@ -56,6 +56,7 @@ export function ArhivaView({ today }: { today: string }) {
   const {
     selectedChild,
     loadArchiveDays,
+    loadBookletLive,
     signedPhotoUrl,
     downloadPhotoBytes,
   } = useFamily();
@@ -140,6 +141,7 @@ export function ArhivaView({ today }: { today: string }) {
             ? monthPeriod
             : calendarYearPeriod(toCivilDate(selectedDate).year);
       const rows = await loadArchiveDays(period.start, period.end);
+      const live = await loadBookletLive(period.start, period.end, today);
       const photos = new Map<string, { bytes: Uint8Array }>();
       for (const row of rows) {
         if (!row.photo_path) continue;
@@ -161,6 +163,7 @@ export function ArhivaView({ today }: { today: string }) {
         days: rows,
         photos,
         today,
+        live,
       });
       triggerDownload(pdf, pdfDownloadFilename(period));
     } catch (err) {
