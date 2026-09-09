@@ -179,4 +179,39 @@ describe("archive booklet PDF", () => {
     });
     expect(bytes.byteLength).toBeGreaterThan(1000);
   });
+
+  test("week PDF draws live done titles on a day with no photo and no archive row", async () => {
+    const bytes = await buildArchiveBookletPdf({
+      period: civilWeekPeriod("2026-09-09"),
+      children: [{ id: "c1", name: "Cezar", age_band_label: "1–2" }],
+      days: [
+        {
+          child_id: "c1",
+          civil_date: "2026-09-09",
+          age_band_label: "1–2",
+          day_note: "Imita aspiratorul.",
+          done_titles: ["Udăm planta"],
+          photo_path: null,
+        },
+      ],
+      live: {
+        programYearStart: "2026-08-31",
+        completions: [
+          {
+            child_id: "c1",
+            activity_id: "mon",
+            completed_at: "2026-09-07T07:00:00.000Z",
+          },
+        ],
+        activities: [{ id: "mon", title: "Pași în curte" }],
+      },
+      fontBytes: await fontBytes(),
+      today: "2026-09-09",
+    });
+    const pdf = await PDFDocument.create();
+    pdf.registerFontkit(fontkit);
+    const font = await pdf.embedFont(await fontBytes(), { subset: true });
+    expect(() => font.encodeText("Ați făcut: Pași în curte")).not.toThrow();
+    expect(bytes.byteLength).toBeGreaterThan(1000);
+  });
 });

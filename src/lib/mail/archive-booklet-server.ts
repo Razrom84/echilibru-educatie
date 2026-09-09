@@ -1,10 +1,13 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import {
   ARCHIVE_BUCKET,
+  bookletCivilDates,
   eachCivilDate,
   missingArchiveDrafts,
+  seedTitlesForDates,
   snapshotAgeBandLabel,
   type ArchivePeriod,
+  type BookletLiveSources,
 } from "@/lib/archive";
 import {
   buildArchiveBookletPdf,
@@ -12,8 +15,6 @@ import {
   type ArchivePdfDay,
 } from "@/lib/archive-pdf";
 import { familyProgramYearStart } from "@/lib/program-week";
-import { getSeedActivities } from "@/lib/seed/week1";
-import { programWeekNumber } from "@/lib/program-week";
 import type { ArchiveDay } from "@/lib/types";
 
 export type ArchiveChildRow = ArchivePdfChild & {
@@ -35,8 +36,7 @@ export async function hydrateMissingArchiveDays(args: {
   const childIds = args.children.map((child) => child.id);
   const yearStart = familyProgramYearStart(args.family);
   const dates = eachCivilDate(args.period.start, args.period.end);
-  const weeks = [...new Set(dates.map((date) => programWeekNumber(date, yearStart)))];
-  const activities = weeks.flatMap((week) => getSeedActivities(week));
+  const activities = seedTitlesForDates(dates, yearStart);
 
   const [
     { data: existingRows, error: existingError },
@@ -115,14 +115,68 @@ export async function downloadArchivePhotos(
   return photos;
 }
 
+export async function loadBookletLiveSources(args: {
+  supabase: SupabaseClient;
+  childIds: readonly string[];
+  period: Pick<ArchivePeriod, "start" | "end">;
+  today: string;
+  family: {
+    program_year_start?: string | null;
+    joined_at?: string | null;
+    created_at?: string | null;
+  };
+}): Promise<BookletLiveSources> {
+  const yearStart = familyProgramYearStart(args.family);
+  const dates = bookletCivilDates(args.period, args.today);
+  const activities = seedTitlesForDates(dates, yearStart);
+  if (args.childIds.length === 0) {
+    return { programYearStart: yearStart, notes: [], completions: [], activities };
+  }
+  const [
+    { data: noteRows, error: noteError },
+    { data: doneRows, error: doneError },
+  ] = await Promise.all([
+    args.supabase
+      .from("day_notes")
+      .select("child_id, program_year_start, week_number, day_of_week, body")
+      .in("child_id", args.childIds),
+    args.supabase
+      .from("completions")
+      .select("child_id, activity_id, completed_at")
+      .in("child_id", args.childIds),
+  ]);
+  if (noteError) throw new Error(noteError.message);
+  if (doneError) throw new Error(doneError.message);
+  return {
+    programYearStart: yearStart,
+    notes: noteRows ?? [],
+    completions: doneRows ?? [],
+    activities,
+  };
+}
+
 export async function buildFamilyArchivePdf(args: {
   supabase: SupabaseClient;
   period: ArchivePeriod;
   children: readonly (ArchivePdfChild & { age_band?: string })[];
   days: readonly ArchivePdfDay[];
   today: string;
+  family?: {
+    program_year_start?: string | null;
+    joined_at?: string | null;
+    created_at?: string | null;
+  };
 }): Promise<Uint8Array> {
   const photos = await downloadArchivePhotos(args.supabase, args.days);
+  const live = args.family
+    ? await loadBookletLiveSources({
+        supabase: args.supabase,
+        childIds: args.children.map((child) => child.id),
+        period: args.period,
+        today: args.today,
+        family: args.family,
+      })
+    : undefined;
   return buildArchiveBookletPdf({
     period: args.period,
     children: args.children.map((child) => ({
@@ -135,5 +189,6 @@ export async function buildFamilyArchivePdf(args: {
     days: args.days,
     photos,
     today: args.today,
+    live,
   });
 }

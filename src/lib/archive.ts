@@ -24,6 +24,7 @@ import {
   toDateOnlyString,
   type DateInput,
 } from "@/lib/program-week";
+import { getSeedActivities } from "@/lib/seed/week1";
 import type { ArchiveDay, DayNote } from "@/lib/types";
 
 export const ARCHIVE_BUCKET = "archive-photos";
@@ -336,12 +337,65 @@ export type BookletChild = {
   age_band_label?: string | null;
 };
 
+/** Completions + notes for the PDF — not only archive_days stamped when a photo was saved. */
+export type BookletLiveSources = {
+  programYearStart: string;
+  notes?: readonly Pick<
+    DayNote,
+    "child_id" | "program_year_start" | "week_number" | "day_of_week" | "body"
+  >[];
+  completions: readonly {
+    child_id: string;
+    activity_id: string;
+    completed_at: string;
+  }[];
+  activities: readonly { id: string; title: string }[];
+};
+
+export function seedTitlesForDates(
+  dates: readonly string[],
+  programYearStart: string,
+): { id: string; title: string }[] {
+  const weeks = [...new Set(dates.map((date) => programWeekNumber(date, programYearStart)))];
+  const byId = new Map<string, { id: string; title: string }>();
+  for (const week of weeks) {
+    for (const activity of getSeedActivities(week)) {
+      if (!byId.has(activity.id)) {
+        byId.set(activity.id, { id: activity.id, title: activity.title });
+      }
+    }
+  }
+  return [...byId.values()];
+}
+
+function liveContentForDay(
+  childId: string,
+  civilDate: string,
+  live: BookletLiveSources | undefined,
+): { done: string[]; note: string } {
+  if (!live) return { done: [], note: "" };
+  const done = doneTitlesForCivilDate({
+    civilDate,
+    activities: live.activities,
+    completions: live.completions.filter((row) => row.child_id === childId),
+  });
+  const note = live.notes
+    ? noteForCivilDate({
+        civilDate,
+        programYearStart: live.programYearStart,
+        notes: live.notes.filter((row) => row.child_id === childId),
+      })
+    : "";
+  return { done, note };
+}
+
 /** Every civil day in range, including quiet days with no photo and no note. */
 export function expandBookletDays<T extends ArchiveDayDraft>(args: {
   period: Pick<ArchivePeriod, "start" | "end">;
   today: string;
   children: readonly BookletChild[];
   days: readonly T[];
+  live?: BookletLiveSources;
 }): ArchiveDayDraft[] {
   const dates = bookletCivilDates(args.period, args.today);
   const byKey = new Map(
@@ -351,24 +405,18 @@ export function expandBookletDays<T extends ArchiveDayDraft>(args: {
   for (const date of dates) {
     for (const child of args.children) {
       const existing = byKey.get(`${child.id}:${date}`);
-      if (existing) {
-        result.push({
-          child_id: existing.child_id,
-          civil_date: existing.civil_date,
-          age_band_label: existing.age_band_label,
-          day_note: existing.day_note,
-          done_titles: [...existing.done_titles],
-          photo_path: existing.photo_path,
-        });
-        continue;
-      }
+      const liveBits = liveContentForDay(child.id, date, args.live);
       result.push({
-        child_id: child.id,
+        child_id: existing?.child_id ?? child.id,
         civil_date: date,
-        age_band_label: child.age_band_label?.trim() || "",
-        day_note: "",
-        done_titles: [],
-        photo_path: null,
+        age_band_label:
+          existing?.age_band_label?.trim() || child.age_band_label?.trim() || "",
+        day_note: existing?.day_note?.trim() || liveBits.note,
+        done_titles: normalizeDoneTitles([
+          ...(existing?.done_titles ?? []),
+          ...liveBits.done,
+        ]),
+        photo_path: existing?.photo_path ?? null,
       });
     }
   }

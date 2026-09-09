@@ -44,9 +44,12 @@ import {
   addCivilDays,
   archiveDayHasContent,
   archivePhotoPath,
+  bookletCivilDates,
   buildArchiveDraft,
   doneTitlesForCivilDate,
   noteForCivilDate,
+  seedTitlesForDates,
+  type BookletLiveSources,
 } from "@/lib/archive";
 import { compressDayPhoto, jpegFileFromBlob, rejectIfNotPhoto } from "@/lib/archive-photo";
 import {
@@ -100,6 +103,7 @@ type FamilyContextValue = {
   saveDayPhoto: (civilDate: string, file: File) => Promise<void>;
   removeDayPhoto: (civilDate: string) => Promise<void>;
   loadArchiveDays: (start: string, end: string) => Promise<ArchiveDay[]>;
+  loadBookletLive: (start: string, end: string, today: string) => Promise<BookletLiveSources>;
   signedPhotoUrl: (path: string | null) => Promise<string | null>;
   downloadPhotoBytes: (path: string) => Promise<Uint8Array | null>;
   ensureCalendarToken: () => Promise<string>;
@@ -999,6 +1003,57 @@ export function FamilyProvider({
     [isDemo, selectedChild],
   );
 
+  const loadBookletLive = useCallback(
+    async (start: string, end: string, today: string): Promise<BookletLiveSources> => {
+      const yearStart = family ? familyProgramYearStart(family) : familyProgramYearStart({});
+      const dates = bookletCivilDates({ start, end }, today);
+      const activities = seedTitlesForDates(dates, yearStart);
+      if (!selectedChild) {
+        return { programYearStart: yearStart, notes: [], completions: [], activities };
+      }
+      if (isDemo) {
+        const state = readDemoState();
+        return {
+          programYearStart: yearStart,
+          notes: state.dayNotes.filter((note) => note.child_id === selectedChild.id),
+          completions: state.completions.filter((row) => row.child_id === selectedChild.id),
+          activities,
+        };
+      }
+      const supabase = createBrowserSupabase();
+      if (!supabase) {
+        return {
+          programYearStart: yearStart,
+          notes: dayNotes.filter((note) => note.child_id === selectedChild.id),
+          completions: completions.filter((row) => row.child_id === selectedChild.id),
+          activities,
+        };
+      }
+      const [
+        { data: noteRows, error: noteError },
+        { data: doneRows, error: doneError },
+      ] = await Promise.all([
+        supabase
+          .from("day_notes")
+          .select("child_id, program_year_start, week_number, day_of_week, body")
+          .eq("child_id", selectedChild.id),
+        supabase
+          .from("completions")
+          .select("child_id, activity_id, completed_at")
+          .eq("child_id", selectedChild.id),
+      ]);
+      if (noteError) throw new Error(noteError.message);
+      if (doneError) throw new Error(doneError.message);
+      return {
+        programYearStart: yearStart,
+        notes: noteRows ?? [],
+        completions: doneRows ?? [],
+        activities,
+      };
+    },
+    [completions, dayNotes, family, isDemo, selectedChild],
+  );
+
   const approveCompletion = useCallback(
     async (activityId: string) => {
       if (!selectedChild) return;
@@ -1104,6 +1159,7 @@ export function FamilyProvider({
       saveDayPhoto,
       removeDayPhoto,
       loadArchiveDays,
+      loadBookletLive,
       signedPhotoUrl,
       downloadPhotoBytes,
       ensureCalendarToken,
@@ -1122,6 +1178,7 @@ export function FamilyProvider({
       isDemo,
       kids,
       loadArchiveDays,
+      loadBookletLive,
       refresh,
       removeDayPhoto,
       saveDayNote,
