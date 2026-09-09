@@ -112,6 +112,7 @@ export function AziView({ today }: { today: string }) {
             dayOfWeek={day}
           />
           <DayPhotoPicker
+            key={`${selectedChild.id}-${today}`}
             civilDate={today}
             photoUrl={todayPhotoUrl}
             hasPhoto={Boolean(todayArchive?.photo_path)}
@@ -126,6 +127,7 @@ export function AziView({ today }: { today: string }) {
             dayOfWeek={day}
           />
           <DayPhotoPicker
+            key={`${selectedChild.id}-${today}-empty`}
             civilDate={today}
             photoUrl={todayPhotoUrl}
             hasPhoto={Boolean(todayArchive?.photo_path)}

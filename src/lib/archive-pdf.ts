@@ -1,14 +1,26 @@
 /**
  * One PDF style for week / month / year booklets.
  * Date, what you did, the day's note, photo thumbnail. No scores, no video.
+ *
+ * Body copy uses an embedded Unicode font (Source Sans 3 Regular) so Romanian
+ * letters ă â î ș ț draw. Do not fall back to Helvetica / WinAnsi.
  */
 
 import fontkit from "@pdf-lib/fontkit";
-import { PDFDocument, rgb, type PDFFont, type PDFImage, type PDFPage } from "pdf-lib";
+import {
+  PDFDocument,
+  rgb,
+  type PDFFont,
+  type PDFImage,
+  type PDFPage,
+  type RGB,
+} from "pdf-lib";
 import {
   ARCHIVE_EMPTY_PERIOD,
   ARCHIVE_HEADING,
-  archiveDayHasContent,
+  ARCHIVE_QUIET_DAY,
+  clipArchivePeriodToToday,
+  expandBookletDays,
   type ArchivePeriod,
 } from "@/lib/archive";
 import { formatRoLongDate } from "@/lib/monday-digest";
@@ -18,6 +30,7 @@ import { civilDayOfWeek } from "@/lib/program-week";
 export type ArchivePdfChild = {
   id: string;
   name: string;
+  age_band_label?: string | null;
 };
 
 export type ArchivePdfDay = {
@@ -42,7 +55,9 @@ const INK = rgb(74 / 255, 61 / 255, 50 / 255);
 const GREEN = rgb(61 / 255, 90 / 255, 69 / 255);
 const MUTED = rgb(122 / 255, 109 / 255, 94 / 255);
 const RULE = rgb(230 / 255, 220 / 255, 200 / 255);
-const FONT_PATH = "public/fonts/SourceSans3-LatinExt-Regular.ttf";
+
+/** Full Regular — Basic Latin + Latin-1 + Romanian. Not a latin-ext-only cut. */
+export const ARCHIVE_FONT_PATH = "public/fonts/SourceSans3-Regular.ttf";
 
 let cachedFontBytes: Uint8Array | null = null;
 
@@ -51,10 +66,10 @@ export async function loadArchiveFontBytes(): Promise<Uint8Array> {
   if (typeof window === "undefined") {
     const { readFile } = await import("node:fs/promises");
     const { join } = await import("node:path");
-    cachedFontBytes = new Uint8Array(await readFile(join(process.cwd(), FONT_PATH)));
+    cachedFontBytes = new Uint8Array(await readFile(join(process.cwd(), ARCHIVE_FONT_PATH)));
     return cachedFontBytes;
   }
-  const response = await fetch("/fonts/SourceSans3-LatinExt-Regular.ttf");
+  const response = await fetch("/fonts/SourceSans3-Regular.ttf");
   if (!response.ok) throw new Error("Nu am putut încărca fontul pentru PDF.");
   cachedFontBytes = new Uint8Array(await response.arrayBuffer());
   return cachedFontBytes;
@@ -101,12 +116,26 @@ type Layout = {
   page: PDFPage;
   y: number;
   font: PDFFont;
-  boldish: PDFFont;
 };
+
+function drawRun(
+  page: PDFPage,
+  text: string,
+  opts: { x: number; y: number; size: number; font: PDFFont; color: RGB },
+): void {
+  if (!text) return;
+  page.drawText(text, {
+    x: opts.x,
+    y: opts.y,
+    size: opts.size,
+    font: opts.font,
+    color: opts.color,
+  });
+}
 
 function newPage(pdf: PDFDocument, font: PDFFont): Layout {
   const page = pdf.addPage([PAGE_WIDTH, PAGE_HEIGHT]);
-  return { page, y: PAGE_HEIGHT - MARGIN, font, boldish: font };
+  return { page, y: PAGE_HEIGHT - MARGIN, font };
 }
 
 function ensureSpace(pdf: PDFDocument, layout: Layout, need: number): Layout {
@@ -122,7 +151,7 @@ function drawCover(
   },
 ): Layout {
   const { page, font } = layout;
-  page.drawText("ECHILIBRU EDUCAȚIE", {
+  drawRun(page, "ECHILIBRU EDUCAȚIE", {
     x: MARGIN,
     y: layout.y,
     size: 10,
@@ -130,7 +159,7 @@ function drawCover(
     color: MUTED,
   });
   layout.y -= 28;
-  page.drawText(ARCHIVE_HEADING, {
+  drawRun(page, ARCHIVE_HEADING, {
     x: MARGIN,
     y: layout.y,
     size: 26,
@@ -143,7 +172,7 @@ function drawCover(
       ? args.children[0]!.name
       : args.children.map((child) => child.name).join(" · ");
   if (who) {
-    page.drawText(who, {
+    drawRun(page, who, {
       x: MARGIN,
       y: layout.y,
       size: 16,
@@ -152,7 +181,7 @@ function drawCover(
     });
     layout.y -= 22;
   }
-  page.drawText(args.period.label, {
+  drawRun(page, args.period.label, {
     x: MARGIN,
     y: layout.y,
     size: 13,
@@ -170,6 +199,11 @@ function drawCover(
   return layout;
 }
 
+function isQuietDay(day: ArchivePdfDay, hasPhoto: boolean): boolean {
+  const done = day.done_titles.filter((title) => title.trim());
+  return done.length === 0 && !day.day_note.trim() && !hasPhoto;
+}
+
 function dayBlockHeight(
   font: PDFFont,
   day: ArchivePdfDay,
@@ -184,6 +218,9 @@ function dayBlockHeight(
   }
   if (note) {
     lines += wrapText(font, `Notă: ${note}`, 11, textWidth).length;
+  }
+  if (isQuietDay(day, hasPhoto)) {
+    lines += wrapText(font, ARCHIVE_QUIET_DAY, 11, textWidth).length;
   }
   const textH = lines * 14 + 12;
   return Math.max(hasPhoto ? THUMB + 16 : 56, textH);
@@ -218,7 +255,7 @@ function drawDay(
   let ty = top - 12;
   const weekday = getDayName(civilDayOfWeek(day.civil_date));
   const heading = `${weekday}, ${formatRoLongDate(day.civil_date)}`;
-  page.drawText(heading, {
+  drawRun(page, heading, {
     x: textX,
     y: ty,
     size: 13,
@@ -230,7 +267,7 @@ function drawDay(
     .filter(Boolean)
     .join(" · ");
   if (meta) {
-    page.drawText(meta, {
+    drawRun(page, meta, {
       x: textX,
       y: ty,
       size: 10,
@@ -242,14 +279,20 @@ function drawDay(
   const done = day.done_titles.filter((title) => title.trim());
   if (done.length > 0) {
     for (const line of wrapText(font, `Ați făcut: ${done.join("; ")}`, 11, textWidth)) {
-      page.drawText(line, { x: textX, y: ty, size: 11, font, color: INK });
+      drawRun(page, line, { x: textX, y: ty, size: 11, font, color: INK });
       ty -= 14;
     }
   }
   const note = day.day_note.trim();
   if (note) {
     for (const line of wrapText(font, `Notă: ${note}`, 11, textWidth)) {
-      page.drawText(line, { x: textX, y: ty, size: 11, font, color: INK });
+      drawRun(page, line, { x: textX, y: ty, size: 11, font, color: INK });
+      ty -= 14;
+    }
+  }
+  if (isQuietDay(day, Boolean(photo))) {
+    for (const line of wrapText(font, ARCHIVE_QUIET_DAY, 11, textWidth)) {
+      drawRun(page, line, { x: textX, y: ty, size: 11, font, color: MUTED });
       ty -= 14;
     }
   }
@@ -271,20 +314,25 @@ export async function buildArchiveBookletPdf(args: {
   days: readonly ArchivePdfDay[];
   photos?: ReadonlyMap<string, ArchivePdfPhoto>;
   fontBytes?: Uint8Array;
+  today: string;
 }): Promise<Uint8Array> {
   const pdf = await PDFDocument.create();
   pdf.registerFontkit(fontkit);
   const fontBytes = args.fontBytes ?? (await loadArchiveFontBytes());
   const font = await pdf.embedFont(fontBytes, { subset: true });
+  const period = clipArchivePeriodToToday(args.period, args.today);
   let layout = newPage(pdf, font);
-  layout = drawCover(layout, { period: args.period, children: args.children });
+  layout = drawCover(layout, { period, children: args.children });
 
-  const visible = args.days
-    .filter((day) => archiveDayHasContent(day))
-    .sort((a, b) => a.civil_date.localeCompare(b.civil_date) || a.child_id.localeCompare(b.child_id));
+  const visible = expandBookletDays({
+    period,
+    today: args.today,
+    children: args.children,
+    days: args.days,
+  });
 
   if (visible.length === 0) {
-    layout.page.drawText(ARCHIVE_EMPTY_PERIOD, {
+    drawRun(layout.page, ARCHIVE_EMPTY_PERIOD, {
       x: MARGIN,
       y: layout.y,
       size: 12,
@@ -307,7 +355,7 @@ export async function buildArchiveBookletPdf(args: {
     }
   }
 
-  pdf.setTitle(`${ARCHIVE_HEADING} · ${args.period.label}`);
+  pdf.setTitle(`${ARCHIVE_HEADING} · ${period.label}`);
   pdf.setAuthor("Echilibru educație");
   pdf.setLanguage("ro");
   return pdf.save();
