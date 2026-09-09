@@ -1,20 +1,22 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
-import { renderDigestEmail } from "@/lib/monday-digest-email";
+import { renderArchiveReadyEmail } from "@/lib/archive-email";
+import { pdfDownloadFilename } from "@/lib/archive-pdf";
 import {
   digestCcAddress,
-  digestSelection,
   testPeriodKey,
   type DigestKind,
 } from "@/lib/monday-digest";
 import { bucharestToday, type DateInput } from "@/lib/program-week";
+import { composeArchiveMail } from "@/lib/mail/compose-archive-mail";
 import {
-  composeMondayDigest,
-  type ComposeFamily,
-  type DigestChild,
-  type DigestCompletion,
-  type DigestDayNote,
-} from "@/lib/mail/compose-monday-digest";
+  buildFamilyArchivePdf,
+  hydrateMissingArchiveDays,
+  loadArchiveDaysInPeriod,
+  type ArchiveChildRow,
+} from "@/lib/mail/archive-booklet-server";
 import type { MailSender } from "@/lib/mail/resend";
+import { getWeekTheme } from "@/lib/week";
+import { closedWeekContext } from "@/lib/monday-digest";
 
 export type DigestRunOptions = {
   now: DateInput;
@@ -60,8 +62,13 @@ export type DigestRunResult = {
   };
 };
 
-type FamilyRow = ComposeFamily & {
+type FamilyRow = {
+  id: string;
   parent_id: string;
+  program_year_start?: string | null;
+  joined_at?: string | null;
+  created_at?: string | null;
+  monday_digest_email?: boolean | null;
   second_parent_email?: string | null;
 };
 
@@ -129,72 +136,24 @@ export async function runMondayDigest(
   const familyIds = families.map((row) => row.id);
   const { data: childRows, error: childError } = await opts.supabase
     .from("children")
-    .select("id, name, family_id")
+    .select("id, name, family_id, age_band")
     .eq("active", true)
     .in("family_id", familyIds);
   if (childError) throw new Error(childError.message);
 
-  const childrenByFamily = new Map<string, DigestChild[]>();
-  for (const row of childRows ?? []) {
+  const childrenByFamily = new Map<string, ArchiveChildRow[]>();
+  for (const row of (childRows ?? []) as ArchiveChildRow[]) {
     const list = childrenByFamily.get(row.family_id) ?? [];
-    list.push({ id: row.id, name: row.name });
+    list.push(row);
     childrenByFamily.set(row.family_id, list);
   }
 
-  const childIds = (childRows ?? []).map((row) => row.id);
-  let completions: DigestCompletion[] = [];
-  let notes: (DigestDayNote & {
-    program_year_start?: string;
-    family_id?: string;
-    child_id: string;
-  })[] = [];
-
-  if (childIds.length > 0) {
-    const [{ data: doneRows, error: doneError }, { data: noteRows, error: noteError }] =
-      await Promise.all([
-        opts.supabase
-          .from("completions")
-          .select("child_id, activity_id")
-          .in("child_id", childIds),
-        opts.supabase
-          .from("day_notes")
-          .select("child_id, week_number, day_of_week, body, program_year_start")
-          .in("child_id", childIds),
-      ]);
-    if (doneError) throw new Error(doneError.message);
-    if (noteError) throw new Error(noteError.message);
-    completions = (doneRows ?? []) as DigestCompletion[];
-    notes = (noteRows ?? []) as typeof notes;
-  }
-
-  const childFamily = new Map(
-    (childRows ?? []).map((row) => [row.id, row.family_id as string]),
-  );
-
   for (const family of families) {
     const kids = childrenByFamily.get(family.id) ?? [];
-    const selected = digestSelection(opts.now, family, opts.kindOverride);
-    const yearStart =
-      selected.kind === "weekly"
-        ? selected.closed.programYearStart
-        : family.program_year_start;
-    const familyCompletions = completions.filter(
-      (row) => childFamily.get(row.child_id) === family.id,
-    );
-    const familyNotes = notes.filter((row) => {
-      if (childFamily.get(row.child_id) !== family.id) return false;
-      if (yearStart && row.program_year_start && row.program_year_start !== yearStart) {
-        return false;
-      }
-      return true;
-    });
-
-    const composed = composeMondayDigest({
+    const composed = composeArchiveMail({
       now: opts.now,
       family,
-      children: kids,
-      completions: familyCompletions,
-      notes: familyNotes,
+      days: [],
       kindOverride: opts.kindOverride,
       ignoreToggle: Boolean(opts.testSend),
     });
@@ -204,31 +163,70 @@ export async function runMondayDigest(
       continue;
     }
 
-    const model = composed.model;
-    if (composed.status === "skipped-empty") {
+    const period = composed.period;
+    try {
+      await hydrateMissingArchiveDays({
+        supabase: opts.supabase,
+        children: kids,
+        period,
+        family,
+      });
+    } catch (err) {
       outcomes.push({
         familyId: family.id,
-        status: "skipped-empty",
-        periodKey: model.periodKey,
-        kind: model.kind,
-        subject: model.subject,
+        status: "error",
+        periodKey: period.periodKey,
+        kind: period.kind,
+        error: err instanceof Error ? err.message : "Nu am putut pregăti arhiva.",
       });
       continue;
     }
+
+    const days = await loadArchiveDaysInPeriod(
+      opts.supabase,
+      kids.map((child) => child.id),
+      period,
+    );
+    const ready = composeArchiveMail({
+      now: opts.now,
+      family,
+      days,
+      kindOverride: opts.kindOverride,
+      ignoreToggle: Boolean(opts.testSend),
+    });
+
+    if (ready.status === "skipped-toggle") {
+      outcomes.push({ familyId: family.id, status: "skipped-toggle" });
+      continue;
+    }
+    if (ready.status === "skipped-empty") {
+      outcomes.push({
+        familyId: family.id,
+        status: "skipped-empty",
+        periodKey: ready.period.periodKey,
+        kind: ready.period.kind,
+      });
+      continue;
+    }
+
+    const theme =
+      ready.period.kind === "weekly"
+        ? getWeekTheme(closedWeekContext(opts.now, family).week)
+        : undefined;
+    const email = renderArchiveReadyEmail({ period: ready.period, theme });
 
     const to = opts.toOverride ?? (await parentEmail(opts.supabase, family.parent_id));
     if (!to) {
       outcomes.push({
         familyId: family.id,
         status: "skipped-no-email",
-        periodKey: model.periodKey,
-        kind: model.kind,
+        periodKey: ready.period.periodKey,
+        kind: ready.period.kind,
       });
       continue;
     }
 
     const cc = digestCcAddress(family.second_parent_email, to);
-    const email = renderDigestEmail(model);
     preview = {
       to,
       cc,
@@ -241,8 +239,8 @@ export async function runMondayDigest(
       outcomes.push({
         familyId: family.id,
         status: "dry-run",
-        periodKey: model.periodKey,
-        kind: model.kind,
+        periodKey: ready.period.periodKey,
+        kind: ready.period.kind,
         subject: email.subject,
         to,
         cc,
@@ -254,38 +252,56 @@ export async function runMondayDigest(
       outcomes.push({
         familyId: family.id,
         status: "error",
-        periodKey: model.periodKey,
-        kind: model.kind,
+        periodKey: ready.period.periodKey,
+        kind: ready.period.kind,
         error: "RESEND_API_KEY lipsește.",
       });
       continue;
     }
 
-    const periodKey = opts.testSend ? testPeriodKey() : model.periodKey;
+    const periodKey = opts.testSend ? testPeriodKey() : ready.period.periodKey;
     try {
-      const claim = await claimSend(opts.supabase, family.id, periodKey, model.kind);
+      const claim = await claimSend(
+        opts.supabase,
+        family.id,
+        periodKey,
+        ready.period.kind,
+      );
       if (claim === "already") {
         outcomes.push({
           familyId: family.id,
           status: "skipped-already",
           periodKey,
-          kind: model.kind,
+          kind: ready.period.kind,
         });
         continue;
       }
       try {
+        const pdf = await buildFamilyArchivePdf({
+          supabase: opts.supabase,
+          period: ready.period,
+          children: kids,
+          days,
+        });
         await opts.sender.send({
           to,
           cc,
           subject: email.subject,
           html: email.html,
           text: email.text,
+          attachments: [
+            {
+              filename: pdfDownloadFilename(ready.period),
+              content: pdf,
+              contentType: "application/pdf",
+            },
+          ],
         });
         outcomes.push({
           familyId: family.id,
           status: "sent",
           periodKey,
-          kind: model.kind,
+          kind: ready.period.kind,
           subject: email.subject,
           to,
           cc,
@@ -299,7 +315,7 @@ export async function runMondayDigest(
         familyId: family.id,
         status: "error",
         periodKey,
-        kind: model.kind,
+        kind: ready.period.kind,
         error: err instanceof Error ? err.message : "Trimiterea a eșuat.",
       });
     }
@@ -323,4 +339,3 @@ export function summarizeRun(result: DigestRunResult) {
   }
   return { ...counts, families: result.outcomes.length };
 }
-

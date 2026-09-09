@@ -7,10 +7,11 @@ import { bucharestToday } from "@/lib/program-week";
 import type { DigestKind } from "@/lib/monday-digest";
 
 export const dynamic = "force-dynamic";
+export const maxDuration = 60;
 
 function parseKind(url: URL): DigestKind | null {
   const raw = url.searchParams.get("kind");
-  return raw === "weekly" || raw === "monthly" ? raw : null;
+  return raw === "weekly" || raw === "monthly" || raw === "yearly" ? raw : null;
 }
 
 export async function POST(request: Request) {

@@ -3,6 +3,7 @@ import { PROGRAM_YEAR_START_MONDAY_2026_27 } from "@/lib/fixtures/program-year-2
 import { WEEK_THEMES } from "@/lib/week";
 import {
   DIGEST_ANUL_URL,
+  DIGEST_ARHIVA_URL,
   DIGEST_AZI_URL,
   DIGEST_CC_HELP,
   DIGEST_CC_INVALID,
@@ -24,12 +25,14 @@ import {
   familyWantsMondayDigest,
   formatRoMonthYear,
   isFirstMondayOfMonth,
+  isJanuarySecond,
   monthlyPeriodKey,
   monthlyProgressLine,
   monthlySubject,
   noteLine,
   parseOptionalEmail,
   previousCalendarMonth,
+  previousCalendarYear,
   progressLine,
   selectDigestKind,
   shouldSkipDigest,
@@ -37,6 +40,7 @@ import {
   visibleNotes,
   weeklyPeriodKey,
   weeklySubject,
+  yearlyPeriodKey,
   weeksOverlappingMonth,
 } from "./monday-digest";
 
@@ -55,18 +59,26 @@ describe("Cristina copy (V1.3)", () => {
     );
     expect(DIGEST_TOGGLE_LABEL).toBe("Raport luni pe email");
     expect(DIGEST_TOGGLE_HELP).toBe(
-      "Luni dimineața, un rezumat al săptămânii. Prima luni din lună: rezumatul lunii trecute.",
+      "Luni dimineața, un mesaj scurt că ai caietul PDF gata. Prima luni din lună: caietul lunii trecute. Pe 2 ianuarie: caietul anului trecut.",
     );
-    expect(WEEKLY_INTRO).toContain("Săptămâna trecută");
-    expect(MONTHLY_INTRO).toContain("Luna trecută");
+    expect(WEEKLY_INTRO).toContain("Caietul săptămânii");
+    expect(MONTHLY_INTRO).toContain("Caietul lunii");
     expect(DIGEST_AZI_URL).toBe("https://educatie.echilibru-cartea.ro/azi");
     expect(DIGEST_ANUL_URL).toBe("https://educatie.echilibru-cartea.ro/anul");
+    expect(DIGEST_ARHIVA_URL).toBe("https://educatie.echilibru-cartea.ro/arhiva");
     expect(DIGEST_CC_LABEL).toBe("Email al doilea părinte (opțional)");
     expect(DIGEST_CC_HELP).toBe(
       "Primește și el raportul de luni, în copie. Gol = fără copie.",
     );
     expect(DIGEST_CC_INVALID).toBe("Scrie un email valid, sau lasă gol.");
-    expect(DIGEST_TEST_SKIPPED).toBe("Nimic de raportat săptămâna trecută");
+    expect(isJanuarySecond("2027-01-02")).toBe(true);
+    expect(isJanuarySecond("2027-01-03")).toBe(false);
+    expect(yearlyPeriodKey(2026)).toBe("yearly:2026");
+    expect(previousCalendarYear("2027-01-02")).toMatchObject({
+      year: 2026,
+      start: "2026-01-01",
+      end: "2026-12-31",
+    });
   });
 
   test("copy stays Romanian", () => {

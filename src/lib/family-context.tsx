@@ -14,9 +14,12 @@ import {
   addDemoChild,
   clearDemoSession,
   demoActivities,
+  demoArchiveDaysForChild,
   demoDayNotesForWeek,
   readDemoState,
+  removeDemoArchiveDay,
   removeDemoCompletion,
+  upsertDemoArchiveDay,
   upsertDemoCompletion,
   upsertDemoDayNote,
   writeDemoState,
@@ -25,6 +28,7 @@ import {
 import { createBrowserSupabase } from "@/lib/supabase/client";
 import type {
   Activity,
+  ArchiveDay,
   Child,
   Completion,
   CompletionMode,
@@ -33,12 +37,33 @@ import type {
 } from "@/lib/types";
 import { bandFromBirthdate } from "@/lib/band";
 import { normalizeDayNoteBody } from "@/lib/day-note";
-import { normalizeActivity } from "@/lib/seed/week1";
+import { getSeedActivities, normalizeActivity } from "@/lib/seed/week1";
 import { DEMO_CALENDAR_TOKEN, generateCalendarToken } from "@/lib/calendar";
 import {
+  ARCHIVE_BUCKET,
+  addCivilDays,
+  archiveDayHasContent,
+  archivePhotoPath,
+  buildArchiveDraft,
+  doneTitlesForCivilDate,
+  noteForCivilDate,
+} from "@/lib/archive";
+import { compressDayPhoto, jpegFileFromBlob, rejectIfNotPhoto } from "@/lib/archive-photo";
+import {
+  deleteDemoPhoto,
+  demoPhotoObjectUrl,
+  readDemoPhoto,
+  saveDemoPhoto,
+} from "@/lib/demo/photos";
+import {
+  bucharestToday,
+  civilDayOfWeek,
   familyJoinFields,
   familyProgramWeek,
   familyProgramYearStart,
+  programWeekNumber,
+  programWeekRange,
+  toDateOnlyString,
 } from "@/lib/program-week";
 import { getWeekTheme, PROGRAM_AGE_BAND, PROGRAM_WEEK } from "@/lib/week";
 import type { SeedActivity } from "@/lib/types";
@@ -57,6 +82,8 @@ type FamilyContextValue = {
   activities: Activity[];
   completions: Completion[];
   dayNotes: DayNote[];
+  todayArchive: ArchiveDay | null;
+  todayPhotoUrl: string | null;
   refresh: () => Promise<void>;
   selectWeek: (week: number) => void;
   selectChild: (childId: string) => Promise<void>;
@@ -70,6 +97,11 @@ type FamilyContextValue = {
   toggleComplete: (activityId: string) => Promise<void>;
   approveCompletion: (activityId: string) => Promise<void>;
   saveDayNote: (dayOfWeek: number, body: string) => Promise<void>;
+  saveDayPhoto: (civilDate: string, file: File) => Promise<void>;
+  removeDayPhoto: (civilDate: string) => Promise<void>;
+  loadArchiveDays: (start: string, end: string) => Promise<ArchiveDay[]>;
+  signedPhotoUrl: (path: string | null) => Promise<string | null>;
+  downloadPhotoBytes: (path: string) => Promise<Uint8Array | null>;
   ensureCalendarToken: () => Promise<string>;
   signOut: () => Promise<void>;
 };
@@ -97,6 +129,10 @@ function writeWeekCookie(week: number) {
   }
 }
 
+function demoRowId(prefix: string) {
+  return `${prefix}-${Math.random().toString(36).slice(2, 10)}`;
+}
+
 export function FamilyProvider({
   isDemo,
   initialWeek = PROGRAM_WEEK,
@@ -116,6 +152,8 @@ export function FamilyProvider({
   const [activities, setActivities] = useState<Activity[]>([]);
   const [completions, setCompletions] = useState<Completion[]>([]);
   const [dayNotes, setDayNotes] = useState<DayNote[]>([]);
+  const [todayArchive, setTodayArchive] = useState<ArchiveDay | null>(null);
+  const [todayPhotoUrl, setTodayPhotoUrl] = useState<string | null>(null);
 
   const selectedChild = useMemo(
     () => kids.find((child) => child.id === selectedChildId) ?? kids[0] ?? null,
@@ -136,6 +174,12 @@ export function FamilyProvider({
       setActivities(demoActivities(week));
       setCompletions(state.completions);
       setDayNotes(demoDayNotesForWeek(state, week));
+      const today = bucharestToday();
+      const childId = state.selectedChildId;
+      const row =
+        demoArchiveDaysForChild(state, childId).find((item) => item.civil_date === today) ??
+        null;
+      setTodayArchive(row);
     },
     [],
   );
@@ -143,7 +187,26 @@ export function FamilyProvider({
   const refresh = useCallback(async () => {
     setError(null);
     if (isDemo) {
-      applyDemo(readDemoState(), selectedWeek);
+      const state = readDemoState();
+      applyDemo(state, selectedWeek);
+      const today = bucharestToday();
+      const childId = state.selectedChildId;
+      const row =
+        demoArchiveDaysForChild(state, childId).find((item) => item.civil_date === today) ??
+        null;
+      setTodayArchive(row);
+      if (childId && row?.photo_path) {
+        const url = await demoPhotoObjectUrl(childId, today);
+        setTodayPhotoUrl((prev) => {
+          if (prev) URL.revokeObjectURL(prev);
+          return url;
+        });
+      } else {
+        setTodayPhotoUrl((prev) => {
+          if (prev) URL.revokeObjectURL(prev);
+          return null;
+        });
+      }
       setStatus("ready");
       return;
     }
@@ -247,9 +310,11 @@ export function FamilyProvider({
 
     if (nextSelected) {
       const yearStart = familyProgramYearStart(currentFamily);
+      const today = bucharestToday();
       const [
         { data: doneRows, error: doneError },
         { data: noteRows, error: noteError },
+        { data: archiveRow, error: archiveError },
       ] = await Promise.all([
         supabase.from("completions").select("*").eq("child_id", nextSelected),
         supabase
@@ -258,6 +323,12 @@ export function FamilyProvider({
           .eq("child_id", nextSelected)
           .eq("program_year_start", yearStart)
           .eq("week_number", selectedWeek),
+        supabase
+          .from("archive_days")
+          .select("*")
+          .eq("child_id", nextSelected)
+          .eq("civil_date", today)
+          .maybeSingle(),
       ]);
       if (doneError) {
         setError(doneError.message);
@@ -269,11 +340,28 @@ export function FamilyProvider({
         setStatus("error");
         return;
       }
+      if (archiveError) {
+        setError(archiveError.message);
+        setStatus("error");
+        return;
+      }
       setCompletions((doneRows ?? []) as Completion[]);
       setDayNotes((noteRows ?? []) as DayNote[]);
+      const archive = (archiveRow as ArchiveDay | null) ?? null;
+      setTodayArchive(archive);
+      if (archive?.photo_path) {
+        const signed = await supabase.storage
+          .from(ARCHIVE_BUCKET)
+          .createSignedUrl(archive.photo_path, 3600);
+        setTodayPhotoUrl(signed.data?.signedUrl ?? null);
+      } else {
+        setTodayPhotoUrl(null);
+      }
     } else {
       setCompletions([]);
       setDayNotes([]);
+      setTodayArchive(null);
+      setTodayPhotoUrl(null);
     }
 
     setStatus("ready");
@@ -295,14 +383,33 @@ export function FamilyProvider({
         writeDemoState(state);
         setCompletions(state.completions);
         setDayNotes(demoDayNotesForWeek(state, selectedWeek));
+        const today = bucharestToday();
+        const row =
+          demoArchiveDaysForChild(state, childId).find((item) => item.civil_date === today) ??
+          null;
+        setTodayArchive(row);
+        if (row?.photo_path) {
+          const url = await demoPhotoObjectUrl(childId, today);
+          setTodayPhotoUrl((prev) => {
+            if (prev) URL.revokeObjectURL(prev);
+            return url;
+          });
+        } else {
+          setTodayPhotoUrl((prev) => {
+            if (prev) URL.revokeObjectURL(prev);
+            return null;
+          });
+        }
         return;
       }
       const supabase = createBrowserSupabase();
       if (!supabase || !family) return;
       const yearStart = familyProgramYearStart(family);
+      const today = bucharestToday();
       const [
         { data, error: doneError },
         { data: noteRows, error: noteError },
+        { data: archiveRow, error: archiveError },
       ] = await Promise.all([
         supabase.from("completions").select("*").eq("child_id", childId),
         supabase
@@ -311,6 +418,12 @@ export function FamilyProvider({
           .eq("child_id", childId)
           .eq("program_year_start", yearStart)
           .eq("week_number", selectedWeek),
+        supabase
+          .from("archive_days")
+          .select("*")
+          .eq("child_id", childId)
+          .eq("civil_date", today)
+          .maybeSingle(),
       ]);
       if (doneError) {
         setError(doneError.message);
@@ -320,8 +433,22 @@ export function FamilyProvider({
         setError(noteError.message);
         return;
       }
+      if (archiveError) {
+        setError(archiveError.message);
+        return;
+      }
       setCompletions((data ?? []) as Completion[]);
       setDayNotes((noteRows ?? []) as DayNote[]);
+      const archive = (archiveRow as ArchiveDay | null) ?? null;
+      setTodayArchive(archive);
+      if (archive?.photo_path) {
+        const signed = await supabase.storage
+          .from(ARCHIVE_BUCKET)
+          .createSignedUrl(archive.photo_path, 3600);
+        setTodayPhotoUrl(signed.data?.signedUrl ?? null);
+      } else {
+        setTodayPhotoUrl(null);
+      }
     },
     [family, isDemo, selectedWeek],
   );
@@ -354,6 +481,8 @@ export function FamilyProvider({
       writeChildCookie(child.id);
       setCompletions([]);
       setDayNotes([]);
+      setTodayArchive(null);
+      setTodayPhotoUrl(null);
     },
     [applyDemo, family, isDemo, selectedWeek],
   );
@@ -414,6 +543,156 @@ export function FamilyProvider({
     [family, isDemo],
   );
 
+  const stampArchiveDay = useCallback(
+    async (args: {
+      civilDate: string;
+      completions: Completion[];
+      dayNotes: DayNote[];
+      photoPath?: string | null;
+      clearPhoto?: boolean;
+      preferExistingDone?: boolean;
+    }): Promise<ArchiveDay | null> => {
+      if (!selectedChild || !family) return null;
+      const yearStart = familyProgramYearStart(family);
+      const week = programWeekNumber(args.civilDate, yearStart);
+      const catalog = getSeedActivities(week);
+      let existing: ArchiveDay | null = null;
+      if (isDemo) {
+        existing =
+          demoArchiveDaysForChild(readDemoState(), selectedChild.id).find(
+            (row) => row.civil_date === args.civilDate,
+          ) ?? null;
+      } else {
+        const supabase = createBrowserSupabase();
+        if (!supabase) return null;
+        const { data } = await supabase
+          .from("archive_days")
+          .select("*")
+          .eq("child_id", selectedChild.id)
+          .eq("civil_date", args.civilDate)
+          .maybeSingle();
+        existing = (data as ArchiveDay | null) ?? null;
+      }
+
+      const photoPath = args.clearPhoto
+        ? null
+        : args.photoPath !== undefined
+          ? args.photoPath
+          : (existing?.photo_path ?? null);
+
+      let notesForDay = args.dayNotes;
+      const hasNote = notesForDay.some(
+        (note) =>
+          note.child_id === selectedChild.id &&
+          note.program_year_start === yearStart &&
+          note.week_number === week &&
+          note.day_of_week === civilDayOfWeek(args.civilDate),
+      );
+      if (!hasNote) {
+        if (isDemo) {
+          notesForDay = readDemoState().dayNotes;
+        } else {
+          const notesClient = createBrowserSupabase();
+          if (notesClient) {
+            const { data: extraNotes } = await notesClient
+              .from("day_notes")
+              .select("*")
+              .eq("child_id", selectedChild.id)
+              .eq("program_year_start", yearStart)
+              .eq("week_number", week)
+              .eq("day_of_week", civilDayOfWeek(args.civilDate));
+            if (extraNotes?.length) {
+              notesForDay = [...notesForDay, ...(extraNotes as DayNote[])];
+            }
+          }
+        }
+      }
+
+      const draft = buildArchiveDraft({
+        childId: selectedChild.id,
+        civilDate: args.civilDate,
+        ageBand: selectedChild.age_band,
+        existingBandLabel: existing?.age_band_label,
+        dayNote:
+          noteForCivilDate({
+            civilDate: args.civilDate,
+            programYearStart: yearStart,
+            notes: notesForDay,
+          }) || (existing?.day_note ?? ""),
+        doneTitles: (() => {
+          const computed = doneTitlesForCivilDate({
+            civilDate: args.civilDate,
+            activities: catalog,
+            completions: args.completions.filter((row) => row.child_id === selectedChild.id),
+          });
+          if (computed.length > 0) return computed;
+          if (args.preferExistingDone) return existing?.done_titles ?? [];
+          return [];
+        })(),
+        photoPath,
+      });
+
+      if (!archiveDayHasContent(draft)) {
+        if (isDemo) {
+          writeDemoState(
+            removeDemoArchiveDay(readDemoState(), selectedChild.id, args.civilDate),
+          );
+        } else {
+          const supabase = createBrowserSupabase();
+          await supabase
+            ?.from("archive_days")
+            .delete()
+            .eq("child_id", selectedChild.id)
+            .eq("civil_date", args.civilDate);
+        }
+        if (args.civilDate === bucharestToday()) {
+          setTodayArchive(null);
+          setTodayPhotoUrl((prev) => {
+            if (prev?.startsWith("blob:")) URL.revokeObjectURL(prev);
+            return null;
+          });
+        }
+        return null;
+      }
+
+      if (isDemo) {
+        const row: ArchiveDay = {
+          id: existing?.id ?? demoRowId("archive"),
+          ...draft,
+          created_at: existing?.created_at ?? new Date().toISOString(),
+          updated_at: new Date().toISOString(),
+        };
+        writeDemoState(upsertDemoArchiveDay(readDemoState(), row));
+        if (args.civilDate === bucharestToday()) setTodayArchive(row);
+        return row;
+      }
+
+      const supabase = createBrowserSupabase();
+      if (!supabase) return null;
+      const { data, error } = await supabase
+        .from("archive_days")
+        .upsert(
+          {
+            child_id: draft.child_id,
+            civil_date: draft.civil_date,
+            age_band_label: draft.age_band_label,
+            day_note: draft.day_note,
+            done_titles: draft.done_titles,
+            photo_path: draft.photo_path,
+            updated_at: new Date().toISOString(),
+          },
+          { onConflict: "child_id,civil_date" },
+        )
+        .select("*")
+        .single();
+      if (error || !data) throw new Error(error?.message ?? "Nu am putut salva arhiva.");
+      const row = data as ArchiveDay;
+      if (args.civilDate === bucharestToday()) setTodayArchive(row);
+      return row;
+    },
+    [family, isDemo, selectedChild],
+  );
+
   const toggleComplete = useCallback(
     async (activityId: string) => {
       if (!selectedChild || !family) return;
@@ -423,6 +702,15 @@ export function FamilyProvider({
           const next = removeDemoCompletion(readDemoState(), selectedChild.id, activityId);
           writeDemoState(next);
           setCompletions(next.completions);
+          const dates = new Set<string>([bucharestToday()]);
+          dates.add(toDateOnlyString(existing.completed_at));
+          for (const civilDate of dates) {
+            await stampArchiveDay({
+              civilDate,
+              completions: next.completions,
+              dayNotes,
+            });
+          }
           return;
         }
         const supabase = createBrowserSupabase();
@@ -432,7 +720,17 @@ export function FamilyProvider({
           .delete()
           .eq("id", existing.id);
         if (deleteError) throw new Error(deleteError.message);
-        setCompletions((current) => current.filter((row) => row.id !== existing.id));
+        const nextCompletions = completions.filter((row) => row.id !== existing.id);
+        setCompletions(nextCompletions);
+        const dates = new Set<string>([bucharestToday()]);
+        dates.add(toDateOnlyString(existing.completed_at));
+        for (const civilDate of dates) {
+          await stampArchiveDay({
+            civilDate,
+            completions: nextCompletions,
+            dayNotes,
+          });
+        }
         return;
       }
 
@@ -447,6 +745,11 @@ export function FamilyProvider({
         });
         writeDemoState(next);
         setCompletions(next.completions);
+        await stampArchiveDay({
+          civilDate: bucharestToday(),
+          completions: next.completions,
+          dayNotes,
+        });
         return;
       }
 
@@ -463,9 +766,16 @@ export function FamilyProvider({
         .select("*")
         .single();
       if (insertError || !data) throw new Error(insertError?.message ?? "Nu am putut salva.");
-      setCompletions((current) => [...current, data as Completion]);
+      const row = data as Completion;
+      const nextCompletions = [...completions, row];
+      setCompletions(nextCompletions);
+      await stampArchiveDay({
+        civilDate: bucharestToday(),
+        completions: nextCompletions,
+        dayNotes,
+      });
     },
-    [completions, family, isDemo, selectedChild],
+    [completions, dayNotes, family, isDemo, selectedChild, stampArchiveDay],
   );
 
   const saveDayNote = useCallback(
@@ -481,7 +791,14 @@ export function FamilyProvider({
           body,
         });
         writeDemoState(next);
-        setDayNotes(demoDayNotesForWeek(next, selectedWeek));
+        const nextNotes = demoDayNotesForWeek(next, selectedWeek);
+        setDayNotes(nextNotes);
+        const range = programWeekRange(selectedWeek, programYearStart);
+        await stampArchiveDay({
+          civilDate: addCivilDays(range.start, dayOfWeek - 1),
+          completions,
+          dayNotes: next.dayNotes,
+        });
         return;
       }
       const supabase = createBrowserSupabase();
@@ -495,9 +812,14 @@ export function FamilyProvider({
             .eq("id", existing.id);
           if (deleteError) throw new Error(deleteError.message);
         }
-        setDayNotes((current) =>
-          current.filter((note) => note.day_of_week !== dayOfWeek),
-        );
+        const nextNotes = dayNotes.filter((note) => note.day_of_week !== dayOfWeek);
+        setDayNotes(nextNotes);
+        const range = programWeekRange(selectedWeek, programYearStart);
+        await stampArchiveDay({
+          civilDate: addCivilDays(range.start, dayOfWeek - 1),
+          completions,
+          dayNotes: nextNotes,
+        });
         return;
       }
       const payload = {
@@ -519,12 +841,162 @@ export function FamilyProvider({
         throw new Error(upsertError?.message ?? "Nu am putut salva.");
       }
       const saved = data as DayNote;
-      setDayNotes((current) => [
-        ...current.filter((note) => note.day_of_week !== dayOfWeek),
+      const nextNotes = [
+        ...dayNotes.filter((note) => note.day_of_week !== dayOfWeek),
         saved,
-      ]);
+      ];
+      setDayNotes(nextNotes);
+      const range = programWeekRange(selectedWeek, programYearStart);
+      await stampArchiveDay({
+        civilDate: addCivilDays(range.start, dayOfWeek - 1),
+        completions,
+        dayNotes: nextNotes,
+      });
     },
-    [dayNotes, family, isDemo, selectedChild, selectedWeek],
+    [completions, dayNotes, family, isDemo, selectedChild, selectedWeek, stampArchiveDay],
+  );
+
+  const signedPhotoUrl = useCallback(
+    async (path: string | null): Promise<string | null> => {
+      if (!path || !selectedChild) return null;
+      if (isDemo) {
+        const [, civilDate] = path.split("/");
+        const date = civilDate?.replace(/\.jpg$/, "") ?? "";
+        return demoPhotoObjectUrl(selectedChild.id, date);
+      }
+      const supabase = createBrowserSupabase();
+      if (!supabase) return null;
+      const { data, error } = await supabase.storage
+        .from(ARCHIVE_BUCKET)
+        .createSignedUrl(path, 3600);
+      if (error) return null;
+      return data.signedUrl;
+    },
+    [isDemo, selectedChild],
+  );
+
+  const downloadPhotoBytes = useCallback(
+    async (path: string): Promise<Uint8Array | null> => {
+      if (!selectedChild) return null;
+      if (isDemo) {
+        const date = path.split("/")[1]?.replace(/\.jpg$/, "") ?? "";
+        const blob = await readDemoPhoto(selectedChild.id, date);
+        if (!blob) return null;
+        return new Uint8Array(await blob.arrayBuffer());
+      }
+      const supabase = createBrowserSupabase();
+      if (!supabase) return null;
+      const { data, error } = await supabase.storage.from(ARCHIVE_BUCKET).download(path);
+      if (error || !data) return null;
+      return new Uint8Array(await data.arrayBuffer());
+    },
+    [isDemo, selectedChild],
+  );
+
+  const saveDayPhoto = useCallback(
+    async (civilDate: string, file: File) => {
+      if (!selectedChild) throw new Error("Alege un copil mai întâi.");
+      const rejected = rejectIfNotPhoto(file);
+      if (rejected) throw new Error(rejected);
+      const blob = await compressDayPhoto(file);
+      const jpeg = jpegFileFromBlob(blob, civilDate);
+      const path = archivePhotoPath(selectedChild.id, civilDate);
+
+      if (isDemo) {
+        await saveDemoPhoto(selectedChild.id, civilDate, jpeg);
+        const row = await stampArchiveDay({
+          civilDate,
+          completions,
+          dayNotes,
+          photoPath: path,
+          preferExistingDone: true,
+        });
+        if (civilDate === bucharestToday()) {
+          const url = URL.createObjectURL(jpeg);
+          setTodayPhotoUrl((prev) => {
+            if (prev?.startsWith("blob:")) URL.revokeObjectURL(prev);
+            return url;
+          });
+          setTodayArchive(row);
+        }
+        return;
+      }
+
+      const supabase = createBrowserSupabase();
+      if (!supabase) throw new Error("Supabase nu este configurat.");
+      const { error: uploadError } = await supabase.storage
+        .from(ARCHIVE_BUCKET)
+        .upload(path, jpeg, {
+          upsert: true,
+          contentType: "image/jpeg",
+          cacheControl: "3600",
+        });
+      if (uploadError) throw new Error(uploadError.message);
+      const row = await stampArchiveDay({
+        civilDate,
+        completions,
+        dayNotes,
+        photoPath: path,
+        preferExistingDone: true,
+      });
+      if (civilDate === bucharestToday()) {
+        const signed = await supabase.storage.from(ARCHIVE_BUCKET).createSignedUrl(path, 3600);
+        setTodayPhotoUrl(signed.data?.signedUrl ?? null);
+        setTodayArchive(row);
+      }
+    },
+    [completions, dayNotes, isDemo, selectedChild, stampArchiveDay],
+  );
+
+  const removeDayPhoto = useCallback(
+    async (civilDate: string) => {
+      if (!selectedChild) return;
+      const path = archivePhotoPath(selectedChild.id, civilDate);
+      if (isDemo) {
+        await deleteDemoPhoto(selectedChild.id, civilDate);
+      } else {
+        const supabase = createBrowserSupabase();
+        await supabase?.storage.from(ARCHIVE_BUCKET).remove([path]);
+      }
+      const row = await stampArchiveDay({
+        civilDate,
+        completions,
+        dayNotes,
+        clearPhoto: true,
+        preferExistingDone: true,
+      });
+      if (civilDate === bucharestToday()) {
+        setTodayPhotoUrl((prev) => {
+          if (prev?.startsWith("blob:")) URL.revokeObjectURL(prev);
+          return null;
+        });
+        setTodayArchive(row);
+      }
+    },
+    [completions, dayNotes, isDemo, selectedChild, stampArchiveDay],
+  );
+
+  const loadArchiveDays = useCallback(
+    async (start: string, end: string): Promise<ArchiveDay[]> => {
+      if (!selectedChild) return [];
+      if (isDemo) {
+        return demoArchiveDaysForChild(readDemoState(), selectedChild.id)
+          .filter((row) => row.civil_date >= start && row.civil_date <= end)
+          .sort((a, b) => a.civil_date.localeCompare(b.civil_date));
+      }
+      const supabase = createBrowserSupabase();
+      if (!supabase) return [];
+      const { data, error } = await supabase
+        .from("archive_days")
+        .select("*")
+        .eq("child_id", selectedChild.id)
+        .gte("civil_date", start)
+        .lte("civil_date", end)
+        .order("civil_date", { ascending: true });
+      if (error) throw new Error(error.message);
+      return (data ?? []) as ArchiveDay[];
+    },
+    [isDemo, selectedChild],
   );
 
   const approveCompletion = useCallback(
@@ -619,6 +1091,8 @@ export function FamilyProvider({
       activities,
       completions,
       dayNotes,
+      todayArchive,
+      todayPhotoUrl,
       refresh,
       selectWeek,
       selectChild,
@@ -627,6 +1101,11 @@ export function FamilyProvider({
       toggleComplete,
       approveCompletion,
       saveDayNote,
+      saveDayPhoto,
+      removeDayPhoto,
+      loadArchiveDays,
+      signedPhotoUrl,
+      downloadPhotoBytes,
       ensureCalendarToken,
       signOut,
     }),
@@ -636,19 +1115,26 @@ export function FamilyProvider({
       approveCompletion,
       completions,
       dayNotes,
+      downloadPhotoBytes,
       ensureCalendarToken,
       error,
       family,
       isDemo,
       kids,
+      loadArchiveDays,
       refresh,
+      removeDayPhoto,
       saveDayNote,
+      saveDayPhoto,
       selectChild,
       selectWeek,
       selectedChild,
       selectedWeek,
       signOut,
+      signedPhotoUrl,
       status,
+      todayArchive,
+      todayPhotoUrl,
       toggleComplete,
       updateFamily,
     ],

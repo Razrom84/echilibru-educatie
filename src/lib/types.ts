@@ -81,3 +81,16 @@ export type DayNote = {
   created_at?: string;
   updated_at?: string;
 };
+
+/** Frozen civil-day snapshot. Source of truth for Archive / PDF — not live curriculum. */
+export type ArchiveDay = {
+  id: string;
+  child_id: string;
+  civil_date: string;
+  age_band_label: string;
+  day_note: string;
+  done_titles: string[];
+  photo_path: string | null;
+  created_at?: string;
+  updated_at?: string;
+};

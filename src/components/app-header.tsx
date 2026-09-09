@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
 const VIEW_LINKS = [
   { href: "/azi", label: "Azi" },
   { href: "/saptamana", label: "Săptămâna asta" },
+  { href: "/arhiva", label: "Arhivă" },
   { href: "/anul", label: "Anul" },
 ] as const;
 
@@ -70,7 +71,10 @@ export function AppHeader({ today }: { today: string }) {
         })}
       </nav>
 
-      {pathname === "/anul" || pathname.startsWith("/anul/") ? null : (
+      {pathname === "/anul" ||
+      pathname.startsWith("/anul/") ||
+      pathname === "/arhiva" ||
+      pathname.startsWith("/arhiva/") ? null : (
         <Suspense fallback={<DayChipsFallback />}>
           <DayChips today={today} />
         </Suspense>

@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { composeMondayDigest } from "@/lib/mail/compose-monday-digest";
+import { composeArchiveMail } from "@/lib/mail/compose-archive-mail";
 import { readDemoState } from "@/lib/demo/store";
-import { renderDigestEmail } from "@/lib/monday-digest-email";
+import { renderArchiveReadyEmail } from "@/lib/archive-email";
 import {
   DIGEST_CC_PREVIEW,
   DIGEST_TEST_DEMO,
@@ -36,23 +36,21 @@ export function MondayDigestSettings() {
     try {
       if (isDemo) {
         const state = readDemoState();
-        const composed = composeMondayDigest({
+        const composed = composeArchiveMail({
           now: bucharestToday(),
           family: state.family,
-          children: state.children.filter((child) => child.active),
-          completions: state.completions,
-          notes: state.dayNotes,
+          days: state.archiveDays ?? [],
           ignoreToggle: true,
         });
         if (composed.status === "skipped-toggle" || composed.status === "skipped-empty") {
           setPreview({
-            subject: composed.status === "skipped-empty" ? composed.model.subject : "",
+            subject: composed.status === "skipped-empty" ? composed.period.label : "",
             text: DIGEST_TEST_SKIPPED,
             skipped: true,
           });
           return;
         }
-        const email = renderDigestEmail(composed.model);
+        const email = renderArchiveReadyEmail({ period: composed.period });
         setPreview({
           subject: email.subject,
           text: email.text,

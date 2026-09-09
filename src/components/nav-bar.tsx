@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { CalendarDays, House, Settings2, Sprout } from "lucide-react";
+import { Archive, CalendarDays, House, Settings2, Sprout } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const ITEMS = [
   { href: "/azi", label: "Azi", icon: House },
   { href: "/saptamana", label: "Săptămâna asta", icon: CalendarDays },
+  { href: "/arhiva", label: "Arhivă", icon: Archive },
   { href: "/progres", label: "Progres", icon: Sprout },
   { href: "/setari", label: "Setări", icon: Settings2 },
 ];
@@ -20,7 +21,7 @@ export function NavBar() {
       aria-label="Navigare principală"
       className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-card/95 backdrop-blur md:hidden"
     >
-      <ul className="mx-auto grid max-w-lg grid-cols-4 px-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-1">
+      <ul className="mx-auto grid max-w-lg grid-cols-5 px-1 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-1">
         {ITEMS.map((item) => {
           const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
           const Icon = item.icon;

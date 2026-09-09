@@ -1,7 +1,7 @@
 import { CHILD_COOKIE, DEMO_COOKIE, DEMO_STORAGE_KEY } from "@/lib/config";
 import { bandFromBirthdate } from "@/lib/band";
 import { getSeedActivities } from "@/lib/seed/week1";
-import type { Child, Completion, CompletionMode, DayNote, Family } from "@/lib/types";
+import type { ArchiveDay, Child, Completion, CompletionMode, DayNote, Family } from "@/lib/types";
 import { dayNoteMatches, normalizeDayNoteBody } from "@/lib/day-note";
 import { familyJoinFields, familyProgramYearStart } from "@/lib/program-week";
 import { PROGRAM_WEEK } from "@/lib/week";
@@ -11,6 +11,7 @@ export type DemoState = {
   children: Child[];
   completions: Completion[];
   dayNotes: DayNote[];
+  archiveDays: ArchiveDay[];
   selectedChildId: string | null;
 };
 
@@ -40,6 +41,7 @@ export function emptyDemoState(): DemoState {
     children: [],
     completions: [],
     dayNotes: [],
+    archiveDays: [],
     selectedChildId: null,
   };
 }
@@ -56,6 +58,7 @@ export function readDemoState(): DemoState {
       ...parsed,
       family: { ...defaults.family, ...parsed.family },
       dayNotes: parsed.dayNotes ?? [],
+      archiveDays: parsed.archiveDays ?? [],
     };
   } catch {
     return emptyDemoState();
@@ -189,4 +192,37 @@ export function upsertDemoDayNote(
     updated_at: nowIso(),
   };
   return { ...state, dayNotes: [...without, row] };
+}
+
+export function demoArchiveDaysForChild(state: DemoState, childId: string | null): ArchiveDay[] {
+  if (!childId) return [];
+  return state.archiveDays.filter((row) => row.child_id === childId);
+}
+
+export function upsertDemoArchiveDay(
+  state: DemoState,
+  row: ArchiveDay,
+): DemoState {
+  return {
+    ...state,
+    archiveDays: [
+      ...state.archiveDays.filter(
+        (item) => !(item.child_id === row.child_id && item.civil_date === row.civil_date),
+      ),
+      row,
+    ],
+  };
+}
+
+export function removeDemoArchiveDay(
+  state: DemoState,
+  childId: string,
+  civilDate: string,
+): DemoState {
+  return {
+    ...state,
+    archiveDays: state.archiveDays.filter(
+      (row) => !(row.child_id === childId && row.civil_date === civilDate),
+    ),
+  };
 }

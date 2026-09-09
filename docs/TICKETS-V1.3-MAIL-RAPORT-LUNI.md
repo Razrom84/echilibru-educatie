@@ -1,7 +1,7 @@
 # V1.3 — Raport luni pe email (săptămânal + lunar)
 
 Transport: **Resend**. From: `noreply@echilibru-cartea.ro`.  
-În afara scope-ului: mail zilnic, banda gifted, PDF, OAuth.
+Corpul mailului e scurt: caietul PDF e gata, atașat. Fără scoruri. Fără video.
 
 ## Când se trimite
 
@@ -9,32 +9,40 @@ Cron Vercel: **luni 08:00 Europe/Bucharest**.
 
 | Dată (luni) | Tip | Conținut |
 | --- | --- | --- |
-| Orice luni **în afară de** prima luni din lună | Săptămânal | Săptămâna civilă închisă (L–D) = S# `current_W − 1`. Temă + progres (completări) + note pe zi (zilele goale se omit). |
-| **Prima luni** din luna calendaristică | Lunar (înlocuiește săptămânalul) | Luna calendaristică anterioară: teme / sezoane, progres agregat, note (max. ~10). |
+| Orice luni **în afară de** prima luni din lună | Săptămânal | Caietul săptămânii civile închise (L–D). Mesaj scurt + PDF atașat. |
+| **Prima luni** din luna calendaristică | Lunar (înlocuiește săptămânalul) | Caietul lunii calendaristice anterioare. Mesaj scurt + PDF atașat. |
 
-Nu se trimite dacă **zero progres ȘI zero note**.  
-Toggle Setări: **Raport luni pe email** (implicit pornit).  
-Câmp opțional: **Email al doilea părinte** — dacă e completat, Resend pune `cc:` pe săptămânal și lunar. Gol = fără copie.
+Cron separat: **2 ianuarie 08:00 Europe/Bucharest** (`0 6 2 1 *` UTC) → caietul anului calendaristic trecut. Nu se amestecă cu luni.
+
+Nu se trimite dacă perioada n-are notă, lucruri bifate sau fotografie.  
+Toggle Setări: **Raport luni pe email** (implicit pornit; acoperă și caietul de 2 ianuarie).  
+Câmp opțional: **Email al doilea părinte** — dacă e completat, Resend pune `cc:`. Gol = fără copie.
 
 ### Subject
 
 - Săptămânal: `Săptămâna trecută · [Temă] — Echilibru educație`
 - Lunar: `Luna trecută · [august 2026] — Echilibru educație`
+- Anual: `Anul trecut · [2026] — Echilibru educație`
 
 ### CTA
 
-- Săptămânal: https://educatie.echilibru-cartea.ro/azi
-- Lunar: `/anul` și `/azi`
+https://educatie.echilibru-cartea.ro/arhiva
 
 ## Cron UTC și ora de vară (DST)
 
-Vercel cron e **doar UTC**. Expresia din `vercel.json`:
+Vercel cron e **doar UTC**. Expresii din `vercel.json`:
 
 ```
 0 5 * * 1
 ```
 
-= luni 05:00 UTC.
+= luni 05:00 UTC (08:00 EEST / 07:00 EET).
+
+```
+0 6 2 1 *
+```
+
+= 2 ianuarie 06:00 UTC = **08:00 EET** (ianuarie e iarnă).
 
 | Perioadă | Decalaj București | Ora locală a cronului |
 | --- | --- | --- |
@@ -79,11 +87,9 @@ curl -sS -H "Authorization: Bearer $CRON_SECRET" \
 curl -sS -H "Authorization: Bearer $CRON_SECRET" \
   "https://<deploy>/api/cron/raport-luni?dryRun=1&asOf=2026-09-07"
 
-# O familie, forțează săptămânal
-curl -sS -X POST -H "Authorization: Bearer $CRON_SECRET" \
-  -H "Content-Type: application/json" \
-  -d '{"dryRun":true,"familyId":"<uuid>","kind":"weekly","asOf":"2026-09-14"}' \
-  "https://<deploy>/api/cron/raport-luni"
+# Dry-run anual (2 ian 2027 → caiet 2026)
+curl -sS -H "Authorization: Bearer $CRON_SECRET" \
+  "https://<deploy>/api/cron/raport-an?dryRun=1&asOf=2027-01-02"
 ```
 
 Local: aceleași URL-uri pe `http://localhost:3000`, cu `CRON_SECRET` în `.env.local`. Fără `RESEND_API_KEY`, doar `dryRun=1` are sens.

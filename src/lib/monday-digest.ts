@@ -1,9 +1,12 @@
 /**
- * Monday digest (V1.3) — weekly every Monday 08:00 Europe/Bucharest,
- * except the first Monday of a calendar month (monthly replaces weekly).
+ * Monday digest mail (V1.3 → archive booklet).
+ * Weekly every Monday 08:00 Europe/Bucharest, except the first Monday
+ * of a calendar month (monthly replaces weekly). Yearly booklet is a
+ * separate cron on 2 January 08:00 Europe/Bucharest.
  *
  * Weekly looks at the closed civil week (Mon–Sun of S# = current_W − 1).
  * Monthly looks at the previous calendar month.
+ * Yearly looks at the previous calendar year.
  */
 
 import { programWeekSeason, type Season } from "@/lib/anul";
@@ -26,14 +29,15 @@ export const DIGEST_FROM = "Echilibru educație <noreply@echilibru-cartea.ro>";
 export const DIGEST_SITE = "https://educatie.echilibru-cartea.ro";
 export const DIGEST_AZI_URL = `${DIGEST_SITE}/azi`;
 export const DIGEST_ANUL_URL = `${DIGEST_SITE}/anul`;
+export const DIGEST_ARHIVA_URL = `${DIGEST_SITE}/arhiva`;
 
 export const DIGEST_TOGGLE_LABEL = "Raport luni pe email";
 export const DIGEST_TOGGLE_HELP =
-  "Luni dimineața, un rezumat al săptămânii. Prima luni din lună: rezumatul lunii trecute.";
+  "Luni dimineața, un mesaj scurt că ai caietul PDF gata. Prima luni din lună: caietul lunii trecute. Pe 2 ianuarie: caietul anului trecut.";
 export const DIGEST_TEST_PREVIEW = "Arată un test";
 export const DIGEST_TEST_SEND = "Trimite un test";
 export const DIGEST_TEST_SENT = "Test trimis.";
-export const DIGEST_TEST_SKIPPED = "Nimic de raportat săptămâna trecută";
+export const DIGEST_TEST_SKIPPED = "Nimic de pus în caiet pentru perioada asta";
 export const DIGEST_TEST_DEMO =
   "În demonstrație poți doar privi testul. Emailul real cere un cont.";
 export const DIGEST_CC_LABEL = "Email al doilea părinte (opțional)";
@@ -42,16 +46,21 @@ export const DIGEST_CC_HELP =
 export const DIGEST_CC_INVALID = "Scrie un email valid, sau lasă gol.";
 export const DIGEST_CC_PREVIEW = "Copie";
 
-export const WEEKLY_INTRO = "Săptămâna trecută s-a închis. Iată ce ați făcut, pe scurt.";
-export const MONTHLY_INTRO = "Luna trecută, pe scurt — teme, progres și câteva note.";
+export const WEEKLY_INTRO =
+  "Caietul săptămânii este gata. Îl găsești atașat — zilele, ce ați făcut, nota și fotografia.";
+export const MONTHLY_INTRO =
+  "Caietul lunii trecute este gata. Îl găsești atașat — zilele, ce ați făcut, nota și fotografia.";
+export const YEARLY_INTRO =
+  "Caietul anului trecut este gata. Îl găsești atașat — zilele, ce ați făcut, nota și fotografia.";
 export const NOTES_HEADING = "Note pe zi";
 export const THEMES_HEADING = "Teme";
-export const WEEKLY_CTA_LABEL = "Deschide Azi";
+export const WEEKLY_CTA_LABEL = "Deschide Arhiva";
 export const MONTHLY_CTA_ANUL = "Vezi anul";
 export const MONTHLY_CTA_AZI = "Deschide Azi";
+export const ARCHIVE_CTA_LABEL = "Deschide Arhiva";
 export const MONTHLY_NOTES_CAP = 10;
 
-export type DigestKind = "weekly" | "monthly";
+export type DigestKind = "weekly" | "monthly" | "yearly";
 
 export type DigestNote = {
   week: number;
@@ -138,6 +147,11 @@ export function formatRoDayMonth(dateOnly: string): string {
   return `${civil.day} ${RO_MONTHS[civil.month] ?? ""}`.trim();
 }
 
+export function formatRoLongDate(dateOnly: string): string {
+  const civil = toCivilDate(dateOnly);
+  return `${civil.day} ${RO_MONTHS[civil.month] ?? ""} ${civil.year}`.trim();
+}
+
 export function isMonday(input: DateInput): boolean {
   return civilDayOfWeek(input) === 1;
 }
@@ -190,6 +204,39 @@ export function weeklyPeriodKey(programYearStart: string, week: number): string 
 
 export function monthlyPeriodKey(year: number, month: number): string {
   return `monthly:${year}-${String(month).padStart(2, "0")}`;
+}
+
+export function yearlyPeriodKey(year: number): string {
+  return `yearly:${year}`;
+}
+
+/** 2 January — yearly booklet mail, separate from the Monday cron. */
+export function isJanuarySecond(input: DateInput): boolean {
+  const civil = toCivilDate(input);
+  return civil.month === 1 && civil.day === 2;
+}
+
+export function previousCalendarYear(input: DateInput): {
+  year: number;
+  start: string;
+  end: string;
+  label: string;
+} {
+  const year = toCivilDate(input).year - 1;
+  return {
+    year,
+    start: `${year}-01-01`,
+    end: `${year}-12-31`,
+    label: String(year),
+  };
+}
+
+export function yearlySubject(year: number): string {
+  return `Anul trecut · ${year} — Echilibru educație`;
+}
+
+export function calendarYearRange(year: number): { start: string; end: string } {
+  return { start: `${year}-01-01`, end: `${year}-12-31` };
 }
 
 export function testPeriodKey(now: Date = new Date()): string {
