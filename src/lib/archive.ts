@@ -37,6 +37,7 @@ export const ARCHIVE_EMPTY_DAY =
   "Nu am notă, lucruri bifate sau fotografie pentru ziua asta.";
 export const ARCHIVE_EMPTY_PERIOD =
   "Nu am găsit zile cu notă, lucruri bifate sau fotografie în perioada asta.";
+export const ARCHIVE_QUIET_DAY = "Fără notă și fără fotografie.";
 export const ARCHIVE_PDF_WEEK = "Descarcă caietul săptămânii";
 export const ARCHIVE_PDF_MONTH = "Descarcă caietul lunii";
 export const ARCHIVE_PDF_YEAR = "Descarcă caietul anului";
@@ -58,6 +59,8 @@ export const PHOTO_TYPE_REJECTED =
   "Alege o fotografie din galerie sau de pe calculator.";
 export const PHOTO_READ_FAILED =
   "Nu pot citi această fotografie. Alege JPEG sau PNG.";
+export const PHOTO_OPEN = "Deschide fotografia mai mare";
+export const PHOTO_CLOSE = "Închide fotografia";
 
 export type ArchivePeriodKind = "weekly" | "monthly" | "yearly";
 
@@ -308,6 +311,68 @@ export function daysInPeriod<T extends { civil_date: string }>(
   return days
     .filter((day) => day.civil_date >= period.start && day.civil_date <= period.end)
     .sort((a, b) => a.civil_date.localeCompare(b.civil_date));
+}
+
+/** Europe/Bucharest civil `today` — never emit future days. */
+export function clipArchivePeriodToToday(
+  period: ArchivePeriod,
+  today: string,
+): ArchivePeriod {
+  const end = period.end <= today ? period.end : today;
+  return { ...period, end };
+}
+
+export function bookletCivilDates(
+  period: Pick<ArchivePeriod, "start" | "end">,
+  today: string,
+): string[] {
+  const end = period.end <= today ? period.end : today;
+  if (period.start > end) return [];
+  return eachCivilDate(period.start, end);
+}
+
+export type BookletChild = {
+  id: string;
+  age_band_label?: string | null;
+};
+
+/** Every civil day in range, including quiet days with no photo and no note. */
+export function expandBookletDays<T extends ArchiveDayDraft>(args: {
+  period: Pick<ArchivePeriod, "start" | "end">;
+  today: string;
+  children: readonly BookletChild[];
+  days: readonly T[];
+}): ArchiveDayDraft[] {
+  const dates = bookletCivilDates(args.period, args.today);
+  const byKey = new Map(
+    args.days.map((day) => [`${day.child_id}:${day.civil_date}`, day] as const),
+  );
+  const result: ArchiveDayDraft[] = [];
+  for (const date of dates) {
+    for (const child of args.children) {
+      const existing = byKey.get(`${child.id}:${date}`);
+      if (existing) {
+        result.push({
+          child_id: existing.child_id,
+          civil_date: existing.civil_date,
+          age_band_label: existing.age_band_label,
+          day_note: existing.day_note,
+          done_titles: [...existing.done_titles],
+          photo_path: existing.photo_path,
+        });
+        continue;
+      }
+      result.push({
+        child_id: child.id,
+        civil_date: date,
+        age_band_label: child.age_band_label?.trim() || "",
+        day_note: "",
+        done_titles: [],
+        photo_path: null,
+      });
+    }
+  }
+  return result;
 }
 
 export function shouldSkipArchivePeriod(days: readonly {

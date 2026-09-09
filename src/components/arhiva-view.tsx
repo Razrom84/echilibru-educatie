@@ -20,6 +20,7 @@ import {
   calendarMonthPeriod,
   calendarYearPeriod,
   civilWeekPeriod,
+  snapshotAgeBandLabel,
 } from "@/lib/archive";
 import { useFamily } from "@/lib/family-context";
 import { formatRoLongDate } from "@/lib/monday-digest";
@@ -150,9 +151,16 @@ export function ArhivaView({ today }: { today: string }) {
       );
       const pdf = await buildArchiveBookletPdf({
         period,
-        children: [{ id: selectedChild.id, name: selectedChild.name }],
+        children: [
+          {
+            id: selectedChild.id,
+            name: selectedChild.name,
+            age_band_label: snapshotAgeBandLabel(selectedChild.age_band),
+          },
+        ],
         days: rows,
         photos,
+        today,
       });
       triggerDownload(pdf, pdfDownloadFilename(period));
     } catch (err) {
@@ -268,6 +276,7 @@ export function ArhivaView({ today }: { today: string }) {
             <p className="text-sm text-muted-foreground">{ARCHIVE_EMPTY_DAY}</p>
           )}
           <DayPhotoPicker
+            key={`${selectedChild.id}-${selectedDate}`}
             civilDate={selectedDate}
             photoUrl={photoUrl}
             hasPhoto={Boolean(selectedRow?.photo_path)}

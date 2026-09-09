@@ -6,7 +6,7 @@ import {
   testPeriodKey,
   type DigestKind,
 } from "@/lib/monday-digest";
-import { bucharestToday, type DateInput } from "@/lib/program-week";
+import { bucharestToday, toDateOnlyString, type DateInput } from "@/lib/program-week";
 import { composeArchiveMail } from "@/lib/mail/compose-archive-mail";
 import {
   buildFamilyArchivePdf,
@@ -282,6 +282,7 @@ export async function runMondayDigest(
           period: ready.period,
           children: kids,
           days,
+          today: toDateOnlyString(opts.now),
         });
         await opts.sender.send({
           to,

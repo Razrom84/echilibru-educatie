@@ -3,6 +3,7 @@ import {
   ARCHIVE_BUCKET,
   eachCivilDate,
   missingArchiveDrafts,
+  snapshotAgeBandLabel,
   type ArchivePeriod,
 } from "@/lib/archive";
 import {
@@ -117,14 +118,22 @@ export async function downloadArchivePhotos(
 export async function buildFamilyArchivePdf(args: {
   supabase: SupabaseClient;
   period: ArchivePeriod;
-  children: readonly ArchivePdfChild[];
+  children: readonly (ArchivePdfChild & { age_band?: string })[];
   days: readonly ArchivePdfDay[];
+  today: string;
 }): Promise<Uint8Array> {
   const photos = await downloadArchivePhotos(args.supabase, args.days);
   return buildArchiveBookletPdf({
     period: args.period,
-    children: args.children,
+    children: args.children.map((child) => ({
+      id: child.id,
+      name: child.name,
+      age_band_label:
+        child.age_band_label ??
+        (child.age_band ? snapshotAgeBandLabel(child.age_band) : ""),
+    })),
     days: args.days,
     photos,
+    today: args.today,
   });
 }

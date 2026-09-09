@@ -5,20 +5,23 @@ import {
   archiveDayHasContent,
   archivePhotoPath,
   buildArchiveDraft,
+  bookletCivilDates,
   calendarMonthPeriod,
   calendarYearPeriod,
   civilWeekPeriod,
+  clipArchivePeriodToToday,
   closedMonthPeriod,
   closedWeekPeriod,
   closedYearPeriod,
   doneTitlesForCivilDate,
   eachCivilDate,
+  expandBookletDays,
   missingArchiveDrafts,
   noteForCivilDate,
   shouldSkipArchivePeriod,
   snapshotAgeBandLabel,
 } from "./archive";
-import { isLikelyVideoFile, rejectIfNotPhoto } from "./archive-photo";
+import { isLikelyVideoFile, PHOTO_ACCEPT, rejectIfNotPhoto } from "./archive-photo";
 import { renderArchiveReadyEmail } from "./archive-email";
 import { composeArchiveMail } from "./mail/compose-archive-mail";
 import { DIGEST_ARHIVA_URL } from "./monday-digest";
@@ -156,6 +159,83 @@ describe("archive periods", () => {
     expect(calendarMonthPeriod(2026, 2).end).toBe("2026-02-28");
     expect(calendarYearPeriod(2026).end).toBe("2026-12-31");
   });
+
+  test("current week is Monday through today, not future weekdays", () => {
+    const week = civilWeekPeriod("2026-09-09");
+    expect(week.start).toBe("2026-09-07");
+    expect(week.end).toBe("2026-09-13");
+    const clipped = clipArchivePeriodToToday(week, "2026-09-09");
+    expect(clipped.start).toBe("2026-09-07");
+    expect(clipped.end).toBe("2026-09-09");
+    expect(bookletCivilDates(week, "2026-09-09")).toEqual([
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+    ]);
+  });
+
+  test("past week is all seven days", () => {
+    const week = civilWeekPeriod("2026-09-02");
+    expect(week.start).toBe("2026-08-31");
+    expect(week.end).toBe("2026-09-06");
+    expect(clipArchivePeriodToToday(week, "2026-09-09").end).toBe("2026-09-06");
+    expect(bookletCivilDates(week, "2026-09-09")).toHaveLength(7);
+  });
+
+  test("current month is day 1 through today", () => {
+    const month = calendarMonthPeriod(2026, 9);
+    const clipped = clipArchivePeriodToToday(month, "2026-09-09");
+    expect(clipped.start).toBe("2026-09-01");
+    expect(clipped.end).toBe("2026-09-09");
+    expect(bookletCivilDates(month, "2026-09-09")[0]).toBe("2026-09-01");
+    expect(bookletCivilDates(month, "2026-09-09").at(-1)).toBe("2026-09-09");
+  });
+
+  test("past month is every day of that month", () => {
+    const month = calendarMonthPeriod(2026, 8);
+    expect(clipArchivePeriodToToday(month, "2026-09-09").end).toBe("2026-08-31");
+    expect(bookletCivilDates(month, "2026-09-09")).toHaveLength(31);
+  });
+
+  test("current year is 1 January through today", () => {
+    const year = calendarYearPeriod(2026);
+    const dates = bookletCivilDates(year, "2026-09-09");
+    expect(dates[0]).toBe("2026-01-01");
+    expect(dates.at(-1)).toBe("2026-09-09");
+    expect(dates).not.toContain("2026-09-10");
+  });
+
+  test("past year is every day of that year", () => {
+    const year = calendarYearPeriod(2025);
+    expect(bookletCivilDates(year, "2026-09-09")).toHaveLength(365);
+  });
+
+  test("expand includes quiet days that have no photo and no note", () => {
+    const days = expandBookletDays({
+      period: { start: "2026-09-07", end: "2026-09-09" },
+      today: "2026-09-09",
+      children: [{ id: "c1", age_band_label: "1–2" }],
+      days: [
+        {
+          child_id: "c1",
+          civil_date: "2026-09-08",
+          age_band_label: "1–2",
+          day_note: "Azi.",
+          done_titles: [],
+          photo_path: "c1/2026-09-08.jpg",
+        },
+      ],
+    });
+    expect(days.map((day) => day.civil_date)).toEqual([
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+    ]);
+    expect(days[0]?.photo_path).toBeNull();
+    expect(days[0]?.day_note).toBe("");
+    expect(days[1]?.photo_path).toBe("c1/2026-09-08.jpg");
+    expect(days[2]?.photo_path).toBeNull();
+  });
 });
 
 describe("photo file guards", () => {
@@ -164,6 +244,7 @@ describe("photo file guards", () => {
     expect(rejectIfNotPhoto({ type: "video/mp4", name: "ziua.mp4" })).toMatch(/video/i);
     expect(rejectIfNotPhoto({ type: "", name: "seara.mov" })).toMatch(/video/i);
     expect(rejectIfNotPhoto({ type: "image/jpeg", name: "poza.jpg" })).toBeNull();
+    expect(PHOTO_ACCEPT).not.toMatch(/video/i);
   });
 });
 
