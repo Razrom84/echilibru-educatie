@@ -51,7 +51,7 @@ describe("archive snapshots", () => {
     );
   });
 
-  test("done titles follow completed_at civil date, not live catalog ids", () => {
+  test("done titles follow completed_at civil date when the catalog has no weekday", () => {
     const titles = doneTitlesForCivilDate({
       civilDate: "2026-09-08",
       activities: [
@@ -64,6 +64,36 @@ describe("archive snapshots", () => {
       ],
     });
     expect(titles).toEqual(["Pași în curte"]);
+  });
+
+  test("a weekday activity ticked on Sunday is listed on the program day", () => {
+    const activities = [
+      {
+        id: "tue-fizic",
+        title: "Turnăm cu grijă",
+        week_number: 2,
+        day_of_week: 2,
+      },
+    ];
+    const completions = [
+      { activity_id: "tue-fizic", completed_at: "2026-09-13T14:00:00.000Z" },
+    ];
+    expect(
+      doneTitlesForCivilDate({
+        civilDate: "2026-09-08",
+        programYearStart: PROGRAM_YEAR_START_MONDAY_2026_27,
+        activities,
+        completions,
+      }),
+    ).toEqual(["Turnăm cu grijă"]);
+    expect(
+      doneTitlesForCivilDate({
+        civilDate: "2026-09-13",
+        programYearStart: PROGRAM_YEAR_START_MONDAY_2026_27,
+        activities,
+        completions,
+      }),
+    ).toEqual([]);
   });
 
   test("band label is frozen on later writes", () => {
@@ -283,6 +313,56 @@ describe("archive periods", () => {
     expect(days[1]?.day_note).toBe("");
     expect(days[2]?.done_titles).toEqual(["Udăm planta"]);
     expect(days[2]?.photo_path).toBe("c1/2026-09-09.jpg");
+  });
+
+  test("live program-day titles win over a snapshot stamped on the click day", () => {
+    const days = expandBookletDays({
+      period: { start: "2026-09-07", end: "2026-09-13" },
+      today: "2026-09-13",
+      children: [{ id: "c1", age_band_label: "1–2" }],
+      days: [
+        {
+          child_id: "c1",
+          civil_date: "2026-09-13",
+          age_band_label: "1–2",
+          day_note: "",
+          done_titles: ["Turnăm cu grijă", "Carte cu apă / baie"],
+          photo_path: "c1/2026-09-13.jpg",
+        },
+      ],
+      live: {
+        programYearStart: PROGRAM_YEAR_START_MONDAY_2026_27,
+        completions: [
+          {
+            child_id: "c1",
+            activity_id: "tue",
+            completed_at: "2026-09-13T14:00:00.000Z",
+          },
+          {
+            child_id: "c1",
+            activity_id: "sun",
+            completed_at: "2026-09-13T14:05:00.000Z",
+          },
+        ],
+        activities: [
+          {
+            id: "tue",
+            title: "Turnăm cu grijă",
+            week_number: 2,
+            day_of_week: 2,
+          },
+          {
+            id: "sun",
+            title: "Carte cu apă / baie",
+            week_number: 2,
+            day_of_week: 7,
+          },
+        ],
+      },
+    });
+    const byDate = Object.fromEntries(days.map((day) => [day.civil_date, day.done_titles]));
+    expect(byDate["2026-09-08"]).toEqual(["Turnăm cu grijă"]);
+    expect(byDate["2026-09-13"]).toEqual(["Carte cu apă / baie"]);
   });
 
   test("expand fills done titles onto a photo row that stored none", () => {

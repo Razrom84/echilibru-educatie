@@ -173,6 +173,23 @@ export function programWeekRange(
   };
 }
 
+/**
+ * Civil `YYYY-MM-DD` (Europe/Bucharest) for program week `1…52` + weekday `1…7`.
+ * Monday of S1 is `programYearStart`; Luni of S2 is that Monday + 7, etc.
+ */
+export function programDayCivilDate(
+  week: number,
+  dayOfWeek: number,
+  programYearStart: DateInput,
+): string {
+  const day = Math.min(7, Math.max(1, dayOfWeek));
+  const start = addUtcDays(
+    mondayOf(programYearStart),
+    (clampWeek(week) - 1) * 7 + (day - 1),
+  );
+  return formatCivilDate(start);
+}
+
 /** Validation-F helper: S1–S52 → Mon–Sun ranges for a program year. */
 export function programWeekTable(programYearStart?: DateInput): ProgramWeekRange[] {
   const start = programYearStart

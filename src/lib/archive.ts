@@ -21,9 +21,9 @@ import {
   mondayOf,
   programWeekNumber,
   toCivilDate,
-  toDateOnlyString,
   type DateInput,
 } from "@/lib/program-week";
+import { completionCivilDate, type ActivityDayRef } from "@/lib/completion-date";
 import { getSeedActivities } from "@/lib/seed/week1";
 import type { ArchiveDay, DayNote } from "@/lib/types";
 
@@ -137,16 +137,28 @@ export function normalizeDoneTitles(titles: readonly string[]): string[] {
   return result;
 }
 
+export type ArchiveActivityRef = ActivityDayRef & {
+  id: string;
+  title: string;
+};
+
 export function doneTitlesForCivilDate(args: {
   civilDate: string;
-  activities: readonly { id: string; title: string }[];
+  programYearStart?: string;
+  activities: readonly ArchiveActivityRef[];
   completions: readonly { activity_id: string; completed_at: string }[];
 }): string[] {
-  const titlesById = new Map(args.activities.map((row) => [row.id, row.title]));
+  const byId = new Map(args.activities.map((row) => [row.id, row]));
   const titles: string[] = [];
   for (const row of args.completions) {
-    if (toDateOnlyString(row.completed_at) !== args.civilDate) continue;
-    const title = titlesById.get(row.activity_id);
+    const activity = byId.get(row.activity_id);
+    const civil = completionCivilDate({
+      completedAt: row.completed_at,
+      programYearStart: args.programYearStart,
+      activity,
+    });
+    if (civil !== args.civilDate) continue;
+    const title = activity?.title;
     if (title) titles.push(title);
   }
   return normalizeDoneTitles(titles);
@@ -204,7 +216,7 @@ export function missingArchiveDrafts(args: {
     activity_id: string;
     completed_at: string;
   }[];
-  activities: readonly { id: string; title: string }[];
+  activities: readonly ArchiveActivityRef[];
   programYearStart: string;
 }): ArchiveDayDraft[] {
   const have = new Set(
@@ -221,6 +233,7 @@ export function missingArchiveDrafts(args: {
       });
       const doneTitles = doneTitlesForCivilDate({
         civilDate,
+        programYearStart: args.programYearStart,
         activities: args.activities,
         completions: args.completions.filter((row) => row.child_id === child.id),
       });
@@ -349,19 +362,24 @@ export type BookletLiveSources = {
     activity_id: string;
     completed_at: string;
   }[];
-  activities: readonly { id: string; title: string }[];
+  activities: readonly ArchiveActivityRef[];
 };
 
 export function seedTitlesForDates(
   dates: readonly string[],
   programYearStart: string,
-): { id: string; title: string }[] {
+): ArchiveActivityRef[] {
   const weeks = [...new Set(dates.map((date) => programWeekNumber(date, programYearStart)))];
-  const byId = new Map<string, { id: string; title: string }>();
+  const byId = new Map<string, ArchiveActivityRef>();
   for (const week of weeks) {
     for (const activity of getSeedActivities(week)) {
       if (!byId.has(activity.id)) {
-        byId.set(activity.id, { id: activity.id, title: activity.title });
+        byId.set(activity.id, {
+          id: activity.id,
+          title: activity.title,
+          week_number: activity.week_number,
+          day_of_week: activity.day_of_week,
+        });
       }
     }
   }
@@ -376,6 +394,7 @@ function liveContentForDay(
   if (!live) return { done: [], note: "" };
   const done = doneTitlesForCivilDate({
     civilDate,
+    programYearStart: live.programYearStart,
     activities: live.activities,
     completions: live.completions.filter((row) => row.child_id === childId),
   });
@@ -412,10 +431,9 @@ export function expandBookletDays<T extends ArchiveDayDraft>(args: {
         age_band_label:
           existing?.age_band_label?.trim() || child.age_band_label?.trim() || "",
         day_note: existing?.day_note?.trim() || liveBits.note,
-        done_titles: normalizeDoneTitles([
-          ...(existing?.done_titles ?? []),
-          ...liveBits.done,
-        ]),
+        done_titles: normalizeDoneTitles(
+          args.live ? liveBits.done : (existing?.done_titles ?? []),
+        ),
         photo_path: existing?.photo_path ?? null,
       });
     }

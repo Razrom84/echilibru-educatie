@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { CompleteToggle } from "@/components/complete-toggle";
 import { DayNoteEditor } from "@/components/day-note-editor";
 import { PillarMark } from "@/components/pillar-mark";
 import { EmptyState } from "@/components/status-blocks";
@@ -27,8 +28,16 @@ export function SaptamanaView({
   today: string;
   focusDay?: number | null;
 }) {
-  const { activities, completions, selectedChild, selectedWeek, weekTheme, family } =
-    useFamily();
+  const {
+    activities,
+    completions,
+    selectedChild,
+    selectedWeek,
+    weekTheme,
+    family,
+    toggleComplete,
+  } = useFamily();
+  const [busyId, setBusyId] = useState<string | null>(null);
   const todayDow = aziDayOfWeek(today);
   const days = visibleProgramWeekDays({
     weekMonday: mondayOf(today),
@@ -46,6 +55,15 @@ export function SaptamanaView({
     const section = document.getElementById(weekDaySectionId(selectedDay));
     section?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, [selectedDay]);
+
+  async function onToggle(activityId: string) {
+    setBusyId(activityId);
+    try {
+      await toggleComplete(activityId);
+    } finally {
+      setBusyId(null);
+    }
+  }
 
   if (!selectedChild) {
     return (
@@ -113,10 +131,10 @@ export function SaptamanaView({
                       (row) => row.activity_id === activity.id,
                     );
                     return (
-                      <li key={activity.id}>
+                      <li key={activity.id} className="flex items-center gap-2">
                         <Link
                           href={`/activitate/${activity.id}`}
-                          className="flex items-center gap-2 rounded-xl px-1 py-1 hover:bg-muted"
+                          className="flex min-w-0 flex-1 items-center gap-2 rounded-xl px-1 py-1 hover:bg-muted"
                         >
                           <span
                             className={cn(
@@ -132,6 +150,12 @@ export function SaptamanaView({
                           <PillarMark pillar={activity.pillar} />
                           <span className="truncate text-sm">{activity.title}</span>
                         </Link>
+                        <CompleteToggle
+                          completion={completion ?? null}
+                          disabled={busyId === activity.id}
+                          compact
+                          onToggle={() => void onToggle(activity.id)}
+                        />
                       </li>
                     );
                   })}

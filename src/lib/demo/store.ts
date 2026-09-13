@@ -115,6 +115,7 @@ export function upsertDemoCompletion(
     activityId: string;
     mode: CompletionMode;
     parentApproved: boolean | null;
+    completedAt?: string;
   },
 ): DemoState {
   const existing = state.completions.find(
@@ -124,7 +125,7 @@ export function upsertDemoCompletion(
     id: existing?.id ?? id("done"),
     child_id: input.childId,
     activity_id: input.activityId,
-    completed_at: existing?.completed_at ?? nowIso(),
+    completed_at: existing?.completed_at ?? input.completedAt ?? nowIso(),
     mode: input.mode,
     parent_approved: input.parentApproved,
   };
