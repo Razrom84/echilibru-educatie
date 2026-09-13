@@ -37,7 +37,11 @@ import type {
 } from "@/lib/types";
 import { bandFromBirthdate } from "@/lib/band";
 import { normalizeDayNoteBody } from "@/lib/day-note";
-import { getSeedActivities, normalizeActivity } from "@/lib/seed/week1";
+import {
+  completedAtForCivilDate,
+  restampDatesForToggle,
+} from "@/lib/completion-date";
+import { getSeedActivities, getSeedActivityById, normalizeActivity } from "@/lib/seed/week1";
 import { DEMO_CALENDAR_TOKEN, generateCalendarToken } from "@/lib/calendar";
 import {
   ARCHIVE_BUCKET,
@@ -64,9 +68,9 @@ import {
   familyJoinFields,
   familyProgramWeek,
   familyProgramYearStart,
+  programDayCivilDate,
   programWeekNumber,
   programWeekRange,
-  toDateOnlyString,
 } from "@/lib/program-week";
 import { getWeekTheme, PROGRAM_AGE_BAND, PROGRAM_WEEK } from "@/lib/week";
 import type { SeedActivity } from "@/lib/types";
@@ -626,6 +630,7 @@ export function FamilyProvider({
         doneTitles: (() => {
           const computed = doneTitlesForCivilDate({
             civilDate: args.civilDate,
+            programYearStart: yearStart,
             activities: catalog,
             completions: args.completions.filter((row) => row.child_id === selectedChild.id),
           });
@@ -700,15 +705,22 @@ export function FamilyProvider({
   const toggleComplete = useCallback(
     async (activityId: string) => {
       if (!selectedChild || !family) return;
+      const activity =
+        activities.find((row) => row.id === activityId) ?? getSeedActivityById(activityId);
+      const yearStart = familyProgramYearStart(family);
+      const programCivilDate = activity
+        ? programDayCivilDate(activity.week_number, activity.day_of_week, yearStart)
+        : bucharestToday();
       const existing = completions.find((row) => row.activity_id === activityId);
       if (existing) {
         if (isDemo) {
           const next = removeDemoCompletion(readDemoState(), selectedChild.id, activityId);
           writeDemoState(next);
           setCompletions(next.completions);
-          const dates = new Set<string>([bucharestToday()]);
-          dates.add(toDateOnlyString(existing.completed_at));
-          for (const civilDate of dates) {
+          for (const civilDate of restampDatesForToggle({
+            programCivilDate,
+            previousCompletedAt: existing.completed_at,
+          })) {
             await stampArchiveDay({
               civilDate,
               completions: next.completions,
@@ -726,9 +738,10 @@ export function FamilyProvider({
         if (deleteError) throw new Error(deleteError.message);
         const nextCompletions = completions.filter((row) => row.id !== existing.id);
         setCompletions(nextCompletions);
-        const dates = new Set<string>([bucharestToday()]);
-        dates.add(toDateOnlyString(existing.completed_at));
-        for (const civilDate of dates) {
+        for (const civilDate of restampDatesForToggle({
+          programCivilDate,
+          previousCompletedAt: existing.completed_at,
+        })) {
           await stampArchiveDay({
             civilDate,
             completions: nextCompletions,
@@ -740,17 +753,19 @@ export function FamilyProvider({
 
       const mode = family.default_mode;
       const parentApproved = mode === "A" ? true : false;
+      const completedAt = completedAtForCivilDate(programCivilDate);
       if (isDemo) {
         const next = upsertDemoCompletion(readDemoState(), {
           childId: selectedChild.id,
           activityId,
           mode,
           parentApproved,
+          completedAt,
         });
         writeDemoState(next);
         setCompletions(next.completions);
         await stampArchiveDay({
-          civilDate: bucharestToday(),
+          civilDate: programCivilDate,
           completions: next.completions,
           dayNotes,
         });
@@ -766,6 +781,7 @@ export function FamilyProvider({
           activity_id: activityId,
           mode,
           parent_approved: parentApproved,
+          completed_at: completedAt,
         })
         .select("*")
         .single();
@@ -774,12 +790,12 @@ export function FamilyProvider({
       const nextCompletions = [...completions, row];
       setCompletions(nextCompletions);
       await stampArchiveDay({
-        civilDate: bucharestToday(),
+        civilDate: programCivilDate,
         completions: nextCompletions,
         dayNotes,
       });
     },
-    [completions, dayNotes, family, isDemo, selectedChild, stampArchiveDay],
+    [activities, completions, dayNotes, family, isDemo, selectedChild, stampArchiveDay],
   );
 
   const saveDayNote = useCallback(

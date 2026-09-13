@@ -11,6 +11,7 @@ import {
   familyProgramYearStart,
   formatCivilDate,
   mondayOf,
+  programDayCivilDate,
   programWeekNumber,
   programWeekRange,
   programWeekTable,
@@ -137,6 +138,8 @@ describe("programWeekTable — 2026/27 fixture", () => {
       week: 1,
       ...PROGRAM_YEAR_2026_27.s1,
     });
+    expect(programDayCivilDate(2, 1, START_2026_27)).toBe("2026-09-07");
+    expect(programDayCivilDate(2, 7, START_2026_27)).toBe("2026-09-13");
   });
 });
 
