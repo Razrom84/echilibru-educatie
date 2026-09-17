@@ -1,5 +1,5 @@
 /**
- * One PDF style for week / month / year booklets.
+ * One PDF style for week / month / year / interval booklets.
  * Date, what you did, the day's note, photo thumbnail. No scores, no video.
  *
  * Body copy uses an embedded Unicode font (Source Sans 3 Regular) so Romanian

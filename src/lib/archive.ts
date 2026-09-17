@@ -42,6 +42,14 @@ export const ARCHIVE_QUIET_DAY = "Fără notă și fără fotografie.";
 export const ARCHIVE_PDF_WEEK = "Descarcă caietul săptămânii";
 export const ARCHIVE_PDF_MONTH = "Descarcă caietul lunii";
 export const ARCHIVE_PDF_YEAR = "Descarcă caietul anului";
+export const ARCHIVE_PDF_INTERVAL = "Descarcă caiet pe interval";
+export const ARCHIVE_PDF_INTERVAL_FROM = "De la";
+export const ARCHIVE_PDF_INTERVAL_TO = "Până la";
+export const ARCHIVE_PDF_INTERVAL_HELP =
+  "Alege perioada; același caiet scurt, fără punctaje.";
+export const ARCHIVE_PDF_INTERVAL_INVALID =
+  "Perioada nu e validă: „Până la” trebuie să fie aceeași zi sau după „De la”.";
+export const ARCHIVE_PDF_INTERVAL_MISSING = "Alege data de început și data de sfârșit.";
 export const ARCHIVE_PDF_BUSY = "Pregătesc caietul…";
 export const ARCHIVE_PICK_DAY = "Alege o zi";
 export const ARCHIVE_BAND_PREFIX = "Banda";
@@ -63,7 +71,7 @@ export const PHOTO_READ_FAILED =
 export const PHOTO_OPEN = "Deschide fotografia mai mare";
 export const PHOTO_CLOSE = "Închide fotografia";
 
-export type ArchivePeriodKind = "weekly" | "monthly" | "yearly";
+export type ArchivePeriodKind = "weekly" | "monthly" | "yearly" | "interval";
 
 export type ArchivePeriod = {
   kind: ArchivePeriodKind;
@@ -96,13 +104,16 @@ export function addCivilDays(dateOnly: string, days: number): string {
   );
 }
 
+/** Safety cap so a bad loop cannot walk forever. Year booklets are 365/366. */
+const CIVIL_DATE_WALK_LIMIT = 800;
+
 export function eachCivilDate(start: string, end: string): string[] {
   const dates: string[] = [];
   let current = start;
   while (current <= end) {
     dates.push(current);
     current = addCivilDays(current, 1);
-    if (dates.length > 400) break;
+    if (dates.length > CIVIL_DATE_WALK_LIMIT) break;
   }
   return dates;
 }
@@ -310,6 +321,23 @@ export function calendarYearPeriod(year: number): ArchivePeriod {
     periodKey: yearlyPeriodKey(year),
     label: String(year),
     filename: `caiet-an-${year}.pdf`,
+  };
+}
+
+export function intervalRangeError(start: string, end: string): string | null {
+  if (!isCivilDate(start) || !isCivilDate(end)) return ARCHIVE_PDF_INTERVAL_MISSING;
+  if (end < start) return ARCHIVE_PDF_INTERVAL_INVALID;
+  return null;
+}
+
+export function civilIntervalPeriod(start: string, end: string): ArchivePeriod {
+  return {
+    kind: "interval",
+    start,
+    end,
+    periodKey: `interval:${start}:${end}`,
+    label: `${formatRoLongDate(start)} – ${formatRoLongDate(end)}`,
+    filename: `caiet-interval-${start}-${end}.pdf`,
   };
 }
 

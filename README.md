@@ -10,7 +10,7 @@ Nu atinge site-ul englez EQUILIBRIUM / `equilibriumthebook.com`.
 - Autentificare părinte: email + parolă (Supabase Auth)
 - Onboarding: primul copil
 - 8 ecrane: Login, Onboarding, Azi, Săptămână, Detaliu activitate, Progres, Copii, Setări
-- **Arhivă de creștere**: o fotografie comprimată pe zi civilă (Europe/Bucharest), pagină privată, caiet PDF (săptămână / lună / an)
+- **Arhivă de creștere**: o fotografie comprimată pe zi civilă (Europe/Bucharest), pagină privată, caiet PDF (săptămână / lună / an / interval ales)
 - Mod A (părintele face împreună / pentru copil) și mod B (bifa copilului + aprobare)
 - Completările se salvează per copil
 - Calendar ICS: **Adaugă în calendar** copiază un link de abonament (`/api/calendar/{token}.ics`); Apple / Google se abonează, fără OAuth
@@ -121,7 +121,7 @@ Origin nu e legat de Vercel din acest agent. Pași:
 
 Pe **Azi**: o fotografie pe ziua civilă (Europe/Bucharest), din galerie sau de pe calculator. Se comprimă în browser (JPEG, latură max. 1600px). Originalul rămâne pe dispozitiv. O poză / zi; se poate înlocui sau șterge. Fără video.
 
-**Arhivă** (`/arhiva`): aceeași autentificare, privată pe copil. Deschizi o zi trecută: nota, ce a fost bifat, fotografia dacă există. Descarci manual caietul PDF pentru săptămâna civilă (luni–duminică), luna calendaristică sau anul calendaristic. Același stil: dată, ce ați făcut, notă, thumbnail.
+**Arhivă** (`/arhiva`): aceeași autentificare, privată pe copil. Deschizi o zi trecută: nota, ce a fost bifat, fotografia dacă există. Descarci manual caietul PDF pentru săptămâna civilă (luni–duminică), luna calendaristică, anul calendaristic sau un interval ales (De la / Până la). Același stil: dată, ce ați făcut, notă, thumbnail.
 
 Mailul de luni nu mai pune scoruri în corp: e un mesaj scurt că ai caietul gata, cu PDF-ul atașat. Prima luni din lună = caietul lunii trecute. 2 ianuarie 08:00 Europe/Bucharest = caietul anului calendaristic trecut (cron separat, ca să nu se amestece cu luni).
 

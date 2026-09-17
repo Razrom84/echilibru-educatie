@@ -4,18 +4,27 @@ import {
   addCivilDays,
   archiveDayHasContent,
   archivePhotoPath,
+  ARCHIVE_EMPTY_PERIOD,
+  ARCHIVE_PDF_INTERVAL,
+  ARCHIVE_PDF_INTERVAL_FROM,
+  ARCHIVE_PDF_INTERVAL_INVALID,
+  ARCHIVE_PDF_INTERVAL_MISSING,
+  ARCHIVE_PDF_INTERVAL_TO,
   buildArchiveDraft,
   bookletCivilDates,
   calendarMonthPeriod,
   calendarYearPeriod,
+  civilIntervalPeriod,
   civilWeekPeriod,
   clipArchivePeriodToToday,
   closedMonthPeriod,
   closedWeekPeriod,
   closedYearPeriod,
+  daysInPeriod,
   doneTitlesForCivilDate,
   eachCivilDate,
   expandBookletDays,
+  intervalRangeError,
   missingArchiveDrafts,
   noteForCivilDate,
   shouldSkipArchivePeriod,
@@ -238,6 +247,118 @@ describe("archive periods", () => {
   test("past year is every day of that year", () => {
     const year = calendarYearPeriod(2025);
     expect(bookletCivilDates(year, "2026-09-09")).toHaveLength(365);
+  });
+
+  test("custom interval copy is locked in Romanian", () => {
+    expect(ARCHIVE_PDF_INTERVAL).toBe("Descarcă caiet pe interval");
+    expect(ARCHIVE_PDF_INTERVAL_FROM).toBe("De la");
+    expect(ARCHIVE_PDF_INTERVAL_TO).toBe("Până la");
+  });
+
+  test("invalid interval (end before start) is a gentle Romanian error", () => {
+    expect(intervalRangeError("2026-09-10", "2026-09-01")).toBe(
+      ARCHIVE_PDF_INTERVAL_INVALID,
+    );
+    expect(intervalRangeError("2026-09-01", "2026-09-01")).toBeNull();
+    expect(intervalRangeError("2026-09-01", "2026-09-10")).toBeNull();
+    expect(intervalRangeError("", "2026-09-10")).toBe(ARCHIVE_PDF_INTERVAL_MISSING);
+  });
+
+  test("civil interval is inclusive and names the PDF after both dates", () => {
+    const period = civilIntervalPeriod("2026-09-03", "2026-09-08");
+    expect(period.kind).toBe("interval");
+    expect(period.start).toBe("2026-09-03");
+    expect(period.end).toBe("2026-09-08");
+    expect(period.periodKey).toBe("interval:2026-09-03:2026-09-08");
+    expect(period.label).toBe("3 septembrie 2026 – 8 septembrie 2026");
+    expect(period.filename).toBe("caiet-interval-2026-09-03-2026-09-08.pdf");
+  });
+
+  test("interval booklet dates are only the chosen days, clipped to today", () => {
+    const period = civilIntervalPeriod("2026-09-03", "2026-09-12");
+    expect(bookletCivilDates(period, "2026-09-09")).toEqual([
+      "2026-09-03",
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+    ]);
+    expect(bookletCivilDates(period, "2026-09-09")).not.toContain("2026-09-02");
+    expect(bookletCivilDates(period, "2026-09-09")).not.toContain("2026-09-10");
+    expect(clipArchivePeriodToToday(period, "2026-09-09").end).toBe("2026-09-09");
+  });
+
+  test("daysInPeriod keeps only rows inside the interval", () => {
+    const period = civilIntervalPeriod("2026-09-03", "2026-09-05");
+    const rows = daysInPeriod(
+      [
+        { civil_date: "2026-09-02" },
+        { civil_date: "2026-09-03" },
+        { civil_date: "2026-09-05" },
+        { civil_date: "2026-09-06" },
+      ],
+      period,
+    );
+    expect(rows.map((row) => row.civil_date)).toEqual(["2026-09-03", "2026-09-05"]);
+  });
+
+  test("empty interval (start after today) has no booklet days", () => {
+    const period = civilIntervalPeriod("2026-09-10", "2026-09-12");
+    expect(bookletCivilDates(period, "2026-09-09")).toEqual([]);
+    expect(ARCHIVE_EMPTY_PERIOD).toMatch(/perioada/i);
+  });
+
+  test("expand for an interval includes quiet days and live done titles only in range", () => {
+    const period = civilIntervalPeriod("2026-09-08", "2026-09-09");
+    const days = expandBookletDays({
+      period,
+      today: "2026-09-09",
+      children: [{ id: "c1", age_band_label: "1–2" }],
+      days: [
+        {
+          child_id: "c1",
+          civil_date: "2026-09-07",
+          age_band_label: "1–2",
+          day_note: "În afara intervalului.",
+          done_titles: ["Pași în curte"],
+          photo_path: "c1/2026-09-07.jpg",
+        },
+        {
+          child_id: "c1",
+          civil_date: "2026-09-08",
+          age_band_label: "1–2",
+          day_note: "În interval.",
+          done_titles: [],
+          photo_path: "c1/2026-09-08.jpg",
+        },
+      ],
+      live: {
+        programYearStart: PROGRAM_YEAR_START_MONDAY_2026_27,
+        completions: [
+          {
+            child_id: "c1",
+            activity_id: "mon",
+            completed_at: "2026-09-07T07:00:00.000Z",
+          },
+          {
+            child_id: "c1",
+            activity_id: "tue",
+            completed_at: "2026-09-08T07:00:00.000Z",
+          },
+        ],
+        activities: [
+          { id: "mon", title: "Pași în curte" },
+          { id: "tue", title: "Turnăm cu grijă" },
+        ],
+      },
+    });
+    expect(days.map((day) => day.civil_date)).toEqual(["2026-09-08", "2026-09-09"]);
+    expect(days[0]?.day_note).toBe("În interval.");
+    expect(days[0]?.done_titles).toEqual(["Turnăm cu grijă"]);
+    expect(days[1]?.day_note).toBe("");
+    expect(days[1]?.photo_path).toBeNull();
   });
 
   test("expand includes quiet days that have no photo and no note", () => {

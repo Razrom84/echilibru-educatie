@@ -11,6 +11,10 @@ import {
   ARCHIVE_EMPTY_PERIOD,
   ARCHIVE_HEADING,
   ARCHIVE_PDF_BUSY,
+  ARCHIVE_PDF_INTERVAL,
+  ARCHIVE_PDF_INTERVAL_FROM,
+  ARCHIVE_PDF_INTERVAL_HELP,
+  ARCHIVE_PDF_INTERVAL_TO,
   ARCHIVE_PDF_MONTH,
   ARCHIVE_PDF_WEEK,
   ARCHIVE_PDF_YEAR,
@@ -19,8 +23,11 @@ import {
   archiveDayHasContent,
   calendarMonthPeriod,
   calendarYearPeriod,
+  civilIntervalPeriod,
   civilWeekPeriod,
+  intervalRangeError,
   snapshotAgeBandLabel,
+  type ArchivePeriod,
 } from "@/lib/archive";
 import { useFamily } from "@/lib/family-context";
 import { formatRoLongDate } from "@/lib/monday-digest";
@@ -65,7 +72,12 @@ export function ArhivaView({ today }: { today: string }) {
   const [photoUrl, setPhotoUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
-  const [pdfBusy, setPdfBusy] = useState<"week" | "month" | "year" | null>(null);
+  const [pdfBusy, setPdfBusy] = useState<"week" | "month" | "year" | "interval" | null>(
+    null,
+  );
+  const [intervalStart, setIntervalStart] = useState(today);
+  const [intervalEnd, setIntervalEnd] = useState(today);
+  const [intervalError, setIntervalError] = useState<string | null>(null);
   const [reloadToken, setReloadToken] = useState(0);
 
   const monthValue = monthInputValue(selectedDate);
@@ -129,17 +141,14 @@ export function ArhivaView({ today }: { today: string }) {
     };
   }, [selectedRow?.photo_path, signedPhotoUrl]);
 
-  async function downloadPeriod(kind: "week" | "month" | "year") {
+  async function downloadBooklet(
+    period: ArchivePeriod,
+    busy: "week" | "month" | "year" | "interval",
+  ) {
     if (!selectedChild) return;
-    setPdfBusy(kind);
+    setPdfBusy(busy);
     setError(null);
     try {
-      const period =
-        kind === "week"
-          ? civilWeekPeriod(selectedDate)
-          : kind === "month"
-            ? monthPeriod
-            : calendarYearPeriod(toCivilDate(selectedDate).year);
       const rows = await loadArchiveDays(period.start, period.end);
       const live = await loadBookletLive(period.start, period.end, today);
       const photos = new Map<string, { bytes: Uint8Array }>();
@@ -171,6 +180,26 @@ export function ArhivaView({ today }: { today: string }) {
     } finally {
       setPdfBusy(null);
     }
+  }
+
+  function downloadPeriod(kind: "week" | "month" | "year") {
+    const period =
+      kind === "week"
+        ? civilWeekPeriod(selectedDate)
+        : kind === "month"
+          ? monthPeriod
+          : calendarYearPeriod(toCivilDate(selectedDate).year);
+    void downloadBooklet(period, kind);
+  }
+
+  function downloadInterval() {
+    const rangeError = intervalRangeError(intervalStart, intervalEnd);
+    if (rangeError) {
+      setIntervalError(rangeError);
+      return;
+    }
+    setIntervalError(null);
+    void downloadBooklet(civilIntervalPeriod(intervalStart, intervalEnd), "interval");
   }
 
   if (!selectedChild) {
@@ -291,8 +320,8 @@ export function ArhivaView({ today }: { today: string }) {
       <div className="space-y-3 rounded-2xl border border-border bg-card p-4">
         <p className="text-sm font-medium">Caiet PDF</p>
         <p className="text-xs leading-5 text-muted-foreground">
-          Același caiet scurt pentru săptămână (luni–duminică), lună sau an: data, ce ați
-          făcut, nota și fotografia. Fără punctaje.
+          Același caiet scurt pentru săptămână (luni–duminică), lună, an sau un interval
+          ales: data, ce ați făcut, nota și fotografia. Fără punctaje.
         </p>
         <div className="flex flex-col gap-2 sm:flex-row">
           <Button
@@ -300,7 +329,7 @@ export function ArhivaView({ today }: { today: string }) {
             variant="outline"
             className="h-11 flex-1"
             disabled={pdfBusy != null}
-            onClick={() => void downloadPeriod("week")}
+            onClick={() => downloadPeriod("week")}
           >
             {pdfBusy === "week" ? ARCHIVE_PDF_BUSY : ARCHIVE_PDF_WEEK}
           </Button>
@@ -309,7 +338,7 @@ export function ArhivaView({ today }: { today: string }) {
             variant="outline"
             className="h-11 flex-1"
             disabled={pdfBusy != null}
-            onClick={() => void downloadPeriod("month")}
+            onClick={() => downloadPeriod("month")}
           >
             {pdfBusy === "month" ? ARCHIVE_PDF_BUSY : ARCHIVE_PDF_MONTH}
           </Button>
@@ -318,10 +347,61 @@ export function ArhivaView({ today }: { today: string }) {
             variant="outline"
             className="h-11 flex-1"
             disabled={pdfBusy != null}
-            onClick={() => void downloadPeriod("year")}
+            onClick={() => downloadPeriod("year")}
           >
             {pdfBusy === "year" ? ARCHIVE_PDF_BUSY : ARCHIVE_PDF_YEAR}
           </Button>
+        </div>
+        <div className="space-y-2 border-t border-border pt-3">
+          <p className="text-xs leading-5 text-muted-foreground">
+            {ARCHIVE_PDF_INTERVAL_HELP}
+          </p>
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-end">
+            <div className="space-y-1">
+              <Label htmlFor="arhiva-interval-de-la">{ARCHIVE_PDF_INTERVAL_FROM}</Label>
+              <Input
+                id="arhiva-interval-de-la"
+                type="date"
+                value={intervalStart}
+                max={today}
+                aria-invalid={intervalError != null}
+                onChange={(event) => {
+                  setIntervalStart(event.target.value);
+                  setIntervalError(null);
+                }}
+                className="h-11 w-[11.5rem]"
+              />
+            </div>
+            <div className="space-y-1">
+              <Label htmlFor="arhiva-interval-pana-la">{ARCHIVE_PDF_INTERVAL_TO}</Label>
+              <Input
+                id="arhiva-interval-pana-la"
+                type="date"
+                value={intervalEnd}
+                max={today}
+                aria-invalid={intervalError != null}
+                onChange={(event) => {
+                  setIntervalEnd(event.target.value);
+                  setIntervalError(null);
+                }}
+                className="h-11 w-[11.5rem]"
+              />
+            </div>
+            <Button
+              type="button"
+              variant="outline"
+              className="h-11 sm:flex-1"
+              disabled={pdfBusy != null}
+              onClick={downloadInterval}
+            >
+              {pdfBusy === "interval" ? ARCHIVE_PDF_BUSY : ARCHIVE_PDF_INTERVAL}
+            </Button>
+          </div>
+          {intervalError ? (
+            <p className="text-sm text-destructive" role="alert">
+              {intervalError}
+            </p>
+          ) : null}
         </div>
         {days.every((row) => !archiveDayHasContent(row)) && !loading ? (
           <p className="text-xs text-muted-foreground">{ARCHIVE_EMPTY_PERIOD}</p>

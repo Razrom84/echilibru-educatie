@@ -11,9 +11,8 @@ import {
   monthlySubject,
   weeklySubject,
   yearlySubject,
-  type DigestKind,
 } from "@/lib/monday-digest";
-import type { ArchivePeriod } from "@/lib/archive";
+import type { ArchivePeriod, ArchivePeriodKind } from "@/lib/archive";
 
 export type ArchiveReadyEmail = {
   subject: string;
@@ -65,7 +64,7 @@ function htmlShell(title: string, inner: string): string {
 `;
 }
 
-export function archiveMailIntro(kind: DigestKind): string {
+export function archiveMailIntro(kind: ArchivePeriodKind): string {
   if (kind === "yearly") return YEARLY_INTRO;
   if (kind === "monthly") return MONTHLY_INTRO;
   return WEEKLY_INTRO;
