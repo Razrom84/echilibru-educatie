@@ -79,13 +79,18 @@ import {
   programWeekNumber,
   programWeekRange,
 } from "@/lib/program-week";
-import { clampProgramWeek, getWeekTheme, PROGRAM_AGE_BAND, PROGRAM_WEEK, PROGRAM_WEEKS } from "@/lib/week";
+import { getWeekTheme, PROGRAM_AGE_BAND, PROGRAM_WEEK, PROGRAM_WEEKS } from "@/lib/week";
 import type { SeedActivity } from "@/lib/types";
 import {
+  applyPreviewBand,
+  applyPreviewWeek,
   bandHasCatalog,
+  clearPreviewSession,
+  isBandPreview,
   liveChildBand,
   previewActivitiesPending,
   themesFromActivityRows,
+  viewBandFromSession,
   viewProgramWeek,
   type PilotBand,
 } from "@/lib/band-preview";
@@ -232,8 +237,8 @@ export function FamilyProvider({
   }, [demoWeek, family, initialWeek, isDemo]);
 
   const liveBand = liveChildBand(selectedChild?.age_band);
-  const isPreviewing = Boolean(previewBand && previewBand !== liveBand);
-  const viewBand: PilotBand = isPreviewing && previewBand ? previewBand : liveBand;
+  const isPreviewing = isBandPreview(previewBand);
+  const viewBand: PilotBand = viewBandFromSession(previewBand, liveBand);
   const viewWeek = viewProgramWeek(isPreviewing, selectedWeek, previewWeek);
   const catalogForBand =
     isPreviewing && previewCatalog && previewCatalog.band === viewBand
@@ -1303,29 +1308,27 @@ export function FamilyProvider({
 
   const selectPreviewWeek = useCallback(
     (week: number) => {
-      if (!isPreviewing) return;
-      setPreviewWeek(clampProgramWeek(week));
+      setPreviewWeek((current) => {
+        const next = applyPreviewWeek(
+          week,
+          { previewBand, previewWeek: current },
+          selectedWeek,
+        );
+        return next.session.previewWeek;
+      });
     },
-    [isPreviewing],
+    [previewBand, selectedWeek],
   );
 
-  const selectPreviewBand = useCallback(
-    (band: PilotBand) => {
-      if (band === liveBand) {
-        setPreviewBand(null);
-        setPreviewWeek(null);
-        clearPreviewBandCookie();
-        return;
-      }
-      setPreviewBand(band);
-      writePreviewBandCookie(band);
-    },
-    [liveBand],
-  );
+  const selectPreviewBand = useCallback((band: PilotBand) => {
+    setPreviewBand(applyPreviewBand(band).previewBand);
+    writePreviewBandCookie(band);
+  }, []);
 
   const clearPreviewBand = useCallback(() => {
-    setPreviewBand(null);
-    setPreviewWeek(null);
+    const cleared = clearPreviewSession();
+    setPreviewBand(cleared.previewBand);
+    setPreviewWeek(cleared.previewWeek);
     clearPreviewBandCookie();
   }, []);
 

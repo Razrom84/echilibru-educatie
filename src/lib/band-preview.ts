@@ -32,8 +32,56 @@ export function liveChildBand(ageBand: string | null | undefined): PilotBand {
   return parsePilotBand(ageBand) ?? PROGRAM_AGE_BAND;
 }
 
-export function isBandPreview(viewBand: string, liveBand: string): boolean {
-  return viewBand !== liveBand;
+/** Session-only preview: chosen band + S#, never the child's live program week. */
+export type PreviewSession = {
+  previewBand: PilotBand | null;
+  previewWeek: number | null;
+};
+
+/**
+ * Preview is a Settings → Previzualizare session, including the live band.
+ * Selecting `1-2` while the child is on `1-2` still enters preview so S# nav
+ * can browse that catalog without moving the live week.
+ */
+export function isBandPreview(previewBand: string | null | undefined): boolean {
+  return isPilotBand(previewBand);
+}
+
+export function viewBandFromSession(
+  previewBand: PilotBand | null | undefined,
+  liveBand: PilotBand,
+): PilotBand {
+  return isPilotBand(previewBand) ? previewBand : liveBand;
+}
+
+/** Any pilot band, including live, enters or stays in the preview session. */
+export function applyPreviewBand(
+  band: PilotBand,
+  session: PreviewSession = { previewBand: null, previewWeek: null },
+): PreviewSession {
+  return { previewBand: band, previewWeek: session.previewWeek };
+}
+
+export function clearPreviewSession(): PreviewSession {
+  return { previewBand: null, previewWeek: null };
+}
+
+/**
+ * Session S# only. `liveWeek` is returned unchanged so callers cannot move
+ * the child's program week from the preview picker.
+ */
+export function applyPreviewWeek(
+  week: number,
+  session: PreviewSession,
+  liveWeek: number,
+): { session: PreviewSession; liveWeek: number } {
+  if (!isBandPreview(session.previewBand)) {
+    return { session, liveWeek };
+  }
+  return {
+    session: { ...session, previewWeek: clampProgramWeek(week) },
+    liveWeek,
+  };
 }
 
 /**
