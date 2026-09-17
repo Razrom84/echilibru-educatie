@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useEffect, useId, useState } from "react";
+import { FormEvent, useId, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -27,13 +27,15 @@ export function DayNoteEditor({
   const fieldId = useId();
   const stored = storedDayNoteBody(dayNotes, dayOfWeek, viewWeek);
   const [draft, setDraft] = useState(stored);
+  const [seenStored, setSeenStored] = useState(stored);
   const [busy, setBusy] = useState(false);
   const [saved, setSaved] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
+  if (stored !== seenStored) {
+    setSeenStored(stored);
     setDraft(stored);
-  }, [stored, dayOfWeek, viewWeek]);
+  }
 
   if (!selectedChild) return null;
 
