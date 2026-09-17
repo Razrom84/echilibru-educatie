@@ -5,9 +5,11 @@ import fontkit from "@pdf-lib/fontkit";
 import { PDFDocument } from "pdf-lib";
 import { describe, expect, test } from "vitest";
 import {
+  ARCHIVE_EMPTY_PERIOD,
   ARCHIVE_QUIET_DAY,
   calendarMonthPeriod,
   calendarYearPeriod,
+  civilIntervalPeriod,
   civilWeekPeriod,
 } from "./archive";
 import { ARCHIVE_FONT_PATH, buildArchiveBookletPdf } from "./archive-pdf";
@@ -213,5 +215,51 @@ describe("archive booklet PDF", () => {
     const font = await pdf.embedFont(await fontBytes(), { subset: true });
     expect(() => font.encodeText("Ați făcut: Pași în curte")).not.toThrow();
     expect(bytes.byteLength).toBeGreaterThan(1000);
+  });
+
+  test("interval period uses the same builder and stays inside the range", async () => {
+    const bytes = await buildArchiveBookletPdf({
+      period: civilIntervalPeriod("2026-09-08", "2026-09-09"),
+      children: [{ id: "c1", name: "Cezar" }],
+      days: [
+        {
+          child_id: "c1",
+          civil_date: "2026-09-07",
+          age_band_label: "1–2",
+          day_note: "În afara intervalului.",
+          done_titles: ["Pași în curte"],
+          photo_path: null,
+        },
+        {
+          child_id: "c1",
+          civil_date: "2026-09-08",
+          age_band_label: "1–2",
+          day_note: "Am fost în curte.",
+          done_titles: ["Turnăm cu grijă"],
+          photo_path: null,
+        },
+      ],
+      fontBytes: await fontBytes(),
+      today: "2026-09-09",
+    });
+    expect(bytes.byteLength).toBeGreaterThan(1000);
+    const asString = pdfLatin1(bytes);
+    expect(asString).toContain("%PDF");
+    expect(asString.toLowerCase()).not.toContain("video");
+  });
+
+  test("empty interval booklet still draws the empty-period line", async () => {
+    const bytes = await buildArchiveBookletPdf({
+      period: civilIntervalPeriod("2026-09-10", "2026-09-12"),
+      children: [{ id: "c1", name: "Cezar" }],
+      days: [],
+      fontBytes: await fontBytes(),
+      today: "2026-09-09",
+    });
+    expect(bytes.byteLength).toBeGreaterThan(500);
+    const pdf = await PDFDocument.create();
+    pdf.registerFontkit(fontkit);
+    const font = await pdf.embedFont(await fontBytes(), { subset: true });
+    expect(() => font.encodeText(ARCHIVE_EMPTY_PERIOD)).not.toThrow();
   });
 });

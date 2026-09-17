@@ -3,7 +3,7 @@ import {
   closedWeekPeriod,
   closedYearPeriod,
   shouldSkipArchivePeriod,
-  type ArchivePeriod,
+  type DigestArchivePeriod,
 } from "@/lib/archive";
 import {
   familyWantsMondayDigest,
@@ -32,14 +32,14 @@ export type ComposeArchiveFamily = {
 
 export type ComposeArchiveResult =
   | { status: "skipped-toggle" }
-  | { status: "skipped-empty"; period: ArchivePeriod }
-  | { status: "ready"; period: ArchivePeriod };
+  | { status: "skipped-empty"; period: DigestArchivePeriod }
+  | { status: "ready"; period: DigestArchivePeriod };
 
 export function selectArchiveMailPeriod(
   now: DateInput,
   family: ComposeArchiveFamily | null,
   kindOverride?: DigestKind | null,
-): ArchivePeriod {
+): DigestArchivePeriod {
   const kind = kindOverride ?? selectDigestKind(now);
   if (kind === "yearly") return closedYearPeriod(now);
   if (kind === "monthly") return closedMonthPeriod(now);
