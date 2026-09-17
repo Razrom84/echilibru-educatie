@@ -82,6 +82,11 @@ export type ArchivePeriod = {
   filename: string;
 };
 
+/** Mail / digest periods never use a manual interval. */
+export type DigestArchivePeriod = ArchivePeriod & {
+  kind: Exclude<ArchivePeriodKind, "interval">;
+};
+
 export type ArchiveDayDraft = {
   child_id: string;
   civil_date: string;
@@ -263,7 +268,7 @@ export function missingArchiveDrafts(args: {
   return drafts;
 }
 
-export function civilWeekPeriod(input: DateInput): ArchivePeriod {
+export function civilWeekPeriod(input: DateInput): DigestArchivePeriod {
   const start = formatCivilDate(mondayOf(input));
   const end = addCivilDays(start, 6);
   return {
@@ -283,7 +288,7 @@ export function closedWeekPeriod(
     joined_at?: string | null;
     created_at?: string | null;
   } | null,
-): ArchivePeriod {
+): DigestArchivePeriod {
   const closed = closedWeekContext(now, family);
   return {
     kind: "weekly",
@@ -295,7 +300,7 @@ export function closedWeekPeriod(
   };
 }
 
-export function calendarMonthPeriod(year: number, month: number): ArchivePeriod {
+export function calendarMonthPeriod(year: number, month: number): DigestArchivePeriod {
   const range = calendarMonthRange(year, month);
   return {
     kind: "monthly",
@@ -307,12 +312,12 @@ export function calendarMonthPeriod(year: number, month: number): ArchivePeriod 
   };
 }
 
-export function closedMonthPeriod(now: DateInput): ArchivePeriod {
+export function closedMonthPeriod(now: DateInput): DigestArchivePeriod {
   const month = previousCalendarMonth(now);
   return calendarMonthPeriod(month.year, month.month);
 }
 
-export function calendarYearPeriod(year: number): ArchivePeriod {
+export function calendarYearPeriod(year: number): DigestArchivePeriod {
   const range = calendarYearRange(year);
   return {
     kind: "yearly",
@@ -330,7 +335,10 @@ export function intervalRangeError(start: string, end: string): string | null {
   return null;
 }
 
-export function civilIntervalPeriod(start: string, end: string): ArchivePeriod {
+export function civilIntervalPeriod(
+  start: string,
+  end: string,
+): ArchivePeriod & { kind: "interval" } {
   return {
     kind: "interval",
     start,
@@ -341,7 +349,7 @@ export function civilIntervalPeriod(start: string, end: string): ArchivePeriod {
   };
 }
 
-export function closedYearPeriod(now: DateInput): ArchivePeriod {
+export function closedYearPeriod(now: DateInput): DigestArchivePeriod {
   const year = previousCalendarYear(now);
   return calendarYearPeriod(year.year);
 }
