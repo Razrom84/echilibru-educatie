@@ -11,8 +11,11 @@ import {
   PREVIEW_WEEK_LABEL,
   PREVIEW_WEEK_NEXT,
   PREVIEW_WEEK_PREV,
+  applyPreviewBand,
+  applyPreviewWeek,
   bandHasCatalog,
   bandLabel,
+  clearPreviewSession,
   isBandPreview,
   isPilotBand,
   liveChildBand,
@@ -22,6 +25,7 @@ import {
   previewShowsWeekNav,
   previewWeekControlLabel,
   themesFromActivityRows,
+  viewBandFromSession,
   viewProgramWeek,
 } from "./band-preview";
 
@@ -68,13 +72,18 @@ describe("V1.4 age-band preview", () => {
     expect(isPilotBand("1-2")).toBe(true);
   });
 
-  test("preview is only when the chosen band is not the child's live band", () => {
-    expect(isBandPreview("1-2", "1-2")).toBe(false);
-    expect(isBandPreview("2-3", "1-2")).toBe(true);
-    expect(isBandPreview("6-7", "1-2")).toBe(true);
+  test("preview session is active for any chosen pilot band, including live", () => {
+    expect(isBandPreview("1-2")).toBe(true);
+    expect(isBandPreview("2-3")).toBe(true);
+    expect(isBandPreview("6-7")).toBe(true);
+    expect(isBandPreview(null)).toBe(false);
+    expect(isBandPreview(undefined)).toBe(false);
   });
 
   test("banner copy names the preview band as read-only", () => {
+    expect(previewBannerText("1-2")).toBe(
+      "Previzualizare · bandă 1–2 (doar citire)",
+    );
     expect(previewBannerText("2-3")).toBe(
       "Previzualizare · bandă 2–3 (doar citire)",
     );
@@ -150,10 +159,73 @@ describe("V1.4.1 preview week navigation", () => {
     expect(viewProgramWeek(true, 4, 99)).toBe(52);
   });
 
-  test("S# control is shown for every preview band, including empty catalogs", () => {
+  test("selecting the live band enters a preview session instead of exiting", () => {
+    const liveBand = "1-2" as const;
+    const session = applyPreviewBand(liveBand);
+    expect(isBandPreview(session.previewBand)).toBe(true);
+    expect(session.previewBand).toBe("1-2");
+    expect(viewBandFromSession(session.previewBand, liveBand)).toBe("1-2");
+    expect(previewShowsWeekNav(isBandPreview(session.previewBand))).toBe(true);
+  });
+
+  test("switching from a non-live band to live 1-2 stays in preview", () => {
+    const fromOther = applyPreviewWeek(12, applyPreviewBand("2-3"), 4).session;
+    const toLive = applyPreviewBand("1-2", fromOther);
+    expect(isBandPreview(toLive.previewBand)).toBe(true);
+    expect(toLive.previewBand).toBe("1-2");
+    expect(toLive.previewWeek).toBe(12);
+  });
+
+  test("applyPreviewWeek is a no-op outside a preview session", () => {
+    const liveWeek = 4;
+    const idle = { previewBand: null, previewWeek: null };
+    const { session, liveWeek: unchanged } = applyPreviewWeek(12, idle, liveWeek);
+    expect(session.previewWeek).toBeNull();
+    expect(unchanged).toBe(4);
+  });
+
+  test("selectPreviewWeek does not mutate the live week", () => {
+    const liveWeek = 4;
+    const started = applyPreviewBand("1-2");
+    const { session, liveWeek: unchanged } = applyPreviewWeek(
+      12,
+      started,
+      liveWeek,
+    );
+    expect(session.previewWeek).toBe(12);
+    expect(unchanged).toBe(4);
+    expect(liveWeek).toBe(4);
+    expect(
+      viewProgramWeek(isBandPreview(session.previewBand), liveWeek, session.previewWeek),
+    ).toBe(12);
+  });
+
+  test("Înapoi / clearPreview restores live band and live S#", () => {
+    const liveBand = "1-2" as const;
+    const liveWeek = 4;
+    const previewing = applyPreviewWeek(
+      12,
+      applyPreviewBand(liveBand),
+      liveWeek,
+    ).session;
+    const cleared = clearPreviewSession();
+    expect(isBandPreview(cleared.previewBand)).toBe(false);
+    expect(cleared.previewWeek).toBeNull();
+    expect(viewBandFromSession(cleared.previewBand, liveBand)).toBe(liveBand);
+    expect(
+      viewProgramWeek(
+        isBandPreview(cleared.previewBand),
+        liveWeek,
+        cleared.previewWeek,
+      ),
+    ).toBe(4);
+    expect(previewing.previewWeek).toBe(12);
+  });
+
+  test("S# control is shown for every preview band, including live and empty catalogs", () => {
     for (const band of PILOT_BANDS) {
-      const preview = isBandPreview(band, "1-2");
-      expect(previewShowsWeekNav(preview)).toBe(preview);
+      expect(isBandPreview(band)).toBe(true);
+      expect(previewShowsWeekNav(isBandPreview(band))).toBe(true);
     }
     expect(previewShowsWeekNav(true)).toBe(true);
     expect(previewShowsWeekNav(false)).toBe(false);
