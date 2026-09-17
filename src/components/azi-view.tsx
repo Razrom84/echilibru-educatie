@@ -28,7 +28,7 @@ export function AziView({ today }: { today: string }) {
     viewWeekTheme,
     completions,
     selectedChild,
-    selectedWeek,
+    viewWeek,
     toggleComplete,
     family,
     todayArchive,
@@ -38,7 +38,7 @@ export function AziView({ today }: { today: string }) {
   } = useFamily();
   const [busyId, setBusyId] = useState<string | null>(null);
 
-  const week = selectedWeek;
+  const week = viewWeek;
   const day = aziDayOfWeek(today);
   const gate = aziGate({
     viewDate: today,

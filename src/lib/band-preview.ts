@@ -1,4 +1,4 @@
-import { PROGRAM_AGE_BAND } from "@/lib/week";
+import { clampProgramWeek, isProgramWeek, PROGRAM_AGE_BAND } from "@/lib/week";
 
 /** Pilot bands the parent may preview. Live V1 stays `1-2`. */
 export const PILOT_BANDS = ["1-2", "2-3", "3-4", "4-5", "5-6", "6-7"] as const;
@@ -10,6 +10,9 @@ export const PREVIEW_HELP =
 export const PREVIEW_EXIT = "Înapoi la banda copilului";
 export const PREVIEW_LIVE_MARK = "Azi copilul";
 export const PREVIEW_EMPTY = "Conținutul pentru această vârstă vine curând.";
+export const PREVIEW_WEEK_LABEL = "Săptămâna";
+export const PREVIEW_WEEK_PREV = "Săptămâna anterioară";
+export const PREVIEW_WEEK_NEXT = "Săptămâna următoare";
 
 export function isPilotBand(value: string | null | undefined): value is PilotBand {
   return (PILOT_BANDS as readonly string[]).includes(value ?? "");
@@ -31,6 +34,25 @@ export function liveChildBand(ageBand: string | null | undefined): PilotBand {
 
 export function isBandPreview(viewBand: string, liveBand: string): boolean {
   return viewBand !== liveBand;
+}
+
+/**
+ * Week shown on Azi / Săptămâna / Anul.
+ * In band preview, `previewWeek` is session-only and must not move the live S#.
+ */
+export function viewProgramWeek(
+  isPreview: boolean,
+  liveWeek: number,
+  previewWeek: number | null | undefined,
+): number {
+  if (!isPreview || previewWeek == null) return liveWeek;
+  return isProgramWeek(previewWeek)
+    ? previewWeek
+    : clampProgramWeek(previewWeek);
+}
+
+export function previewWeekControlLabel(week: number): string {
+  return `${PREVIEW_WEEK_LABEL} S${clampProgramWeek(week)}`;
 }
 
 export function previewBannerText(band: string): string {

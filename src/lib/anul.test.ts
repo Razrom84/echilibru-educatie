@@ -6,6 +6,7 @@ import {
   ANUL_SUBTITLE,
   ANUL_TITLE,
   anulPreviewReady,
+  anulWeekOpen,
   meteorologicalSeason,
   programWeekSeason,
   resolveAnulYearStart,
@@ -118,6 +119,15 @@ describe("yearWeekPreviews", () => {
       Array.from({ length: 13 }, (_, i) => i + 1),
     );
     expect(groups[3]?.weeks.at(-1)?.week).toBe(52);
+  });
+});
+
+describe("anulWeekOpen", () => {
+  test("live Anul only opens the current S#; preview opens any", () => {
+    expect(anulWeekOpen(false, true)).toBe(true);
+    expect(anulWeekOpen(false, false)).toBe(false);
+    expect(anulWeekOpen(true, false)).toBe(true);
+    expect(anulWeekOpen(true, true)).toBe(true);
   });
 });
 
