@@ -1,5 +1,6 @@
 import { describe, expect, test } from "vitest";
-import { PROGRAM_AGE_BAND } from "./week";
+import { getSeedActivities } from "./seed/week1";
+import { PROGRAM_AGE_BAND, PROGRAM_WEEKS } from "./week";
 import {
   PILOT_BANDS,
   PREVIEW_EMPTY,
@@ -72,6 +73,22 @@ describe("V1.4 age-band preview", () => {
     );
     expect(previewBannerText("4-5")).toBe(
       "Previzualizare · bandă 4–5 (doar citire)",
+    );
+  });
+
+  test("local seed cannot fill a 2-3 preview; empty only if that band has no rows", () => {
+    const weekRows = getSeedActivities(1).filter((row) => row.banda === "2-3");
+    const themeRows = PROGRAM_WEEKS.flatMap((week) =>
+      getSeedActivities(week).filter((row) => row.banda === "2-3"),
+    );
+    expect(weekRows).toHaveLength(0);
+    expect(themeRows).toHaveLength(0);
+    expect(bandHasCatalog(themesFromActivityRows(themeRows))).toBe(false);
+    expect(getSeedActivities(1).filter((row) => row.banda === "1-2")).toHaveLength(
+      28,
+    );
+    expect(getSeedActivities(1).some((row) => row.id.includes("-b23-"))).toBe(
+      false,
     );
   });
 

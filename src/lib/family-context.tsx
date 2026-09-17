@@ -463,30 +463,25 @@ export function FamilyProvider({
     let cancelled = false;
 
     async function loadPreviewCatalog(band: PilotBand) {
-      if (isDemo) {
+      const applySeedFallback = () => {
         const weekRows = getSeedActivities(selectedWeek).filter((row) => row.banda === band);
         const themeRows = PROGRAM_WEEKS.flatMap((week) =>
           getSeedActivities(week).filter((row) => row.banda === band),
         );
-        if (cancelled) return;
         setPreviewCatalog({
           band,
           week: selectedWeek,
           activities: weekRows,
           themes: themesFromActivityRows(themeRows),
         });
-        return;
-      }
+      };
 
+      // Preview reads the shared catalog. Demo still queries live `activities`
+      // when Supabase is configured — local seed is banda `1-2` only.
       const supabase = createBrowserSupabase();
       if (!supabase) {
         if (cancelled) return;
-        setPreviewCatalog({
-          band,
-          week: selectedWeek,
-          activities: [],
-          themes: {},
-        });
+        applySeedFallback();
         return;
       }
 
@@ -530,7 +525,7 @@ export function FamilyProvider({
     return () => {
       cancelled = true;
     };
-  }, [isDemo, isPreviewing, previewBand, selectedWeek]);
+  }, [isPreviewing, previewBand, selectedWeek]);
 
   const selectChild = useCallback(
     async (childId: string) => {
