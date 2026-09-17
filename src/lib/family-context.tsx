@@ -84,6 +84,7 @@ import type { SeedActivity } from "@/lib/types";
 import {
   bandHasCatalog,
   liveChildBand,
+  previewActivitiesPending,
   themesFromActivityRows,
   viewProgramWeek,
   type PilotBand,
@@ -107,6 +108,7 @@ type FamilyContextValue = {
   viewActivities: Activity[];
   viewWeekTheme: string;
   previewLoading: boolean;
+  previewWeekLoading: boolean;
   bandHasContent: boolean;
   bandWeekThemes: Partial<Record<number, string>> | null;
   activities: Activity[];
@@ -141,6 +143,7 @@ type FamilyContextValue = {
 };
 
 const FamilyContext = createContext<FamilyContextValue | null>(null);
+const EMPTY_PREVIEW_ACTIVITIES: Activity[] = [];
 
 function readChildCookie() {
   if (typeof document === "undefined") return null;
@@ -232,16 +235,26 @@ export function FamilyProvider({
   const isPreviewing = Boolean(previewBand && previewBand !== liveBand);
   const viewBand: PilotBand = isPreviewing && previewBand ? previewBand : liveBand;
   const viewWeek = viewProgramWeek(isPreviewing, selectedWeek, previewWeek);
-  const previewReady = Boolean(
-    isPreviewing &&
-      previewCatalog &&
-      previewCatalog.band === viewBand &&
-      previewCatalog.week === viewWeek,
-  );
-  const previewLoading = isPreviewing && !previewReady;
-  const previewActivities = previewReady && previewCatalog ? previewCatalog.activities : [];
-  const bandWeekThemes = previewReady && previewCatalog ? previewCatalog.themes : null;
-  const viewActivities = isPreviewing ? previewActivities : activities;
+  const catalogForBand =
+    isPreviewing && previewCatalog && previewCatalog.band === viewBand
+      ? previewCatalog
+      : null;
+  const catalogForWeek =
+    catalogForBand && catalogForBand.week === viewWeek ? catalogForBand : null;
+  const bandWeekThemes = catalogForBand?.themes ?? null;
+  const bandHasContent = isPreviewing
+    ? bandHasCatalog(bandWeekThemes) || (catalogForBand?.activities.length ?? 0) > 0
+    : activities.length > 0;
+  const previewLoading = isPreviewing && !catalogForBand;
+  const previewWeekLoading = previewActivitiesPending({
+    catalogWeek: catalogForBand?.week,
+    viewWeek,
+    bandHasContent,
+  });
+  const viewActivities = useMemo(() => {
+    if (!isPreviewing) return activities;
+    return catalogForWeek?.activities ?? EMPTY_PREVIEW_ACTIVITIES;
+  }, [activities, catalogForWeek, isPreviewing]);
   const viewWeekTheme = useMemo(() => {
     const fromCatalog = viewActivities.find(
       (row) => row.week_number === viewWeek,
@@ -250,9 +263,6 @@ export function FamilyProvider({
     if (isPreviewing) return bandWeekThemes?.[viewWeek] ?? "";
     return getWeekTheme(viewWeek);
   }, [bandWeekThemes, isPreviewing, viewActivities, viewWeek]);
-  const bandHasContent = isPreviewing
-    ? bandHasCatalog(bandWeekThemes) || viewActivities.length > 0
-    : activities.length > 0;
 
   const applyDemo = useCallback(
     (state: DemoState, week: number) => {
@@ -1350,6 +1360,7 @@ export function FamilyProvider({
       viewActivities,
       viewWeekTheme,
       previewLoading,
+      previewWeekLoading,
       bandHasContent,
       bandWeekThemes,
       activities,
@@ -1397,6 +1408,7 @@ export function FamilyProvider({
       loadArchiveDays,
       loadBookletLive,
       previewLoading,
+      previewWeekLoading,
       refresh,
       removeDayPhoto,
       saveDayNote,

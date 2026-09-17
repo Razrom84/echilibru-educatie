@@ -11,6 +11,7 @@ import {
   ANUL_NOW,
   ANUL_SUBTITLE,
   ANUL_TITLE,
+  anulHidesPreviewThemeList,
   anulPreviewReady,
   anulWeekOpen,
   resolveAnulYearStart,
@@ -68,7 +69,7 @@ export function AnulView() {
     );
   }
 
-  if (isBandPreview && !bandHasContent) {
+  if (anulHidesPreviewThemeList(isBandPreview, bandHasContent)) {
     return (
       <section className="space-y-4">
         <BandPreviewBanner />
@@ -93,6 +94,10 @@ export function AnulView() {
       <BandPreviewBanner />
       {heading}
 
+      {isBandPreview && !bandHasContent ? (
+        <EmptyState title={PREVIEW_EMPTY} />
+      ) : null}
+
       {groups.length === 0 ? (
         <EmptyState title={ANUL_TITLE} body={ANUL_ERROR} />
       ) : (
@@ -113,7 +118,9 @@ export function AnulView() {
                             S{row.week}
                             <span className="text-muted-foreground"> · {row.season}</span>
                           </p>
-                          <p className="mt-0.5 text-sm leading-5">{row.theme}</p>
+                          {row.theme ? (
+                            <p className="mt-0.5 text-sm leading-5">{row.theme}</p>
+                          ) : null}
                         </div>
                         {row.current ? (
                           <Badge variant="default">{ANUL_NOW}</Badge>

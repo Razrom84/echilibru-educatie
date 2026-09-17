@@ -55,6 +55,25 @@ export function previewWeekControlLabel(week: number): string {
   return `${PREVIEW_WEEK_LABEL} S${clampProgramWeek(week)}`;
 }
 
+/** S# prev/next/picker is shown for every preview band, including empty catalogs. */
+export function previewShowsWeekNav(isPreview: boolean): boolean {
+  return isPreview;
+}
+
+/**
+ * Week-activity refetch spinner. Empty bands stay on the empty copy while S#
+ * changes; seeded bands wait so Azi does not flash PREVIEW_EMPTY for a week
+ * that has rows.
+ */
+export function previewActivitiesPending(args: {
+  catalogWeek: number | null | undefined;
+  viewWeek: number;
+  bandHasContent: boolean;
+}): boolean {
+  if (!args.bandHasContent) return false;
+  return args.catalogWeek !== args.viewWeek;
+}
+
 export function previewBannerText(band: string): string {
   return `Previzualizare · bandă ${bandLabel(band)} (doar citire)`;
 }

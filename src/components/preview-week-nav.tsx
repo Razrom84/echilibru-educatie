@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import {
   PREVIEW_WEEK_NEXT,
   PREVIEW_WEEK_PREV,
+  previewShowsWeekNav,
   previewWeekControlLabel,
 } from "@/lib/band-preview";
 import { useFamily } from "@/lib/family-context";
@@ -15,7 +16,7 @@ const LAST_WEEK = PROGRAM_WEEKS[PROGRAM_WEEKS.length - 1] ?? 52;
 
 export function PreviewWeekNav() {
   const { isBandPreview, viewWeek, selectPreviewWeek } = useFamily();
-  if (!isBandPreview) return null;
+  if (!previewShowsWeekNav(isBandPreview)) return null;
 
   return (
     <div

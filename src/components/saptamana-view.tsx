@@ -41,6 +41,7 @@ export function SaptamanaView({
     toggleComplete,
     isBandPreview,
     previewLoading,
+    previewWeekLoading,
   } = useFamily();
   const [busyId, setBusyId] = useState<string | null>(null);
   const todayDow = aziDayOfWeek(today);
@@ -96,7 +97,7 @@ export function SaptamanaView({
         ) : null}
       </div>
 
-      {isBandPreview && previewLoading ? (
+      {isBandPreview && (previewLoading || previewWeekLoading) ? (
         <LoadingState label="Se încarcă previzualizarea…" />
       ) : isBandPreview && weekItems.length === 0 ? (
         <EmptyState title={PREVIEW_EMPTY} />

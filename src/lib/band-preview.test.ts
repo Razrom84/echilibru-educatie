@@ -17,7 +17,9 @@ import {
   isPilotBand,
   liveChildBand,
   parsePilotBand,
+  previewActivitiesPending,
   previewBannerText,
+  previewShowsWeekNav,
   previewWeekControlLabel,
   themesFromActivityRows,
   viewProgramWeek,
@@ -146,5 +148,35 @@ describe("V1.4.1 preview week navigation", () => {
     expect(clampProgramWeek(53)).toBe(52);
     expect(clampProgramWeek(Number.NaN)).toBe(1);
     expect(viewProgramWeek(true, 4, 99)).toBe(52);
+  });
+
+  test("S# control is shown for every preview band, including empty catalogs", () => {
+    for (const band of PILOT_BANDS) {
+      const preview = isBandPreview(band, "1-2");
+      expect(previewShowsWeekNav(preview)).toBe(preview);
+    }
+    expect(previewShowsWeekNav(true)).toBe(true);
+    expect(previewShowsWeekNav(false)).toBe(false);
+    expect(
+      previewActivitiesPending({
+        catalogWeek: 4,
+        viewWeek: 12,
+        bandHasContent: false,
+      }),
+    ).toBe(false);
+    expect(
+      previewActivitiesPending({
+        catalogWeek: 4,
+        viewWeek: 12,
+        bandHasContent: true,
+      }),
+    ).toBe(true);
+    expect(
+      previewActivitiesPending({
+        catalogWeek: 12,
+        viewWeek: 12,
+        bandHasContent: true,
+      }),
+    ).toBe(false);
   });
 });
