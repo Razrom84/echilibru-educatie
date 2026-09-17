@@ -79,12 +79,13 @@ import {
   programWeekNumber,
   programWeekRange,
 } from "@/lib/program-week";
-import { getWeekTheme, PROGRAM_AGE_BAND, PROGRAM_WEEK, PROGRAM_WEEKS } from "@/lib/week";
+import { clampProgramWeek, getWeekTheme, PROGRAM_AGE_BAND, PROGRAM_WEEK, PROGRAM_WEEKS } from "@/lib/week";
 import type { SeedActivity } from "@/lib/types";
 import {
   bandHasCatalog,
   liveChildBand,
   themesFromActivityRows,
+  viewProgramWeek,
   type PilotBand,
 } from "@/lib/band-preview";
 
@@ -98,6 +99,7 @@ type FamilyContextValue = {
   children: Child[];
   selectedChild: Child | null;
   selectedWeek: number;
+  viewWeek: number;
   weekTheme: string;
   liveBand: PilotBand;
   viewBand: PilotBand;
@@ -114,6 +116,7 @@ type FamilyContextValue = {
   todayPhotoUrl: string | null;
   refresh: () => Promise<void>;
   selectWeek: (week: number) => void;
+  selectPreviewWeek: (week: number) => void;
   selectPreviewBand: (band: PilotBand) => void;
   clearPreviewBand: () => void;
   selectChild: (childId: string) => Promise<void>;
@@ -201,6 +204,7 @@ export function FamilyProvider({
   const [selectedChildId, setSelectedChildId] = useState<string | null>(null);
   const [demoWeek, setDemoWeek] = useState<number | null>(isDemo ? initialWeek : null);
   const [previewBand, setPreviewBand] = useState<PilotBand | null>(initialPreviewBand);
+  const [previewWeek, setPreviewWeek] = useState<number | null>(null);
   const [previewCatalog, setPreviewCatalog] = useState<{
     band: PilotBand;
     week: number;
@@ -227,11 +231,12 @@ export function FamilyProvider({
   const liveBand = liveChildBand(selectedChild?.age_band);
   const isPreviewing = Boolean(previewBand && previewBand !== liveBand);
   const viewBand: PilotBand = isPreviewing && previewBand ? previewBand : liveBand;
+  const viewWeek = viewProgramWeek(isPreviewing, selectedWeek, previewWeek);
   const previewReady = Boolean(
     isPreviewing &&
       previewCatalog &&
       previewCatalog.band === viewBand &&
-      previewCatalog.week === selectedWeek,
+      previewCatalog.week === viewWeek,
   );
   const previewLoading = isPreviewing && !previewReady;
   const previewActivities = previewReady && previewCatalog ? previewCatalog.activities : [];
@@ -239,12 +244,12 @@ export function FamilyProvider({
   const viewActivities = isPreviewing ? previewActivities : activities;
   const viewWeekTheme = useMemo(() => {
     const fromCatalog = viewActivities.find(
-      (row) => row.week_number === selectedWeek,
+      (row) => row.week_number === viewWeek,
     )?.tema_saptamana;
     if (fromCatalog?.trim()) return fromCatalog;
-    if (isPreviewing) return bandWeekThemes?.[selectedWeek] ?? "";
-    return getWeekTheme(selectedWeek);
-  }, [bandWeekThemes, isPreviewing, selectedWeek, viewActivities]);
+    if (isPreviewing) return bandWeekThemes?.[viewWeek] ?? "";
+    return getWeekTheme(viewWeek);
+  }, [bandWeekThemes, isPreviewing, viewActivities, viewWeek]);
   const bandHasContent = isPreviewing
     ? bandHasCatalog(bandWeekThemes) || viewActivities.length > 0
     : activities.length > 0;
@@ -464,13 +469,13 @@ export function FamilyProvider({
 
     async function loadPreviewCatalog(band: PilotBand) {
       const applySeedFallback = () => {
-        const weekRows = getSeedActivities(selectedWeek).filter((row) => row.banda === band);
+        const weekRows = getSeedActivities(viewWeek).filter((row) => row.banda === band);
         const themeRows = PROGRAM_WEEKS.flatMap((week) =>
           getSeedActivities(week).filter((row) => row.banda === band),
         );
         setPreviewCatalog({
           band,
-          week: selectedWeek,
+          week: viewWeek,
           activities: weekRows,
           themes: themesFromActivityRows(themeRows),
         });
@@ -492,7 +497,7 @@ export function FamilyProvider({
         supabase
           .from("activities")
           .select("*")
-          .eq("saptamana", selectedWeek)
+          .eq("saptamana", viewWeek)
           // Filter by `banda` text (live `1-2`; preview `2-3` ids are `sN-b23-z…`).
           .eq("banda", band)
           .order("zi", { ascending: true }),
@@ -506,7 +511,7 @@ export function FamilyProvider({
       if (activityError || themeError) {
         setPreviewCatalog({
           band,
-          week: selectedWeek,
+          week: viewWeek,
           activities: [],
           themes: {},
         });
@@ -515,7 +520,7 @@ export function FamilyProvider({
 
       setPreviewCatalog({
         band,
-        week: selectedWeek,
+        week: viewWeek,
         activities: ((activityRows ?? []) as SeedActivity[]).map(normalizeActivity),
         themes: themesFromActivityRows(themeRows ?? []),
       });
@@ -525,7 +530,7 @@ export function FamilyProvider({
     return () => {
       cancelled = true;
     };
-  }, [isPreviewing, previewBand, selectedWeek]);
+  }, [isPreviewing, previewBand, viewWeek]);
 
   const selectChild = useCallback(
     async (childId: string) => {
@@ -1286,10 +1291,19 @@ export function FamilyProvider({
     [isDemo],
   );
 
+  const selectPreviewWeek = useCallback(
+    (week: number) => {
+      if (!isPreviewing) return;
+      setPreviewWeek(clampProgramWeek(week));
+    },
+    [isPreviewing],
+  );
+
   const selectPreviewBand = useCallback(
     (band: PilotBand) => {
       if (band === liveBand) {
         setPreviewBand(null);
+        setPreviewWeek(null);
         clearPreviewBandCookie();
         return;
       }
@@ -1301,6 +1315,7 @@ export function FamilyProvider({
 
   const clearPreviewBand = useCallback(() => {
     setPreviewBand(null);
+    setPreviewWeek(null);
     clearPreviewBandCookie();
   }, []);
 
@@ -1327,6 +1342,7 @@ export function FamilyProvider({
       children: kids,
       selectedChild,
       selectedWeek,
+      viewWeek,
       weekTheme: getWeekTheme(selectedWeek),
       liveBand,
       viewBand,
@@ -1343,6 +1359,7 @@ export function FamilyProvider({
       todayPhotoUrl,
       refresh,
       selectWeek,
+      selectPreviewWeek,
       selectPreviewBand,
       clearPreviewBand,
       selectChild,
@@ -1386,6 +1403,7 @@ export function FamilyProvider({
       saveDayPhoto,
       selectChild,
       selectPreviewBand,
+      selectPreviewWeek,
       selectWeek,
       selectedChild,
       selectedWeek,
@@ -1398,6 +1416,7 @@ export function FamilyProvider({
       updateFamily,
       viewActivities,
       viewBand,
+      viewWeek,
       viewWeekTheme,
     ],
   );

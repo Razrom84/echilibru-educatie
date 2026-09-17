@@ -73,6 +73,17 @@ export function parseProgramWeek(raw: string | null | undefined): ProgramWeek {
   return isProgramWeek(n) ? n : PROGRAM_WEEK;
 }
 
+/** Keep S# in 1–52. Used by band-preview week nav (not the live calendar week). */
+export function clampProgramWeek(week: number): ProgramWeek {
+  if (isProgramWeek(week)) return week;
+  if (!Number.isFinite(week)) return PROGRAM_WEEK;
+  const rounded = Math.round(week);
+  if (rounded <= 1) return 1;
+  const last = PROGRAM_WEEKS[PROGRAM_WEEKS.length - 1];
+  if (rounded >= last) return last;
+  return rounded as ProgramWeek;
+}
+
 export function getWeekTheme(week: number): string {
   return isProgramWeek(week) ? WEEK_THEMES[week] : WEEK_THEMES[PROGRAM_WEEK];
 }

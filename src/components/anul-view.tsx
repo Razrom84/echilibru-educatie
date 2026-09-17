@@ -12,6 +12,7 @@ import {
   ANUL_SUBTITLE,
   ANUL_TITLE,
   anulPreviewReady,
+  anulWeekOpen,
   resolveAnulYearStart,
   yearWeekPreviews,
   yearWeeksBySeason,
@@ -23,11 +24,12 @@ import { cn } from "@/lib/utils";
 export function AnulView() {
   const {
     family,
-    selectedWeek,
+    viewWeek,
     isBandPreview,
     previewLoading,
     bandHasContent,
     bandWeekThemes,
+    selectPreviewWeek,
   } = useFamily();
   const [noticeWeek, setNoticeWeek] = useState<number | null>(null);
 
@@ -36,18 +38,18 @@ export function AnulView() {
     () =>
       yearWeekPreviews({
         programYearStart: yearStart,
-        currentWeek: selectedWeek,
+        currentWeek: viewWeek,
         themes: isBandPreview ? bandWeekThemes : undefined,
       }),
-    [bandWeekThemes, isBandPreview, selectedWeek, yearStart],
+    [bandWeekThemes, isBandPreview, viewWeek, yearStart],
   );
   const groups = useMemo(() => yearWeeksBySeason(weeks), [weeks]);
   const ready = anulPreviewReady(weeks);
 
   useEffect(() => {
-    const current = document.getElementById(`saptamana-${selectedWeek}`);
+    const current = document.getElementById(`saptamana-${viewWeek}`);
     current?.scrollIntoView({ behavior: "smooth", block: "center" });
-  }, [selectedWeek]);
+  }, [viewWeek]);
 
   const heading = (
     <div>
@@ -100,7 +102,8 @@ export function AnulView() {
               <h2 className="font-heading text-xl">{group.season}</h2>
               <ul className="space-y-2">
                 {group.weeks.map((row) => {
-                  const lockedOpen = noticeWeek === row.week;
+                  const openable = anulWeekOpen(isBandPreview, row.current);
+                  const lockedOpen = !openable && noticeWeek === row.week;
                   const label = `S${row.week} · ${row.theme} · ${row.season}`;
                   const body = (
                     <>
@@ -116,7 +119,7 @@ export function AnulView() {
                           <Badge variant="default">{ANUL_NOW}</Badge>
                         ) : null}
                       </div>
-                      {!row.current && lockedOpen ? (
+                      {lockedOpen ? (
                         <p
                           className="mt-2 text-sm text-muted-foreground"
                           role="status"
@@ -130,13 +133,20 @@ export function AnulView() {
 
                   return (
                     <li key={row.week} id={`saptamana-${row.week}`}>
-                      {row.current ? (
+                      {openable ? (
                         <Link
                           href="/saptamana"
-                          aria-label={`${label} · ${ANUL_NOW}`}
+                          aria-label={
+                            row.current ? `${label} · ${ANUL_NOW}` : label
+                          }
+                          onClick={() => {
+                            if (isBandPreview) selectPreviewWeek(row.week);
+                          }}
                           className={cn(
-                            "block rounded-2xl border border-primary/40 bg-card p-4",
-                            "ring-2 ring-primary/20 hover:bg-muted/50",
+                            "block rounded-2xl border bg-card p-4 hover:bg-muted/50",
+                            row.current
+                              ? "border-primary/40 ring-2 ring-primary/20"
+                              : "border-border",
                           )}
                         >
                           {body}

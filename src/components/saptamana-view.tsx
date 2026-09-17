@@ -13,6 +13,7 @@ import { PILLARS } from "@/lib/pillars";
 import { mondayOf } from "@/lib/program-week";
 import {
   SAPTAMANA_TITLE,
+  PROGRAM_WEEK_DAYS,
   focusedWeekDay,
   midweekJoinHelper,
   saptamanaSubtitle,
@@ -35,7 +36,7 @@ export function SaptamanaView({
     viewWeekTheme,
     completions,
     selectedChild,
-    selectedWeek,
+    viewWeek,
     family,
     toggleComplete,
     isBandPreview,
@@ -43,19 +44,21 @@ export function SaptamanaView({
   } = useFamily();
   const [busyId, setBusyId] = useState<string | null>(null);
   const todayDow = aziDayOfWeek(today);
-  const days = visibleProgramWeekDays({
-    weekMonday: mondayOf(today),
-    joinedAt: family?.joined_at ?? family?.created_at,
-  });
+  const days = isBandPreview
+    ? [...PROGRAM_WEEK_DAYS]
+    : visibleProgramWeekDays({
+        weekMonday: mondayOf(today),
+        joinedAt: family?.joined_at ?? family?.created_at,
+      });
   const selectedDay = focusedWeekDay({
     requestedDay: focusDay,
     todayDay: todayDow,
     visibleDays: days,
   });
-  const joinHelper = midweekJoinHelper(days);
+  const joinHelper = isBandPreview ? null : midweekJoinHelper(days);
   const readOnly = isBandPreview;
   const weekItems = viewActivities.filter(
-    (activity) => activity.week_number === selectedWeek,
+    (activity) => activity.week_number === viewWeek,
   );
 
   useEffect(() => {
@@ -86,7 +89,7 @@ export function SaptamanaView({
       <div>
         <h1 className="font-heading text-3xl">{SAPTAMANA_TITLE}</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          {saptamanaSubtitle(selectedWeek, viewWeekTheme)}
+          {saptamanaSubtitle(viewWeek, viewWeekTheme)}
         </p>
         {joinHelper ? (
           <p className="mt-2 text-sm text-muted-foreground">{joinHelper}</p>
@@ -179,7 +182,7 @@ export function SaptamanaView({
                 </ul>
                 {readOnly ? null : (
                   <DayNoteEditor
-                    key={`${selectedChild.id}-${selectedWeek}-${day}`}
+                    key={`${selectedChild.id}-${viewWeek}-${day}`}
                     dayOfWeek={day}
                     embedded
                   />

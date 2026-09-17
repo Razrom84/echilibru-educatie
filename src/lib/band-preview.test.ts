@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest";
 import { getSeedActivities } from "./seed/week1";
-import { PROGRAM_AGE_BAND, PROGRAM_WEEKS } from "./week";
+import { clampProgramWeek, PROGRAM_AGE_BAND, PROGRAM_WEEKS } from "./week";
 import {
   PILOT_BANDS,
   PREVIEW_EMPTY,
@@ -8,6 +8,9 @@ import {
   PREVIEW_HELP,
   PREVIEW_LIVE_MARK,
   PREVIEW_TITLE,
+  PREVIEW_WEEK_LABEL,
+  PREVIEW_WEEK_NEXT,
+  PREVIEW_WEEK_PREV,
   bandHasCatalog,
   bandLabel,
   isBandPreview,
@@ -15,7 +18,9 @@ import {
   liveChildBand,
   parsePilotBand,
   previewBannerText,
+  previewWeekControlLabel,
   themesFromActivityRows,
+  viewProgramWeek,
 } from "./band-preview";
 
 describe("V1.4 age-band preview", () => {
@@ -112,5 +117,34 @@ describe("V1.4 age-band preview", () => {
     expect(bandHasCatalog(themes)).toBe(true);
     expect(bandHasCatalog({})).toBe(false);
     expect(bandHasCatalog(null)).toBe(false);
+  });
+});
+
+describe("V1.4.1 preview week navigation", () => {
+  test("locks Săptămâna S# control copy", () => {
+    expect(PREVIEW_WEEK_LABEL).toBe("Săptămâna");
+    expect(PREVIEW_WEEK_PREV).toBe("Săptămâna anterioară");
+    expect(PREVIEW_WEEK_NEXT).toBe("Săptămâna următoare");
+    expect(previewWeekControlLabel(1)).toBe("Săptămâna S1");
+    expect(previewWeekControlLabel(12)).toBe("Săptămâna S12");
+    expect(previewWeekControlLabel(52)).toBe("Săptămâna S52");
+  });
+
+  test("preview S# is session-only and does not move the live week", () => {
+    const live = 4;
+    expect(viewProgramWeek(false, live, 12)).toBe(4);
+    expect(viewProgramWeek(true, live, 12)).toBe(12);
+    expect(viewProgramWeek(true, live, null)).toBe(4);
+    expect(viewProgramWeek(true, live, undefined)).toBe(4);
+    expect(viewProgramWeek(false, live, null)).toBe(4);
+  });
+
+  test("preview picker stays on S1–S52", () => {
+    expect(clampProgramWeek(1)).toBe(1);
+    expect(clampProgramWeek(52)).toBe(52);
+    expect(clampProgramWeek(0)).toBe(1);
+    expect(clampProgramWeek(53)).toBe(52);
+    expect(clampProgramWeek(Number.NaN)).toBe(1);
+    expect(viewProgramWeek(true, 4, 99)).toBe(52);
   });
 });

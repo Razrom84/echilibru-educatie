@@ -109,3 +109,8 @@ export function yearWeeksBySeason(
 export function anulPreviewReady(weeks: readonly YearWeekPreview[]): boolean {
   return weeks.length === PROGRAM_WEEKS_PER_YEAR;
 }
+
+/** Live Anul only opens the current S#. Band preview may open any S1–S52. */
+export function anulWeekOpen(isPreview: boolean, isCurrent: boolean): boolean {
+  return isPreview || isCurrent;
+}
