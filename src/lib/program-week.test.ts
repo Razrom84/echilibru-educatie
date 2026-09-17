@@ -16,6 +16,8 @@ import {
   programWeekRange,
   programWeekTable,
   programYearStartMonday,
+  rawProgramWeekNumber,
+  isCivilDateInProgramYear,
   resolveProgramYearStartMonday,
 } from "./program-week";
 
@@ -94,6 +96,19 @@ describe("programWeekNumber — clamp", () => {
   test("dates before the given 2026/27 start clamp to S1", () => {
     expect(programWeekNumber("2026-08-24", START_2026_27)).toBe(1);
     expect(programWeekNumber("2025-12-01", START_2026_27)).toBe(1);
+  });
+});
+
+describe("rawProgramWeekNumber — no clamp before S1", () => {
+  test("August Sundays stay below week 1 (not S1)", () => {
+    expect(rawProgramWeekNumber("2026-08-30", START_2026_27)).toBe(0);
+    expect(rawProgramWeekNumber("2026-08-23", START_2026_27)).toBe(-1);
+    expect(rawProgramWeekNumber("2026-08-31", START_2026_27)).toBe(1);
+    expect(rawProgramWeekNumber("2026-09-06", START_2026_27)).toBe(1);
+    expect(isCivilDateInProgramYear("2026-08-23", START_2026_27)).toBe(false);
+    expect(isCivilDateInProgramYear("2026-08-30", START_2026_27)).toBe(false);
+    expect(isCivilDateInProgramYear("2026-08-31", START_2026_27)).toBe(true);
+    expect(isCivilDateInProgramYear("2026-09-06", START_2026_27)).toBe(true);
   });
 });
 

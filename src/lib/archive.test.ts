@@ -10,6 +10,7 @@ import {
   ARCHIVE_PDF_INTERVAL_INVALID,
   ARCHIVE_PDF_INTERVAL_MISSING,
   ARCHIVE_PDF_INTERVAL_TO,
+  archiveJoinCivilDate,
   buildArchiveDraft,
   bookletCivilDates,
   calendarMonthPeriod,
@@ -17,6 +18,7 @@ import {
   civilIntervalPeriod,
   civilWeekPeriod,
   clipArchivePeriodToToday,
+  clipCivilDateToJoin,
   closedMonthPeriod,
   closedWeekPeriod,
   closedYearPeriod,
@@ -661,5 +663,126 @@ describe("note mapping", () => {
       ],
     });
     expect(body).toBe("Marți.");
+  });
+
+  const s1SundayNotes = [
+    {
+      child_id: "c1",
+      program_year_start: PROGRAM_YEAR_START_MONDAY_2026_27,
+      week_number: 1,
+      day_of_week: 7,
+      body: "Pipăit pietre…",
+    },
+  ];
+  const s1SundayLive = {
+    programYearStart: PROGRAM_YEAR_START_MONDAY_2026_27,
+    notes: s1SundayNotes,
+    completions: [
+      {
+        child_id: "c1",
+        activity_id: "sun-s1",
+        completed_at: "2026-09-06T10:00:00.000Z",
+      },
+    ],
+    activities: [
+      {
+        id: "sun-s1",
+        title: "Pipăit pietre",
+        week_number: 1,
+        day_of_week: 7,
+      },
+    ],
+  };
+
+  test("does not clamp pre-year Sundays onto S1 (Aug 23/30 vs Sep 6)", () => {
+    const args = {
+      programYearStart: PROGRAM_YEAR_START_MONDAY_2026_27,
+      notes: s1SundayNotes,
+    };
+    expect(noteForCivilDate({ ...args, civilDate: "2026-08-23" })).toBe("");
+    expect(noteForCivilDate({ ...args, civilDate: "2026-08-30" })).toBe("");
+    expect(noteForCivilDate({ ...args, civilDate: "2026-09-06" })).toBe("Pipăit pietre…");
+    expect(noteForCivilDate({ ...args, civilDate: "2026-08-31" })).toBe("");
+  });
+
+  test("interval 1–31 Aug: August Sundays stay quiet despite the S1 Sunday note", () => {
+    const days = expandBookletDays({
+      period: civilIntervalPeriod("2026-08-01", "2026-08-31"),
+      today: "2026-09-17",
+      children: [{ id: "c1", age_band_label: "1–2" }],
+      days: [],
+      live: s1SundayLive,
+    });
+    const byDate = Object.fromEntries(days.map((day) => [day.civil_date, day]));
+    for (const sunday of ["2026-08-02", "2026-08-09", "2026-08-16", "2026-08-23", "2026-08-30"]) {
+      expect(byDate[sunday]?.day_note, sunday).toBe("");
+      expect(byDate[sunday]?.done_titles, sunday).toEqual([]);
+    }
+    expect(byDate["2026-08-31"]?.day_note).toBe("");
+    expect(days.some((day) => day.day_note.includes("Pipăit"))).toBe(false);
+  });
+
+  test("month, year, and week builders use the same pre-year mapping", () => {
+    const child = [{ id: "c1", age_band_label: "1–2" }];
+    const month = expandBookletDays({
+      period: calendarMonthPeriod(2026, 8),
+      today: "2026-09-17",
+      children: child,
+      days: [],
+      live: s1SundayLive,
+    });
+    const year = expandBookletDays({
+      period: calendarYearPeriod(2026),
+      today: "2026-09-09",
+      children: child,
+      days: [],
+      live: s1SundayLive,
+    });
+    const week = expandBookletDays({
+      period: civilWeekPeriod("2026-08-30"),
+      today: "2026-09-17",
+      children: child,
+      days: [],
+      live: s1SundayLive,
+    });
+    const monthByDate = Object.fromEntries(month.map((day) => [day.civil_date, day.day_note]));
+    const yearByDate = Object.fromEntries(year.map((day) => [day.civil_date, day.day_note]));
+    const weekByDate = Object.fromEntries(week.map((day) => [day.civil_date, day.day_note]));
+    expect(monthByDate["2026-08-23"]).toBe("");
+    expect(monthByDate["2026-08-30"]).toBe("");
+    expect(yearByDate["2026-08-23"]).toBe("");
+    expect(yearByDate["2026-08-30"]).toBe("");
+    expect(yearByDate["2026-09-06"]).toBe("Pipăit pietre…");
+    expect(weekByDate["2026-08-30"]).toBe("");
+    expect(week.every((day) => day.day_note === "" && day.done_titles.length === 0)).toBe(true);
+  });
+
+  test("hydrate does not stamp pre-year Sundays from the S1 Sunday note", () => {
+    const drafts = missingArchiveDrafts({
+      dates: ["2026-08-23", "2026-08-30", "2026-09-06"],
+      existing: [],
+      children: [{ id: "c1", age_band: "1-2" }],
+      notes: s1SundayNotes,
+      completions: [],
+      activities: [],
+      programYearStart: PROGRAM_YEAR_START_MONDAY_2026_27,
+    });
+    expect(drafts.map((row) => row.civil_date)).toEqual(["2026-09-06"]);
+    expect(drafts[0]?.day_note).toBe("Pipăit pietre…");
+  });
+
+  test("interval picker start clips to joined_at", () => {
+    expect(
+      archiveJoinCivilDate({ joined_at: "2026-09-05T08:12:00.000Z" }),
+    ).toBe("2026-09-05");
+    expect(
+      archiveJoinCivilDate({
+        joined_at: null,
+        created_at: "2026-09-05T08:12:00.000Z",
+      }),
+    ).toBe("2026-09-05");
+    expect(clipCivilDateToJoin("2026-08-01", "2026-09-05")).toBe("2026-09-05");
+    expect(clipCivilDateToJoin("2026-09-10", "2026-09-05")).toBe("2026-09-10");
+    expect(clipCivilDateToJoin("2026-08-01", null)).toBe("2026-08-01");
   });
 });

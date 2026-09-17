@@ -146,6 +146,31 @@ function clampWeek(value: number): number {
 }
 
 /**
+ * Unclamped week offset from `programYearStart`'s Monday.
+ * Dates before S1 are `< 1` (never rounded up). After S52 they stay `> 52`
+ * (no rollover). Use this for archive note lookup — not live S# nav.
+ */
+export function rawProgramWeekNumber(
+  input: DateInput,
+  programYearStart: DateInput,
+): number {
+  return rawWeekNumber(mondayOf(input), mondayOf(programYearStart));
+}
+
+/**
+ * True when `civilDate` falls in S1–S52 of `programYearStart`.
+ * Pre-year dates are false even though `programWeekNumber` would clamp them to 1.
+ */
+export function isCivilDateInProgramYear(
+  civilDate: DateInput,
+  programYearStart: DateInput,
+): boolean {
+  if (toDateOnlyString(civilDate) < toDateOnlyString(programYearStart)) return false;
+  const week = rawProgramWeekNumber(civilDate, programYearStart);
+  return week >= 1 && week <= PROGRAM_WEEKS_PER_YEAR;
+}
+
+/**
  * Program week 1..52 for a civil date.
  * If `programYearStart` is omitted, the start Monday is resolved from `input`.
  * Weeks past 52 rollover onto the next program year (never S53).

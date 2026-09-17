@@ -18,9 +18,12 @@ import {
 import {
   civilDayOfWeek,
   formatCivilDate,
+  isCivilDateInProgramYear,
   mondayOf,
   programWeekNumber,
+  rawProgramWeekNumber,
   toCivilDate,
+  toDateOnlyString,
   type DateInput,
 } from "@/lib/program-week";
 import { completionCivilDate, type ActivityDayRef } from "@/lib/completion-date";
@@ -188,7 +191,11 @@ export function noteForCivilDate(args: {
     "program_year_start" | "week_number" | "day_of_week" | "body"
   >[];
 }): string {
-  const week = programWeekNumber(args.civilDate, args.programYearStart);
+  if (toDateOnlyString(args.civilDate) < toDateOnlyString(args.programYearStart)) {
+    return "";
+  }
+  const week = rawProgramWeekNumber(args.civilDate, args.programYearStart);
+  if (week < 1) return "";
   const day = civilDayOfWeek(args.civilDate);
   const note = args.notes.find(
     (row) =>
@@ -335,6 +342,21 @@ export function intervalRangeError(start: string, end: string): string | null {
   return null;
 }
 
+/** Account start as a civil date — interval picker should not go earlier. */
+export function archiveJoinCivilDate(family: {
+  joined_at?: string | null;
+  created_at?: string | null;
+} | null): string | null {
+  const source = family?.joined_at ?? family?.created_at;
+  if (!source) return null;
+  return toDateOnlyString(source);
+}
+
+export function clipCivilDateToJoin(date: string, joinCivil: string | null): string {
+  if (!joinCivil || date >= joinCivil) return date;
+  return joinCivil;
+}
+
 export function civilIntervalPeriod(
   start: string,
   end: string,
@@ -405,7 +427,13 @@ export function seedTitlesForDates(
   dates: readonly string[],
   programYearStart: string,
 ): ArchiveActivityRef[] {
-  const weeks = [...new Set(dates.map((date) => programWeekNumber(date, programYearStart)))];
+  const weeks = [
+    ...new Set(
+      dates
+        .filter((date) => isCivilDateInProgramYear(date, programYearStart))
+        .map((date) => programWeekNumber(date, programYearStart)),
+    ),
+  ];
   const byId = new Map<string, ArchiveActivityRef>();
   for (const week of weeks) {
     for (const activity of getSeedActivities(week)) {
@@ -428,6 +456,9 @@ function liveContentForDay(
   live: BookletLiveSources | undefined,
 ): { done: string[]; note: string } {
   if (!live) return { done: [], note: "" };
+  if (!isCivilDateInProgramYear(civilDate, live.programYearStart)) {
+    return { done: [], note: "" };
+  }
   const done = doneTitlesForCivilDate({
     civilDate,
     programYearStart: live.programYearStart,

@@ -21,10 +21,12 @@ import {
   ARCHIVE_SUBTITLE,
   addCivilDays,
   archiveDayHasContent,
+  archiveJoinCivilDate,
   calendarMonthPeriod,
   calendarYearPeriod,
   civilIntervalPeriod,
   civilWeekPeriod,
+  clipCivilDateToJoin,
   intervalRangeError,
   snapshotAgeBandLabel,
   type ArchivePeriod,
@@ -61,12 +63,14 @@ function triggerDownload(bytes: Uint8Array, filename: string) {
 
 export function ArhivaView({ today }: { today: string }) {
   const {
+    family,
     selectedChild,
     loadArchiveDays,
     loadBookletLive,
     signedPhotoUrl,
     downloadPhotoBytes,
   } = useFamily();
+  const joinCivil = archiveJoinCivilDate(family);
   const [selectedDate, setSelectedDate] = useState(today);
   const [days, setDays] = useState<ArchiveDay[]>([]);
   const [photoUrl, setPhotoUrl] = useState<string | null>(null);
@@ -193,13 +197,14 @@ export function ArhivaView({ today }: { today: string }) {
   }
 
   function downloadInterval() {
-    const rangeError = intervalRangeError(intervalStart, intervalEnd);
+    const start = clipCivilDateToJoin(intervalStart, joinCivil);
+    const rangeError = intervalRangeError(start, intervalEnd);
     if (rangeError) {
       setIntervalError(rangeError);
       return;
     }
     setIntervalError(null);
-    void downloadBooklet(civilIntervalPeriod(intervalStart, intervalEnd), "interval");
+    void downloadBooklet(civilIntervalPeriod(start, intervalEnd), "interval");
   }
 
   if (!selectedChild) {
@@ -363,10 +368,11 @@ export function ArhivaView({ today }: { today: string }) {
                 id="arhiva-interval-de-la"
                 type="date"
                 value={intervalStart}
+                min={joinCivil ?? undefined}
                 max={today}
                 aria-invalid={intervalError != null}
                 onChange={(event) => {
-                  setIntervalStart(event.target.value);
+                  setIntervalStart(clipCivilDateToJoin(event.target.value, joinCivil));
                   setIntervalError(null);
                 }}
                 className="h-11 w-[11.5rem]"
@@ -378,10 +384,11 @@ export function ArhivaView({ today }: { today: string }) {
                 id="arhiva-interval-pana-la"
                 type="date"
                 value={intervalEnd}
+                min={joinCivil ?? undefined}
                 max={today}
                 aria-invalid={intervalError != null}
                 onChange={(event) => {
-                  setIntervalEnd(event.target.value);
+                  setIntervalEnd(clipCivilDateToJoin(event.target.value, joinCivil));
                   setIntervalError(null);
                 }}
                 className="h-11 w-[11.5rem]"
