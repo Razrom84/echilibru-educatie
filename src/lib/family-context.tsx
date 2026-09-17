@@ -81,6 +81,7 @@ import {
 } from "@/lib/program-week";
 import { getWeekTheme, PROGRAM_AGE_BAND, PROGRAM_WEEK, PROGRAM_WEEKS } from "@/lib/week";
 import type { SeedActivity } from "@/lib/types";
+import { aziDayOfWeek } from "@/lib/azi";
 import {
   applyPreviewBand,
   applyPreviewWeek,
@@ -94,6 +95,7 @@ import {
   viewProgramWeek,
   type PilotBand,
 } from "@/lib/band-preview";
+import { weekWritesAllowed } from "@/lib/view-week";
 
 type Status = "loading" | "ready" | "error";
 
@@ -110,8 +112,10 @@ type FamilyContextValue = {
   liveBand: PilotBand;
   viewBand: PilotBand;
   isBandPreview: boolean;
+  writesAllowed: boolean;
   viewActivities: Activity[];
   viewWeekTheme: string;
+  viewCivilDate: string;
   previewLoading: boolean;
   previewWeekLoading: boolean;
   bandHasContent: boolean;
@@ -124,6 +128,7 @@ type FamilyContextValue = {
   refresh: () => Promise<void>;
   selectWeek: (week: number) => void;
   selectPreviewWeek: (week: number) => void;
+  resetViewWeek: () => void;
   selectPreviewBand: (band: PilotBand) => void;
   clearPreviewBand: () => void;
   selectChild: (childId: string) => Promise<void>;
@@ -224,6 +229,10 @@ export function FamilyProvider({
   const [dayNotes, setDayNotes] = useState<DayNote[]>([]);
   const [todayArchive, setTodayArchive] = useState<ArchiveDay | null>(null);
   const [todayPhotoUrl, setTodayPhotoUrl] = useState<string | null>(null);
+  const [liveViewCatalog, setLiveViewCatalog] = useState<{
+    week: number;
+    activities: Activity[];
+  } | null>(null);
 
   const selectedChild = useMemo(
     () => kids.find((child) => child.id === selectedChildId) ?? kids[0] ?? null,
@@ -240,6 +249,21 @@ export function FamilyProvider({
   const isPreviewing = isBandPreview(previewBand);
   const viewBand: PilotBand = viewBandFromSession(previewBand, liveBand);
   const viewWeek = viewProgramWeek(isPreviewing, selectedWeek, previewWeek);
+  const writesAllowed = weekWritesAllowed({
+    viewWeek,
+    officialWeek: selectedWeek,
+    viewBand,
+    liveBand,
+  });
+  const viewCivilDate = useMemo(() => {
+    const today = bucharestToday();
+    if (!family) return today;
+    return programDayCivilDate(
+      viewWeek,
+      aziDayOfWeek(today),
+      familyProgramYearStart(family),
+    );
+  }, [family, viewWeek]);
   const catalogForBand =
     isPreviewing && previewCatalog && previewCatalog.band === viewBand
       ? previewCatalog
@@ -249,17 +273,30 @@ export function FamilyProvider({
   const bandWeekThemes = catalogForBand?.themes ?? null;
   const bandHasContent = isPreviewing
     ? bandHasCatalog(bandWeekThemes) || (catalogForBand?.activities.length ?? 0) > 0
-    : activities.length > 0;
+    : viewWeek === selectedWeek
+      ? activities.length > 0
+      : (liveViewCatalog?.week === viewWeek && liveViewCatalog.activities.length > 0);
   const previewLoading = isPreviewing && !catalogForBand;
-  const previewWeekLoading = previewActivitiesPending({
-    catalogWeek: catalogForBand?.week,
-    viewWeek,
-    bandHasContent,
-  });
+  const previewWeekLoading = isPreviewing
+    ? previewActivitiesPending({
+        catalogWeek: catalogForBand?.week,
+        viewWeek,
+        bandHasContent,
+      })
+    : viewWeek !== selectedWeek && liveViewCatalog?.week !== viewWeek;
   const viewActivities = useMemo(() => {
-    if (!isPreviewing) return activities;
-    return catalogForWeek?.activities ?? EMPTY_PREVIEW_ACTIVITIES;
-  }, [activities, catalogForWeek, isPreviewing]);
+    if (isPreviewing) return catalogForWeek?.activities ?? EMPTY_PREVIEW_ACTIVITIES;
+    if (viewWeek === selectedWeek) return activities;
+    if (liveViewCatalog?.week === viewWeek) return liveViewCatalog.activities;
+    return EMPTY_PREVIEW_ACTIVITIES;
+  }, [
+    activities,
+    catalogForWeek,
+    isPreviewing,
+    liveViewCatalog,
+    selectedWeek,
+    viewWeek,
+  ]);
   const viewWeekTheme = useMemo(() => {
     const fromCatalog = viewActivities.find(
       (row) => row.week_number === viewWeek,
@@ -292,14 +329,15 @@ export function FamilyProvider({
     if (isDemo) {
       const state = readDemoState();
       applyDemo(state, selectedWeek);
-      const today = bucharestToday();
+      setDayNotes(demoDayNotesForWeek(state, viewWeek));
       const childId = state.selectedChildId;
       const row =
-        demoArchiveDaysForChild(state, childId).find((item) => item.civil_date === today) ??
-        null;
+        demoArchiveDaysForChild(state, childId).find(
+          (item) => item.civil_date === viewCivilDate,
+        ) ?? null;
       setTodayArchive(row);
       if (childId && row?.photo_path) {
-        const url = await demoPhotoObjectUrl(childId, today);
+        const url = await demoPhotoObjectUrl(childId, viewCivilDate);
         setTodayPhotoUrl((prev) => {
           if (prev) URL.revokeObjectURL(prev);
           return url;
@@ -413,7 +451,6 @@ export function FamilyProvider({
 
     if (nextSelected) {
       const yearStart = familyProgramYearStart(currentFamily);
-      const today = bucharestToday();
       const [
         { data: doneRows, error: doneError },
         { data: noteRows, error: noteError },
@@ -425,12 +462,12 @@ export function FamilyProvider({
           .select("*")
           .eq("child_id", nextSelected)
           .eq("program_year_start", yearStart)
-          .eq("week_number", selectedWeek),
+          .eq("week_number", viewWeek),
         supabase
           .from("archive_days")
           .select("*")
           .eq("child_id", nextSelected)
-          .eq("civil_date", today)
+          .eq("civil_date", viewCivilDate)
           .maybeSingle(),
       ]);
       if (doneError) {
@@ -468,7 +505,7 @@ export function FamilyProvider({
     }
 
     setStatus("ready");
-  }, [applyDemo, isDemo, selectedWeek]);
+  }, [applyDemo, isDemo, selectedWeek, viewCivilDate, viewWeek]);
 
   useEffect(() => {
     const frame = requestAnimationFrame(() => {
@@ -547,6 +584,57 @@ export function FamilyProvider({
     };
   }, [isPreviewing, previewBand, viewWeek]);
 
+  useEffect(() => {
+    if (isPreviewing) return;
+    if (viewWeek === selectedWeek) return;
+
+    let cancelled = false;
+
+    async function loadLiveViewCatalog() {
+      const applySeed = () => {
+        setLiveViewCatalog({
+          week: viewWeek,
+          activities: getSeedActivities(viewWeek).filter(
+            (row) => row.banda === liveBand,
+          ),
+        });
+      };
+
+      if (isDemo) {
+        if (!cancelled) applySeed();
+        return;
+      }
+
+      const supabase = createBrowserSupabase();
+      if (!supabase) {
+        if (!cancelled) applySeed();
+        return;
+      }
+
+      const { data, error } = await supabase
+        .from("activities")
+        .select("*")
+        .eq("saptamana", viewWeek)
+        .eq("banda", liveBand)
+        .order("zi", { ascending: true });
+
+      if (cancelled) return;
+      if (error) {
+        setLiveViewCatalog({ week: viewWeek, activities: [] });
+        return;
+      }
+      setLiveViewCatalog({
+        week: viewWeek,
+        activities: ((data ?? []) as SeedActivity[]).map(normalizeActivity),
+      });
+    }
+
+    void loadLiveViewCatalog();
+    return () => {
+      cancelled = true;
+    };
+  }, [isDemo, isPreviewing, liveBand, selectedWeek, viewWeek]);
+
   const selectChild = useCallback(
     async (childId: string) => {
       setSelectedChildId(childId);
@@ -555,14 +643,14 @@ export function FamilyProvider({
         const state = { ...readDemoState(), selectedChildId: childId };
         writeDemoState(state);
         setCompletions(state.completions);
-        setDayNotes(demoDayNotesForWeek(state, selectedWeek));
-        const today = bucharestToday();
+        setDayNotes(demoDayNotesForWeek(state, viewWeek));
         const row =
-          demoArchiveDaysForChild(state, childId).find((item) => item.civil_date === today) ??
-          null;
+          demoArchiveDaysForChild(state, childId).find(
+            (item) => item.civil_date === viewCivilDate,
+          ) ?? null;
         setTodayArchive(row);
         if (row?.photo_path) {
-          const url = await demoPhotoObjectUrl(childId, today);
+          const url = await demoPhotoObjectUrl(childId, viewCivilDate);
           setTodayPhotoUrl((prev) => {
             if (prev) URL.revokeObjectURL(prev);
             return url;
@@ -578,7 +666,6 @@ export function FamilyProvider({
       const supabase = createBrowserSupabase();
       if (!supabase || !family) return;
       const yearStart = familyProgramYearStart(family);
-      const today = bucharestToday();
       const [
         { data, error: doneError },
         { data: noteRows, error: noteError },
@@ -590,12 +677,12 @@ export function FamilyProvider({
           .select("*")
           .eq("child_id", childId)
           .eq("program_year_start", yearStart)
-          .eq("week_number", selectedWeek),
+          .eq("week_number", viewWeek),
         supabase
           .from("archive_days")
           .select("*")
           .eq("child_id", childId)
-          .eq("civil_date", today)
+          .eq("civil_date", viewCivilDate)
           .maybeSingle(),
       ]);
       if (doneError) {
@@ -623,7 +710,7 @@ export function FamilyProvider({
         setTodayPhotoUrl(null);
       }
     },
-    [family, isDemo, selectedWeek],
+    [family, isDemo, viewCivilDate, viewWeek],
   );
 
   const addChild = useCallback(
@@ -725,7 +812,7 @@ export function FamilyProvider({
       clearPhoto?: boolean;
       preferExistingDone?: boolean;
     }): Promise<ArchiveDay | null> => {
-      if (isPreviewing) return null;
+      if (!writesAllowed) return null;
       if (!selectedChild || !family) return null;
       const yearStart = familyProgramYearStart(family);
       const week = programWeekNumber(args.civilDate, yearStart);
@@ -820,7 +907,7 @@ export function FamilyProvider({
             .eq("child_id", selectedChild.id)
             .eq("civil_date", args.civilDate);
         }
-        if (args.civilDate === bucharestToday()) {
+        if (args.civilDate === viewCivilDate) {
           setTodayArchive(null);
           setTodayPhotoUrl((prev) => {
             if (prev?.startsWith("blob:")) URL.revokeObjectURL(prev);
@@ -838,7 +925,7 @@ export function FamilyProvider({
           updated_at: new Date().toISOString(),
         };
         writeDemoState(upsertDemoArchiveDay(readDemoState(), row));
-        if (args.civilDate === bucharestToday()) setTodayArchive(row);
+        if (args.civilDate === viewCivilDate) setTodayArchive(row);
         return row;
       }
 
@@ -862,18 +949,20 @@ export function FamilyProvider({
         .single();
       if (error || !data) throw new Error(error?.message ?? "Nu am putut salva arhiva.");
       const row = data as ArchiveDay;
-      if (args.civilDate === bucharestToday()) setTodayArchive(row);
+      if (args.civilDate === viewCivilDate) setTodayArchive(row);
       return row;
     },
-    [family, isDemo, isPreviewing, selectedChild],
+    [family, isDemo, selectedChild, viewCivilDate, writesAllowed],
   );
 
   const toggleComplete = useCallback(
     async (activityId: string) => {
-      if (isPreviewing) return;
+      if (!writesAllowed) return;
       if (!selectedChild || !family) return;
       const activity =
-        activities.find((row) => row.id === activityId) ?? getSeedActivityById(activityId);
+        viewActivities.find((row) => row.id === activityId) ??
+        activities.find((row) => row.id === activityId) ??
+        getSeedActivityById(activityId);
       const yearStart = familyProgramYearStart(family);
       const programCivilDate = activity
         ? programDayCivilDate(activity.week_number, activity.day_of_week, yearStart)
@@ -962,26 +1051,26 @@ export function FamilyProvider({
         dayNotes,
       });
     },
-    [activities, completions, dayNotes, family, isDemo, isPreviewing, selectedChild, stampArchiveDay],
+    [activities, completions, dayNotes, family, isDemo, selectedChild, stampArchiveDay, viewActivities, writesAllowed],
   );
 
   const saveDayNote = useCallback(
     async (dayOfWeek: number, body: string) => {
-      if (isPreviewing) return;
+      if (!writesAllowed) return;
       if (!selectedChild || !family) return;
       const programYearStart = familyProgramYearStart(family);
       const normalized = normalizeDayNoteBody(body);
       if (isDemo) {
         const next = upsertDemoDayNote(readDemoState(), {
           childId: selectedChild.id,
-          weekNumber: selectedWeek,
+          weekNumber: viewWeek,
           dayOfWeek,
           body,
         });
         writeDemoState(next);
-        const nextNotes = demoDayNotesForWeek(next, selectedWeek);
+        const nextNotes = demoDayNotesForWeek(next, viewWeek);
         setDayNotes(nextNotes);
-        const range = programWeekRange(selectedWeek, programYearStart);
+        const range = programWeekRange(viewWeek, programYearStart);
         await stampArchiveDay({
           civilDate: addCivilDays(range.start, dayOfWeek - 1),
           completions,
@@ -1002,7 +1091,7 @@ export function FamilyProvider({
         }
         const nextNotes = dayNotes.filter((note) => note.day_of_week !== dayOfWeek);
         setDayNotes(nextNotes);
-        const range = programWeekRange(selectedWeek, programYearStart);
+        const range = programWeekRange(viewWeek, programYearStart);
         await stampArchiveDay({
           civilDate: addCivilDays(range.start, dayOfWeek - 1),
           completions,
@@ -1013,7 +1102,7 @@ export function FamilyProvider({
       const payload = {
         child_id: selectedChild.id,
         program_year_start: programYearStart,
-        week_number: selectedWeek,
+        week_number: viewWeek,
         day_of_week: dayOfWeek,
         body: normalized,
         updated_at: new Date().toISOString(),
@@ -1034,14 +1123,14 @@ export function FamilyProvider({
         saved,
       ];
       setDayNotes(nextNotes);
-      const range = programWeekRange(selectedWeek, programYearStart);
+      const range = programWeekRange(viewWeek, programYearStart);
       await stampArchiveDay({
         civilDate: addCivilDays(range.start, dayOfWeek - 1),
         completions,
         dayNotes: nextNotes,
       });
     },
-    [completions, dayNotes, family, isDemo, isPreviewing, selectedChild, selectedWeek, stampArchiveDay],
+    [completions, dayNotes, family, isDemo, selectedChild, stampArchiveDay, viewWeek, writesAllowed],
   );
 
   const signedPhotoUrl = useCallback(
@@ -1083,7 +1172,7 @@ export function FamilyProvider({
 
   const saveDayPhoto = useCallback(
     async (civilDate: string, file: File) => {
-      if (isPreviewing) return;
+      if (!writesAllowed) return;
       if (!selectedChild) throw new Error("Alege un copil mai întâi.");
       const rejected = rejectIfNotPhoto(file);
       if (rejected) throw new Error(rejected);
@@ -1100,7 +1189,7 @@ export function FamilyProvider({
           photoPath: path,
           preferExistingDone: true,
         });
-        if (civilDate === bucharestToday()) {
+        if (civilDate === viewCivilDate) {
           const url = URL.createObjectURL(jpeg);
           setTodayPhotoUrl((prev) => {
             if (prev?.startsWith("blob:")) URL.revokeObjectURL(prev);
@@ -1128,18 +1217,18 @@ export function FamilyProvider({
         photoPath: path,
         preferExistingDone: true,
       });
-      if (civilDate === bucharestToday()) {
+      if (civilDate === viewCivilDate) {
         const signed = await supabase.storage.from(ARCHIVE_BUCKET).createSignedUrl(path, 3600);
         setTodayPhotoUrl(signed.data?.signedUrl ?? null);
         setTodayArchive(row);
       }
     },
-    [completions, dayNotes, isDemo, isPreviewing, selectedChild, stampArchiveDay],
+    [completions, dayNotes, isDemo, selectedChild, stampArchiveDay, viewCivilDate, writesAllowed],
   );
 
   const removeDayPhoto = useCallback(
     async (civilDate: string) => {
-      if (isPreviewing) return;
+      if (!writesAllowed) return;
       if (!selectedChild) return;
       const path = archivePhotoPath(selectedChild.id, civilDate);
       if (isDemo) {
@@ -1155,7 +1244,7 @@ export function FamilyProvider({
         clearPhoto: true,
         preferExistingDone: true,
       });
-      if (civilDate === bucharestToday()) {
+      if (civilDate === viewCivilDate) {
         setTodayPhotoUrl((prev) => {
           if (prev?.startsWith("blob:")) URL.revokeObjectURL(prev);
           return null;
@@ -1163,7 +1252,7 @@ export function FamilyProvider({
         setTodayArchive(row);
       }
     },
-    [completions, dayNotes, isDemo, isPreviewing, selectedChild, stampArchiveDay],
+    [completions, dayNotes, isDemo, selectedChild, stampArchiveDay, viewCivilDate, writesAllowed],
   );
 
   const loadArchiveDays = useCallback(
@@ -1242,7 +1331,7 @@ export function FamilyProvider({
 
   const approveCompletion = useCallback(
     async (activityId: string) => {
-      if (isPreviewing) return;
+      if (!writesAllowed) return;
       if (!selectedChild) return;
       const existing = completions.find((row) => row.activity_id === activityId);
       if (!existing) return;
@@ -1270,7 +1359,7 @@ export function FamilyProvider({
         current.map((row) => (row.id === existing.id ? (data as Completion) : row)),
       );
     },
-    [completions, isDemo, isPreviewing, selectedChild],
+    [completions, isDemo, selectedChild, writesAllowed],
   );
 
   const ensureCalendarToken = useCallback(async () => {
@@ -1320,6 +1409,10 @@ export function FamilyProvider({
     [previewBand, selectedWeek],
   );
 
+  const resetViewWeek = useCallback(() => {
+    setPreviewWeek(null);
+  }, []);
+
   const selectPreviewBand = useCallback((band: PilotBand) => {
     setPreviewBand(applyPreviewBand(band).previewBand);
     writePreviewBandCookie(band);
@@ -1360,8 +1453,10 @@ export function FamilyProvider({
       liveBand,
       viewBand,
       isBandPreview: isPreviewing,
+      writesAllowed,
       viewActivities,
       viewWeekTheme,
+      viewCivilDate,
       previewLoading,
       previewWeekLoading,
       bandHasContent,
@@ -1374,6 +1469,7 @@ export function FamilyProvider({
       refresh,
       selectWeek,
       selectPreviewWeek,
+      resetViewWeek,
       selectPreviewBand,
       clearPreviewBand,
       selectChild,
@@ -1414,6 +1510,7 @@ export function FamilyProvider({
       previewWeekLoading,
       refresh,
       removeDayPhoto,
+      resetViewWeek,
       saveDayNote,
       saveDayPhoto,
       selectChild,
@@ -1431,8 +1528,10 @@ export function FamilyProvider({
       updateFamily,
       viewActivities,
       viewBand,
+      viewCivilDate,
       viewWeek,
       viewWeekTheme,
+      writesAllowed,
     ],
   );
 

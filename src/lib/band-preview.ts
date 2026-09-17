@@ -1,4 +1,5 @@
-import { clampProgramWeek, isProgramWeek, PROGRAM_AGE_BAND } from "@/lib/week";
+import { clampProgramWeek, PROGRAM_AGE_BAND } from "@/lib/week";
+import { resolveViewWeek } from "@/lib/view-week";
 
 /** Pilot bands the parent may preview. Live V1 stays `1-2`. */
 export const PILOT_BANDS = ["1-2", "2-3", "3-4", "4-5", "5-6", "6-7"] as const;
@@ -68,16 +69,14 @@ export function clearPreviewSession(): PreviewSession {
 
 /**
  * Session S# only. `liveWeek` is returned unchanged so callers cannot move
- * the child's program week from the preview picker.
+ * the child's program week from the picker — on live Azi/Săptămâna and in
+ * band preview alike (V1.5).
  */
 export function applyPreviewWeek(
   week: number,
   session: PreviewSession,
   liveWeek: number,
 ): { session: PreviewSession; liveWeek: number } {
-  if (!isBandPreview(session.previewBand)) {
-    return { session, liveWeek };
-  }
   return {
     session: { ...session, previewWeek: clampProgramWeek(week) },
     liveWeek,
@@ -86,24 +85,25 @@ export function applyPreviewWeek(
 
 /**
  * Week shown on Azi / Săptămâna / Anul.
- * In band preview, `previewWeek` is session-only and must not move the live S#.
+ * Session `previewWeek` is view-only and must not move the live S#, including
+ * when the parent is not in a band-preview session.
  */
 export function viewProgramWeek(
-  isPreview: boolean,
+  _isPreview: boolean,
   liveWeek: number,
   previewWeek: number | null | undefined,
 ): number {
-  if (!isPreview || previewWeek == null) return liveWeek;
-  return isProgramWeek(previewWeek)
-    ? previewWeek
-    : clampProgramWeek(previewWeek);
+  return resolveViewWeek(liveWeek, previewWeek);
 }
 
 export function previewWeekControlLabel(week: number): string {
   return `${PREVIEW_WEEK_LABEL} S${clampProgramWeek(week)}`;
 }
 
-/** S# prev/next/picker is shown for every preview band, including empty catalogs. */
+/**
+ * S# prev/next/picker in the preview banner (every preview band, empty OK).
+ * Live Azi / Săptămâna also show the same control — see `showsLiveWeekNav`.
+ */
 export function previewShowsWeekNav(isPreview: boolean): boolean {
   return isPreview;
 }
@@ -122,8 +122,9 @@ export function previewActivitiesPending(args: {
   return args.catalogWeek !== args.viewWeek;
 }
 
-export function previewBannerText(band: string): string {
-  return `Previzualizare · bandă ${bandLabel(band)} (doar citire)`;
+export function previewBannerText(band: string, writesAllowed = false): string {
+  const base = `Previzualizare · bandă ${bandLabel(band)}`;
+  return writesAllowed ? base : `${base} (doar citire)`;
 }
 
 export function themesFromActivityRows(

@@ -124,9 +124,9 @@ describe("yearWeekPreviews", () => {
 });
 
 describe("anulWeekOpen", () => {
-  test("live Anul only opens the current S#; preview opens any", () => {
+  test("Anul opens every S#; writes are gated elsewhere (past/current live)", () => {
     expect(anulWeekOpen(false, true)).toBe(true);
-    expect(anulWeekOpen(false, false)).toBe(false);
+    expect(anulWeekOpen(false, false)).toBe(true);
     expect(anulWeekOpen(true, false)).toBe(true);
     expect(anulWeekOpen(true, true)).toBe(true);
   });

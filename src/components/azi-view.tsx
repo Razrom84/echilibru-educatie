@@ -6,6 +6,7 @@ import { BandPreviewBanner } from "@/components/band-preview-banner";
 import { DayNoteEditor } from "@/components/day-note-editor";
 import { DayPhotoPicker } from "@/components/day-photo-picker";
 import { AddToCalendarButton } from "@/components/add-to-calendar-button";
+import { PreviewWeekNav } from "@/components/preview-week-nav";
 import { EmptyState, LoadingState } from "@/components/status-blocks";
 import {
   AZI_BEFORE_JOIN,
@@ -20,6 +21,7 @@ import {
 import { PREVIEW_EMPTY } from "@/lib/band-preview";
 import { useFamily } from "@/lib/family-context";
 import { PILLARS } from "@/lib/pillars";
+import { weekRelation } from "@/lib/view-week";
 import Link from "next/link";
 
 export function AziView({ today }: { today: string }) {
@@ -29,11 +31,14 @@ export function AziView({ today }: { today: string }) {
     completions,
     selectedChild,
     viewWeek,
+    selectedWeek,
     toggleComplete,
     family,
     todayArchive,
     todayPhotoUrl,
+    viewCivilDate,
     isBandPreview,
+    writesAllowed,
     previewLoading,
     previewWeekLoading,
   } = useFamily();
@@ -41,8 +46,9 @@ export function AziView({ today }: { today: string }) {
 
   const week = viewWeek;
   const day = aziDayOfWeek(today);
+  const relation = weekRelation(viewWeek, selectedWeek);
   const gate = aziGate({
-    viewDate: today,
+    viewDate: viewCivilDate,
     today,
     joinedAt: family?.joined_at ?? family?.created_at,
   });
@@ -54,7 +60,9 @@ export function AziView({ today }: { today: string }) {
     completions.some((row) => row.activity_id === activity.id),
   ).length;
   const allDone = aziAllDone(todayActivities.length, doneCount);
-  const readOnly = isBandPreview;
+  const readOnly = !writesAllowed;
+  const hideForJoin = relation === "current" && gate === "before_join";
+  const hideFutureDay = relation === "current" && gate === "locked";
 
   async function onToggle(activityId: string) {
     if (readOnly) return;
@@ -83,6 +91,7 @@ export function AziView({ today }: { today: string }) {
   return (
     <section className="space-y-4">
       <BandPreviewBanner />
+      <PreviewWeekNav />
       <div>
         <h1 className="font-heading text-3xl">{aziTitle(viewWeekTheme, day)}</h1>
         <p className="mt-1 text-sm text-muted-foreground">{aziSubtitle(day)}</p>
@@ -90,11 +99,13 @@ export function AziView({ today }: { today: string }) {
 
       {isBandPreview && (previewLoading || previewWeekLoading) ? (
         <LoadingState label="Se încarcă previzualizarea…" />
+      ) : !isBandPreview && previewWeekLoading ? (
+        <LoadingState label="Se încarcă săptămâna…" />
       ) : isBandPreview && todayActivities.length === 0 ? (
         <EmptyState title={PREVIEW_EMPTY} />
-      ) : gate === "before_join" ? (
+      ) : hideForJoin ? (
         <EmptyState title={AZI_BEFORE_JOIN} body={aziSubtitle(day)} />
-      ) : gate === "locked" ? (
+      ) : hideFutureDay ? (
         <EmptyState title={aziFutureLocked(day)} body={aziSubtitle(day)} />
       ) : todayActivities.length === 0 ? (
         <EmptyState
@@ -113,9 +124,9 @@ export function AziView({ today }: { today: string }) {
               key={activity.id}
               activity={activity}
               completion={
-                readOnly
-                  ? null
-                  : completions.find((row) => row.activity_id === activity.id) ?? null
+                writesAllowed
+                  ? completions.find((row) => row.activity_id === activity.id) ?? null
+                  : null
               }
               busy={busyId === activity.id}
               readOnly={readOnly}
@@ -129,8 +140,8 @@ export function AziView({ today }: { today: string }) {
                 dayOfWeek={day}
               />
               <DayPhotoPicker
-                key={`${selectedChild.id}-${today}`}
-                civilDate={today}
+                key={`${selectedChild.id}-${viewCivilDate}`}
+                civilDate={viewCivilDate}
                 photoUrl={todayPhotoUrl}
                 hasPhoto={Boolean(todayArchive?.photo_path)}
               />
@@ -139,15 +150,15 @@ export function AziView({ today }: { today: string }) {
         </div>
       )}
 
-      {!readOnly && gate === "open" && todayActivities.length === 0 ? (
+      {!readOnly && !hideForJoin && !hideFutureDay && todayActivities.length === 0 ? (
         <>
           <DayNoteEditor
             key={`${selectedChild.id}-${week}-${day}`}
             dayOfWeek={day}
           />
           <DayPhotoPicker
-            key={`${selectedChild.id}-${today}-empty`}
-            civilDate={today}
+            key={`${selectedChild.id}-${viewCivilDate}-empty`}
+            civilDate={viewCivilDate}
             photoUrl={todayPhotoUrl}
             hasPhoto={Boolean(todayArchive?.photo_path)}
           />
