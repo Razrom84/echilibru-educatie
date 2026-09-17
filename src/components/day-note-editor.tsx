@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useId, useState } from "react";
+import { FormEvent, useEffect, useId, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -11,7 +11,7 @@ import {
   DAY_NOTE_PLACEHOLDER,
   DAY_NOTE_SAVE,
   DAY_NOTE_SAVED,
-  findDayNote,
+  storedDayNoteBody,
 } from "@/lib/day-note";
 import { useFamily } from "@/lib/family-context";
 import { cn } from "@/lib/utils";
@@ -23,13 +23,17 @@ export function DayNoteEditor({
   dayOfWeek: number;
   embedded?: boolean;
 }) {
-  const { dayNotes, saveDayNote, selectedChild } = useFamily();
+  const { dayNotes, saveDayNote, selectedChild, viewWeek } = useFamily();
   const fieldId = useId();
-  const stored = findDayNote(dayNotes, dayOfWeek)?.body ?? "";
+  const stored = storedDayNoteBody(dayNotes, dayOfWeek, viewWeek);
   const [draft, setDraft] = useState(stored);
   const [busy, setBusy] = useState(false);
   const [saved, setSaved] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    setDraft(stored);
+  }, [stored, dayOfWeek, viewWeek]);
 
   if (!selectedChild) return null;
 
