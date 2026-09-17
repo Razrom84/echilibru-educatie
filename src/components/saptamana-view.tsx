@@ -1,16 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { BandPreviewBanner } from "@/components/band-preview-banner";
 import { CompleteToggle } from "@/components/complete-toggle";
 import { DayNoteEditor } from "@/components/day-note-editor";
+import { DayPhotoPicker } from "@/components/day-photo-picker";
 import { PillarMark } from "@/components/pillar-mark";
+import { PreviewWeekNav } from "@/components/preview-week-nav";
 import { EmptyState, LoadingState } from "@/components/status-blocks";
 import { PREVIEW_EMPTY } from "@/lib/band-preview";
 import { useFamily } from "@/lib/family-context";
 import { PILLARS } from "@/lib/pillars";
-import { mondayOf } from "@/lib/program-week";
+import { familyProgramYearStart, formatCivilDate, mondayOf, programWeekRange } from "@/lib/program-week";
 import {
   SAPTAMANA_TITLE,
   PROGRAM_WEEK_DAYS,
@@ -22,6 +24,7 @@ import {
   weekDaySectionId,
 } from "@/lib/saptamana";
 import { aziDayOfWeek } from "@/lib/azi";
+import { addCivilDays } from "@/lib/archive";
 import { cn } from "@/lib/utils";
 
 export function SaptamanaView({
@@ -40,33 +43,83 @@ export function SaptamanaView({
     family,
     toggleComplete,
     isBandPreview,
+    viewBand,
+    liveBand,
+    writesAllowed,
     previewLoading,
     previewWeekLoading,
+    loadArchiveDays,
+    signedPhotoUrl,
   } = useFamily();
   const [busyId, setBusyId] = useState<string | null>(null);
+  const [photos, setPhotos] = useState<
+    Record<string, { url: string | null; hasPhoto: boolean }>
+  >({});
   const todayDow = aziDayOfWeek(today);
-  const days = isBandPreview
-    ? [...PROGRAM_WEEK_DAYS]
-    : visibleProgramWeekDays({
-        weekMonday: mondayOf(today),
-        joinedAt: family?.joined_at ?? family?.created_at,
-      });
+  const yearStart = family ? familyProgramYearStart(family) : null;
+  const weekMonday = yearStart
+    ? programWeekRange(viewWeek, yearStart).start
+    : formatCivilDate(mondayOf(today));
+  const otherBand = viewBand !== liveBand;
+  const joinedAt = family?.joined_at ?? family?.created_at;
+  const days = useMemo(
+    () =>
+      otherBand
+        ? [...PROGRAM_WEEK_DAYS]
+        : visibleProgramWeekDays({
+            weekMonday,
+            joinedAt,
+          }),
+    [joinedAt, otherBand, weekMonday],
+  );
   const selectedDay = focusedWeekDay({
     requestedDay: focusDay,
     todayDay: todayDow,
     visibleDays: days,
   });
-  const joinHelper = isBandPreview ? null : midweekJoinHelper(days);
-  const readOnly = isBandPreview;
+  const joinHelper = otherBand ? null : midweekJoinHelper(days);
+  const readOnly = !writesAllowed;
+  const showProgress = !otherBand;
   const weekItems = viewActivities.filter(
     (activity) => activity.week_number === viewWeek,
   );
+  const civilByDay = useMemo(() => {
+    const map: Record<number, string> = {};
+    for (const day of days) {
+      map[day] = addCivilDays(weekMonday, day - 1);
+    }
+    return map;
+  }, [days, weekMonday]);
 
   useEffect(() => {
     if (selectedDay == null) return;
     const section = document.getElementById(weekDaySectionId(selectedDay));
     section?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, [selectedDay]);
+
+  useEffect(() => {
+    if (readOnly || !yearStart) return;
+    let cancelled = false;
+    const range = programWeekRange(viewWeek, yearStart);
+    void (async () => {
+      try {
+        const rows = await loadArchiveDays(range.start, range.end);
+        const next: Record<string, { url: string | null; hasPhoto: boolean }> = {};
+        for (const row of rows) {
+          next[row.civil_date] = {
+            hasPhoto: Boolean(row.photo_path),
+            url: row.photo_path ? await signedPhotoUrl(row.photo_path) : null,
+          };
+        }
+        if (!cancelled) setPhotos(next);
+      } catch {
+        if (!cancelled) setPhotos({});
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [loadArchiveDays, readOnly, signedPhotoUrl, viewWeek, yearStart]);
 
   async function onToggle(activityId: string) {
     if (readOnly) return;
@@ -78,6 +131,20 @@ export function SaptamanaView({
     }
   }
 
+  async function reloadPhotos() {
+    if (!yearStart) return;
+    const range = programWeekRange(viewWeek, yearStart);
+    const rows = await loadArchiveDays(range.start, range.end);
+    const next: Record<string, { url: string | null; hasPhoto: boolean }> = {};
+    for (const row of rows) {
+      next[row.civil_date] = {
+        hasPhoto: Boolean(row.photo_path),
+        url: row.photo_path ? await signedPhotoUrl(row.photo_path) : null,
+      };
+    }
+    setPhotos(next);
+  }
+
   if (!selectedChild) {
     return (
       <EmptyState title="Alege un copil" body="Săptămâna se leagă de copilul activ." />
@@ -87,6 +154,7 @@ export function SaptamanaView({
   return (
     <section className="space-y-5">
       <BandPreviewBanner />
+      <PreviewWeekNav />
       <div>
         <h1 className="font-heading text-3xl">{SAPTAMANA_TITLE}</h1>
         <p className="mt-1 text-sm text-muted-foreground">
@@ -99,6 +167,8 @@ export function SaptamanaView({
 
       {isBandPreview && (previewLoading || previewWeekLoading) ? (
         <LoadingState label="Se încarcă previzualizarea…" />
+      ) : !isBandPreview && previewWeekLoading ? (
+        <LoadingState label="Se încarcă săptămâna…" />
       ) : isBandPreview && weekItems.length === 0 ? (
         <EmptyState title={PREVIEW_EMPTY} />
       ) : days.length === 0 ? (
@@ -112,11 +182,13 @@ export function SaptamanaView({
             const items = weekItems
               .filter((activity) => activity.day_of_week === day)
               .sort((a, b) => PILLARS.indexOf(a.pillar) - PILLARS.indexOf(b.pillar));
-            const done = readOnly
-              ? 0
-              : items.filter((activity) =>
+            const done = showProgress
+              ? items.filter((activity) =>
                   completions.some((row) => row.activity_id === activity.id),
-                ).length;
+                ).length
+              : 0;
+            const civilDate = civilByDay[day];
+            const photo = civilDate ? photos[civilDate] : undefined;
 
             return (
               <section
@@ -138,17 +210,17 @@ export function SaptamanaView({
                       </span>
                     ) : null}
                   </h2>
-                  {readOnly ? null : (
+                  {showProgress ? (
                     <p className="text-sm text-muted-foreground">
                       {done}/{items.length || 4}
                     </p>
-                  )}
+                  ) : null}
                 </div>
                 <ul className="mt-3 space-y-2">
                   {items.map((activity) => {
-                    const completion = readOnly
-                      ? null
-                      : completions.find((row) => row.activity_id === activity.id);
+                    const completion = showProgress
+                      ? completions.find((row) => row.activity_id === activity.id)
+                      : null;
                     return (
                       <li key={activity.id} className="flex items-center gap-2">
                         <Link
@@ -182,11 +254,24 @@ export function SaptamanaView({
                   })}
                 </ul>
                 {readOnly ? null : (
-                  <DayNoteEditor
-                    key={`${selectedChild.id}-${viewWeek}-${day}`}
-                    dayOfWeek={day}
-                    embedded
-                  />
+                  <>
+                    <DayNoteEditor
+                      key={`${selectedChild.id}-${viewWeek}-${day}`}
+                      dayOfWeek={day}
+                      embedded
+                    />
+                    {civilDate ? (
+                      <div className="mt-3">
+                        <DayPhotoPicker
+                          key={`${selectedChild.id}-${civilDate}`}
+                          civilDate={civilDate}
+                          photoUrl={photo?.url ?? null}
+                          hasPhoto={Boolean(photo?.hasPhoto)}
+                          onChanged={() => void reloadPhotos()}
+                        />
+                      </div>
+                    ) : null}
+                  </>
                 )}
               </section>
             );

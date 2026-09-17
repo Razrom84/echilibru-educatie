@@ -80,7 +80,7 @@ describe("V1.4 age-band preview", () => {
     expect(isBandPreview(undefined)).toBe(false);
   });
 
-  test("banner copy names the preview band as read-only", () => {
+  test("banner copy names the preview band as read-only by default", () => {
     expect(previewBannerText("1-2")).toBe(
       "Previzualizare · bandă 1–2 (doar citire)",
     );
@@ -90,6 +90,7 @@ describe("V1.4 age-band preview", () => {
     expect(previewBannerText("4-5")).toBe(
       "Previzualizare · bandă 4–5 (doar citire)",
     );
+    expect(previewBannerText("1-2", true)).toBe("Previzualizare · bandă 1–2");
   });
 
   test("local seed cannot fill a 2-3 preview; empty only if that band has no rows", () => {
@@ -143,7 +144,7 @@ describe("V1.4.1 preview week navigation", () => {
 
   test("preview S# is session-only and does not move the live week", () => {
     const live = 4;
-    expect(viewProgramWeek(false, live, 12)).toBe(4);
+    expect(viewProgramWeek(false, live, 12)).toBe(12);
     expect(viewProgramWeek(true, live, 12)).toBe(12);
     expect(viewProgramWeek(true, live, null)).toBe(4);
     expect(viewProgramWeek(true, live, undefined)).toBe(4);
@@ -176,11 +177,12 @@ describe("V1.4.1 preview week navigation", () => {
     expect(toLive.previewWeek).toBe(12);
   });
 
-  test("applyPreviewWeek is a no-op outside a preview session", () => {
+  test("applyPreviewWeek sets session S# on live and in preview, never live week", () => {
     const liveWeek = 4;
     const idle = { previewBand: null, previewWeek: null };
     const { session, liveWeek: unchanged } = applyPreviewWeek(12, idle, liveWeek);
-    expect(session.previewWeek).toBeNull();
+    expect(session.previewWeek).toBe(12);
+    expect(session.previewBand).toBeNull();
     expect(unchanged).toBe(4);
   });
 

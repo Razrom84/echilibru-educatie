@@ -110,9 +110,15 @@ export function anulPreviewReady(weeks: readonly YearWeekPreview[]): boolean {
   return weeks.length === PROGRAM_WEEKS_PER_YEAR;
 }
 
-/** Live Anul only opens the current S#. Band preview may open any S1–S52. */
-export function anulWeekOpen(isPreview: boolean, isCurrent: boolean): boolean {
-  return isPreview || isCurrent;
+/**
+ * V1.5: every S# opens details (Săptămâna). Editability is a separate lock
+ * (past/current on the live band). `isPreview` / `isCurrent` stay in the
+ * signature so call sites do not fork.
+ */
+export function anulWeekOpen(_isPreview: boolean, _isCurrent: boolean): boolean {
+  void _isPreview;
+  void _isCurrent;
+  return true;
 }
 
 /**

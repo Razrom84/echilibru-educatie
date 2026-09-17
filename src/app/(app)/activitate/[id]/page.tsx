@@ -23,13 +23,13 @@ export default function ActivitatePage({
     toggleComplete,
     approveCompletion,
     family,
-    isBandPreview,
+    writesAllowed,
   } = useFamily();
   const [busy, setBusy] = useState(false);
   const activity = viewActivities.find((item) => item.id === id);
-  const completion = isBandPreview
-    ? null
-    : completions.find((row) => row.activity_id === id) ?? null;
+  const completion = writesAllowed
+    ? completions.find((row) => row.activity_id === id) ?? null
+    : null;
   const pending = completion?.mode === "B" && completion.parent_approved === false;
 
   if (!activity) {
@@ -49,7 +49,7 @@ export default function ActivitatePage({
   const current = activity;
 
   async function onToggle() {
-    if (isBandPreview) return;
+    if (!writesAllowed) return;
     setBusy(true);
     try {
       await toggleComplete(current.id);
@@ -59,7 +59,7 @@ export default function ActivitatePage({
   }
 
   async function onApprove() {
-    if (isBandPreview) return;
+    if (!writesAllowed) return;
     setBusy(true);
     try {
       await approveCompletion(current.id);
@@ -113,7 +113,7 @@ export default function ActivitatePage({
         ) : null}
       </div>
 
-      {isBandPreview ? null : (
+      {writesAllowed ? (
         <>
           <div className="flex items-center justify-between gap-3 rounded-2xl border border-border bg-card px-4 py-3">
             <div>
@@ -140,7 +140,7 @@ export default function ActivitatePage({
             </Button>
           ) : null}
         </>
-      )}
+      ) : null}
     </article>
   );
 }

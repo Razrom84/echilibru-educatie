@@ -1,12 +1,11 @@
 "use client";
 
-import { PreviewWeekNav } from "@/components/preview-week-nav";
 import { Button } from "@/components/ui/button";
 import { useFamily } from "@/lib/family-context";
 import { PREVIEW_EXIT, previewBannerText } from "@/lib/band-preview";
 
 export function BandPreviewBanner() {
-  const { isBandPreview, viewBand, clearPreviewBand } = useFamily();
+  const { isBandPreview, viewBand, clearPreviewBand, writesAllowed } = useFamily();
   if (!isBandPreview) return null;
 
   return (
@@ -15,7 +14,9 @@ export function BandPreviewBanner() {
         className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"
         role="status"
       >
-        <p className="text-sm font-medium">{previewBannerText(viewBand)}</p>
+        <p className="text-sm font-medium">
+          {previewBannerText(viewBand, writesAllowed)}
+        </p>
         <Button
           type="button"
           variant="outline"
@@ -25,7 +26,6 @@ export function BandPreviewBanner() {
           {PREVIEW_EXIT}
         </Button>
       </div>
-      <PreviewWeekNav />
     </div>
   );
 }

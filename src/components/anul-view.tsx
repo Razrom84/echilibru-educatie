@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo } from "react";
 import Link from "next/link";
 import { BandPreviewBanner } from "@/components/band-preview-banner";
+import { PreviewWeekNav } from "@/components/preview-week-nav";
 import { EmptyState, LoadingState } from "@/components/status-blocks";
 import { Badge } from "@/components/ui/badge";
 import {
   ANUL_ERROR,
-  ANUL_LOCKED,
   ANUL_NOW,
   ANUL_SUBTITLE,
   ANUL_TITLE,
@@ -20,29 +20,31 @@ import {
 } from "@/lib/anul";
 import { PREVIEW_EMPTY } from "@/lib/band-preview";
 import { useFamily } from "@/lib/family-context";
+import { VIEW_WEEK_READ_ONLY, weekRelation } from "@/lib/view-week";
 import { cn } from "@/lib/utils";
 
 export function AnulView() {
   const {
     family,
     viewWeek,
+    selectedWeek,
     isBandPreview,
     previewLoading,
     bandHasContent,
     bandWeekThemes,
     selectPreviewWeek,
   } = useFamily();
-  const [noticeWeek, setNoticeWeek] = useState<number | null>(null);
 
   const yearStart = resolveAnulYearStart(family);
+  const officialWeek = selectedWeek;
   const weeks = useMemo(
     () =>
       yearWeekPreviews({
         programYearStart: yearStart,
-        currentWeek: viewWeek,
+        currentWeek: isBandPreview ? viewWeek : officialWeek,
         themes: isBandPreview ? bandWeekThemes : undefined,
       }),
-    [bandWeekThemes, isBandPreview, viewWeek, yearStart],
+    [bandWeekThemes, isBandPreview, officialWeek, viewWeek, yearStart],
   );
   const groups = useMemo(() => yearWeeksBySeason(weeks), [weeks]);
   const ready = anulPreviewReady(weeks);
@@ -63,6 +65,7 @@ export function AnulView() {
     return (
       <section className="space-y-4">
         <BandPreviewBanner />
+        {isBandPreview ? <PreviewWeekNav /> : null}
         {heading}
         <LoadingState label="Se încarcă previzualizarea…" />
       </section>
@@ -73,6 +76,7 @@ export function AnulView() {
     return (
       <section className="space-y-4">
         <BandPreviewBanner />
+        {isBandPreview ? <PreviewWeekNav /> : null}
         {heading}
         <EmptyState title={PREVIEW_EMPTY} />
       </section>
@@ -83,6 +87,7 @@ export function AnulView() {
     return (
       <section className="space-y-4">
         <BandPreviewBanner />
+        {isBandPreview ? <PreviewWeekNav /> : null}
         {heading}
         <EmptyState title={ANUL_ERROR} body={ANUL_SUBTITLE} />
       </section>
@@ -92,6 +97,7 @@ export function AnulView() {
   return (
     <section className="space-y-5">
       <BandPreviewBanner />
+      {isBandPreview ? <PreviewWeekNav /> : null}
       {heading}
 
       {isBandPreview && !bandHasContent ? (
@@ -108,7 +114,8 @@ export function AnulView() {
               <ul className="space-y-2">
                 {group.weeks.map((row) => {
                   const openable = anulWeekOpen(isBandPreview, row.current);
-                  const lockedOpen = !openable && noticeWeek === row.week;
+                  const relation = weekRelation(row.week, officialWeek);
+                  const future = relation === "future";
                   const label = `S${row.week} · ${row.theme} · ${row.season}`;
                   const body = (
                     <>
@@ -122,19 +129,17 @@ export function AnulView() {
                             <p className="mt-0.5 text-sm leading-5">{row.theme}</p>
                           ) : null}
                         </div>
-                        {row.current ? (
-                          <Badge variant="default">{ANUL_NOW}</Badge>
-                        ) : null}
+                        <div className="flex shrink-0 flex-col items-end gap-1">
+                          {row.current ? (
+                            <Badge variant="default">{ANUL_NOW}</Badge>
+                          ) : null}
+                          {future ? (
+                            <span className="text-[11px] text-muted-foreground">
+                              {VIEW_WEEK_READ_ONLY}
+                            </span>
+                          ) : null}
+                        </div>
                       </div>
-                      {lockedOpen ? (
-                        <p
-                          className="mt-2 text-sm text-muted-foreground"
-                          role="status"
-                          aria-live="polite"
-                        >
-                          {ANUL_LOCKED}
-                        </p>
-                      ) : null}
                     </>
                   );
 
@@ -144,11 +149,13 @@ export function AnulView() {
                         <Link
                           href="/saptamana"
                           aria-label={
-                            row.current ? `${label} · ${ANUL_NOW}` : label
+                            row.current
+                              ? `${label} · ${ANUL_NOW}`
+                              : future
+                                ? `${label} · ${VIEW_WEEK_READ_ONLY}`
+                                : label
                           }
-                          onClick={() => {
-                            if (isBandPreview) selectPreviewWeek(row.week);
-                          }}
+                          onClick={() => selectPreviewWeek(row.week)}
                           className={cn(
                             "block rounded-2xl border bg-card p-4 hover:bg-muted/50",
                             row.current
@@ -159,19 +166,9 @@ export function AnulView() {
                           {body}
                         </Link>
                       ) : (
-                        <button
-                          type="button"
-                          aria-label={label}
-                          aria-expanded={lockedOpen}
-                          onClick={() =>
-                            setNoticeWeek((current) =>
-                              current === row.week ? null : row.week,
-                            )
-                          }
-                          className="w-full rounded-2xl border border-border bg-card p-4 text-left hover:bg-muted/40"
-                        >
+                        <div className="rounded-2xl border border-border bg-card p-4">
                           {body}
-                        </button>
+                        </div>
                       )}
                     </li>
                   );
