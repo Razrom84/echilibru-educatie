@@ -5,6 +5,7 @@ import {
   ANUL_NOW,
   ANUL_SUBTITLE,
   ANUL_TITLE,
+  anulHidesPreviewThemeList,
   anulPreviewReady,
   anulWeekOpen,
   meteorologicalSeason,
@@ -128,6 +129,27 @@ describe("anulWeekOpen", () => {
     expect(anulWeekOpen(false, false)).toBe(false);
     expect(anulWeekOpen(true, false)).toBe(true);
     expect(anulWeekOpen(true, true)).toBe(true);
+  });
+});
+
+describe("V1.4.1 empty preview band still lists S#", () => {
+  test("does not hide the Anul theme list when the preview catalog is empty", () => {
+    expect(anulHidesPreviewThemeList(true, false)).toBe(false);
+    expect(anulHidesPreviewThemeList(true, true)).toBe(false);
+    expect(anulHidesPreviewThemeList(false, false)).toBe(false);
+  });
+
+  test("empty preview themes still yield 52 clickable weeks", () => {
+    const rows = yearWeekPreviews({
+      programYearStart: PROGRAM_YEAR_START_MONDAY_2026_27,
+      currentWeek: 12,
+      themes: {},
+    });
+    expect(anulPreviewReady(rows)).toBe(true);
+    expect(rows).toHaveLength(52);
+    expect(rows[11]?.current).toBe(true);
+    expect(rows[11]?.theme).toBe("");
+    expect(rows.every((row) => anulWeekOpen(true, row.current))).toBe(true);
   });
 });
 

@@ -35,6 +35,7 @@ export function AziView({ today }: { today: string }) {
     todayPhotoUrl,
     isBandPreview,
     previewLoading,
+    previewWeekLoading,
   } = useFamily();
   const [busyId, setBusyId] = useState<string | null>(null);
 
@@ -87,7 +88,7 @@ export function AziView({ today }: { today: string }) {
         <p className="mt-1 text-sm text-muted-foreground">{aziSubtitle(day)}</p>
       </div>
 
-      {isBandPreview && previewLoading ? (
+      {isBandPreview && (previewLoading || previewWeekLoading) ? (
         <LoadingState label="Se încarcă previzualizarea…" />
       ) : isBandPreview && todayActivities.length === 0 ? (
         <EmptyState title={PREVIEW_EMPTY} />
