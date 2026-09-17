@@ -19,6 +19,7 @@ import {
   aziTitle,
 } from "@/lib/azi";
 import { PREVIEW_EMPTY } from "@/lib/band-preview";
+import { dayNoteEditorKey } from "@/lib/day-note";
 import { useFamily } from "@/lib/family-context";
 import { PILLARS } from "@/lib/pillars";
 import { weekRelation } from "@/lib/view-week";
@@ -136,7 +137,7 @@ export function AziView({ today }: { today: string }) {
           {readOnly ? null : (
             <>
               <DayNoteEditor
-                key={`${selectedChild.id}-${week}-${day}`}
+                key={dayNoteEditorKey(selectedChild.id, week, day)}
                 dayOfWeek={day}
               />
               <DayPhotoPicker
@@ -153,7 +154,7 @@ export function AziView({ today }: { today: string }) {
       {!readOnly && !hideForJoin && !hideFutureDay && todayActivities.length === 0 ? (
         <>
           <DayNoteEditor
-            key={`${selectedChild.id}-${week}-${day}`}
+            key={dayNoteEditorKey(selectedChild.id, week, day)}
             dayOfWeek={day}
           />
           <DayPhotoPicker

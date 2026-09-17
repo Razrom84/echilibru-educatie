@@ -12,8 +12,10 @@ import {
   DAY_NOTE_PLACEHOLDER,
   DAY_NOTE_SAVED,
   dayNoteMatches,
+  dayNoteEditorKey,
   findDayNote,
   normalizeDayNoteBody,
+  storedDayNoteBody,
 } from "./day-note";
 
 describe("Notă pe zi copy (Cristina)", () => {
@@ -92,6 +94,26 @@ describe("day note identity", () => {
     ];
     expect(findDayNote(notes, 2)?.body).toBe("marți");
     expect(findDayNote(notes, 7)).toBeUndefined();
+  });
+
+  test("editor remount key includes viewed S# so the same weekday is a new field", () => {
+    expect(dayNoteEditorKey("child-1", 4, 2)).toBe("child-1-4-2");
+    expect(dayNoteEditorKey("child-1", 3, 2)).not.toBe(
+      dayNoteEditorKey("child-1", 4, 2),
+    );
+  });
+
+  test("stored body ignores leftover notes from another S# with the same weekday", () => {
+    const stalePreviousWeek = [
+      { day_of_week: 2, week_number: 4, body: "S4 marți" },
+    ];
+    expect(storedDayNoteBody(stalePreviousWeek, 2, 3)).toBe("");
+    expect(storedDayNoteBody(stalePreviousWeek, 2, 4)).toBe("S4 marți");
+
+    const arrivedViewWeek = [
+      { day_of_week: 2, week_number: 3, body: "S3 marți" },
+    ];
+    expect(storedDayNoteBody(arrivedViewWeek, 2, 3)).toBe("S3 marți");
   });
 });
 

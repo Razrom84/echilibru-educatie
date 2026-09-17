@@ -10,6 +10,7 @@ import { PillarMark } from "@/components/pillar-mark";
 import { PreviewWeekNav } from "@/components/preview-week-nav";
 import { EmptyState, LoadingState } from "@/components/status-blocks";
 import { PREVIEW_EMPTY } from "@/lib/band-preview";
+import { dayNoteEditorKey } from "@/lib/day-note";
 import { useFamily } from "@/lib/family-context";
 import { PILLARS } from "@/lib/pillars";
 import { familyProgramYearStart, formatCivilDate, mondayOf, programWeekRange } from "@/lib/program-week";
@@ -261,7 +262,7 @@ export function SaptamanaView({
                 {readOnly ? null : (
                   <>
                     <DayNoteEditor
-                      key={`${selectedChild.id}-${viewWeek}-${day}`}
+                      key={dayNoteEditorKey(selectedChild.id, viewWeek, day)}
                       dayOfWeek={day}
                       embedded
                     />

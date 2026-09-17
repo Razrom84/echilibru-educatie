@@ -49,3 +49,36 @@ export function findDayNote<T extends { day_of_week: number }>(
 ): T | undefined {
   return notes.find((note) => note.day_of_week === dayOfWeek);
 }
+
+/** Remount identity: child + viewed S# + weekday. */
+export function dayNoteEditorKey(
+  childId: string,
+  viewWeek: number,
+  dayOfWeek: number,
+): string {
+  return `${childId}-${viewWeek}-${dayOfWeek}`;
+}
+
+type StoredNote = {
+  day_of_week: number;
+  week_number?: number;
+  body: string | null;
+};
+
+/**
+ * Body shown in the editor for `(viewWeek, dayOfWeek)`.
+ * `dayNotes` is week-scoped, but on S# change the previous week's rows can
+ * still be in memory until the fetch completes — ignore those leftovers.
+ */
+export function storedDayNoteBody(
+  notes: readonly StoredNote[],
+  dayOfWeek: number,
+  viewWeek: number,
+): string {
+  const note = notes.find(
+    (row) =>
+      row.day_of_week === dayOfWeek &&
+      (row.week_number == null || row.week_number === viewWeek),
+  );
+  return note?.body ?? "";
+}
