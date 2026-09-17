@@ -21,6 +21,7 @@ import {
   viewWeekModeHint,
   weekRelation,
   weekWritesAllowed,
+  trimsJoinDays,
 } from "./view-week";
 
 const FAMILY = {
@@ -167,6 +168,13 @@ describe("V1.5 past editable / future read-only", () => {
         liveBand: "1-2",
       }),
     ).toBe(false);
+  });
+
+  test("join-day trim stays on the official current week only", () => {
+    expect(trimsJoinDays("current", false)).toBe(true);
+    expect(trimsJoinDays("past", false)).toBe(false);
+    expect(trimsJoinDays("future", false)).toBe(false);
+    expect(trimsJoinDays("current", true)).toBe(false);
   });
 });
 

@@ -26,6 +26,7 @@ import {
 import { aziDayOfWeek } from "@/lib/azi";
 import { addCivilDays } from "@/lib/archive";
 import { cn } from "@/lib/utils";
+import { trimsJoinDays, weekRelation } from "@/lib/view-week";
 
 export function SaptamanaView({
   today,
@@ -40,6 +41,7 @@ export function SaptamanaView({
     completions,
     selectedChild,
     viewWeek,
+    selectedWeek,
     family,
     toggleComplete,
     isBandPreview,
@@ -61,23 +63,26 @@ export function SaptamanaView({
     ? programWeekRange(viewWeek, yearStart).start
     : formatCivilDate(mondayOf(today));
   const otherBand = viewBand !== liveBand;
+  const relation = weekRelation(viewWeek, selectedWeek);
   const joinedAt = family?.joined_at ?? family?.created_at;
   const days = useMemo(
     () =>
-      otherBand
-        ? [...PROGRAM_WEEK_DAYS]
-        : visibleProgramWeekDays({
+      trimsJoinDays(relation, otherBand)
+        ? visibleProgramWeekDays({
             weekMonday,
             joinedAt,
-          }),
-    [joinedAt, otherBand, weekMonday],
+          })
+        : [...PROGRAM_WEEK_DAYS],
+    [joinedAt, otherBand, relation, weekMonday],
   );
   const selectedDay = focusedWeekDay({
     requestedDay: focusDay,
     todayDay: todayDow,
     visibleDays: days,
   });
-  const joinHelper = otherBand ? null : midweekJoinHelper(days);
+  const joinHelper = trimsJoinDays(relation, otherBand)
+    ? midweekJoinHelper(days)
+    : null;
   const readOnly = !writesAllowed;
   const showProgress = !otherBand;
   const weekItems = viewActivities.filter(

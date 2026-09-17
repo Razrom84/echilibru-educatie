@@ -78,6 +78,14 @@ export function weekWritesAllowed(args: {
   return weekRelation(args.viewWeek, args.officialWeek) !== "future";
 }
 
+/** Join-day trim applies only to the official current week on the live band. */
+export function trimsJoinDays(
+  relation: WeekRelation,
+  viewingOtherBand: boolean,
+): boolean {
+  return !viewingOtherBand && relation === "current";
+}
+
 /** S# prev/next/picker on live Azi / Săptămâna, not only in band preview. */
 export function showsLiveWeekNav(): boolean {
   return true;

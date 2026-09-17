@@ -61,7 +61,7 @@ export function AziView({ today }: { today: string }) {
   ).length;
   const allDone = aziAllDone(todayActivities.length, doneCount);
   const readOnly = !writesAllowed;
-  const hideForJoin = gate === "before_join";
+  const hideForJoin = relation === "current" && gate === "before_join";
   const hideFutureDay = relation === "current" && gate === "locked";
 
   async function onToggle(activityId: string) {
