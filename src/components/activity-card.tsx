@@ -12,11 +12,13 @@ export function ActivityCard({
   completion,
   onToggle,
   busy,
+  readOnly,
 }: {
   activity: Activity;
   completion: Completion | null;
   onToggle: () => void;
   busy?: boolean;
+  readOnly?: boolean;
 }) {
   const pending = completion?.mode === "B" && completion.parent_approved === false;
 
@@ -54,7 +56,9 @@ export function ActivityCard({
             </p>
           ) : null}
         </div>
-        <CompleteToggle completion={completion} disabled={busy} onToggle={onToggle} />
+        {readOnly ? null : (
+          <CompleteToggle completion={completion} disabled={busy} onToggle={onToggle} />
+        )}
       </div>
     </article>
   );

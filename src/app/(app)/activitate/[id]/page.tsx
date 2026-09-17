@@ -17,11 +17,19 @@ export default function ActivitatePage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = use(params);
-  const { activities, completions, toggleComplete, approveCompletion, family } =
-    useFamily();
+  const {
+    viewActivities,
+    completions,
+    toggleComplete,
+    approveCompletion,
+    family,
+    isBandPreview,
+  } = useFamily();
   const [busy, setBusy] = useState(false);
-  const activity = activities.find((item) => item.id === id);
-  const completion = completions.find((row) => row.activity_id === id) ?? null;
+  const activity = viewActivities.find((item) => item.id === id);
+  const completion = isBandPreview
+    ? null
+    : completions.find((row) => row.activity_id === id) ?? null;
   const pending = completion?.mode === "B" && completion.parent_approved === false;
 
   if (!activity) {
@@ -41,6 +49,7 @@ export default function ActivitatePage({
   const current = activity;
 
   async function onToggle() {
+    if (isBandPreview) return;
     setBusy(true);
     try {
       await toggleComplete(current.id);
@@ -50,6 +59,7 @@ export default function ActivitatePage({
   }
 
   async function onApprove() {
+    if (isBandPreview) return;
     setBusy(true);
     try {
       await approveCompletion(current.id);
@@ -103,30 +113,34 @@ export default function ActivitatePage({
         ) : null}
       </div>
 
-      <div className="flex items-center justify-between gap-3 rounded-2xl border border-border bg-card px-4 py-3">
-        <div>
-          <p className="text-sm font-medium">
-            {completion
-              ? pending
-                ? "Făcut, așteaptă aprobare"
-                : "Făcut"
-              : "Încă nefăcut"}
-          </p>
-          <p className="text-xs text-muted-foreground">
-            Mod {family?.default_mode ?? activity.mod_default}
-            {(family?.default_mode ?? activity.mod_default) === "B"
-              ? " — copilul face, părintele aprobă"
-              : " — părintele face împreună / pentru copil"}
-          </p>
-        </div>
-        <CompleteToggle completion={completion} disabled={busy} onToggle={() => void onToggle()} />
-      </div>
+      {isBandPreview ? null : (
+        <>
+          <div className="flex items-center justify-between gap-3 rounded-2xl border border-border bg-card px-4 py-3">
+            <div>
+              <p className="text-sm font-medium">
+                {completion
+                  ? pending
+                    ? "Făcut, așteaptă aprobare"
+                    : "Făcut"
+                  : "Încă nefăcut"}
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Mod {family?.default_mode ?? activity.mod_default}
+                {(family?.default_mode ?? activity.mod_default) === "B"
+                  ? " — copilul face, părintele aprobă"
+                  : " — părintele face împreună / pentru copil"}
+              </p>
+            </div>
+            <CompleteToggle completion={completion} disabled={busy} onToggle={() => void onToggle()} />
+          </div>
 
-      {pending ? (
-        <Button className="h-11 w-full" disabled={busy} onClick={() => void onApprove()}>
-          Aprobă (mod B)
-        </Button>
-      ) : null}
+          {pending ? (
+            <Button className="h-11 w-full" disabled={busy} onClick={() => void onApprove()}>
+              Aprobă (mod B)
+            </Button>
+          ) : null}
+        </>
+      )}
     </article>
   );
 }

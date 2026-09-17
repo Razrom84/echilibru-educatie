@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { BandPreviewBanner } from "@/components/band-preview-banner";
 import { CompleteToggle } from "@/components/complete-toggle";
 import { DayNoteEditor } from "@/components/day-note-editor";
 import { PillarMark } from "@/components/pillar-mark";
-import { EmptyState } from "@/components/status-blocks";
+import { EmptyState, LoadingState } from "@/components/status-blocks";
+import { PREVIEW_EMPTY } from "@/lib/band-preview";
 import { useFamily } from "@/lib/family-context";
 import { PILLARS } from "@/lib/pillars";
 import { mondayOf } from "@/lib/program-week";
@@ -29,13 +31,15 @@ export function SaptamanaView({
   focusDay?: number | null;
 }) {
   const {
-    activities,
+    viewActivities,
+    viewWeekTheme,
     completions,
     selectedChild,
     selectedWeek,
-    weekTheme,
     family,
     toggleComplete,
+    isBandPreview,
+    previewLoading,
   } = useFamily();
   const [busyId, setBusyId] = useState<string | null>(null);
   const todayDow = aziDayOfWeek(today);
@@ -49,6 +53,10 @@ export function SaptamanaView({
     visibleDays: days,
   });
   const joinHelper = midweekJoinHelper(days);
+  const readOnly = isBandPreview;
+  const weekItems = viewActivities.filter(
+    (activity) => activity.week_number === selectedWeek,
+  );
 
   useEffect(() => {
     if (selectedDay == null) return;
@@ -57,6 +65,7 @@ export function SaptamanaView({
   }, [selectedDay]);
 
   async function onToggle(activityId: string) {
+    if (readOnly) return;
     setBusyId(activityId);
     try {
       await toggleComplete(activityId);
@@ -73,17 +82,22 @@ export function SaptamanaView({
 
   return (
     <section className="space-y-5">
+      <BandPreviewBanner />
       <div>
         <h1 className="font-heading text-3xl">{SAPTAMANA_TITLE}</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          {saptamanaSubtitle(selectedWeek, weekTheme)}
+          {saptamanaSubtitle(selectedWeek, viewWeekTheme)}
         </p>
         {joinHelper ? (
           <p className="mt-2 text-sm text-muted-foreground">{joinHelper}</p>
         ) : null}
       </div>
 
-      {days.length === 0 ? (
+      {isBandPreview && previewLoading ? (
+        <LoadingState label="Se încarcă previzualizarea…" />
+      ) : isBandPreview && weekItems.length === 0 ? (
+        <EmptyState title={PREVIEW_EMPTY} />
+      ) : days.length === 0 ? (
         <EmptyState
           title={SAPTAMANA_TITLE}
           body="Zilele dinainte de înscriere nu apar. Săptămâna următoare le vezi pe toate."
@@ -91,15 +105,14 @@ export function SaptamanaView({
       ) : (
         <div className="space-y-4">
           {days.map((day) => {
-            const items = activities
-              .filter(
-                (activity) =>
-                  activity.day_of_week === day && activity.week_number === selectedWeek,
-              )
+            const items = weekItems
+              .filter((activity) => activity.day_of_week === day)
               .sort((a, b) => PILLARS.indexOf(a.pillar) - PILLARS.indexOf(b.pillar));
-            const done = items.filter((activity) =>
-              completions.some((row) => row.activity_id === activity.id),
-            ).length;
+            const done = readOnly
+              ? 0
+              : items.filter((activity) =>
+                  completions.some((row) => row.activity_id === activity.id),
+                ).length;
 
             return (
               <section
@@ -121,15 +134,17 @@ export function SaptamanaView({
                       </span>
                     ) : null}
                   </h2>
-                  <p className="text-sm text-muted-foreground">
-                    {done}/{items.length || 4}
-                  </p>
+                  {readOnly ? null : (
+                    <p className="text-sm text-muted-foreground">
+                      {done}/{items.length || 4}
+                    </p>
+                  )}
                 </div>
                 <ul className="mt-3 space-y-2">
                   {items.map((activity) => {
-                    const completion = completions.find(
-                      (row) => row.activity_id === activity.id,
-                    );
+                    const completion = readOnly
+                      ? null
+                      : completions.find((row) => row.activity_id === activity.id);
                     return (
                       <li key={activity.id} className="flex items-center gap-2">
                         <Link
@@ -150,21 +165,25 @@ export function SaptamanaView({
                           <PillarMark pillar={activity.pillar} />
                           <span className="truncate text-sm">{activity.title}</span>
                         </Link>
-                        <CompleteToggle
-                          completion={completion ?? null}
-                          disabled={busyId === activity.id}
-                          compact
-                          onToggle={() => void onToggle(activity.id)}
-                        />
+                        {readOnly ? null : (
+                          <CompleteToggle
+                            completion={completion ?? null}
+                            disabled={busyId === activity.id}
+                            compact
+                            onToggle={() => void onToggle(activity.id)}
+                          />
+                        )}
                       </li>
                     );
                   })}
                 </ul>
-                <DayNoteEditor
-                  key={`${selectedChild.id}-${selectedWeek}-${day}`}
-                  dayOfWeek={day}
-                  embedded
-                />
+                {readOnly ? null : (
+                  <DayNoteEditor
+                    key={`${selectedChild.id}-${selectedWeek}-${day}`}
+                    dayOfWeek={day}
+                    embedded
+                  />
+                )}
               </section>
             );
           })}

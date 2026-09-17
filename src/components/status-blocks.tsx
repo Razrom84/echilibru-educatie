@@ -39,13 +39,15 @@ export function EmptyState({
   action,
 }: {
   title: string;
-  body: string;
+  body?: string;
   action?: React.ReactNode;
 }) {
   return (
     <div className="rounded-2xl border border-dashed border-border bg-card/70 px-4 py-8 text-center">
       <p className="font-heading text-xl text-foreground">{title}</p>
-      <p className="mx-auto mt-2 max-w-sm text-sm leading-6 text-muted-foreground">{body}</p>
+      {body ? (
+        <p className="mx-auto mt-2 max-w-sm text-sm leading-6 text-muted-foreground">{body}</p>
+      ) : null}
       {action ? <div className="mt-4">{action}</div> : null}
     </div>
   );

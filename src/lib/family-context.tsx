@@ -9,7 +9,14 @@ import {
   useState,
 } from "react";
 import { useRouter } from "next/navigation";
-import { CHILD_COOKIE, isSupabaseConfigured, WEEK_COOKIE, WEEK_STORAGE_KEY } from "@/lib/config";
+import {
+  CHILD_COOKIE,
+  PREVIEW_BAND_COOKIE,
+  PREVIEW_BAND_STORAGE_KEY,
+  isSupabaseConfigured,
+  WEEK_COOKIE,
+  WEEK_STORAGE_KEY,
+} from "@/lib/config";
 import {
   addDemoChild,
   clearDemoSession,
@@ -72,8 +79,14 @@ import {
   programWeekNumber,
   programWeekRange,
 } from "@/lib/program-week";
-import { getWeekTheme, PROGRAM_AGE_BAND, PROGRAM_WEEK } from "@/lib/week";
+import { getWeekTheme, PROGRAM_AGE_BAND, PROGRAM_WEEK, PROGRAM_WEEKS } from "@/lib/week";
 import type { SeedActivity } from "@/lib/types";
+import {
+  bandHasCatalog,
+  liveChildBand,
+  themesFromActivityRows,
+  type PilotBand,
+} from "@/lib/band-preview";
 
 type Status = "loading" | "ready" | "error";
 
@@ -86,6 +99,14 @@ type FamilyContextValue = {
   selectedChild: Child | null;
   selectedWeek: number;
   weekTheme: string;
+  liveBand: PilotBand;
+  viewBand: PilotBand;
+  isBandPreview: boolean;
+  viewActivities: Activity[];
+  viewWeekTheme: string;
+  previewLoading: boolean;
+  bandHasContent: boolean;
+  bandWeekThemes: Partial<Record<number, string>> | null;
   activities: Activity[];
   completions: Completion[];
   dayNotes: DayNote[];
@@ -93,6 +114,8 @@ type FamilyContextValue = {
   todayPhotoUrl: string | null;
   refresh: () => Promise<void>;
   selectWeek: (week: number) => void;
+  selectPreviewBand: (band: PilotBand) => void;
+  clearPreviewBand: () => void;
   selectChild: (childId: string) => Promise<void>;
   addChild: (input: { name: string; birthdate: string | null }) => Promise<void>;
   updateFamily: (input: {
@@ -137,6 +160,24 @@ function writeWeekCookie(week: number) {
   }
 }
 
+function writePreviewBandCookie(band: PilotBand) {
+  document.cookie = `${PREVIEW_BAND_COOKIE}=${band}; path=/; max-age=31536000; samesite=lax`;
+  try {
+    window.localStorage.setItem(PREVIEW_BAND_STORAGE_KEY, band);
+  } catch {
+    /* ignore quota / private mode */
+  }
+}
+
+function clearPreviewBandCookie() {
+  document.cookie = `${PREVIEW_BAND_COOKIE}=; path=/; max-age=0; samesite=lax`;
+  try {
+    window.localStorage.removeItem(PREVIEW_BAND_STORAGE_KEY);
+  } catch {
+    /* ignore quota / private mode */
+  }
+}
+
 function demoRowId(prefix: string) {
   return `${prefix}-${Math.random().toString(36).slice(2, 10)}`;
 }
@@ -144,10 +185,12 @@ function demoRowId(prefix: string) {
 export function FamilyProvider({
   isDemo,
   initialWeek = PROGRAM_WEEK,
+  initialPreviewBand = null,
   children: tree,
 }: {
   isDemo: boolean;
   initialWeek?: number;
+  initialPreviewBand?: PilotBand | null;
   children: React.ReactNode;
 }) {
   const router = useRouter();
@@ -157,6 +200,13 @@ export function FamilyProvider({
   const [kids, setKids] = useState<Child[]>([]);
   const [selectedChildId, setSelectedChildId] = useState<string | null>(null);
   const [demoWeek, setDemoWeek] = useState<number | null>(isDemo ? initialWeek : null);
+  const [previewBand, setPreviewBand] = useState<PilotBand | null>(initialPreviewBand);
+  const [previewCatalog, setPreviewCatalog] = useState<{
+    band: PilotBand;
+    week: number;
+    activities: Activity[];
+    themes: Partial<Record<number, string>>;
+  } | null>(null);
   const [activities, setActivities] = useState<Activity[]>([]);
   const [completions, setCompletions] = useState<Completion[]>([]);
   const [dayNotes, setDayNotes] = useState<DayNote[]>([]);
@@ -173,6 +223,31 @@ export function FamilyProvider({
     if (family) return familyProgramWeek(family);
     return initialWeek;
   }, [demoWeek, family, initialWeek, isDemo]);
+
+  const liveBand = liveChildBand(selectedChild?.age_band);
+  const isPreviewing = Boolean(previewBand && previewBand !== liveBand);
+  const viewBand: PilotBand = isPreviewing && previewBand ? previewBand : liveBand;
+  const previewReady = Boolean(
+    isPreviewing &&
+      previewCatalog &&
+      previewCatalog.band === viewBand &&
+      previewCatalog.week === selectedWeek,
+  );
+  const previewLoading = isPreviewing && !previewReady;
+  const previewActivities = previewReady && previewCatalog ? previewCatalog.activities : [];
+  const bandWeekThemes = previewReady && previewCatalog ? previewCatalog.themes : null;
+  const viewActivities = isPreviewing ? previewActivities : activities;
+  const viewWeekTheme = useMemo(() => {
+    const fromCatalog = viewActivities.find(
+      (row) => row.week_number === selectedWeek,
+    )?.tema_saptamana;
+    if (fromCatalog?.trim()) return fromCatalog;
+    if (isPreviewing) return bandWeekThemes?.[selectedWeek] ?? "";
+    return getWeekTheme(selectedWeek);
+  }, [bandWeekThemes, isPreviewing, selectedWeek, viewActivities]);
+  const bandHasContent = isPreviewing
+    ? bandHasCatalog(bandWeekThemes) || viewActivities.length > 0
+    : activities.length > 0;
 
   const applyDemo = useCallback(
     (state: DemoState, week: number) => {
@@ -382,6 +457,81 @@ export function FamilyProvider({
     return () => cancelAnimationFrame(frame);
   }, [refresh]);
 
+  useEffect(() => {
+    if (!isPreviewing || !previewBand) return;
+
+    let cancelled = false;
+
+    async function loadPreviewCatalog(band: PilotBand) {
+      if (isDemo) {
+        const weekRows = getSeedActivities(selectedWeek).filter((row) => row.banda === band);
+        const themeRows = PROGRAM_WEEKS.flatMap((week) =>
+          getSeedActivities(week).filter((row) => row.banda === band),
+        );
+        if (cancelled) return;
+        setPreviewCatalog({
+          band,
+          week: selectedWeek,
+          activities: weekRows,
+          themes: themesFromActivityRows(themeRows),
+        });
+        return;
+      }
+
+      const supabase = createBrowserSupabase();
+      if (!supabase) {
+        if (cancelled) return;
+        setPreviewCatalog({
+          band,
+          week: selectedWeek,
+          activities: [],
+          themes: {},
+        });
+        return;
+      }
+
+      const [
+        { data: activityRows, error: activityError },
+        { data: themeRows, error: themeError },
+      ] = await Promise.all([
+        supabase
+          .from("activities")
+          .select("*")
+          .eq("saptamana", selectedWeek)
+          // Filter by `banda` text (live `1-2`; preview `2-3` ids are `sN-b23-z…`).
+          .eq("banda", band)
+          .order("zi", { ascending: true }),
+        supabase
+          .from("activities")
+          .select("saptamana, tema_saptamana")
+          .eq("banda", band),
+      ]);
+
+      if (cancelled) return;
+      if (activityError || themeError) {
+        setPreviewCatalog({
+          band,
+          week: selectedWeek,
+          activities: [],
+          themes: {},
+        });
+        return;
+      }
+
+      setPreviewCatalog({
+        band,
+        week: selectedWeek,
+        activities: ((activityRows ?? []) as SeedActivity[]).map(normalizeActivity),
+        themes: themesFromActivityRows(themeRows ?? []),
+      });
+    }
+
+    void loadPreviewCatalog(previewBand);
+    return () => {
+      cancelled = true;
+    };
+  }, [isDemo, isPreviewing, previewBand, selectedWeek]);
+
   const selectChild = useCallback(
     async (childId: string) => {
       setSelectedChildId(childId);
@@ -560,6 +710,7 @@ export function FamilyProvider({
       clearPhoto?: boolean;
       preferExistingDone?: boolean;
     }): Promise<ArchiveDay | null> => {
+      if (isPreviewing) return null;
       if (!selectedChild || !family) return null;
       const yearStart = familyProgramYearStart(family);
       const week = programWeekNumber(args.civilDate, yearStart);
@@ -699,11 +850,12 @@ export function FamilyProvider({
       if (args.civilDate === bucharestToday()) setTodayArchive(row);
       return row;
     },
-    [family, isDemo, selectedChild],
+    [family, isDemo, isPreviewing, selectedChild],
   );
 
   const toggleComplete = useCallback(
     async (activityId: string) => {
+      if (isPreviewing) return;
       if (!selectedChild || !family) return;
       const activity =
         activities.find((row) => row.id === activityId) ?? getSeedActivityById(activityId);
@@ -795,11 +947,12 @@ export function FamilyProvider({
         dayNotes,
       });
     },
-    [activities, completions, dayNotes, family, isDemo, selectedChild, stampArchiveDay],
+    [activities, completions, dayNotes, family, isDemo, isPreviewing, selectedChild, stampArchiveDay],
   );
 
   const saveDayNote = useCallback(
     async (dayOfWeek: number, body: string) => {
+      if (isPreviewing) return;
       if (!selectedChild || !family) return;
       const programYearStart = familyProgramYearStart(family);
       const normalized = normalizeDayNoteBody(body);
@@ -873,7 +1026,7 @@ export function FamilyProvider({
         dayNotes: nextNotes,
       });
     },
-    [completions, dayNotes, family, isDemo, selectedChild, selectedWeek, stampArchiveDay],
+    [completions, dayNotes, family, isDemo, isPreviewing, selectedChild, selectedWeek, stampArchiveDay],
   );
 
   const signedPhotoUrl = useCallback(
@@ -915,6 +1068,7 @@ export function FamilyProvider({
 
   const saveDayPhoto = useCallback(
     async (civilDate: string, file: File) => {
+      if (isPreviewing) return;
       if (!selectedChild) throw new Error("Alege un copil mai întâi.");
       const rejected = rejectIfNotPhoto(file);
       if (rejected) throw new Error(rejected);
@@ -965,11 +1119,12 @@ export function FamilyProvider({
         setTodayArchive(row);
       }
     },
-    [completions, dayNotes, isDemo, selectedChild, stampArchiveDay],
+    [completions, dayNotes, isDemo, isPreviewing, selectedChild, stampArchiveDay],
   );
 
   const removeDayPhoto = useCallback(
     async (civilDate: string) => {
+      if (isPreviewing) return;
       if (!selectedChild) return;
       const path = archivePhotoPath(selectedChild.id, civilDate);
       if (isDemo) {
@@ -993,7 +1148,7 @@ export function FamilyProvider({
         setTodayArchive(row);
       }
     },
-    [completions, dayNotes, isDemo, selectedChild, stampArchiveDay],
+    [completions, dayNotes, isDemo, isPreviewing, selectedChild, stampArchiveDay],
   );
 
   const loadArchiveDays = useCallback(
@@ -1072,6 +1227,7 @@ export function FamilyProvider({
 
   const approveCompletion = useCallback(
     async (activityId: string) => {
+      if (isPreviewing) return;
       if (!selectedChild) return;
       const existing = completions.find((row) => row.activity_id === activityId);
       if (!existing) return;
@@ -1099,7 +1255,7 @@ export function FamilyProvider({
         current.map((row) => (row.id === existing.id ? (data as Completion) : row)),
       );
     },
-    [completions, isDemo, selectedChild],
+    [completions, isDemo, isPreviewing, selectedChild],
   );
 
   const ensureCalendarToken = useCallback(async () => {
@@ -1135,6 +1291,24 @@ export function FamilyProvider({
     [isDemo],
   );
 
+  const selectPreviewBand = useCallback(
+    (band: PilotBand) => {
+      if (band === liveBand) {
+        setPreviewBand(null);
+        clearPreviewBandCookie();
+        return;
+      }
+      setPreviewBand(band);
+      writePreviewBandCookie(band);
+    },
+    [liveBand],
+  );
+
+  const clearPreviewBand = useCallback(() => {
+    setPreviewBand(null);
+    clearPreviewBandCookie();
+  }, []);
+
   const signOut = useCallback(async () => {
     if (isDemo) {
       clearDemoSession();
@@ -1159,6 +1333,14 @@ export function FamilyProvider({
       selectedChild,
       selectedWeek,
       weekTheme: getWeekTheme(selectedWeek),
+      liveBand,
+      viewBand,
+      isBandPreview: isPreviewing,
+      viewActivities,
+      viewWeekTheme,
+      previewLoading,
+      bandHasContent,
+      bandWeekThemes,
       activities,
       completions,
       dayNotes,
@@ -1166,6 +1348,8 @@ export function FamilyProvider({
       todayPhotoUrl,
       refresh,
       selectWeek,
+      selectPreviewBand,
+      clearPreviewBand,
       selectChild,
       addChild,
       updateFamily,
@@ -1185,6 +1369,9 @@ export function FamilyProvider({
       activities,
       addChild,
       approveCompletion,
+      bandHasContent,
+      bandWeekThemes,
+      clearPreviewBand,
       completions,
       dayNotes,
       downloadPhotoBytes,
@@ -1192,14 +1379,18 @@ export function FamilyProvider({
       error,
       family,
       isDemo,
+      isPreviewing,
       kids,
+      liveBand,
       loadArchiveDays,
       loadBookletLive,
+      previewLoading,
       refresh,
       removeDayPhoto,
       saveDayNote,
       saveDayPhoto,
       selectChild,
+      selectPreviewBand,
       selectWeek,
       selectedChild,
       selectedWeek,
@@ -1210,6 +1401,9 @@ export function FamilyProvider({
       todayPhotoUrl,
       toggleComplete,
       updateFamily,
+      viewActivities,
+      viewBand,
+      viewWeekTheme,
     ],
   );
 

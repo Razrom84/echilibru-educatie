@@ -73,13 +73,15 @@ export function resolveAnulYearStart(family?: {
 export function yearWeekPreviews(args: {
   programYearStart?: DateInput;
   currentWeek: number;
+  /** When set (age-band preview), use these themes instead of the live 1–2 catalog. */
+  themes?: Partial<Record<number, string>> | null;
 }): YearWeekPreview[] {
   const start = args.programYearStart ?? PROGRAM_YEAR_START_MONDAY_2026_27;
   return PROGRAM_WEEKS.map((week) => {
     const range = programWeekRange(week, start);
     return {
       week,
-      theme: getWeekTheme(week),
+      theme: args.themes ? (args.themes[week] ?? "") : getWeekTheme(week),
       season: programWeekSeason(week, start),
       start: range.start,
       end: range.end,

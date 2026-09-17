@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { AddToCalendarButton } from "@/components/add-to-calendar-button";
+import { AgePreviewSettings } from "@/components/age-preview-settings";
 import { MondayDigestSettings } from "@/components/monday-digest-settings";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -165,6 +166,8 @@ export default function SetariPage() {
           {busy ? "Salvez…" : "Salvează familia"}
         </Button>
       </form>
+
+      <AgePreviewSettings />
 
       <MondayDigestSettings />
 

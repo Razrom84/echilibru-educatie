@@ -81,6 +81,17 @@ describe("yearWeekPreviews", () => {
     expect(rows.filter((row) => row.current)).toHaveLength(1);
   });
 
+  test("optional themes override live 1–2 copy for another band", () => {
+    const rows = yearWeekPreviews({
+      programYearStart: PROGRAM_YEAR_START_MONDAY_2026_27,
+      currentWeek: 1,
+      themes: { 1: "Temă 2–3", 2: "Altă temă" },
+    });
+    expect(rows[0]?.theme).toBe("Temă 2–3");
+    expect(rows[1]?.theme).toBe("Altă temă");
+    expect(rows[2]?.theme).toBe("");
+  });
+
   test("current week follows the selected S#, not a tap target", () => {
     const rows = yearWeekPreviews({
       programYearStart: PROGRAM_YEAR_START_MONDAY_2026_27,
