@@ -143,6 +143,7 @@ type FamilyContextValue = {
 };
 
 const FamilyContext = createContext<FamilyContextValue | null>(null);
+const EMPTY_PREVIEW_ACTIVITIES: Activity[] = [];
 
 function readChildCookie() {
   if (typeof document === "undefined") return null;
@@ -250,7 +251,10 @@ export function FamilyProvider({
     viewWeek,
     bandHasContent,
   });
-  const viewActivities = isPreviewing ? (catalogForWeek?.activities ?? []) : activities;
+  const viewActivities = useMemo(() => {
+    if (!isPreviewing) return activities;
+    return catalogForWeek?.activities ?? EMPTY_PREVIEW_ACTIVITIES;
+  }, [activities, catalogForWeek, isPreviewing]);
   const viewWeekTheme = useMemo(() => {
     const fromCatalog = viewActivities.find(
       (row) => row.week_number === viewWeek,

@@ -119,10 +119,11 @@ export function anulWeekOpen(isPreview: boolean, isCurrent: boolean): boolean {
  * V1.4 hid Anul's S1–S52 list when a preview band had no seed.
  * V1.4.1 keeps that list navigable on every preview band (empty themes OK).
  */
+const HIDE_EMPTY_PREVIEW_THEME_LIST = false;
+
 export function anulHidesPreviewThemeList(
   isPreview: boolean,
-  _bandHasContent: boolean,
+  bandHasContent: boolean,
 ): boolean {
-  if (!isPreview) return false;
-  return false;
+  return isPreview && !bandHasContent && HIDE_EMPTY_PREVIEW_THEME_LIST;
 }
