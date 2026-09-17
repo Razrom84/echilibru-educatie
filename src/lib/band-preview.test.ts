@@ -1,0 +1,99 @@
+import { describe, expect, test } from "vitest";
+import { PROGRAM_AGE_BAND } from "./week";
+import {
+  PILOT_BANDS,
+  PREVIEW_EMPTY,
+  PREVIEW_EXIT,
+  PREVIEW_HELP,
+  PREVIEW_LIVE_MARK,
+  PREVIEW_TITLE,
+  bandHasCatalog,
+  bandLabel,
+  isBandPreview,
+  isPilotBand,
+  liveChildBand,
+  parsePilotBand,
+  previewBannerText,
+  themesFromActivityRows,
+} from "./band-preview";
+
+describe("V1.4 age-band preview", () => {
+  test("locks Settings copy", () => {
+    expect(PREVIEW_TITLE).toBe("Previzualizare vârstă");
+    expect(PREVIEW_HELP).toBe(
+      "Vezi temele altei vârste fără să muți copilul de pe banda lui.",
+    );
+    expect(PREVIEW_EXIT).toBe("Înapoi la banda copilului");
+    expect(PREVIEW_LIVE_MARK).toBe("Azi copilul");
+    expect(PREVIEW_EMPTY).toBe(
+      "Conținutul pentru această vârstă vine curând.",
+    );
+  });
+
+  test("lists the six pilot bands and marks live as 1-2", () => {
+    expect(PILOT_BANDS).toEqual(["1-2", "2-3", "3-4", "4-5", "5-6", "6-7"]);
+    expect(PROGRAM_AGE_BAND).toBe("1-2");
+    expect(liveChildBand("1-2")).toBe("1-2");
+    expect(liveChildBand("2-3")).toBe("2-3");
+    expect(liveChildBand(null)).toBe("1-2");
+    expect(liveChildBand("nope")).toBe("1-2");
+  });
+
+  test("display labels use an en dash", () => {
+    expect(PILOT_BANDS.map(bandLabel)).toEqual([
+      "1–2",
+      "2–3",
+      "3–4",
+      "4–5",
+      "5–6",
+      "6–7",
+    ]);
+  });
+
+  test("cookie/session values accept only pilot bands", () => {
+    expect(parsePilotBand("2-3")).toBe("2-3");
+    expect(parsePilotBand(" 6-7 ")).toBe("6-7");
+    expect(parsePilotBand("1–2")).toBeNull();
+    expect(parsePilotBand("7-8")).toBeNull();
+    expect(parsePilotBand("")).toBeNull();
+    expect(isPilotBand("3-4")).toBe(true);
+    expect(isPilotBand("1-2")).toBe(true);
+  });
+
+  test("preview is only when the chosen band is not the child's live band", () => {
+    expect(isBandPreview("1-2", "1-2")).toBe(false);
+    expect(isBandPreview("2-3", "1-2")).toBe(true);
+    expect(isBandPreview("6-7", "1-2")).toBe(true);
+  });
+
+  test("banner copy names the preview band as read-only", () => {
+    expect(previewBannerText("2-3")).toBe(
+      "Previzualizare · bandă 2–3 (doar citire)",
+    );
+    expect(previewBannerText("4-5")).toBe(
+      "Previzualizare · bandă 4–5 (doar citire)",
+    );
+  });
+
+  test("catalog themes come from banda rows, not historical activity ids", () => {
+    const themes = themesFromActivityRows([
+      {
+        saptamana: 1,
+        tema_saptamana: "Apa în casă și afară",
+      },
+      {
+        saptamana: 1,
+        tema_saptamana: "Apa în casă și afară",
+      },
+      { saptamana: 2, tema_saptamana: "  " },
+      { saptamana: 3, tema_saptamana: "Mâini și degete" },
+    ]);
+    expect(themes).toEqual({
+      1: "Apa în casă și afară",
+      3: "Mâini și degete",
+    });
+    expect(bandHasCatalog(themes)).toBe(true);
+    expect(bandHasCatalog({})).toBe(false);
+    expect(bandHasCatalog(null)).toBe(false);
+  });
+});

@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { EmptyState } from "@/components/status-blocks";
+import { BandPreviewBanner } from "@/components/band-preview-banner";
+import { EmptyState, LoadingState } from "@/components/status-blocks";
 import { Badge } from "@/components/ui/badge";
 import {
   ANUL_ERROR,
@@ -15,11 +16,19 @@ import {
   yearWeekPreviews,
   yearWeeksBySeason,
 } from "@/lib/anul";
+import { PREVIEW_EMPTY } from "@/lib/band-preview";
 import { useFamily } from "@/lib/family-context";
 import { cn } from "@/lib/utils";
 
 export function AnulView() {
-  const { family, selectedWeek } = useFamily();
+  const {
+    family,
+    selectedWeek,
+    isBandPreview,
+    previewLoading,
+    bandHasContent,
+    bandWeekThemes,
+  } = useFamily();
   const [noticeWeek, setNoticeWeek] = useState<number | null>(null);
 
   const yearStart = resolveAnulYearStart(family);
@@ -28,8 +37,9 @@ export function AnulView() {
       yearWeekPreviews({
         programYearStart: yearStart,
         currentWeek: selectedWeek,
+        themes: isBandPreview ? bandWeekThemes : undefined,
       }),
-    [selectedWeek, yearStart],
+    [bandWeekThemes, isBandPreview, selectedWeek, yearStart],
   );
   const groups = useMemo(() => yearWeeksBySeason(weeks), [weeks]);
   const ready = anulPreviewReady(weeks);
@@ -39,13 +49,38 @@ export function AnulView() {
     current?.scrollIntoView({ behavior: "smooth", block: "center" });
   }, [selectedWeek]);
 
+  const heading = (
+    <div>
+      <h1 className="font-heading text-3xl">{ANUL_TITLE}</h1>
+      <p className="mt-1 text-sm text-muted-foreground">{ANUL_SUBTITLE}</p>
+    </div>
+  );
+
+  if (isBandPreview && previewLoading) {
+    return (
+      <section className="space-y-4">
+        <BandPreviewBanner />
+        {heading}
+        <LoadingState label="Se încarcă previzualizarea…" />
+      </section>
+    );
+  }
+
+  if (isBandPreview && !bandHasContent) {
+    return (
+      <section className="space-y-4">
+        <BandPreviewBanner />
+        {heading}
+        <EmptyState title={PREVIEW_EMPTY} />
+      </section>
+    );
+  }
+
   if (!ready) {
     return (
       <section className="space-y-4">
-        <div>
-          <h1 className="font-heading text-3xl">{ANUL_TITLE}</h1>
-          <p className="mt-1 text-sm text-muted-foreground">{ANUL_SUBTITLE}</p>
-        </div>
+        <BandPreviewBanner />
+        {heading}
         <EmptyState title={ANUL_ERROR} body={ANUL_SUBTITLE} />
       </section>
     );
@@ -53,10 +88,8 @@ export function AnulView() {
 
   return (
     <section className="space-y-5">
-      <div>
-        <h1 className="font-heading text-3xl">{ANUL_TITLE}</h1>
-        <p className="mt-1 text-sm text-muted-foreground">{ANUL_SUBTITLE}</p>
-      </div>
+      <BandPreviewBanner />
+      {heading}
 
       {groups.length === 0 ? (
         <EmptyState title={ANUL_TITLE} body={ANUL_ERROR} />
