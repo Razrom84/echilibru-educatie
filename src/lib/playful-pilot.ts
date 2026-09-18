@@ -31,7 +31,7 @@ export const PLAYFUL_CHARACTERS: Record<PlayfulCharacterId, PlayfulCharacter> = 
   },
   manuta: {
     id: "manuta",
-    name: "Mânuța",
+    name: "Mănuță",
     src: "/characters/manuta.svg",
   },
 };

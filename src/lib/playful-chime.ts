@@ -3,6 +3,8 @@
  * Device-local preference (localStorage). Default OFF — no autoplay, adult-triggered.
  */
 
+import { playSharedAudio } from "@/lib/playful-audio";
+
 export const CHIME_STORAGE_KEY = "echilibru-chime-gata";
 export const CHIME_SRC = "/sounds/gata-chime.wav";
 /** Quiet rooms / shared devices: sound stays off until a parent turns it on. */
@@ -97,22 +99,9 @@ export function shouldPlayDoneChime(args: {
   return args.enabled && args.hasOverlay && args.completingLast;
 }
 
-let chimeEl: HTMLAudioElement | null = null;
-
 /** Adult-triggered only. Never call from page load / useEffect. */
 export function playDoneChime(): void {
   if (typeof window === "undefined") return;
   if (!readChimeEnabled()) return;
-  try {
-    if (!chimeEl) {
-      chimeEl = new Audio(CHIME_SRC);
-      chimeEl.preload = "auto";
-    }
-    chimeEl.currentTime = 0;
-    void chimeEl.play().catch(() => {
-      // Autoplay policies / missing file — stay silent.
-    });
-  } catch {
-    // Ignore.
-  }
+  playSharedAudio(CHIME_SRC);
 }

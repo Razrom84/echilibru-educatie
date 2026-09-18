@@ -1,0 +1,47 @@
+-- PLAYFUL PILOT copy cleanup: natural RO invitation titles
+-- for S3 V–D (12) and full S4 L–D (28). Rituals unchanged.
+update public.activities as a
+set titlu = v.titlu
+from (values
+  ('s3-2-3-z5-fizic', 'Mergem pe vârfuri, încet.'),
+  ('s3-2-3-z5-mental', 'Ascultăm trei sunete din casă.'),
+  ('s3-2-3-z5-resurse', 'Telefonul pe silențios'),
+  ('s3-2-3-z5-social', 'Spunem „Bună” cu vocea.'),
+  ('s3-2-3-z6-fizic', 'Ieșim afară. Auzi pașii?'),
+  ('s3-2-3-z6-mental', 'Se aude vântul?'),
+  ('s3-2-3-z6-resurse', 'Piatra care nu scoate sunete'),
+  ('s3-2-3-z6-social', 'Îți spun ce auzi tu.'),
+  ('s3-2-3-z7-fizic', 'Plimbare liberă.'),
+  ('s3-2-3-z7-mental', 'Carte în liniște'),
+  ('s3-2-3-z7-resurse', 'Stingem lumina încet'),
+  ('s3-2-3-z7-social', 'Noapte bună, șoptit'),
+  ('s4-2-3-z1-fizic', 'Deschidem și strângem pumnul.'),
+  ('s4-2-3-z1-mental', 'Arată degetul.'),
+  ('s4-2-3-z1-resurse', 'Punem capacul pe cutie.'),
+  ('s4-2-3-z1-social', 'Ținem mâna.'),
+  ('s4-2-3-z2-fizic', 'Culegem trei lucruri.'),
+  ('s4-2-3-z2-mental', 'Mare și mic.'),
+  ('s4-2-3-z2-resurse', 'Boabele în bol.'),
+  ('s4-2-3-z2-social', 'Din mână în mână.'),
+  ('s4-2-3-z3-fizic', 'Ritm cu degetele.'),
+  ('s4-2-3-z3-mental', 'Unde e mânuța?'),
+  ('s4-2-3-z3-resurse', 'Fermoarul, puțin.'),
+  ('s4-2-3-z3-social', 'Gâdilat pe palmă, blând.'),
+  ('s4-2-3-z4-fizic', 'Împingem cutia.'),
+  ('s4-2-3-z4-mental', 'Unu, doi — degete.'),
+  ('s4-2-3-z4-resurse', 'Ștergem masa.'),
+  ('s4-2-3-z4-social', 'Palmă pe palmă.'),
+  ('s4-2-3-z5-fizic', 'Târâit pe pernă.'),
+  ('s4-2-3-z5-mental', 'Moale sau aspru?'),
+  ('s4-2-3-z5-resurse', 'Șoseta la loc.'),
+  ('s4-2-3-z5-social', 'Mâna pe umăr.'),
+  ('s4-2-3-z6-fizic', 'Săpăm cu mâna.'),
+  ('s4-2-3-z6-mental', 'Piatră sau frunză?'),
+  ('s4-2-3-z6-resurse', 'Găleata la loc.'),
+  ('s4-2-3-z6-social', 'Săpăm unul lângă altul.'),
+  ('s4-2-3-z7-fizic', 'Plimbare cu ceva în mână.'),
+  ('s4-2-3-z7-mental', 'Cartea — tu întorci.'),
+  ('s4-2-3-z7-resurse', 'Haina pe cârlig.'),
+  ('s4-2-3-z7-social', 'Noapte bună.')
+) as v(id, titlu)
+where a.id = v.id;

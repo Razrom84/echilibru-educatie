@@ -60,6 +60,7 @@ function ManutaSvg({ size }: { size: number }) {
       height={size}
       aria-hidden
     >
+      <title>Mănuță</title>
       <path
         d="M22 30 C22 18 26 12 32 12 C38 12 42 18 42 30 L42 38 C42 48 38 54 32 54 C26 54 22 48 22 38 Z"
         fill="#F3C7A4"
@@ -101,7 +102,11 @@ export function PlayfulCharacterMark({
   className?: string;
 }) {
   return (
-    <span className={cn("inline-flex shrink-0", className)}>
+    <span
+      className={cn("inline-flex shrink-0", className)}
+      role="img"
+      aria-label={character.name}
+    >
       {CHARACTER_SVG[character.id](size)}
     </span>
   );
