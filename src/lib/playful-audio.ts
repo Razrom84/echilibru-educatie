@@ -1,5 +1,5 @@
 /**
- * One HTMLAudioElement for PLAYFUL sounds + gata chime.
+ * One HTMLAudioElement for the gata chime.
  * No overlap, adult-gesture play() only, iOS silent-switch via default routing.
  */
 

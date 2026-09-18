@@ -5,7 +5,6 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { CompleteToggle } from "@/components/complete-toggle";
 import { PillarMark } from "@/components/pillar-mark";
-import { PlayfulSoundPlay } from "@/components/playful-sound-play";
 import { EmptyState } from "@/components/status-blocks";
 import { Button } from "@/components/ui/button";
 import { useFamily } from "@/lib/family-context";
@@ -88,7 +87,6 @@ export default function ActivitatePage({
           </span>
         </div>
         <h1 className="mt-3 font-heading text-3xl leading-tight">{activity.title}</h1>
-        <PlayfulSoundPlay activityId={activity.id} />
         <p className="mt-1 text-sm text-muted-foreground">{activity.tema_saptamana}</p>
 
         {activity.materiale.length > 0 ? (
