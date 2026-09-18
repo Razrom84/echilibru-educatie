@@ -7,6 +7,11 @@ import { DayNoteEditor } from "@/components/day-note-editor";
 import { DayPhotoPicker } from "@/components/day-photo-picker";
 import { AddToCalendarButton } from "@/components/add-to-calendar-button";
 import { PreviewWeekNav } from "@/components/preview-week-nav";
+import {
+  PlayfulAziHeader,
+  PlayfulRitualBanner,
+  PlayfulSurprise,
+} from "@/components/playful-chrome";
 import { EmptyState, LoadingState } from "@/components/status-blocks";
 import {
   AZI_BEFORE_JOIN,
@@ -22,6 +27,13 @@ import { PREVIEW_EMPTY } from "@/lib/band-preview";
 import { dayNoteEditorKey } from "@/lib/day-note";
 import { useFamily } from "@/lib/family-context";
 import { PILLARS } from "@/lib/pillars";
+import {
+  isCompletingLastActivity,
+  playDoneChime,
+  readChimeEnabled,
+  shouldPlayDoneChime,
+} from "@/lib/playful-chime";
+import { playfulPilotFor } from "@/lib/playful-pilot";
 import { weekRelation } from "@/lib/view-week";
 import Link from "next/link";
 
@@ -61,15 +73,32 @@ export function AziView({ today }: { today: string }) {
     completions.some((row) => row.activity_id === activity.id),
   ).length;
   const allDone = aziAllDone(todayActivities.length, doneCount);
+  const overlay = playfulPilotFor(week, day);
   const readOnly = !writesAllowed;
   const hideForJoin = relation === "current" && gate === "before_join";
   const hideFutureDay = relation === "current" && gate === "locked";
 
   async function onToggle(activityId: string) {
     if (readOnly) return;
+    const wasAlreadyDone = completions.some((row) => row.activity_id === activityId);
+    const completingLast = isCompletingLastActivity({
+      activityIds: todayActivities.map((activity) => activity.id),
+      completedIds: completions.map((row) => row.activity_id),
+      toggledId: activityId,
+      wasAlreadyDone,
+    });
     setBusyId(activityId);
     try {
       await toggleComplete(activityId);
+      if (
+        shouldPlayDoneChime({
+          enabled: readChimeEnabled(),
+          hasOverlay: Boolean(overlay),
+          completingLast,
+        })
+      ) {
+        playDoneChime();
+      }
     } finally {
       setBusyId(null);
     }
@@ -93,10 +122,18 @@ export function AziView({ today }: { today: string }) {
     <section className="space-y-4">
       <BandPreviewBanner />
       <PreviewWeekNav />
-      <div>
-        <h1 className="font-heading text-3xl">{aziTitle(viewWeekTheme, day)}</h1>
-        <p className="mt-1 text-sm text-muted-foreground">{aziSubtitle(day)}</p>
-      </div>
+      {overlay ? (
+        <PlayfulAziHeader
+          character={overlay.character}
+          theme={overlay.theme}
+          ritualOpen={overlay.ritualOpen}
+        />
+      ) : (
+        <div>
+          <h1 className="font-heading text-3xl">{aziTitle(viewWeekTheme, day)}</h1>
+          <p className="mt-1 text-sm text-muted-foreground">{aziSubtitle(day)}</p>
+        </div>
+      )}
 
       {isBandPreview && (previewLoading || previewWeekLoading) ? (
         <LoadingState label="Se încarcă previzualizarea…" />
@@ -115,7 +152,7 @@ export function AziView({ today }: { today: string }) {
         />
       ) : (
         <div className="space-y-3">
-          {!readOnly && allDone ? (
+          {!readOnly && allDone && !overlay ? (
             <p className="rounded-2xl bg-muted px-4 py-3 text-sm font-medium">
               {aziAllDoneMessage(day)}
             </p>
@@ -134,6 +171,10 @@ export function AziView({ today }: { today: string }) {
               onToggle={() => void onToggle(activity.id)}
             />
           ))}
+          {overlay ? <PlayfulSurprise surprise={overlay.surprise} /> : null}
+          {overlay && !readOnly && allDone ? (
+            <PlayfulRitualBanner line={overlay.ritualClose} />
+          ) : null}
           {readOnly ? null : (
             <>
               <DayNoteEditor

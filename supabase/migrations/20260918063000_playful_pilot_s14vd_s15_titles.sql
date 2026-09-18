@@ -1,0 +1,47 @@
+-- PLAYFUL PILOT: invitation titles for S14 V–D + S15 only.
+-- Does not insert new catalog rows; no other weeks/bands.
+update public.activities as a
+set titlu = v.titlu
+from (values
+  ('s14-2-3-z5-fizic', 'Hai să alergăm puțin pe drum'),
+  ('s14-2-3-z5-mental', 'Hai: încet, apoi repede'),
+  ('s14-2-3-z5-resurse', 'Hai pantofii la loc'),
+  ('s14-2-3-z5-social', 'Hai pe rând: un pas'),
+  ('s14-2-3-z6-fizic', 'Hai o plimbare scurtă'),
+  ('s14-2-3-z6-mental', 'Uite pe drum — ce e?'),
+  ('s14-2-3-z6-resurse', 'Hai găleata, apoi la loc'),
+  ('s14-2-3-z6-social', 'Hai unul lângă altul'),
+  ('s14-2-3-z7-fizic', 'Hai — tu alegi drumul'),
+  ('s14-2-3-z7-mental', 'Hai cartea: drum și pași'),
+  ('s14-2-3-z7-resurse', 'Hai pantofii pe cârlig'),
+  ('s14-2-3-z7-social', 'Hai noapte bună'),
+  ('s15-2-3-z1-fizic', 'Hai la masă pe scaun'),
+  ('s15-2-3-z1-mental', 'Uite farfuria pe masă'),
+  ('s15-2-3-z1-resurse', 'Hai farfuria la chiuvetă'),
+  ('s15-2-3-z1-social', 'Hai împreună la masă'),
+  ('s15-2-3-z2-fizic', 'Hai gustarea cu mâna'),
+  ('s15-2-3-z2-mental', 'Uite mâncarea pe farfurie'),
+  ('s15-2-3-z2-resurse', 'Hai șervețelul la loc'),
+  ('s15-2-3-z2-social', 'Hai, mână? gustarea'),
+  ('s15-2-3-z3-fizic', 'Hai lingura la gură'),
+  ('s15-2-3-z3-mental', 'Uite lingura și farfuria'),
+  ('s15-2-3-z3-resurse', 'Hai lingura la chiuvetă'),
+  ('s15-2-3-z3-social', 'Hai pe rând: o lingură'),
+  ('s15-2-3-z4-fizic', 'Hai paharul la masă'),
+  ('s15-2-3-z4-mental', 'Uite paharul lângă farfurie'),
+  ('s15-2-3-z4-resurse', 'Hai paharul la chiuvetă'),
+  ('s15-2-3-z4-social', 'Hai, mulțumesc la masă'),
+  ('s15-2-3-z5-fizic', 'Hai mâinile înainte de masă'),
+  ('s15-2-3-z5-mental', 'Hai: înainte, apoi după'),
+  ('s15-2-3-z5-resurse', 'Hai prosopul la loc'),
+  ('s15-2-3-z5-social', 'Hai, la masă!'),
+  ('s15-2-3-z6-fizic', 'Hai gustarea pe pătură'),
+  ('s15-2-3-z6-mental', 'Uite — ce mâncăm azi?'),
+  ('s15-2-3-z6-resurse', 'Hai farfuria la loc'),
+  ('s15-2-3-z6-social', 'Hai unul câte unul'),
+  ('s15-2-3-z7-fizic', 'Hai — tu alegi după masă'),
+  ('s15-2-3-z7-mental', 'Hai cartea: mâncare pe masă'),
+  ('s15-2-3-z7-resurse', 'Hai farfuriile la loc'),
+  ('s15-2-3-z7-social', 'Hai noapte bună')
+) as v(id, titlu)
+where a.id = v.id;

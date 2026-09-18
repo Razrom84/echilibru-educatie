@@ -8,6 +8,11 @@ import { DayNoteEditor } from "@/components/day-note-editor";
 import { DayPhotoPicker } from "@/components/day-photo-picker";
 import { PillarMark } from "@/components/pillar-mark";
 import { PreviewWeekNav } from "@/components/preview-week-nav";
+import {
+  PlayfulCharacterMark,
+  PlayfulSurprise,
+  PlayfulWeekRitual,
+} from "@/components/playful-chrome";
 import { EmptyState, LoadingState } from "@/components/status-blocks";
 import { PREVIEW_EMPTY } from "@/lib/band-preview";
 import { dayNoteEditorKey } from "@/lib/day-note";
@@ -28,6 +33,13 @@ import { aziDayOfWeek } from "@/lib/azi";
 import { addCivilDays } from "@/lib/archive";
 import { cn } from "@/lib/utils";
 import { trimsJoinDays, weekRelation } from "@/lib/view-week";
+import {
+  isCompletingLastActivity,
+  playDoneChime,
+  readChimeEnabled,
+  shouldPlayDoneChime,
+} from "@/lib/playful-chime";
+import { playfulPilotFor, playfulPilotWeek } from "@/lib/playful-pilot";
 
 export function SaptamanaView({
   today,
@@ -89,6 +101,7 @@ export function SaptamanaView({
   const weekItems = viewActivities.filter(
     (activity) => activity.week_number === viewWeek,
   );
+  const weekOverlay = playfulPilotWeek(viewWeek);
   const civilByDay = useMemo(() => {
     const map: Record<number, string> = {};
     for (const day of days) {
@@ -127,11 +140,27 @@ export function SaptamanaView({
     };
   }, [loadArchiveDays, readOnly, signedPhotoUrl, viewWeek, yearStart]);
 
-  async function onToggle(activityId: string) {
+  async function onToggle(activityId: string, dayOfWeek: number, dayIds: string[]) {
     if (readOnly) return;
+    const wasAlreadyDone = completions.some((row) => row.activity_id === activityId);
+    const completingLast = isCompletingLastActivity({
+      activityIds: dayIds,
+      completedIds: completions.map((row) => row.activity_id),
+      toggledId: activityId,
+      wasAlreadyDone,
+    });
     setBusyId(activityId);
     try {
       await toggleComplete(activityId);
+      if (
+        shouldPlayDoneChime({
+          enabled: readChimeEnabled(),
+          hasOverlay: Boolean(playfulPilotFor(viewWeek, dayOfWeek)),
+          completingLast,
+        })
+      ) {
+        playDoneChime();
+      }
     } finally {
       setBusyId(null);
     }
@@ -170,6 +199,13 @@ export function SaptamanaView({
           <p className="mt-2 text-sm text-muted-foreground">{joinHelper}</p>
         ) : null}
       </div>
+      {weekOverlay ? (
+        <PlayfulWeekRitual
+          character={weekOverlay.character}
+          theme={weekOverlay.theme}
+          ritualOpen={weekOverlay.ritualOpen}
+        />
+      ) : null}
 
       {isBandPreview && (previewLoading || previewWeekLoading) ? (
         <LoadingState label="Se încarcă previzualizarea…" />
@@ -195,6 +231,7 @@ export function SaptamanaView({
               : 0;
             const civilDate = civilByDay[day];
             const photo = civilDate ? photos[civilDate] : undefined;
+            const dayOverlay = playfulPilotFor(viewWeek, day);
 
             return (
               <section
@@ -205,8 +242,14 @@ export function SaptamanaView({
                   day === selectedDay && "ring-2 ring-primary/30",
                 )}
               >
-                <div className="flex items-baseline justify-between gap-3">
-                  <h2 className="flex items-baseline gap-2 font-heading text-xl">
+                <div className="flex items-center justify-between gap-3">
+                  <h2 className="flex items-center gap-2 font-heading text-xl">
+                    {dayOverlay ? (
+                      <PlayfulCharacterMark
+                        character={dayOverlay.character}
+                        size={32}
+                      />
+                    ) : null}
                     {day === todayDow
                       ? `${weekDayHeading(day)}\u00A0`
                       : weekDayHeading(day)}
@@ -252,13 +295,24 @@ export function SaptamanaView({
                             completion={completion ?? null}
                             disabled={busyId === activity.id}
                             compact
-                            onToggle={() => void onToggle(activity.id)}
+                            onToggle={() =>
+                              void onToggle(
+                                activity.id,
+                                day,
+                                items.map((item) => item.id),
+                              )
+                            }
                           />
                         )}
                       </li>
                     );
                   })}
                 </ul>
+                {dayOverlay ? (
+                  <div className="mt-3">
+                    <PlayfulSurprise surprise={dayOverlay.surprise} compact />
+                  </div>
+                ) : null}
                 {readOnly ? null : (
                   <>
                     <DayNoteEditor
