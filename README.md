@@ -104,7 +104,7 @@ Dacă Cristina înlocuiește fișierul JSON, re-rulează importul (`on conflict 
 
 Pilot GO (MannyQ + Răzvan), **doar** banda 1–2: **săptămâna 3 vineri–duminică** și **toată săptămâna 4**. Familia e pe săptămâna 3 live; S14/S15 nu mai sunt pilot. Nu e rollout pe tot catalogul.
 
-- **Azi:** personaj + temă (`Sunțel · Sunete și liniște` / `Mânuța · Mâini și degete`), ritual de deschidere, 4 piloni cu titluri-invitație, `Surpriză: …` sub Social, ritual de închidere când e gata ziua.
+- **Azi:** personaj + temă (`Sunețel · Sunete și liniște` / `Mânuța · Mâini și degete`), ritual de deschidere, 4 piloni cu titluri-invitație, `Surpriză: …` sub Social, ritual de închidere când e gata ziua.
 - **Săptămâna:** ritualul o dată sus; pe zilele din pilot: iconița personajului, 4 piloni, chip Surpriză. S3 luni–joi rămân fără chrome de zi.
 - **Setări:** `Sunet scurt la gata` — **implicit oprit**, salvat pe dispozitiv (`localStorage`), nu pe familie. Sunetul e scurt, pornit doar de adult când bifează ultimul pilon; nu se autoredă la încărcarea paginii.
 - Fără streak / badge / scor. Fără chat. Personajele sunt SVG statice.
@@ -115,7 +115,7 @@ Pilot GO (MannyQ + Răzvan), **doar** banda 1–2: **săptămâna 3 vineri–dum
 
 1. Login → **Intră în demonstrație** → onboarding copil.
 2. Pe **Azi**, folosește controlul S# → **Săptămâna 3** (săptămâna oficială rămâne cea de azi). Hard refresh după deploy.
-3. Vineri Azi: Sunțel, `Hai la sunete. Gata?`, invitații, `Surpriză: șoaptă 2s`. Luni–joi rămân fără chrome de pilot.
+3. Vineri Azi: Sunețel, `Hai la sunete. Gata?`, invitații, `Surpriză: șoaptă 2s`. Luni–joi rămân fără chrome de pilot.
 4. **Săptămâna:** ritualul sus; V–D au personaj + chip Surpriză; L–J nu.
 5. Schimbă S# la **Săptămâna 4**. Azi + Săptămâna: Mânuța, `Hai cu mâinile. Gata?`, surpriză pe L–D.
 6. Setări → pornește **Sunet scurt la gata** → pe o zi de pilot (S3 V–D sau S4, dacă e ziua curentă, nu viitoare), bifează al 4-lea pilon → se aude chime-ul. Reîncarcă pagina: nu se aude nimic până la o bifă nouă.

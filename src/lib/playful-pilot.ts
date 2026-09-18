@@ -26,7 +26,7 @@ export type PlayfulOverlay = {
 export const PLAYFUL_CHARACTERS: Record<PlayfulCharacterId, PlayfulCharacter> = {
   suntel: {
     id: "suntel",
-    name: "Sunțel",
+    name: "Sunețel",
     src: "/characters/suntel.svg",
   },
   manuta: {
