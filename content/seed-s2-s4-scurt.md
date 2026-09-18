@@ -94,7 +94,7 @@
 - **Resurse — Ștergem masa cu cârpă:** Mișcări scurte. „Curat.”
 - **Social — High-five blând:** Oferiți palma. Fără forțare.
 ### Vineri
-- **Fizic — Urcăm pe mâini pe pernă (târâit):** Târâit pe pernă. Scurt.
+- **Fizic — Alunecăm cu mâna ușor pe pernă.:** Pune mâna pe pernă. Alunecă ușor. Scurt — gata.
 - **Mental — Pipăie moale / aspru:** „Moale. Aspru.”
 - **Resurse — Punem șoseta la loc:** În sertar/coș. „La loc.”
 - **Social — Mână pe umărul adultului:** El pune mâna pe umărul vostru. Modelați.

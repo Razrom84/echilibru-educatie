@@ -39,7 +39,6 @@ Fără chei Supabase, din Login apasă **Intră în demonstrație**.
 | `SUPABASE_SERVICE_ROLE_KEY` | Vercel (cron) / CLI | da pe Vercel pentru raportul de luni; nu în browser |
 | `RESEND_API_KEY` | Vercel (Production + Preview) | da, ca să plece mailul de luni |
 | `CRON_SECRET` | Vercel | da; cronul trimite `Authorization: Bearer $CRON_SECRET` |
-| `NEXT_PUBLIC_PLAYFUL_SOUNDS` | `.env.local` și Vercel | nu; **ON implicit** (Play pe S3 V–D). `0` / `false` / `off` = fără UI |
 
 Cheile Supabase: Project Settings → Data API / API Keys.  
 Resend: API key + domeniu `echilibru-cartea.ro` (From `noreply@echilibru-cartea.ro`).  
@@ -108,8 +107,7 @@ Pilot GO (MannyQ + Răzvan), **doar** banda 1–2: **săptămâna 3 vineri–dum
 - **Azi:** personaj + temă (`Sunețel · Sunete și liniște` / `Mânuță · Mâini și degete`), ritual de deschidere, 4 piloni cu titluri-invitație, `Surpriză: …` sub Social, ritual de închidere când e gata ziua.
 - **Ritualuri (lock):** S3 deschidere `Ascultăm. Gata?` / închidere `Sunete gata. Bravo.`; S4 deschidere `Mâinile. Gata?` / închidere `Mâini gata. Bravo.` (fără `Hai la sunete…` / `Hai cu mâinile…`).
 - **Săptămâna:** ritualul o dată sus; pe zilele din pilot: iconița personajului, 4 piloni, chip Surpriză. S3 luni–joi rămân fără chrome de zi.
-- **Setări:** `Sunet scurt la gata` — **implicit oprit**, salvat pe dispozitiv (`localStorage`), nu pe familie. Sunetul e scurt, pornit doar de adult când bifează ultimul pilon; nu se autoredă la încărcarea paginii.
-- **Sunete S3 (V–D):** `Ascultă` e **vizibil implicit pe Production** pe mapările S3 vineri–duminică (fără flag). Toggle Setări `Sunete S3 (vineri–duminică)` rămâne, **implicit pornit**. `NEXT_PUBLIC_PLAYFUL_SOUNDS=0` ascunde Play + toggle. Fără autoplay, fără overlap, tap de adult. Piatră (`s3-2-3-z6-resurse`) = liniște (fără clip / fără Play).
+- **Setări:** `Sunet scurt la gata` — **implicit oprit**, salvat pe dispozitiv (`localStorage`), nu pe familie. Sunetul e scurt, pornit doar de adult când bifează ultimul pilon; nu se autoredă la încărcarea paginii. Fără player de sunete S3 (fără `Ascultă`, fără clipuri wav, fără toggle `Sunete S3`).
 - Fără streak / badge / scor. Fără chat. Personajele sunt SVG statice. Personajul S4 se afișează **`Mânuță`** (â din *mână*, U+00E2 — nu `Mănuță`; id intern `manuta`).
 - Titlurile se schimbă în `content/seed-s2-s4-banda-1-2.json` (doar S3 z5–z7 și S4). Ritualul și surprizele sunt în `src/lib/playful-pilot.ts`.
 - Selectorul S# arată **`Săptămâna 3`**, nu `Săptămâna S3`.
@@ -123,13 +121,14 @@ Pilot GO (MannyQ + Răzvan), **doar** banda 1–2: **săptămâna 3 vineri–dum
 5. Schimbă S# la **Săptămâna 4**. Azi + Săptămâna: Mânuță, `Mâinile. Gata?`, surpriză pe L–D.
 6. Setări → pornește **Sunet scurt la gata** → pe o zi de pilot (S3 V–D sau S4, dacă e ziua curentă, nu viitoare), bifează al 4-lea pilon → se aude chime-ul. Reîncarcă pagina: nu se aude nimic până la o bifă nouă.
 7. Navighează la S14/S15: fără personaj, fără surpriză; titlurile sunt cele de dinainte de pilot.
-8. **Sunete S3 (ON implicit, inclusiv Production):** S# **Săptămâna 3** → Vineri mental / Sâmbătă fizic+mental → `Ascultă` e vizibil și activ fără flag. Setări → `Sunete S3 (vineri–duminică)` e pornit implicit (poți opri). Sâmbătă resurse (piatră) rămâne fără Play.
+8. Azi / Săptămâna / Detaliu / Setări: **fără** buton `Ascultă` și **fără** toggle `Sunete S3 (vineri–duminică)`.
+9. S# **Săptămâna 4** → Vineri fizic: titlul e `Alunecăm cu mâna ușor pe pernă.` (mâna pe pernă, nu târâit).
 
 Poți folosi și săgețile S# de pe Azi / Săptămâna (nu mută săptămâna oficială). Dacă schimbi săptămâna oficială din Setări la o S# al cărei calendar e în viitor, Azi blochează ziua („Se deschide Vineri”) — comportament V1.5, nu al pilotului.
 
 ### QA pe custom / cont real
 
-1. SQL Editor (sau `db push`): `supabase/migrations/20260918080000_playful_s3_vd_natural_titles.sql` — actualizează titlurile S3 V–D + S4. Nu inserează rânduri noi.
+1. SQL Editor (sau `db push`): `supabase/migrations/20260918080000_playful_s3_vd_natural_titles.sql`, apoi `supabase/migrations/20260918090000_s4_v_fizic_alunecam.sql` — actualizează titlurile S3 V–D + S4 (inclusiv S4 V Fizic `Alunecăm cu mâna ușor pe pernă.`). Nu inserează rânduri noi.
 2. Dacă S3/S4 nu sunt încă în `activities`, importă întâi catalogul 1–2, apoi rulează migrarea.
 3. Navighează la S3 / S4 (nav S#). Verifică Azi, Săptămâna, toggle-ul de sunet ca mai sus. Hard refresh.
 4. Gazda: `educatie.echilibru-cartea.ro` (preview-ul Vercel e suficient pentru acest PR).
@@ -146,7 +145,6 @@ Origin nu e legat de Vercel din acest agent. Pași:
    - `SUPABASE_SERVICE_ROLE_KEY` (doar server; cronul de luni)
    - `RESEND_API_KEY`
    - `CRON_SECRET`
-   - `NEXT_PUBLIC_PLAYFUL_SOUNDS` — **ON implicit** (unset / `1` = Play vizibil pe S3 V–D, inclusiv Production). `0` / `false` / `off` = fără UI de sunete.
 4. Authentication → URL Configuration în Supabase: adaugă domeniul Vercel (și, mai târziu, `educatie.echilibru-cartea.ro`) la Site URL / Redirect URLs.
 5. Deploy. `vercel.json` definește:
    - cronul `0 5 * * 1` → `/api/cron/raport-luni` (luni 08:00 EEST / 07:00 EET)

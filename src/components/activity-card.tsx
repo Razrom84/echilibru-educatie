@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { CompleteToggle } from "@/components/complete-toggle";
 import { PillarMark } from "@/components/pillar-mark";
-import { PlayfulSoundPlay } from "@/components/playful-sound-play";
 import { PILLAR_META } from "@/lib/pillars";
 import type { Activity, Completion } from "@/lib/types";
 import { cn } from "@/lib/utils";
@@ -51,7 +50,6 @@ export function ActivityCard({
           <p className="mt-1 line-clamp-2 text-sm leading-6 text-muted-foreground">
             {activity.gata_cand}
           </p>
-          <PlayfulSoundPlay activityId={activity.id} />
           {pending ? (
             <p className="mt-2 text-xs font-medium text-amber-800">
               Așteaptă aprobarea părintelui

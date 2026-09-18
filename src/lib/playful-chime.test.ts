@@ -1,6 +1,9 @@
+import { existsSync } from "node:fs";
+import { resolve } from "node:path";
 import { describe, expect, test } from "vitest";
 import {
   CHIME_DEFAULT_ENABLED,
+  CHIME_SRC,
   CHIME_STORAGE_KEY,
   CHIME_TOGGLE_LABEL,
   isCompletingLastActivity,
@@ -93,5 +96,13 @@ describe("Sunet scurt la gata", () => {
         wasAlreadyDone: false,
       }),
     ).toBe(false);
+  });
+
+  test("keeps gata chime and does not ship playful clip wavs", () => {
+    expect(CHIME_SRC).toBe("/sounds/gata-chime.wav");
+    expect(existsSync(resolve("public/sounds/gata-chime.wav"))).toBe(true);
+    expect(existsSync(resolve("public/sounds/playful-wind.wav"))).toBe(false);
+    expect(existsSync(resolve("public/sounds/playful-steps.wav"))).toBe(false);
+    expect(existsSync(resolve("public/sounds/playful-house.wav"))).toBe(false);
   });
 });

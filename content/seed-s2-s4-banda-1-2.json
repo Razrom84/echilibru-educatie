@@ -1489,19 +1489,20 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "fizic",
-      "titlu": "Târâit pe pernă.",
+      "titlu": "Alunecăm cu mâna ușor pe pernă.",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
         "pernă/saltea"
       ],
       "pasi": [
-        "Târâit pe pernă.",
-        "Scurt."
+        "Pune mâna pe pernă.",
+        "Alunecă ușor mâna pe pernă.",
+        "Scurt — gata."
       ],
-      "gata_cand": "A încercat târâitul.",
+      "gata_cand": "A alunecat mâna pe pernă.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+      "nota": "Vârsta 1–2: doar mâna, blând; el poate refuza."
     },
     {
       "id": "s4-2-3-z5-mental",

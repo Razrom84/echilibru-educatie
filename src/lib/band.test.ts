@@ -19,7 +19,15 @@ describe("M1+M2 live band 1–2", () => {
     expect(LIVE_BAND_NOTE).toBe(
       "Vârsta 1–2: scurt, fără forțare; el poate refuza.",
     );
-    expect(rows.every((row) => row.nota === LIVE_BAND_NOTE)).toBe(true);
+    const s4FridayFizic = rows.find((row) => row.id === "s4-2-3-z5-fizic");
+    expect(s4FridayFizic?.nota).toBe(
+      "Vârsta 1–2: doar mâna, blând; el poate refuza.",
+    );
+    expect(
+      rows
+        .filter((row) => row.id !== "s4-2-3-z5-fizic")
+        .every((row) => row.nota === LIVE_BAND_NOTE),
+    ).toBe(true);
     expect(rows.some((row) => (row.nota ?? "").includes("2–3"))).toBe(false);
     expect(rows.some((row) => (row.nota ?? "").includes("2-3"))).toBe(false);
     expect(rows.every((row) => /-2-3-/.test(row.id))).toBe(true);

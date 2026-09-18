@@ -5,7 +5,6 @@ import { AddToCalendarButton } from "@/components/add-to-calendar-button";
 import { AgePreviewSettings } from "@/components/age-preview-settings";
 import { MondayDigestSettings } from "@/components/monday-digest-settings";
 import { PlayfulChimeSettings } from "@/components/playful-chime-settings";
-import { PlayfulSoundsSettings } from "@/components/playful-sounds-settings";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -171,7 +170,6 @@ export default function SetariPage() {
 
       <div className="space-y-4 rounded-2xl border border-border bg-card p-4">
         <PlayfulChimeSettings />
-        <PlayfulSoundsSettings />
       </div>
 
       <AgePreviewSettings />
