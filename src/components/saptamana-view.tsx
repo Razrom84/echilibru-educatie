@@ -13,6 +13,7 @@ import {
   PlayfulSurprise,
   PlayfulWeekRitual,
 } from "@/components/playful-chrome";
+import { PlayfulSoundPlay } from "@/components/playful-sound-play";
 import { EmptyState, LoadingState } from "@/components/status-blocks";
 import { PREVIEW_EMPTY } from "@/lib/band-preview";
 import { dayNoteEditorKey } from "@/lib/day-note";
@@ -290,6 +291,7 @@ export function SaptamanaView({
                           <PillarMark pillar={activity.pillar} />
                           <span className="truncate text-sm">{activity.title}</span>
                         </Link>
+                        <PlayfulSoundPlay activityId={activity.id} compact />
                         {readOnly ? null : (
                           <CompleteToggle
                             completion={completion ?? null}

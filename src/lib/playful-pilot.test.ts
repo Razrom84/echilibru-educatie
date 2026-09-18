@@ -24,7 +24,7 @@ describe("PLAYFUL PILOT scope", () => {
     expect(playfulPilotFor(3, 7)?.ritualOpen).toBe("Hai la sunete. Gata?");
   });
 
-  test("S4 overlay is L–D with Mânuța", () => {
+  test("S4 overlay is L–D with Mănuță", () => {
     expect(playfulPilotFor(4, 1)?.surprise).toBe("unde-i degetul");
     expect(playfulPilotFor(4, 2)?.surprise).toBe("high-five");
     expect(playfulPilotFor(4, 3)?.surprise).toBe("degete pe masă");
@@ -33,6 +33,8 @@ describe("PLAYFUL PILOT scope", () => {
     expect(playfulPilotFor(4, 6)?.surprise).toBe("săpătură+1");
     expect(playfulPilotFor(4, 7)?.surprise).toBe("pagină+1");
     expect(playfulPilotFor(4, 7)?.character.id).toBe("manuta");
+    expect(playfulPilotFor(4, 7)?.character.name).toBe("Mănuță");
+    expect(playfulPilotFor(4, 7)?.character.src).toBe("/characters/manuta.svg");
     expect(playfulPilotFor(4, 7)?.ritualOpen).toBe("Hai cu mâinile. Gata?");
     expect(playfulPilotFor(4, 7)?.ritualClose).toBe("Mâini gata. Bravo.");
   });
@@ -61,9 +63,12 @@ describe("PLAYFUL PILOT copy helpers", () => {
     expect(playfulHeaderLabel("Sunețel", "Sunete și liniște")).toBe(
       "Sunețel · Sunete și liniște",
     );
-    expect(playfulHeaderLabel("Mânuța", "Mâini și degete")).toBe(
-      "Mânuța · Mâini și degete",
+    expect(playfulHeaderLabel("Mănuță", "Mâini și degete")).toBe(
+      "Mănuță · Mâini și degete",
     );
+    expect(PLAYFUL_CHARACTERS.manuta.name).toBe("Mănuță");
+    expect(PLAYFUL_CHARACTERS.manuta.name).not.toBe("Mânuța");
+    expect(PLAYFUL_CHARACTERS.manuta.id).toBe("manuta");
   });
 
   test("surprise chip uses locked prefix", () => {
@@ -101,38 +106,38 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
     expect(byId["s3-2-3-z7-social"]).toBe("Noapte bună, șoptit.");
   });
 
-  test("S4 titles are invitation voice for hands/fingers L–D", () => {
+  test("S4 titles are natural RO invitation lines for hands/fingers L–D", () => {
     const byId = Object.fromEntries(
       getSeedActivities(4).map((row) => [row.id, row.titlu]),
     );
-    expect(byId["s4-2-3-z1-fizic"]).toBe("Hai pumnul: deschis, strâns");
-    expect(byId["s4-2-3-z1-mental"]).toBe("Uite degetul");
-    expect(byId["s4-2-3-z1-resurse"]).toBe("Hai capacul pe cutie");
-    expect(byId["s4-2-3-z1-social"]).toBe("Hai, mână?");
-    expect(byId["s4-2-3-z2-fizic"]).toBe("Hai 3 lucruri cu mâna");
-    expect(byId["s4-2-3-z2-mental"]).toBe("Uite: mare, mic");
-    expect(byId["s4-2-3-z2-resurse"]).toBe("Hai boabele în bol");
-    expect(byId["s4-2-3-z2-social"]).toBe("Hai, mână? dă înapoi");
-    expect(byId["s4-2-3-z3-fizic"]).toBe("Hai degetele pe masă");
-    expect(byId["s4-2-3-z3-mental"]).toBe("Uite — unde e mânuța?");
-    expect(byId["s4-2-3-z3-resurse"]).toBe("Hai fermoarul");
-    expect(byId["s4-2-3-z3-social"]).toBe("Hai palma, blând");
-    expect(byId["s4-2-3-z4-fizic"]).toBe("Hai împinge cutia");
-    expect(byId["s4-2-3-z4-mental"]).toBe("Uite: unu, doi");
-    expect(byId["s4-2-3-z4-resurse"]).toBe("Hai ștergem masa");
-    expect(byId["s4-2-3-z4-social"]).toBe("Hai, mână? palmă pe palmă");
-    expect(byId["s4-2-3-z5-fizic"]).toBe("Hai pe mâini pe pernă");
-    expect(byId["s4-2-3-z5-mental"]).toBe("Uite: moale, aspru");
-    expect(byId["s4-2-3-z5-resurse"]).toBe("Hai șoseta la loc");
-    expect(byId["s4-2-3-z5-social"]).toBe("Hai mâna pe umăr");
-    expect(byId["s4-2-3-z6-fizic"]).toBe("Hai săpăm cu mâna");
-    expect(byId["s4-2-3-z6-mental"]).toBe("Uite piatra și frunza");
-    expect(byId["s4-2-3-z6-resurse"]).toBe("Hai găleata la loc");
-    expect(byId["s4-2-3-z6-social"]).toBe("Hai unul lângă altul");
-    expect(byId["s4-2-3-z7-fizic"]).toBe("Hai — tu ții ceva");
-    expect(byId["s4-2-3-z7-mental"]).toBe("Hai cartea: o pagină");
-    expect(byId["s4-2-3-z7-resurse"]).toBe("Hai haina pe cârlig");
-    expect(byId["s4-2-3-z7-social"]).toBe("Hai noapte bună");
+    expect(byId["s4-2-3-z1-fizic"]).toBe("Deschidem și strângem pumnul.");
+    expect(byId["s4-2-3-z1-mental"]).toBe("Arată degetul.");
+    expect(byId["s4-2-3-z1-resurse"]).toBe("Punem capacul pe cutie.");
+    expect(byId["s4-2-3-z1-social"]).toBe("Ținem mâna.");
+    expect(byId["s4-2-3-z2-fizic"]).toBe("Culegem trei lucruri.");
+    expect(byId["s4-2-3-z2-mental"]).toBe("Mare și mic.");
+    expect(byId["s4-2-3-z2-resurse"]).toBe("Boabele în bol.");
+    expect(byId["s4-2-3-z2-social"]).toBe("Din mână în mână.");
+    expect(byId["s4-2-3-z3-fizic"]).toBe("Ritm cu degetele.");
+    expect(byId["s4-2-3-z3-mental"]).toBe("Unde e mânuța?");
+    expect(byId["s4-2-3-z3-resurse"]).toBe("Fermoarul, puțin.");
+    expect(byId["s4-2-3-z3-social"]).toBe("Gâdilat pe palmă, blând.");
+    expect(byId["s4-2-3-z4-fizic"]).toBe("Împingem cutia.");
+    expect(byId["s4-2-3-z4-mental"]).toBe("Unu, doi — degete.");
+    expect(byId["s4-2-3-z4-resurse"]).toBe("Ștergem masa.");
+    expect(byId["s4-2-3-z4-social"]).toBe("Palmă pe palmă.");
+    expect(byId["s4-2-3-z5-fizic"]).toBe("Târâit pe pernă.");
+    expect(byId["s4-2-3-z5-mental"]).toBe("Moale sau aspru?");
+    expect(byId["s4-2-3-z5-resurse"]).toBe("Șoseta la loc.");
+    expect(byId["s4-2-3-z5-social"]).toBe("Mâna pe umăr.");
+    expect(byId["s4-2-3-z6-fizic"]).toBe("Săpăm cu mâna.");
+    expect(byId["s4-2-3-z6-mental"]).toBe("Piatră sau frunză?");
+    expect(byId["s4-2-3-z6-resurse"]).toBe("Găleata la loc.");
+    expect(byId["s4-2-3-z6-social"]).toBe("Săpăm unul lângă altul.");
+    expect(byId["s4-2-3-z7-fizic"]).toBe("Plimbare cu ceva în mână.");
+    expect(byId["s4-2-3-z7-mental"]).toBe("Cartea — tu întorci.");
+    expect(byId["s4-2-3-z7-resurse"]).toBe("Haina pe cârlig.");
+    expect(byId["s4-2-3-z7-social"]).toBe("Noapte bună.");
   });
 
   test("S14 V–D and S15 titles are back to pre-pilot wording", () => {
