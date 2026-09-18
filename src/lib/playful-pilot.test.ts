@@ -99,7 +99,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
     expect(byId["s3-2-3-z5-social"]).toBe("Spunem „Bună” cu vocea.");
     expect(byId["s3-2-3-z6-fizic"]).toBe("Ieșim afară. Auzi pașii?");
     expect(byId["s3-2-3-z6-mental"]).toBe("Se aude vântul?");
-    expect(byId["s3-2-3-z6-resurse"]).toBe("Piatra care nu sună");
+    expect(byId["s3-2-3-z6-resurse"]).toBe("Piatra care nu scoate sunete");
     expect(byId["s3-2-3-z6-social"]).toBe("Îți spun ce auzi tu.");
     expect(byId["s3-2-3-z7-fizic"]).toBe("Plimbare liberă.");
     expect(byId["s3-2-3-z7-mental"]).toBe("Carte în liniște");

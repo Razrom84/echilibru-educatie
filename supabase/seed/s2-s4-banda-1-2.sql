@@ -759,7 +759,7 @@ insert into public.activities (
     3,
     6,
     'resurse'::public.pillar,
-    'Piatra care nu sună',
+    'Piatra care nu scoate sunete',
     4,
     'A'::public.completion_mode,
     ARRAY['piatră']::text[],

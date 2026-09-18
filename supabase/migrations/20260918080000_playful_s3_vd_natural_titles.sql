@@ -9,7 +9,7 @@ from (values
   ('s3-2-3-z5-social', 'Spunem „Bună” cu vocea.'),
   ('s3-2-3-z6-fizic', 'Ieșim afară. Auzi pașii?'),
   ('s3-2-3-z6-mental', 'Se aude vântul?'),
-  ('s3-2-3-z6-resurse', 'Piatra care nu sună'),
+  ('s3-2-3-z6-resurse', 'Piatra care nu scoate sunete'),
   ('s3-2-3-z6-social', 'Îți spun ce auzi tu.'),
   ('s3-2-3-z7-fizic', 'Plimbare liberă.'),
   ('s3-2-3-z7-mental', 'Carte în liniște'),
