@@ -1,6 +1,7 @@
 /**
- * PLAYFUL PILOT sounds MVP — S3 V–D mapped clips.
- * Feature flag OFF by default (no production UI). Settings toggle also default OFF.
+ * PLAYFUL PILOT sounds — S3 V–D mapped clips.
+ * ON by default in production (Play visible on S3 V–D). Opt out with
+ * NEXT_PUBLIC_PLAYFUL_SOUNDS=0. Settings toggle default ON; parent can turn off.
  * Adult Play tap only. No autoplay. Shared player (no overlap).
  */
 
@@ -8,10 +9,10 @@ import { playSharedAudio } from "@/lib/playful-audio";
 
 export const PLAYFUL_SOUNDS_FLAG_ENV = "NEXT_PUBLIC_PLAYFUL_SOUNDS";
 export const SOUNDS_STORAGE_KEY = "echilibru-playful-sounds";
-export const SOUNDS_DEFAULT_ENABLED = false;
-export const SOUNDS_TOGGLE_LABEL = "Sunete de previzualizare (S3)";
+export const SOUNDS_DEFAULT_ENABLED = true;
+export const SOUNDS_TOGGLE_LABEL = "Sunete S3 (vineri–duminică)";
 export const SOUNDS_TOGGLE_HELP =
-  "Clipuri scurte (vânt, pași, casă) pe S3 vineri–duminică. Doar dacă le pornești tu. Nu pornesc singure. Oprite implicit — nu e vocea finală.";
+  "Clipuri scurte (vânt, pași, casă) pe S3 vineri–duminică. Pornite implicit. Doar tap de adult. Nu pornesc singure. Piatră rămâne fără sunet.";
 export const SOUNDS_PLAY_LABEL = "Ascultă";
 export const SOUNDS_PLAY_DISABLED_HINT = "Pornește sunetele din Setări";
 
@@ -58,7 +59,10 @@ export function isPlayfulSoundsPreviewEnabled(
   raw: string | undefined = process.env.NEXT_PUBLIC_PLAYFUL_SOUNDS,
 ): boolean {
   const value = raw?.trim().toLowerCase();
-  return value === "1" || value === "true" || value === "on" || value === "yes";
+  if (value === "0" || value === "false" || value === "off" || value === "no") {
+    return false;
+  }
+  return true;
 }
 
 export function playfulSoundForActivity(
