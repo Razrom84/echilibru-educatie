@@ -1089,7 +1089,7 @@ insert into public.activities (
     4,
     5,
     'fizic'::public.pillar,
-    'Târâit pe pernă.',
+    'Alunecăm pe pernă.',
     5,
     'A'::public.completion_mode,
     ARRAY['pernă/saltea']::text[],
