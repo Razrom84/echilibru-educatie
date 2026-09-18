@@ -122,13 +122,13 @@ Pilot GO (MannyQ + Răzvan), **doar** banda 1–2: **săptămâna 3 vineri–dum
 6. Setări → pornește **Sunet scurt la gata** → pe o zi de pilot (S3 V–D sau S4, dacă e ziua curentă, nu viitoare), bifează al 4-lea pilon → se aude chime-ul. Reîncarcă pagina: nu se aude nimic până la o bifă nouă.
 7. Navighează la S14/S15: fără personaj, fără surpriză; titlurile sunt cele de dinainte de pilot.
 8. Azi / Săptămâna / Detaliu / Setări: **fără** buton `Ascultă` și **fără** toggle `Sunete S3 (vineri–duminică)`.
-9. S# **Săptămâna 4** → Vineri fizic: titlul e `Alunecăm pe pernă.` (nu `Târâit pe pernă.`).
+9. S# **Săptămâna 4** → Vineri fizic: titlul e `Alunecăm cu mâna ușor pe pernă.` (mâna pe pernă, nu târâit).
 
 Poți folosi și săgețile S# de pe Azi / Săptămâna (nu mută săptămâna oficială). Dacă schimbi săptămâna oficială din Setări la o S# al cărei calendar e în viitor, Azi blochează ziua („Se deschide Vineri”) — comportament V1.5, nu al pilotului.
 
 ### QA pe custom / cont real
 
-1. SQL Editor (sau `db push`): `supabase/migrations/20260918080000_playful_s3_vd_natural_titles.sql`, apoi `supabase/migrations/20260918090000_s4_v_fizic_alunecam.sql` — actualizează titlurile S3 V–D + S4 (inclusiv S4 V Fizic `Alunecăm pe pernă.`). Nu inserează rânduri noi.
+1. SQL Editor (sau `db push`): `supabase/migrations/20260918080000_playful_s3_vd_natural_titles.sql`, apoi `supabase/migrations/20260918090000_s4_v_fizic_alunecam.sql` — actualizează titlurile S3 V–D + S4 (inclusiv S4 V Fizic `Alunecăm cu mâna ușor pe pernă.`). Nu inserează rânduri noi.
 2. Dacă S3/S4 nu sunt încă în `activities`, importă întâi catalogul 1–2, apoi rulează migrarea.
 3. Navighează la S3 / S4 (nav S#). Verifică Azi, Săptămâna, toggle-ul de sunet ca mai sus. Hard refresh.
 4. Gazda: `educatie.echilibru-cartea.ro` (preview-ul Vercel e suficient pentru acest PR).

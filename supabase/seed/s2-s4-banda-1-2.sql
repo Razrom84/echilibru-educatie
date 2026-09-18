@@ -1089,13 +1089,13 @@ insert into public.activities (
     4,
     5,
     'fizic'::public.pillar,
-    'Alunecăm pe pernă.',
+    'Alunecăm cu mâna ușor pe pernă.',
     5,
     'A'::public.completion_mode,
     ARRAY['pernă/saltea']::text[],
-    ARRAY['Târâit pe pernă.', 'Scurt.']::text[],
-    'A încercat târâitul.',
-    'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
+    ARRAY['Pune mâna pe pernă.', 'Alunecă ușor mâna pe pernă.', 'Scurt — gata.']::text[],
+    'A alunecat mâna pe pernă.',
+    'Vârsta 1–2: doar mâna, blând; el poate refuza.',
     'Mâini și degete'
   ),
 (
