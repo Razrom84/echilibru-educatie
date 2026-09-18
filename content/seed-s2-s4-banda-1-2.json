@@ -962,7 +962,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "resurse",
-      "titlu": "Telefonul pe silențios.",
+      "titlu": "Telefonul pe silențios",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -1044,7 +1044,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "resurse",
-      "titlu": "Ținem o piatră. Liniște.",
+      "titlu": "Piatra care nu sună",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -1107,7 +1107,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "mental",
-      "titlu": "Cartea, liniștit.",
+      "titlu": "Carte în liniște",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
@@ -1128,7 +1128,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "resurse",
-      "titlu": "Stingem lumina încet.",
+      "titlu": "Stingem lumina încet",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -1149,7 +1149,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "social",
-      "titlu": "Noapte bună, șoptit.",
+      "titlu": "Noapte bună, șoptit",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],

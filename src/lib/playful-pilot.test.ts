@@ -68,6 +68,7 @@ describe("PLAYFUL PILOT copy helpers", () => {
     );
     expect(PLAYFUL_CHARACTERS.manuta.name).toBe("Mănuță");
     expect(PLAYFUL_CHARACTERS.manuta.name).not.toBe("Mânuța");
+    expect(PLAYFUL_CHARACTERS.manuta.name).not.toBe("Mănuța");
     expect(PLAYFUL_CHARACTERS.manuta.id).toBe("manuta");
   });
 
@@ -94,16 +95,16 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
     );
     expect(byId["s3-2-3-z5-fizic"]).toBe("Mergem pe vârfuri, încet.");
     expect(byId["s3-2-3-z5-mental"]).toBe("Ascultăm trei sunete din casă.");
-    expect(byId["s3-2-3-z5-resurse"]).toBe("Telefonul pe silențios.");
+    expect(byId["s3-2-3-z5-resurse"]).toBe("Telefonul pe silențios");
     expect(byId["s3-2-3-z5-social"]).toBe("Spunem „Bună” cu vocea.");
     expect(byId["s3-2-3-z6-fizic"]).toBe("Ieșim afară. Auzi pașii?");
     expect(byId["s3-2-3-z6-mental"]).toBe("Se aude vântul?");
-    expect(byId["s3-2-3-z6-resurse"]).toBe("Ținem o piatră. Liniște.");
+    expect(byId["s3-2-3-z6-resurse"]).toBe("Piatra care nu sună");
     expect(byId["s3-2-3-z6-social"]).toBe("Îți spun ce auzi tu.");
     expect(byId["s3-2-3-z7-fizic"]).toBe("Plimbare liberă.");
-    expect(byId["s3-2-3-z7-mental"]).toBe("Cartea, liniștit.");
-    expect(byId["s3-2-3-z7-resurse"]).toBe("Stingem lumina încet.");
-    expect(byId["s3-2-3-z7-social"]).toBe("Noapte bună, șoptit.");
+    expect(byId["s3-2-3-z7-mental"]).toBe("Carte în liniște");
+    expect(byId["s3-2-3-z7-resurse"]).toBe("Stingem lumina încet");
+    expect(byId["s3-2-3-z7-social"]).toBe("Noapte bună, șoptit");
   });
 
   test("S4 titles are natural RO invitation lines for hands/fingers L–D", () => {
