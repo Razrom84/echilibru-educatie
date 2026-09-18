@@ -31,7 +31,7 @@ export const PLAYFUL_CHARACTERS: Record<PlayfulCharacterId, PlayfulCharacter> = 
   },
   manuta: {
     id: "manuta",
-    name: "Mănuță",
+    name: "Mânuță",
     src: "/characters/manuta.svg",
   },
 };
@@ -42,7 +42,7 @@ const WEEK_3 = {
   week: 3 as const,
   theme: "Sunete și liniște",
   character: PLAYFUL_CHARACTERS.suntel,
-  ritualOpen: "Hai la sunete. Gata?",
+  ritualOpen: "Ascultăm. Gata?",
   ritualClose: "Sunete gata. Bravo.",
   surprises: {
     5: "șoaptă 2s",
@@ -55,7 +55,7 @@ const WEEK_4 = {
   week: 4 as const,
   theme: "Mâini și degete",
   character: PLAYFUL_CHARACTERS.manuta,
-  ritualOpen: "Hai cu mâinile. Gata?",
+  ritualOpen: "Mâinile. Gata?",
   ritualClose: "Mâini gata. Bravo.",
   surprises: {
     1: "unde-i degetul",

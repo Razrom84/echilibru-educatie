@@ -26,18 +26,20 @@ class MemoryStorage {
 }
 
 describe("PLAYFUL sounds preview flag", () => {
-  test("is off unless env is an explicit on value", () => {
-    expect(isPlayfulSoundsPreviewEnabled(undefined)).toBe(false);
-    expect(isPlayfulSoundsPreviewEnabled("")).toBe(false);
-    expect(isPlayfulSoundsPreviewEnabled("0")).toBe(false);
-    expect(isPlayfulSoundsPreviewEnabled("false")).toBe(false);
+  test("is on by default; only explicit off values hide Play", () => {
+    expect(isPlayfulSoundsPreviewEnabled(undefined)).toBe(true);
+    expect(isPlayfulSoundsPreviewEnabled("")).toBe(true);
     expect(isPlayfulSoundsPreviewEnabled("1")).toBe(true);
     expect(isPlayfulSoundsPreviewEnabled("true")).toBe(true);
     expect(isPlayfulSoundsPreviewEnabled("ON")).toBe(true);
+    expect(isPlayfulSoundsPreviewEnabled("0")).toBe(false);
+    expect(isPlayfulSoundsPreviewEnabled("false")).toBe(false);
+    expect(isPlayfulSoundsPreviewEnabled("off")).toBe(false);
+    expect(isPlayfulSoundsPreviewEnabled("no")).toBe(false);
   });
 
-  test("build-time env defaults off in tests", () => {
-    expect(isPlayfulSoundsPreviewEnabled()).toBe(false);
+  test("build-time env defaults on so production shows Play on S3 V–D", () => {
+    expect(isPlayfulSoundsPreviewEnabled()).toBe(true);
   });
 });
 
@@ -90,12 +92,12 @@ describe("PLAYFUL sounds mapping (S3 V–D)", () => {
 });
 
 describe("PLAYFUL sounds settings", () => {
-  test("default is off and persists in storage", () => {
-    expect(SOUNDS_DEFAULT_ENABLED).toBe(false);
-    expect(SOUNDS_TOGGLE_LABEL).toBe("Sunete de previzualizare (S3)");
-    expect(readPlayfulSoundsEnabled(null)).toBe(false);
+  test("default is on and persists in storage", () => {
+    expect(SOUNDS_DEFAULT_ENABLED).toBe(true);
+    expect(SOUNDS_TOGGLE_LABEL).toBe("Sunete S3 (vineri–duminică)");
+    expect(readPlayfulSoundsEnabled(null)).toBe(true);
     const storage = new MemoryStorage();
-    expect(readPlayfulSoundsEnabled(storage)).toBe(false);
+    expect(readPlayfulSoundsEnabled(storage)).toBe(true);
     writePlayfulSoundsEnabled(true, storage);
     expect(storage.getItem(SOUNDS_STORAGE_KEY)).toBe("1");
     expect(readPlayfulSoundsEnabled(storage)).toBe(true);

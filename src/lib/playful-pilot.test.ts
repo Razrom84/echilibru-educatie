@@ -21,10 +21,11 @@ describe("PLAYFUL PILOT scope", () => {
     expect(playfulPilotFor(3, 5)?.surprise).toBe("șoaptă 2s");
     expect(playfulPilotFor(3, 6)?.surprise).toBe("o bătaie + liniște");
     expect(playfulPilotFor(3, 7)?.ritualClose).toBe("Sunete gata. Bravo.");
-    expect(playfulPilotFor(3, 7)?.ritualOpen).toBe("Hai la sunete. Gata?");
+    expect(playfulPilotFor(3, 7)?.ritualOpen).toBe("Ascultăm. Gata?");
+    expect(playfulPilotFor(3, 7)?.ritualOpen).not.toBe("Hai la sunete. Gata?");
   });
 
-  test("S4 overlay is L–D with Mănuță", () => {
+  test("S4 overlay is L–D with Mânuță", () => {
     expect(playfulPilotFor(4, 1)?.surprise).toBe("unde-i degetul");
     expect(playfulPilotFor(4, 2)?.surprise).toBe("high-five");
     expect(playfulPilotFor(4, 3)?.surprise).toBe("degete pe masă");
@@ -33,9 +34,10 @@ describe("PLAYFUL PILOT scope", () => {
     expect(playfulPilotFor(4, 6)?.surprise).toBe("săpătură+1");
     expect(playfulPilotFor(4, 7)?.surprise).toBe("pagină+1");
     expect(playfulPilotFor(4, 7)?.character.id).toBe("manuta");
-    expect(playfulPilotFor(4, 7)?.character.name).toBe("Mănuță");
+    expect(playfulPilotFor(4, 7)?.character.name).toBe("Mânuță");
     expect(playfulPilotFor(4, 7)?.character.src).toBe("/characters/manuta.svg");
-    expect(playfulPilotFor(4, 7)?.ritualOpen).toBe("Hai cu mâinile. Gata?");
+    expect(playfulPilotFor(4, 7)?.ritualOpen).toBe("Mâinile. Gata?");
+    expect(playfulPilotFor(4, 7)?.ritualOpen).not.toBe("Hai cu mâinile. Gata?");
     expect(playfulPilotFor(4, 7)?.ritualClose).toBe("Mâini gata. Bravo.");
   });
 
@@ -53,7 +55,7 @@ describe("PLAYFUL PILOT scope", () => {
   test("week ritual exists for S3 even on Mon–Thu", () => {
     const week = playfulPilotWeek(3);
     expect(week?.character).toEqual(PLAYFUL_CHARACTERS.suntel);
-    expect(week?.ritualOpen).toBe("Hai la sunete. Gata?");
+    expect(week?.ritualOpen).toBe("Ascultăm. Gata?");
     expect(playfulPilotFor(3, 2)).toBeNull();
   });
 });
@@ -63,13 +65,17 @@ describe("PLAYFUL PILOT copy helpers", () => {
     expect(playfulHeaderLabel("Sunețel", "Sunete și liniște")).toBe(
       "Sunețel · Sunete și liniște",
     );
-    expect(playfulHeaderLabel("Mănuță", "Mâini și degete")).toBe(
-      "Mănuță · Mâini și degete",
+    expect(playfulHeaderLabel("Mânuță", "Mâini și degete")).toBe(
+      "Mânuță · Mâini și degete",
     );
-    expect(PLAYFUL_CHARACTERS.manuta.name).toBe("Mănuță");
+    expect(PLAYFUL_CHARACTERS.manuta.name).toBe("Mânuță");
+    expect(PLAYFUL_CHARACTERS.manuta.name).not.toBe("Mănuță");
     expect(PLAYFUL_CHARACTERS.manuta.name).not.toBe("Mânuța");
     expect(PLAYFUL_CHARACTERS.manuta.name).not.toBe("Mănuța");
     expect(PLAYFUL_CHARACTERS.manuta.id).toBe("manuta");
+    expect([...PLAYFUL_CHARACTERS.manuta.name].map((ch) => ch.codePointAt(0))).toEqual([
+      0x004d, 0x00e2, 0x006e, 0x0075, 0x021b, 0x0103,
+    ]);
   });
 
   test("surprise chip uses locked prefix", () => {
