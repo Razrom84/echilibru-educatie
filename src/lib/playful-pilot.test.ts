@@ -17,7 +17,7 @@ describe("PLAYFUL PILOT scope", () => {
   test("S3 overlay is only V–D", () => {
     expect(playfulPilotFor(3, 1)).toBeNull();
     expect(playfulPilotFor(3, 4)).toBeNull();
-    expect(playfulPilotFor(3, 5)?.character.name).toBe("Sunțel");
+    expect(playfulPilotFor(3, 5)?.character.name).toBe("Sunețel");
     expect(playfulPilotFor(3, 5)?.surprise).toBe("șoaptă 2s");
     expect(playfulPilotFor(3, 6)?.surprise).toBe("o bătaie + liniște");
     expect(playfulPilotFor(3, 7)?.ritualClose).toBe("Sunete gata. Bravo.");
@@ -58,8 +58,8 @@ describe("PLAYFUL PILOT scope", () => {
 
 describe("PLAYFUL PILOT copy helpers", () => {
   test("header is character · theme", () => {
-    expect(playfulHeaderLabel("Sunțel", "Sunete și liniște")).toBe(
-      "Sunțel · Sunete și liniște",
+    expect(playfulHeaderLabel("Sunețel", "Sunete și liniște")).toBe(
+      "Sunețel · Sunete și liniște",
     );
     expect(playfulHeaderLabel("Mânuța", "Mâini și degete")).toBe(
       "Mânuța · Mâini și degete",
