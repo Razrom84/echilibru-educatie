@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react";
 import { AddToCalendarButton } from "@/components/add-to-calendar-button";
 import { AgePreviewSettings } from "@/components/age-preview-settings";
 import { MondayDigestSettings } from "@/components/monday-digest-settings";
+import { PlayfulChimeSettings } from "@/components/playful-chime-settings";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -166,6 +167,10 @@ export default function SetariPage() {
           {busy ? "Salvez…" : "Salvează familia"}
         </Button>
       </form>
+
+      <div className="rounded-2xl border border-border bg-card p-4">
+        <PlayfulChimeSettings />
+      </div>
 
       <AgePreviewSettings />
 
