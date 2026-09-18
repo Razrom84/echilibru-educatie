@@ -119,7 +119,7 @@ Pilot GO (MannyQ + Răzvan), **doar** banda 1–2: **săptămâna 14 vineri–du
 5. Schimbă la **S15**. Azi + Săptămâna: Farfurio, ritual `Hai la masă. Gata?`, surpriză pe L–D.
 6. Setări → pornește **Sunet scurt la gata** → pe o zi de pilot, bifează al 4-lea pilon → se aude chime-ul. Reîncarcă pagina: nu se aude nimic până la o bifă nouă.
 
-Poți folosi și săgețile S# de pe Azi / Săptămâna (nu mută săptămâna oficială).
+Poți folosi și săgețile S# de pe Azi / Săptămâna (nu mută săptămâna oficială). **În demo, ăsta e drumul bun pentru a vedea pilonii S14/S15 acum**: săptămâna oficială rămâne cea de azi, S14/S15 sunt „doar citire” până ajunge calendarul acolo. Dacă schimbi săptămâna oficială din Setări la S14 înainte ca S14 să fie în calendar, Azi blochează ziua („Se deschide Vineri”) pentru că data civilă e în viitor — comportament V1.5, nu al pilotului.
 
 ### QA pe custom / cont real
 

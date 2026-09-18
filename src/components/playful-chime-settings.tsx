@@ -27,6 +27,7 @@ export function PlayfulChimeSettings() {
         </p>
       </div>
       <Switch
+        id="chime-gata"
         checked={enabled}
         onCheckedChange={(checked) => writeChimeEnabled(Boolean(checked))}
         aria-label={CHIME_TOGGLE_LABEL}
