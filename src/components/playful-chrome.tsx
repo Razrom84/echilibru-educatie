@@ -9,7 +9,7 @@ import {
   type PlayfulCharacterId,
 } from "@/lib/playful-pilot";
 
-function PasorelSvg({ size }: { size: number }) {
+function SuntelSvg({ size }: { size: number }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -18,76 +18,77 @@ function PasorelSvg({ size }: { size: number }) {
       height={size}
       aria-hidden
     >
-      <circle cx="32" cy="30" r="18" fill="#E8C98A" />
-      <circle cx="32" cy="30" r="18" fill="none" stroke="#C4A15E" strokeWidth="1.5" />
-      <ellipse cx="18" cy="34" rx="6" ry="4" fill="#D9B56F" />
-      <circle cx="26" cy="27" r="2.2" fill="#3D2E1A" />
-      <circle cx="38" cy="27" r="2.2" fill="#3D2E1A" />
-      <circle cx="26.6" cy="26.4" r="0.7" fill="#FFF8EC" />
-      <circle cx="38.6" cy="26.4" r="0.7" fill="#FFF8EC" />
-      <path d="M32 31.5 L38 35 L32 36.5 Z" fill="#E07A3D" />
+      <circle cx="32" cy="32" r="18" fill="#E8D48A" />
+      <circle cx="32" cy="32" r="18" fill="none" stroke="#C4A15E" strokeWidth="1.5" />
+      <ellipse cx="16" cy="32" rx="5" ry="8" fill="#D9B56F" stroke="#C4A15E" strokeWidth="1" />
+      <ellipse cx="48" cy="32" rx="5" ry="8" fill="#D9B56F" stroke="#C4A15E" strokeWidth="1" />
+      <circle cx="26" cy="29" r="2.2" fill="#3D2E1A" />
+      <circle cx="38" cy="29" r="2.2" fill="#3D2E1A" />
+      <circle cx="26.6" cy="28.4" r="0.7" fill="#FFF8EC" />
+      <circle cx="38.6" cy="28.4" r="0.7" fill="#FFF8EC" />
       <path
-        d="M24 38 Q32 43 40 38"
+        d="M26 38 Q32 43 38 38"
+        fill="none"
+        stroke="#6B4E2E"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M52 22 Q58 32 52 42"
+        fill="none"
+        stroke="#7AA3C7"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+      <path
+        d="M56 18 Q64 32 56 46"
+        fill="none"
+        stroke="#7AA3C7"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function ManutaSvg({ size }: { size: number }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 64 64"
+      width={size}
+      height={size}
+      aria-hidden
+    >
+      <path
+        d="M22 30 C22 18 26 12 32 12 C38 12 42 18 42 30 L42 38 C42 48 38 54 32 54 C26 54 22 48 22 38 Z"
+        fill="#F3C7A4"
+        stroke="#D9A07A"
+        strokeWidth="1.5"
+      />
+      <path d="M20 28 L16 16" stroke="#F3C7A4" strokeWidth="5.5" strokeLinecap="round" />
+      <path d="M26 20 L24 10" stroke="#F3C7A4" strokeWidth="5.2" strokeLinecap="round" />
+      <path d="M32 18 L32 8" stroke="#F3C7A4" strokeWidth="5.2" strokeLinecap="round" />
+      <path d="M38 20 L40 10" stroke="#F3C7A4" strokeWidth="5.2" strokeLinecap="round" />
+      <path d="M44 28 L48 16" stroke="#F3C7A4" strokeWidth="5.5" strokeLinecap="round" />
+      <circle cx="27" cy="36" r="1.8" fill="#3D2E1A" />
+      <circle cx="37" cy="36" r="1.8" fill="#3D2E1A" />
+      <circle cx="27.5" cy="35.5" r="0.55" fill="#FFF8EC" />
+      <circle cx="37.5" cy="35.5" r="0.55" fill="#FFF8EC" />
+      <path
+        d="M28 43 Q32 46.5 36 43"
         fill="none"
         stroke="#6B4E2E"
         strokeWidth="1.4"
         strokeLinecap="round"
       />
-      <path
-        d="M24 50 L22 58 M24 50 L26 58"
-        stroke="#C46A2B"
-        strokeWidth="2.4"
-        strokeLinecap="round"
-      />
-      <path
-        d="M40 50 L38 58 M40 50 L42 58"
-        stroke="#C46A2B"
-        strokeWidth="2.4"
-        strokeLinecap="round"
-      />
-      <ellipse cx="24" cy="50" rx="4" ry="3" fill="#E8C98A" stroke="#C4A15E" strokeWidth="1" />
-      <ellipse cx="40" cy="50" rx="4" ry="3" fill="#E8C98A" stroke="#C4A15E" strokeWidth="1" />
-    </svg>
-  );
-}
-
-function FarfurioSvg({ size }: { size: number }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 64 64"
-      width={size}
-      height={size}
-      aria-hidden
-    >
-      <circle cx="32" cy="34" r="22" fill="#F3E6C9" stroke="#C9B48A" strokeWidth="2" />
-      <circle cx="32" cy="34" r="14" fill="#FFF9EE" stroke="#E0CFA8" strokeWidth="1.5" />
-      <circle cx="26" cy="32" r="2.1" fill="#3D2E1A" />
-      <circle cx="38" cy="32" r="2.1" fill="#3D2E1A" />
-      <circle cx="26.6" cy="31.4" r="0.6" fill="#FFF8EC" />
-      <circle cx="38.6" cy="31.4" r="0.6" fill="#FFF8EC" />
-      <path
-        d="M26 40 Q32 45 38 40"
-        fill="none"
-        stroke="#6B4E2E"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-      />
-      <path
-        d="M48 18 Q58 22 54 34"
-        fill="none"
-        stroke="#D9A85C"
-        strokeWidth="3"
-        strokeLinecap="round"
-      />
-      <circle cx="48" cy="18" r="3.2" fill="#E8C98A" stroke="#C4A15E" strokeWidth="1" />
     </svg>
   );
 }
 
 const CHARACTER_SVG: Record<PlayfulCharacterId, (size: number) => ReactNode> = {
-  pasorel: (size) => <PasorelSvg size={size} />,
-  farfurio: (size) => <FarfurioSvg size={size} />,
+  suntel: (size) => <SuntelSvg size={size} />,
+  manuta: (size) => <ManutaSvg size={size} />,
 };
 
 export function PlayfulCharacterMark({

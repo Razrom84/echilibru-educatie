@@ -100,32 +100,34 @@ node scripts/import-seed.mjs
 Aplicația citește același JSON în demonstrație. Nu mai există text lorem / placeholder.  
 Dacă Cristina înlocuiește fișierul JSON, re-rulează importul (`on conflict (id) do update`).
 
-## PLAYFUL PILOT (S14 V–D + S15)
+## PLAYFUL PILOT (S3 V–D + S4)
 
-Pilot GO (MannyQ + Răzvan), **doar** banda 1–2: **săptămâna 14 vineri–duminică** și **toată săptămâna 15**. Nu e rollout pe tot catalogul.
+Pilot GO (MannyQ + Răzvan), **doar** banda 1–2: **săptămâna 3 vineri–duminică** și **toată săptămâna 4**. Familia e pe săptămâna 3 live; S14/S15 nu mai sunt pilot. Nu e rollout pe tot catalogul.
 
-- **Azi:** personaj + temă (`Pașorel · Pași pe drumul scurt` / `Farfurio · Mâncare împreună`), ritual de deschidere, 4 piloni cu titluri-invitație, `Surpriză: …` sub Social, ritual de închidere când e gata ziua.
-- **Săptămâna:** ritualul o dată sus; pe zilele din pilot: iconița personajului, 4 piloni, chip Surpriză.
+- **Azi:** personaj + temă (`Sunțel · Sunete și liniște` / `Mânuța · Mâini și degete`), ritual de deschidere, 4 piloni cu titluri-invitație, `Surpriză: …` sub Social, ritual de închidere când e gata ziua.
+- **Săptămâna:** ritualul o dată sus; pe zilele din pilot: iconița personajului, 4 piloni, chip Surpriză. S3 luni–joi rămân fără chrome de zi.
 - **Setări:** `Sunet scurt la gata` — **implicit oprit**, salvat pe dispozitiv (`localStorage`), nu pe familie. Sunetul e scurt, pornit doar de adult când bifează ultimul pilon; nu se autoredă la încărcarea paginii.
 - Fără streak / badge / scor. Fără chat. Personajele sunt SVG statice.
-- Titlurile se schimbă în `content/seed-s13-s16-banda-1-2.json` (doar S14 z5–z7 și S15). Ritualul și surprizele sunt în `src/lib/playful-pilot.ts`.
+- Titlurile se schimbă în `content/seed-s2-s4-banda-1-2.json` (doar S3 z5–z7 și S4). Ritualul și surprizele sunt în `src/lib/playful-pilot.ts`.
+- Selectorul S# arată **`Săptămâna 3`**, nu `Săptămâna S3`.
 
 ### QA pe demonstrație (fără Supabase)
 
 1. Login → **Intră în demonstrație** → onboarding copil.
-2. **Setări** → *Schimbă săptămâna* → **S14**.
-3. **Azi** (dacă e vineri–duminică civil): Pașorel, ritual `Hai la pași. Gata?`, invitații, surpriza zilei. Luni–joi rămân fără chrome de pilot.
+2. Pe **Azi**, folosește controlul S# → **Săptămâna 3** (săptămâna oficială rămâne cea de azi). Hard refresh după deploy.
+3. Vineri Azi: Sunțel, `Hai la sunete. Gata?`, invitații, `Surpriză: șoaptă 2s`. Luni–joi rămân fără chrome de pilot.
 4. **Săptămâna:** ritualul sus; V–D au personaj + chip Surpriză; L–J nu.
-5. Schimbă la **S15**. Azi + Săptămâna: Farfurio, ritual `Hai la masă. Gata?`, surpriză pe L–D.
-6. Setări → pornește **Sunet scurt la gata** → pe o zi de pilot, bifează al 4-lea pilon → se aude chime-ul. Reîncarcă pagina: nu se aude nimic până la o bifă nouă.
+5. Schimbă S# la **Săptămâna 4**. Azi + Săptămâna: Mânuța, `Hai cu mâinile. Gata?`, surpriză pe L–D.
+6. Setări → pornește **Sunet scurt la gata** → pe o zi de pilot (S3 V–D sau S4, dacă e ziua curentă, nu viitoare), bifează al 4-lea pilon → se aude chime-ul. Reîncarcă pagina: nu se aude nimic până la o bifă nouă.
+7. Navighează la S14/S15: fără personaj, fără surpriză; titlurile sunt cele de dinainte de pilot.
 
-Poți folosi și săgețile S# de pe Azi / Săptămâna (nu mută săptămâna oficială). **În demo, ăsta e drumul bun pentru a vedea pilonii S14/S15 acum**: săptămâna oficială rămâne cea de azi, S14/S15 sunt „doar citire” până ajunge calendarul acolo. Dacă schimbi săptămâna oficială din Setări la S14 înainte ca S14 să fie în calendar, Azi blochează ziua („Se deschide Vineri”) pentru că data civilă e în viitor — comportament V1.5, nu al pilotului.
+Poți folosi și săgețile S# de pe Azi / Săptămâna (nu mută săptămâna oficială). Dacă schimbi săptămâna oficială din Setări la o S# al cărei calendar e în viitor, Azi blochează ziua („Se deschide Vineri”) — comportament V1.5, nu al pilotului.
 
 ### QA pe custom / cont real
 
-1. SQL Editor (sau `db push`): `supabase/migrations/20260918063000_playful_pilot_s14vd_s15_titles.sql` — actualizează **doar titlurile** S14 V–D + S15. Nu inserează rânduri noi.
-2. Dacă S14/S15 nu sunt încă în `activities`, importă întâi catalogul 1–2, apoi rulează migrarea.
-3. Navighează la S14 / S15 (nav S#). Verifică Azi, Săptămâna, toggle-ul de sunet ca mai sus.
+1. SQL Editor (sau `db push`): `supabase/migrations/20260918070000_playful_pilot_s3vd_s4_titles.sql` — actualizează titlurile S3 V–D + S4 și revine S14 V–D + S15. Nu inserează rânduri noi.
+2. Dacă S3/S4 nu sunt încă în `activities`, importă întâi catalogul 1–2, apoi rulează migrarea.
+3. Navighează la S3 / S4 (nav S#). Verifică Azi, Săptămâna, toggle-ul de sunet ca mai sus. Hard refresh.
 4. Gazda: `educatie.echilibru-cartea.ro` (preview-ul Vercel e suficient pentru acest PR).
 
 ## Deploy Vercel
