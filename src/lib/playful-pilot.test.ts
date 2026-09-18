@@ -83,22 +83,22 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
     );
   });
 
-  test("S3 V–D titles are invitation lines for sounds/silence", () => {
+  test("S3 V–D titles are natural RO invitation lines for sounds/silence", () => {
     const byId = Object.fromEntries(
       getSeedActivities(3).map((row) => [row.id, row.titlu]),
     );
-    expect(byId["s3-2-3-z5-fizic"]).toBe("Hai pe vârfuri");
-    expect(byId["s3-2-3-z5-mental"]).toBe("Uite 3 sunete din casă");
-    expect(byId["s3-2-3-z5-resurse"]).toBe("Hai telefonul pe liniște");
-    expect(byId["s3-2-3-z5-social"]).toBe("Hai, bună!");
-    expect(byId["s3-2-3-z6-fizic"]).toBe("Hai pași pe iarbă");
-    expect(byId["s3-2-3-z6-mental"]).toBe("Uite — vântul se aude?");
-    expect(byId["s3-2-3-z6-resurse"]).toBe("Hai piatra fără sunet");
-    expect(byId["s3-2-3-z6-social"]).toBe("Hai unul lângă altul");
-    expect(byId["s3-2-3-z7-fizic"]).toBe("Hai — tu alegi plimbarea");
-    expect(byId["s3-2-3-z7-mental"]).toBe("Hai cartea: liniște");
-    expect(byId["s3-2-3-z7-resurse"]).toBe("Hai lumina stinsă");
-    expect(byId["s3-2-3-z7-social"]).toBe("Hai noapte bună");
+    expect(byId["s3-2-3-z5-fizic"]).toBe("Mergem pe vârfuri, încet.");
+    expect(byId["s3-2-3-z5-mental"]).toBe("Ascultăm trei sunete din casă.");
+    expect(byId["s3-2-3-z5-resurse"]).toBe("Telefonul pe silențios.");
+    expect(byId["s3-2-3-z5-social"]).toBe("Spunem „Bună” cu vocea.");
+    expect(byId["s3-2-3-z6-fizic"]).toBe("Ieșim afară. Auzi pașii?");
+    expect(byId["s3-2-3-z6-mental"]).toBe("Se aude vântul?");
+    expect(byId["s3-2-3-z6-resurse"]).toBe("Ținem o piatră. Liniște.");
+    expect(byId["s3-2-3-z6-social"]).toBe("Îți spun ce auzi tu.");
+    expect(byId["s3-2-3-z7-fizic"]).toBe("Plimbare liberă.");
+    expect(byId["s3-2-3-z7-mental"]).toBe("Cartea, liniștit.");
+    expect(byId["s3-2-3-z7-resurse"]).toBe("Stingem lumina încet.");
+    expect(byId["s3-2-3-z7-social"]).toBe("Noapte bună, șoptit.");
   });
 
   test("S4 titles are invitation voice for hands/fingers L–D", () => {
