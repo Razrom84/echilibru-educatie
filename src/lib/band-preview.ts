@@ -97,7 +97,7 @@ export function viewProgramWeek(
 }
 
 export function previewWeekControlLabel(week: number): string {
-  return `${PREVIEW_WEEK_LABEL} S${clampProgramWeek(week)}`;
+  return `${PREVIEW_WEEK_LABEL} ${clampProgramWeek(week)}`;
 }
 
 /**

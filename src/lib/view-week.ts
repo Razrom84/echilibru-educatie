@@ -92,7 +92,7 @@ export function showsLiveWeekNav(): boolean {
 }
 
 export function viewWeekControlLabel(week: number): string {
-  return `${VIEW_WEEK_LABEL} S${clampProgramWeek(week)}`;
+  return `${VIEW_WEEK_LABEL} ${clampProgramWeek(week)}`;
 }
 
 export function viewWeekBrowsingStatus(

@@ -40,7 +40,9 @@ describe("V1.5 session view week", () => {
     expect(VIEW_WEEK_PAST_HINT).toBe(
       "Săptămână trecută — poți bifa, nota și poza.",
     );
-    expect(viewWeekControlLabel(4)).toBe("Săptămâna S4");
+    expect(viewWeekControlLabel(3)).toBe("Săptămâna 3");
+    expect(viewWeekControlLabel(4)).toBe("Săptămâna 4");
+    expect(viewWeekControlLabel(14)).toBe("Săptămâna 14");
     expect(showsLiveWeekNav()).toBe(true);
   });
 

@@ -133,13 +133,14 @@ describe("V1.4 age-band preview", () => {
 });
 
 describe("V1.4.1 preview week navigation", () => {
-  test("locks Săptămâna S# control copy", () => {
+  test("locks Săptămâna n control copy (no leading S in the number)", () => {
     expect(PREVIEW_WEEK_LABEL).toBe("Săptămâna");
     expect(PREVIEW_WEEK_PREV).toBe("Săptămâna anterioară");
     expect(PREVIEW_WEEK_NEXT).toBe("Săptămâna următoare");
-    expect(previewWeekControlLabel(1)).toBe("Săptămâna S1");
-    expect(previewWeekControlLabel(12)).toBe("Săptămâna S12");
-    expect(previewWeekControlLabel(52)).toBe("Săptămâna S52");
+    expect(previewWeekControlLabel(1)).toBe("Săptămâna 1");
+    expect(previewWeekControlLabel(3)).toBe("Săptămâna 3");
+    expect(previewWeekControlLabel(12)).toBe("Săptămâna 12");
+    expect(previewWeekControlLabel(52)).toBe("Săptămâna 52");
   });
 
   test("preview S# is session-only and does not move the live week", () => {
