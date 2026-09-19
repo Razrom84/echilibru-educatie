@@ -100,16 +100,16 @@ node scripts/import-seed.mjs
 Aplicația citește același JSON în demonstrație. Nu mai există text lorem / placeholder.  
 Dacă Cristina înlocuiește fișierul JSON, re-rulează importul (`on conflict (id) do update`).
 
-## PLAYFUL PILOT (S3 V–D + S4)
+## PLAYFUL PILOT (S3 V–D + S4 + S5–S7)
 
-Pilot GO (MannyQ + Răzvan), **doar** banda 1–2: **săptămâna 3 vineri–duminică** și **toată săptămâna 4**. Familia e pe săptămâna 3 live; S14/S15 nu mai sunt pilot. Nu e rollout pe tot catalogul.
+Pilot GO (MannyQ + Răzvan), **doar** banda 1–2: **săptămâna 3 vineri–duminică**, **toată săptămâna 4**, și **S5–S7 L–D**. Familia e pe săptămâna 3 live; S8+ și S14/S15 nu sunt pilot. Nu e rollout pe tot catalogul. Zero sunete de activitate (fără `Ascultă`, fără clipuri wav) — scoase în #33.
 
-- **Azi:** personaj + temă (`Sunețel · Sunete și liniște` / `Mânuță · Mâini și degete`), ritual de deschidere, 4 piloni cu titluri-invitație, `Surpriză: …` sub Social, ritual de închidere când e gata ziua.
-- **Ritualuri (lock):** S3 deschidere `Ascultăm. Gata?` / închidere `Sunete gata. Bravo.`; S4 deschidere `Mâinile. Gata?` / închidere `Mâini gata. Bravo.` (fără `Hai la sunete…` / `Hai cu mâinile…`).
-- **Săptămâna:** ritualul o dată sus; pe zilele din pilot: iconița personajului, 4 piloni, chip Surpriză. S3 luni–joi rămân fără chrome de zi.
+- **Azi:** personaj + temă (`Sunețel · Sunete și liniște` / `Mânuță · Mâini și degete` / `Cariocă · Culori pe care le vedem` / `Săgeată · Sus și jos` / `Preșuleț · Înăuntru și afară`), ritual de deschidere, 4 piloni cu titluri-invitație, `Surpriză: …` sub Social, ritual de închidere când e gata ziua.
+- **Ritualuri (lock):** S3 deschidere `Ascultăm. Gata?` / închidere `Sunete gata. Bravo.`; S4 deschidere `Mâinile. Gata?` / închidere `Mâini gata. Bravo.`; S5 `Vedem culorile.` / `Culori văzute.`; S6 `Sus și jos.` / `Sus-jos gata.`; S7 `Înăuntru și afară.` / `Pe prag, gata.`
+- **Săptămâna:** ritualul o dată sus; pe zilele din pilot: iconița personajului, 4 piloni, chip Surpriză. S3 luni–joi rămân fără chrome de zi. S4–S7 au chrome L–D.
 - **Setări:** `Sunet scurt la gata` — **implicit oprit**, salvat pe dispozitiv (`localStorage`), nu pe familie. Sunetul e scurt, pornit doar de adult când bifează ultimul pilon; nu se autoredă la încărcarea paginii. Fără player de sunete S3 (fără `Ascultă`, fără clipuri wav, fără toggle `Sunete S3`).
-- Fără streak / badge / scor. Fără chat. Personajele sunt SVG statice. Personajul S4 se afișează **`Mânuță`** (â din *mână*, U+00E2 — nu `Mănuță`; id intern `manuta`).
-- Titlurile se schimbă în `content/seed-s2-s4-banda-1-2.json` (doar S3 z5–z7 și S4). Ritualul și surprizele sunt în `src/lib/playful-pilot.ts`.
+- Fără streak / badge / scor. Fără chat. Personajele sunt SVG statice. Personajul S4 se afișează **`Mânuță`** (â din *mână*, U+00E2 — nu `Mănuță`; id intern `manuta`). S5 **`Cariocă`** (ă), S6 **`Săgeată`** (ă), S7 **`Preșuleț`** (ș, ț).
+- Titlurile se schimbă în `content/seed-s2-s4-banda-1-2.json` (S3 z5–z7 și S4) și `content/seed-s5-s8-banda-1-2.json` (doar S5–S7). Ritualul și surprizele sunt în `src/lib/playful-pilot.ts`. Brief lock: `docs/BRIEF-PLAYFUL-S5-S7.md`.
 - Selectorul S# arată **`Săptămâna 3`**, nu `Săptămâna S3`.
 
 ### QA pe demonstrație (fără Supabase)
@@ -119,18 +119,20 @@ Pilot GO (MannyQ + Răzvan), **doar** banda 1–2: **săptămâna 3 vineri–dum
 3. Vineri Azi: Sunețel, `Ascultăm. Gata?`, invitații, `Surpriză: șoaptă 2s`. Luni–joi rămân fără chrome de pilot.
 4. **Săptămâna:** ritualul sus; V–D au personaj + chip Surpriză; L–J nu.
 5. Schimbă S# la **Săptămâna 4**. Azi + Săptămâna: Mânuță, `Mâinile. Gata?`, surpriză pe L–D.
-6. Setări → pornește **Sunet scurt la gata** → pe o zi de pilot (S3 V–D sau S4, dacă e ziua curentă, nu viitoare), bifează al 4-lea pilon → se aude chime-ul. Reîncarcă pagina: nu se aude nimic până la o bifă nouă.
-7. Navighează la S14/S15: fără personaj, fără surpriză; titlurile sunt cele de dinainte de pilot.
-8. Azi / Săptămâna / Detaliu / Setări: **fără** buton `Ascultă` și **fără** toggle `Sunete S3 (vineri–duminică)`.
-9. S# **Săptămâna 4** → Vineri fizic: titlul e `Alunecăm cu mâna ușor pe pernă.` (mâna pe pernă, nu târâit).
+6. S# **Săptămâna 5**: Cariocă, `Vedem culorile.`, Luni fizic `Pași până la roșu`, `Surpriză: Ascundem un obiect roșu 2 sec: „Unde e?”`.
+7. S# **Săptămâna 6**: Săgeată, `Sus și jos.`. S# **Săptămâna 7**: Preșuleț, `Înăuntru și afară.`. S8: fără personaj / surpriză.
+8. Setări → pornește **Sunet scurt la gata** → pe o zi de pilot (dacă e ziua curentă, nu viitoare), bifează al 4-lea pilon → se aude chime-ul. Reîncarcă pagina: nu se aude nimic până la o bifă nouă.
+9. Navighează la S8 / S14/S15: fără personaj, fără surpriză.
+10. Azi / Săptămâna / Detaliu / Setări: **fără** buton `Ascultă` și **fără** toggle `Sunete S3 (vineri–duminică)`.
+11. S# **Săptămâna 4** → Vineri fizic: titlul e `Alunecăm cu mâna ușor pe pernă.` (mâna pe pernă, nu târâit).
 
 Poți folosi și săgețile S# de pe Azi / Săptămâna (nu mută săptămâna oficială). Dacă schimbi săptămâna oficială din Setări la o S# al cărei calendar e în viitor, Azi blochează ziua („Se deschide Vineri”) — comportament V1.5, nu al pilotului.
 
 ### QA pe custom / cont real
 
-1. SQL Editor (sau `db push`): `supabase/migrations/20260918080000_playful_s3_vd_natural_titles.sql`, apoi `supabase/migrations/20260918090000_s4_v_fizic_alunecam.sql` — actualizează titlurile S3 V–D + S4 (inclusiv S4 V Fizic `Alunecăm cu mâna ușor pe pernă.`). Nu inserează rânduri noi.
-2. Dacă S3/S4 nu sunt încă în `activities`, importă întâi catalogul 1–2, apoi rulează migrarea.
-3. Navighează la S3 / S4 (nav S#). Verifică Azi, Săptămâna, toggle-ul de sunet ca mai sus. Hard refresh.
+1. SQL Editor (sau `db push`): `supabase/migrations/20260918080000_playful_s3_vd_natural_titles.sql`, `supabase/migrations/20260918090000_s4_v_fizic_alunecam.sql`, apoi `supabase/migrations/20260919120000_playful_pilot_s5_s7_titles.sql` — actualizează titlurile S3 V–D + S4 + S5–S7. Nu inserează rânduri noi.
+2. Dacă S3–S7 nu sunt încă în `activities`, importă întâi catalogul 1–2, apoi rulează migrarea.
+3. Navighează la S3 / S4 / S5 / S6 / S7 (nav S#). Verifică Azi, Săptămâna, toggle-ul de sunet ca mai sus. Hard refresh.
 4. Gazda: `educatie.echilibru-cartea.ro` (preview-ul Vercel e suficient pentru acest PR).
 
 ## Deploy Vercel

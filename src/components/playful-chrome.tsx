@@ -87,9 +87,111 @@ function ManutaSvg({ size }: { size: number }) {
   );
 }
 
+function CariocaSvg({ size }: { size: number }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 64 64"
+      width={size}
+      height={size}
+      aria-hidden
+    >
+      <title>Cariocă</title>
+      <rect x="22" y="10" width="20" height="10" rx="3" fill="#7AA3C7" stroke="#5E86A8" strokeWidth="1.4" />
+      <rect x="24" y="18" width="16" height="32" rx="4" fill="#F2A07A" stroke="#D47A58" strokeWidth="1.5" />
+      <path d="M28 50 L32 56 L36 50 Z" fill="#E24B4B" stroke="#C43A3A" strokeWidth="1" />
+      <circle cx="28" cy="32" r="1.9" fill="#3D2E1A" />
+      <circle cx="36" cy="32" r="1.9" fill="#3D2E1A" />
+      <circle cx="28.5" cy="31.5" r="0.55" fill="#FFF8EC" />
+      <circle cx="36.5" cy="31.5" r="0.55" fill="#FFF8EC" />
+      <path
+        d="M29 39 Q32 42.5 35 39"
+        fill="none"
+        stroke="#6B4E2E"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+      />
+      <rect x="24" y="20" width="16" height="3" fill="#E8D48A" />
+    </svg>
+  );
+}
+
+function SageataSvg({ size }: { size: number }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 64 64"
+      width={size}
+      height={size}
+      aria-hidden
+    >
+      <title>Săgeată</title>
+      <path
+        d="M32 8 L48 26 L38 26 L38 52 L26 52 L26 26 L16 26 Z"
+        fill="#8FBF8A"
+        stroke="#6A9A66"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      <circle cx="28" cy="36" r="1.8" fill="#3D2E1A" />
+      <circle cx="36" cy="36" r="1.8" fill="#3D2E1A" />
+      <circle cx="28.5" cy="35.5" r="0.55" fill="#FFF8EC" />
+      <circle cx="36.5" cy="35.5" r="0.55" fill="#FFF8EC" />
+      <path
+        d="M29 43 Q32 46.5 35 43"
+        fill="none"
+        stroke="#6B4E2E"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function PresuletSvg({ size }: { size: number }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 64 64"
+      width={size}
+      height={size}
+      aria-hidden
+    >
+      <title>Preșuleț</title>
+      <rect x="8" y="22" width="48" height="24" rx="6" fill="#D9B56F" stroke="#C4A15E" strokeWidth="1.5" />
+      <path
+        d="M12 22 L12 18 M18 22 L18 17 M24 22 L24 18 M30 22 L30 17 M34 22 L34 18 M40 22 L40 17 M46 22 L46 18 M52 22 L52 18"
+        stroke="#C4A15E"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M12 46 L12 50 M18 46 L18 51 M24 46 L24 50 M30 46 L30 51 M34 46 L34 50 M40 46 L40 51 M46 46 L46 50 M52 46 L52 50"
+        stroke="#C4A15E"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <circle cx="26" cy="33" r="2" fill="#3D2E1A" />
+      <circle cx="38" cy="33" r="2" fill="#3D2E1A" />
+      <circle cx="26.6" cy="32.4" r="0.65" fill="#FFF8EC" />
+      <circle cx="38.6" cy="32.4" r="0.65" fill="#FFF8EC" />
+      <path
+        d="M27 40 Q32 44 37 40"
+        fill="none"
+        stroke="#6B4E2E"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 const CHARACTER_SVG: Record<PlayfulCharacterId, (size: number) => ReactNode> = {
   suntel: (size) => <SuntelSvg size={size} />,
   manuta: (size) => <ManutaSvg size={size} />,
+  carioca: (size) => <CariocaSvg size={size} />,
+  sageata: (size) => <SageataSvg size={size} />,
+  presulet: (size) => <PresuletSvg size={size} />,
 };
 
 export function PlayfulCharacterMark({
