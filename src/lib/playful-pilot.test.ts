@@ -190,7 +190,10 @@ describe("PLAYFUL PILOT copy helpers", () => {
       0x0043, 0x0061, 0x0072, 0x0069, 0x006f, 0x0063, 0x0103,
     ]);
     expect(PLAYFUL_CHARACTERS.sageata.name).toBe("Săgeată");
+    expect(PLAYFUL_CHARACTERS.sageata.name).not.toBe("Săgeata");
     expect(PLAYFUL_CHARACTERS.sageata.name).not.toBe("Sageata");
+    expect(PLAYFUL_CHARACTERS.sageata.name.at(-1)).toBe("ă");
+    expect(PLAYFUL_CHARACTERS.sageata.name.at(-1)?.codePointAt(0)).toBe(0x0103);
     expect([...PLAYFUL_CHARACTERS.sageata.name].map((ch) => ch.codePointAt(0))).toEqual([
       0x0053, 0x0103, 0x0067, 0x0065, 0x0061, 0x0074, 0x0103,
     ]);
