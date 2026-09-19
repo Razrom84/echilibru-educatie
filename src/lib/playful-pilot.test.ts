@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import { describe, expect, test } from "vitest";
 import { getSeedActivities } from "./seed/week1";
 import {
@@ -8,6 +10,12 @@ import {
   playfulPilotWeek,
   playfulSurpriseLabel,
 } from "./playful-pilot";
+
+function svgTitle(filename: string): string {
+  const xml = readFileSync(resolve("public/characters", filename), "utf8");
+  const match = xml.match(/<title>(.*?)<\/title>/);
+  return match?.[1] ?? "";
+}
 
 describe("PLAYFUL PILOT scope", () => {
   test("locks weeks to S3–S7", () => {
@@ -192,6 +200,20 @@ describe("PLAYFUL PILOT copy helpers", () => {
     expect([...PLAYFUL_CHARACTERS.presulet.name].map((ch) => ch.codePointAt(0))).toEqual([
       0x0050, 0x0072, 0x0065, 0x0219, 0x0075, 0x006c, 0x0065, 0x021b,
     ]);
+    expect(svgTitle("carioca.svg")).toBe("Cariocă");
+    expect(svgTitle("sageata.svg")).toBe("Săgeată");
+    expect(svgTitle("sageata.svg")).not.toBe("Săgeata");
+    expect(svgTitle("sageata.svg")).not.toBe("Sageata");
+    expect([...svgTitle("sageata.svg")].map((ch) => ch.codePointAt(0))).toEqual([
+      0x0053, 0x0103, 0x0067, 0x0065, 0x0061, 0x0074, 0x0103,
+    ]);
+    expect(svgTitle("presulet.svg")).toBe("Preșuleț");
+    const chrome = readFileSync(resolve("src/components/playful-chrome.tsx"), "utf8");
+    expect(chrome).toContain("<title>Cariocă</title>");
+    expect(chrome).toContain("<title>Săgeată</title>");
+    expect(chrome).toContain("<title>Preșuleț</title>");
+    expect(chrome).not.toContain("<title>Săgeata</title>");
+    expect(chrome).not.toContain("<title>Sageata</title>");
   });
 
   test("S5–S7 overlays have no sound fields", () => {
