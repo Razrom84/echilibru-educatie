@@ -56,8 +56,10 @@ export function getWeek1Activities(): Activity[] {
   );
 }
 
-export function getSeedActivities(week = PROGRAM_WEEK): Activity[] {
-  return ALL_SEED.filter((row) => row.saptamana === week).map(normalizeActivity);
+export function getSeedActivities(week = PROGRAM_WEEK, band?: string): Activity[] {
+  return ALL_SEED.filter(
+    (row) => row.saptamana === week && (!band || row.banda === band),
+  ).map(normalizeActivity);
 }
 
 export function getSeedActivityById(id: string): Activity | undefined {

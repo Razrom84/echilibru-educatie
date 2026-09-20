@@ -4,7 +4,15 @@
 import { civilDayOfWeek, PROGRAM_TIMEZONE } from "@/lib/program-week";
 
 export const PROGRAM_WEEK = 1;
-export const PROGRAM_AGE_BAND = "1-2";
+/** Live catalog bands. Higher modeled bands stay preview/pilot. */
+export const LIVE_AGE_BANDS = ["1-2", "2-3"] as const;
+export type LiveAgeBand = (typeof LIVE_AGE_BANDS)[number];
+/** Default / fallback when a child has no birthdate or unknown band. */
+export const PROGRAM_AGE_BAND: LiveAgeBand = "1-2";
+
+export function isLiveAgeBand(value: string | null | undefined): value is LiveAgeBand {
+  return (LIVE_AGE_BANDS as readonly string[]).includes(value ?? "");
+}
 
 export const PROGRAM_WEEKS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52] as const;
 export type ProgramWeek = (typeof PROGRAM_WEEKS)[number];

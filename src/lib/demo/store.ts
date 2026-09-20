@@ -84,8 +84,8 @@ export function clearDemoSession() {
   document.cookie = `${CHILD_COOKIE}=; path=/; max-age=0`;
 }
 
-export function demoActivities(week = PROGRAM_WEEK) {
-  return getSeedActivities(week);
+export function demoActivities(week = PROGRAM_WEEK, band?: string) {
+  return getSeedActivities(week, band);
 }
 
 export function addDemoChild(

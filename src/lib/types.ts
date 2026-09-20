@@ -1,6 +1,6 @@
 export type Pillar = "fizic" | "mental" | "resurse" | "social";
 export type CompletionMode = "A" | "B";
-export type AgeBand = "1-2";
+export type AgeBand = "1-2" | "2-3" | "3-4" | "4-5" | "5-6" | "6-7";
 
 export type Family = {
   id: string;
