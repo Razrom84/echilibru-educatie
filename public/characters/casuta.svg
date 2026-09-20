@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-hidden="true">
+  <title>Căsuță</title>
+  <path d="M10 30 L32 12 L54 30 Z" fill="#F2A07A" stroke="#D47A58" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="16" y="30" width="32" height="24" rx="2" fill="#E8D48A" stroke="#C4A15E" stroke-width="1.5"/>
+  <rect x="28" y="40" width="8" height="14" rx="1" fill="#7AA3C7" stroke="#5E86A8" stroke-width="1"/>
+  <circle cx="26" cy="38" r="1.9" fill="#3D2E1A"/>
+  <circle cx="38" cy="38" r="1.9" fill="#3D2E1A"/>
+  <circle cx="26.5" cy="37.5" r="0.55" fill="#FFF8EC"/>
+  <circle cx="38.5" cy="37.5" r="0.55" fill="#FFF8EC"/>
+  <path d="M27 46 Q32 49 37 46" fill="none" stroke="#6B4E2E" stroke-width="1.4" stroke-linecap="round"/>
+</svg>

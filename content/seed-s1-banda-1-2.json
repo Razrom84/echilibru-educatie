@@ -84,7 +84,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "social",
-      "titlu": "Salut mamei/tatălui",
+      "titlu": "Salut",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -125,7 +125,7 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "mental",
-      "titlu": "Carte 5 minute",
+      "titlu": "Cartea scurt",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
@@ -147,7 +147,7 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "resurse",
-      "titlu": "Paharul gol / plin",
+      "titlu": "Paharul gol — sau plin?",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -188,7 +188,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "fizic",
-      "titlu": "Dans 2 minute",
+      "titlu": "Dans scurt",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -231,7 +231,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "resurse",
-      "titlu": "Strângem 3 jucării",
+      "titlu": "Trei jucării la loc",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
@@ -253,7 +253,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "social",
-      "titlu": "Îmbrățișare la cerere",
+      "titlu": "Îmbrățișare, dacă vrea",
       "durata_min": 2,
       "mod_default": "A",
       "materiale": [],
@@ -293,7 +293,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "mental",
-      "titlu": "Cald / rece",
+      "titlu": "Cald — sau rece?",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -314,7 +314,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "resurse",
-      "titlu": "Apa e importantă",
+      "titlu": "Apa la loc",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -335,7 +335,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "social",
-      "titlu": "Joacă de-a rândul",
+      "titlu": "Pe rând",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
@@ -356,7 +356,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "fizic",
-      "titlu": "Urcăm / coborâm trepte",
+      "titlu": "Trepte sus, trepte jos",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
@@ -378,7 +378,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "mental",
-      "titlu": "Numește 3 lucruri din cameră",
+      "titlu": "Trei lucruri din cameră",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [],
@@ -397,7 +397,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "resurse",
-      "titlu": "Lumina aprinsă / stinsă",
+      "titlu": "Lumina aprinsă — sau stinsă?",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -419,7 +419,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "social",
-      "titlu": "Vizită scurtă / telefon bunica",
+      "titlu": "Vizită scurtă",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
@@ -440,7 +440,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "fizic",
-      "titlu": "Nisip / iarbă / pietre",
+      "titlu": "Nisip, iarbă, pietre",
       "durata_min": 6,
       "mod_default": "A",
       "materiale": [
@@ -461,7 +461,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "mental",
-      "titlu": "Sunete: pasăre / mașină",
+      "titlu": "Pasăre — sau mașină?",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -503,7 +503,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "social",
-      "titlu": "Joacă paralel cu adultul",
+      "titlu": "Eu în curte, tu pe lângă",
       "durata_min": 8,
       "mod_default": "A",
       "materiale": [
@@ -524,7 +524,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "fizic",
-      "titlu": "Plimbare liberă scurtă",
+      "titlu": "Plimbare liberă",
       "durata_min": 8,
       "mod_default": "A",
       "materiale": [
@@ -545,7 +545,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "mental",
-      "titlu": "Cartea preferată (repetare)",
+      "titlu": "Cartea preferată",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
@@ -566,7 +566,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "resurse",
-      "titlu": "Punem hainele la loc",
+      "titlu": "Hainele la loc",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -587,7 +587,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "social",
-      "titlu": "Ziua e gata — pup de noapte",
+      "titlu": "Noapte bună",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],

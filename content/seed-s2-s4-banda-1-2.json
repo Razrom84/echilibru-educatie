@@ -62,7 +62,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "resurse",
-      "titlu": "Paharul meu cu apă",
+      "titlu": "Paharul cu apă",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -123,7 +123,7 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "mental",
-      "titlu": "Gol și plin",
+      "titlu": "Gol — sau plin?",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -289,7 +289,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "mental",
-      "titlu": "Apă sau uscat",
+      "titlu": "Apă — sau uscat?",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -310,7 +310,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "resurse",
-      "titlu": "Punem paharul la loc",
+      "titlu": "Paharul la loc",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -331,7 +331,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "social",
-      "titlu": "Împărțim o înghițitură",
+      "titlu": "O înghițitură pe rând",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -352,7 +352,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "fizic",
-      "titlu": "Dans cu stropi pe geam",
+      "titlu": "Stropi pe geam",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -373,7 +373,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "mental",
-      "titlu": "Ascultăm apa",
+      "titlu": "Auzim apa",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -394,7 +394,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "resurse",
-      "titlu": "Opriți robinetul",
+      "titlu": "Oprim robinetul",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -415,7 +415,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "social",
-      "titlu": "Arătăm apa bunicii",
+      "titlu": "Uite apa",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
@@ -436,7 +436,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "fizic",
-      "titlu": "Băltoacă sau iarbă udă",
+      "titlu": "Băltoaca, pe scurt",
       "durata_min": 6,
       "mod_default": "A",
       "materiale": [
@@ -457,7 +457,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "mental",
-      "titlu": "Nor sau soare",
+      "titlu": "Nor — sau soare?",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -478,7 +478,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "resurse",
-      "titlu": "Adunăm 2 frunze ude",
+      "titlu": "Două frunze ude",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -499,7 +499,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "social",
-      "titlu": "Joacă lângă adult la apă",
+      "titlu": "Lângă apă",
       "durata_min": 8,
       "mod_default": "A",
       "materiale": [
@@ -520,7 +520,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "fizic",
-      "titlu": "Plimbare liberă scurtă",
+      "titlu": "Plimbare liberă",
       "durata_min": 8,
       "mod_default": "A",
       "materiale": [
@@ -541,7 +541,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "mental",
-      "titlu": "Carte cu apă / baie",
+      "titlu": "Cartea cu apa",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
@@ -623,7 +623,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "mental",
-      "titlu": "Liniște 10 secunde",
+      "titlu": "Liniște scurtă",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -642,7 +642,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "resurse",
-      "titlu": "Jucăria care face zgomot",
+      "titlu": "Jucăria sonoră la loc",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -663,7 +663,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "social",
-      "titlu": "Strigăm pe nume blând",
+      "titlu": "Spunem numele",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -722,7 +722,7 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "resurse",
-      "titlu": "Pune jucăria sonoră la loc",
+      "titlu": "Jucăria la loc",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -743,7 +743,7 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "social",
-      "titlu": "Ascultăm împreună",
+      "titlu": "Ascultăm",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [],
@@ -762,7 +762,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "fizic",
-      "titlu": "Dans pe o melodie scurtă",
+      "titlu": "Dans scurt",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -783,7 +783,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "mental",
-      "titlu": "Voce tare / voce încet",
+      "titlu": "Tare — sau încet?",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -802,7 +802,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "resurse",
-      "titlu": "Oprim muzica",
+      "titlu": "Gata cu cântatul",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -823,7 +823,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "social",
-      "titlu": "Cântec scurt cu familia",
+      "titlu": "Cântăm puțin",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [],
@@ -861,7 +861,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "mental",
-      "titlu": "Pasăre sau mașină",
+      "titlu": "Pasăre — sau mașină?",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -882,7 +882,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "resurse",
-      "titlu": "Închidem ușa încet",
+      "titlu": "Ușa închisă încet",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -903,7 +903,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "social",
-      "titlu": "Rândul la sunet",
+      "titlu": "Rândul tău",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [

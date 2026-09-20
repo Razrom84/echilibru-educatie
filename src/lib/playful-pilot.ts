@@ -1,15 +1,17 @@
 /**
- * PLAYFUL PILOT — GO lock: S3 V–D + full S4 + S5–S20 L–D.
+ * PLAYFUL PILOT — GO lock: S1–S20 L–D (S3 was V–D; now full week).
  * Characters, ritual lines, and daily surprises live here (not in activities.nota).
  * Zero sounds / wavs / Play button — clips were removed in #33.
  */
 
 export const PLAYFUL_PILOT_WEEKS = [
-  3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
 ] as const;
 export type PlayfulPilotWeek = (typeof PLAYFUL_PILOT_WEEKS)[number];
 
 export type PlayfulCharacterId =
+  | "casuta"
+  | "galetusa"
   | "suntel"
   | "manuta"
   | "carioca"
@@ -46,6 +48,16 @@ export type PlayfulOverlay = {
 };
 
 export const PLAYFUL_CHARACTERS: Record<PlayfulCharacterId, PlayfulCharacter> = {
+  casuta: {
+    id: "casuta",
+    name: "Căsuță",
+    src: "/characters/casuta.svg",
+  },
+  galetusa: {
+    id: "galetusa",
+    name: "Găletușă",
+    src: "/characters/galetusa.svg",
+  },
   suntel: {
     id: "suntel",
     name: "Sunețel",
@@ -149,6 +161,40 @@ type WeekConfig = {
   surprises: Record<number, string>;
 };
 
+const WEEK_1: WeekConfig = {
+  week: 1,
+  theme: "Casa și curtea",
+  character: PLAYFUL_CHARACTERS.casuta,
+  ritualOpen: "Casa și curtea.",
+  ritualClose: "Pe curte, gata.",
+  surprises: {
+    1: "Ușa curții se deschide 2 cm",
+    2: "El alege: piatră sau frunză",
+    3: "Mingea „dispare” 2 sec în iarbă",
+    4: "Un lucru ușor în mână 3 sec",
+    5: "O treaptă sus, una jos",
+    6: "O piatră secretă (doar el o arată)",
+    7: "Ultima pagină: casa din imagine",
+  },
+};
+
+const WEEK_2: WeekConfig = {
+  week: 2,
+  theme: "Apa în casă și afară",
+  character: PLAYFUL_CHARACTERS.galetusa,
+  ritualOpen: "Apa în casă.",
+  ritualClose: "Afară, gata.",
+  surprises: {
+    1: "Robinetul 2 sec, apoi oprit",
+    2: "Turnăm 2 picături",
+    3: "Un strop pe mână",
+    4: "Paharul gol stă 2 sec, apoi jos",
+    5: "Stropi pe geam 2 sec",
+    6: "O băltoacă (doar el o arată)",
+    7: "Verificăm: prosopul la loc",
+  },
+};
+
 const WEEK_3: WeekConfig = {
   week: 3,
   theme: "Sunete și liniște",
@@ -156,6 +202,10 @@ const WEEK_3: WeekConfig = {
   ritualOpen: "Ascultăm. Gata?",
   ritualClose: "Sunete gata. Bravo.",
   surprises: {
+    1: "pași, apoi liniște",
+    2: "o bătaie din palme",
+    3: "voce încet 2s",
+    4: "ușa închisă încet",
     5: "șoaptă 2s",
     6: "o bătaie + liniște",
     7: "lumină stinsă 3s",
@@ -452,6 +502,8 @@ const WEEK_20: WeekConfig = {
 };
 
 const WEEK_CONFIG: Record<PlayfulPilotWeek, WeekConfig> = {
+  1: WEEK_1,
+  2: WEEK_2,
   3: WEEK_3,
   4: WEEK_4,
   5: WEEK_5,
@@ -476,7 +528,7 @@ export function isPlayfulPilotWeek(week: number): week is PlayfulPilotWeek {
   return (PLAYFUL_PILOT_WEEKS as readonly number[]).includes(week);
 }
 
-/** Day overlay: S3 only V–D (5–7); S4–S20 L–D (1–7). */
+/** Day overlay: S1–S20 L–D (1–7). */
 export function playfulPilotFor(
   week: number,
   dayOfWeek: number,
@@ -496,7 +548,7 @@ export function playfulPilotFor(
   };
 }
 
-/** Week-level ritual/character (Săptămâna header). S3 still shows ritual; days V–D get surprises. */
+/** Week-level ritual/character (Săptămâna header). */
 export function playfulPilotWeek(week: number): Omit<
   PlayfulOverlay,
   "dayOfWeek" | "surprise"
