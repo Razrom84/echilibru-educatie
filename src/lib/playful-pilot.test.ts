@@ -3378,4 +3378,105 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
     expect(migration).not.toMatch(/-b23-/);
     expect(migration.match(/s\d+-2-3-z\d-[a-z]+/g)).toHaveLength(32);
   });
+
+  test("P4 Lock B: 8 residual ids keep title/theme; body names cizme/șosete/rufe (zero proxy)", () => {
+    const expected: Record<
+      string,
+      {
+        titlu: string;
+        tema: string;
+        materiale: string[];
+        pasi: string[];
+        gata_cand: string;
+      }
+    > = {
+      "s27-2-3-z3-fizic": {
+        titlu: "Cizmele la ușă",
+        tema: "Zăpadă sau ploaie la geam",
+        materiale: ["cizme"],
+        pasi: ["Puneți cizmele la ușă pe scurt.", "„Cizme. Ușă.”"],
+        gata_cand: "A ajutat cu cizmele sau a privit.",
+      },
+      "s27-2-3-z3-resurse": {
+        titlu: "Cizmele după geam",
+        tema: "Zăpadă sau ploaie la geam",
+        materiale: ["cizme"],
+        pasi: ["După geam: cizmele la loc.", "„Cizme. La loc.”"],
+        gata_cand: "A ajutat cu cizmele.",
+      },
+      "s27-2-3-z6-resurse": {
+        titlu: "Șosetele după geam",
+        tema: "Zăpadă sau ploaie la geam",
+        materiale: ["șosete"],
+        pasi: ["După geam: șosetele la loc.", "„Șosete. La loc.”"],
+        gata_cand: "A ajutat cu șosetele.",
+      },
+      "s28-2-3-z3-social": {
+        titlu: "Arătăm cizma",
+        tema: "Dezgheț și noroi",
+        materiale: ["cizmă"],
+        pasi: ["Arătați cizma împreună.", "„Împreună. Cizmă.”"],
+        gata_cand: "A privit cizma cu adultul.",
+      },
+      "s28-2-3-z4-resurse": {
+        titlu: "Cizmele după băltoacă",
+        tema: "Dezgheț și noroi",
+        materiale: ["cizme"],
+        pasi: ["După băltoacă: cizmele la loc.", "„Cizme. La loc.”"],
+        gata_cand: "A ajutat cu cizmele.",
+      },
+      "s28-2-3-z6-resurse": {
+        titlu: "Cizmele la loc, după curte",
+        tema: "Dezgheț și noroi",
+        materiale: ["cizme"],
+        pasi: ["După curte: cizmele la loc.", "„Cizme. La loc.”"],
+        gata_cand: "A ajutat cu cizmele.",
+      },
+      "s35-2-3-z3-resurse": {
+        titlu: "Cizmele după băltoacă",
+        tema: "Apă afară (joc scurt)",
+        materiale: ["cizme"],
+        pasi: ["După băltoacă: cizmele la loc.", "„Cizme. La loc.”"],
+        gata_cand: "A ajutat cu cizmele.",
+      },
+      "s23-2-3-z4-resurse": {
+        titlu: "Rufele în coș",
+        tema: "Mirosuri din casă",
+        materiale: ["rufe", "coș"],
+        pasi: ["Puneți rufele în coș.", "„Rufele. Coș.”"],
+        gata_cand: "A ajutat cu rufele în coș.",
+      },
+    };
+    expect(Object.keys(expected)).toHaveLength(8);
+    const english = /\b(the|towel|spoon|basket|okay|worksheet|hanger|dustpan)\b/i;
+    const leftoverProxy = /cârpă|pahar|prosop|stropitoare|obiect de pe pervaz/;
+    for (const [id, lock] of Object.entries(expected)) {
+      const row = getSeedActivityById(id);
+      expect(row, id).toBeDefined();
+      expect(row?.titlu).toBe(lock.titlu);
+      expect(row?.tema_saptamana).toBe(lock.tema);
+      expect(row?.materiale).toEqual(lock.materiale);
+      expect(row?.pasi).toEqual(lock.pasi);
+      expect(row?.pasi).toHaveLength(2);
+      expect(row?.gata_cand).toBe(lock.gata_cand);
+      const blob = [...row!.materiale, ...row!.pasi, row!.gata_cand].join("\n");
+      expect(blob).not.toMatch(english);
+      expect(blob).not.toMatch(leftoverProxy);
+    }
+    const migration = readFileSync(
+      resolve("supabase/migrations/20260920270000_align_title_body_8.sql"),
+      "utf8",
+    );
+    expect(migration).toMatch(/^\s*materiale = v\.materiale,/m);
+    expect(migration).toMatch(/^\s*pasi = v\.pasi,/m);
+    expect(migration).toMatch(/^\s*gata_cand = v\.gata_cand$/m);
+    expect(migration).not.toMatch(/titlu =/);
+    expect(migration).not.toMatch(/tema_saptamana =/);
+    expect(migration).not.toMatch(/s32-2-3-/);
+    expect(migration).not.toMatch(/s33-2-3-z1-fizic/);
+    expect(migration).not.toMatch(/s33-2-3-z2-resurse/);
+    expect(migration).not.toMatch(/s33-2-3-z6-fizic/);
+    expect(migration).not.toMatch(/-b23-/);
+    expect(migration.match(/s\d+-2-3-z\d-[a-z]+/g)).toHaveLength(8);
+  });
 });

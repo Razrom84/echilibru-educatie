@@ -1364,13 +1364,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "stropitoare mică"
+        "cizme"
       ],
       "pasi": [
-        "Puneți stropitoarea lângă ușă sau pe raft.",
-        "„Stropitoare. La loc.”"
+        "După băltoacă: cizmele la loc.",
+        "„Cizme. La loc.”"
       ],
-      "gata_cand": "A ajutat să pună stropitoarea la loc.",
+      "gata_cand": "A ajutat cu cizmele.",
       "tema_saptamana": "Apă afară (joc scurt)",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },

@@ -1419,13 +1419,14 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "prosop"
+        "rufe",
+        "coș"
       ],
       "pasi": [
-        "Puneți prosopul pe cârlig sau raft.",
-        "„Prosop. La loc.”"
+        "Puneți rufele în coș.",
+        "„Rufele. Coș.”"
       ],
-      "gata_cand": "A ajutat să pună prosopul la loc.",
+      "gata_cand": "A ajutat cu rufele în coș.",
       "tema_saptamana": "Mirosuri din casă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
