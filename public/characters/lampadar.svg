@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-hidden="true">
+  <title>Lampadar</title>
+  <path d="M20 14 L44 14 L40 30 L24 30 Z" fill="#F2E2A0" stroke="#C4A15E" stroke-width="1.5"/>
+  <rect x="29" y="30" width="6" height="22" rx="1" fill="#C4A15E"/>
+  <ellipse cx="32" cy="54" rx="10" ry="3" fill="#D9B56F"/>
+  <circle cx="32" cy="20" r="4" fill="#F7D56A"/>
+  <circle cx="26" cy="24" r="1.9" fill="#3D2E1A"/>
+  <circle cx="38" cy="24" r="1.9" fill="#3D2E1A"/>
+  <circle cx="26.5" cy="23.5" r="0.55" fill="#FFF8EC"/>
+  <circle cx="38.5" cy="23.5" r="0.55" fill="#FFF8EC"/>
+  <path d="M27 30 Q32 33 37 30" fill="none" stroke="#6B4E2E" stroke-width="1.4" stroke-linecap="round"/>
+  
+</svg>

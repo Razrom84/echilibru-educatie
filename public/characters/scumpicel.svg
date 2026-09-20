@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-hidden="true">
-  <title>Noroiuț</title>
-  <ellipse cx="32" cy="38" rx="20" ry="12" fill="#8B5E3C" stroke="#6B4423" stroke-width="1.5"/>
-  <circle cx="24" cy="34" r="6" fill="#A06C45"/>
-  <circle cx="40" cy="36" r="7" fill="#7A4E2E"/>
+  <title>Scumpicel</title>
+  <path d="M32 12 L36 24 L48 24 L38 32 L42 44 L32 36 L22 44 L26 32 L16 24 L28 24 Z" fill="#F7D56A" stroke="#C4A15E" stroke-width="1.4"/>
   <circle cx="26" cy="30" r="1.9" fill="#3D2E1A"/>
   <circle cx="38" cy="30" r="1.9" fill="#3D2E1A"/>
   <circle cx="26.5" cy="29.5" r="0.55" fill="#FFF8EC"/>

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-hidden="true">
-  <title>Ghemuț</title>
-  <ellipse cx="32" cy="34" rx="18" ry="16" fill="#E8D48A" stroke="#C4A15E" stroke-width="1.5"/>
-  <path d="M18 34 Q14 22 24 18" fill="none" stroke="#C4A15E" stroke-width="2.2" stroke-linecap="round"/>
-  <path d="M46 34 Q50 22 40 18" fill="none" stroke="#C4A15E" stroke-width="2.2" stroke-linecap="round"/>
+  <title>Blânduț</title>
+  <path d="M40 16 C24 16 16 28 16 36 C16 48 26 54 32 54 C26 46 26 34 40 28 C44 26 46 22 44 18 C42 16 40 16 40 16 Z" fill="#F2E2A0" stroke="#C4A15E" stroke-width="1.5"/>
   <circle cx="26" cy="32" r="1.9" fill="#3D2E1A"/>
   <circle cx="38" cy="32" r="1.9" fill="#3D2E1A"/>
   <circle cx="26.5" cy="31.5" r="0.55" fill="#FFF8EC"/>
