@@ -797,14 +797,14 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "cutie"
+        "cutie",
+        "frunză"
       ],
       "pasi": [
-        "După colectat: „La loc.”",
-        "„Ajunge.”",
-        "Dacă vrea: alegeți unde stă cutia (1 din 2)."
+        "După colectat: puneți frunza în cutie, apoi cutia la loc.",
+        "„Frunză. La loc.”"
       ],
-      "gata_cand": "Cutia e la loc.",
+      "gata_cand": "A ajutat cu frunza sau cutia.",
       "tema_saptamana": "Umbre pe pământ",
       "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
     },

@@ -655,7 +655,7 @@
       "pasi": [
         "Ieșiți: „Verde. Iarbă.” — 3–5 pași cu piciorul pe iarbă.",
         "Atingeți iarba cu mâna: „Plantă. Verde.”",
-        "Dacă vrea: spuneți „Udăm ca să crește — să crească.” — gest pe iarbă."
+        "Dacă vrea: spuneți „Udăm ca să crească — să crească.” — gest pe iarbă."
       ],
       "gata_cand": "A pus piciorul pe iarbă și a atins verdele.",
       "tema_saptamana": "Piciorul pe iarbă",
@@ -701,7 +701,7 @@
       "pasi": [
         "Turnați puțin: „Apă. Plantă.”",
         "„Ajunge.” — opriți; paharul deoparte.",
-        "Dacă vrea: „De ce udăm?” — „Ca să crește.”"
+        "Dacă vrea: „De ce udăm?” — „Ca să crească.”"
       ],
       "gata_cand": "Planta / iarba a primit puțină apă; ajunge e clar.",
       "tema_saptamana": "Piciorul pe iarbă",
@@ -746,7 +746,7 @@
       "pasi": [
         "Dacă e sigur: un picior pe verde: „Verde.” — 10 secunde.",
         "Altfel: talpa încălțămintei pe iarbă: „Plantă.”",
-        "Dacă vrea: „Udăm ca iarba să crește.” — gest pe sol."
+        "Dacă vrea: „Udăm ca iarba să crească.” — gest pe sol."
       ],
       "gata_cand": "A simțit iarba sub picior (sau talpă).",
       "tema_saptamana": "Piciorul pe iarbă",
@@ -835,7 +835,7 @@
       "pasi": [
         "Îngenuncheați: „Verde.” — mână pe iarbă.",
         "Un picior pe iarbă: „Plantă.” — 5–8 secunde.",
-        "Dacă vrea: „Udăm ca să crește.” — gest pe sol."
+        "Dacă vrea: „Udăm ca să crească.” — gest pe sol."
       ],
       "gata_cand": "A stat scurt cu mână și picior pe iarbă.",
       "tema_saptamana": "Piciorul pe iarbă",
@@ -880,7 +880,7 @@
       "pasi": [
         "Arătați 2: „Azi — apă. Mâine — așteptăm.”",
         "Alegeți împreună: „Ajunge așa.”",
-        "Dacă vrea: spuneți de ce — „Ca să crește / ca să nu fie prea mult.”"
+        "Dacă vrea: spuneți de ce — „Ca să crească / ca să nu fie prea mult.”"
       ],
       "gata_cand": "Ați ales când udați; fără forțare.",
       "tema_saptamana": "Piciorul pe iarbă",
@@ -925,7 +925,7 @@
       "pasi": [
         "Cărați paharul: pași pe verde: „Apă… plantă.”",
         "Turnați puțin: „Crește.” — apoi gata.",
-        "Dacă vrea: el spune de ce ați udat — „Ca să crește.”"
+        "Dacă vrea: el spune de ce ați udat — „Ca să crească.”"
       ],
       "gata_cand": "A cărat apa pe lângă iarbă și a udat pe scurt.",
       "tema_saptamana": "Piciorul pe iarbă",
@@ -947,7 +947,7 @@
       ],
       "pasi": [
         "Arătați: „Plantă. Verde.” — piciorul pe iarbă.",
-        "„De ce udăm?” — „Ca să crește.”",
+        "„De ce udăm?” — „Ca să crească.”",
         "Dacă vrea: el repetă gestul / cuvântul crește."
       ],
       "gata_cand": "A auzit de ce udăm legat de crește.",
@@ -994,7 +994,7 @@
       "pasi": [
         "„Acum eu” — o picătură.",
         "„Acum tu” — dacă vrea; altfel voi închideți.",
-        "Dacă vrea: „De ce?” — „Ca plantă să crește.”"
+        "Dacă vrea: „De ce?” — „Ca plantă să crească.”"
       ],
       "gata_cand": "Ați udat pe rând pe scurt.",
       "tema_saptamana": "Piciorul pe iarbă",
@@ -1176,7 +1176,7 @@
       "pasi": [
         "Umăr la umăr: „Verde… plantă.”",
         "O rundă scurtă — picior și mână.",
-        "Dacă vrea: inventați o frază — „Udăm ca să crește.”"
+        "Dacă vrea: inventați o frază — „Udăm ca să crească.”"
       ],
       "gata_cand": "Ați legat piciorul pe iarbă de planta din casă.",
       "tema_saptamana": "Piciorul pe iarbă",
@@ -1328,14 +1328,14 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "farfurie / castron mic"
+        "farfurie",
+        "fruct"
       ],
       "pasi": [
-        "După gustare: „Ajunge. Încă? Nu acum.”",
-        "Farfuria la chiuvetă sau pe blat: „La loc.”",
-        "Dacă vrea: el oferă farfuria goală adultului — voi: „Mulțumesc.”"
+        "După gustare: „Ajunge.”",
+        "Farfuria cu fruct (sau goală) la loc."
       ],
-      "gata_cand": "Farfuria e la loc; porția e închisă.",
+      "gata_cand": "A ajutat cu farfuria după fruct.",
       "tema_saptamana": "Fructe pe care le vedem",
       "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
     },
@@ -1508,11 +1508,10 @@
         "farfurie"
       ],
       "pasi": [
-        "Arătați: „Goală. Ajunge.”",
-        "La loc: „La chiuvetă / pe blat.”",
-        "Dacă vrea: alegeți chiuveta sau blatul."
+        "„După fruct: goală. Ajunge.”",
+        "Farfuria la loc."
       ],
-      "gata_cand": "Farfuria goală e la loc.",
+      "gata_cand": "Farfuria goală după fruct e la loc.",
       "tema_saptamana": "Fructe pe care le vedem",
       "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
     },
@@ -1692,11 +1691,10 @@
         "șervet"
       ],
       "pasi": [
-        "Strângeți: „La loc.”",
-        "„Ajunge. Masa e gata.”",
-        "Dacă vrea: el alege ce duce primul — paharul sau farfuria."
+        "Strângeți după fruct: „La loc.”",
+        "„Masa cu fruct e gata.”"
       ],
-      "gata_cand": "Obiectele de masă sunt la loc.",
+      "gata_cand": "Obiectele de masă (după fruct) la loc.",
       "tema_saptamana": "Fructe pe care le vedem",
       "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
     },
@@ -1868,11 +1866,10 @@
         "farfurie / pahar"
       ],
       "pasi": [
-        "Strângeți: „La loc.”",
-        "„Gata. Acum e liniște.”",
-        "Dacă vrea: paharul favorit rămâne la vedere."
+        "Strângeți masa cu fruct: „La loc.”",
+        "„Gata. Liniște.”"
       ],
-      "gata_cand": "Masa e strânsă înainte de calm.",
+      "gata_cand": "Masa cu fruct e strânsă înainte de calm.",
       "tema_saptamana": "Fructe pe care le vedem",
       "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
     },

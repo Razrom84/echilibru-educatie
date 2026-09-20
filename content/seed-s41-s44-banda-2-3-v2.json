@@ -1133,14 +1133,13 @@
       "mod_default": "A",
       "materiale": [
         "cutie",
-        "3 obiecte din natură"
+        "frunze"
       ],
       "pasi": [
-        "Puneți trei: „Plin destul. Ajunge.”",
-        "Închideți sau lăsați: „Gata.”",
-        "Dacă vrea: el alege dacă cutia e deschisă sau închisă."
+        "Puneți trei frunze: „Plin destul.”",
+        "„Frunze. Gata.”"
       ],
-      "gata_cand": "Cutia are trei; colectarea e gata.",
+      "gata_cand": "Cutia de frunze are trei.",
       "tema_saptamana": "Vânt și frunze din nou",
       "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
     },

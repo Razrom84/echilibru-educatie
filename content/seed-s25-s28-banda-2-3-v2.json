@@ -2301,11 +2301,10 @@
         "cizme"
       ],
       "pasi": [
-        "După șters: „La loc.”",
-        "„Ajunge.”",
-        "Dacă vrea: ordinea — stânga / dreapta cum vrea el."
+        "După șters: puneți cizmele lângă ușă.",
+        "„Cizme. Ușă.”"
       ],
-      "gata_cand": "Cizmele curate sunt la loc.",
+      "gata_cand": "Cizmele curate sunt lângă ușă.",
       "tema_saptamana": "Dezgheț și noroi",
       "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
     },

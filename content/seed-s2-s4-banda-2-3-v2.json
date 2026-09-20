@@ -339,14 +339,14 @@
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
-        "pahar"
+        "pahar",
+        "masă"
       ],
       "pasi": [
-        "Luați paharul folosit.",
-        "Puneți-l pe loc: „La loc.”",
-        "Dacă vrea: clătiți-l scurt împreună înainte."
+        "Luați paharul.",
+        "Puneți-l pe masă: „La loc. Masă.”"
       ],
-      "gata_cand": "Paharul e pe locul lui.",
+      "gata_cand": "Paharul e pe masă.",
       "tema_saptamana": "Apa în casă și afară",
       "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
     },
