@@ -388,13 +388,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "evantai mic"
+        "haină"
       ],
       "pasi": [
-        "Puneți evantaiul pe masă sau pe raft.",
-        "„Evantai. La loc.”"
+        "Puneți haina pe braț la umbră pe scurt.",
+        "„Haină. Umbră.”"
       ],
-      "gata_cand": "A ajutat să pună evantaiul.",
+      "gata_cand": "A ținut haina sau a privit.",
       "tema_saptamana": "Umbră și loc răcoros",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1526,13 +1526,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "farfurie mică"
+        "șervețel"
       ],
       "pasi": [
-        "După gust: farfuria la chiuvetă sau pe masă.",
-        "„Farfurie. La loc.”"
+        "După gust: șervețelul la loc.",
+        "„Șervețel. La loc.”"
       ],
-      "gata_cand": "A ajutat cu farfuria.",
+      "gata_cand": "A ajutat cu șervețelul.",
       "tema_saptamana": "Fructe pe care le vedem",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -2029,14 +2029,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "șervețel",
-        "suport sau cutie"
+        "cuier"
       ],
       "pasi": [
-        "Puneți șervețelul în suport sau cutie.",
-        "„Șervețel. La loc.”"
+        "Arătați: cuierul e gata.",
+        "„Cuier. Gata.”"
       ],
-      "gata_cand": "A ajutat să pună șervețelul.",
+      "gata_cand": "A privit cuierul sau a arătat.",
       "tema_saptamana": "Ajutor la treabă scurtă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -2094,14 +2093,14 @@
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
-        "lingură",
-        "farfurie"
+        "făraș",
+        "mătură de copil"
       ],
       "pasi": [
-        "Arătați: „Lingură.”",
-        "„Lângă farfurie.” pe scurt."
+        "Arătați: „Jos.”",
+        "„În făraș.” pe scurt."
       ],
-      "gata_cand": "A auzit lingură și farfurie.",
+      "gata_cand": "A auzit jos și făraș.",
       "tema_saptamana": "Ajutor la treabă scurtă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -2116,13 +2115,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "lingură"
+        "făraș"
       ],
       "pasi": [
-        "După: lingura în sertar sau pe suport.",
-        "„Lingură. La loc.”"
+        "Goliți fărașul pe scurt, apoi la loc.",
+        "„Făraș. La loc.”"
       ],
-      "gata_cand": "A ajutat să pună lingura.",
+      "gata_cand": "A ajutat cu fărașul.",
       "tema_saptamana": "Ajutor la treabă scurtă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },

@@ -1444,13 +1444,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "pătură mică"
+        "cârpă de geam"
       ],
       "pasi": [
-        "Luați pătura. Așezați-o pe canapea.",
-        "„Pătură. La loc.”"
+        "Puneți cârpa de geam la loc.",
+        "„Cârpă. La loc.”"
       ],
-      "gata_cand": "A ajutat cu pătura.",
+      "gata_cand": "A ajutat cu cârpa.",
       "tema_saptamana": "Zăpadă sau ploaie la geam",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1483,12 +1483,14 @@
       "titlu": "Haina de ploaie pe umeri",
       "durata_min": 4,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Suflați blând pe geam o dată.",
-        "„Abur.” pe scurt, dacă apare."
+      "materiale": [
+        "haină de ploaie"
       ],
-      "gata_cand": "A suflat sau a privit aburul.",
+      "pasi": [
+        "Puneți haina de ploaie pe umeri pe scurt, cu adult.",
+        "„Haină.” 10–20 de secunde."
+      ],
+      "gata_cand": "A purtat haina pe scurt sau a privit.",
       "tema_saptamana": "Zăpadă sau ploaie la geam",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1502,12 +1504,14 @@
       "titlu": "Haină — sau fără?",
       "durata_min": 3,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Arătați aburul: „Abur.”",
-        "Arătați afară: „Zăpadă.” sau „Ploaie.”"
+      "materiale": [
+        "haină de ploaie"
       ],
-      "gata_cand": "A privit aburul sau afară.",
+      "pasi": [
+        "Arătați haina: „Haină.”",
+        "Arătați fără: „Fără.” pe scurt."
+      ],
+      "gata_cand": "A auzit haină și fără.",
       "tema_saptamana": "Zăpadă sau ploaie la geam",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1522,13 +1526,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "cârpă uscată"
+        "haină"
       ],
       "pasi": [
-        "Ștergeți aburul pe scurt.",
-        "„Cârpă. La loc.”"
+        "Puneți haina pe cârlig.",
+        "„Haină. La loc.”"
       ],
-      "gata_cand": "A ajutat să șteargă sau să pună cârpa.",
+      "gata_cand": "A ajutat să pună haina.",
       "tema_saptamana": "Zăpadă sau ploaie la geam",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1542,12 +1546,14 @@
       "titlu": "Te ajut la haină",
       "durata_min": 3,
       "mod_default": "A",
-      "materiale": [],
+      "materiale": [
+        "haină"
+      ],
       "pasi": [
-        "Voi suflați. „Acum tu.”",
+        "Voi țineți haina. „Acum tu.”",
         "Așteptați fără forțare."
       ],
-      "gata_cand": "A încercat sau a privit rândul.",
+      "gata_cand": "A ajutat la haină sau a privit.",
       "tema_saptamana": "Zăpadă sau ploaie la geam",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1680,14 +1686,14 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "carte",
-        "cârpă"
+        "haină",
+        "carte"
       ],
       "pasi": [
-        "Puneți cartea pe raft, cârpa la loc.",
+        "Puneți haina pe cârlig, cartea pe raft.",
         "„La loc.”"
       ],
-      "gata_cand": "A ajutat să pună la loc.",
+      "gata_cand": "A ajutat cu haina sau cartea.",
       "tema_saptamana": "Zăpadă sau ploaie la geam",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1923,13 +1929,14 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
+        "cârpă",
         "cizme"
       ],
       "pasi": [
-        "Scuturați cizmele pe scurt la ușă.",
-        "„Cizme. Gata.”"
+        "Ștergeți pe scurt cizma cu cârpa.",
+        "„Cârpă. La loc.”"
       ],
-      "gata_cand": "A ajutat să scuture sau a privit.",
+      "gata_cand": "A ajutat cu cârpa sau a privit.",
       "tema_saptamana": "Dezgheț și noroi",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -2088,13 +2095,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "cizme"
+        "prosop"
       ],
       "pasi": [
-        "Așezați cizmele curate lângă ușă.",
-        "„Cizme. La loc.”"
+        "Puneți prosopul la loc după șters.",
+        "„Prosop. La loc.”"
       ],
-      "gata_cand": "A ajutat să așeze cizmele.",
+      "gata_cand": "A ajutat cu prosopul.",
       "tema_saptamana": "Dezgheț și noroi",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -2256,13 +2263,13 @@
       "mod_default": "A",
       "materiale": [
         "cizme",
-        "cârpă"
+        "haină"
       ],
       "pasi": [
-        "Puneți cizmele lângă ușă, cârpa la loc.",
+        "Puneți cizmele lângă ușă, haina pe cârlig.",
         "„La loc. Gata.”"
       ],
-      "gata_cand": "A ajutat să pună la loc.",
+      "gata_cand": "A ajutat cu cizmele sau haina.",
       "tema_saptamana": "Dezgheț și noroi",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },

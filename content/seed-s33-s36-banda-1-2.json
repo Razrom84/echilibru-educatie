@@ -489,14 +489,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "formă mică",
-        "cutie cu nisip"
+        "prosop"
       ],
       "pasi": [
-        "Puneți forma pe raft, nisipul în cutie.",
-        "„La loc.” pe scurt."
+        "Ștergeți mâinile pe prosop pe scurt.",
+        "„Prosop. La loc.”"
       ],
-      "gata_cand": "A ajutat să pună la loc.",
+      "gata_cand": "A atins prosopul sau a privit.",
       "tema_saptamana": "Nisip și găleată",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1201,13 +1200,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "vas mic"
+        "prosop"
       ],
       "pasi": [
-        "Așezați vasul pe masă sau pe treaptă afară.",
-        "„Vas. Apă.”"
+        "Prosopul afară pe scurt, apoi la loc.",
+        "„Prosop. La loc.”"
       ],
-      "gata_cand": "A ajutat să așeze vasul.",
+      "gata_cand": "A ajutat cu prosopul.",
       "tema_saptamana": "Apă afară (joc scurt)",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1695,14 +1694,14 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "vas",
-        "stropitoare"
+        "pahar",
+        "prosop"
       ],
       "pasi": [
-        "Puneți vasul și stropitoarea la loc.",
+        "Puneți paharul și prosopul la loc.",
         "„La loc. Gata.”"
       ],
-      "gata_cand": "A ajutat să pună la loc.",
+      "gata_cand": "A ajutat cu paharul sau prosopul.",
       "tema_saptamana": "Apă afară (joc scurt)",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
