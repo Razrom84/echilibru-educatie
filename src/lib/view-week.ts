@@ -76,13 +76,13 @@ export function weekRelation(
 const COHORT_BAND_LADDER = ["1-2", "2-3", "3-4", "4-5", "5-6", "6-7"] as const;
 
 /** Immediately previous cohort band, or `null` when the live band is first. */
-export function previousCohortBand(liveBand: string): string | null {
+export function previousBand(liveBand: string): string | null {
   const index = (COHORT_BAND_LADDER as readonly string[]).indexOf(liveBand);
   return index > 0 ? COHORT_BAND_LADDER[index - 1] : null;
 }
 
 export function isWritableCohortBand(viewBand: string, liveBand: string): boolean {
-  return viewBand === liveBand || viewBand === previousCohortBand(liveBand);
+  return viewBand === liveBand || viewBand === previousBand(liveBand);
 }
 
 export function weekWritesAllowed(args: {
