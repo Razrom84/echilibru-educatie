@@ -32,38 +32,38 @@ export type PlayfulCharacterId =
   | "mingiuta"
   | "carticica"
   | "cosulet"
-  | "pervazut"
-  | "ghemut"
-  | "nasut"
+  | "ferestruica"
+  | "ghemotoc"
+  | "nasuc"
   | "usita"
-  | "lampita"
-  | "amintioara"
-  | "fulguta"
-  | "noroiut"
-  | "mugurel"
+  | "lampadar"
+  | "amintire"
+  | "fulgusor"
+  | "murdarel"
+  | "muguras"
   | "cioculet"
   | "samantica"
-  | "rotunduta"
-  | "nisiput"
+  | "balonas"
+  | "lopetica"
   | "umbrita"
   | "stropulet"
   | "gandacel"
-  | "racorita"
+  | "racorica"
   | "talpita"
-  | "marulet"
-  | "maturita"
+  | "merisor"
+  | "maturica"
   | "portita"
   | "vantulet"
   | "saculet"
   | "inimioara"
-  | "pasulet"
+  | "plimbarel"
   | "degetel"
-  | "grijita"
-  | "salutel"
-  | "scumput"
-  | "linistita"
-  | "curtita"
-  | "blandulet";
+  | "grijuliul"
+  | "norocel"
+  | "scumpicel"
+  | "cumintel"
+  | "gospodarel"
+  | "blandut";
 
 export type PlayfulCharacter = {
   id: PlayfulCharacterId;
@@ -182,50 +182,50 @@ export const PLAYFUL_CHARACTERS: Record<PlayfulCharacterId, PlayfulCharacter> = 
     name: "Coșuleț",
     src: "/characters/cosulet.svg",
   },
-  pervazut: {
-    id: "pervazut",
-    name: "Pervazuț",
-    src: "/characters/pervazut.svg",
+  ferestruica: {
+    id: "ferestruica",
+    name: "Ferestruică",
+    src: "/characters/ferestruica.svg",
   },
-  ghemut: {
-    id: "ghemut",
-    name: "Ghemuț",
-    src: "/characters/ghemut.svg",
+  ghemotoc: {
+    id: "ghemotoc",
+    name: "Ghemotoc",
+    src: "/characters/ghemotoc.svg",
   },
-  nasut: {
-    id: "nasut",
-    name: "Năsuț",
-    src: "/characters/nasut.svg",
+  nasuc: {
+    id: "nasuc",
+    name: "Năsuc",
+    src: "/characters/nasuc.svg",
   },
   usita: {
     id: "usita",
     name: "Ușiță",
     src: "/characters/usita.svg",
   },
-  lampita: {
-    id: "lampita",
-    name: "Lămpiță",
-    src: "/characters/lampita.svg",
+  lampadar: {
+    id: "lampadar",
+    name: "Lampadar",
+    src: "/characters/lampadar.svg",
   },
-  amintioara: {
-    id: "amintioara",
-    name: "Amintioară",
-    src: "/characters/amintioara.svg",
+  amintire: {
+    id: "amintire",
+    name: "Amintire",
+    src: "/characters/amintire.svg",
   },
-  fulguta: {
-    id: "fulguta",
-    name: "Fulguță",
-    src: "/characters/fulguta.svg",
+  fulgusor: {
+    id: "fulgusor",
+    name: "Fulgușor",
+    src: "/characters/fulgusor.svg",
   },
-  noroiut: {
-    id: "noroiut",
-    name: "Noroiuț",
-    src: "/characters/noroiut.svg",
+  murdarel: {
+    id: "murdarel",
+    name: "Murdărel",
+    src: "/characters/murdarel.svg",
   },
-  mugurel: {
-    id: "mugurel",
-    name: "Mugurel",
-    src: "/characters/mugurel.svg",
+  muguras: {
+    id: "muguras",
+    name: "Muguraș",
+    src: "/characters/muguras.svg",
   },
   cioculet: {
     id: "cioculet",
@@ -237,15 +237,15 @@ export const PLAYFUL_CHARACTERS: Record<PlayfulCharacterId, PlayfulCharacter> = 
     name: "Sămânțică",
     src: "/characters/samantica.svg",
   },
-  rotunduta: {
-    id: "rotunduta",
-    name: "Rotunduță",
-    src: "/characters/rotunduta.svg",
+  balonas: {
+    id: "balonas",
+    name: "Balonaș",
+    src: "/characters/balonas.svg",
   },
-  nisiput: {
-    id: "nisiput",
-    name: "Nisipuț",
-    src: "/characters/nisiput.svg",
+  lopetica: {
+    id: "lopetica",
+    name: "Lopețică",
+    src: "/characters/lopetica.svg",
   },
   umbrita: {
     id: "umbrita",
@@ -262,25 +262,25 @@ export const PLAYFUL_CHARACTERS: Record<PlayfulCharacterId, PlayfulCharacter> = 
     name: "Gândăcel",
     src: "/characters/gandacel.svg",
   },
-  racorita: {
-    id: "racorita",
-    name: "Răcoriță",
-    src: "/characters/racorita.svg",
+  racorica: {
+    id: "racorica",
+    name: "Răcorică",
+    src: "/characters/racorica.svg",
   },
   talpita: {
     id: "talpita",
     name: "Tălpiță",
     src: "/characters/talpita.svg",
   },
-  marulet: {
-    id: "marulet",
-    name: "Măruleț",
-    src: "/characters/marulet.svg",
+  merisor: {
+    id: "merisor",
+    name: "Merișor",
+    src: "/characters/merisor.svg",
   },
-  maturita: {
-    id: "maturita",
-    name: "Măturiță",
-    src: "/characters/maturita.svg",
+  maturica: {
+    id: "maturica",
+    name: "Măturică",
+    src: "/characters/maturica.svg",
   },
   portita: {
     id: "portita",
@@ -302,45 +302,45 @@ export const PLAYFUL_CHARACTERS: Record<PlayfulCharacterId, PlayfulCharacter> = 
     name: "Inimioară",
     src: "/characters/inimioara.svg",
   },
-  pasulet: {
-    id: "pasulet",
-    name: "Pașuleț",
-    src: "/characters/pasulet.svg",
+  plimbarel: {
+    id: "plimbarel",
+    name: "Plimbărel",
+    src: "/characters/plimbarel.svg",
   },
   degetel: {
     id: "degetel",
     name: "Degețel",
     src: "/characters/degetel.svg",
   },
-  grijita: {
-    id: "grijita",
-    name: "Grijiță",
-    src: "/characters/grijita.svg",
+  grijuliul: {
+    id: "grijuliul",
+    name: "Grijuliul",
+    src: "/characters/grijuliul.svg",
   },
-  salutel: {
-    id: "salutel",
-    name: "Salutel",
-    src: "/characters/salutel.svg",
+  norocel: {
+    id: "norocel",
+    name: "Norocel",
+    src: "/characters/norocel.svg",
   },
-  scumput: {
-    id: "scumput",
-    name: "Scumpuț",
-    src: "/characters/scumput.svg",
+  scumpicel: {
+    id: "scumpicel",
+    name: "Scumpicel",
+    src: "/characters/scumpicel.svg",
   },
-  linistita: {
-    id: "linistita",
-    name: "Liniștiță",
-    src: "/characters/linistita.svg",
+  cumintel: {
+    id: "cumintel",
+    name: "Cumințel",
+    src: "/characters/cumintel.svg",
   },
-  curtita: {
-    id: "curtita",
-    name: "Curtiță",
-    src: "/characters/curtita.svg",
+  gospodarel: {
+    id: "gospodarel",
+    name: "Gospodărel",
+    src: "/characters/gospodarel.svg",
   },
-  blandulet: {
-    id: "blandulet",
-    name: "Blânduleț",
-    src: "/characters/blandulet.svg",
+  blandut: {
+    id: "blandut",
+    name: "Blânduț",
+    src: "/characters/blandut.svg",
   },
 };
 
@@ -698,7 +698,7 @@ const WEEK_20: WeekConfig = {
 const WEEK_21: WeekConfig = {
   week: 21,
   theme: "Iarna pe pervaz",
-  character: PLAYFUL_CHARACTERS.pervazut,
+  character: PLAYFUL_CHARACTERS.ferestruica,
   ritualOpen: "Iarna pe pervaz.",
   ritualClose: "Pe pervaz, gata.",
   surprises: {
@@ -714,7 +714,7 @@ const WEEK_21: WeekConfig = {
 const WEEK_22: WeekConfig = {
   week: 22,
   theme: "Corp care se mișcă în casă",
-  character: PLAYFUL_CHARACTERS.ghemut,
+  character: PLAYFUL_CHARACTERS.ghemotoc,
   ritualOpen: "Corp în casă.",
   ritualClose: "Mișcat, gata.",
   surprises: {
@@ -730,7 +730,7 @@ const WEEK_22: WeekConfig = {
 const WEEK_23: WeekConfig = {
   week: 23,
   theme: "Mirosuri din casă",
-  character: PLAYFUL_CHARACTERS.nasut,
+  character: PLAYFUL_CHARACTERS.nasuc,
   ritualOpen: "Mirosuri din casă.",
   ritualClose: "Mirosit, gata.",
   surprises: {
@@ -762,7 +762,7 @@ const WEEK_24: WeekConfig = {
 const WEEK_25: WeekConfig = {
   week: 25,
   theme: "Lumină de seară",
-  character: PLAYFUL_CHARACTERS.lampita,
+  character: PLAYFUL_CHARACTERS.lampadar,
   ritualOpen: "Lumină de seară.",
   ritualClose: "Seara, gata.",
   surprises: {
@@ -778,7 +778,7 @@ const WEEK_25: WeekConfig = {
 const WEEK_26: WeekConfig = {
   week: 26,
   theme: "Jumătate de an: repetăm favoritele",
-  character: PLAYFUL_CHARACTERS.amintioara,
+  character: PLAYFUL_CHARACTERS.amintire,
   ritualOpen: "Favoritele, din nou.",
   ritualClose: "Favorite, gata.",
   surprises: {
@@ -794,7 +794,7 @@ const WEEK_26: WeekConfig = {
 const WEEK_27: WeekConfig = {
   week: 27,
   theme: "Zăpadă sau ploaie la geam",
-  character: PLAYFUL_CHARACTERS.fulguta,
+  character: PLAYFUL_CHARACTERS.fulgusor,
   ritualOpen: "Zăpadă sau ploaie.",
   ritualClose: "La geam, gata.",
   surprises: {
@@ -810,7 +810,7 @@ const WEEK_27: WeekConfig = {
 const WEEK_28: WeekConfig = {
   week: 28,
   theme: "Dezgheț și noroi",
-  character: PLAYFUL_CHARACTERS.noroiut,
+  character: PLAYFUL_CHARACTERS.murdarel,
   ritualOpen: "Dezgheț și noroi.",
   ritualClose: "Noroiul, gata.",
   surprises: {
@@ -826,7 +826,7 @@ const WEEK_28: WeekConfig = {
 const WEEK_29: WeekConfig = {
   week: 29,
   theme: "Muguri și iarbă nouă",
-  character: PLAYFUL_CHARACTERS.mugurel,
+  character: PLAYFUL_CHARACTERS.muguras,
   ritualOpen: "Muguri și iarbă.",
   ritualClose: "Mugurii, gata.",
   surprises: {
@@ -874,7 +874,7 @@ const WEEK_31: WeekConfig = {
 const WEEK_32: WeekConfig = {
   week: 32,
   theme: "Mingea afară",
-  character: PLAYFUL_CHARACTERS.rotunduta,
+  character: PLAYFUL_CHARACTERS.balonas,
   ritualOpen: "Mingea afară.",
   ritualClose: "Mingea, gata.",
   surprises: {
@@ -890,7 +890,7 @@ const WEEK_32: WeekConfig = {
 const WEEK_33: WeekConfig = {
   week: 33,
   theme: "Nisip și găleată",
-  character: PLAYFUL_CHARACTERS.nisiput,
+  character: PLAYFUL_CHARACTERS.lopetica,
   ritualOpen: "Nisip și găleată.",
   ritualClose: "Nisipul, gata.",
   surprises: {
@@ -954,7 +954,7 @@ const WEEK_36: WeekConfig = {
 const WEEK_37: WeekConfig = {
   week: 37,
   theme: "Umbră și loc răcoros",
-  character: PLAYFUL_CHARACTERS.racorita,
+  character: PLAYFUL_CHARACTERS.racorica,
   ritualOpen: "Umbră răcoroasă.",
   ritualClose: "Răcoare, gata.",
   surprises: {
@@ -986,7 +986,7 @@ const WEEK_38: WeekConfig = {
 const WEEK_39: WeekConfig = {
   week: 39,
   theme: "Fructe pe care le vedem",
-  character: PLAYFUL_CHARACTERS.marulet,
+  character: PLAYFUL_CHARACTERS.merisor,
   ritualOpen: "Uite fructele.",
   ritualClose: "Fructe văzute.",
   surprises: {
@@ -1002,7 +1002,7 @@ const WEEK_39: WeekConfig = {
 const WEEK_40: WeekConfig = {
   week: 40,
   theme: "Ajutor la treabă scurtă",
-  character: PLAYFUL_CHARACTERS.maturita,
+  character: PLAYFUL_CHARACTERS.maturica,
   ritualOpen: "Ajutor la treabă.",
   ritualClose: "Treaba, gata.",
   surprises: {
@@ -1082,7 +1082,7 @@ const WEEK_44: WeekConfig = {
 const WEEK_45: WeekConfig = {
   week: 45,
   theme: "Corp puternic, pași mulți",
-  character: PLAYFUL_CHARACTERS.pasulet,
+  character: PLAYFUL_CHARACTERS.plimbarel,
   ritualOpen: "Pași mulți.",
   ritualClose: "Pașii, gata.",
   surprises: {
@@ -1114,7 +1114,7 @@ const WEEK_46: WeekConfig = {
 const WEEK_47: WeekConfig = {
   week: 47,
   theme: "Grijă de lucruri",
-  character: PLAYFUL_CHARACTERS.grijita,
+  character: PLAYFUL_CHARACTERS.grijuliul,
   ritualOpen: "Grijă de lucruri.",
   ritualClose: "Lucruri, gata.",
   surprises: {
@@ -1130,7 +1130,7 @@ const WEEK_47: WeekConfig = {
 const WEEK_48: WeekConfig = {
   week: 48,
   theme: "Salut și la revedere",
-  character: PLAYFUL_CHARACTERS.salutel,
+  character: PLAYFUL_CHARACTERS.norocel,
   ritualOpen: "Salut și pa.",
   ritualClose: "Pa, gata.",
   surprises: {
@@ -1146,7 +1146,7 @@ const WEEK_48: WeekConfig = {
 const WEEK_49: WeekConfig = {
   week: 49,
   theme: "Repetăm 3 favorite",
-  character: PLAYFUL_CHARACTERS.scumput,
+  character: PLAYFUL_CHARACTERS.scumpicel,
   ritualOpen: "Trei favorite.",
   ritualClose: "Cele trei, gata.",
   surprises: {
@@ -1162,7 +1162,7 @@ const WEEK_49: WeekConfig = {
 const WEEK_50: WeekConfig = {
   week: 50,
   theme: "Casă liniștită",
-  character: PLAYFUL_CHARACTERS.linistita,
+  character: PLAYFUL_CHARACTERS.cumintel,
   ritualOpen: "Casă liniștită.",
   ritualClose: "Liniște, gata.",
   surprises: {
@@ -1178,7 +1178,7 @@ const WEEK_50: WeekConfig = {
 const WEEK_51: WeekConfig = {
   week: 51,
   theme: "Curtea cunoscută",
-  character: PLAYFUL_CHARACTERS.curtita,
+  character: PLAYFUL_CHARACTERS.gospodarel,
   ritualOpen: "Curtea știută.",
   ritualClose: "Curtea, gata.",
   surprises: {
@@ -1194,7 +1194,7 @@ const WEEK_51: WeekConfig = {
 const WEEK_52: WeekConfig = {
   week: 52,
   theme: "Anul se închide blând",
-  character: PLAYFUL_CHARACTERS.blandulet,
+  character: PLAYFUL_CHARACTERS.blandut,
   ritualOpen: "Anul, blând.",
   ritualClose: "Anul, gata.",
   surprises: {

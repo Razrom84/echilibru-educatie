@@ -553,10 +553,10 @@ function GaletusaSvg({ size }: { size: number }) {
   );
 }
 
-function PervazutSvg({ size }: { size: number }) {
+function FerestruicaSvg({ size }: { size: number }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
-      <title>Pervazuț</title>
+      <title>Ferestruică</title>
       <rect x="14" y="12" width="36" height="32" rx="2" fill="#C5E4F5" stroke="#5E86A8" strokeWidth="1.5"/>
       <rect x="12" y="42" width="40" height="8" rx="1" fill="#E8D48A" stroke="#C4A15E" strokeWidth="1.5"/>
       <path d="M32 12 L32 44" stroke="#5E86A8" strokeWidth="1.2"/>
@@ -569,13 +569,13 @@ function PervazutSvg({ size }: { size: number }) {
   );
 }
 
-function GhemutSvg({ size }: { size: number }) {
+function GhemotocSvg({ size }: { size: number }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
-      <title>Ghemuț</title>
+      <title>Ghemotoc</title>
       <ellipse cx="32" cy="34" rx="18" ry="16" fill="#E8D48A" stroke="#C4A15E" strokeWidth="1.5"/>
-      <path d="M18 34 Q14 22 24 18" fill="none" stroke="#C4A15E" strokeWidth="2.2" strokeLinecap="round"/>
-      <path d="M46 34 Q50 22 40 18" fill="none" stroke="#C4A15E" strokeWidth="2.2" strokeLinecap="round"/>
+      <path d="M22 34 C24 26 40 26 42 34 C40 42 24 42 22 34" fill="none" stroke="#C4A15E" strokeWidth="1.6"/>
+      <path d="M32 20 Q38 34 32 48" fill="none" stroke="#D9B56F" strokeWidth="1.3"/>
       <circle cx="26" cy="32" r="1.9" fill="#3D2E1A"/>
       <circle cx="38" cy="32" r="1.9" fill="#3D2E1A"/>
       <circle cx="26.5" cy="31.5" r="0.55" fill="#FFF8EC"/>
@@ -585,10 +585,10 @@ function GhemutSvg({ size }: { size: number }) {
   );
 }
 
-function NasutSvg({ size }: { size: number }) {
+function NasucSvg({ size }: { size: number }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
-      <title>Năsuț</title>
+      <title>Năsuc</title>
       <circle cx="32" cy="30" r="18" fill="#E8D48A" stroke="#C4A15E" strokeWidth="1.5"/>
       <path d="M32 28 L28 40 L36 40 Z" fill="#F2A07A" stroke="#D47A58" strokeWidth="1.2"/>
       <circle cx="26" cy="30" r="1.9" fill="#3D2E1A"/>
@@ -615,26 +615,27 @@ function UsitaSvg({ size }: { size: number }) {
   );
 }
 
-function LampitaSvg({ size }: { size: number }) {
+function LampadarSvg({ size }: { size: number }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
-      <title>Lămpiță</title>
-      <path d="M20 18 L44 18 L40 34 L24 34 Z" fill="#F2E2A0" stroke="#C4A15E" strokeWidth="1.5"/>
-      <rect x="29" y="34" width="6" height="16" rx="1" fill="#C4A15E"/>
-      <circle cx="32" cy="22" r="4" fill="#F7D56A"/>
-      <circle cx="26" cy="28" r="1.9" fill="#3D2E1A"/>
-      <circle cx="38" cy="28" r="1.9" fill="#3D2E1A"/>
-      <circle cx="26.5" cy="27.5" r="0.55" fill="#FFF8EC"/>
-      <circle cx="38.5" cy="27.5" r="0.55" fill="#FFF8EC"/>
-      <path d="M27 36 Q32 39.5 37 36" fill="none" stroke="#6B4E2E" strokeWidth="1.4" strokeLinecap="round"/>
+      <title>Lampadar</title>
+      <path d="M20 14 L44 14 L40 30 L24 30 Z" fill="#F2E2A0" stroke="#C4A15E" strokeWidth="1.5"/>
+      <rect x="29" y="30" width="6" height="22" rx="1" fill="#C4A15E"/>
+      <ellipse cx="32" cy="54" rx="10" ry="3" fill="#D9B56F"/>
+      <circle cx="32" cy="20" r="4" fill="#F7D56A"/>
+      <circle cx="26" cy="24" r="1.9" fill="#3D2E1A"/>
+      <circle cx="38" cy="24" r="1.9" fill="#3D2E1A"/>
+      <circle cx="26.5" cy="23.5" r="0.55" fill="#FFF8EC"/>
+      <circle cx="38.5" cy="23.5" r="0.55" fill="#FFF8EC"/>
+      <path d="M27 30 Q32 33 37 30" fill="none" stroke="#6B4E2E" strokeWidth="1.4" strokeLinecap="round"/>
     </svg>
   );
 }
 
-function AmintioaraSvg({ size }: { size: number }) {
+function AmintireSvg({ size }: { size: number }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
-      <title>Amintioară</title>
+      <title>Amintire</title>
       <path d="M32 14 L36 26 L48 26 L38 34 L42 46 L32 38 L22 46 L26 34 L16 26 L28 26 Z" fill="#F2A07A" stroke="#D47A58" strokeWidth="1.4"/>
       <circle cx="26" cy="30" r="1.9" fill="#3D2E1A"/>
       <circle cx="38" cy="30" r="1.9" fill="#3D2E1A"/>
@@ -645,10 +646,10 @@ function AmintioaraSvg({ size }: { size: number }) {
   );
 }
 
-function FulgutaSvg({ size }: { size: number }) {
+function FulgusorSvg({ size }: { size: number }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
-      <title>Fulguță</title>
+      <title>Fulgușor</title>
       <circle cx="32" cy="32" r="16" fill="#E8F2FA" stroke="#7AA3C7" strokeWidth="1.5"/>
       <path d="M32 16 L32 48 M18 32 L46 32 M22 22 L42 42 M42 22 L22 42" stroke="#7AA3C7" strokeWidth="1.6" strokeLinecap="round"/>
       <circle cx="26" cy="32" r="1.9" fill="#3D2E1A"/>
@@ -660,10 +661,10 @@ function FulgutaSvg({ size }: { size: number }) {
   );
 }
 
-function NoroiutSvg({ size }: { size: number }) {
+function MurdarelSvg({ size }: { size: number }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
-      <title>Noroiuț</title>
+      <title>Murdărel</title>
       <ellipse cx="32" cy="38" rx="20" ry="12" fill="#8B5E3C" stroke="#6B4423" strokeWidth="1.5"/>
       <circle cx="24" cy="34" r="6" fill="#A06C45"/>
       <circle cx="40" cy="36" r="7" fill="#7A4E2E"/>
@@ -676,10 +677,10 @@ function NoroiutSvg({ size }: { size: number }) {
   );
 }
 
-function MugurelSvg({ size }: { size: number }) {
+function MugurasSvg({ size }: { size: number }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
-      <title>Mugurel</title>
+      <title>Muguraș</title>
       <rect x="30" y="32" width="4" height="22" rx="2" fill="#6B8F4E"/>
       <ellipse cx="32" cy="24" rx="10" ry="14" fill="#8FBF8A" stroke="#6B8F4E" strokeWidth="1.4"/>
       <ellipse cx="32" cy="20" rx="5" ry="7" fill="#B7D9A8"/>
@@ -723,32 +724,33 @@ function SamanticaSvg({ size }: { size: number }) {
   );
 }
 
-function RotundutaSvg({ size }: { size: number }) {
+function BalonasSvg({ size }: { size: number }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
-      <title>Rotunduță</title>
-      <circle cx="32" cy="32" r="18" fill="#D98A4A" stroke="#B56C32" strokeWidth="1.5"/>
-      <path d="M16 32 Q32 18 48 32 Q32 46 16 32" fill="none" stroke="#F2C9A0" strokeWidth="1.4"/>
-      <circle cx="26" cy="32" r="1.9" fill="#3D2E1A"/>
-      <circle cx="38" cy="32" r="1.9" fill="#3D2E1A"/>
-      <circle cx="26.5" cy="31.5" r="0.55" fill="#FFF8EC"/>
-      <circle cx="38.5" cy="31.5" r="0.55" fill="#FFF8EC"/>
-      <path d="M27 40 Q32 43.5 37 40" fill="none" stroke="#6B4E2E" strokeWidth="1.4" strokeLinecap="round"/>
+      <title>Balonaș</title>
+      <ellipse cx="32" cy="26" rx="14" ry="16" fill="#D98A4A" stroke="#B56C32" strokeWidth="1.5"/>
+      <path d="M32 42 L28 46 L36 46 Z" fill="#B56C32"/>
+      <path d="M32 46 Q28 54 34 58" fill="none" stroke="#C4A15E" strokeWidth="1.6" strokeLinecap="round"/>
+      <circle cx="26" cy="24" r="1.9" fill="#3D2E1A"/>
+      <circle cx="38" cy="24" r="1.9" fill="#3D2E1A"/>
+      <circle cx="26.5" cy="23.5" r="0.55" fill="#FFF8EC"/>
+      <circle cx="38.5" cy="23.5" r="0.55" fill="#FFF8EC"/>
+      <path d="M27 32 Q32 35.5 37 32" fill="none" stroke="#6B4E2E" strokeWidth="1.4" strokeLinecap="round"/>
     </svg>
   );
 }
 
-function NisiputSvg({ size }: { size: number }) {
+function LopeticaSvg({ size }: { size: number }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
-      <title>Nisipuț</title>
-      <path d="M12 44 L20 24 L44 24 L52 44 Z" fill="#E8C48A" stroke="#C4A15E" strokeWidth="1.5"/>
-      <ellipse cx="32" cy="44" rx="20" ry="6" fill="#D9B56F"/>
-      <circle cx="26" cy="30" r="1.9" fill="#3D2E1A"/>
-      <circle cx="38" cy="30" r="1.9" fill="#3D2E1A"/>
-      <circle cx="26.5" cy="29.5" r="0.55" fill="#FFF8EC"/>
-      <circle cx="38.5" cy="29.5" r="0.55" fill="#FFF8EC"/>
-      <path d="M27 38 Q32 41.5 37 38" fill="none" stroke="#6B4E2E" strokeWidth="1.4" strokeLinecap="round"/>
+      <title>Lopețică</title>
+      <rect x="29" y="6" width="6" height="28" rx="3" fill="#C4A15E"/>
+      <path d="M18 34 L46 34 L42 54 L22 54 Z" fill="#8FBF8A" stroke="#6B8F4E" strokeWidth="1.5"/>
+      <circle cx="26" cy="42" r="1.9" fill="#3D2E1A"/>
+      <circle cx="38" cy="42" r="1.9" fill="#3D2E1A"/>
+      <circle cx="26.5" cy="41.5" r="0.55" fill="#FFF8EC"/>
+      <circle cx="38.5" cy="41.5" r="0.55" fill="#FFF8EC"/>
+      <path d="M27 50 Q32 53.5 37 50" fill="none" stroke="#3D2E1A" strokeWidth="1.4" strokeLinecap="round"/>
     </svg>
   );
 }
@@ -798,10 +800,10 @@ function GandacelSvg({ size }: { size: number }) {
   );
 }
 
-function RacoritaSvg({ size }: { size: number }) {
+function RacoricaSvg({ size }: { size: number }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
-      <title>Răcoriță</title>
+      <title>Răcorică</title>
       <path d="M32 10 L48 28 L16 28 Z" fill="#6B8F4E" stroke="#4E6F38" strokeWidth="1.4"/>
       <rect x="29" y="28" width="6" height="22" fill="#8B5E3C"/>
       <ellipse cx="32" cy="52" rx="16" ry="5" fill="#A89878" opacity="0.7"/>
@@ -829,13 +831,13 @@ function TalpitaSvg({ size }: { size: number }) {
   );
 }
 
-function MaruletSvg({ size }: { size: number }) {
+function MerisorSvg({ size }: { size: number }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
-      <title>Măruleț</title>
-      <circle cx="32" cy="34" r="16" fill="#D45A4A" stroke="#B04438" strokeWidth="1.5"/>
-      <path d="M32 18 Q36 12 40 14" fill="none" stroke="#6B8F4E" strokeWidth="2" strokeLinecap="round"/>
-      <ellipse cx="36" cy="16" rx="5" ry="3" fill="#8FBF8A"/>
+      <title>Merișor</title>
+      <circle cx="32" cy="36" r="14" fill="#C43A4A" stroke="#9A2C38" strokeWidth="1.5"/>
+      <path d="M32 22 Q36 14 42 16" fill="none" stroke="#6B8F4E" strokeWidth="2" strokeLinecap="round"/>
+      <ellipse cx="38" cy="16" rx="5" ry="3" fill="#8FBF8A"/>
       <circle cx="26" cy="34" r="1.9" fill="#3D2E1A"/>
       <circle cx="38" cy="34" r="1.9" fill="#3D2E1A"/>
       <circle cx="26.5" cy="33.5" r="0.55" fill="#FFF8EC"/>
@@ -845,10 +847,10 @@ function MaruletSvg({ size }: { size: number }) {
   );
 }
 
-function MaturitaSvg({ size }: { size: number }) {
+function MaturicaSvg({ size }: { size: number }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
-      <title>Măturiță</title>
+      <title>Măturică</title>
       <rect x="30" y="8" width="4" height="28" rx="2" fill="#C4A15E"/>
       <path d="M18 36 L32 32 L46 36 L44 54 L20 54 Z" fill="#D9B56F" stroke="#C4A15E" strokeWidth="1.4"/>
       <circle cx="26" cy="24" r="1.9" fill="#3D2E1A"/>
@@ -922,10 +924,10 @@ function InimioaraSvg({ size }: { size: number }) {
   );
 }
 
-function PasuletSvg({ size }: { size: number }) {
+function PlimbarelSvg({ size }: { size: number }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
-      <title>Pașuleț</title>
+      <title>Plimbărel</title>
       <ellipse cx="24" cy="22" rx="8" ry="10" fill="#E8D48A" stroke="#C4A15E" strokeWidth="1.3"/>
       <ellipse cx="24" cy="40" rx="9" ry="12" fill="#E8D48A" stroke="#C4A15E" strokeWidth="1.3"/>
       <ellipse cx="42" cy="26" rx="8" ry="10" fill="#D9B56F" stroke="#C4A15E" strokeWidth="1.3"/>
@@ -954,10 +956,10 @@ function DegetelSvg({ size }: { size: number }) {
   );
 }
 
-function GrijitaSvg({ size }: { size: number }) {
+function GrijuliulSvg({ size }: { size: number }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
-      <title>Grijiță</title>
+      <title>Grijuliul</title>
       <rect x="16" y="20" width="32" height="28" rx="3" fill="#E8D48A" stroke="#C4A15E" strokeWidth="1.5"/>
       <path d="M16 28 C16 20 48 20 48 28" fill="none" stroke="#C4A15E" strokeWidth="2" strokeLinecap="round"/>
       <rect x="28" y="34" width="8" height="6" rx="1" fill="#C4A15E"/>
@@ -970,12 +972,15 @@ function GrijitaSvg({ size }: { size: number }) {
   );
 }
 
-function SalutelSvg({ size }: { size: number }) {
+function NorocelSvg({ size }: { size: number }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
-      <title>Salutel</title>
-      <circle cx="32" cy="32" r="16" fill="#E8D48A" stroke="#C4A15E" strokeWidth="1.5"/>
-      <path d="M46 24 Q56 18 54 30 Q56 40 46 38" fill="none" stroke="#C4A15E" strokeWidth="2.4" strokeLinecap="round"/>
+      <title>Norocel</title>
+      <ellipse cx="32" cy="22" rx="8" ry="10" fill="#8FBF8A" stroke="#6B8F4E" strokeWidth="1.2"/>
+      <ellipse cx="22" cy="32" rx="10" ry="8" fill="#8FBF8A" stroke="#6B8F4E" strokeWidth="1.2"/>
+      <ellipse cx="42" cy="32" rx="10" ry="8" fill="#8FBF8A" stroke="#6B8F4E" strokeWidth="1.2"/>
+      <ellipse cx="32" cy="42" rx="8" ry="10" fill="#8FBF8A" stroke="#6B8F4E" strokeWidth="1.2"/>
+      <circle cx="32" cy="32" r="7" fill="#B7D9A8"/>
       <circle cx="26" cy="30" r="1.9" fill="#3D2E1A"/>
       <circle cx="38" cy="30" r="1.9" fill="#3D2E1A"/>
       <circle cx="26.5" cy="29.5" r="0.55" fill="#FFF8EC"/>
@@ -985,10 +990,10 @@ function SalutelSvg({ size }: { size: number }) {
   );
 }
 
-function ScumputSvg({ size }: { size: number }) {
+function ScumpicelSvg({ size }: { size: number }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
-      <title>Scumpuț</title>
+      <title>Scumpicel</title>
       <path d="M32 12 L36 24 L48 24 L38 32 L42 44 L32 36 L22 44 L26 32 L16 24 L28 24 Z" fill="#F7D56A" stroke="#C4A15E" strokeWidth="1.4"/>
       <circle cx="26" cy="30" r="1.9" fill="#3D2E1A"/>
       <circle cx="38" cy="30" r="1.9" fill="#3D2E1A"/>
@@ -999,10 +1004,10 @@ function ScumputSvg({ size }: { size: number }) {
   );
 }
 
-function LinistitaSvg({ size }: { size: number }) {
+function CumintelSvg({ size }: { size: number }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
-      <title>Liniștiță</title>
+      <title>Cumințel</title>
       <ellipse cx="32" cy="36" rx="20" ry="14" fill="#E8D48A" stroke="#C4A15E" strokeWidth="1.5"/>
       <path d="M14 30 Q32 18 50 30" fill="none" stroke="#C4A15E" strokeWidth="2" strokeLinecap="round"/>
       <circle cx="26" cy="32" r="1.9" fill="#3D2E1A"/>
@@ -1014,10 +1019,10 @@ function LinistitaSvg({ size }: { size: number }) {
   );
 }
 
-function CurtitaSvg({ size }: { size: number }) {
+function GospodarelSvg({ size }: { size: number }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
-      <title>Curtiță</title>
+      <title>Gospodărel</title>
       <rect x="10" y="20" width="6" height="28" fill="#C4A15E"/>
       <rect x="48" y="20" width="6" height="28" fill="#C4A15E"/>
       <path d="M10 24 L54 24 M10 32 L54 32 M10 40 L54 40" stroke="#8FBF8A" strokeWidth="2.2"/>
@@ -1031,10 +1036,10 @@ function CurtitaSvg({ size }: { size: number }) {
   );
 }
 
-function BlanduletSvg({ size }: { size: number }) {
+function BlandutSvg({ size }: { size: number }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
-      <title>Blânduleț</title>
+      <title>Blânduț</title>
       <path d="M40 16 C24 16 16 28 16 36 C16 48 26 54 32 54 C26 46 26 34 40 28 C44 26 46 22 44 18 C42 16 40 16 40 16 Z" fill="#F2E2A0" stroke="#C4A15E" strokeWidth="1.5"/>
       <circle cx="26" cy="32" r="1.9" fill="#3D2E1A"/>
       <circle cx="38" cy="32" r="1.9" fill="#3D2E1A"/>
@@ -1066,38 +1071,38 @@ const CHARACTER_SVG: Record<PlayfulCharacterId, (size: number) => ReactNode> = {
   mingiuta: (size) => <MingiutaSvg size={size} />,
   carticica: (size) => <CarticicaSvg size={size} />,
   cosulet: (size) => <CosuletSvg size={size} />,
-  pervazut: (size) => <PervazutSvg size={size} />,
-  ghemut: (size) => <GhemutSvg size={size} />,
-  nasut: (size) => <NasutSvg size={size} />,
+  ferestruica: (size) => <FerestruicaSvg size={size} />,
+  ghemotoc: (size) => <GhemotocSvg size={size} />,
+  nasuc: (size) => <NasucSvg size={size} />,
   usita: (size) => <UsitaSvg size={size} />,
-  lampita: (size) => <LampitaSvg size={size} />,
-  amintioara: (size) => <AmintioaraSvg size={size} />,
-  fulguta: (size) => <FulgutaSvg size={size} />,
-  noroiut: (size) => <NoroiutSvg size={size} />,
-  mugurel: (size) => <MugurelSvg size={size} />,
+  lampadar: (size) => <LampadarSvg size={size} />,
+  amintire: (size) => <AmintireSvg size={size} />,
+  fulgusor: (size) => <FulgusorSvg size={size} />,
+  murdarel: (size) => <MurdarelSvg size={size} />,
+  muguras: (size) => <MugurasSvg size={size} />,
   cioculet: (size) => <CioculetSvg size={size} />,
   samantica: (size) => <SamanticaSvg size={size} />,
-  rotunduta: (size) => <RotundutaSvg size={size} />,
-  nisiput: (size) => <NisiputSvg size={size} />,
+  balonas: (size) => <BalonasSvg size={size} />,
+  lopetica: (size) => <LopeticaSvg size={size} />,
   umbrita: (size) => <UmbritaSvg size={size} />,
   stropulet: (size) => <StropuletSvg size={size} />,
   gandacel: (size) => <GandacelSvg size={size} />,
-  racorita: (size) => <RacoritaSvg size={size} />,
+  racorica: (size) => <RacoricaSvg size={size} />,
   talpita: (size) => <TalpitaSvg size={size} />,
-  marulet: (size) => <MaruletSvg size={size} />,
-  maturita: (size) => <MaturitaSvg size={size} />,
+  merisor: (size) => <MerisorSvg size={size} />,
+  maturica: (size) => <MaturicaSvg size={size} />,
   portita: (size) => <PortitaSvg size={size} />,
   vantulet: (size) => <VantuletSvg size={size} />,
   saculet: (size) => <SaculetSvg size={size} />,
   inimioara: (size) => <InimioaraSvg size={size} />,
-  pasulet: (size) => <PasuletSvg size={size} />,
+  plimbarel: (size) => <PlimbarelSvg size={size} />,
   degetel: (size) => <DegetelSvg size={size} />,
-  grijita: (size) => <GrijitaSvg size={size} />,
-  salutel: (size) => <SalutelSvg size={size} />,
-  scumput: (size) => <ScumputSvg size={size} />,
-  linistita: (size) => <LinistitaSvg size={size} />,
-  curtita: (size) => <CurtitaSvg size={size} />,
-  blandulet: (size) => <BlanduletSvg size={size} />,
+  grijuliul: (size) => <GrijuliulSvg size={size} />,
+  norocel: (size) => <NorocelSvg size={size} />,
+  scumpicel: (size) => <ScumpicelSvg size={size} />,
+  cumintel: (size) => <CumintelSvg size={size} />,
+  gospodarel: (size) => <GospodarelSvg size={size} />,
+  blandut: (size) => <BlandutSvg size={size} />,
 };
 
 export function PlayfulCharacterMark({

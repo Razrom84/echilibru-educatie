@@ -1,11 +1,11 @@
 # Brief playful S21–S52 · banda 1–2
 **20 Sep 2026 · Cristina · format ca pilot S14–S20 · zero sunete**
-**Personaje lock:** Pervazuț · Ghemuț · Năsuț · Ușiță · Lămpiță · Amintioară · Fulguță · Noroiuț · Mugurel · Cioculeț · Sămânțică · Rotunduță · Nisipuț · Umbriță · Stropuleț · Gândăcel · Răcoriță · Tălpiță · Măruleț · Măturiță · Portiță · Vântuleț · Săculeț · Inimioară · Pașuleț · Degețel · Grijiță · Salutel · Scumpuț · Liniștiță · Curtiță · Blânduleț
+**Personaje lock:** Ferestruică · Ghemotoc · Năsuc · Ușiță · Lampadar · Amintire · Fulgușor · Murdărel · Muguraș · Cioculeț · Sămânțică · Balonaș · Lopețică · Umbriță · Stropuleț · Gândăcel · Răcorică · Tălpiță · Merișor · Măturică · Portiță · Vântuleț · Săculeț · Inimioară · Plimbărel · Degețel · Grijuliul · Norocel · Scumpicel · Cumințel · Gospodărel · Blânduț
 
 Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poate refuza.
 
 ## S21 — temă: Iarna pe pervaz
-**Personaj:** **Pervazuț**  
+**Personaj:** **Ferestruică**  
 **Ritual:** Open `Iarna pe pervaz.` · Close `Pe pervaz, gata.`
 
 ### Surprize L–D
@@ -65,7 +65,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ---
 
 ## S22 — temă: Corp care se mișcă în casă
-**Personaj:** **Ghemuț**  
+**Personaj:** **Ghemotoc**  
 **Ritual:** Open `Corp în casă.` · Close `Mișcat, gata.`
 
 ### Surprize L–D
@@ -125,7 +125,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ---
 
 ## S23 — temă: Mirosuri din casă
-**Personaj:** **Năsuț**  
+**Personaj:** **Năsuc**  
 **Ritual:** Open `Mirosuri din casă.` · Close `Mirosit, gata.`
 
 ### Surprize L–D
@@ -245,7 +245,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ---
 
 ## S25 — temă: Lumină de seară
-**Personaj:** **Lămpiță**  
+**Personaj:** **Lampadar**  
 **Ritual:** Open `Lumină de seară.` · Close `Seara, gata.`
 
 ### Surprize L–D
@@ -305,7 +305,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ---
 
 ## S26 — temă: Jumătate de an: repetăm favoritele
-**Personaj:** **Amintioară**  
+**Personaj:** **Amintire**  
 **Ritual:** Open `Favoritele, din nou.` · Close `Favorite, gata.`
 
 ### Surprize L–D
@@ -365,7 +365,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ---
 
 ## S27 — temă: Zăpadă sau ploaie la geam
-**Personaj:** **Fulguță**  
+**Personaj:** **Fulgușor**  
 **Ritual:** Open `Zăpadă sau ploaie.` · Close `La geam, gata.`
 
 ### Surprize L–D
@@ -425,7 +425,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ---
 
 ## S28 — temă: Dezgheț și noroi
-**Personaj:** **Noroiuț**  
+**Personaj:** **Murdărel**  
 **Ritual:** Open `Dezgheț și noroi.` · Close `Noroiul, gata.`
 
 ### Surprize L–D
@@ -485,7 +485,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ---
 
 ## S29 — temă: Muguri și iarbă nouă
-**Personaj:** **Mugurel**  
+**Personaj:** **Muguraș**  
 **Ritual:** Open `Muguri și iarbă.` · Close `Mugurii, gata.`
 
 ### Surprize L–D
@@ -665,7 +665,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ---
 
 ## S32 — temă: Mingea afară
-**Personaj:** **Rotunduță**  
+**Personaj:** **Balonaș**  
 **Ritual:** Open `Mingea afară.` · Close `Mingea, gata.`
 
 ### Surprize L–D
@@ -725,7 +725,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ---
 
 ## S33 — temă: Nisip și găleată
-**Personaj:** **Nisipuț**  
+**Personaj:** **Lopețică**  
 **Ritual:** Open `Nisip și găleată.` · Close `Nisipul, gata.`
 
 ### Surprize L–D
@@ -965,7 +965,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ---
 
 ## S37 — temă: Umbră și loc răcoros
-**Personaj:** **Răcoriță**  
+**Personaj:** **Răcorică**  
 **Ritual:** Open `Umbră răcoroasă.` · Close `Răcoare, gata.`
 
 ### Surprize L–D
@@ -1085,7 +1085,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ---
 
 ## S39 — temă: Fructe pe care le vedem
-**Personaj:** **Măruleț**  
+**Personaj:** **Merișor**  
 **Ritual:** Open `Uite fructele.` · Close `Fructe văzute.`
 
 ### Surprize L–D
@@ -1145,7 +1145,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ---
 
 ## S40 — temă: Ajutor la treabă scurtă
-**Personaj:** **Măturiță**  
+**Personaj:** **Măturică**  
 **Ritual:** Open `Ajutor la treabă.` · Close `Treaba, gata.`
 
 ### Surprize L–D
@@ -1445,7 +1445,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ---
 
 ## S45 — temă: Corp puternic, pași mulți
-**Personaj:** **Pașuleț**  
+**Personaj:** **Plimbărel**  
 **Ritual:** Open `Pași mulți.` · Close `Pașii, gata.`
 
 ### Surprize L–D
@@ -1565,7 +1565,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ---
 
 ## S47 — temă: Grijă de lucruri
-**Personaj:** **Grijiță**  
+**Personaj:** **Grijuliul**  
 **Ritual:** Open `Grijă de lucruri.` · Close `Lucruri, gata.`
 
 ### Surprize L–D
@@ -1625,7 +1625,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ---
 
 ## S48 — temă: Salut și la revedere
-**Personaj:** **Salutel**  
+**Personaj:** **Norocel**  
 **Ritual:** Open `Salut și pa.` · Close `Pa, gata.`
 
 ### Surprize L–D
@@ -1685,7 +1685,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ---
 
 ## S49 — temă: Repetăm 3 favorite
-**Personaj:** **Scumpuț**  
+**Personaj:** **Scumpicel**  
 **Ritual:** Open `Trei favorite.` · Close `Cele trei, gata.`
 
 ### Surprize L–D
@@ -1745,7 +1745,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ---
 
 ## S50 — temă: Casă liniștită
-**Personaj:** **Liniștiță**  
+**Personaj:** **Cumințel**  
 **Ritual:** Open `Casă liniștită.` · Close `Liniște, gata.`
 
 ### Surprize L–D
@@ -1805,7 +1805,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ---
 
 ## S51 — temă: Curtea cunoscută
-**Personaj:** **Curtiță**  
+**Personaj:** **Gospodărel**  
 **Ritual:** Open `Curtea știută.` · Close `Curtea, gata.`
 
 ### Surprize L–D
@@ -1865,7 +1865,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ---
 
 ## S52 — temă: Anul se închide blând
-**Personaj:** **Blânduleț**  
+**Personaj:** **Blânduț**  
 **Ritual:** Open `Anul, blând.` · Close `Anul, gata.`
 
 ### Surprize L–D
@@ -1925,12 +1925,12 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ---
 
 ## Ortografie
-- **Pervazuț** (ț) · **Ghemuț** (ț) · **Năsuț** (ă, ț) · **Ușiță** (ș, ț, ă)
-- **Lămpiță** (ă, ț, ă) · **Amintioară** (ă) · **Fulguță** (ț, ă) · **Noroiuț** (ț)
-- **Mugurel** · **Cioculeț** (ț) · **Sămânțică** (ă, â, ț, ă) · **Rotunduță** (ț, ă)
-- **Nisipuț** (ț) · **Umbriță** (ț, ă) · **Stropuleț** (ț) · **Gândăcel** (â, ă)
-- **Răcoriță** (ă, ț, ă) · **Tălpiță** (ă, ț, ă) · **Măruleț** (ă, ț) · **Măturiță** (ă, ț, ă)
+- **Ferestruică** (ă) · **Ghemotoc** · **Năsuc** (ă) · **Ușiță** (ș, ț, ă)
+- **Lampadar** · **Amintire** · **Fulgușor** (ș) · **Murdărel** (ă)
+- **Muguraș** (ș) · **Cioculeț** (ț) · **Sămânțică** (ă, â, ț, ă) · **Balonaș** (ș)
+- **Lopețică** (ț, ă) · **Umbriță** (ț, ă) · **Stropuleț** (ț) · **Gândăcel** (â, ă)
+- **Răcorică** (ă, ă) · **Tălpiță** (ă, ț, ă) · **Merișor** (ș) · **Măturică** (ă, ă)
 - **Portiță** (ț, ă) · **Vântuleț** (â, ț) · **Săculeț** (ă, ț) · **Inimioară** (ă)
-- **Pașuleț** (ș, ț) · **Degețel** (ț) · **Grijiță** (ț, ă) · **Salutel**
-- **Scumpuț** (ț) · **Liniștiță** (ș, ț, ă) · **Curtiță** (ț, ă) · **Blânduleț** (â, ț)
+- **Plimbărel** (ă) · **Degețel** (ț) · **Grijuliul** · **Norocel**
+- **Scumpicel** · **Cumințel** (ț) · **Gospodărel** (ă) · **Blânduț** (â, ț)
 - Zero Hai-forțat · zero soft EN · zero sunete
