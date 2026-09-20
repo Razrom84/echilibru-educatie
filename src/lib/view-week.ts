@@ -4,12 +4,11 @@
  * `officialWeek` (`familyProgramWeek` / demo Settings tool) is what digests
  * and mail use. Navigating S# on Azi / Săptămâna only moves `sessionWeek`.
  *
- * Write lock (Răzvan locked): bifă / notă / poză only on the **live** cohort
- * band plus the **immediately previous** band. Example: child on 2–3 can edit
- * 2–3 and 1–2; child on 3–4 can edit 3–4 and 2–3 (1–2 read-only).
- * Older bands, future preview-only bands, and future S# on the live band
- * stay read-only. The previous band stays writable for every S# (completed
- * year — including S52 after the cohort advances).
+ * Write lock (Răzvan / Cristina lock): bifă / notă / poză when
+ * `viewBand` is the **live** cohort band **or** the immediately previous
+ * band, **and** the viewed S# is not future. Example: child on 2–3 can
+ * edit 2–3 and 1–2 for past/current S#; 3–4 is read-only; future S# is
+ * read-only on both writable bands. Live `1-2` has no previous.
  */
 
 import { clampProgramWeek, isProgramWeek } from "@/lib/week";
@@ -93,7 +92,6 @@ export function weekWritesAllowed(args: {
   liveBand: string;
 }): boolean {
   if (!isWritableCohortBand(args.viewBand, args.liveBand)) return false;
-  if (args.viewBand !== args.liveBand) return true;
   return weekRelation(args.viewWeek, args.officialWeek) !== "future";
 }
 

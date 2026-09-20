@@ -97,6 +97,10 @@ describe("V1.4 age-band preview", () => {
       "Previzualizare · bandă 4–5 (doar citire)",
     );
     expect(previewBannerText("1-2", true)).toBe("Previzualizare · bandă 1–2");
+    expect(previewBannerText("1-2", true)).not.toContain("doar citire");
+    expect(previewBannerText("3-4", false)).toBe(
+      "Previzualizare · bandă 3–4 (doar citire)",
+    );
   });
 
   test("local v2 seed fills a 2-3 preview; default catalog stays 1-2", () => {

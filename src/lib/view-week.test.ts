@@ -131,18 +131,27 @@ describe("V1.5 past editable / future read-only", () => {
     ).toBe(false);
   });
 
-  test("previous cohort band stays writable after the child advances", () => {
+  test("live 2-3: write on 2-3 and previous 1-2 for past/current; future S# is RO on both", () => {
     expect(previousCohortBand("1-2")).toBeNull();
     expect(previousCohortBand("2-3")).toBe("1-2");
     expect(previousCohortBand("3-4")).toBe("2-3");
     expect(isWritableCohortBand("1-2", "2-3")).toBe(true);
     expect(isWritableCohortBand("2-3", "2-3")).toBe(true);
+    expect(isWritableCohortBand("3-4", "2-3")).toBe(false);
     expect(isWritableCohortBand("1-2", "3-4")).toBe(false);
     expect(
       weekWritesAllowed({
-        viewWeek: 52,
+        viewWeek: 2,
         officialWeek: 4,
-        viewBand: "1-2",
+        viewBand: "2-3",
+        liveBand: "2-3",
+      }),
+    ).toBe(true);
+    expect(
+      weekWritesAllowed({
+        viewWeek: 4,
+        officialWeek: 4,
+        viewBand: "2-3",
         liveBand: "2-3",
       }),
     ).toBe(true);
@@ -158,13 +167,29 @@ describe("V1.5 past editable / future read-only", () => {
       weekWritesAllowed({
         viewWeek: 4,
         officialWeek: 4,
-        viewBand: "2-3",
-        liveBand: "3-4",
+        viewBand: "1-2",
+        liveBand: "2-3",
       }),
     ).toBe(true);
+    expect(
+      weekWritesAllowed({
+        viewWeek: 52,
+        officialWeek: 4,
+        viewBand: "2-3",
+        liveBand: "2-3",
+      }),
+    ).toBe(false);
+    expect(
+      weekWritesAllowed({
+        viewWeek: 52,
+        officialWeek: 4,
+        viewBand: "1-2",
+        liveBand: "2-3",
+      }),
+    ).toBe(false);
   });
 
-  test("older and future preview-only bands stay read-only", () => {
+  test("older than previous and newer than live stay read-only", () => {
     expect(
       weekWritesAllowed({
         viewWeek: 2,
@@ -175,7 +200,7 @@ describe("V1.5 past editable / future read-only", () => {
     ).toBe(false);
     expect(
       weekWritesAllowed({
-        viewWeek: 52,
+        viewWeek: 2,
         officialWeek: 4,
         viewBand: "1-2",
         liveBand: "3-4",
