@@ -521,7 +521,41 @@ function CosuletSvg({ size }: { size: number }) {
   );
 }
 
+function CasutaSvg({ size }: { size: number }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
+      <title>Căsuță</title>
+      <path d="M10 30 L32 12 L54 30 Z" fill="#F2A07A" stroke="#D47A58" strokeWidth="1.5" strokeLinejoin="round" />
+      <rect x="16" y="30" width="32" height="24" rx="2" fill="#E8D48A" stroke="#C4A15E" strokeWidth="1.5" />
+      <rect x="28" y="40" width="8" height="14" rx="1" fill="#7AA3C7" stroke="#5E86A8" strokeWidth="1" />
+      <circle cx="26" cy="38" r="1.9" fill="#3D2E1A" />
+      <circle cx="38" cy="38" r="1.9" fill="#3D2E1A" />
+      <circle cx="26.5" cy="37.5" r="0.55" fill="#FFF8EC" />
+      <circle cx="38.5" cy="37.5" r="0.55" fill="#FFF8EC" />
+      <path d="M27 46 Q32 49 37 46" fill="none" stroke="#6B4E2E" strokeWidth="1.4" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function GaletutaSvg({ size }: { size: number }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
+      <title>Găletuță</title>
+      <path d="M18 22 L22 52 C22 56 26 58 32 58 C38 58 42 56 42 52 L46 22 Z" fill="#7AA3C7" stroke="#5E86A8" strokeWidth="1.5" strokeLinejoin="round" />
+      <path d="M18 22 C18 14 46 14 46 22" fill="none" stroke="#5E86A8" strokeWidth="2.4" strokeLinecap="round" />
+      <path d="M22 34 L42 34" fill="none" stroke="#C5E4F5" strokeWidth="2" strokeLinecap="round" />
+      <circle cx="26" cy="40" r="1.9" fill="#3D2E1A" />
+      <circle cx="38" cy="40" r="1.9" fill="#3D2E1A" />
+      <circle cx="26.5" cy="39.5" r="0.55" fill="#FFF8EC" />
+      <circle cx="38.5" cy="39.5" r="0.55" fill="#FFF8EC" />
+      <path d="M27 48 Q32 51.5 37 48" fill="none" stroke="#3D2E1A" strokeWidth="1.4" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 const CHARACTER_SVG: Record<PlayfulCharacterId, (size: number) => ReactNode> = {
+  casuta: (size) => <CasutaSvg size={size} />,
+  galetuta: (size) => <GaletutaSvg size={size} />,
   suntel: (size) => <SuntelSvg size={size} />,
   manuta: (size) => <ManutaSvg size={size} />,
   carioca: (size) => <CariocaSvg size={size} />,
