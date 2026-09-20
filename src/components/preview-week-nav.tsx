@@ -30,13 +30,13 @@ export function PreviewWeekNav() {
   if (!showsLiveWeekNav()) return null;
 
   const browsing = viewWeekBrowsingStatus(viewWeek, selectedWeek);
-  const hint = viewWeekModeHint(viewWeek, selectedWeek);
   const writable = weekWritesAllowed({
     viewWeek,
     officialWeek: selectedWeek,
     viewBand,
     liveBand,
   });
+  const hint = viewWeekModeHint(viewWeek, selectedWeek, writable);
 
   return (
     <div className="space-y-2">

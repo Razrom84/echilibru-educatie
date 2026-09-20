@@ -4,10 +4,12 @@
  * `officialWeek` (`familyProgramWeek` / demo Settings tool) is what digests
  * and mail use. Navigating S# on Azi / Săptămâna only moves `sessionWeek`.
  *
- * Write lock (Răzvan GO, ambiguous "previous bands" fallback):
- * writable actions (bifă / notă / poză) only when viewing the **live** child's
- * band catalog for a **past or current** S#. Non-live preview bands stay
- * read-only. Future S# is read-only on every band.
+ * Write lock (Răzvan locked): bifă / notă / poză only on the **live** cohort
+ * band plus the **immediately previous** band. Example: child on 2–3 can edit
+ * 2–3 and 1–2; child on 3–4 can edit 3–4 and 2–3 (1–2 read-only).
+ * Older bands, future preview-only bands, and future S# on the live band
+ * stay read-only. The previous band stays writable for every S# (completed
+ * year — including S52 after the cohort advances).
  */
 
 import { clampProgramWeek, isProgramWeek } from "@/lib/week";
@@ -68,13 +70,30 @@ export function weekRelation(
   return "current";
 }
 
+/**
+ * Same ladder as `PILOT_BANDS`. Kept here so the write lock does not import
+ * `band-preview` (that module already imports this file).
+ */
+const COHORT_BAND_LADDER = ["1-2", "2-3", "3-4", "4-5", "5-6", "6-7"] as const;
+
+/** Immediately previous cohort band, or `null` when the live band is first. */
+export function previousCohortBand(liveBand: string): string | null {
+  const index = (COHORT_BAND_LADDER as readonly string[]).indexOf(liveBand);
+  return index > 0 ? COHORT_BAND_LADDER[index - 1] : null;
+}
+
+export function isWritableCohortBand(viewBand: string, liveBand: string): boolean {
+  return viewBand === liveBand || viewBand === previousCohortBand(liveBand);
+}
+
 export function weekWritesAllowed(args: {
   viewWeek: number;
   officialWeek: number;
   viewBand: string;
   liveBand: string;
 }): boolean {
-  if (args.viewBand !== args.liveBand) return false;
+  if (!isWritableCohortBand(args.viewBand, args.liveBand)) return false;
+  if (args.viewBand !== args.liveBand) return true;
   return weekRelation(args.viewWeek, args.officialWeek) !== "future";
 }
 
@@ -106,8 +125,16 @@ export function viewWeekBrowsingStatus(
 export function viewWeekModeHint(
   viewWeek: number,
   officialWeek: number,
+  writesAllowed?: boolean,
 ): string | null {
   const relation = weekRelation(viewWeek, officialWeek);
+  if (writesAllowed === true) {
+    if (relation === "past") return VIEW_WEEK_PAST_HINT;
+    return null;
+  }
+  if (writesAllowed === false) {
+    return relation === "future" ? VIEW_WEEK_FUTURE_HINT : null;
+  }
   if (relation === "future") return VIEW_WEEK_FUTURE_HINT;
   if (relation === "past") return VIEW_WEEK_PAST_HINT;
   return null;
