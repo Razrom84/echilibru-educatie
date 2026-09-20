@@ -1131,13 +1131,14 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "2–3 jucării sau cărți"
+        "carte",
+        "minge"
       ],
       "pasi": [
-        "Puneți obiectele folosite pe raft.",
+        "Puneți cartea și mingea pe raft.",
         "„La loc. Gata.”"
       ],
-      "gata_cand": "A ajutat să pună la loc.",
+      "gata_cand": "A ajutat să pună cartea sau mingea.",
       "tema_saptamana": "Jumătate de an: repetăm favoritele",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },

@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, test } from "vitest";
-import { getSeedActivities } from "./seed/week1";
+import { getSeedActivities, getSeedActivityById } from "./seed/week1";
 import {
   PLAYFUL_CHARACTERS,
   PLAYFUL_PILOT_WEEKS,
@@ -2596,5 +2596,355 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       "Apoi: „Gata.” pe scurt, cu adult.",
     ]);
     expect(z6?.gata_cand).toBe("A folosit lopățica / găleata sau a privit.");
+  });
+
+  test("Lock B: 35 ids keep title/theme; body names the object (zero proxy)", () => {
+    const expected: Record<
+      string,
+      {
+        titlu: string;
+        tema: string;
+        materiale: string[];
+        pasi: string[];
+        gata_cand: string;
+      }
+    > = {
+      "s1-2-3-z6-fizic": {
+        titlu: "Nisip, iarbă, pietre",
+        tema: "Casa și curtea",
+        materiale: ["nisip, iarbă sau pietre"],
+        pasi: [
+          "Atingeți pe scurt nisip, iarbă sau o piatră, cu adult.",
+          "„Moale. Aspru.”",
+        ],
+        gata_cand: "A explorat 2 texturi denumite.",
+      },
+      "s22-2-3-z6-resurse": {
+        titlu: "Pantofii de casă, la loc",
+        tema: "Corp care se mișcă în casă",
+        materiale: ["pantofi de casă"],
+        pasi: [
+          "Puneți pantofii de casă la loc lângă ușă sau pe raft.",
+          "„Pantofi. La loc.”",
+        ],
+        gata_cand: "A ajutat cu pantofii de casă.",
+      },
+      "s22-2-3-z7-resurse": {
+        titlu: "Perna și cartea la loc",
+        tema: "Corp care se mișcă în casă",
+        materiale: ["pernă", "carte"],
+        pasi: [
+          "Puneți perna și cartea la loc după joacă.",
+          "„La loc. Gata.”",
+        ],
+        gata_cand: "A ajutat cu perna sau cartea.",
+      },
+      "s23-2-3-z6-mental": {
+        titlu: "Floare — sau frunză?",
+        tema: "Mirosuri din casă",
+        materiale: [],
+        pasi: [
+          "Arătați o floare: „Floare.”",
+          "Arătați o frunză: „Frunză.” pe scurt.",
+        ],
+        gata_cand: "A auzit floare și frunză.",
+      },
+      "s23-2-3-z7-resurse": {
+        titlu: "Cana și cartea la loc",
+        tema: "Mirosuri din casă",
+        materiale: ["cană", "carte"],
+        pasi: ["Puneți cana și cartea la loc.", "„La loc. Gata.”"],
+        gata_cand: "A ajutat cu cana sau cartea.",
+      },
+      "s24-2-3-z3-resurse": {
+        titlu: "Pantofii lângă ușă",
+        tema: "Familia și oaspeții",
+        materiale: ["pantofi"],
+        pasi: ["Așezați pantofii lângă ușă.", "„Pantofi. La ușă.”"],
+        gata_cand: "A ajutat cu pantofii lângă ușă.",
+      },
+      "s24-2-3-z7-resurse": {
+        titlu: "Pantofii și haina la loc",
+        tema: "Familia și oaspeții",
+        materiale: ["pantofi", "haină"],
+        pasi: ["Puneți pantofii și haina la loc.", "„La loc. Gata.”"],
+        gata_cand: "A ajutat cu pantofii sau haina.",
+      },
+      "s26-2-3-z7-resurse": {
+        titlu: "Cartea și mingea la loc",
+        tema: "Jumătate de an: repetăm favoritele",
+        materiale: ["carte", "minge"],
+        pasi: ["Puneți cartea și mingea pe raft.", "„La loc. Gata.”"],
+        gata_cand: "A ajutat să pună cartea sau mingea.",
+      },
+      "s29-2-3-z2-resurse": {
+        titlu: "Pantofii după iarbă",
+        tema: "Muguri și iarbă nouă",
+        materiale: ["pantofi"],
+        pasi: ["După iarbă: pantofii lângă ușă.", "„Pantofi. La loc.”"],
+        gata_cand: "A ajutat cu pantofii după iarbă.",
+      },
+      "s29-2-3-z3-fizic": {
+        titlu: "Atingem o frunză mică",
+        tema: "Muguri și iarbă nouă",
+        materiale: ["frunză pe plantă"],
+        pasi: [
+          "Atingeți pe scurt o frunză mică, cu adult.",
+          "„Frunză.” 10–20 de secunde.",
+        ],
+        gata_cand: "A atins frunza sau a privit.",
+      },
+      "s29-2-3-z3-resurse": {
+        titlu: "Frunza rămâne pe plantă",
+        tema: "Muguri și iarbă nouă",
+        materiale: ["plantă cu frunze"],
+        pasi: [
+          "Arătați: frunza rămâne pe plantă.",
+          "„Frunză. Pe plantă.” fără a smulge.",
+        ],
+        gata_cand: "A privit frunza pe plantă.",
+      },
+      "s29-2-3-z3-social": {
+        titlu: "Atingem frunza pe rând",
+        tema: "Muguri și iarbă nouă",
+        materiale: ["frunză pe plantă"],
+        pasi: ["Pe rând: atingeți frunza mică.", "„Acum tu.” fără forțare."],
+        gata_cand: "A atins pe rând sau a privit.",
+      },
+      "s29-2-3-z5-mental": {
+        titlu: "Mugure și frunză",
+        tema: "Muguri și iarbă nouă",
+        materiale: [],
+        pasi: [
+          "Arătați un mugure: „Mugure.”",
+          "Arătați o frunză: „Frunză.” pe scurt.",
+        ],
+        gata_cand: "A auzit mugure și frunză.",
+      },
+      "s29-2-3-z6-resurse": {
+        titlu: "Pantofii la ușă după iarbă",
+        tema: "Muguri și iarbă nouă",
+        materiale: ["pantofi"],
+        pasi: ["După iarbă: pantofii la ușă.", "„Pantofi. La ușă.”"],
+        gata_cand: "A ajutat cu pantofii la ușă.",
+      },
+      "s29-2-3-z7-resurse": {
+        titlu: "Stropitoarea și pantofii la loc",
+        tema: "Muguri și iarbă nouă",
+        materiale: ["stropitoare", "pantofi"],
+        pasi: [
+          "Stropitoarea la loc; pantofii lângă ușă.",
+          "„La loc. Gata.”",
+        ],
+        gata_cand: "A ajutat cu stropitoarea sau pantofii.",
+      },
+      "s30-2-3-z3-resurse": {
+        titlu: "Pantofii după ascultat",
+        tema: "Păsări dimineața",
+        materiale: ["pantofi"],
+        pasi: ["După ascultat: pantofii lângă ușă.", "„Pantofi. Gata.”"],
+        gata_cand: "A ajutat cu pantofii sau a privit.",
+      },
+      "s35-2-3-z6-fizic": {
+        titlu: "O picătură pe frunză",
+        tema: "Apă afară (joc scurt)",
+        materiale: ["pahar cu puțină apă", "frunză"],
+        pasi: [
+          "Lăsați o picătură pe o frunză, cu adult.",
+          "„Picătură. Frunză.” pe scurt.",
+        ],
+        gata_cand: "A lăsat picătura pe frunză sau a privit.",
+      },
+      "s35-2-3-z6-resurse": {
+        titlu: "Frunza rămâne afară",
+        tema: "Apă afară (joc scurt)",
+        materiale: ["frunză afară"],
+        pasi: [
+          "Frunza rămâne afară — nu o aduceți în casă.",
+          "„Frunză. Afară.”",
+        ],
+        gata_cand: "A lăsat frunza afară sau a privit.",
+      },
+      "s36-2-3-z2-mental": {
+        titlu: "Pe frunză",
+        tema: "Insecte de departe",
+        materiale: [],
+        pasi: [
+          "Arătați pe frunză: „Pe frunză.”",
+          "Privire scurtă, fără atingere dacă e insectă.",
+        ],
+        gata_cand: "A auzit pe frunză.",
+      },
+      "s36-2-3-z6-mental": {
+        titlu: "Pământ — sau frunză?",
+        tema: "Insecte de departe",
+        materiale: [],
+        pasi: [
+          "Arătați pământul: „Pământ.”",
+          "Arătați o frunză: „Frunză.” pe scurt.",
+        ],
+        gata_cand: "A auzit pământ și frunză.",
+      },
+      "s38-2-3-z4-resurse": {
+        titlu: "Pantofii după pași",
+        tema: "Piciorul pe iarbă",
+        materiale: ["pantofi"],
+        pasi: ["După pași: pantofii lângă ușă.", "„Pantofi. Gata.”"],
+        gata_cand: "A ajutat cu pantofii sau a privit.",
+      },
+      "s38-2-3-z7-fizic": {
+        titlu: "Plimbare desculți, apoi pantofi",
+        tema: "Piciorul pe iarbă",
+        materiale: ["pantofi"],
+        pasi: [
+          "Câțiva pași desculți pe iarbă, cu adult.",
+          "Apoi pantofii: „Pantofi.”",
+        ],
+        gata_cand: "A mers desculț pe scurt, apoi pantofi.",
+      },
+      "s40-2-3-z1-fizic": {
+        titlu: "Ținem mătura",
+        tema: "Ajutor la treabă scurtă",
+        materiale: ["mătură de copil"],
+        pasi: [
+          "Țineți mătura pe scurt, cu adult.",
+          "„Mătură.” 10–20 de secunde.",
+        ],
+        gata_cand: "A ținut mătura sau a atins-o.",
+      },
+      "s40-2-3-z1-resurse": {
+        titlu: "Mătura lângă ușă",
+        tema: "Ajutor la treabă scurtă",
+        materiale: ["mătură de copil"],
+        pasi: [
+          "Puneți mătura lângă ușă sau la locul ei.",
+          "„Mătură. Aici.”",
+        ],
+        gata_cand: "A ajutat să pună mătura.",
+      },
+      "s40-2-3-z1-social": {
+        titlu: "Măturăm împreună",
+        tema: "Ajutor la treabă scurtă",
+        materiale: ["mătură de copil"],
+        pasi: [
+          "Țineți mătura împreună pe scurt.",
+          "„Împreună. Mătură.” fără forțare.",
+        ],
+        gata_cand: "A ținut mătura cu adultul sau a privit.",
+      },
+      "s40-2-3-z4-fizic": {
+        titlu: "Haina pe cuier",
+        tema: "Ajutor la treabă scurtă",
+        materiale: ["haină", "cuier"],
+        pasi: [
+          "Puneți haina pe cuier, cu adult.",
+          "„Haină. Cuier.” pe scurt.",
+        ],
+        gata_cand: "A ajutat cu haina pe cuier.",
+      },
+      "s40-2-3-z4-mental": {
+        titlu: "Haina la locul ei",
+        tema: "Ajutor la treabă scurtă",
+        materiale: ["haină"],
+        pasi: ['Întrebați: „Unde e haina?”', 'Arătați: „Aici. La loc.”'],
+        gata_cand: "A auzit unde și aici.",
+      },
+      "s40-2-3-z4-social": {
+        titlu: "Punem haina împreună",
+        tema: "Ajutor la treabă scurtă",
+        materiale: ["haină", "cuier"],
+        pasi: [
+          "Puneți haina pe cuier împreună.",
+          "„Împreună. Haină.” fără forțare.",
+        ],
+        gata_cand: "A ajutat cu haina sau a privit.",
+      },
+      "s40-2-3-z5-fizic": {
+        titlu: "Măturăm trei fire",
+        tema: "Ajutor la treabă scurtă",
+        materiale: ["mătură de copil"],
+        pasi: [
+          "Măturați pe scurt trei fire / o zonă mică.",
+          "„Mătură. Trei.”",
+        ],
+        gata_cand: "A măturat pe scurt sau a privit.",
+      },
+      "s40-2-3-z5-social": {
+        titlu: "Măturăm pe rând",
+        tema: "Ajutor la treabă scurtă",
+        materiale: ["mătură de copil"],
+        pasi: ["Voi măturați. „Acum tu.”", "Așteptați fără forțare."],
+        gata_cand: "A măturat pe rând sau a privit.",
+      },
+      "s40-2-3-z6-resurse": {
+        titlu: "Mătura la loc",
+        tema: "Ajutor la treabă scurtă",
+        materiale: ["mătură de copil"],
+        pasi: ["Puneți mătura la loc.", "„Mătură. Gata.”"],
+        gata_cand: "A ajutat să pună mătura la loc.",
+      },
+      "s40-2-3-z7-resurse": {
+        titlu: "Mătura și cârpa la loc",
+        tema: "Ajutor la treabă scurtă",
+        materiale: ["mătură de copil", "cârpă"],
+        pasi: ["Mătura și cârpa la loc.", "„La loc. Gata.”"],
+        gata_cand: "A ajutat cu mătura sau cârpa.",
+      },
+      "s42-2-3-z6-resurse": {
+        titlu: "Găleata la loc după frunze",
+        tema: "Vânt și frunze din nou",
+        materiale: ["găleată"],
+        pasi: [
+          "După frunze: găleata pe treaptă sau în casă.",
+          "„Găleată. La loc.”",
+        ],
+        gata_cand: "A ajutat să pună găleata.",
+      },
+      "s45-2-3-z2-resurse": {
+        titlu: "Pantofii la ușă",
+        tema: "Corp puternic, pași mulți",
+        materiale: ["pantofi"],
+        pasi: ["Pantofii lângă ușă.", "„Pantofi. La ușă.”"],
+        gata_cand: "A ajutat cu pantofii.",
+      },
+      "s45-2-3-z4-resurse": {
+        titlu: "Pantofii după curte",
+        tema: "Corp puternic, pași mulți",
+        materiale: ["pantofi"],
+        pasi: ["După curte: pantofii la loc.", "„Pantofi. Gata.”"],
+        gata_cand: "A ajutat cu pantofii după curte.",
+      },
+    };
+    expect(Object.keys(expected)).toHaveLength(35);
+    expect(playfulPilotFor(40, 1)?.character.name).toBe("Măturică");
+    expect(playfulPilotFor(40, 1)?.theme).toBe("Ajutor la treabă scurtă");
+    const proxy = /prosop|șervețel|lingură/;
+    const english = /\b(the|towel|spoon|basket|okay|worksheet)\b/i;
+    for (const [id, lock] of Object.entries(expected)) {
+      const row = getSeedActivityById(id);
+      expect(row, id).toBeDefined();
+      expect(row?.titlu).toBe(lock.titlu);
+      expect(row?.tema_saptamana).toBe(lock.tema);
+      expect(row?.materiale).toEqual(lock.materiale);
+      expect(row?.pasi).toEqual(lock.pasi);
+      expect(row?.pasi).toHaveLength(2);
+      expect(row?.gata_cand).toBe(lock.gata_cand);
+      const blob = [...row!.materiale, ...row!.pasi, row!.gata_cand].join("\n");
+      expect(blob).not.toMatch(proxy);
+      expect(blob).not.toMatch(english);
+    }
+    const migration = readFileSync(
+      resolve("supabase/migrations/20260920240000_align_title_body_35.sql"),
+      "utf8",
+    );
+    expect(migration).toMatch(/^\s*materiale = v\.materiale,/m);
+    expect(migration).toMatch(/^\s*pasi = v\.pasi,/m);
+    expect(migration).toMatch(/^\s*gata_cand = v\.gata_cand$/m);
+    expect(migration).not.toMatch(/titlu =/);
+    expect(migration).not.toMatch(/tema_saptamana =/);
+    expect(migration).not.toMatch(/s32-2-3-/);
+    expect(migration).not.toMatch(/s33-2-3-/);
+    expect(migration).not.toMatch(/-b23-/);
+    expect(migration.match(/s\d+-2-3-z\d-[a-z]+/g)).toHaveLength(35);
   });
 });

@@ -444,13 +444,13 @@
       "durata_min": 6,
       "mod_default": "A",
       "materiale": [
-        "curte"
+        "nisip, iarbă sau pietre"
       ],
       "pasi": [
-        "Descălțați dacă e în siguranță sau atingeți texturi.",
+        "Atingeți pe scurt nisip, iarbă sau o piatră, cu adult.",
         "„Moale. Aspru.”"
       ],
-      "gata_cand": "A explorat 2 texturi.",
+      "gata_cand": "A explorat 2 texturi denumite.",
       "tema_saptamana": "Casa și curtea",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },

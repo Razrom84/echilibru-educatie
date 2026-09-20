@@ -865,12 +865,14 @@
       "titlu": "Pantofii după pași",
       "durata_min": 4,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Intrați. Închideți ușa pe scurt.",
-        "„Ușă. Gata.”"
+      "materiale": [
+        "pantofi"
       ],
-      "gata_cand": "A ajutat la ușă sau a privit.",
+      "pasi": [
+        "După pași: pantofii lângă ușă.",
+        "„Pantofi. Gata.”"
+      ],
+      "gata_cand": "A ajutat cu pantofii sau a privit.",
       "tema_saptamana": "Piciorul pe iarbă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1059,12 +1061,14 @@
       "titlu": "Plimbare desculți, apoi pantofi",
       "durata_min": 6,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "El dictează direcția afară pe scurt, cu adult.",
-        "La final: o atingere cu piciorul pe iarbă dacă vrea."
+      "materiale": [
+        "pantofi"
       ],
-      "gata_cand": "A mers liber pe scurt afară.",
+      "pasi": [
+        "Câțiva pași desculți pe iarbă, cu adult.",
+        "Apoi pantofii: „Pantofi.”"
+      ],
+      "gata_cand": "A mers desculț pe scurt, apoi pantofi.",
       "tema_saptamana": "Piciorul pe iarbă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1732,13 +1736,13 @@
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "obiect ușor (prosop sau jucărie)"
+        "mătură de copil"
       ],
       "pasi": [
-        "Cărați obiectul doi–trei pași, cu adult.",
-        "„Cărăm. Pași.” pe scurt."
+        "Țineți mătura pe scurt, cu adult.",
+        "„Mătură.” 10–20 de secunde."
       ],
-      "gata_cand": "A cărat sau a ținut obiectul.",
+      "gata_cand": "A ținut mătura sau a atins-o.",
       "tema_saptamana": "Ajutor la treabă scurtă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1772,13 +1776,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "obiect ușor"
+        "mătură de copil"
       ],
       "pasi": [
-        "Puneți obiectul pe masă sau pe raft.",
-        "„Aici. La loc.”"
+        "Puneți mătura lângă ușă sau la locul ei.",
+        "„Mătură. Aici.”"
       ],
-      "gata_cand": "A ajutat să pună obiectul.",
+      "gata_cand": "A ajutat să pună mătura.",
       "tema_saptamana": "Ajutor la treabă scurtă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1793,13 +1797,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "obiect ușor"
+        "mătură de copil"
       ],
       "pasi": [
-        "Țineți obiectul împreună câțiva pași.",
-        "„Împreună. Cărăm.” fără forțare."
+        "Țineți mătura împreună pe scurt.",
+        "„Împreună. Mătură.” fără forțare."
       ],
-      "gata_cand": "A cărat pe scurt cu adultul.",
+      "gata_cand": "A ținut mătura cu adultul sau a privit.",
       "tema_saptamana": "Ajutor la treabă scurtă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1982,13 +1986,14 @@
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "șervețel"
+        "haină",
+        "cuier"
       ],
       "pasi": [
-        "Luați șervețelul și aduceți-l pe masă, cu adult.",
-        "„Șervețel. Masă.” pe scurt."
+        "Puneți haina pe cuier, cu adult.",
+        "„Haină. Cuier.” pe scurt."
       ],
-      "gata_cand": "A adus șervețelul sau a ținut.",
+      "gata_cand": "A ajutat cu haina pe cuier.",
       "tema_saptamana": "Ajutor la treabă scurtă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -2003,11 +2008,11 @@
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
-        "șervețel"
+        "haină"
       ],
       "pasi": [
-        "Întrebați: „Unde e?” pe scurt.",
-        "Arătați: „Aici. Șervețel.”"
+        "Întrebați: „Unde e haina?”",
+        "Arătați: „Aici. La loc.”"
       ],
       "gata_cand": "A auzit unde și aici.",
       "tema_saptamana": "Ajutor la treabă scurtă",
@@ -2046,13 +2051,14 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "șervețel"
+        "haină",
+        "cuier"
       ],
       "pasi": [
-        "Oferiți șervețelul: „Ține.” pe scurt.",
-        "Fără forțare."
+        "Puneți haina pe cuier împreună.",
+        "„Împreună. Haină.” fără forțare."
       ],
-      "gata_cand": "A dat sau a oferit șervețelul.",
+      "gata_cand": "A ajutat cu haina sau a privit.",
       "tema_saptamana": "Ajutor la treabă scurtă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -2067,13 +2073,13 @@
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "lingură"
+        "mătură de copil"
       ],
       "pasi": [
-        "Așezați lingura pe masă lângă farfurie, cu adult.",
-        "„Lingură. Masă.” pe scurt."
+        "Măturați pe scurt trei fire / o zonă mică.",
+        "„Mătură. Trei.”"
       ],
-      "gata_cand": "A așezat lingura sau a privit.",
+      "gata_cand": "A măturat pe scurt sau a privit.",
       "tema_saptamana": "Ajutor la treabă scurtă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -2131,14 +2137,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "lingură",
-        "farfurie"
+        "mătură de copil"
       ],
       "pasi": [
-        "Voi așezați. „Acum tu.”",
+        "Voi măturați. „Acum tu.”",
         "Așteptați fără forțare."
       ],
-      "gata_cand": "A văzut rândul sau a așezat.",
+      "gata_cand": "A măturat pe rând sau a privit.",
       "tema_saptamana": "Ajutor la treabă scurtă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -2196,13 +2201,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "coș mic"
+        "mătură de copil"
       ],
       "pasi": [
-        "Puneți coșul pe raft după sortat.",
-        "„Coș. Gata.”"
+        "Puneți mătura la loc.",
+        "„Mătură. Gata.”"
       ],
-      "gata_cand": "A ajutat să pună coșul.",
+      "gata_cand": "A ajutat să pună mătura la loc.",
       "tema_saptamana": "Ajutor la treabă scurtă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -2278,13 +2283,14 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "2–3 obiecte"
+        "mătură de copil",
+        "cârpă"
       ],
       "pasi": [
-        "Puneți 2–3 obiecte pe raft sau în coș.",
+        "Mătura și cârpa la loc.",
         "„La loc. Gata.”"
       ],
-      "gata_cand": "A ajutat să pună la loc.",
+      "gata_cand": "A ajutat cu mătura sau cârpa.",
       "tema_saptamana": "Ajutor la treabă scurtă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
