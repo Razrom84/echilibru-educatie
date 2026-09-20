@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BrandMark } from "@/components/brand-mark";
 import { DayChips, DayChipsFallback } from "@/components/day-chips";
-import { PROGRAM_AGE_BAND_LABEL } from "@/lib/band";
+import { ageBandLabel, PROGRAM_AGE_BAND_LABEL } from "@/lib/band";
 import { useFamily } from "@/lib/family-context";
 import { cn } from "@/lib/utils";
 
@@ -18,7 +18,8 @@ const VIEW_LINKS = [
 
 export function AppHeader({ today }: { today: string }) {
   const pathname = usePathname();
-  const { selectedChild, children, isDemo, family, weekTheme } = useFamily();
+  const { selectedChild, children, isDemo, family, weekTheme, liveBand } =
+    useFamily();
   const initial = selectedChild?.name.trim().charAt(0).toUpperCase() ?? "?";
 
   return (
@@ -34,7 +35,7 @@ export function AppHeader({ today }: { today: string }) {
               {selectedChild ? selectedChild.name : family?.display_name || "Familia ta"}
             </p>
             <p className="mt-1 text-sm text-muted-foreground">
-              {weekTheme} · {PROGRAM_AGE_BAND_LABEL} ani
+              {weekTheme} · {ageBandLabel(liveBand) || PROGRAM_AGE_BAND_LABEL} ani
               {isDemo ? " · demonstrație" : ""}
             </p>
           </div>

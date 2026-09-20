@@ -1,6 +1,11 @@
 import { describe, expect, test } from "vitest";
 import { getSeedActivities } from "./seed/week1";
-import { clampProgramWeek, PROGRAM_AGE_BAND, PROGRAM_WEEKS } from "./week";
+import {
+  clampProgramWeek,
+  LIVE_AGE_BANDS,
+  PROGRAM_AGE_BAND,
+  PROGRAM_WEEKS,
+} from "./week";
 import {
   PILOT_BANDS,
   PREVIEW_EMPTY,
@@ -42,9 +47,10 @@ describe("V1.4 age-band preview", () => {
     );
   });
 
-  test("lists the six pilot bands and marks live as 1-2", () => {
+  test("lists the six pilot bands; live catalogs are 1-2 and 2-3", () => {
     expect(PILOT_BANDS).toEqual(["1-2", "2-3", "3-4", "4-5", "5-6", "6-7"]);
     expect(PROGRAM_AGE_BAND).toBe("1-2");
+    expect(LIVE_AGE_BANDS).toEqual(["1-2", "2-3"]);
     expect(liveChildBand("1-2")).toBe("1-2");
     expect(liveChildBand("2-3")).toBe("2-3");
     expect(liveChildBand(null)).toBe("1-2");

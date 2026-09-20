@@ -1,7 +1,7 @@
 import { clampProgramWeek, PROGRAM_AGE_BAND } from "@/lib/week";
 import { resolveViewWeek } from "@/lib/view-week";
 
-/** Pilot bands the parent may preview. Live V1 stays `1-2`. */
+/** Pilot bands the parent may preview. Live catalogs are `1-2` and `2-3`. */
 export const PILOT_BANDS = ["1-2", "2-3", "3-4", "4-5", "5-6", "6-7"] as const;
 export type PilotBand = (typeof PILOT_BANDS)[number];
 

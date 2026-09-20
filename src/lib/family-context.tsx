@@ -42,7 +42,7 @@ import type {
   DayNote,
   Family,
 } from "@/lib/types";
-import { bandFromBirthdate } from "@/lib/band";
+import { applyCohortAgeBand, bandFromBirthdate } from "@/lib/band";
 import { normalizeDayNoteBody } from "@/lib/day-note";
 import {
   completedAtForCivilDate,
@@ -79,7 +79,7 @@ import {
   programWeekNumber,
   programWeekRange,
 } from "@/lib/program-week";
-import { getWeekTheme, PROGRAM_AGE_BAND, PROGRAM_WEEK, PROGRAM_WEEKS } from "@/lib/week";
+import { getWeekTheme, PROGRAM_WEEK, PROGRAM_WEEKS } from "@/lib/week";
 import type { SeedActivity } from "@/lib/types";
 import { aziDayOfWeek } from "@/lib/azi";
 import {
@@ -308,16 +308,23 @@ export function FamilyProvider({
 
   const applyDemo = useCallback(
     (state: DemoState, week: number) => {
+      const kids = state.children
+        .filter((child) => child.active)
+        .map((child) => applyCohortAgeBand(child));
+      const selectedId =
+        kids.find((child) => child.id === state.selectedChildId)?.id ??
+        kids[0]?.id ??
+        null;
+      const selected = kids.find((child) => child.id === selectedId) ?? null;
       setFamily(state.family);
-      setKids(state.children.filter((child) => child.active));
-      setSelectedChildId(state.selectedChildId);
-      setActivities(demoActivities(week));
+      setKids(kids);
+      setSelectedChildId(selectedId);
+      setActivities(demoActivities(week, liveChildBand(selected?.age_band)));
       setCompletions(state.completions);
-      setDayNotes(demoDayNotesForWeek(state, week));
+      setDayNotes(demoDayNotesForWeek({ ...state, selectedChildId: selectedId }, week));
       const today = bucharestToday();
-      const childId = state.selectedChildId;
       const row =
-        demoArchiveDaysForChild(state, childId).find((item) => item.civil_date === today) ??
+        demoArchiveDaysForChild(state, selectedId).find((item) => item.civil_date === today) ??
         null;
       setTodayArchive(row);
     },
@@ -408,34 +415,21 @@ export function FamilyProvider({
     setFamily(currentFamily);
     const idForChildren = currentFamily.id;
 
-    const [{ data: childRows, error: childError }, { data: activityRows, error: activityError }] =
-      await Promise.all([
-        supabase
-          .from("children")
-          .select("*")
-          .eq("family_id", idForChildren)
-          .eq("active", true)
-          .order("created_at", { ascending: true }),
-        supabase
-          .from("activities")
-          .select("*")
-          .eq("saptamana", selectedWeek)
-          .eq("banda", PROGRAM_AGE_BAND)
-          .order("zi", { ascending: true }),
-      ]);
+    const { data: childRows, error: childError } = await supabase
+      .from("children")
+      .select("*")
+      .eq("family_id", idForChildren)
+      .eq("active", true)
+      .order("created_at", { ascending: true });
 
     if (childError) {
       setError(childError.message);
       setStatus("error");
       return;
     }
-    if (activityError) {
-      setError(activityError.message);
-      setStatus("error");
-      return;
-    }
 
-    const nextKids = (childRows ?? []) as Child[];
+    const storedKids = (childRows ?? []) as Child[];
+    const nextKids = storedKids.map((child) => applyCohortAgeBand(child));
     setKids(nextKids);
 
     const cookieChild = readChildCookie();
@@ -446,8 +440,35 @@ export function FamilyProvider({
     setSelectedChildId(nextSelected);
     if (nextSelected) writeChildCookie(nextSelected);
 
+    const selected = nextKids.find((child) => child.id === nextSelected) ?? null;
+    const catalogBand = liveChildBand(selected?.age_band);
+    const { data: activityRows, error: activityError } = await supabase
+      .from("activities")
+      .select("*")
+      .eq("saptamana", selectedWeek)
+      .eq("banda", catalogBand)
+      .order("zi", { ascending: true });
+
+    if (activityError) {
+      setError(activityError.message);
+      setStatus("error");
+      return;
+    }
+
     const catalog = ((activityRows ?? []) as SeedActivity[]).map(normalizeActivity);
     setActivities(catalog);
+
+    const stale = nextKids.filter((child) => {
+      const stored = storedKids.find((row) => row.id === child.id);
+      return stored != null && stored.age_band !== child.age_band;
+    });
+    if (stale.length > 0) {
+      void Promise.all(
+        stale.map((child) =>
+          supabase.from("children").update({ age_band: child.age_band }).eq("id", child.id),
+        ),
+      );
+    }
 
     if (nextSelected) {
       const yearStart = familyProgramYearStart(currentFamily);
@@ -550,7 +571,7 @@ export function FamilyProvider({
           .from("activities")
           .select("*")
           .eq("saptamana", viewWeek)
-          // Filter by `banda` text (live `1-2`; preview `2-3` ids are `sN-b23-z…`).
+          // Filter by `banda` text (live `1-2` / `2-3`; other pilots stay preview).
           .eq("banda", band)
           .order("zi", { ascending: true }),
         supabase
@@ -642,6 +663,13 @@ export function FamilyProvider({
       if (isDemo) {
         const state = { ...readDemoState(), selectedChildId: childId };
         writeDemoState(state);
+        const selected = state.children.find((child) => child.id === childId);
+        setActivities(
+          demoActivities(
+            selectedWeek,
+            liveChildBand(selected ? applyCohortAgeBand(selected).age_band : null),
+          ),
+        );
         setCompletions(state.completions);
         setDayNotes(demoDayNotesForWeek(state, viewWeek));
         const row =
@@ -666,10 +694,15 @@ export function FamilyProvider({
       const supabase = createBrowserSupabase();
       if (!supabase || !family) return;
       const yearStart = familyProgramYearStart(family);
+      const selected = kids.find((child) => child.id === childId);
+      const catalogBand = liveChildBand(
+        selected ? applyCohortAgeBand(selected).age_band : null,
+      );
       const [
         { data, error: doneError },
         { data: noteRows, error: noteError },
         { data: archiveRow, error: archiveError },
+        { data: activityRows, error: activityError },
       ] = await Promise.all([
         supabase.from("completions").select("*").eq("child_id", childId),
         supabase
@@ -684,6 +717,12 @@ export function FamilyProvider({
           .eq("child_id", childId)
           .eq("civil_date", viewCivilDate)
           .maybeSingle(),
+        supabase
+          .from("activities")
+          .select("*")
+          .eq("saptamana", selectedWeek)
+          .eq("banda", catalogBand)
+          .order("zi", { ascending: true }),
       ]);
       if (doneError) {
         setError(doneError.message);
@@ -697,6 +736,11 @@ export function FamilyProvider({
         setError(archiveError.message);
         return;
       }
+      if (activityError) {
+        setError(activityError.message);
+        return;
+      }
+      setActivities(((activityRows ?? []) as SeedActivity[]).map(normalizeActivity));
       setCompletions((data ?? []) as Completion[]);
       setDayNotes((noteRows ?? []) as DayNote[]);
       const archive = (archiveRow as ArchiveDay | null) ?? null;
@@ -710,7 +754,7 @@ export function FamilyProvider({
         setTodayPhotoUrl(null);
       }
     },
-    [family, isDemo, viewCivilDate, viewWeek],
+    [family, isDemo, kids, selectedWeek, viewCivilDate, viewWeek],
   );
 
   const addChild = useCallback(
@@ -735,7 +779,7 @@ export function FamilyProvider({
         .select("*")
         .single();
       if (insertError || !data) throw new Error(insertError?.message ?? "Nu am putut salva copilul.");
-      const child = data as Child;
+      const child = applyCohortAgeBand(data as Child);
       setKids((current) => [...current, child]);
       setSelectedChildId(child.id);
       writeChildCookie(child.id);
@@ -743,6 +787,14 @@ export function FamilyProvider({
       setDayNotes([]);
       setTodayArchive(null);
       setTodayPhotoUrl(null);
+      const { data: activityRows, error: activityError } = await supabase
+        .from("activities")
+        .select("*")
+        .eq("saptamana", selectedWeek)
+        .eq("banda", liveChildBand(child.age_band))
+        .order("zi", { ascending: true });
+      if (activityError) throw new Error(activityError.message);
+      setActivities(((activityRows ?? []) as SeedActivity[]).map(normalizeActivity));
     },
     [applyDemo, family, isDemo, selectedWeek],
   );
@@ -816,7 +868,14 @@ export function FamilyProvider({
       if (!selectedChild || !family) return null;
       const yearStart = familyProgramYearStart(family);
       const week = programWeekNumber(args.civilDate, yearStart);
-      const catalog = getSeedActivities(week);
+      const loaded =
+        week === selectedWeek
+          ? activities
+          : liveViewCatalog?.week === week
+            ? liveViewCatalog.activities
+            : [];
+      const catalog =
+        loaded.length > 0 ? loaded : getSeedActivities(week, liveBand);
       let existing: ArchiveDay | null = null;
       if (isDemo) {
         existing =
@@ -952,7 +1011,17 @@ export function FamilyProvider({
       if (args.civilDate === viewCivilDate) setTodayArchive(row);
       return row;
     },
-    [family, isDemo, selectedChild, viewCivilDate, writesAllowed],
+    [
+      activities,
+      family,
+      isDemo,
+      liveBand,
+      liveViewCatalog,
+      selectedChild,
+      selectedWeek,
+      viewCivilDate,
+      writesAllowed,
+    ],
   );
 
   const toggleComplete = useCallback(
@@ -1282,9 +1351,23 @@ export function FamilyProvider({
     async (start: string, end: string, today: string): Promise<BookletLiveSources> => {
       const yearStart = family ? familyProgramYearStart(family) : familyProgramYearStart({});
       const dates = bookletCivilDates({ start, end }, today);
-      const activities = seedTitlesForDates(dates, yearStart);
+      const fromSeed = seedTitlesForDates(dates, yearStart, liveBand);
+      const loaded = [
+        ...activities,
+        ...(liveViewCatalog?.activities ?? []),
+      ].map((row) => ({
+        id: row.id,
+        title: row.title,
+        week_number: row.week_number,
+        day_of_week: row.day_of_week,
+      }));
+      const byId = new Map(fromSeed.map((row) => [row.id, row]));
+      for (const row of loaded) {
+        if (!byId.has(row.id)) byId.set(row.id, row);
+      }
+      const catalog = [...byId.values()];
       if (!selectedChild) {
-        return { programYearStart: yearStart, notes: [], completions: [], activities };
+        return { programYearStart: yearStart, notes: [], completions: [], activities: catalog };
       }
       if (isDemo) {
         const state = readDemoState();
@@ -1292,7 +1375,7 @@ export function FamilyProvider({
           programYearStart: yearStart,
           notes: state.dayNotes.filter((note) => note.child_id === selectedChild.id),
           completions: state.completions.filter((row) => row.child_id === selectedChild.id),
-          activities,
+          activities: catalog,
         };
       }
       const supabase = createBrowserSupabase();
@@ -1301,7 +1384,7 @@ export function FamilyProvider({
           programYearStart: yearStart,
           notes: dayNotes.filter((note) => note.child_id === selectedChild.id),
           completions: completions.filter((row) => row.child_id === selectedChild.id),
-          activities,
+          activities: catalog,
         };
       }
       const [
@@ -1323,10 +1406,10 @@ export function FamilyProvider({
         programYearStart: yearStart,
         notes: noteRows ?? [],
         completions: doneRows ?? [],
-        activities,
+        activities: catalog,
       };
     },
-    [completions, dayNotes, family, isDemo, selectedChild],
+    [activities, completions, dayNotes, family, isDemo, liveBand, liveViewCatalog, selectedChild],
   );
 
   const approveCompletion = useCallback(

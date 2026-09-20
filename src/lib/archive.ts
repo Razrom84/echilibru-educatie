@@ -426,6 +426,7 @@ export type BookletLiveSources = {
 export function seedTitlesForDates(
   dates: readonly string[],
   programYearStart: string,
+  band?: string,
 ): ArchiveActivityRef[] {
   const weeks = [
     ...new Set(
@@ -436,7 +437,7 @@ export function seedTitlesForDates(
   ];
   const byId = new Map<string, ArchiveActivityRef>();
   for (const week of weeks) {
-    for (const activity of getSeedActivities(week)) {
+    for (const activity of getSeedActivities(week, band)) {
       if (!byId.has(activity.id)) {
         byId.set(activity.id, {
           id: activity.id,

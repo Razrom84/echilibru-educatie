@@ -68,8 +68,9 @@ export function OnboardingForm() {
         />
       </div>
       <p className="text-sm leading-6 text-muted-foreground">
-        Din data de naștere, V1 pune copilul pe banda <strong>1–2 ani</strong> și
-        deschide săptămâna 1 — Casa și curtea. Celelalte benzi vin ulterior.
+        Din data de naștere, copilul e pus pe banda anului școlar
+        (<strong>1–2</strong> sau <strong>2–3</strong>) — vârsta de la lunea S1,
+        nu de azi. Săptămâna urmează calendarul comun; poți intra și la mijloc.
       </p>
       {error ? <p className="text-sm text-destructive">{error}</p> : null}
       <Button
