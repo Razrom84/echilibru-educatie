@@ -376,13 +376,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "un obiect de pe pervaz"
+        "floare pe pervaz"
       ],
       "pasi": [
-        "Luați obiectul pe scurt.",
-        "Puneți-l la loc: „La loc. Pervaz.”"
+        "Luați floarea pe scurt.",
+        "Puneți-o la loc: „Floare. Pervaz.”"
       ],
-      "gata_cand": "A ajutat să pună obiectul la loc.",
+      "gata_cand": "A ajutat cu floarea pe pervaz.",
       "tema_saptamana": "Iarna pe pervaz",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1505,14 +1505,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "fruct",
-        "farfurie sau coș"
+        "lingură"
       ],
       "pasi": [
-        "Puneți fructul la loc după mirosit.",
-        "„La loc.”"
+        "Puneți lingura la chiuvetă.",
+        "„Lingură. La loc.”"
       ],
-      "gata_cand": "A ajutat să pună fructul la loc.",
+      "gata_cand": "A ajutat cu lingura.",
       "tema_saptamana": "Mirosuri din casă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1545,12 +1544,14 @@
       "titlu": "Mirosim o floare",
       "durata_min": 5,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Intrați în bucătărie pe scurt.",
-        "Stați pe loc: „Bucătărie. Miros.”"
+      "materiale": [
+        "floare (sau plantă cu floare)"
       ],
-      "gata_cand": "A intrat și a stat pe scurt.",
+      "pasi": [
+        "Mirosiți pe scurt o floare, cu adult.",
+        "„Floare. Miros.”"
+      ],
+      "gata_cand": "A mirosit sau a privit floarea.",
       "tema_saptamana": "Mirosuri din casă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1584,14 +1585,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "farfurie",
-        "cană"
+        "floare afară"
       ],
       "pasi": [
-        "Puneți farfuria și cana la loc pe rând.",
-        "„La loc.”"
+        "Floarea rămâne afară — nu o aduceți în casă.",
+        "„Floare. Afară.”"
       ],
-      "gata_cand": "A ajutat cu un obiect la loc.",
+      "gata_cand": "A lăsat floarea afară sau a privit.",
       "tema_saptamana": "Mirosuri din casă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -2063,13 +2063,14 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "pereche de pantofi"
+        "haină",
+        "cuier"
       ],
       "pasi": [
-        "Așezați pantofii lângă ușă sau pe raft.",
-        "„Pantofi. La loc.”"
+        "Puneți haina oaspetelui pe cuier.",
+        "„Haină. Cuier.”"
       ],
-      "gata_cand": "A ajutat cu pantofii.",
+      "gata_cand": "A ajutat cu haina pe cuier.",
       "tema_saptamana": "Familia și oaspeții",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -2145,13 +2146,14 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "fotografie sau album"
+        "haină",
+        "cuier"
       ],
       "pasi": [
-        "Puneți poza sau albumul pe raft.",
-        "„La loc.”"
+        "După vizită: haina pe cuier.",
+        "„Haină. La loc.”"
       ],
-      "gata_cand": "A ajutat să pună poza la loc.",
+      "gata_cand": "A ajutat cu haina după vizită.",
       "tema_saptamana": "Familia și oaspeții",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },

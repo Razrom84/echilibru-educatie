@@ -3078,4 +3078,304 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
     expect(migration).not.toMatch(/-b23-/);
     expect(migration.match(/s\d+-2-3-z\d-[a-z]+/g)).toHaveLength(35);
   });
+
+  test("P3 Lock B: 32 residual ids keep title/theme; body names the object (zero proxy)", () => {
+    const expected: Record<
+      string,
+      {
+        titlu: string;
+        tema: string;
+        materiale: string[];
+        pasi: string[];
+        gata_cand: string;
+      }
+    > = {
+      "s14-2-3-z7-resurse": {
+        titlu: "Pantofii și haina la loc",
+        tema: "Pași pe drumul scurt",
+        materiale: ["pantofi", "haină"],
+        pasi: ["Puneți pantofii și haina la loc.", "„La loc. Gata.”"],
+        gata_cand: "A ajutat cu pantofii sau haina.",
+      },
+      "s21-2-3-z5-resurse": {
+        titlu: "Floarea de pe pervaz, la loc",
+        tema: "Iarna pe pervaz",
+        materiale: ["floare pe pervaz"],
+        pasi: [
+          "Luați floarea pe scurt.",
+          "Puneți-o la loc: „Floare. Pervaz.”",
+        ],
+        gata_cand: "A ajutat cu floarea pe pervaz.",
+      },
+      "s23-2-3-z5-resurse": {
+        titlu: "Lingura la chiuvetă",
+        tema: "Mirosuri din casă",
+        materiale: ["lingură"],
+        pasi: ["Puneți lingura la chiuvetă.", "„Lingură. La loc.”"],
+        gata_cand: "A ajutat cu lingura.",
+      },
+      "s23-2-3-z6-fizic": {
+        titlu: "Mirosim o floare",
+        tema: "Mirosuri din casă",
+        materiale: ["floare (sau plantă cu floare)"],
+        pasi: ["Mirosiți pe scurt o floare, cu adult.", "„Floare. Miros.”"],
+        gata_cand: "A mirosit sau a privit floarea.",
+      },
+      "s23-2-3-z6-resurse": {
+        titlu: "Floarea rămâne afară",
+        tema: "Mirosuri din casă",
+        materiale: ["floare afară"],
+        pasi: [
+          "Floarea rămâne afară — nu o aduceți în casă.",
+          "„Floare. Afară.”",
+        ],
+        gata_cand: "A lăsat floarea afară sau a privit.",
+      },
+      "s24-2-3-z5-resurse": {
+        titlu: "Haina oaspetelui pe cuier",
+        tema: "Familia și oaspeții",
+        materiale: ["haină", "cuier"],
+        pasi: ["Puneți haina oaspetelui pe cuier.", "„Haină. Cuier.”"],
+        gata_cand: "A ajutat cu haina pe cuier.",
+      },
+      "s24-2-3-z6-resurse": {
+        titlu: "Haina pe cuier după vizită",
+        tema: "Familia și oaspeții",
+        materiale: ["haină", "cuier"],
+        pasi: ["După vizită: haina pe cuier.", "„Haină. La loc.”"],
+        gata_cand: "A ajutat cu haina după vizită.",
+      },
+      "s27-2-3-z4-resurse": {
+        titlu: "Cârpa de geam, la loc",
+        tema: "Zăpadă sau ploaie la geam",
+        materiale: ["cârpă de geam"],
+        pasi: ["Puneți cârpa de geam la loc.", "„Cârpă. La loc.”"],
+        gata_cand: "A ajutat cu cârpa.",
+      },
+      "s27-2-3-z5-fizic": {
+        titlu: "Haina de ploaie pe umeri",
+        tema: "Zăpadă sau ploaie la geam",
+        materiale: ["haină de ploaie"],
+        pasi: [
+          "Puneți haina de ploaie pe umeri pe scurt, cu adult.",
+          "„Haină.” 10–20 de secunde.",
+        ],
+        gata_cand: "A purtat haina pe scurt sau a privit.",
+      },
+      "s27-2-3-z5-mental": {
+        titlu: "Haină — sau fără?",
+        tema: "Zăpadă sau ploaie la geam",
+        materiale: ["haină de ploaie"],
+        pasi: [
+          "Arătați haina: „Haină.”",
+          "Arătați fără: „Fără.” pe scurt.",
+        ],
+        gata_cand: "A auzit haină și fără.",
+      },
+      "s27-2-3-z5-resurse": {
+        titlu: "Haina pe cârlig",
+        tema: "Zăpadă sau ploaie la geam",
+        materiale: ["haină"],
+        pasi: ["Puneți haina pe cârlig.", "„Haină. La loc.”"],
+        gata_cand: "A ajutat să pună haina.",
+      },
+      "s27-2-3-z5-social": {
+        titlu: "Te ajut la haină",
+        tema: "Zăpadă sau ploaie la geam",
+        materiale: ["haină"],
+        pasi: ["Voi țineți haina. „Acum tu.”", "Așteptați fără forțare."],
+        gata_cand: "A ajutat la haină sau a privit.",
+      },
+      "s27-2-3-z7-resurse": {
+        titlu: "Haina și cartea la loc",
+        tema: "Zăpadă sau ploaie la geam",
+        materiale: ["haină", "carte"],
+        pasi: ["Puneți haina pe cârlig, cartea pe raft.", "„La loc.”"],
+        gata_cand: "A ajutat cu haina sau cartea.",
+      },
+      "s28-2-3-z3-resurse": {
+        titlu: "Cârpa de cizme, la loc",
+        tema: "Dezgheț și noroi",
+        materiale: ["cârpă", "cizme"],
+        pasi: ["Ștergeți pe scurt cizma cu cârpa.", "„Cârpă. La loc.”"],
+        gata_cand: "A ajutat cu cârpa sau a privit.",
+      },
+      "s28-2-3-z5-resurse": {
+        titlu: "Prosopul la loc",
+        tema: "Dezgheț și noroi",
+        materiale: ["prosop"],
+        pasi: ["Puneți prosopul la loc după șters.", "„Prosop. La loc.”"],
+        gata_cand: "A ajutat cu prosopul.",
+      },
+      "s28-2-3-z7-resurse": {
+        titlu: "Cizmele și haina la loc",
+        tema: "Dezgheț și noroi",
+        materiale: ["cizme", "haină"],
+        pasi: ["Puneți cizmele lângă ușă, haina pe cârlig.", "„La loc. Gata.”"],
+        gata_cand: "A ajutat cu cizmele sau haina.",
+      },
+      "s29-2-3-z1-fizic": {
+        titlu: "Degetul pe mugure",
+        tema: "Muguri și iarbă nouă",
+        materiale: ["mugure pe plantă"],
+        pasi: [
+          "Atingeți pe scurt un mugure, cu adult.",
+          "„Mugure.” 10–20 de secunde.",
+        ],
+        gata_cand: "A atins mugurele sau a privit.",
+      },
+      "s29-2-3-z1-social": {
+        titlu: "Arătăm mugurele",
+        tema: "Muguri și iarbă nouă",
+        materiale: ["mugure pe plantă"],
+        pasi: [
+          "Arătați mugurele împreună.",
+          "„Împreună. Mugure.” fără grabă.",
+        ],
+        gata_cand: "A privit mugurele cu adultul.",
+      },
+      "s29-2-3-z5-fizic": {
+        titlu: "Ne aplecăm la mugure",
+        tema: "Muguri și iarbă nouă",
+        materiale: ["mugure pe plantă"],
+        pasi: ["Aplecați-vă pe scurt spre mugure, cu adult.", "„Mugure.”"],
+        gata_cand: "A privit mugurele de aproape.",
+      },
+      "s31-2-3-z3-fizic": {
+        titlu: "Așteptăm lângă ghiveci",
+        tema: "Semințe și udat",
+        materiale: ["ghiveci"],
+        pasi: ["Stați lângă ghiveci pe scurt.", "„Ghiveci.” 10–20 de secunde."],
+        gata_cand: "A stat lângă ghiveci sau a privit.",
+      },
+      "s31-2-3-z3-resurse": {
+        titlu: "Ghiveciul pe pervaz",
+        tema: "Semințe și udat",
+        materiale: ["ghiveci"],
+        pasi: ["Puneți ghiveciul pe pervaz.", "„Ghiveci. Pervaz.”"],
+        gata_cand: "A ajutat cu ghiveciul.",
+      },
+      "s31-2-3-z3-social": {
+        titlu: "Privim ghiveciul împreună",
+        tema: "Semințe și udat",
+        materiale: ["ghiveci"],
+        pasi: ["Priviti ghiveciul împreună pe scurt.", "„Împreună. Ghiveci.”"],
+        gata_cand: "A privit ghiveciul cu adultul.",
+      },
+      "s31-2-3-z7-fizic": {
+        titlu: "Plimbare până la ghiveci",
+        tema: "Semințe și udat",
+        materiale: ["ghiveci"],
+        pasi: [
+          "Mergeți pe scurt până la ghiveci, cu adult.",
+          "„Ghiveci.” la final.",
+        ],
+        gata_cand: "A ajuns la ghiveci sau a privit.",
+      },
+      "s33-2-3-z6-resurse": {
+        titlu: "Mâinile pe prosop",
+        tema: "Nisip și găleată",
+        materiale: ["prosop"],
+        pasi: ["Ștergeți mâinile pe prosop pe scurt.", "„Prosop. La loc.”"],
+        gata_cand: "A atins prosopul sau a privit.",
+      },
+      "s35-2-3-z1-resurse": {
+        titlu: "Prosopul afară, apoi la loc",
+        tema: "Apă afară (joc scurt)",
+        materiale: ["prosop"],
+        pasi: ["Prosopul afară pe scurt, apoi la loc.", "„Prosop. La loc.”"],
+        gata_cand: "A ajutat cu prosopul.",
+      },
+      "s35-2-3-z7-resurse": {
+        titlu: "Paharul și prosopul la loc",
+        tema: "Apă afară (joc scurt)",
+        materiale: ["pahar", "prosop"],
+        pasi: ["Puneți paharul și prosopul la loc.", "„La loc. Gata.”"],
+        gata_cand: "A ajutat cu paharul sau prosopul.",
+      },
+      "s37-2-3-z5-resurse": {
+        titlu: "Haina pe braț, la umbră",
+        tema: "Umbră și loc răcoros",
+        materiale: ["haină"],
+        pasi: ["Puneți haina pe braț la umbră pe scurt.", "„Haină. Umbră.”"],
+        gata_cand: "A ținut haina sau a privit.",
+      },
+      "s39-2-3-z5-resurse": {
+        titlu: "Șervețelul la loc",
+        tema: "Fructe pe care le vedem",
+        materiale: ["șervețel"],
+        pasi: ["După gust: șervețelul la loc.", "„Șervețel. La loc.”"],
+        gata_cand: "A ajutat cu șervețelul.",
+      },
+      "s40-2-3-z4-resurse": {
+        titlu: "Cuierul e gata",
+        tema: "Ajutor la treabă scurtă",
+        materiale: ["cuier"],
+        pasi: ["Arătați: cuierul e gata.", "„Cuier. Gata.”"],
+        gata_cand: "A privit cuierul sau a arătat.",
+      },
+      "s40-2-3-z5-mental": {
+        titlu: "Jos, apoi în făraș",
+        tema: "Ajutor la treabă scurtă",
+        materiale: ["făraș", "mătură de copil"],
+        pasi: ["Arătați: „Jos.”", "„În făraș.” pe scurt."],
+        gata_cand: "A auzit jos și făraș.",
+      },
+      "s40-2-3-z5-resurse": {
+        titlu: "Fărașul golit, la loc",
+        tema: "Ajutor la treabă scurtă",
+        materiale: ["făraș"],
+        pasi: ["Goliți fărașul pe scurt, apoi la loc.", "„Făraș. La loc.”"],
+        gata_cand: "A ajutat cu fărașul.",
+      },
+      "s45-2-3-z6-resurse": {
+        titlu: "Haina după plimbare",
+        tema: "Corp puternic, pași mulți",
+        materiale: ["haină"],
+        pasi: [
+          "După plimbare: haina pe cârlig sau cuier.",
+          "„Haină. La loc.”",
+        ],
+        gata_cand: "A ajutat cu haina.",
+      },
+    };
+    expect(Object.keys(expected)).toHaveLength(32);
+    const english = /\b(the|towel|spoon|basket|okay|worksheet|hanger|dustpan)\b/i;
+    const leftoverProxy = /șervețel|lingură|farfurie|evantai/;
+    const leftoverIds = new Set([
+      "s40-2-3-z4-resurse",
+      "s40-2-3-z5-mental",
+      "s40-2-3-z5-resurse",
+    ]);
+    for (const [id, lock] of Object.entries(expected)) {
+      const row = getSeedActivityById(id);
+      expect(row, id).toBeDefined();
+      expect(row?.titlu).toBe(lock.titlu);
+      expect(row?.tema_saptamana).toBe(lock.tema);
+      expect(row?.materiale).toEqual(lock.materiale);
+      expect(row?.pasi).toEqual(lock.pasi);
+      expect(row?.pasi).toHaveLength(2);
+      expect(row?.gata_cand).toBe(lock.gata_cand);
+      const blob = [...row!.materiale, ...row!.pasi, row!.gata_cand].join("\n");
+      expect(blob).not.toMatch(english);
+      if (leftoverIds.has(id)) {
+        expect(blob).not.toMatch(leftoverProxy);
+      }
+    }
+    const migration = readFileSync(
+      resolve("supabase/migrations/20260920260000_align_title_body_32.sql"),
+      "utf8",
+    );
+    expect(migration).toMatch(/^\s*materiale = v\.materiale,/m);
+    expect(migration).toMatch(/^\s*pasi = v\.pasi,/m);
+    expect(migration).toMatch(/^\s*gata_cand = v\.gata_cand$/m);
+    expect(migration).not.toMatch(/titlu =/);
+    expect(migration).not.toMatch(/tema_saptamana =/);
+    expect(migration).not.toMatch(/s32-2-3-/);
+    expect(migration).not.toMatch(/s33-2-3-z1-fizic/);
+    expect(migration).not.toMatch(/s33-2-3-z2-resurse/);
+    expect(migration).not.toMatch(/s33-2-3-z6-fizic/);
+    expect(migration).not.toMatch(/-b23-/);
+    expect(migration.match(/s\d+-2-3-z\d-[a-z]+/g)).toHaveLength(32);
+  });
 });

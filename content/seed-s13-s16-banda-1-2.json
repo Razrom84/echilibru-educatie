@@ -1118,13 +1118,14 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "pantofi"
+        "pantofi",
+        "haină"
       ],
       "pasi": [
-        "Așezați pantofii la ușă împreună.",
-        "„La loc.”"
+        "Puneți pantofii și haina la loc.",
+        "„La loc. Gata.”"
       ],
-      "gata_cand": "A ajutat cu pantofii.",
+      "gata_cand": "A ajutat cu pantofii sau haina.",
       "tema_saptamana": "Pași pe drumul scurt",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },

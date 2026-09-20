@@ -456,13 +456,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "pantofi"
+        "haină"
       ],
       "pasi": [
-        "După pași: puneți pantofii lângă ușă.",
-        "„Pantofi. La loc.”"
+        "După plimbare: haina pe cârlig sau cuier.",
+        "„Haină. La loc.”"
       ],
-      "gata_cand": "A ajutat să pună pantofii la loc.",
+      "gata_cand": "A ajutat cu haina.",
       "tema_saptamana": "Corp puternic, pași mulți",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },

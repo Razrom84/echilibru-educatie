@@ -25,12 +25,14 @@
       "titlu": "Degetul pe mugure",
       "durata_min": 5,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "În curte sau pe pervaz: atingeți iarba sau o frunză verde pe scurt.",
-        "„Iarbă. Verde.” 10–20 de secunde."
+      "materiale": [
+        "mugure pe plantă"
       ],
-      "gata_cand": "A atins iarba sau a privit.",
+      "pasi": [
+        "Atingeți pe scurt un mugure, cu adult.",
+        "„Mugure.” 10–20 de secunde."
+      ],
+      "gata_cand": "A atins mugurele sau a privit.",
       "tema_saptamana": "Muguri și iarbă nouă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -84,12 +86,14 @@
       "titlu": "Arătăm mugurele",
       "durata_min": 3,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Stați lângă iarbă sau plantă unul lângă altul.",
-        "„Împreună. Verde.” fără grabă."
+      "materiale": [
+        "mugure pe plantă"
       ],
-      "gata_cand": "A stat lângă voi la verde.",
+      "pasi": [
+        "Arătați mugurele împreună.",
+        "„Împreună. Mugure.” fără grabă."
+      ],
+      "gata_cand": "A privit mugurele cu adultul.",
       "tema_saptamana": "Muguri și iarbă nouă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -350,13 +354,13 @@
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "stropitoare mică sau pahar cu apă"
+        "mugure pe plantă"
       ],
       "pasi": [
-        "Turnați puțină apă la rădăcină, cu adult.",
-        "„Apă. Plantă.” pe scurt."
+        "Aplecați-vă pe scurt spre mugure, cu adult.",
+        "„Mugure.”"
       ],
-      "gata_cand": "A turnat sau a privit apa.",
+      "gata_cand": "A privit mugurele de aproape.",
       "tema_saptamana": "Muguri și iarbă nouă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1310,13 +1314,13 @@
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "pahar cu apă sau stropitoare mică"
+        "ghiveci"
       ],
       "pasi": [
-        "Turnați puțină apă pe pământ, cu adult.",
-        "„Apă. Udat.” pe scurt."
+        "Stați lângă ghiveci pe scurt.",
+        "„Ghiveci.” 10–20 de secunde."
       ],
-      "gata_cand": "A turnat apa sau a privit.",
+      "gata_cand": "A stat lângă ghiveci sau a privit.",
       "tema_saptamana": "Semințe și udat",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1350,13 +1354,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "pahar sau stropitoare"
+        "ghiveci"
       ],
       "pasi": [
-        "Puneți paharul la chiuvetă sau pe masă.",
-        "„Pahar. La loc.”"
+        "Puneți ghiveciul pe pervaz.",
+        "„Ghiveci. Pervaz.”"
       ],
-      "gata_cand": "A ajutat cu paharul.",
+      "gata_cand": "A ajutat cu ghiveciul.",
       "tema_saptamana": "Semințe și udat",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1371,13 +1375,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "stropitoare mică"
+        "ghiveci"
       ],
       "pasi": [
-        "Țineți stropitoarea împreună pe scurt.",
-        "„Împreună. Apă.” fără forțare."
+        "Priviti ghiveciul împreună pe scurt.",
+        "„Împreună. Ghiveci.”"
       ],
-      "gata_cand": "A ținut sau a privit udatul.",
+      "gata_cand": "A privit ghiveciul cu adultul.",
       "tema_saptamana": "Semințe și udat",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1638,13 +1642,13 @@
       "durata_min": 7,
       "mod_default": "A",
       "materiale": [
-        "stropitoare dacă vrea"
+        "ghiveci"
       ],
       "pasi": [
-        "El dictează direcția prin casă sau curte pe scurt.",
-        "La final: o stropire mică dacă vrea."
+        "Mergeți pe scurt până la ghiveci, cu adult.",
+        "„Ghiveci.” la final."
       ],
-      "gata_cand": "A mers liber pe scurt.",
+      "gata_cand": "A ajuns la ghiveci sau a privit.",
       "tema_saptamana": "Semințe și udat",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
