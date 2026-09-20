@@ -1,0 +1,2463 @@
+{
+  "version": 2,
+  "locale": "ro",
+  "banda": "2-3",
+  "saptamani": [
+    49,
+    50,
+    51,
+    52
+  ],
+  "teme": {
+    "49": "Repetăm 3 favorita",
+    "50": "Casă liniștită",
+    "51": "Curtea cunoscută",
+    "52": "Anul se închide blând"
+  },
+  "activitati": [
+    {
+      "id": "s49-2-3-z1-fizic",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "fizic",
+      "titlu": "Reluăm jocul fizic favorita",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber"
+      ],
+      "pasi": [
+        "Alegeți un joc pe care l-a iubit anul ăsta (pași / minge / geam): „Favorita.”",
+        "Faceți o rundă scurtă: „Din nou.”",
+        "Dacă vrea: ordonați 2 favorita — întâi… apoi…"
+      ],
+      "gata_cand": "A reluat un joc fizic favorit pe scurt.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z1-mental",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "mental",
+      "titlu": "Alege favorita — de ce?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "2–3 amintiri / gesturi de jocuri din an"
+      ],
+      "pasi": [
+        "Arătați 2–3: „Care e favorita?”",
+        "„De ce?” — așteptați gest sau 1 cuvânt; fără notare.",
+        "Dacă vrea: ordonați 2 — asta întâi, asta apoi."
+      ],
+      "gata_cand": "A ales o favorită (gest e destul).",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z1-resurse",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "resurse",
+      "titlu": "Alege 1 din 3 favorita",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "3 obiecte / zone din jocuri iubite"
+      ],
+      "pasi": [
+        "Arătați trei: „Una. Favorita.”",
+        "El alege una: „Gata. Ajunge.”",
+        "Dacă vrea: puneți cele 3 în ordine — 1, 2, 3."
+      ],
+      "gata_cand": "A ales una din trei favorita.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z1-social",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "social",
+      "titlu": "Joacă favorita cu adultul",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "jocul ales"
+      ],
+      "pasi": [
+        "„Favorita împreună.” — o rundă scurtă.",
+        "„Gata.” — oprire blândă.",
+        "Dacă vrea: din nou o dată, apoi gata."
+      ],
+      "gata_cand": "A jucat favorita cu adultul pe scurt.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z2-fizic",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "fizic",
+      "titlu": "Din nou — aceeași mișcare de două ori",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber"
+      ],
+      "pasi": [
+        "O mișcare pe care o știe: „Una.”",
+        "„Din nou.” — a doua oară, la fel.",
+        "Dacă vrea: alegeți a doua mișcare favorita și ordonați-le."
+      ],
+      "gata_cand": "A repetat mișcarea cu din nou.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z2-mental",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "mental",
+      "titlu": "Trei favorita — care e unu?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "3 gesturi / obiecte din an"
+      ],
+      "pasi": [
+        "Arătați trei: „Favorita… favorita… favorita.”",
+        "„Care e unu?” — așteptați alegerea, fără test.",
+        "Dacă vrea: puneți 1–2–3 în ordine cu el."
+      ],
+      "gata_cand": "A ales prima dintre trei favorita.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z2-resurse",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "resurse",
+      "titlu": "Jucăria favorita — la loc după",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "1 jucărie favorită"
+      ],
+      "pasi": [
+        "Joacă scurtă: „Favorita.”",
+        "„Gata. La loc.”",
+        "Dacă vrea: alegeți între 2 jucării favorita unde stau."
+      ],
+      "gata_cand": "Jucăria favorită e la loc.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z2-social",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "social",
+      "titlu": "Arată-i altcuiva favorita",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "persoană dragă",
+        "joc / obiect"
+      ],
+      "pasi": [
+        "Mergeți la cineva drag: „Favorita. Uite.”",
+        "El arată sau joacă o clipă.",
+        "Dacă vrea: din nou pe scurt, apoi gata."
+      ],
+      "gata_cand": "A arătat favorita cuiva din casă.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z3-fizic",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "fizic",
+      "titlu": "Traseu scurt al celor 3 favorita",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "2–3 locuri din jocuri iubite"
+      ],
+      "pasi": [
+        "„Întâi aici… apoi acolo.” — traseu scurt al favoritelor.",
+        "„Gata.” la final.",
+        "Dacă vrea: el ordonează cele 2–3 locuri — care primul."
+      ],
+      "gata_cand": "A mers pe traseul favoritelor.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z3-mental",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "mental",
+      "titlu": "Favorita de vară sau de casă?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "2 zone / amintiri"
+      ],
+      "pasi": [
+        "Arătați două: „Care e favorita?”",
+        "Stați pe alegerea lui o clipă.",
+        "Dacă vrea: ordonați — întâi asta, apoi cealaltă."
+      ],
+      "gata_cand": "A ales între două amintiri favorita.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z3-resurse",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "resurse",
+      "titlu": "Ajunge — o favorită azi",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "2–3 opțiuni"
+      ],
+      "pasi": [
+        "„Azi una. Favorita.” — alegeți împreună.",
+        "„Gata. Ajunge.”",
+        "Dacă vrea: ordonați restul pentru mâine (gest)."
+      ],
+      "gata_cand": "O singură favorită e aleasă pentru azi.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z3-social",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "social",
+      "titlu": "Rândul la favorita",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "joc scurt"
+      ],
+      "pasi": [
+        "„Acum eu — favorita.” O rundă.",
+        "„Acum tu.” — așteptați.",
+        "Dacă vrea: din nou pe rând, apoi gata."
+      ],
+      "gata_cand": "Ați schimbat rândul la jocul favorit.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z4-fizic",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "fizic",
+      "titlu": "Corp favorit: sărit / pași / pe loc",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber"
+      ],
+      "pasi": [
+        "El alege: sărituri, pași sau pe loc: „Favorita.”",
+        "O rundă: „Gata.”",
+        "Dacă vrea: din nou + a doua alegere, în ordine."
+      ],
+      "gata_cand": "A făcut mișcarea corporală aleasă.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z4-mental",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "mental",
+      "titlu": "De ce e favorita? — 1 frază / gest",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "obiectul / jocul ales"
+      ],
+      "pasi": [
+        "Țineți alegerea: „De ce e favorita?”",
+        "Modelați o frază scurtă sau acceptați gestul — fără evaluare.",
+        "Dacă vrea: comparați cu a doua favorită — care întâi."
+      ],
+      "gata_cand": "A motivat (gest/cuvânt) favorita.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z4-resurse",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "resurse",
+      "titlu": "Trei pe masă — alege una",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "3 obiecte favorita pe masă / jos"
+      ],
+      "pasi": [
+        "„Trei. Alege favorita.”",
+        "Celelalte: „La loc. Gata.”",
+        "Dacă vrea: ordonați cele 3 înainte de a alege."
+      ],
+      "gata_cand": "A ales una; restul la loc.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z4-social",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "social",
+      "titlu": "Eu gata, tu din nou",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "joc scurt"
+      ],
+      "pasi": [
+        "Voi: „Gata.” — opriți.",
+        "El: „Din nou?” — dacă vrea, o rundă; dacă nu, gata.",
+        "Dacă vrea: el spune gata primul."
+      ],
+      "gata_cand": "Ați folosit gata / din nou împreună.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z5-fizic",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "fizic",
+      "titlu": "Din nou pe traseul cunoscut",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "traseu scurt în casă (2–3 puncte)"
+      ],
+      "pasi": [
+        "Faceți traseul o dată: „Una.”",
+        "„Din nou.” — a doua oară.",
+        "Dacă vrea: el schimbă ordinea punctelor."
+      ],
+      "gata_cand": "A repetat traseul cu din nou.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z5-mental",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "mental",
+      "titlu": "Trei favorita din an — care?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "3 amintiri: drum / curte / casă"
+      ],
+      "pasi": [
+        "Arătați trei amintiri din săptămânile trecute.",
+        "„Care e favorita?”",
+        "Dacă vrea: ordonați 2–3 favorita din an."
+      ],
+      "gata_cand": "A ales o amintire favorită din an.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z5-resurse",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "resurse",
+      "titlu": "Gata — totul la loc după favorita",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "obiectele din joc"
+      ],
+      "pasi": [
+        "După joc: „Gata. La loc.”",
+        "„Ajunge.”",
+        "Dacă vrea: alegeți ce rămâne la vedere (1 din 2)."
+      ],
+      "gata_cand": "După favorita, lucrurile sunt la loc.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z5-social",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "social",
+      "titlu": "Împreună: favorita, apoi gata",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "joc ales"
+      ],
+      "pasi": [
+        "„Favorita împreună.” — scurt.",
+        "Împreună: „Gata.”",
+        "Dacă vrea: din nou o dată dacă amândoi vreți."
+      ],
+      "gata_cand": "Ați închis favorita cu gata împreună.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z6-fizic",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "fizic",
+      "titlu": "Mișcare liberă — ce e favorita azi",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber"
+      ],
+      "pasi": [
+        "El alege mișcarea: „Favorita.”",
+        "Voi urmăriți blând: „Gata” când se oprește.",
+        "Dacă vrea: din nou sau treceți la a doua favorită."
+      ],
+      "gata_cand": "A mișcat liber pe alegerea lui.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z6-mental",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "mental",
+      "titlu": "Ce am iubit anul ăsta?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu calm"
+      ],
+      "pasi": [
+        "„Anul ăsta. Favorita…” — numiți 1–2 amintiri blând.",
+        "El adaugă gest sau cuvânt — fără întrebări.",
+        "Dacă vrea: ordonați 2–3 pe degete."
+      ],
+      "gata_cand": "Ați numit cel puțin o favorită din an.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z6-resurse",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "resurse",
+      "titlu": "Alege 1 din 3 — apoi gata",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "3 zone / obiecte"
+      ],
+      "pasi": [
+        "„Una din trei. Favorita.”",
+        "„Gata. Ajunge pentru azi.”",
+        "Dacă vrea: celelalte două în ordine pe loc."
+      ],
+      "gata_cand": "A ales una din trei; gata.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z6-social",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "social",
+      "titlu": "Arătăm favoritele adultului",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "1–2 obiecte / gesturi"
+      ],
+      "pasi": [
+        "„Favorita. Uite.” — arătați împreună.",
+        "Adultul mulțumește blând: „Frumos.”",
+        "Dacă vrea: din nou pe scurt, apoi gata."
+      ],
+      "gata_cand": "A împărtășit favoritele cu adultul.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z7-fizic",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "fizic",
+      "titlu": "Mișcare liberă — favorita blândă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber"
+      ],
+      "pasi": [
+        "El alege; voi urmăriți blând.",
+        "Fără grabă: „Favorita… gata.”",
+        "Dacă vrea: din nou o dată foarte scurt."
+      ],
+      "gata_cand": "A mișcat liber pe favorita zilei.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z7-mental",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "mental",
+      "titlu": "Favoritul săptămânii — din nou sau gata?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "amintirea săptămânii"
+      ],
+      "pasi": [
+        "„Azi favorita e…” — arătați alegerea lui.",
+        "„Din nou sau gata?” — respectați.",
+        "Dacă vrea: ordonați 2 favorita ale săptămânii."
+      ],
+      "gata_cand": "A închis mental săptămâna pe o favorită.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z7-resurse",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "resurse",
+      "titlu": "Totul la loc — gata înainte de calm",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "jucării folosite"
+      ],
+      "pasi": [
+        "„Gata. La loc.”",
+        "„Acum e liniște.”",
+        "Dacă vrea: un obiect favorita rămâne la vedere."
+      ],
+      "gata_cand": "Lucrurile sunt la loc; calm.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s49-2-3-z7-social",
+      "banda": "2-3",
+      "saptamana": 49,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "social",
+      "titlu": "Ritual: bună seara, favorita blândă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu de seară"
+      ],
+      "pasi": [
+        "Șoptiți: „Bună seara. Favorita…” — un gest scurt.",
+        "„Gata. Noapte bună.”",
+        "Dacă vrea: din nou pe un salut mic, apoi odihnă."
+      ],
+      "gata_cand": "Ați închis seara cu ritual de favorita.",
+      "tema_saptamana": "Repetăm 3 favorita",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z1-fizic",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "fizic",
+      "titlu": "30 de secunde mișcare, 30 de calm",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber în casă"
+      ],
+      "pasi": [
+        "Mișcați-vă ușor ~30 de secunde: „Mișcare.”",
+        "Opriți-vă: „Calm. Liniște.” — ~30 de secunde pe loc.",
+        "Dacă vrea: încă o rundă scurtă de 30s liniște."
+      ],
+      "gata_cand": "Ați făcut mișcare scurtă, apoi calm.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z1-mental",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "mental",
+      "titlu": "Ce ați auzit în liniște?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "cameră liniștită"
+      ],
+      "pasi": [
+        "Stați liniște ~20 de secunde: „Liniște. Ascultăm.”",
+        "„Ce ați auzit?” — un sunet sau „liniște”.",
+        "Dacă vrea: creați încă 30s de liniște împreună."
+      ],
+      "gata_cand": "A auzit ceva (sau liniștea) pe scurt.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z1-resurse",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "resurse",
+      "titlu": "Jucăriile la loc înainte de calm",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "2–3 jucării pe jos",
+        "cutie / raft"
+      ],
+      "pasi": [
+        "Strângeți: „La loc.”",
+        "„Acum calm. Moale.”",
+        "Dacă vrea: alegeți ce rămâne afară (1 din 2)."
+      ],
+      "gata_cand": "Jucăriile sunt la loc; casa e pregătită de calm.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z1-social",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "social",
+      "titlu": "Liniște împreună",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Stați umăr la umăr: „Liniște împreună.”",
+        "10–20 de secunde fără vorbă tare — moale.",
+        "Dacă vrea: el ține degetul la buze ca semnal de calm."
+      ],
+      "gata_cand": "Ați împărtășit o clipă de liniște.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z2-fizic",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "fizic",
+      "titlu": "Pași moale prin casă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "hol / cameră"
+      ],
+      "pasi": [
+        "Mergeți pe vârfuri sau pași ușori: „Moale. Pași.”",
+        "Opriți-vă: „Calm.”",
+        "Dacă vrea: el alege unde e cel mai liniște colț."
+      ],
+      "gata_cand": "A făcut pași blânzi și s-a oprit calm.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z2-mental",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "mental",
+      "titlu": "Liniște sau sunet? — două clipe",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "5 secunde liniște: „Liniște.”",
+        "O bătaie din palme: „Sunet.” Apoi iar liniște.",
+        "Dacă vrea: creați 30s de liniște după sunet."
+      ],
+      "gata_cand": "A simțit diferența liniște / sunet.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z2-resurse",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "resurse",
+      "titlu": "Oprim jucăria sonoră — gata",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "jucărie sonoră",
+        "cutie"
+      ],
+      "pasi": [
+        "După un sunet scurt: „Gata. Liniște.”",
+        "„La loc. Ajunge.”",
+        "Dacă vrea: el alege cutia sau raftul."
+      ],
+      "gata_cand": "Jucăria sonoră e oprită și la loc.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z2-social",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "social",
+      "titlu": "Rândul la liniște",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Voi: „Acum eu — liniște.” 5 secunde.",
+        "„Acum tu” — așteptați liniștea lui.",
+        "Dacă vrea: încă un schimb, apoi moale împreună."
+      ],
+      "gata_cand": "Ați schimbat rândul la o clipă de liniște.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z3-fizic",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "fizic",
+      "titlu": "Dans scurt, apoi calm",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber"
+      ],
+      "pasi": [
+        "Mișcare ~30 de secunde: „Mișcare.”",
+        "Mâinile pe genunchi: „Calm. Moale.”",
+        "Dacă vrea: încă 30s de liniște pe loc."
+      ],
+      "gata_cand": "A trecut de la mișcare la calm.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z3-mental",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "mental",
+      "titlu": "Unde e casa liniștită?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "2 locuri: hol / colț de cameră"
+      ],
+      "pasi": [
+        "Arătați două locuri: „Unde e liniște?”",
+        "Stați în locul ales: „Calm aici.”",
+        "Dacă vrea: creați 30s de liniște în acel loc."
+      ],
+      "gata_cand": "A ales un loc liniștit din casă.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z3-resurse",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "resurse",
+      "titlu": "Totul la loc — apoi moale",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "obiecte pe jos"
+      ],
+      "pasi": [
+        "„La loc.” — 2–3 lucruri.",
+        "„Moale. Liniște. Ajunge.”",
+        "Dacă vrea: alegeți un obiect moale de ținut pe genunchi."
+      ],
+      "gata_cand": "Casa e strânsă; urmează moale.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z3-social",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "social",
+      "titlu": "Liniște pe genunchi împreună",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "canapea / covor"
+      ],
+      "pasi": [
+        "Stați aproape: „Liniște. Calm.”",
+        "Respirați o dată vizibil, moale.",
+        "Dacă vrea: el spune când e gata calm (gest)."
+      ],
+      "gata_cand": "Ați stat liniștiți aproape unul de altul.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z4-fizic",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "fizic",
+      "titlu": "Întindere moale, apoi pe loc",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Brațele sus blând: „Moale.”",
+        "Jos pe loc: „Calm. Liniște.”",
+        "Dacă vrea: încă 30s pe loc, fără mișcare mare."
+      ],
+      "gata_cand": "A făcut o întindere moale și calm.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z4-mental",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "mental",
+      "titlu": "Voce moale — un cuvânt",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Spuneți un cuvânt tare, apoi moale: „Moale. Liniște.”",
+        "El poate doar asculta.",
+        "Dacă vrea: el alege un cuvânt pe care îl spuneți moale."
+      ],
+      "gata_cand": "A auzit voce moale pe scurt.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z4-resurse",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "resurse",
+      "titlu": "Alege 1 din 2 — jucăria liniște",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "2 jucării: una sonoră, una fără sunet"
+      ],
+      "pasi": [
+        "„Care e liniște?” — arătați ambele.",
+        "Alegeți una: „Ajunge. La loc pe cealaltă.”",
+        "Dacă vrea: 30s de joacă moale cu cea liniște."
+      ],
+      "gata_cand": "A ales jucăria liniștită; cealaltă la loc.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z4-social",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "social",
+      "titlu": "Arată-i adultului liniște",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Invitați-l să arate colțul liniștit: „Liniște. Uite.”",
+        "Adultul șoptește: „Calm. Moale.”",
+        "Dacă vrea: stați 30s acolo împreună."
+      ],
+      "gata_cand": "A arătat un loc liniște adultului.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z5-fizic",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "fizic",
+      "titlu": "Trei opriri calm pe traseu",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "hol: 3 puncte"
+      ],
+      "pasi": [
+        "La fiecare oprire: „Calm.” — 5 secunde.",
+        "Între opriri: pași moale.",
+        "Dacă vrea: la ultima oprire, 30s de liniște."
+      ],
+      "gata_cand": "A făcut trei opriri calme pe traseu.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z5-mental",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "mental",
+      "titlu": "Liniște, calm, moale — pe scurt",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Spuneți pe rând cu gest: „Liniște.” „Calm.” „Moale.”",
+        "Repetați o dată, șoptit.",
+        "Dacă vrea: el arată care îi place — liniște / calm / moale."
+      ],
+      "gata_cand": "A auzit cele trei cuvinte pe liniște.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z5-resurse",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "resurse",
+      "titlu": "Lumina sau jucăria — la loc pentru calm",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "întrerupător sau jucărie",
+        "locul lor"
+      ],
+      "pasi": [
+        "Pregătiți casa: „La loc.”",
+        "„Acum liniște. Ajunge.”",
+        "Dacă vrea: alegeți lumină mică sau stins (cu adult)."
+      ],
+      "gata_cand": "Casa e pregătită pentru calm.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z5-social",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "social",
+      "titlu": "Liniște pe rând — eu, tu",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Voi liniște 5 secunde: „Acum eu.”",
+        "El: „Acum tu” — așteptați.",
+        "Dacă vrea: la final 30s liniște împreună."
+      ],
+      "gata_cand": "Ați făcut liniște pe rând.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z6-fizic",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "fizic",
+      "titlu": "Mișcare liberă, apoi calm liber",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber"
+      ],
+      "pasi": [
+        "El dictează ~30s mișcare.",
+        "Apoi: „Calm. Moale.” — cât vrea el pe loc.",
+        "Dacă vrea: încă 30s de liniște în locul ales."
+      ],
+      "gata_cand": "A mișcat liber, apoi s-a calm pe loc.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z6-mental",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "mental",
+      "titlu": "Ce ați auzit azi în casă?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "cameră"
+      ],
+      "pasi": [
+        "Stați liniște 15–20 de secunde.",
+        "„Ce ați auzit?” — oferiți 2 opțiuni arătate.",
+        "Dacă vrea: creați 30s de liniște „goală” (fără comentariu)."
+      ],
+      "gata_cand": "A reflectat blând la ce a auzit.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z6-resurse",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "resurse",
+      "titlu": "Totul la loc înainte de liniște",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "jucării folosite"
+      ],
+      "pasi": [
+        "„La loc.”",
+        "„Liniște. Ajunge pentru azi.”",
+        "Dacă vrea: un obiect moale rămâne pe canapea."
+      ],
+      "gata_cand": "Spațiul e strâns înainte de liniște.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z6-social",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "social",
+      "titlu": "Arătăm liniștea altcuiva",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "persoană dragă sau jucărie"
+      ],
+      "pasi": [
+        "Mergeți la cineva: „Liniște. Uite.” — gest de liniște.",
+        "Stați moale o clipă.",
+        "Dacă vrea: 30s liniște în trei (sau cu jucăria)."
+      ],
+      "gata_cand": "A împărtășit gestul de liniște.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z7-fizic",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "fizic",
+      "titlu": "Corp liber — calm cum vrea el",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber"
+      ],
+      "pasi": [
+        "El alege: mișcare scurtă sau doar calm pe loc.",
+        "Voi urmăriți blând: „Moale… calm.”",
+        "Dacă vrea: 30s liniște la final."
+      ],
+      "gata_cand": "A ales ritmul calm al duminicii.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z7-mental",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "mental",
+      "titlu": "Favoritul: liniște sau moale?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Întrebați: „Îți place liniște sau moale?” — arătați ambele gesturi.",
+        "Respectați alegerea; fără test.",
+        "Dacă vrea: creați 30s pe alegerea lui."
+      ],
+      "gata_cand": "A ales un tip de liniște a săptămânii.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z7-resurse",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "resurse",
+      "titlu": "Totul la loc înainte de calm",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "jucării"
+      ],
+      "pasi": [
+        "Strângeți: „La loc.”",
+        "„Calm. Gata pentru azi.”",
+        "Dacă vrea: un ultim moale pe genunchi, apoi odihnă."
+      ],
+      "gata_cand": "Spațiul e gata înainte de calm.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s50-2-3-z7-social",
+      "banda": "2-3",
+      "saptamana": 50,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "social",
+      "titlu": "Ritual: bună seara — liniște, calm",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu de seară"
+      ],
+      "pasi": [
+        "Șoptiți: „Bună seara. Liniște. Moale.”",
+        "„Calm. Noapte bună.”",
+        "Dacă vrea: 30s de liniște înainte de somn."
+      ],
+      "gata_cand": "Ați închis seara cu ritual de liniște.",
+      "tema_saptamana": "Casă liniștită",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z1-fizic",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "fizic",
+      "titlu": "Traseu cunoscut în curte",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "curte / balcon / potecă"
+      ],
+      "pasi": [
+        "Mergeți pe drum-ul pe care îl știți: „Drum.”",
+        "Opriți-vă la un loc cunoscut: „Curte.”",
+        "Dacă vrea: denumiți 3 locuri pe traseu — poartă / copac / iarbă."
+      ],
+      "gata_cand": "A mers pe traseul cunoscut din curte.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z1-mental",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "mental",
+      "titlu": "Hartă verbală: trei locuri",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "3 locuri vizibile în curte"
+      ],
+      "pasi": [
+        "Arătați: „Curte. Copac. Drum.” — sau echivalentele RO.",
+        "„Unde e copac?” — așteptați arătarea.",
+        "Dacă vrea: el denumește cele 3 locuri (gest e destul)."
+      ],
+      "gata_cand": "A asociat cel puțin un loc din cele trei.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z1-resurse",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "resurse",
+      "titlu": "Întoarcere = gata curtea",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "ușă / punct de pornim"
+      ],
+      "pasi": [
+        "Spuneți: „Ne întoarcem. Gata curte.”",
+        "Ajungeți: „Acasă. Ajunge.”",
+        "Dacă vrea: alegeți pe unde vă întoarceți pe drum."
+      ],
+      "gata_cand": "V-ați întors; curtea e închisă pentru acum.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z1-social",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "social",
+      "titlu": "Arată locul preferat din curte",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "„Unde îți place în curte?” — el arată.",
+        "Denumiți locul: „Copac” sau „Drum” sau altul.",
+        "Dacă vrea: denumiți 3 locuri împreună."
+      ],
+      "gata_cand": "A arătat locul preferat din curte.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z2-fizic",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "fizic",
+      "titlu": "Pași până la copac și înapoi",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "pom / stâlp / reper „copac”"
+      ],
+      "pasi": [
+        "Mergeți la copac: „Copac. Pom.”",
+        "Înapoi pe drum: „Drum. Înapoi.”",
+        "Dacă vrea: denumiți 3 opriri — pornim / copac / poartă."
+      ],
+      "gata_cand": "A mers până la copac și înapoi.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z2-mental",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "mental",
+      "titlu": "Curte, copac, drum — pe rând",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "curte"
+      ],
+      "pasi": [
+        "Arătați fiecare: „Curte.” „Copac.” „Drum.”",
+        "Repetați o dată, arătând.",
+        "Dacă vrea: el arată drum-ul singur."
+      ],
+      "gata_cand": "A auzit și a văzut cele trei cuvinte pe locuri.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z2-resurse",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "resurse",
+      "titlu": "Pantofii / jucăria de curte — la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pantofi sau jucărie luată afară",
+        "locul lor"
+      ],
+      "pasi": [
+        "După curte: „La loc.”",
+        "„Gata. Ajunge.”",
+        "Dacă vrea: alegeți raftul sau cutia."
+      ],
+      "gata_cand": "Obiectul de curte e la loc.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z2-social",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "social",
+      "titlu": "Mergeți pe drum împreună",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "drum scurt"
+      ],
+      "pasi": [
+        "Luați-l de mână: „Drum împreună.”",
+        "La copac: „Aici.” — o clipă.",
+        "Dacă vrea: el alege ritmul pe drum."
+      ],
+      "gata_cand": "A mers pe drum cu adultul.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z3-fizic",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "fizic",
+      "titlu": "Aceleași locuri — traseu cunoscut",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "2–3 locuri din curte pe care le știți"
+      ],
+      "pasi": [
+        "Parcurgeți aceleași locuri ca ieri: „Curte cunoscut.”",
+        "La fiecare: numiți scurt.",
+        "Dacă vrea: denumiți toate cele 3 locuri pe rând."
+      ],
+      "gata_cand": "A vizitat din nou locurile cunoscute.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z3-mental",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "mental",
+      "titlu": "Unde e drum? Unde e copac?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "curte"
+      ],
+      "pasi": [
+        "„Unde e drum?” — așteptați gestul.",
+        "„Unde e copac?” — la fel.",
+        "Dacă vrea: adăugați „Unde e curte?” ca al treilea."
+      ],
+      "gata_cand": "A arătat drum sau copac.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z3-resurse",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "resurse",
+      "titlu": "Gata curte — întoarcere acasă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "ușă"
+      ],
+      "pasi": [
+        "„Gata curte. Mergem.”",
+        "„Acasă. Ajunge.”",
+        "Dacă vrea: el alege când e gata (gest)."
+      ],
+      "gata_cand": "Curtea e închisă; sunteți acasă.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z3-social",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "social",
+      "titlu": "Rândul pe drum",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "drum scurt"
+      ],
+      "pasi": [
+        "Voi faceți 3 pași pe drum: „Acum eu.”",
+        "„Acum tu” — așteptați.",
+        "Dacă vrea: la copac schimbați din nou rândul."
+      ],
+      "gata_cand": "Ați schimbat rândul pe drum.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z4-fizic",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "fizic",
+      "titlu": "Drum lung sau drum scurt?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "2 trasee scurte în curte"
+      ],
+      "pasi": [
+        "Arătați două drum-uri: „Scurt? Lung?”",
+        "Mergeți pe cel ales: „Drum.”",
+        "Dacă vrea: denumiți 3 locuri pe drum-ul ales."
+      ],
+      "gata_cand": "A ales și a mers pe un drum.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z4-mental",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "mental",
+      "titlu": "Copac aproape sau departe?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "copac / reper"
+      ],
+      "pasi": [
+        "Arătați: „Copac aproape? Sau departe?”",
+        "Mergeți până acolo sau doar arătați.",
+        "Dacă vrea: comparați cu un al doilea copac / stâlp."
+      ],
+      "gata_cand": "A legat copac de aproape / departe.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z4-resurse",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "resurse",
+      "titlu": "Alege 1 din 2 — unde stăm în curte",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "2 locuri: lângă copac / pe drum"
+      ],
+      "pasi": [
+        "„Aici sau aici?”",
+        "Stați scurt: „Ajunge.”",
+        "Dacă vrea: denumiți locul ales + încă 2 din jur."
+      ],
+      "gata_cand": "A ales unde stați în curte.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z4-social",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "social",
+      "titlu": "Arată curte-ul altcuiva",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "persoană dragă"
+      ],
+      "pasi": [
+        "Mergeți cu cineva: „Curte. Uite.”",
+        "El arată copac sau drum.",
+        "Dacă vrea: denumiți 3 locuri pentru oaspete."
+      ],
+      "gata_cand": "A arătat curtea cuiva drag.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z5-fizic",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "fizic",
+      "titlu": "Trei opriri pe drum cunoscut",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "drum cu 3 repere"
+      ],
+      "pasi": [
+        "Oprire 1, 2, 3 — denumiți fiecare.",
+        "„Drum. Curte. Copac.” pe ce se potrivește.",
+        "Dacă vrea: el alege ordinea celor 3 opriri."
+      ],
+      "gata_cand": "A făcut trei opriri pe drum.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z5-mental",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "mental",
+      "titlu": "Hartă: curte → copac → drum",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Spuneți harta: „Curte. Copac. Drum.” arătând.",
+        "Cereți: „Arată drum.”",
+        "Dacă vrea: el spune harta cu gesturi pe cele 3."
+      ],
+      "gata_cand": "A folosit harta verbală pe scurt.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z5-resurse",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "resurse",
+      "titlu": "Întoarcerea de pe drum — ajunge",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "drum → ușă"
+      ],
+      "pasi": [
+        "Înapoi pe drum: „Acasă.”",
+        "„Gata. Ajunge.”",
+        "Dacă vrea: un obiect mic de curte la loc."
+      ],
+      "gata_cand": "V-ați întors de pe drum; gata.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z5-social",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "social",
+      "titlu": "Așteaptă-mă la copac",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "copac / reper"
+      ],
+      "pasi": [
+        "El stă la copac (sau voi); celălalt vine: „Te aștept.”",
+        "Când ajungeți: „Împreună pe drum!”",
+        "Dacă vrea: schimbați rolurile o dată."
+      ],
+      "gata_cand": "Ați exersat așteptarea la copac.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z6-fizic",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "fizic",
+      "titlu": "Plimbare liberă pe curte cunoscut",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "curte"
+      ],
+      "pasi": [
+        "Mergeți liber pe locurile știute: „Curte.”",
+        "Voi numiți drum / copac dacă apar.",
+        "Dacă vrea: el alege 3 locuri de vizitat."
+      ],
+      "gata_cand": "A explorat liber curtea cunoscută.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z6-mental",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "mental",
+      "titlu": "Ce locuri știm în curte?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "curte"
+      ],
+      "pasi": [
+        "„Ce știm?” — oferiți 2–3 locuri arătate.",
+        "„Copac? Drum?” — așteptați gest.",
+        "Dacă vrea: denumiți cele 3 locuri preferate din curte."
+      ],
+      "gata_cand": "Ați numit locuri cunoscute din curte.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z6-resurse",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "resurse",
+      "titlu": "La loc după curte",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pantofi / jucărie / frunză"
+      ],
+      "pasi": [
+        "„La loc.”",
+        "„Gata curte. Ajunge.”",
+        "Dacă vrea: alegeți ce rămâne afară (1 din 2)."
+      ],
+      "gata_cand": "După curte, lucrurile sunt la loc.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z6-social",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "social",
+      "titlu": "Locul preferat — arată-mi",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "„Arată-mi.” — el duce la locul preferat din curte.",
+        "Denumiți: „Copac” sau „Drum” sau altul.",
+        "Dacă vrea: denumiți 3 locuri din jurul lui."
+      ],
+      "gata_cand": "A dus adultul la locul preferat.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z7-fizic",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "fizic",
+      "titlu": "Pași liberi pe drum — cum vrea el",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "drum / curte"
+      ],
+      "pasi": [
+        "El dictează ritmul pe drum sau stă la copac.",
+        "Fără grabă: „Curte cunoscut.”",
+        "Dacă vrea: treceți pe 3 locuri denumite, blând."
+      ],
+      "gata_cand": "A mers liber pe curtea cunoscută.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z7-mental",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "mental",
+      "titlu": "Favoritul din curte: copac sau drum?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "„Copac sau drum?” — arătați ambele.",
+        "Respectați alegerea.",
+        "Dacă vrea: adăugați curte ca a treia opțiune denumită."
+      ],
+      "gata_cand": "A ales un loc favorit din curte.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z7-resurse",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "resurse",
+      "titlu": "Totul la loc înainte de calm",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "obiecte de curte"
+      ],
+      "pasi": [
+        "„La loc.”",
+        "„Gata curte pentru azi.”",
+        "Dacă vrea: un ultim privit spre copac, apoi calm."
+      ],
+      "gata_cand": "Spațiul e gata după curte.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s51-2-3-z7-social",
+      "banda": "2-3",
+      "saptamana": 51,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "social",
+      "titlu": "Ritual: bună seara — curte e gata",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "ușă / fereastră spre curte"
+      ],
+      "pasi": [
+        "Șoptiți: „Bună seara. Curte… drum… copac — gata.”",
+        "„Noapte bună.”",
+        "Dacă vrea: un salut mic spre curte pe fereastră."
+      ],
+      "gata_cand": "Ați închis seara cu ritual de curte cunoscută.",
+      "tema_saptamana": "Curtea cunoscută",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z1-fizic",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "fizic",
+      "titlu": "Ultimul joc fizic favorita — blând",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber"
+      ],
+      "pasi": [
+        "Alegeți un joc iubit din an: „Favorita.”",
+        "O rundă scurtă: „Din nou… gata.” — fără grabă.",
+        "Dacă vrea: ordonați 2 favorita — întâi… apoi…"
+      ],
+      "gata_cand": "A reluat blând un joc fizic favorit.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z1-mental",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "mental",
+      "titlu": "Anul se închide — care e favorita?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "2–3 amintiri din an"
+      ],
+      "pasi": [
+        "Arătați 2–3: „Care e favorita?”",
+        "„De ce?” — gest e destul; fără notare, fără test.",
+        "Dacă vrea: ordonați 2–3 favorita ale anului."
+      ],
+      "gata_cand": "A ales o favorită a anului (gest e destul).",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z1-resurse",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "resurse",
+      "titlu": "Alege 1 din 3 — apoi gata pe an",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "3 obiecte / zone favorita"
+      ],
+      "pasi": [
+        "Arătați trei: „Una. Favorita.”",
+        "„Gata. Ajunge pentru an.”",
+        "Dacă vrea: puneți cele 3 în ordine — 1, 2, 3."
+      ],
+      "gata_cand": "A ales una din trei; anul se închide pe alegere.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z1-social",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "social",
+      "titlu": "Joacă favorita — închidere împreună",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "jocul ales"
+      ],
+      "pasi": [
+        "„Favorita împreună.” — o rundă blândă.",
+        "„Gata. Anul se închide.”",
+        "Dacă vrea: din nou o dată, apoi gata."
+      ],
+      "gata_cand": "Ați închis o favorită împreună.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z2-fizic",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "fizic",
+      "titlu": "Din nou blând — aceeași mișcare",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber"
+      ],
+      "pasi": [
+        "O mișcare cunoscută: „Una.”",
+        "„Din nou.” — a doua oară, mai blând.",
+        "Dacă vrea: alegeți a doua mișcare și ordonați-le."
+      ],
+      "gata_cand": "A repetat mișcarea blând cu din nou.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z2-mental",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "mental",
+      "titlu": "Ce am iubit anul ăsta — fără test",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu calm"
+      ],
+      "pasi": [
+        "„Anul… favorita…” — numiți 1–2 amintiri.",
+        "El adaugă gest sau cuvânt — acceptați orice.",
+        "Dacă vrea: ordonați 2–3 pe degete."
+      ],
+      "gata_cand": "Ați numit blând o favorită a anului.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z2-resurse",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "resurse",
+      "titlu": "Jucăria favorita — la loc, gata",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "1 jucărie favorită"
+      ],
+      "pasi": [
+        "Joacă scurtă: „Favorita.”",
+        "„Gata. La loc.”",
+        "Dacă vrea: alegeți între 2 unde stă."
+      ],
+      "gata_cand": "Jucăria favorită e la loc; gata.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z2-social",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "social",
+      "titlu": "Arată favoritele anului",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "persoană dragă",
+        "1–2 obiecte"
+      ],
+      "pasi": [
+        "„Favorita. Uite.” — arătați împreună.",
+        "Adultul: „Frumos. Gata pentru azi.”",
+        "Dacă vrea: din nou pe scurt, apoi gata."
+      ],
+      "gata_cand": "A împărtășit favoritele anului.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z3-fizic",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "fizic",
+      "titlu": "Traseu blând al anului",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "2–3 locuri din jocuri ale anului"
+      ],
+      "pasi": [
+        "„Întâi aici… apoi acolo.” — traseu scurt de amintiri.",
+        "„Gata.” la final — închidere blândă.",
+        "Dacă vrea: el ordonează cele 2–3 locuri."
+      ],
+      "gata_cand": "A mers pe traseul blând al amintirilor.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z3-mental",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "mental",
+      "titlu": "Trei favorita — care închide anul?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "3 gesturi / obiecte"
+      ],
+      "pasi": [
+        "Arătați trei: „Favorita… favorita… favorita.”",
+        "„Care e unu pentru închidere?” — fără presiune.",
+        "Dacă vrea: puneți 1–2–3 în ordine cu el."
+      ],
+      "gata_cand": "A ales una dintre trei pentru închidere.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z3-resurse",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "resurse",
+      "titlu": "Ajunge — o favorită, apoi gata",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "2–3 opțiuni"
+      ],
+      "pasi": [
+        "„Azi una. Favorita.”",
+        "„Gata. Ajunge.”",
+        "Dacă vrea: ordonați restul pe loc (gest)."
+      ],
+      "gata_cand": "O favorită e aleasă; gata.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z3-social",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "social",
+      "titlu": "Rândul la favorita — apoi gata",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "joc scurt"
+      ],
+      "pasi": [
+        "„Acum eu — favorita.” O rundă.",
+        "„Acum tu.” — așteptați.",
+        "Dacă vrea: din nou pe rând, apoi gata împreună."
+      ],
+      "gata_cand": "Ați schimbat rândul și ați închis cu gata.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z4-fizic",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "fizic",
+      "titlu": "Corp blând: favorita de închidere",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber"
+      ],
+      "pasi": [
+        "El alege: sărituri mici, pași sau pe loc: „Favorita.”",
+        "O rundă: „Gata.”",
+        "Dacă vrea: din nou + a doua alegere, în ordine."
+      ],
+      "gata_cand": "A făcut mișcarea blândă aleasă.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z4-mental",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "mental",
+      "titlu": "De ce e favorita? — blând, fără notă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "obiectul / jocul ales"
+      ],
+      "pasi": [
+        "„De ce e favorita?”",
+        "Modelați o frază scurtă sau acceptați gestul — zero evaluare.",
+        "Dacă vrea: comparați cu a doua — care întâi."
+      ],
+      "gata_cand": "A motivat blând favorita.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z4-resurse",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "resurse",
+      "titlu": "Trei pe masă — alege, gata",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "3 obiecte favorita"
+      ],
+      "pasi": [
+        "„Trei. Alege favorita.”",
+        "Celelalte: „La loc. Gata.”",
+        "Dacă vrea: ordonați cele 3 înainte de a alege."
+      ],
+      "gata_cand": "A ales una; restul la loc.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z4-social",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "social",
+      "titlu": "Eu gata, tu din nou — închidere",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "joc scurt"
+      ],
+      "pasi": [
+        "Voi: „Gata.” — opriți blând.",
+        "El: „Din nou?” — dacă vrea; dacă nu, gata anul pe azi.",
+        "Dacă vrea: el spune gata primul."
+      ],
+      "gata_cand": "Ați folosit gata / din nou la închidere.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z5-fizic",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "fizic",
+      "titlu": "Din nou pe traseul anului",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "traseu scurt cunoscut (2–3 puncte)"
+      ],
+      "pasi": [
+        "Faceți traseul o dată: „Una.”",
+        "„Din nou.” — a doua oară, blând.",
+        "Dacă vrea: el schimbă ordinea punctelor."
+      ],
+      "gata_cand": "A repetat traseul anului cu din nou.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z5-mental",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "mental",
+      "titlu": "Favorita din an: casă, curte, drum?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "3 amintiri: casă / curte / drum"
+      ],
+      "pasi": [
+        "Arătați trei amintiri din an.",
+        "„Care e favorita?”",
+        "Dacă vrea: ordonați 2–3 favorita ale anului."
+      ],
+      "gata_cand": "A ales o amintire favorită a anului.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z5-resurse",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "resurse",
+      "titlu": "Gata — totul la loc după an",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "obiectele din joc"
+      ],
+      "pasi": [
+        "După joc: „Gata. La loc.”",
+        "„Ajunge. Anul se strânge blând.”",
+        "Dacă vrea: alegeți ce rămâne la vedere (1 din 2)."
+      ],
+      "gata_cand": "După favorita, lucrurile sunt la loc.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z5-social",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "social",
+      "titlu": "Împreună: favorita, apoi gata pe an",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "joc ales"
+      ],
+      "pasi": [
+        "„Favorita împreună.” — scurt.",
+        "Împreună: „Gata.”",
+        "Dacă vrea: din nou o dată dacă amândoi vreți."
+      ],
+      "gata_cand": "Ați închis favorita anului cu gata.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z6-fizic",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "fizic",
+      "titlu": "Mișcare liberă — favorita de închidere",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber"
+      ],
+      "pasi": [
+        "El alege mișcarea: „Favorita.”",
+        "Voi urmăriți blând: „Gata” când se oprește.",
+        "Dacă vrea: din nou sau a doua favorită, în ordine."
+      ],
+      "gata_cand": "A mișcat liber pe alegerea de închidere.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z6-mental",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "mental",
+      "titlu": "Anul e plin — ce rămâne favorita?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu calm"
+      ],
+      "pasi": [
+        "„Anul se închide. Favorita…” — 1–2 amintiri.",
+        "El adaugă ce vrea — fără întrebări.",
+        "Dacă vrea: ordonați 2–3 pe degete."
+      ],
+      "gata_cand": "Ați numit blând ce rămâne favorita.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z6-resurse",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "resurse",
+      "titlu": "Alege 1 din 3 — gata pe an",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "3 zone / obiecte"
+      ],
+      "pasi": [
+        "„Una din trei. Favorita.”",
+        "„Gata. Ajunge pentru an.”",
+        "Dacă vrea: celelalte două în ordine pe loc."
+      ],
+      "gata_cand": "A ales una din trei; gata pe an.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z6-social",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "social",
+      "titlu": "Mulțumim anului — favorita împreună",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "1–2 obiecte / gesturi"
+      ],
+      "pasi": [
+        "„Favorita. Mulțumim.” — gest blând spre an.",
+        "Adultul: „Frumos. Gata.”",
+        "Dacă vrea: din nou pe un salut mic, apoi gata."
+      ],
+      "gata_cand": "Ați mulțumit blând anului cu favorita.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z7-fizic",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "fizic",
+      "titlu": "Mișcare liberă — anul se închide blând",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber"
+      ],
+      "pasi": [
+        "El alege; voi urmăriți blând.",
+        "Fără grabă: „Favorita… gata. Anul e gata.”",
+        "Dacă vrea: din nou o dată foarte scurt."
+      ],
+      "gata_cand": "A mișcat liber; anul se închide pe corp.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z7-mental",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "mental",
+      "titlu": "Favoritul anului — din nou sau gata?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "amintirea anului"
+      ],
+      "pasi": [
+        "„Favorita e…” — arătați alegerea lui.",
+        "„Din nou sau gata?” — respectați; zero evaluare.",
+        "Dacă vrea: ordonați 2 favorita ale anului."
+      ],
+      "gata_cand": "A închis mental anul pe o favorită.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z7-resurse",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "resurse",
+      "titlu": "Totul la loc — gata înainte de calm",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "jucării folosite"
+      ],
+      "pasi": [
+        "„Gata. La loc.”",
+        "„Anul e strâns. Liniște.”",
+        "Dacă vrea: un obiect favorita rămâne la vedere."
+      ],
+      "gata_cand": "Lucrurile sunt la loc; anul e strâns blând.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s52-2-3-z7-social",
+      "banda": "2-3",
+      "saptamana": 52,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "social",
+      "titlu": "Ritual: bună seara — anul e gata",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu de seară"
+      ],
+      "pasi": [
+        "Șoptiți: „Bună seara. Favorita… gata. Anul se închide blând.”",
+        "„Noapte bună.”",
+        "Dacă vrea: din nou pe un salut mic, apoi odihnă."
+      ],
+      "gata_cand": "Ați închis anul cu ritual blând de seară.",
+      "tema_saptamana": "Anul se închide blând",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    }
+  ]
+}

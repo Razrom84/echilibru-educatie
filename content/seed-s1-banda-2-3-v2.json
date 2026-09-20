@@ -1,0 +1,623 @@
+{
+  "version": 2,
+  "locale": "ro",
+  "banda": "2-3",
+  "saptamani": [
+    1
+  ],
+  "teme": {
+    "1": "Casa și curtea"
+  },
+  "activitati": [
+    {
+      "id": "s1-2-3-z1-fizic",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "fizic",
+      "titlu": "Pași din casă în curte",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "pantofi dacă e nevoie",
+        "ușă spre curte"
+      ],
+      "pasi": [
+        "Deschideți ușa împreună și faceți câțiva pași în curte.",
+        "Arătați: „Aici e curtea. Am ieșit din casă.”",
+        "Dacă vrea: alegeți împreună unde stați 10 secunde — lângă ușă sau mai departe."
+      ],
+      "gata_cand": "A făcut pași din casă în curte cu adultul.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z1-mental",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "mental",
+      "titlu": "Trei locuri din casă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "ușă",
+        "fereastră",
+        "scaun (sau 3 locuri vizibile)"
+      ],
+      "pasi": [
+        "Arătați trei locuri: „Ușă. Fereastră. Scaun.”",
+        "Întrebați blând: „Unde e ușa?” și așteptați arătarea.",
+        "Dacă vrea: spuneți o dată: „Casă.” și arătați camera."
+      ],
+      "gata_cand": "A auzit și a privit cele trei locuri.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z1-resurse",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "resurse",
+      "titlu": "Jucăria la loc după joacă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "1 jucărie",
+        "cutie sau raft"
+      ],
+      "pasi": [
+        "Luați o jucărie folosită și mergeți la locul ei.",
+        "Puneți-o împreună: „La loc. Gata joaca.”",
+        "Dacă vrea: alegeți între cutie și raft unde o puneți."
+      ],
+      "gata_cand": "Jucăria e pe locul ei.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z1-social",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "social",
+      "titlu": "Salut spațiului: bună, casă",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "La intrare, bateți ușor în ușă și spuneți: „Bună, casă!”",
+        "Zâmbiți și așteptați dacă vrea să imite gestul.",
+        "Dacă vrea: adăugați: „Ușă.” când atingeți clanța."
+      ],
+      "gata_cand": "A participat la salutul spațiului (privire, gest sau cuvânt).",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z2-fizic",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "fizic",
+      "titlu": "Explorează două zone",
+      "durata_min": 6,
+      "mod_default": "A",
+      "materiale": [
+        "curte sau balcon",
+        "un colț din casă"
+      ],
+      "pasi": [
+        "Mergeți la o zonă (de exemplu iarbă sau hol), stați 20 de secunde.",
+        "Mergeți la a doua zonă și numiți-o: „Aici e…”.",
+        "Dacă vrea: întrebați: „Unde mergem din nou?” și urmați alegerea lui."
+      ],
+      "gata_cand": "A vizitat două zone distincte.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z2-mental",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "mental",
+      "titlu": "Unde e curtea?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră sau ușă cu vedere"
+      ],
+      "pasi": [
+        "Stați la fereastră/ușă: „Unde e curtea?”",
+        "Arătați și spuneți: „Curte.”",
+        "Dacă vrea: comparați: „În casă e cald. Afară e curtea.”"
+      ],
+      "gata_cand": "A privit spre curte când ați arătat.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z2-resurse",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "resurse",
+      "titlu": "Pantofii la loc după ieșire",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pantofi",
+        "locul pantofilor"
+      ],
+      "pasi": [
+        "După ce ați fost afară, luați pantofii împreună.",
+        "Puneți-i pe loc: „Pantofii la loc.”",
+        "Dacă vrea: numărați: „Un pantof. Doi pantofi. Gata.”"
+      ],
+      "gata_cand": "Pantofii sunt pe locul lor.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z2-social",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "social",
+      "titlu": "Arătăm curtea adultului",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Invitați-l să arate cu mâna un loc din curte.",
+        "Spuneți: „Uite ce arată el!” și denumiți locul.",
+        "Dacă vrea: lăsați-l să aleagă ce arată — copac, poartă sau iarbă."
+      ],
+      "gata_cand": "A arătat ceva din curte adultului.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z3-fizic",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "fizic",
+      "titlu": "Pași până la ușă și înapoi",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "ușă de la intrare"
+      ],
+      "pasi": [
+        "Mergeți împreună până la ușă: „Ușa.”",
+        "Întoarceți-vă câțiva pași în casă: „Înapoi acasă.”",
+        "Dacă vrea: faceți traseul încă o dată, el alege ritmul."
+      ],
+      "gata_cand": "A mers până la ușă și înapoi.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z3-mental",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "mental",
+      "titlu": "Casă sau curte?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "două obiecte: unul din casă, unul din curte (frunză/piatră)"
+      ],
+      "pasi": [
+        "Arătați obiectul din casă: „Din casă.”",
+        "Arătați cel din curte: „Din curte.” Întrebați: „Care e din curte?”",
+        "Dacă vrea: lăsați-l să sorteze încă un obiect în cele două grupe."
+      ],
+      "gata_cand": "A participat la sortarea casă / curte.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z3-resurse",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "resurse",
+      "titlu": "Trei lucruri strânse",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "3 obiecte mici pe jos",
+        "cutie"
+      ],
+      "pasi": [
+        "Alegeți trei lucruri de pe jos: „Una. Două. Trei.”",
+        "Puneți-le în cutie: „Ajunge. La loc.”",
+        "Dacă vrea: alegeți împreună un al patrulea lucru sau opriți-vă."
+      ],
+      "gata_cand": "Cele trei lucruri sunt în cutie.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z3-social",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "social",
+      "titlu": "Bună pe prag",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Pe prag, spuneți unul altuia: „Bună!”",
+        "Așteptați răspunsul fără grabă.",
+        "Dacă vrea: adăugați un salut scurt spre curte: „Bună, curte!”"
+      ],
+      "gata_cand": "Ați schimbat un salut pe prag.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z4-fizic",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "fizic",
+      "titlu": "Cărăm ceva ușor afară",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "obiect ușor (jucărie, găleată goală)"
+      ],
+      "pasi": [
+        "Dați-i ceva ușor de cărat câțiva pași spre ușă.",
+        "Spuneți: „Tu porți. Mergem în curte.”",
+        "Dacă vrea: lăsați-l să aleagă ce cără — jucăria sau găleata."
+      ],
+      "gata_cand": "A cărat obiectul pe scurt traseu.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z4-mental",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "mental",
+      "titlu": "Ușa se deschide, ușa se închide",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "ușă (cu adult)"
+      ],
+      "pasi": [
+        "Deschideți încet: „Deschis.”",
+        "Închideți blând: „Închis.” Repetați o dată.",
+        "Dacă vrea: el alege: „Deschidem sau închidem?”"
+      ],
+      "gata_cand": "A văzut deschis / închis pe ușă.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z4-resurse",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "resurse",
+      "titlu": "Haina pe cârlig după curte",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "haină",
+        "cârlig sau scaun"
+      ],
+      "pasi": [
+        "După ieșire, luați haina împreună.",
+        "Puneți-o pe cârlig: „Haina la loc.”",
+        "Dacă vrea: întrebați: „Pe cârlig sau pe scaun?”"
+      ],
+      "gata_cand": "Haina e pe locul ei.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z4-social",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "social",
+      "titlu": "Rândul la deschis ușa",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "ușă"
+      ],
+      "pasi": [
+        "Voi deschideți puțin: „Acum eu.”",
+        "Apoi: „Acum tu” — țineți mâna lui pe clanță dacă vrea.",
+        "Dacă vrea: încă un schimb de rând, apoi gata."
+      ],
+      "gata_cand": "Ați făcut un schimb de rând la ușă.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z5-fizic",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "fizic",
+      "titlu": "Traseu: cameră, hol, ușă",
+      "durata_min": 6,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Parcurgeți împreună: cameră → hol → ușă.",
+        "La fiecare oprire numiți locul.",
+        "Dacă vrea: el alege ordinea: „Întâi holul sau ușa?”"
+      ],
+      "gata_cand": "A parcurs cele trei repere.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z5-mental",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "mental",
+      "titlu": "Hartă scurtă: trei cuvinte",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Spuneți: „Casă. Ușă. Curte.” arătând fiecare.",
+        "Cereți: „Arată casa” — așteptați gestul.",
+        "Dacă vrea: includeți: „Casă.” lângă camera principală."
+      ],
+      "gata_cand": "A asociat cel puțin un loc cu gestul.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z5-resurse",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "resurse",
+      "titlu": "Cheile sau coșul la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "coș / bol pentru chei sau obiecte de la ușă"
+      ],
+      "pasi": [
+        "Luați un obiect de la intrare (chei, eșarfă, coș).",
+        "Puneți-l pe locul lui: „Aici stă. La loc.”",
+        "Dacă vrea: verificați dacă mai e ceva de pus — alegeți 1 din 2."
+      ],
+      "gata_cand": "Obiectul de la intrare e pe loc.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z5-social",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "social",
+      "titlu": "Invită adultul în curte",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Modelați: „Hai în curte!” și întindeți mâna.",
+        "Mergeți împreună doar dacă vrea; altfel stați pe prag.",
+        "Dacă vrea: el „conduce” — voi urmați pașii lui."
+      ],
+      "gata_cand": "Ați făcut invitația și ați mers sau ați rămas pe prag împreună.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z6-fizic",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "fizic",
+      "titlu": "Iarbă, piatră, potecă",
+      "durata_min": 6,
+      "mod_default": "A",
+      "materiale": [
+        "curte cu texturi (iarbă/piatră/potecă)"
+      ],
+      "pasi": [
+        "Pășiți pe două texturi diferite (cu pantofi dacă e nevoie).",
+        "Numeți: „Moale. Dur.” sau „Iarbă. Piatră.”",
+        "Dacă vrea: alegeți o a treia textură de explorat 10 secunde."
+      ],
+      "gata_cand": "A pășit pe cel puțin două texturi.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z6-mental",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "mental",
+      "titlu": "Ce e al casei, ce e al curții",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "cană",
+        "frunză sau piatră"
+      ],
+      "pasi": [
+        "Arătați cana: „Din casă.” Frunza: „Din curte.”",
+        "Întrebați: „Unde stă cana?”",
+        "Dacă vrea: inventați un joc scurt de rol: „Eu sunt în casă, tu ești în curte.”"
+      ],
+      "gata_cand": "A participat la categoria casă / curte.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z6-resurse",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "resurse",
+      "titlu": "Frunza sau piatra în cutie",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "1–2 obiecte din curte",
+        "cutie"
+      ],
+      "pasi": [
+        "Aduceți o frunză sau o piatră în casă pe scurt.",
+        "Puneți-o în cutie: „Ajunge. La loc în cutie.”",
+        "Dacă vrea: alegeți să o lăsați afară în loc de cutie."
+      ],
+      "gata_cand": "Obiectul are un loc decis împreună.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z6-social",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "social",
+      "titlu": "Joacă paralel în curte",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "2 jucării simple"
+      ],
+      "pasi": [
+        "Stați lângă el cu propria jucărie; comentați ce face el.",
+        "Nu preluați jocul; oferiți un cuvânt: „Tu construiești.”",
+        "Dacă vrea: schimbați pe rând o jucărie o dată."
+      ],
+      "gata_cand": "Ați jucat paralel fără a forța schimbul.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z7-fizic",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "fizic",
+      "titlu": "Plimbare liberă pe traseul cunoscut",
+      "durata_min": 6,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "El dictează ritmul pe un traseu scurt casă–curte.",
+        "Voi numiți ce arată, fără grabă.",
+        "Dacă vrea: reluați locul favorit al săptămânii 20 de secunde."
+      ],
+      "gata_cand": "A mers liber pe traseul scurt.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z7-mental",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "mental",
+      "titlu": "Locul favorit al săptămânii",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Întrebați: „Unde ți-a plăcut cel mai mult?” — arătați 2–3 opțiuni.",
+        "Stați acolo un moment și numiți locul.",
+        "Dacă vrea: spuneți de ce e frumos, într-o frază scurtă."
+      ],
+      "gata_cand": "Ați ales și ați vizitat locul favorit.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z7-resurse",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "resurse",
+      "titlu": "Totul la loc înainte de calm",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "1–2 obiecte de strâns"
+      ],
+      "pasi": [
+        "Strângeți împreună un obiect sau două: „La loc.”",
+        "Spuneți: „Gata. Acum e liniște.”",
+        "Dacă vrea: alegeți un obiect favorit să rămână la vedere."
+      ],
+      "gata_cand": "Spațiul e strâns pe scurt.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s1-2-3-z7-social",
+      "banda": "2-3",
+      "saptamana": 1,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "social",
+      "titlu": "Ritual: bună seara, casă",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "lumină mică opțională"
+      ],
+      "pasi": [
+        "Șoptiți: „Bună seara, casă.”",
+        "Îmbrățișați-vă doar dacă vrea; fără forțare.",
+        "Dacă vrea: adăugați: „Curte — la revedere până mâine.”"
+      ],
+      "gata_cand": "Ați închis ziua cu ritualul blând.",
+      "tema_saptamana": "Casa și curtea",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    }
+  ]
+}
