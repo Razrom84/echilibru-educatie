@@ -26,13 +26,14 @@
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
+        "lopățică",
         "nisip în cutie sau pe plajă mică"
       ],
       "pasi": [
-        "Afară sau în cutie: puneți mâna în nisip pe scurt.",
-        "„Nisip.” 10–20 de secunde."
+        "Luați lopățica. Scoateți puțin nisip pe scurt.",
+        "„Lopățică. Nisip.” 10–20 de secunde."
       ],
-      "gata_cand": "A atins nisipul sau a privit.",
+      "gata_cand": "A atins lopățica / nisipul sau a privit.",
       "tema_saptamana": "Nisip și găleată",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -151,13 +152,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "găleată"
+        "lopățică"
       ],
       "pasi": [
-        "Puneți găleata pe raft sau lângă ușă.",
-        "„Găleată. La loc.”"
+        "Puneți lopățica pe raft sau lângă găleată.",
+        "„Lopățică. La loc.”"
       ],
-      "gata_cand": "A ajutat să pună găleata la loc.",
+      "gata_cand": "A ajutat să pună lopățica la loc.",
       "tema_saptamana": "Nisip și găleată",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -444,14 +445,15 @@
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "nisip",
-        "formă mică sau găleată"
+        "lopățică",
+        "găleată",
+        "nisip"
       ],
       "pasi": [
-        "Apăsați forma sau găleata în nisip pe scurt, cu adult.",
-        "„Formă. Nisip.” 10–20 de secunde."
+        "Cu lopățica, puneți puțin nisip în găleată.",
+        "Apoi: „Gata.” pe scurt, cu adult."
       ],
-      "gata_cand": "A apăsat sau a privit.",
+      "gata_cand": "A folosit lopățica / găleata sau a privit.",
       "tema_saptamana": "Nisip și găleată",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
