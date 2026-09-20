@@ -142,13 +142,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "minge ușoară"
+        "pantofi"
       ],
       "pasi": [
-        "Țineți mingea pe scurt în palmă.",
-        "„Minge. Palmă.”"
+        "Pantofii lângă ușă.",
+        "„Pantofi. La ușă.”"
       ],
-      "gata_cand": "A ținut mingea sau a privit.",
+      "gata_cand": "A ajutat cu pantofii.",
       "tema_saptamana": "Corp puternic, pași mulți",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -301,12 +301,14 @@
       "titlu": "Pantofii după curte",
       "durata_min": 4,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Puneți mâinile pe genunchi pe scurt.",
-        "„Mâini. Jos.” apoi mâinile jos."
+      "materiale": [
+        "pantofi"
       ],
-      "gata_cand": "A atins genunchii sau a privit.",
+      "pasi": [
+        "După curte: pantofii la loc.",
+        "„Pantofi. Gata.”"
+      ],
+      "gata_cand": "A ajutat cu pantofii după curte.",
       "tema_saptamana": "Corp puternic, pași mulți",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },

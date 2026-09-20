@@ -1003,14 +1003,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "minge moale",
-        "cutie"
+        "pantofi de casă"
       ],
       "pasi": [
-        "Dacă ați folosit mingea, puneți-o în cutie.",
-        "„La loc. În cutie.”"
+        "Puneți pantofii de casă la loc lângă ușă sau pe raft.",
+        "„Pantofi. La loc.”"
       ],
-      "gata_cand": "A ajutat cu mingea în cutie.",
+      "gata_cand": "A ajutat cu pantofii de casă.",
       "tema_saptamana": "Corp care se mișcă în casă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1084,13 +1083,14 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "1–2 jucării"
+        "pernă",
+        "carte"
       ],
       "pasi": [
-        "Puneți jucăriile folosite pe raft.",
-        "„La loc.”"
+        "Puneți perna și cartea la loc după joacă.",
+        "„La loc. Gata.”"
       ],
-      "gata_cand": "A ajutat cu cel puțin o jucărie.",
+      "gata_cand": "A ajutat cu perna sau cartea.",
       "tema_saptamana": "Corp care se mișcă în casă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1566,10 +1566,10 @@
       "mod_default": "A",
       "materiale": [],
       "pasi": [
-        "Un miros scurt. Apoi mâinile pe genunchi.",
-        "„Gata. Miros.”"
+        "Arătați o floare: „Floare.”",
+        "Arătați o frunză: „Frunză.” pe scurt."
       ],
-      "gata_cand": "A auzit gata după miros.",
+      "gata_cand": "A auzit floare și frunză.",
       "tema_saptamana": "Mirosuri din casă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1665,13 +1665,14 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "pâine sau săpun folosit"
+        "cană",
+        "carte"
       ],
       "pasi": [
-        "Puneți obiectul folosit la loc.",
+        "Puneți cana și cartea la loc.",
         "„La loc. Gata.”"
       ],
-      "gata_cand": "A ajutat cu obiectul la loc.",
+      "gata_cand": "A ajutat cu cana sau cartea.",
       "tema_saptamana": "Mirosuri din casă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1904,13 +1905,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "1 obiect de pe scaun"
+        "pantofi"
       ],
       "pasi": [
-        "Luați un obiect de pe scaun. Puneți-l la loc.",
-        "„Scaun. Liber.”"
+        "Așezați pantofii lângă ușă.",
+        "„Pantofi. La ușă.”"
       ],
-      "gata_cand": "A ajutat să elibereze scaunul.",
+      "gata_cand": "A ajutat cu pantofii lângă ușă.",
       "tema_saptamana": "Familia și oaspeții",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -2226,13 +2227,14 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "pluș sau păpușă"
+        "pantofi",
+        "haină"
       ],
       "pasi": [
-        "Puneți plușul pe raft după joacă.",
+        "Puneți pantofii și haina la loc.",
         "„La loc. Gata.”"
       ],
-      "gata_cand": "A ajutat cu plușul pe raft.",
+      "gata_cand": "A ajutat cu pantofii sau haina.",
       "tema_saptamana": "Familia și oaspeții",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },

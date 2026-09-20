@@ -1572,13 +1572,14 @@
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "pahar cu puțină apă"
+        "pahar cu puțină apă",
+        "frunză"
       ],
       "pasi": [
-        "Lăsați câteva picături pe o piatră sau foaie afară, cu adult.",
-        "„Picături. Apă.” pe scurt."
+        "Lăsați o picătură pe o frunză, cu adult.",
+        "„Picătură. Frunză.” pe scurt."
       ],
-      "gata_cand": "A lăsat picături sau a privit.",
+      "gata_cand": "A lăsat picătura pe frunză sau a privit.",
       "tema_saptamana": "Apă afară (joc scurt)",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1612,14 +1613,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "pahar",
-        "vas"
+        "frunză afară"
       ],
       "pasi": [
-        "Puneți paharul și vasul la loc după joacă.",
-        "„La loc. Gata.”"
+        "Frunza rămâne afară — nu o aduceți în casă.",
+        "„Frunză. Afară.”"
       ],
-      "gata_cand": "A ajutat să strângă vasele.",
+      "gata_cand": "A lăsat frunza afară sau a privit.",
       "tema_saptamana": "Apă afară (joc scurt)",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1834,10 +1834,10 @@
       "mod_default": "A",
       "materiale": [],
       "pasi": [
-        "Arătați departe: „Departe.”",
-        "Arătați aproape de voi: „Aproape.” pe scurt."
+        "Arătați pe frunză: „Pe frunză.”",
+        "Privire scurtă, fără atingere dacă e insectă."
       ],
-      "gata_cand": "A auzit departe și aproape.",
+      "gata_cand": "A auzit pe frunză.",
       "tema_saptamana": "Insecte de departe",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -2140,10 +2140,10 @@
       "mod_default": "A",
       "materiale": [],
       "pasi": [
-        "„Privim.” pe scurt.",
-        "„Nu atingem.” fără grabă."
+        "Arătați pământul: „Pământ.”",
+        "Arătați o frunză: „Frunză.” pe scurt."
       ],
-      "gata_cand": "A auzit privim și nu atingem.",
+      "gata_cand": "A auzit pământ și frunză.",
       "tema_saptamana": "Insecte de departe",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },

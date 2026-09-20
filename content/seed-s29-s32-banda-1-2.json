@@ -144,13 +144,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "plantă sau ramură"
+        "pantofi"
       ],
       "pasi": [
-        "Puneți planta sau ramura la loc pe scurt.",
-        "„La loc. Plantă.”"
+        "După iarbă: pantofii lângă ușă.",
+        "„Pantofi. La loc.”"
       ],
-      "gata_cand": "A ajutat să pună la loc.",
+      "gata_cand": "A ajutat cu pantofii după iarbă.",
       "tema_saptamana": "Muguri și iarbă nouă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -183,12 +183,14 @@
       "titlu": "Atingem o frunză mică",
       "durata_min": 6,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "În curte: câțiva pași pe iarbă, cu adult.",
-        "„Iarbă. Pași.” pe scurt."
+      "materiale": [
+        "frunză pe plantă"
       ],
-      "gata_cand": "A făcut câțiva pași pe iarbă.",
+      "pasi": [
+        "Atingeți pe scurt o frunză mică, cu adult.",
+        "„Frunză.” 10–20 de secunde."
+      ],
+      "gata_cand": "A atins frunza sau a privit.",
       "tema_saptamana": "Muguri și iarbă nouă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -222,13 +224,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "pantofi"
+        "plantă cu frunze"
       ],
       "pasi": [
-        "Așezați pantofii lângă ușă după curte.",
-        "„Pantofi. La loc.”"
+        "Arătați: frunza rămâne pe plantă.",
+        "„Frunză. Pe plantă.” fără a smulge."
       ],
-      "gata_cand": "A ajutat cu pantofii.",
+      "gata_cand": "A privit frunza pe plantă.",
       "tema_saptamana": "Muguri și iarbă nouă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -242,12 +244,14 @@
       "titlu": "Atingem frunza pe rând",
       "durata_min": 4,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Mergeți câțiva pași lângă adult pe iarbă.",
-        "„Împreună. Iarbă.” fără forțare."
+      "materiale": [
+        "frunză pe plantă"
       ],
-      "gata_cand": "A mers lângă adult pe scurt.",
+      "pasi": [
+        "Pe rând: atingeți frunza mică.",
+        "„Acum tu.” fără forțare."
+      ],
+      "gata_cand": "A atins pe rând sau a privit.",
       "tema_saptamana": "Muguri și iarbă nouă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -368,10 +372,10 @@
       "mod_default": "A",
       "materiale": [],
       "pasi": [
-        "Arătați apa: „Apă.”",
-        "Arătați planta: „Plantă. Beată.” pe scurt."
+        "Arătați un mugure: „Mugure.”",
+        "Arătați o frunză: „Frunză.” pe scurt."
       ],
-      "gata_cand": "A auzit apă și plantă.",
+      "gata_cand": "A auzit mugure și frunză.",
       "tema_saptamana": "Muguri și iarbă nouă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -468,13 +472,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "coș sau găleată mică"
+        "pantofi"
       ],
       "pasi": [
-        "Puneți frunza în coș sau înapoi afară.",
-        "„Frunză. La loc.”"
+        "După iarbă: pantofii la ușă.",
+        "„Pantofi. La ușă.”"
       ],
-      "gata_cand": "A pus frunza sau a ajutat.",
+      "gata_cand": "A ajutat cu pantofii la ușă.",
       "tema_saptamana": "Muguri și iarbă nouă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -550,14 +554,14 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "ghiveci",
-        "stropitoare"
+        "stropitoare",
+        "pantofi"
       ],
       "pasi": [
-        "Puneți planta pe pervaz, stropitoarea la loc.",
+        "Stropitoarea la loc; pantofii lângă ușă.",
         "„La loc. Gata.”"
       ],
-      "gata_cand": "A ajutat să pună la loc.",
+      "gata_cand": "A ajutat cu stropitoarea sau pantofii.",
       "tema_saptamana": "Muguri și iarbă nouă",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -782,12 +786,14 @@
       "titlu": "Pantofii după ascultat",
       "durata_min": 4,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Intrați. Închideți ușa pe scurt.",
-        "„Ușă. Gata.”"
+      "materiale": [
+        "pantofi"
       ],
-      "gata_cand": "A ajutat la ușă sau a privit.",
+      "pasi": [
+        "După ascultat: pantofii lângă ușă.",
+        "„Pantofi. Gata.”"
+      ],
+      "gata_cand": "A ajutat cu pantofii sau a privit.",
       "tema_saptamana": "Păsări dimineața",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },

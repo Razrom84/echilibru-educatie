@@ -311,9 +311,9 @@ insert into public.activities (
     'Nisip, iarbă, pietre',
     6,
     'A'::public.completion_mode,
-    ARRAY['curte']::text[],
-    ARRAY['Descălțați dacă e în siguranță sau atingeți texturi.', '„Moale. Aspru.”']::text[],
-    'A explorat 2 texturi.',
+    ARRAY['nisip, iarbă sau pietre']::text[],
+    ARRAY['Atingeți pe scurt nisip, iarbă sau o piatră, cu adult.', '„Moale. Aspru.”']::text[],
+    'A explorat 2 texturi denumite.',
     'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Casa și curtea'
   ),
