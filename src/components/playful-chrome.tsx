@@ -408,6 +408,119 @@ function HainutaSvg({ size }: { size: number }) {
   );
 }
 
+function PotecutaSvg({ size }: { size: number }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
+      <title>Potecuță</title>
+      <path d="M8 50 C18 42 22 38 32 40 C42 42 46 34 56 28" fill="none" stroke="#C4A15E" strokeWidth="8" strokeLinecap="round" />
+      <circle cx="20" cy="46" r="3" fill="#8FBF8A" />
+      <circle cx="34" cy="40" r="3.5" fill="#D98A4A" />
+      <circle cx="48" cy="32" r="3" fill="#8FBF8A" />
+      <circle cx="34" cy="22" r="12" fill="#E8D48A" stroke="#C4A15E" strokeWidth="1.5" />
+      <circle cx="30" cy="20" r="1.9" fill="#3D2E1A" />
+      <circle cx="38" cy="20" r="1.9" fill="#3D2E1A" />
+      <circle cx="30.5" cy="19.5" r="0.55" fill="#FFF8EC" />
+      <circle cx="38.5" cy="19.5" r="0.55" fill="#FFF8EC" />
+      <path d="M31 26 Q34 29 37 26" fill="none" stroke="#6B4E2E" strokeWidth="1.4" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function LinguritaSvg({ size }: { size: number }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
+      <title>Linguriță</title>
+      <ellipse cx="32" cy="22" rx="14" ry="12" fill="#D9B56F" stroke="#C4A15E" strokeWidth="1.5" />
+      <rect x="29" y="32" width="6" height="24" rx="3" fill="#C4A15E" />
+      <circle cx="27" cy="20" r="1.9" fill="#3D2E1A" />
+      <circle cx="37" cy="20" r="1.9" fill="#3D2E1A" />
+      <circle cx="27.5" cy="19.5" r="0.55" fill="#FFF8EC" />
+      <circle cx="37.5" cy="19.5" r="0.55" fill="#FFF8EC" />
+      <path d="M28 26 Q32 29.5 36 26" fill="none" stroke="#6B4E2E" strokeWidth="1.4" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function PicaturaSvg({ size }: { size: number }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
+      <title>Picătură</title>
+      <path d="M32 8 C32 8 14 30 14 40 C14 50 22 56 32 56 C42 56 50 50 50 40 C50 30 32 8 32 8 Z" fill="#7AA3C7" stroke="#5E86A8" strokeWidth="1.5" />
+      <path d="M24 22 Q28 18 32 22" fill="none" stroke="#C5E4F5" strokeWidth="2" strokeLinecap="round" />
+      <circle cx="26" cy="38" r="1.9" fill="#3D2E1A" />
+      <circle cx="38" cy="38" r="1.9" fill="#3D2E1A" />
+      <circle cx="26.5" cy="37.5" r="0.55" fill="#FFF8EC" />
+      <circle cx="38.5" cy="37.5" r="0.55" fill="#FFF8EC" />
+      <path d="M27 46 Q32 49.5 37 46" fill="none" stroke="#3D2E1A" strokeWidth="1.4" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function PasaricaSvg({ size }: { size: number }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
+      <title>Păsărică</title>
+      <ellipse cx="34" cy="34" rx="16" ry="13" fill="#F2A07A" stroke="#D47A58" strokeWidth="1.5" />
+      <path d="M20 34 Q10 24 22 22 Q16 32 20 34 Z" fill="#E8D48A" stroke="#C4A15E" strokeWidth="1.2" />
+      <circle cx="48" cy="30" r="7" fill="#F2A07A" stroke="#D47A58" strokeWidth="1.3" />
+      <path d="M54 30 L62 28 L54 34 Z" fill="#E8D48A" stroke="#C4A15E" strokeWidth="1" />
+      <path d="M30 46 L28 56 M38 46 L40 56" fill="none" stroke="#C4A15E" strokeWidth="1.8" strokeLinecap="round" />
+      <circle cx="46" cy="28" r="1.7" fill="#3D2E1A" />
+      <circle cx="46.5" cy="27.5" r="0.5" fill="#FFF8EC" />
+      <circle cx="30" cy="32" r="1.7" fill="#3D2E1A" />
+      <circle cx="30.5" cy="31.5" r="0.5" fill="#FFF8EC" />
+      <path d="M31 38 Q36 41 42 36" fill="none" stroke="#6B4E2E" strokeWidth="1.3" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function MingiutaSvg({ size }: { size: number }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
+      <title>Mingiuță</title>
+      <circle cx="32" cy="32" r="20" fill="#8FBF8A" stroke="#6A9A66" strokeWidth="1.5" />
+      <path d="M16 24 Q32 18 48 24 M16 40 Q32 46 48 40 M32 12 L32 52" fill="none" stroke="#6A9A66" strokeWidth="1.4" />
+      <circle cx="26" cy="28" r="1.9" fill="#3D2E1A" />
+      <circle cx="38" cy="28" r="1.9" fill="#3D2E1A" />
+      <circle cx="26.5" cy="27.5" r="0.55" fill="#FFF8EC" />
+      <circle cx="38.5" cy="27.5" r="0.55" fill="#FFF8EC" />
+      <path d="M27 38 Q32 42 37 38" fill="none" stroke="#6B4E2E" strokeWidth="1.4" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function CarticicaSvg({ size }: { size: number }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
+      <title>Cărticică</title>
+      <rect x="14" y="14" width="36" height="38" rx="3" fill="#7AA3C7" stroke="#5E86A8" strokeWidth="1.5" />
+      <rect x="18" y="18" width="28" height="30" rx="1.5" fill="#FFF8EC" />
+      <path d="M32 18 L32 48" fill="none" stroke="#C4A15E" strokeWidth="1.2" />
+      <circle cx="26" cy="32" r="1.7" fill="#3D2E1A" />
+      <circle cx="38" cy="32" r="1.7" fill="#3D2E1A" />
+      <circle cx="26.5" cy="31.5" r="0.5" fill="#FFF8EC" />
+      <circle cx="38.5" cy="31.5" r="0.5" fill="#FFF8EC" />
+      <path d="M27 40 Q32 43 37 40" fill="none" stroke="#6B4E2E" strokeWidth="1.3" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function CosuletSvg({ size }: { size: number }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
+      <title>Coșuleț</title>
+      <path d="M16 24 L20 50 C20 54 24 56 32 56 C40 56 44 54 44 50 L48 24 Z" fill="#E8C48A" stroke="#C4A15E" strokeWidth="1.5" />
+      <path d="M16 24 C16 16 48 16 48 24" fill="none" stroke="#C4A15E" strokeWidth="2.4" strokeLinecap="round" />
+      <path d="M22 32 L42 32 M22 40 L42 40" fill="none" stroke="#D9B56F" strokeWidth="1.2" />
+      <circle cx="26" cy="36" r="1.9" fill="#3D2E1A" />
+      <circle cx="38" cy="36" r="1.9" fill="#3D2E1A" />
+      <circle cx="26.5" cy="35.5" r="0.55" fill="#FFF8EC" />
+      <circle cx="38.5" cy="35.5" r="0.55" fill="#FFF8EC" />
+      <path d="M27 44 Q32 47.5 37 44" fill="none" stroke="#6B4E2E" strokeWidth="1.4" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 const CHARACTER_SVG: Record<PlayfulCharacterId, (size: number) => ReactNode> = {
   suntel: (size) => <SuntelSvg size={size} />,
   manuta: (size) => <ManutaSvg size={size} />,
@@ -420,6 +533,13 @@ const CHARACTER_SVG: Record<PlayfulCharacterId, (size: number) => ReactNode> = {
   luminita: (size) => <LuminitaSvg size={size} />,
   canuta: (size) => <CanutaSvg size={size} />,
   hainuta: (size) => <HainutaSvg size={size} />,
+  potecuta: (size) => <PotecutaSvg size={size} />,
+  lingurita: (size) => <LinguritaSvg size={size} />,
+  picatura: (size) => <PicaturaSvg size={size} />,
+  pasarica: (size) => <PasaricaSvg size={size} />,
+  mingiuta: (size) => <MingiutaSvg size={size} />,
+  carticica: (size) => <CarticicaSvg size={size} />,
+  cosulet: (size) => <CosuletSvg size={size} />,
 };
 
 export function PlayfulCharacterMark({
