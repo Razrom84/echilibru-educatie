@@ -113,7 +113,7 @@ insert into public.activities (
     1,
     2,
     'social'::public.pillar,
-    'Mulțumesc',
+    'Spunem mulțumesc',
     3,
     'A'::public.completion_mode,
     '{}'::text[],
