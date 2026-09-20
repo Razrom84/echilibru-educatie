@@ -1,11 +1,13 @@
 /**
- * PLAYFUL PILOT — GO lock: S1–S20 L–D (S3 was V–D; now full week).
+ * PLAYFUL PILOT — GO lock: S1–S52 L–D (full year, banda 1–2).
  * Characters, ritual lines, and daily surprises live here (not in activities.nota).
  * Zero sounds / wavs / Play button — clips were removed in #33.
  */
 
 export const PLAYFUL_PILOT_WEEKS = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+  21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
+  41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52,
 ] as const;
 export type PlayfulPilotWeek = (typeof PLAYFUL_PILOT_WEEKS)[number];
 
@@ -29,7 +31,39 @@ export type PlayfulCharacterId =
   | "pasarica"
   | "mingiuta"
   | "carticica"
-  | "cosulet";
+  | "cosulet"
+  | "pervazut"
+  | "ghemut"
+  | "nasut"
+  | "usita"
+  | "lampita"
+  | "amintioara"
+  | "fulguta"
+  | "noroiut"
+  | "mugurel"
+  | "cioculet"
+  | "samantica"
+  | "rotunduta"
+  | "nisiput"
+  | "umbrita"
+  | "stropulet"
+  | "gandacel"
+  | "racorita"
+  | "talpita"
+  | "marulet"
+  | "maturita"
+  | "portita"
+  | "vantulet"
+  | "saculet"
+  | "inimioara"
+  | "pasulet"
+  | "degetel"
+  | "grijita"
+  | "salutel"
+  | "scumput"
+  | "linistita"
+  | "curtita"
+  | "blandulet";
 
 export type PlayfulCharacter = {
   id: PlayfulCharacterId;
@@ -147,6 +181,166 @@ export const PLAYFUL_CHARACTERS: Record<PlayfulCharacterId, PlayfulCharacter> = 
     id: "cosulet",
     name: "Coșuleț",
     src: "/characters/cosulet.svg",
+  },
+  pervazut: {
+    id: "pervazut",
+    name: "Pervazuț",
+    src: "/characters/pervazut.svg",
+  },
+  ghemut: {
+    id: "ghemut",
+    name: "Ghemuț",
+    src: "/characters/ghemut.svg",
+  },
+  nasut: {
+    id: "nasut",
+    name: "Năsuț",
+    src: "/characters/nasut.svg",
+  },
+  usita: {
+    id: "usita",
+    name: "Ușiță",
+    src: "/characters/usita.svg",
+  },
+  lampita: {
+    id: "lampita",
+    name: "Lămpiță",
+    src: "/characters/lampita.svg",
+  },
+  amintioara: {
+    id: "amintioara",
+    name: "Amintioară",
+    src: "/characters/amintioara.svg",
+  },
+  fulguta: {
+    id: "fulguta",
+    name: "Fulguță",
+    src: "/characters/fulguta.svg",
+  },
+  noroiut: {
+    id: "noroiut",
+    name: "Noroiuț",
+    src: "/characters/noroiut.svg",
+  },
+  mugurel: {
+    id: "mugurel",
+    name: "Mugurel",
+    src: "/characters/mugurel.svg",
+  },
+  cioculet: {
+    id: "cioculet",
+    name: "Cioculeț",
+    src: "/characters/cioculet.svg",
+  },
+  samantica: {
+    id: "samantica",
+    name: "Sămânțică",
+    src: "/characters/samantica.svg",
+  },
+  rotunduta: {
+    id: "rotunduta",
+    name: "Rotunduță",
+    src: "/characters/rotunduta.svg",
+  },
+  nisiput: {
+    id: "nisiput",
+    name: "Nisipuț",
+    src: "/characters/nisiput.svg",
+  },
+  umbrita: {
+    id: "umbrita",
+    name: "Umbriță",
+    src: "/characters/umbrita.svg",
+  },
+  stropulet: {
+    id: "stropulet",
+    name: "Stropuleț",
+    src: "/characters/stropulet.svg",
+  },
+  gandacel: {
+    id: "gandacel",
+    name: "Gândăcel",
+    src: "/characters/gandacel.svg",
+  },
+  racorita: {
+    id: "racorita",
+    name: "Răcoriță",
+    src: "/characters/racorita.svg",
+  },
+  talpita: {
+    id: "talpita",
+    name: "Tălpiță",
+    src: "/characters/talpita.svg",
+  },
+  marulet: {
+    id: "marulet",
+    name: "Măruleț",
+    src: "/characters/marulet.svg",
+  },
+  maturita: {
+    id: "maturita",
+    name: "Măturiță",
+    src: "/characters/maturita.svg",
+  },
+  portita: {
+    id: "portita",
+    name: "Portiță",
+    src: "/characters/portita.svg",
+  },
+  vantulet: {
+    id: "vantulet",
+    name: "Vântuleț",
+    src: "/characters/vantulet.svg",
+  },
+  saculet: {
+    id: "saculet",
+    name: "Săculeț",
+    src: "/characters/saculet.svg",
+  },
+  inimioara: {
+    id: "inimioara",
+    name: "Inimioară",
+    src: "/characters/inimioara.svg",
+  },
+  pasulet: {
+    id: "pasulet",
+    name: "Pașuleț",
+    src: "/characters/pasulet.svg",
+  },
+  degetel: {
+    id: "degetel",
+    name: "Degețel",
+    src: "/characters/degetel.svg",
+  },
+  grijita: {
+    id: "grijita",
+    name: "Grijiță",
+    src: "/characters/grijita.svg",
+  },
+  salutel: {
+    id: "salutel",
+    name: "Salutel",
+    src: "/characters/salutel.svg",
+  },
+  scumput: {
+    id: "scumput",
+    name: "Scumpuț",
+    src: "/characters/scumput.svg",
+  },
+  linistita: {
+    id: "linistita",
+    name: "Liniștiță",
+    src: "/characters/linistita.svg",
+  },
+  curtita: {
+    id: "curtita",
+    name: "Curtiță",
+    src: "/characters/curtita.svg",
+  },
+  blandulet: {
+    id: "blandulet",
+    name: "Blânduleț",
+    src: "/characters/blandulet.svg",
   },
 };
 
@@ -501,6 +695,519 @@ const WEEK_20: WeekConfig = {
   },
 };
 
+const WEEK_21: WeekConfig = {
+  week: 21,
+  theme: "Iarna pe pervaz",
+  character: PLAYFUL_CHARACTERS.pervazut,
+  ritualOpen: "Iarna pe pervaz.",
+  ritualClose: "Pe pervaz, gata.",
+  surprises: {
+    1: "Mâna pe geam 2 sec",
+    2: "Un deget pe geamul rece",
+    3: "De la geam la canapea",
+    4: "Un suflu pe geam",
+    5: "El atinge pervazul",
+    6: "O privire afară (doar el o arată)",
+    7: "Ultima pagină: iarna din imagine",
+  },
+};
+const WEEK_22: WeekConfig = {
+  week: 22,
+  theme: "Corp care se mișcă în casă",
+  character: PLAYFUL_CHARACTERS.ghemut,
+  ritualOpen: "Corp în casă.",
+  ritualClose: "Mișcat, gata.",
+  surprises: {
+    1: "Balans 2 sec pe loc",
+    2: "Târâit doi pași",
+    3: "O săritură mică",
+    4: "Brațele sus 1 sec",
+    5: "Trei pași pe loc",
+    6: "Un dans, apoi așezat",
+    7: "Ultima pagină: un copil care se mișcă",
+  },
+};
+const WEEK_23: WeekConfig = {
+  week: 23,
+  theme: "Mirosuri din casă",
+  character: PLAYFUL_CHARACTERS.nasut,
+  ritualOpen: "Mirosuri din casă.",
+  ritualClose: "Mirosit, gata.",
+  surprises: {
+    1: "Nas aproape de pâine 2 sec",
+    2: "Săpunul la nas 1 sec",
+    3: "Ceaiul răcit, un miros",
+    4: "Prosopul curat la nas",
+    5: "El alege: pâine sau măr",
+    6: "Un miros în bucătărie (doar el)",
+    7: "Verificăm: cana la loc",
+  },
+};
+const WEEK_24: WeekConfig = {
+  week: 24,
+  theme: "Familia și oaspeții",
+  character: PLAYFUL_CHARACTERS.usita,
+  ritualOpen: "Familia, oaspeții.",
+  ritualClose: "La ușă, gata.",
+  surprises: {
+    1: "Mâna sus: salut",
+    2: "Fluturăm: la revedere",
+    3: "O jucărie pentru oaspete",
+    4: "Ne așezăm 2 sec lângă",
+    5: "Pași până la ușă",
+    6: "El arată cine e în poză",
+    7: "Un salut la final",
+  },
+};
+const WEEK_25: WeekConfig = {
+  week: 25,
+  theme: "Lumină de seară",
+  character: PLAYFUL_CHARACTERS.lampita,
+  ritualOpen: "Lumină de seară.",
+  ritualClose: "Seara, gata.",
+  surprises: {
+    1: "Lampa se aprinde 2 sec",
+    2: "Perdeaua se trage",
+    3: "Pătura pe pat",
+    4: "O pagină din cartea de seară",
+    5: "Mâinile la chiuvetă",
+    6: "Lumina se stinge 2 sec",
+    7: "Verificăm: lampa pe noptieră",
+  },
+};
+const WEEK_26: WeekConfig = {
+  week: 26,
+  theme: "Jumătate de an: repetăm favoritele",
+  character: PLAYFUL_CHARACTERS.amintioara,
+  ritualOpen: "Favoritele, din nou.",
+  ritualClose: "Favorite, gata.",
+  surprises: {
+    1: "Geamul favorit 2 sec",
+    2: "Dansul de atunci, o dată",
+    3: "El alege pagina",
+    4: "Mingea favorită rulează 1 sec",
+    5: "Trei favorite pe masă, alege una",
+    6: "Mirosul favorit 2 sec",
+    7: "Un favorit la final",
+  },
+};
+const WEEK_27: WeekConfig = {
+  week: 27,
+  theme: "Zăpadă sau ploaie la geam",
+  character: PLAYFUL_CHARACTERS.fulguta,
+  ritualOpen: "Zăpadă sau ploaie.",
+  ritualClose: "La geam, gata.",
+  surprises: {
+    1: "Mâna pe geam: vremea",
+    2: "Urmărim o picătură",
+    3: "Urechea la geam 2 sec",
+    4: "De la geam rece la cameră",
+    5: "Un suflu, apoi vremea",
+    6: "El arată: fulg sau picătură",
+    7: "Ultima pagină: ploaie sau zăpadă",
+  },
+};
+const WEEK_28: WeekConfig = {
+  week: 28,
+  theme: "Dezgheț și noroi",
+  character: PLAYFUL_CHARACTERS.noroiut,
+  ritualOpen: "Dezgheț și noroi.",
+  ritualClose: "Noroiul, gata.",
+  surprises: {
+    1: "Cizmele pe picioare",
+    2: "Un pas în noroi, dacă e",
+    3: "Noroiul pe cizmă, uităm",
+    4: "Mâna pe pământul ud",
+    5: "El alege: cizmă sau șosetă",
+    6: "O baltă (doar el o arată)",
+    7: "Cizmele la loc",
+  },
+};
+const WEEK_29: WeekConfig = {
+  week: 29,
+  theme: "Muguri și iarbă nouă",
+  character: PLAYFUL_CHARACTERS.mugurel,
+  ritualOpen: "Muguri și iarbă.",
+  ritualClose: "Mugurii, gata.",
+  surprises: {
+    1: "Un mugure pe creangă",
+    2: "Mâna pe iarba nouă",
+    3: "El atinge un mugure",
+    4: "O frunză mică 2 sec",
+    5: "Udăm o dată",
+    6: "Un mugure secret (doar el)",
+    7: "Ultima pagină: iarba din imagine",
+  },
+};
+const WEEK_30: WeekConfig = {
+  week: 30,
+  theme: "Păsări dimineața",
+  character: PLAYFUL_CHARACTERS.cioculet,
+  ritualOpen: "Păsări dimineața.",
+  ritualClose: "Păsări, gata.",
+  surprises: {
+    1: "Urechea la geam dimineața",
+    2: "Arătăm spre cer",
+    3: "El face un ciripit cu gura",
+    4: "O pasăre (doar el o arată)",
+    5: "Trei secunde: auzim",
+    6: "Pași afară, urechi deschise",
+    7: "Ultima pagină: o pasăre",
+  },
+};
+const WEEK_31: WeekConfig = {
+  week: 31,
+  theme: "Semințe și udat",
+  character: PLAYFUL_CHARACTERS.samantica,
+  ritualOpen: "Semințe și udat.",
+  ritualClose: "Udat, gata.",
+  surprises: {
+    1: "O sămânță în palmă",
+    2: "Turnăm 2 picături",
+    3: "El alege sămânța",
+    4: "Pământul peste sămânță",
+    5: "Udăm o dată",
+    6: "Sămânța secretă (doar el)",
+    7: "Verificăm: sticla cu apă la loc",
+  },
+};
+const WEEK_32: WeekConfig = {
+  week: 32,
+  theme: "Mingea afară",
+  character: PLAYFUL_CHARACTERS.rotunduta,
+  ritualOpen: "Mingea afară.",
+  ritualClose: "Mingea, gata.",
+  surprises: {
+    1: "Mingea rulează 1 sec afară",
+    2: "El alege: minge mare sau mică",
+    3: "O aruncare scurtă",
+    4: "Mingea „dispare” 2 sec în iarbă",
+    5: "Dăm mingea pe rând",
+    6: "Un țopăit",
+    7: "Mingea în cutie",
+  },
+};
+const WEEK_33: WeekConfig = {
+  week: 33,
+  theme: "Nisip și găleată",
+  character: PLAYFUL_CHARACTERS.nisiput,
+  ritualOpen: "Nisip și găleată.",
+  ritualClose: "Nisipul, gata.",
+  surprises: {
+    1: "Mâna în nisip 2 sec",
+    2: "Turnăm nisip în găleată",
+    3: "O urmă de palmă",
+    4: "El alege: nisip sau găleată",
+    5: "Găleata se răstoarnă 1 sec",
+    6: "O pietricică în nisip (doar el)",
+    7: "Găleata la loc",
+  },
+};
+const WEEK_34: WeekConfig = {
+  week: 34,
+  theme: "Umbre pe pământ",
+  character: PLAYFUL_CHARACTERS.umbrita,
+  ritualOpen: "Umbre pe pământ.",
+  ritualClose: "Umbra, gata.",
+  surprises: {
+    1: "Mâna face umbră 2 sec",
+    2: "Umbra se mișcă, apoi stă",
+    3: "El calcă umbra",
+    4: "Umbră de frunză",
+    5: "El alege: soare sau umbră",
+    6: "O umbră secretă (doar el)",
+    7: "Ultima pagină: o umbră",
+  },
+};
+const WEEK_35: WeekConfig = {
+  week: 35,
+  theme: "Apă afară (joc scurt)",
+  character: PLAYFUL_CHARACTERS.stropulet,
+  ritualOpen: "Apă afară.",
+  ritualClose: "Pe apă, gata.",
+  surprises: {
+    1: "Un strop pe mână",
+    2: "Picături pe piatră",
+    3: "El atinge apa 1 sec",
+    4: "Turnăm 2 picături afară",
+    5: "El alege: ud sau uscat",
+    6: "O băltoacă (doar el)",
+    7: "Prosopul la loc",
+  },
+};
+const WEEK_36: WeekConfig = {
+  week: 36,
+  theme: "Insecte de departe",
+  character: PLAYFUL_CHARACTERS.gandacel,
+  ritualOpen: "Insecte de departe.",
+  ritualClose: "Departe, gata.",
+  surprises: {
+    1: "Privim de departe 2 sec",
+    2: "Arătăm cu degetul, fără a atinge",
+    3: "El alege: pe frunză sau pe pământ",
+    4: "Un gândac (doar el îl arată)",
+    5: "Trei pași înapoi, apoi uităm",
+    6: "Urechea: zumzet, dacă e",
+    7: "Ultima pagină: o insectă",
+  },
+};
+const WEEK_37: WeekConfig = {
+  week: 37,
+  theme: "Umbră și loc răcoros",
+  character: PLAYFUL_CHARACTERS.racorita,
+  ritualOpen: "Umbră răcoroasă.",
+  ritualClose: "Răcoare, gata.",
+  surprises: {
+    1: "Stăm 2 sec la umbră",
+    2: "Din soare în umbră",
+    3: "El alege locul răcoros",
+    4: "Mâna pe pământul umbrit",
+    5: "O gură de aer la umbră",
+    6: "Locul secret (doar el)",
+    7: "Înapoi în casă, lin",
+  },
+};
+const WEEK_38: WeekConfig = {
+  week: 38,
+  theme: "Piciorul pe iarbă",
+  character: PLAYFUL_CHARACTERS.talpita,
+  ritualOpen: "Picior pe iarbă.",
+  ritualClose: "Pe iarbă, gata.",
+  surprises: {
+    1: "Tălpița pe iarbă 2 sec",
+    2: "Un pas desculț, dacă vrea",
+    3: "Iarba gâdilă piciorul",
+    4: "El alege: iarbă sau piatră",
+    5: "Două tălpi, una după alta",
+    6: "Urma lui (doar el o arată)",
+    7: "Pantofii la loc",
+  },
+};
+const WEEK_39: WeekConfig = {
+  week: 39,
+  theme: "Fructe pe care le vedem",
+  character: PLAYFUL_CHARACTERS.marulet,
+  ritualOpen: "Uite fructele.",
+  ritualClose: "Fructe văzute.",
+  surprises: {
+    1: "Mărul pe masă 2 sec",
+    2: "El alege: măr sau altă culoare",
+    3: "Mirosim mărul",
+    4: "Tăiem cu ochii: rotund",
+    5: "Un fruct secret (doar el)",
+    6: "Punem mărul în coș",
+    7: "Ultima pagină: un fruct",
+  },
+};
+const WEEK_40: WeekConfig = {
+  week: 40,
+  theme: "Ajutor la treabă scurtă",
+  character: PLAYFUL_CHARACTERS.maturita,
+  ritualOpen: "Ajutor la treabă.",
+  ritualClose: "Treaba, gata.",
+  surprises: {
+    1: "Mătura face 2 mișcări",
+    2: "El ține coada 2 sec",
+    3: "Un lucru la loc",
+    4: "El alege: mătură sau cârpă",
+    5: "Ștergem masa o dată",
+    6: "Treaba secretă (doar el o arată)",
+    7: "Mătura la loc",
+  },
+};
+const WEEK_41: WeekConfig = {
+  week: 41,
+  theme: "Drumul până la poartă",
+  character: PLAYFUL_CHARACTERS.portita,
+  ritualOpen: "Drumul la poartă.",
+  ritualClose: "La poartă, gata.",
+  surprises: {
+    1: "Pași până la poartă",
+    2: "Mâna pe poartă 2 sec",
+    3: "Poarta se deschide 2 cm",
+    4: "El alege: înăuntru sau afară",
+    5: "Un pas dincolo de prag",
+    6: "Poarta (doar el o arată)",
+    7: "Înapoi, poarta închisă",
+  },
+};
+const WEEK_42: WeekConfig = {
+  week: 42,
+  theme: "Vânt și frunze din nou",
+  character: PLAYFUL_CHARACTERS.vantulet,
+  ritualOpen: "Vânt din nou.",
+  ritualClose: "Vântul, gata.",
+  surprises: {
+    1: "O gură de vânt",
+    2: "Frunza zboară 1 sec",
+    3: "El prinde o frunză, dacă vrea",
+    4: "Părul se mișcă în vânt",
+    5: "El alege: vânt sau liniște",
+    6: "O frunză secretă (doar el)",
+    7: "Frunza în coș",
+  },
+};
+const WEEK_43: WeekConfig = {
+  week: 43,
+  theme: "Coșul și strânsul",
+  character: PLAYFUL_CHARACTERS.saculet,
+  ritualOpen: "Coșul și strânsul.",
+  ritualClose: "Strâns, gata.",
+  surprises: {
+    1: "Un lucru în săculeț",
+    2: "El alege: coș sau săculeț",
+    3: "Trei lucruri, apoi gata",
+    4: "Săculețul se închide 2 sec",
+    5: "Piatra sau frunza în coș",
+    6: "Săculețul secret (doar el)",
+    7: "Verificăm: totul strâns",
+  },
+};
+const WEEK_44: WeekConfig = {
+  week: 44,
+  theme: "Prieteni și familie",
+  character: PLAYFUL_CHARACTERS.inimioara,
+  ritualOpen: "Prieteni și familie.",
+  ritualClose: "Împreună, gata.",
+  surprises: {
+    1: "Mâna pe umăr 1 sec, dacă vrea",
+    2: "Arătăm pe cineva din poză",
+    3: "El alege: mama sau tata",
+    4: "O îmbrățișare scurtă, dacă vrea",
+    5: "Stați doi, lângă",
+    6: "Inima din palmă (doar el)",
+    7: "Noapte bună împreună",
+  },
+};
+const WEEK_45: WeekConfig = {
+  week: 45,
+  theme: "Corp puternic, pași mulți",
+  character: PLAYFUL_CHARACTERS.pasulet,
+  ritualOpen: "Pași mulți.",
+  ritualClose: "Pașii, gata.",
+  surprises: {
+    1: "Cinci pași, apoi stăm",
+    2: "Pași mari, apoi mici",
+    3: "El alege: repede sau încet",
+    4: "O săritură mică după pași",
+    5: "Pași pe hol dus-întors",
+    6: "Urma lui (doar el)",
+    7: "Pantofii la loc",
+  },
+};
+const WEEK_46: WeekConfig = {
+  week: 46,
+  theme: "Întrebări cu arătatul",
+  character: PLAYFUL_CHARACTERS.degetel,
+  ritualOpen: "Arătăm împreună.",
+  ritualClose: "Arătat, gata.",
+  surprises: {
+    1: "Arătăm mingea",
+    2: "Unde e jucăria? 2 sec",
+    3: "Arătăm ușa",
+    4: "Arătăm fereastra",
+    5: "El alege ce arată",
+    6: "Degețelul secret (doar el arată)",
+    7: "Ultima pagină: unde e?",
+  },
+};
+const WEEK_47: WeekConfig = {
+  week: 47,
+  theme: "Grijă de lucruri",
+  character: PLAYFUL_CHARACTERS.grijita,
+  ritualOpen: "Grijă de lucruri.",
+  ritualClose: "Lucruri, gata.",
+  surprises: {
+    1: "Jucăria e a mea, 2 sec",
+    2: "Punem în cutie",
+    3: "Două lucruri la loc",
+    4: "Haina pe cuier",
+    5: "Cartea pe raft",
+    6: "El alege un lucru de grijă",
+    7: "Verificăm: cutia la loc",
+  },
+};
+const WEEK_48: WeekConfig = {
+  week: 48,
+  theme: "Salut și la revedere",
+  character: PLAYFUL_CHARACTERS.salutel,
+  ritualOpen: "Salut și pa.",
+  ritualClose: "Pa, gata.",
+  surprises: {
+    1: "Mâna sus: salut",
+    2: "Pași până la ușă",
+    3: "Fluturăm: la revedere",
+    4: "Salut, apoi câțiva pași",
+    5: "La revedere la fereastră",
+    6: "El salută oaspetele, dacă vrea",
+    7: "Un salut la final",
+  },
+};
+const WEEK_49: WeekConfig = {
+  week: 49,
+  theme: "Repetăm 3 favorite",
+  character: PLAYFUL_CHARACTERS.scumput,
+  ritualOpen: "Trei favorite.",
+  ritualClose: "Cele trei, gata.",
+  surprises: {
+    1: "Mingea favorită 2 sec",
+    2: "El alege pagina iubită",
+    3: "Dansul ales, o dată",
+    4: "Mingea din nou, pe rând",
+    5: "Alege una din trei",
+    6: "Pașii favoriți",
+    7: "Un favorit la final",
+  },
+};
+const WEEK_50: WeekConfig = {
+  week: 50,
+  theme: "Casă liniștită",
+  character: PLAYFUL_CHARACTERS.linistita,
+  ritualOpen: "Casă liniștită.",
+  ritualClose: "Liniște, gata.",
+  surprises: {
+    1: "Pași moi 2 sec",
+    2: "Așezare pe pernă",
+    3: "Carte pe genunchi",
+    4: "Mâinile pe genunchi",
+    5: "Perdeaua se trage blând",
+    6: "Balans blând pe loc",
+    7: "Verificăm: casa e liniștită",
+  },
+};
+const WEEK_51: WeekConfig = {
+  week: 51,
+  theme: "Curtea cunoscută",
+  character: PLAYFUL_CHARACTERS.curtita,
+  ritualOpen: "Curtea știută.",
+  ritualClose: "Curtea, gata.",
+  surprises: {
+    1: "Pași în curtea cunoscută",
+    2: "Mâna pe gard",
+    3: "Pași până la copac",
+    4: "Atingem pământul",
+    5: "Mâna pe poartă",
+    6: "El arată un loc știut",
+    7: "Înapoi la ușă",
+  },
+};
+const WEEK_52: WeekConfig = {
+  week: 52,
+  theme: "Anul se închide blând",
+  character: PLAYFUL_CHARACTERS.blandulet,
+  ritualOpen: "Anul, blând.",
+  ritualClose: "Anul, gata.",
+  surprises: {
+    1: "Pași blânzi prin casă",
+    2: "Trei locuri din casă",
+    3: "El alege pagina anului",
+    4: "Mingea blândă, pe rând",
+    5: "Privim geamul la final",
+    6: "Balans: anul se închide",
+    7: "Totul la loc, an gata",
+  },
+};
+
 const WEEK_CONFIG: Record<PlayfulPilotWeek, WeekConfig> = {
   1: WEEK_1,
   2: WEEK_2,
@@ -522,13 +1229,45 @@ const WEEK_CONFIG: Record<PlayfulPilotWeek, WeekConfig> = {
   18: WEEK_18,
   19: WEEK_19,
   20: WEEK_20,
+  21: WEEK_21,
+  22: WEEK_22,
+  23: WEEK_23,
+  24: WEEK_24,
+  25: WEEK_25,
+  26: WEEK_26,
+  27: WEEK_27,
+  28: WEEK_28,
+  29: WEEK_29,
+  30: WEEK_30,
+  31: WEEK_31,
+  32: WEEK_32,
+  33: WEEK_33,
+  34: WEEK_34,
+  35: WEEK_35,
+  36: WEEK_36,
+  37: WEEK_37,
+  38: WEEK_38,
+  39: WEEK_39,
+  40: WEEK_40,
+  41: WEEK_41,
+  42: WEEK_42,
+  43: WEEK_43,
+  44: WEEK_44,
+  45: WEEK_45,
+  46: WEEK_46,
+  47: WEEK_47,
+  48: WEEK_48,
+  49: WEEK_49,
+  50: WEEK_50,
+  51: WEEK_51,
+  52: WEEK_52,
 };
 
 export function isPlayfulPilotWeek(week: number): week is PlayfulPilotWeek {
   return (PLAYFUL_PILOT_WEEKS as readonly number[]).includes(week);
 }
 
-/** Day overlay: S1–S20 L–D (1–7). */
+/** Day overlay: S1–S52 L–D (1–7). */
 export function playfulPilotFor(
   week: number,
   dayOfWeek: number,

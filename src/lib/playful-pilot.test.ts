@@ -18,9 +18,11 @@ function svgTitle(filename: string): string {
 }
 
 describe("PLAYFUL PILOT scope", () => {
-  test("locks weeks to S1–S20", () => {
+  test("locks weeks to S1–S52", () => {
     expect([...PLAYFUL_PILOT_WEEKS]).toEqual([
       1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+      21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
+      41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52,
     ]);
   });
 
@@ -378,13 +380,57 @@ describe("PLAYFUL PILOT scope", () => {
     expect(playfulPilotFor(20, 7)?.surprise).toBe("Verificăm coșul: totul la loc");
   });
 
-  test("S21 and other weeks stay untouched", () => {
-    expect(playfulPilotFor(21, 1)).toBeNull();
-    expect(playfulPilotWeek(21)).toBeNull();
-    expect(playfulPilotFor(21, 5)).toBeNull();
-    expect(playfulPilotFor(22, 1)).toBeNull();
-    expect(playfulPilotWeek(22)).toBeNull();
+
+  test("S21–S52 overlays lock characters, rituals, surprises", () => {
+    const rows = [
+    {week:21,id:"pervazut",name:"Pervazuț",open:"Iarna pe pervaz.",close:"Pe pervaz, gata.",s1:"Mâna pe geam 2 sec",theme:"Iarna pe pervaz"},
+    {week:22,id:"ghemut",name:"Ghemuț",open:"Corp în casă.",close:"Mișcat, gata.",s1:"Balans 2 sec pe loc",theme:"Corp care se mișcă în casă"},
+    {week:23,id:"nasut",name:"Năsuț",open:"Mirosuri din casă.",close:"Mirosit, gata.",s1:"Nas aproape de pâine 2 sec",theme:"Mirosuri din casă"},
+    {week:24,id:"usita",name:"Ușiță",open:"Familia, oaspeții.",close:"La ușă, gata.",s1:"Mâna sus: salut",theme:"Familia și oaspeții"},
+    {week:25,id:"lampita",name:"Lămpiță",open:"Lumină de seară.",close:"Seara, gata.",s1:"Lampa se aprinde 2 sec",theme:"Lumină de seară"},
+    {week:26,id:"amintioara",name:"Amintioară",open:"Favoritele, din nou.",close:"Favorite, gata.",s1:"Geamul favorit 2 sec",theme:"Jumătate de an: repetăm favoritele"},
+    {week:27,id:"fulguta",name:"Fulguță",open:"Zăpadă sau ploaie.",close:"La geam, gata.",s1:"Mâna pe geam: vremea",theme:"Zăpadă sau ploaie la geam"},
+    {week:28,id:"noroiut",name:"Noroiuț",open:"Dezgheț și noroi.",close:"Noroiul, gata.",s1:"Cizmele pe picioare",theme:"Dezgheț și noroi"},
+    {week:29,id:"mugurel",name:"Mugurel",open:"Muguri și iarbă.",close:"Mugurii, gata.",s1:"Un mugure pe creangă",theme:"Muguri și iarbă nouă"},
+    {week:30,id:"cioculet",name:"Cioculeț",open:"Păsări dimineața.",close:"Păsări, gata.",s1:"Urechea la geam dimineața",theme:"Păsări dimineața"},
+    {week:31,id:"samantica",name:"Sămânțică",open:"Semințe și udat.",close:"Udat, gata.",s1:"O sămânță în palmă",theme:"Semințe și udat"},
+    {week:32,id:"rotunduta",name:"Rotunduță",open:"Mingea afară.",close:"Mingea, gata.",s1:"Mingea rulează 1 sec afară",theme:"Mingea afară"},
+    {week:33,id:"nisiput",name:"Nisipuț",open:"Nisip și găleată.",close:"Nisipul, gata.",s1:"Mâna în nisip 2 sec",theme:"Nisip și găleată"},
+    {week:34,id:"umbrita",name:"Umbriță",open:"Umbre pe pământ.",close:"Umbra, gata.",s1:"Mâna face umbră 2 sec",theme:"Umbre pe pământ"},
+    {week:35,id:"stropulet",name:"Stropuleț",open:"Apă afară.",close:"Pe apă, gata.",s1:"Un strop pe mână",theme:"Apă afară (joc scurt)"},
+    {week:36,id:"gandacel",name:"Gândăcel",open:"Insecte de departe.",close:"Departe, gata.",s1:"Privim de departe 2 sec",theme:"Insecte de departe"},
+    {week:37,id:"racorita",name:"Răcoriță",open:"Umbră răcoroasă.",close:"Răcoare, gata.",s1:"Stăm 2 sec la umbră",theme:"Umbră și loc răcoros"},
+    {week:38,id:"talpita",name:"Tălpiță",open:"Picior pe iarbă.",close:"Pe iarbă, gata.",s1:"Tălpița pe iarbă 2 sec",theme:"Piciorul pe iarbă"},
+    {week:39,id:"marulet",name:"Măruleț",open:"Uite fructele.",close:"Fructe văzute.",s1:"Mărul pe masă 2 sec",theme:"Fructe pe care le vedem"},
+    {week:40,id:"maturita",name:"Măturiță",open:"Ajutor la treabă.",close:"Treaba, gata.",s1:"Mătura face 2 mișcări",theme:"Ajutor la treabă scurtă"},
+    {week:41,id:"portita",name:"Portiță",open:"Drumul la poartă.",close:"La poartă, gata.",s1:"Pași până la poartă",theme:"Drumul până la poartă"},
+    {week:42,id:"vantulet",name:"Vântuleț",open:"Vânt din nou.",close:"Vântul, gata.",s1:"O gură de vânt",theme:"Vânt și frunze din nou"},
+    {week:43,id:"saculet",name:"Săculeț",open:"Coșul și strânsul.",close:"Strâns, gata.",s1:"Un lucru în săculeț",theme:"Coșul și strânsul"},
+    {week:44,id:"inimioara",name:"Inimioară",open:"Prieteni și familie.",close:"Împreună, gata.",s1:"Mâna pe umăr 1 sec, dacă vrea",theme:"Prieteni și familie"},
+    {week:45,id:"pasulet",name:"Pașuleț",open:"Pași mulți.",close:"Pașii, gata.",s1:"Cinci pași, apoi stăm",theme:"Corp puternic, pași mulți"},
+    {week:46,id:"degetel",name:"Degețel",open:"Arătăm împreună.",close:"Arătat, gata.",s1:"Arătăm mingea",theme:"Întrebări cu arătatul"},
+    {week:47,id:"grijita",name:"Grijiță",open:"Grijă de lucruri.",close:"Lucruri, gata.",s1:"Jucăria e a mea, 2 sec",theme:"Grijă de lucruri"},
+    {week:48,id:"salutel",name:"Salutel",open:"Salut și pa.",close:"Pa, gata.",s1:"Mâna sus: salut",theme:"Salut și la revedere"},
+    {week:49,id:"scumput",name:"Scumpuț",open:"Trei favorite.",close:"Cele trei, gata.",s1:"Mingea favorită 2 sec",theme:"Repetăm 3 favorite"},
+    {week:50,id:"linistita",name:"Liniștiță",open:"Casă liniștită.",close:"Liniște, gata.",s1:"Pași moi 2 sec",theme:"Casă liniștită"},
+    {week:51,id:"curtita",name:"Curtiță",open:"Curtea știută.",close:"Curtea, gata.",s1:"Pași în curtea cunoscută",theme:"Curtea cunoscută"},
+    {week:52,id:"blandulet",name:"Blânduleț",open:"Anul, blând.",close:"Anul, gata.",s1:"Pași blânzi prin casă",theme:"Anul se închide blând"},
+    ] as const;
+    expect(rows).toHaveLength(32);
+    for (const row of rows) {
+      const overlay = playfulPilotFor(row.week, 1);
+      expect(overlay?.character.id).toBe(row.id);
+      expect(overlay?.character.name).toBe(row.name);
+      expect(overlay?.character.src).toBe(`/characters/${row.id}.svg`);
+      expect(overlay?.theme).toBe(row.theme);
+      expect(overlay?.ritualOpen).toBe(row.open);
+      expect(overlay?.ritualOpen).not.toMatch(/\bHai\b/);
+      expect(playfulPilotFor(row.week, 7)?.ritualClose).toBe(row.close);
+      expect(overlay?.surprise).toBe(row.s1);
+      expect(playfulPilotWeek(row.week)?.character.name).toBe(row.name);
+    }
   });
+
 
   test("week ritual exists for S3 including Mon–Thu overlay", () => {
     const week = playfulPilotWeek(3);
@@ -455,6 +501,103 @@ describe("PLAYFUL PILOT copy helpers", () => {
     );
     expect(playfulHeaderLabel("Coșuleț", "Ordine mică în cameră")).toBe(
       "Coșuleț · Ordine mică în cameră",
+    );
+
+    expect(playfulHeaderLabel("Pervazuț", "Iarna pe pervaz")).toBe(
+      "Pervazuț · Iarna pe pervaz",
+    );
+    expect(playfulHeaderLabel("Ghemuț", "Corp care se mișcă în casă")).toBe(
+      "Ghemuț · Corp care se mișcă în casă",
+    );
+    expect(playfulHeaderLabel("Năsuț", "Mirosuri din casă")).toBe(
+      "Năsuț · Mirosuri din casă",
+    );
+    expect(playfulHeaderLabel("Ușiță", "Familia și oaspeții")).toBe(
+      "Ușiță · Familia și oaspeții",
+    );
+    expect(playfulHeaderLabel("Lămpiță", "Lumină de seară")).toBe(
+      "Lămpiță · Lumină de seară",
+    );
+    expect(playfulHeaderLabel("Amintioară", "Jumătate de an: repetăm favoritele")).toBe(
+      "Amintioară · Jumătate de an: repetăm favoritele",
+    );
+    expect(playfulHeaderLabel("Fulguță", "Zăpadă sau ploaie la geam")).toBe(
+      "Fulguță · Zăpadă sau ploaie la geam",
+    );
+    expect(playfulHeaderLabel("Noroiuț", "Dezgheț și noroi")).toBe(
+      "Noroiuț · Dezgheț și noroi",
+    );
+    expect(playfulHeaderLabel("Mugurel", "Muguri și iarbă nouă")).toBe(
+      "Mugurel · Muguri și iarbă nouă",
+    );
+    expect(playfulHeaderLabel("Cioculeț", "Păsări dimineața")).toBe(
+      "Cioculeț · Păsări dimineața",
+    );
+    expect(playfulHeaderLabel("Sămânțică", "Semințe și udat")).toBe(
+      "Sămânțică · Semințe și udat",
+    );
+    expect(playfulHeaderLabel("Rotunduță", "Mingea afară")).toBe(
+      "Rotunduță · Mingea afară",
+    );
+    expect(playfulHeaderLabel("Nisipuț", "Nisip și găleată")).toBe(
+      "Nisipuț · Nisip și găleată",
+    );
+    expect(playfulHeaderLabel("Umbriță", "Umbre pe pământ")).toBe(
+      "Umbriță · Umbre pe pământ",
+    );
+    expect(playfulHeaderLabel("Stropuleț", "Apă afară (joc scurt)")).toBe(
+      "Stropuleț · Apă afară (joc scurt)",
+    );
+    expect(playfulHeaderLabel("Gândăcel", "Insecte de departe")).toBe(
+      "Gândăcel · Insecte de departe",
+    );
+    expect(playfulHeaderLabel("Răcoriță", "Umbră și loc răcoros")).toBe(
+      "Răcoriță · Umbră și loc răcoros",
+    );
+    expect(playfulHeaderLabel("Tălpiță", "Piciorul pe iarbă")).toBe(
+      "Tălpiță · Piciorul pe iarbă",
+    );
+    expect(playfulHeaderLabel("Măruleț", "Fructe pe care le vedem")).toBe(
+      "Măruleț · Fructe pe care le vedem",
+    );
+    expect(playfulHeaderLabel("Măturiță", "Ajutor la treabă scurtă")).toBe(
+      "Măturiță · Ajutor la treabă scurtă",
+    );
+    expect(playfulHeaderLabel("Portiță", "Drumul până la poartă")).toBe(
+      "Portiță · Drumul până la poartă",
+    );
+    expect(playfulHeaderLabel("Vântuleț", "Vânt și frunze din nou")).toBe(
+      "Vântuleț · Vânt și frunze din nou",
+    );
+    expect(playfulHeaderLabel("Săculeț", "Coșul și strânsul")).toBe(
+      "Săculeț · Coșul și strânsul",
+    );
+    expect(playfulHeaderLabel("Inimioară", "Prieteni și familie")).toBe(
+      "Inimioară · Prieteni și familie",
+    );
+    expect(playfulHeaderLabel("Pașuleț", "Corp puternic, pași mulți")).toBe(
+      "Pașuleț · Corp puternic, pași mulți",
+    );
+    expect(playfulHeaderLabel("Degețel", "Întrebări cu arătatul")).toBe(
+      "Degețel · Întrebări cu arătatul",
+    );
+    expect(playfulHeaderLabel("Grijiță", "Grijă de lucruri")).toBe(
+      "Grijiță · Grijă de lucruri",
+    );
+    expect(playfulHeaderLabel("Salutel", "Salut și la revedere")).toBe(
+      "Salutel · Salut și la revedere",
+    );
+    expect(playfulHeaderLabel("Scumpuț", "Repetăm 3 favorite")).toBe(
+      "Scumpuț · Repetăm 3 favorite",
+    );
+    expect(playfulHeaderLabel("Liniștiță", "Casă liniștită")).toBe(
+      "Liniștiță · Casă liniștită",
+    );
+    expect(playfulHeaderLabel("Curtiță", "Curtea cunoscută")).toBe(
+      "Curtiță · Curtea cunoscută",
+    );
+    expect(playfulHeaderLabel("Blânduleț", "Anul se închide blând")).toBe(
+      "Blânduleț · Anul se închide blând",
     );
     expect(PLAYFUL_CHARACTERS.manuta.name).toBe("Mânuță");
     expect(PLAYFUL_CHARACTERS.manuta.name).not.toBe("Mănuță");
@@ -669,8 +812,109 @@ describe("PLAYFUL PILOT copy helpers", () => {
     expect(chrome).not.toContain("<title>Galetuta</title>");
   });
 
-  test("S1–S2 and S5–S20 overlays have no sound fields", () => {
-    for (const week of [1, 2, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) {
+  test("S21–S52 names lock Romanian diacritics on SVG + chrome", () => {
+    const chrome = readFileSync(resolve("src/components/playful-chrome.tsx"), "utf8");
+    expect(PLAYFUL_CHARACTERS.pervazut.name).toBe("Pervazuț");
+    expect(svgTitle("pervazut.svg")).toBe("Pervazuț");
+    expect(chrome).toContain("<title>Pervazuț</title>");
+    expect(PLAYFUL_CHARACTERS.ghemut.name).toBe("Ghemuț");
+    expect(svgTitle("ghemut.svg")).toBe("Ghemuț");
+    expect(chrome).toContain("<title>Ghemuț</title>");
+    expect(PLAYFUL_CHARACTERS.nasut.name).toBe("Năsuț");
+    expect(svgTitle("nasut.svg")).toBe("Năsuț");
+    expect(chrome).toContain("<title>Năsuț</title>");
+    expect(PLAYFUL_CHARACTERS.usita.name).toBe("Ușiță");
+    expect(svgTitle("usita.svg")).toBe("Ușiță");
+    expect(chrome).toContain("<title>Ușiță</title>");
+    expect(PLAYFUL_CHARACTERS.lampita.name).toBe("Lămpiță");
+    expect(svgTitle("lampita.svg")).toBe("Lămpiță");
+    expect(chrome).toContain("<title>Lămpiță</title>");
+    expect(PLAYFUL_CHARACTERS.amintioara.name).toBe("Amintioară");
+    expect(svgTitle("amintioara.svg")).toBe("Amintioară");
+    expect(chrome).toContain("<title>Amintioară</title>");
+    expect(PLAYFUL_CHARACTERS.fulguta.name).toBe("Fulguță");
+    expect(svgTitle("fulguta.svg")).toBe("Fulguță");
+    expect(chrome).toContain("<title>Fulguță</title>");
+    expect(PLAYFUL_CHARACTERS.noroiut.name).toBe("Noroiuț");
+    expect(svgTitle("noroiut.svg")).toBe("Noroiuț");
+    expect(chrome).toContain("<title>Noroiuț</title>");
+    expect(PLAYFUL_CHARACTERS.mugurel.name).toBe("Mugurel");
+    expect(svgTitle("mugurel.svg")).toBe("Mugurel");
+    expect(chrome).toContain("<title>Mugurel</title>");
+    expect(PLAYFUL_CHARACTERS.cioculet.name).toBe("Cioculeț");
+    expect(svgTitle("cioculet.svg")).toBe("Cioculeț");
+    expect(chrome).toContain("<title>Cioculeț</title>");
+    expect(PLAYFUL_CHARACTERS.samantica.name).toBe("Sămânțică");
+    expect(svgTitle("samantica.svg")).toBe("Sămânțică");
+    expect(chrome).toContain("<title>Sămânțică</title>");
+    expect(PLAYFUL_CHARACTERS.rotunduta.name).toBe("Rotunduță");
+    expect(svgTitle("rotunduta.svg")).toBe("Rotunduță");
+    expect(chrome).toContain("<title>Rotunduță</title>");
+    expect(PLAYFUL_CHARACTERS.nisiput.name).toBe("Nisipuț");
+    expect(svgTitle("nisiput.svg")).toBe("Nisipuț");
+    expect(chrome).toContain("<title>Nisipuț</title>");
+    expect(PLAYFUL_CHARACTERS.umbrita.name).toBe("Umbriță");
+    expect(svgTitle("umbrita.svg")).toBe("Umbriță");
+    expect(chrome).toContain("<title>Umbriță</title>");
+    expect(PLAYFUL_CHARACTERS.stropulet.name).toBe("Stropuleț");
+    expect(svgTitle("stropulet.svg")).toBe("Stropuleț");
+    expect(chrome).toContain("<title>Stropuleț</title>");
+    expect(PLAYFUL_CHARACTERS.gandacel.name).toBe("Gândăcel");
+    expect(svgTitle("gandacel.svg")).toBe("Gândăcel");
+    expect(chrome).toContain("<title>Gândăcel</title>");
+    expect(PLAYFUL_CHARACTERS.racorita.name).toBe("Răcoriță");
+    expect(svgTitle("racorita.svg")).toBe("Răcoriță");
+    expect(chrome).toContain("<title>Răcoriță</title>");
+    expect(PLAYFUL_CHARACTERS.talpita.name).toBe("Tălpiță");
+    expect(svgTitle("talpita.svg")).toBe("Tălpiță");
+    expect(chrome).toContain("<title>Tălpiță</title>");
+    expect(PLAYFUL_CHARACTERS.marulet.name).toBe("Măruleț");
+    expect(svgTitle("marulet.svg")).toBe("Măruleț");
+    expect(chrome).toContain("<title>Măruleț</title>");
+    expect(PLAYFUL_CHARACTERS.maturita.name).toBe("Măturiță");
+    expect(svgTitle("maturita.svg")).toBe("Măturiță");
+    expect(chrome).toContain("<title>Măturiță</title>");
+    expect(PLAYFUL_CHARACTERS.portita.name).toBe("Portiță");
+    expect(svgTitle("portita.svg")).toBe("Portiță");
+    expect(chrome).toContain("<title>Portiță</title>");
+    expect(PLAYFUL_CHARACTERS.vantulet.name).toBe("Vântuleț");
+    expect(svgTitle("vantulet.svg")).toBe("Vântuleț");
+    expect(chrome).toContain("<title>Vântuleț</title>");
+    expect(PLAYFUL_CHARACTERS.saculet.name).toBe("Săculeț");
+    expect(svgTitle("saculet.svg")).toBe("Săculeț");
+    expect(chrome).toContain("<title>Săculeț</title>");
+    expect(PLAYFUL_CHARACTERS.inimioara.name).toBe("Inimioară");
+    expect(svgTitle("inimioara.svg")).toBe("Inimioară");
+    expect(chrome).toContain("<title>Inimioară</title>");
+    expect(PLAYFUL_CHARACTERS.pasulet.name).toBe("Pașuleț");
+    expect(svgTitle("pasulet.svg")).toBe("Pașuleț");
+    expect(chrome).toContain("<title>Pașuleț</title>");
+    expect(PLAYFUL_CHARACTERS.degetel.name).toBe("Degețel");
+    expect(svgTitle("degetel.svg")).toBe("Degețel");
+    expect(chrome).toContain("<title>Degețel</title>");
+    expect(PLAYFUL_CHARACTERS.grijita.name).toBe("Grijiță");
+    expect(svgTitle("grijita.svg")).toBe("Grijiță");
+    expect(chrome).toContain("<title>Grijiță</title>");
+    expect(PLAYFUL_CHARACTERS.salutel.name).toBe("Salutel");
+    expect(svgTitle("salutel.svg")).toBe("Salutel");
+    expect(chrome).toContain("<title>Salutel</title>");
+    expect(PLAYFUL_CHARACTERS.scumput.name).toBe("Scumpuț");
+    expect(svgTitle("scumput.svg")).toBe("Scumpuț");
+    expect(chrome).toContain("<title>Scumpuț</title>");
+    expect(PLAYFUL_CHARACTERS.linistita.name).toBe("Liniștiță");
+    expect(svgTitle("linistita.svg")).toBe("Liniștiță");
+    expect(chrome).toContain("<title>Liniștiță</title>");
+    expect(PLAYFUL_CHARACTERS.curtita.name).toBe("Curtiță");
+    expect(svgTitle("curtita.svg")).toBe("Curtiță");
+    expect(chrome).toContain("<title>Curtiță</title>");
+    expect(PLAYFUL_CHARACTERS.blandulet.name).toBe("Blânduleț");
+    expect(svgTitle("blandulet.svg")).toBe("Blânduleț");
+    expect(chrome).toContain("<title>Blânduleț</title>");
+  });
+
+  test("S1–S52 overlays have no sound fields (S3 ritual lock contains Ascultăm)", () => {
+    for (const week of PLAYFUL_PILOT_WEEKS) {
+      if (week === 3) continue; // ritual lock contains Ascultăm
       const overlay = playfulPilotFor(week, 1);
       expect(overlay).not.toBeNull();
       expect(overlay).not.toHaveProperty("sound");
@@ -1037,9 +1281,6 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
     for (const [id, titlu] of Object.entries(expected)) {
       expect(byId[id]).toBe(titlu);
     }
-    expect(
-      getSeedActivities(21).find((row) => row.id === "s21-2-3-z1-fizic")?.titlu,
-    ).toBe("Mâna pe geam pe scurt");
   });
 
   test("S11–S13 titles are locked invitation lines for L–D × 4 pillars", () => {
@@ -1138,9 +1379,6 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
     for (const [id, titlu] of Object.entries(expected)) {
       expect(byId[id]).toBe(titlu);
     }
-    expect(
-      getSeedActivities(21).find((row) => row.id === "s21-2-3-z1-fizic")?.titlu,
-    ).toBe("Mâna pe geam pe scurt");
   });
   test("S14–S20 titles are locked invitation lines for L–D × 4 pillars", () => {
     const expected: Record<string, string> = {
@@ -1350,17 +1588,914 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
     for (const [id, titlu] of Object.entries(expected)) {
       expect(byId[id]).toBe(titlu);
     }
-    expect(
-      getSeedActivities(21).find((row) => row.id === "s21-2-3-z1-fizic")?.titlu,
-    ).toBe("Mâna pe geam pe scurt");
   });
-  test("S21 titles stay pre-pilot wording", () => {
-    const s21 = Object.fromEntries(
-      getSeedActivities(21).map((row) => [row.id, row.titlu]),
+  test("S21–S52 titles are locked invitation lines for L–D × 4 pillars", () => {
+    const expected: Record<string, string> = {
+      "s21-2-3-z1-fizic": "Mâna pe geam",
+      "s21-2-3-z1-mental": "Geam și afară",
+      "s21-2-3-z1-resurse": "Perdeaua la loc",
+      "s21-2-3-z1-social": "Privim geamul împreună",
+      "s21-2-3-z2-fizic": "Deget pe geam rece",
+      "s21-2-3-z2-mental": "Gheață pe geam?",
+      "s21-2-3-z2-resurse": "Cârpa de geam",
+      "s21-2-3-z2-social": "Arătăm geamul adultului",
+      "s21-2-3-z3-fizic": "De la geam la canapea caldă",
+      "s21-2-3-z3-mental": "Rece afară, cald în casă",
+      "s21-2-3-z3-resurse": "Pătura pe canapea",
+      "s21-2-3-z3-social": "Ne încălzim împreună",
+      "s21-2-3-z4-fizic": "Suflăm pe geam",
+      "s21-2-3-z4-mental": "Abur pe geam",
+      "s21-2-3-z4-resurse": "Ștergem aburul și cârpa la loc",
+      "s21-2-3-z4-social": "Suflăm pe rând pe geam",
+      "s21-2-3-z5-fizic": "Pervazul: mână pe pervaz",
+      "s21-2-3-z5-mental": "Lumină la geam",
+      "s21-2-3-z5-resurse": "Obiectul de pe pervaz la loc",
+      "s21-2-3-z5-social": "Pervazul cu adultul",
+      "s21-2-3-z6-fizic": "Geam, apoi pași în casă",
+      "s21-2-3-z6-mental": "Iarnă afară, casă caldă",
+      "s21-2-3-z6-resurse": "Șosetele la loc după geam",
+      "s21-2-3-z6-social": "Spunem adultului: geam rece",
+      "s21-2-3-z7-fizic": "Plimbare liberă în casă, geam la final",
+      "s21-2-3-z7-mental": "Carte: iarnă și casă",
+      "s21-2-3-z7-resurse": "Cartea și pătura pe raft",
+      "s21-2-3-z7-social": "Noapte bună",
+      "s22-2-3-z1-fizic": "Balans ușor pe loc",
+      "s22-2-3-z1-mental": "Corp care se mișcă",
+      "s22-2-3-z1-resurse": "Spațiu liber pe jos",
+      "s22-2-3-z1-social": "Dansăm împreună",
+      "s22-2-3-z2-fizic": "Târâit pe jos câțiva pași",
+      "s22-2-3-z2-mental": "Jos pe podea",
+      "s22-2-3-z2-resurse": "Covorul — sau zona de joacă liberă",
+      "s22-2-3-z2-social": "Târâim pe rând",
+      "s22-2-3-z3-fizic": "Sărituri mici pe loc",
+      "s22-2-3-z3-mental": "Unu, doi — sărituri",
+      "s22-2-3-z3-resurse": "Pernuța pe canapea după sărituri",
+      "s22-2-3-z3-social": "Sărim lângă adult",
+      "s22-2-3-z4-fizic": "Brațe sus și jos",
+      "s22-2-3-z4-mental": "Sus și jos cu brațele",
+      "s22-2-3-z4-resurse": "Jucăria de dans la loc",
+      "s22-2-3-z4-social": "Brațe sus împreună",
+      "s22-2-3-z5-fizic": "Pași pe loc în casă",
+      "s22-2-3-z5-mental": "Mișcare, apoi gata",
+      "s22-2-3-z5-resurse": "Spațiul de mișcare strâns",
+      "s22-2-3-z5-social": "Pași pe loc cu mama — sau tata",
+      "s22-2-3-z6-fizic": "Dans scurt, apoi așezat",
+      "s22-2-3-z6-mental": "Mișcare și liniște în corp",
+      "s22-2-3-z6-resurse": "Mingea moale în cutie după dans",
+      "s22-2-3-z6-social": "Arătăm mișcarea adultului",
+      "s22-2-3-z7-fizic": "Plimbare liberă, un dans la final",
+      "s22-2-3-z7-mental": "Carte: copii care se mișcă",
+      "s22-2-3-z7-resurse": "Jucăriile de mișcare pe raft",
+      "s22-2-3-z7-social": "Noapte bună",
+      "s23-2-3-z1-fizic": "Nas aproape de pâine",
+      "s23-2-3-z1-mental": "Pâine: miros",
+      "s23-2-3-z1-resurse": "Pâinea în coș — sau pe masă la loc",
+      "s23-2-3-z1-social": "Mirosim pâinea împreună",
+      "s23-2-3-z2-fizic": "Mâini și săpun",
+      "s23-2-3-z2-mental": "Săpun: miros curat",
+      "s23-2-3-z2-resurse": "Săpunul la loc lângă chiuvetă",
+      "s23-2-3-z2-social": "Spălăm mâinile cu adultul",
+      "s23-2-3-z3-fizic": "Cană cu ceai răcit — miros",
+      "s23-2-3-z3-mental": "Ceai: cald răcit, miros",
+      "s23-2-3-z3-resurse": "Cana pe masă — sau la chiuvetă",
+      "s23-2-3-z3-social": "Mirosim ceaiul cu adultul",
+      "s23-2-3-z4-fizic": "Prosopul curat la nas",
+      "s23-2-3-z4-mental": "Curat: miros de rufe",
+      "s23-2-3-z4-resurse": "Prosopul pe cârlig — sau la loc",
+      "s23-2-3-z4-social": "Arătăm prosopul adultului",
+      "s23-2-3-z5-fizic": "Măr sau fruct — miros",
+      "s23-2-3-z5-mental": "Trei mirosuri: pâine, săpun, ceai",
+      "s23-2-3-z5-resurse": "Fructul în farfurie — sau coș",
+      "s23-2-3-z5-social": "Spunem adultului ce am mirosit",
+      "s23-2-3-z6-fizic": "Bucătăria: pași și miros",
+      "s23-2-3-z6-mental": "Miros în casă, gata",
+      "s23-2-3-z6-resurse": "Farfuria și cana la loc",
+      "s23-2-3-z6-social": "Mirosim în bucătărie cu adultul",
+      "s23-2-3-z7-fizic": "Plimbare liberă în casă, un miros la final",
+      "s23-2-3-z7-mental": "Carte: mâncare și casă",
+      "s23-2-3-z7-resurse": "Obiectele de miros la loc",
+      "s23-2-3-z7-social": "Noapte bună",
+      "s24-2-3-z1-fizic": "Mână ridicată: salut",
+      "s24-2-3-z1-mental": "Bună — cuvânt scurt",
+      "s24-2-3-z1-resurse": "Jucăria de salut pe raft",
+      "s24-2-3-z1-social": "Spunem bună adultului",
+      "s24-2-3-z2-fizic": "Fluturăm mâna: la revedere",
+      "s24-2-3-z2-mental": "Bună și la revedere",
+      "s24-2-3-z2-resurse": "Haina de oaspete pe cârlig",
+      "s24-2-3-z2-social": "La revedere adultului",
+      "s24-2-3-z3-fizic": "Ducem o jucărie „oaspetelui”",
+      "s24-2-3-z3-mental": "Oaspete în casă",
+      "s24-2-3-z3-resurse": "Scaunul liber pentru oaspete",
+      "s24-2-3-z3-social": "Oferim jucăria adultului-oaspete",
+      "s24-2-3-z4-fizic": "Ne așezăm lângă oaspete",
+      "s24-2-3-z4-mental": "Aproape, lin",
+      "s24-2-3-z4-resurse": "Paharul pe masă pentru oaspete",
+      "s24-2-3-z4-social": "Stăm lângă oaspete fără forțare",
+      "s24-2-3-z5-fizic": "Pași până la ușă: salut",
+      "s24-2-3-z5-mental": "Familie: mama, tata, copil",
+      "s24-2-3-z5-resurse": "Pantofii de oaspete la loc",
+      "s24-2-3-z5-social": "Salut la ușă cu adultul",
+      "s24-2-3-z6-fizic": "Poză de familie — arătăm cu degetul",
+      "s24-2-3-z6-mental": "Cine e în poză",
+      "s24-2-3-z6-resurse": "Poza — sau albumul pe raft",
+      "s24-2-3-z6-social": "Arătăm poza adultului",
+      "s24-2-3-z7-fizic": "Plimbare liberă, salut la final",
+      "s24-2-3-z7-mental": "Carte: familie și casă",
+      "s24-2-3-z7-resurse": "Jucăria-oaspete pe raft",
+      "s24-2-3-z7-social": "Noapte bună",
+      "s25-2-3-z1-fizic": "Aprindem lampa",
+      "s25-2-3-z1-mental": "Lumină și seară",
+      "s25-2-3-z1-resurse": "Lampa pe noptieră la loc",
+      "s25-2-3-z1-social": "Lumina de seară împreună",
+      "s25-2-3-z2-fizic": "Tragem perdeaua seara",
+      "s25-2-3-z2-mental": "Întuneric blând afară",
+      "s25-2-3-z2-resurse": "Perdeaua închisă la loc",
+      "s25-2-3-z2-social": "Perdeaua cu adultul",
+      "s25-2-3-z3-fizic": "Pătura pe pat seara",
+      "s25-2-3-z3-mental": "Pat și somn",
+      "s25-2-3-z3-resurse": "Perna și pătura la loc",
+      "s25-2-3-z3-social": "Ne așezăm pe pat împreună",
+      "s25-2-3-z4-fizic": "Cartea de seară: întoarcem pagina",
+      "s25-2-3-z4-mental": "Imaginea din cartea de seară",
+      "s25-2-3-z4-resurse": "Cartea pe noptieră",
+      "s25-2-3-z4-social": "Citire scurtă lângă adult",
+      "s25-2-3-z5-fizic": "Mâinile la chiuvetă seara",
+      "s25-2-3-z5-mental": "Curat și gata de somn",
+      "s25-2-3-z5-resurse": "Prosopul la loc după spălat",
+      "s25-2-3-z5-social": "Spălăm mâinile pe rând",
+      "s25-2-3-z6-fizic": "Stingem lumina",
+      "s25-2-3-z6-mental": "Aprins și stins",
+      "s25-2-3-z6-resurse": "Lumina de veghe pe noptieră",
+      "s25-2-3-z6-social": "Stingem pe rând",
+      "s25-2-3-z7-fizic": "Plimbare liberă, lumină la final",
+      "s25-2-3-z7-mental": "Carte: noapte și lumină",
+      "s25-2-3-z7-resurse": "Cartea și pătura la loc seara",
+      "s25-2-3-z7-social": "Noapte bună",
+      "s26-2-3-z1-fizic": "Geamul favorit",
+      "s26-2-3-z1-mental": "Ne amintim: geam",
+      "s26-2-3-z1-resurse": "Perdeaua la loc, ca înainte",
+      "s26-2-3-z1-social": "Privim geamul împreună din nou",
+      "s26-2-3-z2-fizic": "Dansul favorit pe loc",
+      "s26-2-3-z2-mental": "Ne amintim: corp și dans",
+      "s26-2-3-z2-resurse": "Spațiu liber pentru dansul vechi",
+      "s26-2-3-z2-social": "Dansăm din nou împreună",
+      "s26-2-3-z3-fizic": "Cartea iubită: pagina lui",
+      "s26-2-3-z3-mental": "Ne amintim imaginea din carte",
+      "s26-2-3-z3-resurse": "Cartea favorită pe raft",
+      "s26-2-3-z3-social": "Citim favorita cu adultul",
+      "s26-2-3-z4-fizic": "Mingea favorită: dat",
+      "s26-2-3-z4-mental": "Ne amintim: minge și rând",
+      "s26-2-3-z4-resurse": "Mingea în cutie din nou",
+      "s26-2-3-z4-social": "Mingea pe rând, ca înainte",
+      "s26-2-3-z5-fizic": "Trei obiecte favorite pe masă",
+      "s26-2-3-z5-mental": "Ne amintim: unde e?",
+      "s26-2-3-z5-resurse": "Trei lucruri la loc, ca înainte",
+      "s26-2-3-z5-social": "Arătăm favoritele adultului",
+      "s26-2-3-z6-fizic": "Mirosul favorit",
+      "s26-2-3-z6-mental": "Pâine — sau săpun?",
+      "s26-2-3-z6-resurse": "Obiectul de miros la loc",
+      "s26-2-3-z6-social": "Mirosim din nou împreună",
+      "s26-2-3-z7-fizic": "Plimbare liberă, un favorit la final",
+      "s26-2-3-z7-mental": "Carte: jumătate de an împreună",
+      "s26-2-3-z7-resurse": "Favoritele pe raft la final",
+      "s26-2-3-z7-social": "Noapte bună",
+      "s27-2-3-z1-fizic": "Mâna pe geam: vremea",
+      "s27-2-3-z1-mental": "Zăpadă — sau ploaie?",
+      "s27-2-3-z1-resurse": "Perdeaua trasă la geam",
+      "s27-2-3-z1-social": "Privim vremea împreună",
+      "s27-2-3-z2-fizic": "Deget pe geam: urmărim picături",
+      "s27-2-3-z2-mental": "Picătură — sau fulg?",
+      "s27-2-3-z2-resurse": "Cârpa de geam după privire",
+      "s27-2-3-z2-social": "Arătăm vremea adultului",
+      "s27-2-3-z3-fizic": "Urechea la geam",
+      "s27-2-3-z3-mental": "Sunet afară, liniște în casă",
+      "s27-2-3-z3-resurse": "Geamul și cârpa la loc",
+      "s27-2-3-z3-social": "Ascultăm ploaia împreună",
+      "s27-2-3-z4-fizic": "De la geam rece la cameră caldă",
+      "s27-2-3-z4-mental": "Rece afară, cald în casă",
+      "s27-2-3-z4-resurse": "Pătura după geamul rece",
+      "s27-2-3-z4-social": "Ne încălzim după geam",
+      "s27-2-3-z5-fizic": "Suflăm pe geam: abur și vreme",
+      "s27-2-3-z5-mental": "Abur, apoi afară",
+      "s27-2-3-z5-resurse": "Ștergem aburul, cârpa la loc",
+      "s27-2-3-z5-social": "Suflăm pe rând la geam",
+      "s27-2-3-z6-fizic": "Numărăm fulgi",
+      "s27-2-3-z6-mental": "Multă zăpadă — sau ploaie?",
+      "s27-2-3-z6-resurse": "Obiectul de pe pervaz la loc",
+      "s27-2-3-z6-social": "Spunem adultului ce e afară",
+      "s27-2-3-z7-fizic": "Plimbare liberă, geam la final",
+      "s27-2-3-z7-mental": "Cartea cu vremea",
+      "s27-2-3-z7-resurse": "Cartea și cârpa pe raft",
+      "s27-2-3-z7-social": "Noapte bună",
+      "s28-2-3-z1-fizic": "Cizmele pe picioare",
+      "s28-2-3-z1-mental": "Cizmă și picior",
+      "s28-2-3-z1-resurse": "Cizmele lângă ușă la loc",
+      "s28-2-3-z1-social": "Cizmele cu adultul",
+      "s28-2-3-z2-fizic": "Deget pe noroi",
+      "s28-2-3-z2-mental": "Moale — sau tare?",
+      "s28-2-3-z2-resurse": "Cârpa de noroi la loc",
+      "s28-2-3-z2-social": "Privim noroiul împreună",
+      "s28-2-3-z3-fizic": "Pași scurți în curte cu cizme",
+      "s28-2-3-z3-mental": "Curte și casă",
+      "s28-2-3-z3-resurse": "Cizmele scuturate la ușă",
+      "s28-2-3-z3-social": "Pași în curte cu adultul",
+      "s28-2-3-z4-fizic": "Apă pe pământ: dezgheț",
+      "s28-2-3-z4-mental": "Dezgheț: apă și pământ",
+      "s28-2-3-z4-resurse": "Paharul de apă la loc",
+      "s28-2-3-z4-social": "Turnăm apa pe rând",
+      "s28-2-3-z5-fizic": "Ștergem cizmele pe preș",
+      "s28-2-3-z5-mental": "Murdar și curat",
+      "s28-2-3-z5-resurse": "Cizmele curate lângă ușă",
+      "s28-2-3-z5-social": "Ștergem pe rând pe preș",
+      "s28-2-3-z6-fizic": "Mâini la chiuvetă după curte",
+      "s28-2-3-z6-mental": "Texturi: noroi, apoi apă",
+      "s28-2-3-z6-resurse": "Prosopul după curte la loc",
+      "s28-2-3-z6-social": "Spălăm după curte împreună",
+      "s28-2-3-z7-fizic": "Plimbare liberă în curte",
+      "s28-2-3-z7-mental": "Carte: curte și primăvară",
+      "s28-2-3-z7-resurse": "Cizmele și cârpa la loc",
+      "s28-2-3-z7-social": "Noapte bună",
+      "s29-2-3-z1-fizic": "Atingem iarba nouă",
+      "s29-2-3-z1-mental": "Verde: iarbă nouă",
+      "s29-2-3-z1-resurse": "Ghiveciul pe pervaz la loc",
+      "s29-2-3-z1-social": "Privim iarba împreună",
+      "s29-2-3-z2-fizic": "Deget pe mugure",
+      "s29-2-3-z2-mental": "Mugure și frunză",
+      "s29-2-3-z2-resurse": "Ramura la loc",
+      "s29-2-3-z2-social": "Mugurele cu adultul",
+      "s29-2-3-z3-fizic": "Pași scurți pe iarbă",
+      "s29-2-3-z3-mental": "Iarbă și pământ",
+      "s29-2-3-z3-resurse": "Pantofii lângă ușă după iarbă",
+      "s29-2-3-z3-social": "Pași pe iarbă cu adultul",
+      "s29-2-3-z4-fizic": "Mirosim planta verde",
+      "s29-2-3-z4-mental": "Plantă: verde și frunză",
+      "s29-2-3-z4-resurse": "Planta pe pervaz după miros",
+      "s29-2-3-z4-social": "Mirosim planta pe rând",
+      "s29-2-3-z5-fizic": "Udăm iarba",
+      "s29-2-3-z5-mental": "Apă pentru plantă",
+      "s29-2-3-z5-resurse": "Stropitoarea la loc",
+      "s29-2-3-z5-social": "Udăm pe rând",
+      "s29-2-3-z6-fizic": "Culegem o frunză căzută",
+      "s29-2-3-z6-mental": "Frunză pe pământ, iarbă pe loc",
+      "s29-2-3-z6-resurse": "Frunza în coș",
+      "s29-2-3-z6-social": "Arătăm frunza adultului",
+      "s29-2-3-z7-fizic": "Plimbare liberă la iarbă",
+      "s29-2-3-z7-mental": "Carte: iarbă și plantă",
+      "s29-2-3-z7-resurse": "Planta și stropitoarea la loc",
+      "s29-2-3-z7-social": "Noapte bună",
+      "s30-2-3-z1-fizic": "La geam dimineața: ascultăm",
+      "s30-2-3-z1-mental": "Pasăre: sunet afară",
+      "s30-2-3-z1-resurse": "Perdeaua trasă pentru sunet",
+      "s30-2-3-z1-social": "Ascultăm păsările împreună",
+      "s30-2-3-z2-fizic": "Arătăm spre cer",
+      "s30-2-3-z2-mental": "Sus: pasăre pe creangă",
+      "s30-2-3-z2-resurse": "Geamul liber după privit",
+      "s30-2-3-z2-social": "Arătăm pasărea adultului",
+      "s30-2-3-z3-fizic": "Ieșim scurt: urechi afară",
+      "s30-2-3-z3-mental": "Casă și afară: sunete",
+      "s30-2-3-z3-resurse": "Ușa închisă după ascultat",
+      "s30-2-3-z3-social": "Ascultăm afară cu adultul",
+      "s30-2-3-z4-fizic": "Imităm ciripit",
+      "s30-2-3-z4-mental": "Ciripit și liniște",
+      "s30-2-3-z4-resurse": "Jucăria-pasăre pe raft",
+      "s30-2-3-z4-social": "Ciripim pe rând",
+      "s30-2-3-z5-fizic": "Privim o pasăre",
+      "s30-2-3-z5-mental": "Pasăre: zboară",
+      "s30-2-3-z5-resurse": "Binoclul de jucărie la loc",
+      "s30-2-3-z5-social": "Privim pasărea împreună",
+      "s30-2-3-z6-fizic": "Brațe ca aripile",
+      "s30-2-3-z6-mental": "Aripi și corp",
+      "s30-2-3-z6-resurse": "Spațiu liber pentru aripi",
+      "s30-2-3-z6-social": "Aripi împreună",
+      "s30-2-3-z7-fizic": "Plimbare liberă, urechi la final",
+      "s30-2-3-z7-mental": "Carte: păsări",
+      "s30-2-3-z7-resurse": "Cartea și jucăria-pasăre la loc",
+      "s30-2-3-z7-social": "Noapte bună",
+      "s31-2-3-z1-fizic": "Ținem o sămânță",
+      "s31-2-3-z1-mental": "Sămânță: mică",
+      "s31-2-3-z1-resurse": "Semințele în cutie la loc",
+      "s31-2-3-z1-social": "Arătăm sămânța adultului",
+      "s31-2-3-z2-fizic": "Punem sămânța în pământ",
+      "s31-2-3-z2-mental": "Sămânță și pământ",
+      "s31-2-3-z2-resurse": "Ghiveciul pe masă după plantat",
+      "s31-2-3-z2-social": "Plantăm pe rând",
+      "s31-2-3-z3-fizic": "Udăm sămânța",
+      "s31-2-3-z3-mental": "Udat: apă pe pământ",
+      "s31-2-3-z3-resurse": "Paharul de udat la loc",
+      "s31-2-3-z3-social": "Udăm împreună",
+      "s31-2-3-z4-fizic": "Deget în pământ umed",
+      "s31-2-3-z4-mental": "Umed și uscat",
+      "s31-2-3-z4-resurse": "Mâinile pe prosop după pământ",
+      "s31-2-3-z4-social": "Atingem pământul pe rând",
+      "s31-2-3-z5-fizic": "Cărăm stropitoarea câțiva pași",
+      "s31-2-3-z5-mental": "Stropitoare și grijă",
+      "s31-2-3-z5-resurse": "Stropitoarea lângă plantă la loc",
+      "s31-2-3-z5-social": "Cărăm pe rând stropitoarea",
+      "s31-2-3-z6-fizic": "Privim ghiveciul: a crescut?",
+      "s31-2-3-z6-mental": "Așteptăm: sămânță apoi plantă",
+      "s31-2-3-z6-resurse": "Ghiveciul pe lumină la loc",
+      "s31-2-3-z6-social": "Privim ghiveciul împreună",
+      "s31-2-3-z7-fizic": "Plimbare liberă, udat la final",
+      "s31-2-3-z7-mental": "Carte: sămânță și plantă",
+      "s31-2-3-z7-resurse": "Semințele și stropitoarea la loc",
+      "s31-2-3-z7-social": "Noapte bună",
+      "s32-2-3-z1-fizic": "Ținem mingea afară",
+      "s32-2-3-z1-mental": "Minge: rotundă",
+      "s32-2-3-z1-resurse": "Mingea lângă ușă înainte de joacă",
+      "s32-2-3-z1-social": "Mingea afară cu adultul",
+      "s32-2-3-z2-fizic": "Dăm mingea afară",
+      "s32-2-3-z2-mental": "Dat și primit",
+      "s32-2-3-z2-resurse": "Mingea pe iarbă la loc scurt",
+      "s32-2-3-z2-social": "Dăm mingea pe rând afară",
+      "s32-2-3-z3-fizic": "Aruncăm mingea jos",
+      "s32-2-3-z3-mental": "Sus și jos: minge",
+      "s32-2-3-z3-resurse": "Mingea în coș după aruncat",
+      "s32-2-3-z3-social": "Aruncăm pe rând jos",
+      "s32-2-3-z4-fizic": "Urmărim mingea pe iarbă",
+      "s32-2-3-z4-mental": "Minge: unde e?",
+      "s32-2-3-z4-resurse": "Mingea adusă lângă ușă",
+      "s32-2-3-z4-social": "Căutăm mingea împreună",
+      "s32-2-3-z5-fizic": "Picioarele lângă minge",
+      "s32-2-3-z5-mental": "Mână și picior la minge",
+      "s32-2-3-z5-resurse": "Mingea în cutie după curte",
+      "s32-2-3-z5-social": "Mingea cu piciorul pe rând",
+      "s32-2-3-z6-fizic": "Aducem mingea în casă",
+      "s32-2-3-z6-mental": "Afară și casă: minge",
+      "s32-2-3-z6-resurse": "Mingea pe raft după afară",
+      "s32-2-3-z6-social": "Intrăm cu mingea împreună",
+      "s32-2-3-z7-fizic": "Plimbare liberă, minge la final",
+      "s32-2-3-z7-mental": "Carte: minge și afară",
+      "s32-2-3-z7-resurse": "Mingea și pantofii la loc",
+      "s32-2-3-z7-social": "Noapte bună",
+      "s33-2-3-z1-fizic": "Mâna în nisip",
+      "s33-2-3-z1-mental": "Nisip: moale",
+      "s33-2-3-z1-resurse": "Găleata lângă nisip",
+      "s33-2-3-z1-social": "Privim nisipul împreună",
+      "s33-2-3-z2-fizic": "Umplem găleata puțin",
+      "s33-2-3-z2-mental": "Găleată: plină și goală",
+      "s33-2-3-z2-resurse": "Găleata pe raft după joacă",
+      "s33-2-3-z2-social": "Umplem pe rând",
+      "s33-2-3-z3-fizic": "Turnăm nisip din găleată",
+      "s33-2-3-z3-mental": "Jos: nisip pe pământ",
+      "s33-2-3-z3-resurse": "Nisipul înapoi în cutie",
+      "s33-2-3-z3-social": "Turnăm nisip cu adultul",
+      "s33-2-3-z4-fizic": "Degete prin nisip",
+      "s33-2-3-z4-mental": "Urme în nisip",
+      "s33-2-3-z4-resurse": "Lopata mică la loc",
+      "s33-2-3-z4-social": "Arătăm urma adultului",
+      "s33-2-3-z5-fizic": "Cărăm găleata doi pași",
+      "s33-2-3-z5-mental": "Greu și ușor: găleata",
+      "s33-2-3-z5-resurse": "Găleata și lopata împreună la loc",
+      "s33-2-3-z5-social": "Cărăm găleata împreună",
+      "s33-2-3-z6-fizic": "Formă mică în nisip",
+      "s33-2-3-z6-mental": "Rotund: găleata pe nisip",
+      "s33-2-3-z6-resurse": "Forma și nisipul la loc",
+      "s33-2-3-z6-social": "Facem forma pe rând",
+      "s33-2-3-z7-fizic": "Plimbare liberă la nisip",
+      "s33-2-3-z7-mental": "Carte: nisip și găleată",
+      "s33-2-3-z7-resurse": "Găleata și lopata la loc",
+      "s33-2-3-z7-social": "Noapte bună",
+      "s34-2-3-z1-fizic": "Ieșim la soare",
+      "s34-2-3-z1-mental": "Umbră pe pământ",
+      "s34-2-3-z1-resurse": "Pantofii lângă ușă după soare",
+      "s34-2-3-z1-social": "Privim umbra împreună",
+      "s34-2-3-z2-fizic": "Mâna face umbră",
+      "s34-2-3-z2-mental": "Mână și umbră",
+      "s34-2-3-z2-resurse": "Spațiu liber pe pământ",
+      "s34-2-3-z2-social": "Arătăm umbra adultului",
+      "s34-2-3-z3-fizic": "Pași pe umbră",
+      "s34-2-3-z3-mental": "Lungă și scurtă: umbra",
+      "s34-2-3-z3-resurse": "Ușa închisă după umbre",
+      "s34-2-3-z3-social": "Pași pe umbră cu adultul",
+      "s34-2-3-z4-fizic": "Umbră de frunză",
+      "s34-2-3-z4-mental": "Copac și umbră",
+      "s34-2-3-z4-resurse": "Frunza căzută în coș",
+      "s34-2-3-z4-social": "Privim umbra copacului împreună",
+      "s34-2-3-z5-fizic": "Corpul face umbră mare",
+      "s34-2-3-z5-mental": "Eu și umbra mea",
+      "s34-2-3-z5-resurse": "Pălăria la loc",
+      "s34-2-3-z5-social": "Umbrele noastre una lângă alta",
+      "s34-2-3-z6-fizic": "Urmărim umbra care se mișcă",
+      "s34-2-3-z6-mental": "Stă și se mișcă: umbra",
+      "s34-2-3-z6-resurse": "Obiectul de umbră pe raft",
+      "s34-2-3-z6-social": "Mișcăm umbra pe rând",
+      "s34-2-3-z7-fizic": "Plimbare liberă, umbră la final",
+      "s34-2-3-z7-mental": "Carte: soare și umbră",
+      "s34-2-3-z7-resurse": "Pantofii și pălăria la loc",
+      "s34-2-3-z7-social": "Noapte bună",
+      "s35-2-3-z1-fizic": "Atingem apa afară",
+      "s35-2-3-z1-mental": "Apă: udă",
+      "s35-2-3-z1-resurse": "Vasul cu apă pe masă afară",
+      "s35-2-3-z1-social": "Privim apa împreună",
+      "s35-2-3-z2-fizic": "Turnăm apă din pahar",
+      "s35-2-3-z2-mental": "Pahar: plin și gol",
+      "s35-2-3-z2-resurse": "Paharul la loc după turnat",
+      "s35-2-3-z2-social": "Turnăm pe rând",
+      "s35-2-3-z3-fizic": "Udăm o plantă afară",
+      "s35-2-3-z3-mental": "Plantă bea apă",
+      "s35-2-3-z3-resurse": "Stropitoarea la loc",
+      "s35-2-3-z3-social": "Udăm planta cu adultul",
+      "s35-2-3-z4-fizic": "Stropim pământul",
+      "s35-2-3-z4-mental": "Pământ ud și uscat",
+      "s35-2-3-z4-resurse": "Apa rămasă înapoi în vas",
+      "s35-2-3-z4-social": "Stropim pe rând",
+      "s35-2-3-z5-fizic": "Mâinile în apă",
+      "s35-2-3-z5-mental": "Rece: apa afară",
+      "s35-2-3-z5-resurse": "Prosopul la loc după mâini",
+      "s35-2-3-z5-social": "Mâinile în apă pe rând",
+      "s35-2-3-z6-fizic": "Picături pe piatră",
+      "s35-2-3-z6-mental": "Picătură: mică",
+      "s35-2-3-z6-resurse": "Paharul și vasul la loc",
+      "s35-2-3-z6-social": "Facem picături împreună",
+      "s35-2-3-z7-fizic": "Plimbare liberă, apă la final",
+      "s35-2-3-z7-mental": "Carte: apă afară",
+      "s35-2-3-z7-resurse": "Vasul și stropitoarea la loc",
+      "s35-2-3-z7-social": "Noapte bună",
+      "s36-2-3-z1-fizic": "Ieșim: privim",
+      "s36-2-3-z1-mental": "Insectă: mică",
+      "s36-2-3-z1-resurse": "Pantofii lângă ușă după privit",
+      "s36-2-3-z1-social": "Privim insecta împreună de departe",
+      "s36-2-3-z2-fizic": "Arătăm cu degetul de departe",
+      "s36-2-3-z2-mental": "Departe și aproape",
+      "s36-2-3-z2-resurse": "Mâinile libere, fără prins",
+      "s36-2-3-z2-social": "Arătăm insecta adultului",
+      "s36-2-3-z3-fizic": "Urmărim o insectă cu ochii",
+      "s36-2-3-z3-mental": "Merge: insecta pe frunză",
+      "s36-2-3-z3-resurse": "Spațiu liber pe potecă",
+      "s36-2-3-z3-social": "Urmărim împreună de departe",
+      "s36-2-3-z4-fizic": "Ascultăm zumzet",
+      "s36-2-3-z4-mental": "Zumzet și liniște",
+      "s36-2-3-z4-resurse": "Ușa închisă după ascultat",
+      "s36-2-3-z4-social": "Ascultăm zumzetul împreună",
+      "s36-2-3-z5-fizic": "Privim fluturele de departe",
+      "s36-2-3-z5-mental": "Zboară: insectă în aer",
+      "s36-2-3-z5-resurse": "Binoclul de jucărie la loc",
+      "s36-2-3-z5-social": "Privim fluturele împreună",
+      "s36-2-3-z6-fizic": "Pași moi lângă insectă",
+      "s36-2-3-z6-mental": "Grijă: nu atingem",
+      "s36-2-3-z6-resurse": "Poteca liberă după pași",
+      "s36-2-3-z6-social": "Pași moi cu adultul",
+      "s36-2-3-z7-fizic": "Plimbare liberă, privit la final",
+      "s36-2-3-z7-mental": "Carte: insecte",
+      "s36-2-3-z7-resurse": "Cartea și binoclul la loc",
+      "s36-2-3-z7-social": "Noapte bună",
+      "s37-2-3-z1-fizic": "Intrăm în umbră",
+      "s37-2-3-z1-mental": "Umbră: răcoare",
+      "s37-2-3-z1-resurse": "Paharul cu apă la umbră",
+      "s37-2-3-z1-social": "Stăm la umbră împreună",
+      "s37-2-3-z2-fizic": "Așezăm pe scaun la umbră",
+      "s37-2-3-z2-mental": "Soare și umbră",
+      "s37-2-3-z2-resurse": "Pălăria pe scaun la umbră",
+      "s37-2-3-z2-social": "Pauză scurtă cu adultul",
+      "s37-2-3-z3-fizic": "Bem apă la umbră",
+      "s37-2-3-z3-mental": "Apă: rece",
+      "s37-2-3-z3-resurse": "Paharul gol pe masă",
+      "s37-2-3-z3-social": "Bem pe rând la umbră",
+      "s37-2-3-z4-fizic": "Din soare în umbră, doi pași",
+      "s37-2-3-z4-mental": "Cald și răcoare",
+      "s37-2-3-z4-resurse": "Pantofii la umbră lângă ușă",
+      "s37-2-3-z4-social": "Mergem în umbră cu adultul",
+      "s37-2-3-z5-fizic": "Aer pe față la umbră",
+      "s37-2-3-z5-mental": "Aer: blând",
+      "s37-2-3-z5-resurse": "Evantaiul pe masă după",
+      "s37-2-3-z5-social": "Facem aer pe rând",
+      "s37-2-3-z6-fizic": "Odihnă scurtă pe pătură la umbră",
+      "s37-2-3-z6-mental": "Loc răcoros: aici",
+      "s37-2-3-z6-resurse": "Pătura rulată la loc",
+      "s37-2-3-z6-social": "Pe pătură unul lângă altul",
+      "s37-2-3-z7-fizic": "Plimbare liberă, umbră la final",
+      "s37-2-3-z7-mental": "Carte: umbră și răcoare",
+      "s37-2-3-z7-resurse": "Paharul și pălăria la loc",
+      "s37-2-3-z7-social": "Noapte bună",
+      "s38-2-3-z1-fizic": "Piciorul pe iarbă",
+      "s38-2-3-z1-mental": "Iarbă: verde",
+      "s38-2-3-z1-resurse": "Pantofii lângă iarbă",
+      "s38-2-3-z1-social": "Privim iarba împreună",
+      "s38-2-3-z2-fizic": "Desculț pe iarbă, dacă e potrivit",
+      "s38-2-3-z2-mental": "Moale: iarba",
+      "s38-2-3-z2-resurse": "Șosetele în pantofi",
+      "s38-2-3-z2-social": "Desculți pe rând pe iarbă",
+      "s38-2-3-z3-fizic": "Degetele de la picioare pe iarbă",
+      "s38-2-3-z3-mental": "Gâdilă: iarba",
+      "s38-2-3-z3-resurse": "Prosopul mic lângă pantofi",
+      "s38-2-3-z3-social": "Arătăm iarba adultului",
+      "s38-2-3-z4-fizic": "Pași scurți pe iarbă",
+      "s38-2-3-z4-mental": "Iarbă și drum",
+      "s38-2-3-z4-resurse": "Ușa închisă după iarbă",
+      "s38-2-3-z4-social": "Pași pe iarbă cu adultul",
+      "s38-2-3-z5-fizic": "Ne așezăm pe iarbă",
+      "s38-2-3-z5-mental": "Jos pe iarbă",
+      "s38-2-3-z5-resurse": "Pătura pe iarbă, apoi la loc",
+      "s38-2-3-z5-social": "Pe iarbă unul lângă altul",
+      "s38-2-3-z6-fizic": "Picior pe iarbă, picior pe piatră",
+      "s38-2-3-z6-mental": "Moale și tare",
+      "s38-2-3-z6-resurse": "Pantofii pe raft după iarbă",
+      "s38-2-3-z6-social": "Simțim pe rând: iarbă și piatră",
+      "s38-2-3-z7-fizic": "Plimbare liberă, iarbă la final",
+      "s38-2-3-z7-mental": "Carte: iarbă și picioare",
+      "s38-2-3-z7-resurse": "Pantofii și prosopul la loc",
+      "s38-2-3-z7-social": "Noapte bună",
+      "s39-2-3-z1-fizic": "Ținem un fruct",
+      "s39-2-3-z1-mental": "Fruct: rotund",
+      "s39-2-3-z1-resurse": "Fructul în bol pe masă",
+      "s39-2-3-z1-social": "Privim fructul împreună",
+      "s39-2-3-z2-fizic": "Arătăm fructul cu degetul",
+      "s39-2-3-z2-mental": "Măr — sau roșie?",
+      "s39-2-3-z2-resurse": "Bolul pe masă, la locul lui",
+      "s39-2-3-z2-social": "Arătăm fructul adultului",
+      "s39-2-3-z3-fizic": "Mirosim fructul",
+      "s39-2-3-z3-mental": "Miros dulce",
+      "s39-2-3-z3-resurse": "Fructul înapoi în bol",
+      "s39-2-3-z3-social": "Mirosim pe rând",
+      "s39-2-3-z4-fizic": "Atingem coaja fructului",
+      "s39-2-3-z4-mental": "Netedă: coaja",
+      "s39-2-3-z4-resurse": "Șervețelul lângă bol",
+      "s39-2-3-z4-social": "Atingem fructul împreună",
+      "s39-2-3-z5-fizic": "Gust mic de fruct",
+      "s39-2-3-z5-mental": "Dulce: gustul",
+      "s39-2-3-z5-resurse": "Farfuria mică la chiuvetă",
+      "s39-2-3-z5-social": "Gustăm pe rând",
+      "s39-2-3-z6-fizic": "Spălăm fructul",
+      "s39-2-3-z6-mental": "Ud: fructul spălat",
+      "s39-2-3-z6-resurse": "Fructul pe prosopul de bucătărie",
+      "s39-2-3-z6-social": "Spălăm împreună",
+      "s39-2-3-z7-fizic": "Plimbare liberă, fruct la final",
+      "s39-2-3-z7-mental": "Carte: fructe",
+      "s39-2-3-z7-resurse": "Bolul și farfuria la loc",
+      "s39-2-3-z7-social": "Noapte bună",
+      "s40-2-3-z1-fizic": "Cărăm un obiect doi pași",
+      "s40-2-3-z1-mental": "Ajutor: da",
+      "s40-2-3-z1-resurse": "Obiectul pe masă după cărat",
+      "s40-2-3-z1-social": "Cărăm împreună",
+      "s40-2-3-z2-fizic": "Punem două lucruri la loc",
+      "s40-2-3-z2-mental": "Unu și doi: la loc",
+      "s40-2-3-z2-resurse": "Coșul pe raft după treabă",
+      "s40-2-3-z2-social": "Punem pe rând la loc",
+      "s40-2-3-z3-fizic": "Ștergem masa",
+      "s40-2-3-z3-mental": "Curat: masa",
+      "s40-2-3-z3-resurse": "Cârpa la chiuvetă",
+      "s40-2-3-z3-social": "Ștergem pe rând",
+      "s40-2-3-z4-fizic": "Aducem șervețelul",
+      "s40-2-3-z4-mental": "Unde e șervețelul",
+      "s40-2-3-z4-resurse": "Șervețelul în suport",
+      "s40-2-3-z4-social": "Dăm șervețelul adultului",
+      "s40-2-3-z5-fizic": "Așezăm lingura pe masă",
+      "s40-2-3-z5-mental": "Lingură lângă farfurie",
+      "s40-2-3-z5-resurse": "Lingura în sertar după",
+      "s40-2-3-z5-social": "Pregătim masa pe rând",
+      "s40-2-3-z6-fizic": "Sortăm trei lucruri",
+      "s40-2-3-z6-mental": "Trei: la loc",
+      "s40-2-3-z6-resurse": "Coșul plin pe raft",
+      "s40-2-3-z6-social": "Sortăm împreună",
+      "s40-2-3-z7-fizic": "Plimbare liberă, treabă scurtă la final",
+      "s40-2-3-z7-mental": "Carte: ajutor acasă",
+      "s40-2-3-z7-resurse": "Trei lucruri la loc, gata",
+      "s40-2-3-z7-social": "Noapte bună",
+      "s41-2-3-z1-fizic": "Pași spre poartă",
+      "s41-2-3-z1-mental": "Drum: acolo",
+      "s41-2-3-z1-resurse": "Pantofii lângă ușă înainte",
+      "s41-2-3-z1-social": "Mergem pe drum împreună",
+      "s41-2-3-z2-fizic": "Pași pe potecă",
+      "s41-2-3-z2-mental": "Aproape și departe",
+      "s41-2-3-z2-resurse": "Pălăria pe cuier după drum",
+      "s41-2-3-z2-social": "Pași pe rând pe potecă",
+      "s41-2-3-z3-fizic": "Atingem poarta",
+      "s41-2-3-z3-mental": "Poartă: închisă",
+      "s41-2-3-z3-resurse": "Mâna jos, poarta rămâne",
+      "s41-2-3-z3-social": "Arătăm poarta adultului",
+      "s41-2-3-z4-fizic": "Cărăm un obiect până la poartă",
+      "s41-2-3-z4-mental": "Înainte pe drum",
+      "s41-2-3-z4-resurse": "Obiectul înapoi lângă ușă",
+      "s41-2-3-z4-social": "Cărăm împreună spre poartă",
+      "s41-2-3-z5-fizic": "Pauză la poartă, apoi înapoi",
+      "s41-2-3-z5-mental": "Casă și poartă",
+      "s41-2-3-z5-resurse": "Pantofii pe raft după drum",
+      "s41-2-3-z5-social": "Pauză la poartă cu adultul",
+      "s41-2-3-z6-fizic": "Privim dincolo de poartă",
+      "s41-2-3-z6-mental": "Curte și drum",
+      "s41-2-3-z6-resurse": "Haina pe cuier după plimbare",
+      "s41-2-3-z6-social": "Joacă paralel pe drumul scurt",
+      "s41-2-3-z7-fizic": "Plimbare liberă, poarta la final",
+      "s41-2-3-z7-mental": "Carte: drum și casă",
+      "s41-2-3-z7-resurse": "Pantofii și haina la loc",
+      "s41-2-3-z7-social": "Noapte bună",
+      "s42-2-3-z1-fizic": "Pași pe frunze din nou",
+      "s42-2-3-z1-mental": "Vânt și frunză",
+      "s42-2-3-z1-resurse": "Frunza jos la loc",
+      "s42-2-3-z1-social": "Simțim vântul împreună",
+      "s42-2-3-z2-fizic": "Culegem o frunză căzută",
+      "s42-2-3-z2-mental": "Frunza se mișcă",
+      "s42-2-3-z2-resurse": "Frunza în coș, apoi afară",
+      "s42-2-3-z2-social": "Dăm frunza din mână în mână",
+      "s42-2-3-z3-fizic": "Aruncăm frunze în sus",
+      "s42-2-3-z3-mental": "Galbenă — sau maro?",
+      "s42-2-3-z3-resurse": "Maturăm trei frunze",
+      "s42-2-3-z3-social": "Aruncăm frunza pe rând",
+      "s42-2-3-z4-fizic": "Eșarfa în vânt",
+      "s42-2-3-z4-mental": "Eșarfa zboară puțin",
+      "s42-2-3-z4-resurse": "Eșarfa pe cârlig",
+      "s42-2-3-z4-social": "Ținem eșarfa doi",
+      "s42-2-3-z5-fizic": "Suflăm pe o frunză",
+      "s42-2-3-z5-mental": "Aer pe față",
+      "s42-2-3-z5-resurse": "Frunza înapoi afară",
+      "s42-2-3-z5-social": "Suflăm pe rând",
+      "s42-2-3-z6-fizic": "Plimbare scurtă cu vânt și frunze",
+      "s42-2-3-z6-mental": "Copacul se mișcă din nou",
+      "s42-2-3-z6-resurse": "Găleata la loc după frunze",
+      "s42-2-3-z6-social": "Joacă paralel cu frunze",
+      "s42-2-3-z7-fizic": "Plimbare liberă, frunză la final",
+      "s42-2-3-z7-mental": "Carte: vânt și frunze",
+      "s42-2-3-z7-resurse": "Haina de afară pe cârlig",
+      "s42-2-3-z7-social": "Noapte bună",
+      "s43-2-3-z1-fizic": "Punem trei lucruri în coș",
+      "s43-2-3-z1-mental": "Trei în coș",
+      "s43-2-3-z1-resurse": "Coșul pe raft",
+      "s43-2-3-z1-social": "Dăm un obiect din coș",
+      "s43-2-3-z2-fizic": "Cărăm coșul cinci pași",
+      "s43-2-3-z2-mental": "Plin și gol",
+      "s43-2-3-z2-resurse": "Golim coșul pe masă, apoi la loc",
+      "s43-2-3-z2-social": "Cărăm coșul împreună",
+      "s43-2-3-z3-fizic": "Strângem jucării în coș",
+      "s43-2-3-z3-mental": "Unde e coșul",
+      "s43-2-3-z3-resurse": "Coșul lângă jucării, pe raft",
+      "s43-2-3-z3-social": "Arătăm coșul adultului",
+      "s43-2-3-z4-fizic": "Două grămezi în coș",
+      "s43-2-3-z4-mental": "Aici și aici",
+      "s43-2-3-z4-resurse": "Totul în coș după sortare",
+      "s43-2-3-z4-social": "Punem în coș pe rând",
+      "s43-2-3-z5-fizic": "Culegem afară în coș",
+      "s43-2-3-z5-mental": "Piatră — sau frunză?",
+      "s43-2-3-z5-resurse": "Lăsăm afară ce am cules",
+      "s43-2-3-z5-social": "Arătăm ce am cules",
+      "s43-2-3-z6-fizic": "Strângem camera cu coșul",
+      "s43-2-3-z6-mental": "Mult și puțin",
+      "s43-2-3-z6-resurse": "Coșul pe locul lui acasă",
+      "s43-2-3-z6-social": "Strângem paralel cu adultul",
+      "s43-2-3-z7-fizic": "Plimbare liberă, coș dacă vrea",
+      "s43-2-3-z7-mental": "Carte: multe obiecte",
+      "s43-2-3-z7-resurse": "Jucăriile în coș",
+      "s43-2-3-z7-social": "Noapte bună",
+      "s44-2-3-z1-fizic": "Mână ridicată: bună",
+      "s44-2-3-z1-mental": "Bună — cuvânt scurt",
+      "s44-2-3-z1-resurse": "Jucăria-oaspete pe raft",
+      "s44-2-3-z1-social": "Stăm unul lângă altul",
+      "s44-2-3-z2-fizic": "Arătăm poza de familie",
+      "s44-2-3-z2-mental": "Mama, tata, tu",
+      "s44-2-3-z2-resurse": "Poza pe raft",
+      "s44-2-3-z2-social": "Privim poza împreună",
+      "s44-2-3-z3-fizic": "Dăm jucăria-prieten din mână",
+      "s44-2-3-z3-mental": "Prieten: jucăria",
+      "s44-2-3-z3-resurse": "Jucăria pe pat",
+      "s44-2-3-z3-social": "Oferim jucăria adultului",
+      "s44-2-3-z4-fizic": "Pași până la ușă: salut",
+      "s44-2-3-z4-mental": "La revedere",
+      "s44-2-3-z4-resurse": "Pantofii lângă ușă după salut",
+      "s44-2-3-z4-social": "Salut la ușă cu adultul",
+      "s44-2-3-z5-fizic": "Batem din palme o dată împreună",
+      "s44-2-3-z5-mental": "Prieten și familie",
+      "s44-2-3-z5-resurse": "Paharul de oaspete pe masă, apoi la loc",
+      "s44-2-3-z5-social": "Salut pe rând cu mâna",
+      "s44-2-3-z6-fizic": "Joacă liberă lângă jucăria-prieten",
+      "s44-2-3-z6-mental": "Familie în carte",
+      "s44-2-3-z6-resurse": "Jucăriile la loc după joacă",
+      "s44-2-3-z6-social": "Joacă paralel cu adultul",
+      "s44-2-3-z7-fizic": "Plimbare liberă, salut la final",
+      "s44-2-3-z7-mental": "Carte: familie și casă",
+      "s44-2-3-z7-resurse": "Haina și jucăria la loc",
+      "s44-2-3-z7-social": "Noapte bună",
+      "s45-2-3-z1-fizic": "Pași mulți în casă",
+      "s45-2-3-z1-mental": "Corp: puternic",
+      "s45-2-3-z1-resurse": "Pantofii înainte de pași",
+      "s45-2-3-z1-social": "Pași puternici împreună",
+      "s45-2-3-z2-fizic": "Sărituri mici pe loc",
+      "s45-2-3-z2-mental": "Sus și jos: corp",
+      "s45-2-3-z2-resurse": "Mingea ușoară în palmă",
+      "s45-2-3-z2-social": "Sărim pe rând",
+      "s45-2-3-z3-fizic": "Cărăm ceva ușor câțiva pași",
+      "s45-2-3-z3-mental": "Greu și ușor",
+      "s45-2-3-z3-resurse": "Obiectul pe masă după cărat",
+      "s45-2-3-z3-social": "Cărăm pe rând",
+      "s45-2-3-z4-fizic": "Brațe sus, corp puternic",
+      "s45-2-3-z4-mental": "Brațe și picioare",
+      "s45-2-3-z4-resurse": "Mâinile pe genunchi, apoi jos",
+      "s45-2-3-z4-social": "Brațe sus împreună",
+      "s45-2-3-z5-fizic": "Pași pe loc, apoi înainte",
+      "s45-2-3-z5-mental": "Înainte și pe loc",
+      "s45-2-3-z5-resurse": "Calea liberă pe podea",
+      "s45-2-3-z5-social": "Pași înainte cu adultul",
+      "s45-2-3-z6-fizic": "Pași mulți dus-întors",
+      "s45-2-3-z6-mental": "Mulți pași: unu și doi",
+      "s45-2-3-z6-resurse": "Pantofii la loc după pași",
+      "s45-2-3-z6-social": "Dus-întors cu adultul",
+      "s45-2-3-z7-fizic": "Plimbare liberă, pași mulți",
+      "s45-2-3-z7-mental": "Carte: corp și pași",
+      "s45-2-3-z7-resurse": "Mingea și pantofii la loc",
+      "s45-2-3-z7-social": "Noapte bună",
+      "s46-2-3-z1-fizic": "Arătăm cu degetul",
+      "s46-2-3-z1-mental": "Unde e mingea?",
+      "s46-2-3-z1-resurse": "Mingea pe masă, la vedere",
+      "s46-2-3-z1-social": "Arătăm mingea adultului",
+      "s46-2-3-z2-fizic": "Căutăm în cameră",
+      "s46-2-3-z2-mental": "Unde e jucăria?",
+      "s46-2-3-z2-resurse": "Jucăria pe scaun la vedere",
+      "s46-2-3-z2-social": "Căutăm pe rând",
+      "s46-2-3-z3-fizic": "Arătăm ușa cu degetul",
+      "s46-2-3-z3-mental": "Unde e ușa?",
+      "s46-2-3-z3-resurse": "Mâna pe ușă",
+      "s46-2-3-z3-social": "Arătăm ușa împreună",
+      "s46-2-3-z4-fizic": "Arătăm fereastra",
+      "s46-2-3-z4-mental": "Unde e fereastra?",
+      "s46-2-3-z4-resurse": "Perdeaua — sau geamul?",
+      "s46-2-3-z4-social": "Privim pe fereastră împreună",
+      "s46-2-3-z5-fizic": "Arătăm scaunul și masa",
+      "s46-2-3-z5-mental": "Unde e scaunul?",
+      "s46-2-3-z5-resurse": "Paharul pe masă, arătat",
+      "s46-2-3-z5-social": "Arătăm pe rând: scaun, masă",
+      "s46-2-3-z6-fizic": "Căutăm pantofii",
+      "s46-2-3-z6-mental": "Unde sunt pantofii?",
+      "s46-2-3-z6-resurse": "Pantofii la loc după arătat",
+      "s46-2-3-z6-social": "Arătăm pantofii adultului",
+      "s46-2-3-z7-fizic": "Plimbare liberă, arătăm",
+      "s46-2-3-z7-mental": "Carte: unde e?",
+      "s46-2-3-z7-resurse": "Jucăria și cartea la loc",
+      "s46-2-3-z7-social": "Noapte bună",
+      "s47-2-3-z1-fizic": "Luăm o jucărie",
+      "s47-2-3-z1-mental": "Al meu: jucăria",
+      "s47-2-3-z1-resurse": "Jucăria pe masă, a mea",
+      "s47-2-3-z1-social": "Arătăm jucăria: a mea",
+      "s47-2-3-z2-fizic": "Purtăm jucăria până la cutie",
+      "s47-2-3-z2-mental": "La loc: cutie",
+      "s47-2-3-z2-resurse": "Jucăria în cutie",
+      "s47-2-3-z2-social": "Punem la loc pe rând",
+      "s47-2-3-z3-fizic": "Strângem două lucruri",
+      "s47-2-3-z3-mental": "Una și alta: la loc",
+      "s47-2-3-z3-resurse": "Două lucruri în cutie",
+      "s47-2-3-z3-social": "Strângem împreună",
+      "s47-2-3-z4-fizic": "Haina pe cuier",
+      "s47-2-3-z4-mental": "Haina: a mea, la loc",
+      "s47-2-3-z4-resurse": "Haina pe cuier, grijă",
+      "s47-2-3-z4-social": "Punem haina împreună",
+      "s47-2-3-z5-fizic": "Cartea pe raft",
+      "s47-2-3-z5-mental": "Cartea: unde stă?",
+      "s47-2-3-z5-resurse": "Cartea pe raft, grijă",
+      "s47-2-3-z5-social": "Cartea la loc pe rând",
+      "s47-2-3-z6-fizic": "Trei lucruri la loc",
+      "s47-2-3-z6-mental": "Grijă: al meu, la loc",
+      "s47-2-3-z6-resurse": "Cutia cu lucruri la loc",
+      "s47-2-3-z6-social": "Grijă de lucruri împreună",
+      "s47-2-3-z7-fizic": "Plimbare liberă și un lucru la loc",
+      "s47-2-3-z7-mental": "Carte: grijă de lucruri",
+      "s47-2-3-z7-resurse": "Jucăria și haina la loc",
+      "s47-2-3-z7-social": "Noapte bună",
+      "s48-2-3-z1-fizic": "Mâna sus: salut",
+      "s48-2-3-z1-mental": "Salut: bună",
+      "s48-2-3-z1-resurse": "Ușa deschisă, salut",
+      "s48-2-3-z1-social": "Salutăm împreună",
+      "s48-2-3-z2-fizic": "Pași până la ușă, salut",
+      "s48-2-3-z2-mental": "Cine e la ușă?",
+      "s48-2-3-z2-resurse": "Haina pe cuier înainte de ieșire",
+      "s48-2-3-z2-social": "Salut mamei",
+      "s48-2-3-z3-fizic": "Mâna flutură: la revedere",
+      "s48-2-3-z3-mental": "La revedere",
+      "s48-2-3-z3-resurse": "Ușa închisă după la revedere",
+      "s48-2-3-z3-social": "La revedere împreună",
+      "s48-2-3-z4-fizic": "Salut, apoi câțiva pași",
+      "s48-2-3-z4-mental": "Salut și la revedere",
+      "s48-2-3-z4-resurse": "Pantofii lângă ușă la salut",
+      "s48-2-3-z4-social": "Salut pe rând",
+      "s48-2-3-z5-fizic": "La revedere la fereastră",
+      "s48-2-3-z5-mental": "Aici și acolo: salut",
+      "s48-2-3-z5-resurse": "Perdeaua trasă după la revedere",
+      "s48-2-3-z5-social": "La revedere pe rând",
+      "s48-2-3-z6-fizic": "Salut oaspetelui",
+      "s48-2-3-z6-mental": "Mulțumesc",
+      "s48-2-3-z6-resurse": "Haina pe cuier după oaspete",
+      "s48-2-3-z6-social": "Salut și mulțumesc împreună",
+      "s48-2-3-z7-fizic": "Plimbare liberă, salut la final",
+      "s48-2-3-z7-mental": "Carte: salut și la revedere",
+      "s48-2-3-z7-resurse": "Haina și pantofii la loc",
+      "s48-2-3-z7-social": "Noapte bună",
+      "s49-2-3-z1-fizic": "Alegem mingea favorită",
+      "s49-2-3-z1-mental": "Prima favorită: minge",
+      "s49-2-3-z1-resurse": "Mingea pe masă, aleasă",
+      "s49-2-3-z1-social": "Arătăm mingea favorită adultului",
+      "s49-2-3-z2-fizic": "Alegem cartea iubită: pagina lui",
+      "s49-2-3-z2-mental": "A doua favorită: carte",
+      "s49-2-3-z2-resurse": "Cartea pe raft, aleasă",
+      "s49-2-3-z2-social": "Citim favorita împreună din nou",
+      "s49-2-3-z3-fizic": "A treia favorită: dans pe loc",
+      "s49-2-3-z3-mental": "Trei favorite: unu, doi, trei",
+      "s49-2-3-z3-resurse": "Spațiu liber pentru dansul ales",
+      "s49-2-3-z3-social": "Dansăm din nou pe rând",
+      "s49-2-3-z4-fizic": "Repetăm mingea: dat",
+      "s49-2-3-z4-mental": "Ne amintim: minge din nou",
+      "s49-2-3-z4-resurse": "Mingea în cutie din nou",
+      "s49-2-3-z4-social": "Mingea pe rând, ca înainte",
+      "s49-2-3-z5-fizic": "Trei obiecte favorite pe masă",
+      "s49-2-3-z5-mental": "Alege una din trei",
+      "s49-2-3-z5-resurse": "Trei favorite la loc pe rând",
+      "s49-2-3-z5-social": "Arătăm alegerea adultului",
+      "s49-2-3-z6-fizic": "Repetăm pașii favoriți",
+      "s49-2-3-z6-mental": "Ne amintim: pași și favorit",
+      "s49-2-3-z6-resurse": "Pantofii la loc după pașii aleși",
+      "s49-2-3-z6-social": "Pași favoriți împreună din nou",
+      "s49-2-3-z7-fizic": "Plimbare liberă: alege un favorit",
+      "s49-2-3-z7-mental": "Carte: trei favorite în an",
+      "s49-2-3-z7-resurse": "Favoritele pe raft la final",
+      "s49-2-3-z7-social": "Noapte bună",
+      "s50-2-3-z1-fizic": "Pași moi în casă",
+      "s50-2-3-z1-mental": "Liniște: casă",
+      "s50-2-3-z1-resurse": "Ușa închisă blând",
+      "s50-2-3-z1-social": "Stați liniștiți unul lângă altul",
+      "s50-2-3-z2-fizic": "Așezare blândă pe pernă",
+      "s50-2-3-z2-mental": "Calm: pernă și corp",
+      "s50-2-3-z2-resurse": "Perna la loc după așezare",
+      "s50-2-3-z2-social": "Pernă liniștită cu adultul",
+      "s50-2-3-z3-fizic": "Carte pe genunchi",
+      "s50-2-3-z3-mental": "Imagini blânde din carte",
+      "s50-2-3-z3-resurse": "Cartea pe raft după liniște",
+      "s50-2-3-z3-social": "Citim liniștiți împreună",
+      "s50-2-3-z4-fizic": "Mâini pe genunchi, respirație blândă",
+      "s50-2-3-z4-mental": "Liniște: mâini și corp",
+      "s50-2-3-z4-resurse": "Lumina mică în cameră",
+      "s50-2-3-z4-social": "Lumină mică împreună",
+      "s50-2-3-z5-fizic": "Pași la geam, lin",
+      "s50-2-3-z5-mental": "Afară e, în casă e calm",
+      "s50-2-3-z5-resurse": "Perdeaua trasă blând",
+      "s50-2-3-z5-social": "Privim geamul liniștiți",
+      "s50-2-3-z6-fizic": "Balans blând pe loc",
+      "s50-2-3-z6-mental": "Sunete mici în casă",
+      "s50-2-3-z6-resurse": "Jucăriile la loc, casă liniștită",
+      "s50-2-3-z6-social": "Casă liniștită împreună",
+      "s50-2-3-z7-fizic": "Plimbare liberă blândă în casă",
+      "s50-2-3-z7-mental": "Carte: casă liniștită",
+      "s50-2-3-z7-resurse": "Cartea și perna la loc",
+      "s50-2-3-z7-social": "Noapte bună",
+      "s51-2-3-z1-fizic": "Pași în curtea cunoscută",
+      "s51-2-3-z1-mental": "Curte: locul nostru",
+      "s51-2-3-z1-resurse": "Pantofii la ușă înainte de curte",
+      "s51-2-3-z1-social": "Ieșim în curte împreună",
+      "s51-2-3-z2-fizic": "Mâna pe gardul cunoscut",
+      "s51-2-3-z2-mental": "Uite: gardul",
+      "s51-2-3-z2-resurse": "Mâna jos după gard",
+      "s51-2-3-z2-social": "Arătăm gardul adultului",
+      "s51-2-3-z3-fizic": "Pași până la copacul cunoscut",
+      "s51-2-3-z3-mental": "Uite: frunza",
+      "s51-2-3-z3-resurse": "O frunză ținută, apoi la loc",
+      "s51-2-3-z3-social": "Privim copacul împreună",
+      "s51-2-3-z4-fizic": "Atingem pământul cunoscut",
+      "s51-2-3-z4-mental": "Uite: pământul",
+      "s51-2-3-z4-resurse": "Mâinile curate după pământ",
+      "s51-2-3-z4-social": "Atingem pământul pe rând",
+      "s51-2-3-z5-fizic": "Drumul scurt la poarta cunoscută",
+      "s51-2-3-z5-mental": "Uite: poarta",
+      "s51-2-3-z5-resurse": "Mâna pe poartă, apoi jos",
+      "s51-2-3-z5-social": "Arătăm poarta adultului",
+      "s51-2-3-z6-fizic": "Urechi afară: sunete cunoscute",
+      "s51-2-3-z6-mental": "Pasăre — sau mașină?",
+      "s51-2-3-z6-resurse": "Înapoi la ușă, pantofii la loc",
+      "s51-2-3-z6-social": "Ascultăm afară împreună",
+      "s51-2-3-z7-fizic": "Plimbare liberă în curtea cunoscută",
+      "s51-2-3-z7-mental": "Carte: curte și locuri",
+      "s51-2-3-z7-resurse": "Haina și pantofii la loc",
+      "s51-2-3-z7-social": "Noapte bună",
+      "s52-2-3-z1-fizic": "Pași blânzi prin casă",
+      "s52-2-3-z1-mental": "Anul: blând",
+      "s52-2-3-z1-resurse": "O jucărie pe masă, lin",
+      "s52-2-3-z1-social": "Stați blând unul lângă altul",
+      "s52-2-3-z2-fizic": "Atingem trei locuri din casă",
+      "s52-2-3-z2-mental": "Ne amintim casa",
+      "s52-2-3-z2-resurse": "Trei lucruri la loc blând",
+      "s52-2-3-z2-social": "Arătăm casa adultului",
+      "s52-2-3-z3-fizic": "Cartea anului: pagina lui",
+      "s52-2-3-z3-mental": "Imagini din an",
+      "s52-2-3-z3-resurse": "Cartea pe raft la închidere",
+      "s52-2-3-z3-social": "Citim blând împreună",
+      "s52-2-3-z4-fizic": "Mingea blândă: dat",
+      "s52-2-3-z4-mental": "Ne amintim: minge și rând",
+      "s52-2-3-z4-resurse": "Mingea în cutie la final",
+      "s52-2-3-z4-social": "Mingea pe rând, blând",
+      "s52-2-3-z5-fizic": "Geamul: privim anul",
+      "s52-2-3-z5-mental": "Afară și în casă: gata blând",
+      "s52-2-3-z5-resurse": "Perdeaua la loc blând",
+      "s52-2-3-z5-social": "Privim geamul împreună la final",
+      "s52-2-3-z6-fizic": "Balans blând: anul se închide",
+      "s52-2-3-z6-mental": "Gata blând",
+      "s52-2-3-z6-resurse": "Favoritele pe raft, anul gata",
+      "s52-2-3-z6-social": "Mulțumesc, blând",
+      "s52-2-3-z7-fizic": "Plimbare liberă: anul se închide",
+      "s52-2-3-z7-mental": "Carte: anul se închide blând",
+      "s52-2-3-z7-resurse": "Totul la loc: an gata",
+      "s52-2-3-z7-social": "Noapte bună",
+    };
+    expect(Object.keys(expected)).toHaveLength(896);
+    const byId = Object.fromEntries(
+      Array.from({ length: 32 }, (_, i) => i + 21).flatMap((week) =>
+        getSeedActivities(week).map((row) => [row.id, row.titlu]),
+      ),
     );
-    expect(s21["s21-2-3-z1-fizic"]).toBe("Mâna pe geam pe scurt");
-    expect(s21["s21-2-3-z1-mental"]).toBe("Geam și afară");
-    expect(s21["s21-2-3-z1-resurse"]).toBe("Perdeaua la loc");
-    expect(s21["s21-2-3-z1-social"]).toBe("Privim geamul împreună");
+    for (const [id, titlu] of Object.entries(expected)) {
+      expect(byId[id]).toBe(titlu);
+    }
   });
 });

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-hidden="true">
+  <title>Nisipuț</title>
+  <path d="M12 44 L20 24 L44 24 L52 44 Z" fill="#E8C48A" stroke="#C4A15E" stroke-width="1.5"/>
+  <ellipse cx="32" cy="44" rx="20" ry="6" fill="#D9B56F"/>
+  <circle cx="26" cy="30" r="1.9" fill="#3D2E1A"/>
+  <circle cx="38" cy="30" r="1.9" fill="#3D2E1A"/>
+  <circle cx="26.5" cy="29.5" r="0.55" fill="#FFF8EC"/>
+  <circle cx="38.5" cy="29.5" r="0.55" fill="#FFF8EC"/>
+  <path d="M27 38 Q32 41.5 37 38" fill="none" stroke="#6B4E2E" stroke-width="1.4" stroke-linecap="round"/>
+</svg>
