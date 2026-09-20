@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { getSeedActivities } from "./seed/week1";
+import { getSeedActivities, usesLocalSeedCatalog } from "./seed/week1";
 import {
   clampProgramWeek,
   LIVE_AGE_BANDS,
@@ -99,20 +99,25 @@ describe("V1.4 age-band preview", () => {
     expect(previewBannerText("1-2", true)).toBe("Previzualizare · bandă 1–2");
   });
 
-  test("local seed cannot fill a 2-3 preview; empty only if that band has no rows", () => {
-    const weekRows = getSeedActivities(1).filter((row) => row.banda === "2-3");
+  test("local v2 seed fills a 2-3 preview; default catalog stays 1-2", () => {
+    const weekRows = getSeedActivities(1, "2-3");
     const themeRows = PROGRAM_WEEKS.flatMap((week) =>
-      getSeedActivities(week).filter((row) => row.banda === "2-3"),
+      getSeedActivities(week, "2-3"),
     );
-    expect(weekRows).toHaveLength(0);
-    expect(themeRows).toHaveLength(0);
-    expect(bandHasCatalog(themesFromActivityRows(themeRows))).toBe(false);
+    expect(weekRows).toHaveLength(28);
+    expect(weekRows.every((row) => row.banda === "2-3")).toBe(true);
+    expect(themeRows).toHaveLength(1456);
+    expect(bandHasCatalog(themesFromActivityRows(themeRows))).toBe(true);
     expect(getSeedActivities(1).filter((row) => row.banda === "1-2")).toHaveLength(
       28,
     );
     expect(getSeedActivities(1).some((row) => row.id.includes("-b23-"))).toBe(
       false,
     );
+    expect(getSeedActivities(1, "3-4")).toHaveLength(0);
+    expect(usesLocalSeedCatalog({ isDemo: true, band: "6-7" })).toBe(true);
+    expect(usesLocalSeedCatalog({ isDemo: false, band: "2-3" })).toBe(true);
+    expect(usesLocalSeedCatalog({ isDemo: false, band: "1-2" })).toBe(false);
   });
 
   test("catalog themes come from banda rows, not historical activity ids", () => {
