@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-hidden="true">
+  <title>Mingiuță</title>
+  <circle cx="32" cy="32" r="20" fill="#8FBF8A" stroke="#6A9A66" stroke-width="1.5"/>
+  <path d="M16 24 Q32 18 48 24 M16 40 Q32 46 48 40 M32 12 L32 52" fill="none" stroke="#6A9A66" stroke-width="1.4"/>
+  <circle cx="26" cy="28" r="1.9" fill="#3D2E1A"/>
+  <circle cx="38" cy="28" r="1.9" fill="#3D2E1A"/>
+  <circle cx="26.5" cy="27.5" r="0.55" fill="#FFF8EC"/>
+  <circle cx="38.5" cy="27.5" r="0.55" fill="#FFF8EC"/>
+  <path d="M27 38 Q32 42 37 38" fill="none" stroke="#6B4E2E" stroke-width="1.4" stroke-linecap="round"/>
+</svg>

@@ -1,10 +1,12 @@
 /**
- * PLAYFUL PILOT — GO lock: S3 V–D + full S4 + S5–S13 L–D.
+ * PLAYFUL PILOT — GO lock: S3 V–D + full S4 + S5–S20 L–D.
  * Characters, ritual lines, and daily surprises live here (not in activities.nota).
  * Zero sounds / wavs / Play button — clips were removed in #33.
  */
 
-export const PLAYFUL_PILOT_WEEKS = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] as const;
+export const PLAYFUL_PILOT_WEEKS = [
+  3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+] as const;
 export type PlayfulPilotWeek = (typeof PLAYFUL_PILOT_WEEKS)[number];
 
 export type PlayfulCharacterId =
@@ -18,7 +20,14 @@ export type PlayfulCharacterId =
   | "cutiuta"
   | "luminita"
   | "canuta"
-  | "hainuta";
+  | "hainuta"
+  | "potecuta"
+  | "lingurita"
+  | "picatura"
+  | "pasarica"
+  | "mingiuta"
+  | "carticica"
+  | "cosulet";
 
 export type PlayfulCharacter = {
   id: PlayfulCharacterId;
@@ -91,6 +100,41 @@ export const PLAYFUL_CHARACTERS: Record<PlayfulCharacterId, PlayfulCharacter> = 
     id: "hainuta",
     name: "Hăinuță",
     src: "/characters/hainuta.svg",
+  },
+  potecuta: {
+    id: "potecuta",
+    name: "Potecuță",
+    src: "/characters/potecuta.svg",
+  },
+  lingurita: {
+    id: "lingurita",
+    name: "Linguriță",
+    src: "/characters/lingurita.svg",
+  },
+  picatura: {
+    id: "picatura",
+    name: "Picătură",
+    src: "/characters/picatura.svg",
+  },
+  pasarica: {
+    id: "pasarica",
+    name: "Păsărică",
+    src: "/characters/pasarica.svg",
+  },
+  mingiuta: {
+    id: "mingiuta",
+    name: "Mingiuță",
+    src: "/characters/mingiuta.svg",
+  },
+  carticica: {
+    id: "carticica",
+    name: "Cărticică",
+    src: "/characters/carticica.svg",
+  },
+  cosulet: {
+    id: "cosulet",
+    name: "Coșuleț",
+    src: "/characters/cosulet.svg",
   },
 };
 
@@ -288,6 +332,125 @@ const WEEK_13: WeekConfig = {
   },
 };
 
+const WEEK_14: WeekConfig = {
+  week: 14,
+  theme: "Pași pe drumul scurt",
+  character: PLAYFUL_CHARACTERS.potecuta,
+  ritualOpen: "Pași pe drum.",
+  ritualClose: "Pe drum, gata.",
+  surprises: {
+    1: "Trei pași pe hol, apoi stăm",
+    2: "Ușa se deschide 2 cm — „ieșim?”",
+    3: "O treaptă sus, o treaptă jos",
+    4: "Pietricica „dispare” 2 sec pe drum",
+    5: "El alege: repede sau încet",
+    6: "Un pas pe drum (doar el îl arată)",
+    7: "Ultima pagină: un drum din imagine",
+  },
+};
+
+const WEEK_15: WeekConfig = {
+  week: 15,
+  theme: "Mâncare împreună",
+  character: PLAYFUL_CHARACTERS.lingurita,
+  ritualOpen: "Mâncare împreună.",
+  ritualClose: "La masă, gata.",
+  surprises: {
+    1: "Scaunul se apropie 2 cm de masă",
+    2: "Gustarea „dispare” 1 sec în palmă",
+    3: "Lingura stă 2 sec la gură, apoi jos",
+    4: "Paharul se așază lângă farfurie",
+    5: "El alege: înainte de masă sau după",
+    6: "O bucățică pe farfurie (doar el o arată)",
+    7: "Verificăm chiuveta: farfuria la loc",
+  },
+};
+
+const WEEK_16: WeekConfig = {
+  week: 16,
+  theme: "Apă și sete",
+  character: PLAYFUL_CHARACTERS.picatura,
+  ritualOpen: "Apă și sete.",
+  ritualClose: "Apa, gata.",
+  surprises: {
+    1: "O înghițitură, apoi paharul jos",
+    2: "Turnăm 2 picături — „apa?”",
+    3: "Paharul merge 3 pași, apoi stă",
+    4: "Robinetul se deschide 2 sec",
+    5: "El alege: sete sau nu",
+    6: "O picătură pe plantă (doar el o pune)",
+    7: "Verificăm raftul: paharul la loc",
+  },
+};
+
+const WEEK_17: WeekConfig = {
+  week: 17,
+  theme: "Animale pe care le auzim",
+  character: PLAYFUL_CHARACTERS.pasarica,
+  ritualOpen: "Auzim animale.",
+  ritualClose: "Auzite, gata.",
+  surprises: {
+    1: "Urechea la geam 2 sec",
+    2: "El face ham-ham o dată",
+    3: "Aripi 1 sec, apoi jos",
+    4: "La geam, stăm 2 sec",
+    5: "El alege: sunet sau liniște",
+    6: "O pasăre afară (doar el o arată)",
+    7: "Ultima pagină: un animal din imagine",
+  },
+};
+
+const WEEK_18: WeekConfig = {
+  week: 18,
+  theme: "Joacă de-a rândul",
+  character: PLAYFUL_CHARACTERS.mingiuta,
+  ritualOpen: "Joacă de-a rândul.",
+  ritualClose: "Rândul, gata.",
+  surprises: {
+    1: "Mingea rulează 1 sec, apoi stă",
+    2: "El dă mingea, adultul așteaptă",
+    3: "Un cub al lui, un cub al tău",
+    4: "Două bătăi din palme, pe rând",
+    5: "El alege: acum eu sau acum tu",
+    6: "Mingea afară 2 sec, apoi în mână",
+    7: "Verificăm raftul: mingea la loc",
+  },
+};
+
+const WEEK_19: WeekConfig = {
+  week: 19,
+  theme: "Cartea de seară",
+  character: PLAYFUL_CHARACTERS.carticica,
+  ritualOpen: "Cartea de seară.",
+  ritualClose: "Cartea, gata.",
+  surprises: {
+    1: "Cartea se așază pe canapea 2 sec",
+    2: "O pagină se întoarce, apoi stă",
+    3: "El alege pagina",
+    4: "Coperta se închide 2 sec",
+    5: "Trei pagini, apoi gata",
+    6: "Cartea „dispare” pe raft ziua",
+    7: "Ultima pagină: imaginea favorită",
+  },
+};
+
+const WEEK_20: WeekConfig = {
+  week: 20,
+  theme: "Ordine mică în cameră",
+  character: PLAYFUL_CHARACTERS.cosulet,
+  ritualOpen: "Ordine în cameră.",
+  ritualClose: "Camera, gata.",
+  surprises: {
+    1: "Un lucru „dispare” 2 sec în coș",
+    2: "El alege: raft sau coș",
+    3: "Trei lucruri, apoi stăm",
+    4: "Capacul coșului se închide 2 sec",
+    5: "Pătura se așază 3 sec pe canapea",
+    6: "Coșul merge până la ușă, apoi la loc",
+    7: "Verificăm coșul: totul la loc",
+  },
+};
+
 const WEEK_CONFIG: Record<PlayfulPilotWeek, WeekConfig> = {
   3: WEEK_3,
   4: WEEK_4,
@@ -300,13 +463,20 @@ const WEEK_CONFIG: Record<PlayfulPilotWeek, WeekConfig> = {
   11: WEEK_11,
   12: WEEK_12,
   13: WEEK_13,
+  14: WEEK_14,
+  15: WEEK_15,
+  16: WEEK_16,
+  17: WEEK_17,
+  18: WEEK_18,
+  19: WEEK_19,
+  20: WEEK_20,
 };
 
 export function isPlayfulPilotWeek(week: number): week is PlayfulPilotWeek {
   return (PLAYFUL_PILOT_WEEKS as readonly number[]).includes(week);
 }
 
-/** Day overlay: S3 only V–D (5–7); S4–S13 L–D (1–7). */
+/** Day overlay: S3 only V–D (5–7); S4–S20 L–D (1–7). */
 export function playfulPilotFor(
   week: number,
   dayOfWeek: number,

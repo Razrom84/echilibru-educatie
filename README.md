@@ -100,16 +100,16 @@ node scripts/import-seed.mjs
 Aplicația citește același JSON în demonstrație. Nu mai există text lorem / placeholder.  
 Dacă Cristina înlocuiește fișierul JSON, re-rulează importul (`on conflict (id) do update`).
 
-## PLAYFUL PILOT (S3 V–D + S4 + S5–S13)
+## PLAYFUL PILOT (S3 V–D + S4 + S5–S20)
 
-Pilot GO (MannyQ + Răzvan), **doar** banda 1–2: **săptămâna 3 vineri–duminică**, **toată săptămâna 4**, și **S5–S13 L–D**. Familia e pe săptămâna 3 live; S14+ nu sunt pilot. Nu e rollout pe tot catalogul. Zero sunete de activitate (fără `Ascultă`, fără clipuri wav) — scoase în #33.
+Pilot GO (MannyQ + Răzvan), **doar** banda 1–2: **săptămâna 3 vineri–duminică**, **toată săptămâna 4**, și **S5–S20 L–D**. Familia e pe săptămâna 3 live; S21+ nu sunt pilot. Nu e rollout pe tot catalogul. Zero sunete de activitate (fără `Ascultă`, fără clipuri wav) — scoase în #33.
 
-- **Azi:** personaj + temă (`Sunețel · Sunete și liniște` / `Mânuță · Mâini și degete` / `Cariocă · Culori pe care le vedem` / `Săgeată · Sus și jos` / `Preșuleț · Înăuntru și afară` / `Frunzuliță · Frunze și pământ` / `Suflare · Vânt și aer` / `Cutiuță · Colectăm și sortăm` / `Luminiță · Lumină și umbră` / `Cănuță · Cald și rece (repetare)` / `Hăinuță · Haine pe vreme`), ritual de deschidere, 4 piloni cu titluri-invitație, `Surpriză: …` sub Social, ritual de închidere când e gata ziua.
-- **Ritualuri (lock):** S3 deschidere `Ascultăm. Gata?` / închidere `Sunete gata. Bravo.`; S4 deschidere `Mâinile. Gata?` / închidere `Mâini gata. Bravo.`; S5 `Vedem culorile.` / `Culori văzute.`; S6 `Sus și jos.` / `Sus-jos gata.`; S7 `Înăuntru și afară.` / `Pe prag, gata.`; S8 `Frunze și pământ.` / `Pe pământ, gata.`; S9 `Vânt și aer.` / `În aer, gata.`; S10 `Adunăm și sortăm.` / `La loc, gata.`; S11 `Lumină și umbră.` / `În umbră, gata.`; S12 `Cald și rece.` / `Cald-rece, gata.`; S13 `Haine pe vreme.` / `Pe cârlig, gata.`
-- **Săptămâna:** ritualul o dată sus; pe zilele din pilot: iconița personajului, 4 piloni, chip Surpriză. S3 luni–joi rămân fără chrome de zi. S4–S13 au chrome L–D. S14+ rămân fără chrome playful.
+- **Azi:** personaj + temă (`Sunețel · Sunete și liniște` / `Mânuță · Mâini și degete` / `Cariocă · Culori pe care le vedem` / `Săgeată · Sus și jos` / `Preșuleț · Înăuntru și afară` / `Frunzuliță · Frunze și pământ` / `Suflare · Vânt și aer` / `Cutiuță · Colectăm și sortăm` / `Luminiță · Lumină și umbră` / `Cănuță · Cald și rece (repetare)` / `Hăinuță · Haine pe vreme` / `Potecuță · Pași pe drumul scurt` / `Linguriță · Mâncare împreună` / `Picătură · Apă și sete` / `Păsărică · Animale pe care le auzim` / `Mingiuță · Joacă de-a rândul` / `Cărticică · Cartea de seară` / `Coșuleț · Ordine mică în cameră`), ritual de deschidere, 4 piloni cu titluri-invitație, `Surpriză: …` sub Social, ritual de închidere când e gata ziua.
+- **Ritualuri (lock):** S3 deschidere `Ascultăm. Gata?` / închidere `Sunete gata. Bravo.`; S4 deschidere `Mâinile. Gata?` / închidere `Mâini gata. Bravo.`; S5 `Vedem culorile.` / `Culori văzute.`; S6 `Sus și jos.` / `Sus-jos gata.`; S7 `Înăuntru și afară.` / `Pe prag, gata.`; S8 `Frunze și pământ.` / `Pe pământ, gata.`; S9 `Vânt și aer.` / `În aer, gata.`; S10 `Adunăm și sortăm.` / `La loc, gata.`; S11 `Lumină și umbră.` / `În umbră, gata.`; S12 `Cald și rece.` / `Cald-rece, gata.`; S13 `Haine pe vreme.` / `Pe cârlig, gata.`; S14 `Pași pe drum.` / `Pe drum, gata.`; S15 `Mâncare împreună.` / `La masă, gata.`; S16 `Apă și sete.` / `Apa, gata.`; S17 `Auzim animale.` / `Auzite, gata.`; S18 `Joacă de-a rândul.` / `Rândul, gata.`; S19 `Cartea de seară.` / `Cartea, gata.`; S20 `Ordine în cameră.` / `Camera, gata.`
+- **Săptămâna:** ritualul o dată sus; pe zilele din pilot: iconița personajului, 4 piloni, chip Surpriză. S3 luni–joi rămân fără chrome de zi. S4–S20 au chrome L–D. S21+ rămân fără chrome playful.
 - **Setări:** `Sunet scurt la gata` — **implicit oprit**, salvat pe dispozitiv (`localStorage`), nu pe familie. Sunetul e scurt, pornit doar de adult când bifează ultimul pilon; nu se autoredă la încărcarea paginii. Fără player de sunete S3 (fără `Ascultă`, fără clipuri wav, fără toggle `Sunete S3`).
-- Fără streak / badge / scor. Fără chat. Personajele sunt SVG statice. Personajul S4 se afișează **`Mânuță`** (â din *mână*, U+00E2 — nu `Mănuță`; id intern `manuta`). S5 **`Cariocă`** (ă), S6 **`Săgeată`** (ă), S7 **`Preșuleț`** (ș, ț), S8 **`Frunzuliță`** (ț, ă), S9 **`Suflare`**, S10 **`Cutiuță`** (ț, ă), S11 **`Luminiță`** (ț, ă), S12 **`Cănuță`** (ă, ț, ă — nu `Mânuță`), S13 **`Hăinuță`** (ă, ț, ă).
-- Titlurile se schimbă în `content/seed-s2-s4-banda-1-2.json` (S3 z5–z7 și S4), `content/seed-s5-s8-banda-1-2.json` (S5–S8), `content/seed-s9-s12-banda-1-2.json` (S9–S12) și `content/seed-s13-s16-banda-1-2.json` (doar S13). Ritualul și surprizele sunt în `src/lib/playful-pilot.ts`. Brief lock: `docs/BRIEF-PLAYFUL-S5-S7.md`, `docs/BRIEF-PLAYFUL-S8-S10.md`, `docs/BRIEF-PLAYFUL-S11-S13.md`.
+- Fără streak / badge / scor. Fără chat. Personajele sunt SVG statice. Personajul S4 se afișează **`Mânuță`** (â din *mână*, U+00E2 — nu `Mănuță`; id intern `manuta`). S5 **`Cariocă`** (ă), S6 **`Săgeată`** (ă), S7 **`Preșuleț`** (ș, ț), S8 **`Frunzuliță`** (ț, ă), S9 **`Suflare`**, S10 **`Cutiuță`** (ț, ă), S11 **`Luminiță`** (ț, ă), S12 **`Cănuță`** (ă, ț, ă — nu `Mânuță`), S13 **`Hăinuță`** (ă, ț, ă), S14 **`Potecuță`** (ț, ă), S15 **`Linguriță`** (ț, ă), S16 **`Picătură`** (ă, ă), S17 **`Păsărică`** (ă, ă, ă), S18 **`Mingiuță`** (ț, ă), S19 **`Cărticică`** (ă, ă), S20 **`Coșuleț`** (ș, ț).
+- Titlurile se schimbă în `content/seed-s2-s4-banda-1-2.json` (S3 z5–z7 și S4), `content/seed-s5-s8-banda-1-2.json` (S5–S8), `content/seed-s9-s12-banda-1-2.json` (S9–S12), `content/seed-s13-s16-banda-1-2.json` (S13–S16) și `content/seed-s17-s20-banda-1-2.json` (S17–S20). Ritualul și surprizele sunt în `src/lib/playful-pilot.ts`. Brief lock: `docs/BRIEF-PLAYFUL-S5-S7.md`, `docs/BRIEF-PLAYFUL-S8-S10.md`, `docs/BRIEF-PLAYFUL-S11-S13.md`, `docs/BRIEF-PLAYFUL-S14-S20.md`.
 - Selectorul S# arată **`Săptămâna 3`**, nu `Săptămâna S3`.
 
 ### QA pe demonstrație (fără Supabase)
@@ -122,19 +122,20 @@ Pilot GO (MannyQ + Răzvan), **doar** banda 1–2: **săptămâna 3 vineri–dum
 6. S# **Săptămâna 5**: Cariocă, `Vedem culorile.`, Luni fizic `Pași până la roșu`, `Surpriză: Ascundem un obiect roșu 2 sec: „Unde e?”`.
 7. S# **Săptămâna 6**: Săgeată, `Sus și jos.`. S# **Săptămâna 7**: Preșuleț, `Înăuntru și afară.`.
 8. S# **Săptămâna 8**: Frunzuliță, `Frunze și pământ.`, Luni fizic `Pași pe frunze`. S# **Săptămâna 9**: Suflare, `Vânt și aer.`. S# **Săptămâna 10**: Cutiuță, `Adunăm și sortăm.`.
-9. S# **Săptămâna 11**: Luminiță, `Lumină și umbră.`, Luni fizic `Pași până la lumină`. S# **Săptămâna 12**: Cănuță, `Cald și rece.`. S# **Săptămâna 13**: Hăinuță, `Haine pe vreme.`. S14: fără personaj / surpriză.
-10. Setări → pornește **Sunet scurt la gata** → pe o zi de pilot (dacă e ziua curentă, nu viitoare), bifează al 4-lea pilon → se aude chime-ul. Reîncarcă pagina: nu se aude nimic până la o bifă nouă.
-11. Navighează la S14/S15: fără personaj, fără surpriză.
-12. Azi / Săptămâna / Detaliu / Setări: **fără** buton `Ascultă` și **fără** toggle `Sunete S3 (vineri–duminică)`.
-13. S# **Săptămâna 4** → Vineri fizic: titlul e `Alunecăm cu mâna ușor pe pernă.` (mâna pe pernă, nu târâit).
+9. S# **Săptămâna 11**: Luminiță, `Lumină și umbră.`, Luni fizic `Pași până la lumină`. S# **Săptămâna 12**: Cănuță, `Cald și rece.`. S# **Săptămâna 13**: Hăinuță, `Haine pe vreme.`.
+10. S# **Săptămâna 14**: Potecuță, `Pași pe drum.`, Luni fizic `Pași pe hol`. S# **Săptămâna 15**: Linguriță, `Mâncare împreună.`. S# **Săptămâna 16**: Picătură, `Apă și sete.`. S# **Săptămâna 17**: Păsărică, `Auzim animale.`. S# **Săptămâna 18**: Mingiuță, `Joacă de-a rândul.`. S# **Săptămâna 19**: Cărticică, `Cartea de seară.`. S# **Săptămâna 20**: Coșuleț, `Ordine în cameră.`. S21: fără personaj / surpriză.
+11. Setări → pornește **Sunet scurt la gata** → pe o zi de pilot (dacă e ziua curentă, nu viitoare), bifează al 4-lea pilon → se aude chime-ul. Reîncarcă pagina: nu se aude nimic până la o bifă nouă.
+12. Navighează la S21: fără personaj, fără surpriză.
+13. Azi / Săptămâna / Detaliu / Setări: **fără** buton `Ascultă` și **fără** toggle `Sunete S3 (vineri–duminică)`.
+14. S# **Săptămâna 4** → Vineri fizic: titlul e `Alunecăm cu mâna ușor pe pernă.` (mâna pe pernă, nu târâit).
 
 Poți folosi și săgețile S# de pe Azi / Săptămâna (nu mută săptămâna oficială). Dacă schimbi săptămâna oficială din Setări la o S# al cărei calendar e în viitor, Azi blochează ziua („Se deschide Vineri”) — comportament V1.5, nu al pilotului.
 
 ### QA pe custom / cont real
 
-1. SQL Editor (sau `db push`): `supabase/migrations/20260918080000_playful_s3_vd_natural_titles.sql`, `supabase/migrations/20260918090000_s4_v_fizic_alunecam.sql`, `supabase/migrations/20260919120000_playful_pilot_s5_s7_titles.sql`, `supabase/migrations/20260920120000_playful_pilot_s8_s10_titles.sql`, apoi `supabase/migrations/20260920140000_playful_pilot_s11_s13_titles.sql` — actualizează titlurile S3 V–D + S4 + S5–S13. Nu inserează rânduri noi.
-2. Dacă S3–S13 nu sunt încă în `activities`, importă întâi catalogul 1–2, apoi rulează migrarea.
-3. Navighează la S3 / S4 / S5 / S6 / S7 / S8 / S9 / S10 / S11 / S12 / S13 (nav S#). Verifică Azi, Săptămâna, toggle-ul de sunet ca mai sus. Hard refresh.
+1. SQL Editor (sau `db push`): `supabase/migrations/20260918080000_playful_s3_vd_natural_titles.sql`, `supabase/migrations/20260918090000_s4_v_fizic_alunecam.sql`, `supabase/migrations/20260919120000_playful_pilot_s5_s7_titles.sql`, `supabase/migrations/20260920120000_playful_pilot_s8_s10_titles.sql`, `supabase/migrations/20260920140000_playful_pilot_s11_s13_titles.sql`, apoi `supabase/migrations/20260920160000_playful_pilot_s14_s20_titles.sql` — actualizează titlurile S3 V–D + S4 + S5–S20. Nu inserează rânduri noi.
+2. Dacă S3–S20 nu sunt încă în `activities`, importă întâi catalogul 1–2, apoi rulează migrarea.
+3. Navighează la S3–S20 (nav S#). Verifică Azi, Săptămâna, toggle-ul de sunet ca mai sus. Hard refresh.
 4. Gazda: `educatie.echilibru-cartea.ro` (preview-ul Vercel e suficient pentru acest PR).
 
 ## Deploy Vercel
