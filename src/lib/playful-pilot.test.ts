@@ -18,8 +18,8 @@ function svgTitle(filename: string): string {
 }
 
 describe("PLAYFUL PILOT scope", () => {
-  test("locks weeks to S3–S7", () => {
-    expect([...PLAYFUL_PILOT_WEEKS]).toEqual([3, 4, 5, 6, 7]);
+  test("locks weeks to S3–S10", () => {
+    expect([...PLAYFUL_PILOT_WEEKS]).toEqual([3, 4, 5, 6, 7, 8, 9, 10]);
   });
 
   test("S3 overlay is only V–D", () => {
@@ -127,9 +127,80 @@ describe("PLAYFUL PILOT scope", () => {
     );
   });
 
-  test("S8/S14/S15 and other weeks stay untouched", () => {
-    expect(playfulPilotFor(8, 1)).toBeNull();
-    expect(playfulPilotWeek(8)).toBeNull();
+  test("S8 overlay is L–D with Frunzuliță", () => {
+    expect(playfulPilotFor(8, 1)?.character.name).toBe("Frunzuliță");
+    expect(playfulPilotFor(8, 1)?.character.id).toBe("frunzulita");
+    expect(playfulPilotFor(8, 1)?.character.src).toBe("/characters/frunzulita.svg");
+    expect(playfulPilotFor(8, 1)?.theme).toBe("Frunze și pământ");
+    expect(playfulPilotFor(8, 1)?.ritualOpen).toBe("Frunze și pământ.");
+    expect(playfulPilotFor(8, 7)?.ritualClose).toBe("Pe pământ, gata.");
+    expect(playfulPilotFor(8, 1)?.ritualOpen).not.toMatch(/Hai/);
+    expect(playfulPilotFor(8, 1)?.surprise).toBe("Atingem frunza cu obrazul 2 sec");
+    expect(playfulPilotFor(8, 2)?.surprise).toBe("El alege frunza: mare sau mică");
+    expect(playfulPilotFor(8, 3)?.surprise).toBe("Pământ uscat pe palmă, 2 sec");
+    expect(playfulPilotFor(8, 4)?.surprise).toBe("Noroiul „dispare” pe prosop");
+    expect(playfulPilotFor(8, 5)?.surprise).toBe("O frunză zboară 1 sec, apoi cade");
+    expect(playfulPilotFor(8, 6)?.surprise).toBe(
+      "O frunză „secretă” pe potecă (doar el o arată)",
+    );
+    expect(playfulPilotFor(8, 7)?.surprise).toBe(
+      "Ultima pagină: o frunză din imagine",
+    );
+  });
+
+  test("S9 overlay is L–D with Suflare", () => {
+    expect(playfulPilotFor(9, 1)?.character.name).toBe("Suflare");
+    expect(playfulPilotFor(9, 1)?.character.id).toBe("suflare");
+    expect(playfulPilotFor(9, 1)?.character.src).toBe("/characters/suflare.svg");
+    expect(playfulPilotFor(9, 1)?.theme).toBe("Vânt și aer");
+    expect(playfulPilotFor(9, 1)?.ritualOpen).toBe("Vânt și aer.");
+    expect(playfulPilotFor(9, 7)?.ritualClose).toBe("În aer, gata.");
+    expect(playfulPilotFor(9, 1)?.ritualOpen).not.toMatch(/Hai/);
+    expect(playfulPilotFor(9, 1)?.surprise).toBe("Aerul pe obraz 2 sec");
+    expect(playfulPilotFor(9, 2)?.surprise).toBe("Suflăm o dată, apoi liniște");
+    expect(playfulPilotFor(9, 3)?.surprise).toBe("Brațele aripă — o clipă");
+    expect(playfulPilotFor(9, 4)?.surprise).toBe("Eșarfa zboară 2 sec");
+    expect(playfulPilotFor(9, 5)?.surprise).toBe("El suflă, frunza se mișcă");
+    expect(playfulPilotFor(9, 6)?.surprise).toBe(
+      "Vântul pe obraz (doar el îl simte)",
+    );
+    expect(playfulPilotFor(9, 7)?.surprise).toBe(
+      "Ultima pagină: un nor din imagine",
+    );
+  });
+
+  test("S10 overlay is L–D with Cutiuță", () => {
+    expect(playfulPilotFor(10, 1)?.character.name).toBe("Cutiuță");
+    expect(playfulPilotFor(10, 1)?.character.id).toBe("cutiuta");
+    expect(playfulPilotFor(10, 1)?.character.src).toBe("/characters/cutiuta.svg");
+    expect(playfulPilotFor(10, 1)?.theme).toBe("Colectăm și sortăm");
+    expect(playfulPilotFor(10, 1)?.ritualOpen).toBe("Adunăm și sortăm.");
+    expect(playfulPilotFor(10, 7)?.ritualClose).toBe("La loc, gata.");
+    expect(playfulPilotFor(10, 1)?.ritualOpen).not.toMatch(/Hai/);
+    expect(playfulPilotFor(10, 1)?.surprise).toBe(
+      "Un obiect „dispare” în cutie 2 sec",
+    );
+    expect(playfulPilotFor(10, 2)?.surprise).toBe(
+      "El alege: mare sau mic în cutie",
+    );
+    expect(playfulPilotFor(10, 3)?.surprise).toBe(
+      "Perechea de șosete se întâlnește",
+    );
+    expect(playfulPilotFor(10, 4)?.surprise).toBe(
+      "Un cub stă afară 3 sec, apoi în cutie",
+    );
+    expect(playfulPilotFor(10, 5)?.surprise).toBe("El alege grămada");
+    expect(playfulPilotFor(10, 6)?.surprise).toBe(
+      "O piatră „vizită” scurtă în cutie, apoi afară",
+    );
+    expect(playfulPilotFor(10, 7)?.surprise).toBe(
+      "Verificăm cutia: totul la loc",
+    );
+  });
+
+  test("S11/S14/S15 and other weeks stay untouched", () => {
+    expect(playfulPilotFor(11, 1)).toBeNull();
+    expect(playfulPilotWeek(11)).toBeNull();
     expect(playfulPilotFor(14, 5)).toBeNull();
     expect(playfulPilotFor(14, 7)).toBeNull();
     expect(playfulPilotFor(15, 1)).toBeNull();
@@ -164,6 +235,15 @@ describe("PLAYFUL PILOT copy helpers", () => {
     );
     expect(playfulHeaderLabel("Preșuleț", "Înăuntru și afară")).toBe(
       "Preșuleț · Înăuntru și afară",
+    );
+    expect(playfulHeaderLabel("Frunzuliță", "Frunze și pământ")).toBe(
+      "Frunzuliță · Frunze și pământ",
+    );
+    expect(playfulHeaderLabel("Suflare", "Vânt și aer")).toBe(
+      "Suflare · Vânt și aer",
+    );
+    expect(playfulHeaderLabel("Cutiuță", "Colectăm și sortăm")).toBe(
+      "Cutiuță · Colectăm și sortăm",
     );
     expect(PLAYFUL_CHARACTERS.manuta.name).toBe("Mânuță");
     expect(PLAYFUL_CHARACTERS.manuta.name).not.toBe("Mănuță");
@@ -219,8 +299,44 @@ describe("PLAYFUL PILOT copy helpers", () => {
     expect(chrome).not.toContain("<title>Sageata</title>");
   });
 
-  test("S5–S7 overlays have no sound fields", () => {
-    for (const week of [5, 6, 7]) {
+  test("S8–S10 names lock Romanian diacritics", () => {
+    expect(PLAYFUL_CHARACTERS.frunzulita.name).toBe("Frunzuliță");
+    expect(PLAYFUL_CHARACTERS.frunzulita.name).not.toBe("Frunzulita");
+    expect(PLAYFUL_CHARACTERS.frunzulita.name).not.toBe("Frunzuliţa");
+    expect([...PLAYFUL_CHARACTERS.frunzulita.name].map((ch) => ch.codePointAt(0))).toEqual([
+      0x0046, 0x0072, 0x0075, 0x006e, 0x007a, 0x0075, 0x006c, 0x0069, 0x021b, 0x0103,
+    ]);
+    expect(PLAYFUL_CHARACTERS.suflare.name).toBe("Suflare");
+    expect(PLAYFUL_CHARACTERS.suflare.name).not.toBe("Suflăre");
+    expect([...PLAYFUL_CHARACTERS.suflare.name].map((ch) => ch.codePointAt(0))).toEqual([
+      0x0053, 0x0075, 0x0066, 0x006c, 0x0061, 0x0072, 0x0065,
+    ]);
+    expect(PLAYFUL_CHARACTERS.cutiuta.name).toBe("Cutiuță");
+    expect(PLAYFUL_CHARACTERS.cutiuta.name).not.toBe("Cutiuta");
+    expect(PLAYFUL_CHARACTERS.cutiuta.name).not.toBe("Cutiuţa");
+    expect([...PLAYFUL_CHARACTERS.cutiuta.name].map((ch) => ch.codePointAt(0))).toEqual([
+      0x0043, 0x0075, 0x0074, 0x0069, 0x0075, 0x021b, 0x0103,
+    ]);
+    expect(svgTitle("frunzulita.svg")).toBe("Frunzuliță");
+    expect(svgTitle("suflare.svg")).toBe("Suflare");
+    expect(svgTitle("cutiuta.svg")).toBe("Cutiuță");
+    expect([...svgTitle("frunzulita.svg")].map((ch) => ch.codePointAt(0))).toEqual([
+      0x0046, 0x0072, 0x0075, 0x006e, 0x007a, 0x0075, 0x006c, 0x0069, 0x021b, 0x0103,
+    ]);
+    expect([...svgTitle("cutiuta.svg")].map((ch) => ch.codePointAt(0))).toEqual([
+      0x0043, 0x0075, 0x0074, 0x0069, 0x0075, 0x021b, 0x0103,
+    ]);
+    const chrome = readFileSync(resolve("src/components/playful-chrome.tsx"), "utf8");
+    expect(chrome).toContain("<title>Frunzuliță</title>");
+    expect(chrome).toContain("<title>Suflare</title>");
+    expect(chrome).toContain("<title>Cutiuță</title>");
+    expect(chrome).not.toContain("<title>Frunzulita</title>");
+    expect(chrome).not.toContain("<title>Cutiuta</title>");
+    expect(chrome).not.toMatch(/Hai /);
+  });
+
+  test("S5–S10 overlays have no sound fields", () => {
+    for (const week of [5, 6, 7, 8, 9, 10]) {
       const overlay = playfulPilotFor(week, 1);
       expect(overlay).not.toBeNull();
       expect(overlay).not.toHaveProperty("sound");
@@ -408,9 +524,107 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
     for (const [id, titlu] of Object.entries(expected)) {
       expect(byId[id]).toBe(titlu);
     }
-    expect(getSeedActivities(8).find((row) => row.id === "s8-2-3-z1-fizic")?.titlu).toBe(
-      "Pași pe frunze",
+  });
+
+  test("S8–S10 titles are locked invitation lines for L–D × 4 pillars", () => {
+    const expected: Record<string, string> = {
+      "s8-2-3-z1-fizic": "Pași pe frunze",
+      "s8-2-3-z1-mental": "Uite: frunza",
+      "s8-2-3-z1-resurse": "Frunza jos, la loc",
+      "s8-2-3-z1-social": "Arătăm frunza",
+      "s8-2-3-z2-fizic": "Culegem trei frunze",
+      "s8-2-3-z2-mental": "Frunză mare — sau mică?",
+      "s8-2-3-z2-resurse": "Frunzele în găleată",
+      "s8-2-3-z2-social": "Ține frunza",
+      "s8-2-3-z3-fizic": "Săpăm puțin",
+      "s8-2-3-z3-mental": "Pământ uscat — sau ud?",
+      "s8-2-3-z3-resurse": "Lopățica la loc",
+      "s8-2-3-z3-social": "Săpăm unul lângă altul",
+      "s8-2-3-z4-fizic": "Noroi pe degete",
+      "s8-2-3-z4-mental": "Frunză — sau pământ?",
+      "s8-2-3-z4-resurse": "Mâinile pe prosop",
+      "s8-2-3-z4-social": "Mâini curate",
+      "s8-2-3-z5-fizic": "Frunze sus, pe scurt",
+      "s8-2-3-z5-mental": "Frunză galbenă — sau verde?",
+      "s8-2-3-z5-resurse": "Trei frunze la loc",
+      "s8-2-3-z5-social": "Pe care frunză?",
+      "s8-2-3-z6-fizic": "Pe poteca cu frunze",
+      "s8-2-3-z6-mental": "Frunze sus pe copac",
+      "s8-2-3-z6-resurse": "Găleata la loc",
+      "s8-2-3-z6-social": "Eu frunza, tu pe lângă",
+      "s8-2-3-z7-fizic": "Plimbare liberă",
+      "s8-2-3-z7-mental": "Cartea cu frunze",
+      "s8-2-3-z7-resurse": "Haina la loc",
+      "s8-2-3-z7-social": "Noapte bună",
+      "s9-2-3-z1-fizic": "Pași în aer",
+      "s9-2-3-z1-mental": "Aerul pe față",
+      "s9-2-3-z1-resurse": "Haina la ușă",
+      "s9-2-3-z1-social": "Arătăm vântul",
+      "s9-2-3-z2-fizic": "Alergăm cu vântul",
+      "s9-2-3-z2-mental": "Frunza se mișcă",
+      "s9-2-3-z2-resurse": "O frunză, apoi jos",
+      "s9-2-3-z2-social": "Suflăm ușor împreună",
+      "s9-2-3-z3-fizic": "Brațele: aripă",
+      "s9-2-3-z3-mental": "Unde e vântul?",
+      "s9-2-3-z3-resurse": "Punga se umflă",
+      "s9-2-3-z3-social": "Uite aerul",
+      "s9-2-3-z4-fizic": "Învârtim eșarfa",
+      "s9-2-3-z4-mental": "Eșarfa zboară puțin",
+      "s9-2-3-z4-resurse": "Eșarfa pe cârlig",
+      "s9-2-3-z4-social": "Ținem eșarfa doi",
+      "s9-2-3-z5-fizic": "Suflăm pe frunză",
+      "s9-2-3-z5-mental": "Aer cald — sau rece?",
+      "s9-2-3-z5-resurse": "Frunza înapoi afară",
+      "s9-2-3-z5-social": "Acum tu sufli",
+      "s9-2-3-z6-fizic": "Plimbare scurtă cu vânt",
+      "s9-2-3-z6-mental": "Copacul se mișcă",
+      "s9-2-3-z6-resurse": "Găleata jos pe iarbă",
+      "s9-2-3-z6-social": "Eu vântul, tu pe lângă",
+      "s9-2-3-z7-fizic": "Plimbare liberă",
+      "s9-2-3-z7-mental": "Cartea: cer și nori",
+      "s9-2-3-z7-resurse": "Haina sus pe cârlig",
+      "s9-2-3-z7-social": "Noapte bună",
+      "s10-2-3-z1-fizic": "Culegem trei de pe jos",
+      "s10-2-3-z1-mental": "Trei pe masă",
+      "s10-2-3-z1-resurse": "În cutie",
+      "s10-2-3-z1-social": "Ține unul",
+      "s10-2-3-z2-fizic": "Cărăm cutia cinci pași",
+      "s10-2-3-z2-mental": "Mare — sau mic?",
+      "s10-2-3-z2-resurse": "Mari în cutie",
+      "s10-2-3-z2-social": "Pe care-l punem?",
+      "s10-2-3-z3-fizic": "Șosetele de pe jos",
+      "s10-2-3-z3-mental": "Perechea de șosete",
+      "s10-2-3-z3-resurse": "Șosetele în sertar",
+      "s10-2-3-z3-social": "Uite perechea",
+      "s10-2-3-z4-fizic": "Cuburi de pe covor",
+      "s10-2-3-z4-mental": "Cuburi, pe rând",
+      "s10-2-3-z4-resurse": "Cuburile în cutie",
+      "s10-2-3-z4-social": "Ține un cub",
+      "s10-2-3-z5-fizic": "Două grămezi",
+      "s10-2-3-z5-mental": "Aici — sau aici?",
+      "s10-2-3-z5-resurse": "Totul la loc",
+      "s10-2-3-z5-social": "Acum tu sortezi",
+      "s10-2-3-z6-fizic": "Trei pietre afară",
+      "s10-2-3-z6-mental": "Piatră — sau frunză?",
+      "s10-2-3-z6-resurse": "Rămân afară",
+      "s10-2-3-z6-social": "Uite ce-am cules",
+      "s10-2-3-z7-fizic": "Plimbare liberă",
+      "s10-2-3-z7-mental": "Cartea cu multe",
+      "s10-2-3-z7-resurse": "Jucăriile în cutie",
+      "s10-2-3-z7-social": "Noapte bună",
+    };
+    expect(Object.keys(expected)).toHaveLength(84);
+    const byId = Object.fromEntries(
+      [8, 9, 10].flatMap((week) =>
+        getSeedActivities(week).map((row) => [row.id, row.titlu]),
+      ),
     );
+    for (const [id, titlu] of Object.entries(expected)) {
+      expect(byId[id]).toBe(titlu);
+    }
+    expect(
+      getSeedActivities(11).find((row) => row.id === "s11-2-3-z1-fizic")?.titlu,
+    ).toBe("Pași spre fereastră luminoasă");
   });
 
   test("S14 V–D and S15 titles are back to pre-pilot wording", () => {

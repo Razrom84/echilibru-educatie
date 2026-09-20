@@ -186,12 +186,117 @@ function PresuletSvg({ size }: { size: number }) {
   );
 }
 
+function FrunzulitaSvg({ size }: { size: number }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 64 64"
+      width={size}
+      height={size}
+      aria-hidden
+    >
+      <title>Frunzuliță</title>
+      <path
+        d="M32 8 C46 14 54 28 48 42 C42 54 22 54 16 42 C10 28 18 14 32 8 Z"
+        fill="#D98A4A"
+        stroke="#B86A32"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      <path d="M32 14 L32 50" fill="none" stroke="#8FBF8A" strokeWidth="1.6" strokeLinecap="round" />
+      <path
+        d="M32 24 Q22 28 18 34 M32 32 Q42 36 46 42"
+        fill="none"
+        stroke="#C4A15E"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+      />
+      <circle cx="26" cy="30" r="1.9" fill="#3D2E1A" />
+      <circle cx="36" cy="30" r="1.9" fill="#3D2E1A" />
+      <circle cx="26.5" cy="29.5" r="0.55" fill="#FFF8EC" />
+      <circle cx="36.5" cy="29.5" r="0.55" fill="#FFF8EC" />
+      <path
+        d="M27 38 Q32 42 37 38"
+        fill="none"
+        stroke="#6B4E2E"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function SuflareSvg({ size }: { size: number }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 64 64"
+      width={size}
+      height={size}
+      aria-hidden
+    >
+      <title>Suflare</title>
+      <ellipse cx="28" cy="34" rx="16" ry="14" fill="#B7D4EA" stroke="#7AA3C7" strokeWidth="1.5" />
+      <ellipse cx="40" cy="30" rx="12" ry="11" fill="#CDE4F4" stroke="#7AA3C7" strokeWidth="1.2" />
+      <path
+        d="M50 22 Q58 20 60 14 M52 28 Q62 26 62 20 M50 34 Q60 34 62 28"
+        fill="none"
+        stroke="#7AA3C7"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+      <circle cx="26" cy="32" r="1.9" fill="#3D2E1A" />
+      <circle cx="36" cy="32" r="1.9" fill="#3D2E1A" />
+      <circle cx="26.5" cy="31.5" r="0.55" fill="#FFF8EC" />
+      <circle cx="36.5" cy="31.5" r="0.55" fill="#FFF8EC" />
+      <path
+        d="M27 40 Q32 43.5 37 40"
+        fill="none"
+        stroke="#6B4E2E"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function CutiutaSvg({ size }: { size: number }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 64 64"
+      width={size}
+      height={size}
+      aria-hidden
+    >
+      <title>Cutiuță</title>
+      <rect x="12" y="24" width="40" height="28" rx="4" fill="#E8C48A" stroke="#C4A15E" strokeWidth="1.5" />
+      <rect x="10" y="16" width="44" height="12" rx="3" fill="#D9B56F" stroke="#C4A15E" strokeWidth="1.5" />
+      <rect x="28" y="18" width="8" height="6" rx="1.5" fill="#7AA3C7" stroke="#5E86A8" strokeWidth="1" />
+      <circle cx="26" cy="38" r="1.9" fill="#3D2E1A" />
+      <circle cx="38" cy="38" r="1.9" fill="#3D2E1A" />
+      <circle cx="26.5" cy="37.5" r="0.55" fill="#FFF8EC" />
+      <circle cx="38.5" cy="37.5" r="0.55" fill="#FFF8EC" />
+      <path
+        d="M27 46 Q32 49.5 37 46"
+        fill="none"
+        stroke="#6B4E2E"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 const CHARACTER_SVG: Record<PlayfulCharacterId, (size: number) => ReactNode> = {
   suntel: (size) => <SuntelSvg size={size} />,
   manuta: (size) => <ManutaSvg size={size} />,
   carioca: (size) => <CariocaSvg size={size} />,
   sageata: (size) => <SageataSvg size={size} />,
   presulet: (size) => <PresuletSvg size={size} />,
+  frunzulita: (size) => <FrunzulitaSvg size={size} />,
+  suflare: (size) => <SuflareSvg size={size} />,
+  cutiuta: (size) => <CutiutaSvg size={size} />,
 };
 
 export function PlayfulCharacterMark({

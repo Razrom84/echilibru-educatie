@@ -1761,7 +1761,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "mental",
-      "titlu": "Uite frunza",
+      "titlu": "Uite: frunza",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -1782,7 +1782,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "resurse",
-      "titlu": "Punem frunza jos la loc",
+      "titlu": "Frunza jos, la loc",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -1824,7 +1824,7 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "fizic",
-      "titlu": "Culegem 3 frunze",
+      "titlu": "Culegem trei frunze",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
@@ -1845,7 +1845,7 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "mental",
-      "titlu": "Frunză mare, frunză mică",
+      "titlu": "Frunză mare — sau mică?",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -1887,7 +1887,7 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "social",
-      "titlu": "Dăm o frunză din mână în mână",
+      "titlu": "Ține frunza",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -1908,7 +1908,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "fizic",
-      "titlu": "Săpăm puțin în pământ",
+      "titlu": "Săpăm puțin",
       "durata_min": 6,
       "mod_default": "A",
       "materiale": [
@@ -1929,7 +1929,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "mental",
-      "titlu": "Pământ uscat sau ud",
+      "titlu": "Pământ uscat — sau ud?",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -1990,7 +1990,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "fizic",
-      "titlu": "Noroi controlat pe degete",
+      "titlu": "Noroi pe degete",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
@@ -2011,7 +2011,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "mental",
-      "titlu": "Frunză sau pământ?",
+      "titlu": "Frunză — sau pământ?",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -2032,7 +2032,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "resurse",
-      "titlu": "Ștergem mâinile pe prosop",
+      "titlu": "Mâinile pe prosop",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -2053,7 +2053,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "social",
-      "titlu": "Arătăm mâinile curate",
+      "titlu": "Mâini curate",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -2072,7 +2072,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "fizic",
-      "titlu": "Aruncăm frunze în sus (scurt)",
+      "titlu": "Frunze sus, pe scurt",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
@@ -2093,7 +2093,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "mental",
-      "titlu": "Frunză galbenă sau verde",
+      "titlu": "Frunză galbenă — sau verde?",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -2114,7 +2114,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "resurse",
-      "titlu": "Maturăm 3 frunze cu mătura mică",
+      "titlu": "Trei frunze la loc",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
@@ -2135,7 +2135,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "social",
-      "titlu": "Rândul la frunză",
+      "titlu": "Pe care frunză?",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -2156,7 +2156,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "fizic",
-      "titlu": "Plimbare pe poteca cu frunze",
+      "titlu": "Pe poteca cu frunze",
       "durata_min": 6,
       "mod_default": "A",
       "materiale": [
@@ -2177,7 +2177,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "mental",
-      "titlu": "Copacul are frunze sus",
+      "titlu": "Frunze sus pe copac",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -2198,7 +2198,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "resurse",
-      "titlu": "Găleata și lopățica la loc",
+      "titlu": "Găleata la loc",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -2219,7 +2219,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "social",
-      "titlu": "Joacă paralel în curtea de toamnă",
+      "titlu": "Eu frunza, tu pe lângă",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [],
@@ -2238,7 +2238,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "fizic",
-      "titlu": "Plimbare liberă de toamnă",
+      "titlu": "Plimbare liberă",
       "durata_min": 6,
       "mod_default": "A",
       "materiale": [
@@ -2259,7 +2259,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "mental",
-      "titlu": "Carte cu frunze / natură",
+      "titlu": "Cartea cu frunze",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
@@ -2280,7 +2280,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "resurse",
-      "titlu": "Cizmele / haina la loc",
+      "titlu": "Haina la loc",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
