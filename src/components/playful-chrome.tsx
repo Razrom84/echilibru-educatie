@@ -288,6 +288,126 @@ function CutiutaSvg({ size }: { size: number }) {
   );
 }
 
+function LuminitaSvg({ size }: { size: number }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 64 64"
+      width={size}
+      height={size}
+      aria-hidden
+    >
+      <title>Luminiță</title>
+      <circle cx="30" cy="30" r="16" fill="#E8D48A" stroke="#C4A15E" strokeWidth="1.5" />
+      <path
+        d="M42 22 C50 28 50 40 42 46 C46 38 46 30 42 22 Z"
+        fill="#6B5A3A"
+        stroke="#4A3C28"
+        strokeWidth="1.2"
+      />
+      <path
+        d="M30 10 L30 4 M18 18 L13 13 M42 18 L47 13 M14 30 L8 30 M46 30 L58 30 M18 42 L13 47 M42 42 L47 47 M30 46 L30 56"
+        fill="none"
+        stroke="#E8D48A"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+      />
+      <circle cx="24" cy="28" r="1.9" fill="#3D2E1A" />
+      <circle cx="34" cy="28" r="1.9" fill="#3D2E1A" />
+      <circle cx="24.5" cy="27.5" r="0.55" fill="#FFF8EC" />
+      <circle cx="34.5" cy="27.5" r="0.55" fill="#FFF8EC" />
+      <path
+        d="M25 36 Q30 40 35 36"
+        fill="none"
+        stroke="#6B4E2E"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function CanutaSvg({ size }: { size: number }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 64 64"
+      width={size}
+      height={size}
+      aria-hidden
+    >
+      <title>Cănuță</title>
+      <path
+        d="M18 22 L20 50 C20 54 24 56 32 56 C40 56 44 54 44 50 L46 22 Z"
+        fill="#F2A07A"
+        stroke="#D47A58"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      <ellipse cx="32" cy="22" rx="14" ry="5" fill="#E8D48A" stroke="#C4A15E" strokeWidth="1.4" />
+      <path
+        d="M46 28 C54 28 56 36 48 40"
+        fill="none"
+        stroke="#D47A58"
+        strokeWidth="3.2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M26 12 Q26 6 30 8 M32 12 Q32 5 36 8"
+        fill="none"
+        stroke="#7AA3C7"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <circle cx="26" cy="36" r="1.9" fill="#3D2E1A" />
+      <circle cx="36" cy="36" r="1.9" fill="#3D2E1A" />
+      <circle cx="26.5" cy="35.5" r="0.55" fill="#FFF8EC" />
+      <circle cx="36.5" cy="35.5" r="0.55" fill="#FFF8EC" />
+      <path
+        d="M27 44 Q32 47.5 37 44"
+        fill="none"
+        stroke="#6B4E2E"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function HainutaSvg({ size }: { size: number }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 64 64"
+      width={size}
+      height={size}
+      aria-hidden
+    >
+      <title>Hăinuță</title>
+      <path
+        d="M20 18 L12 28 L16 32 L20 26 L20 52 C20 54 22 56 32 56 C42 56 44 54 44 52 L44 26 L48 32 L52 28 L44 18 C40 14 24 14 20 18 Z"
+        fill="#7AA3C7"
+        stroke="#5E86A8"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      <path d="M32 18 L32 54" fill="none" stroke="#5E86A8" strokeWidth="1.2" strokeLinecap="round" />
+      <circle cx="32" cy="14" r="3" fill="#D9B56F" stroke="#C4A15E" strokeWidth="1.2" />
+      <circle cx="26" cy="34" r="1.9" fill="#3D2E1A" />
+      <circle cx="38" cy="34" r="1.9" fill="#3D2E1A" />
+      <circle cx="26.5" cy="33.5" r="0.55" fill="#FFF8EC" />
+      <circle cx="38.5" cy="33.5" r="0.55" fill="#FFF8EC" />
+      <path
+        d="M27 42 Q32 45.5 37 42"
+        fill="none"
+        stroke="#6B4E2E"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 const CHARACTER_SVG: Record<PlayfulCharacterId, (size: number) => ReactNode> = {
   suntel: (size) => <SuntelSvg size={size} />,
   manuta: (size) => <ManutaSvg size={size} />,
@@ -297,6 +417,9 @@ const CHARACTER_SVG: Record<PlayfulCharacterId, (size: number) => ReactNode> = {
   frunzulita: (size) => <FrunzulitaSvg size={size} />,
   suflare: (size) => <SuflareSvg size={size} />,
   cutiuta: (size) => <CutiutaSvg size={size} />,
+  luminita: (size) => <LuminitaSvg size={size} />,
+  canuta: (size) => <CanutaSvg size={size} />,
+  hainuta: (size) => <HainutaSvg size={size} />,
 };
 
 export function PlayfulCharacterMark({
