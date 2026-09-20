@@ -28,13 +28,16 @@ describe("Demo / preview 2–3 seed wiring", () => {
 
     const titles = s32.map((row) => row.titlu).join(" ");
     expect(titles).not.toMatch(EN_CUE);
-    expect(titles).toMatch(/Minge/);
-    expect(titles).toMatch(/Rândul/);
+    expect(titles).toMatch(/Balon/);
+    expect(titles).not.toMatch(/[Mm]inge/);
     expect(s32.find((row) => row.id === "s32-2-3-z1-fizic")?.titlu).toBe(
-      "Mingea afară — aruncat scurt",
+      "Ținem balonul de sfoară",
     );
     expect(s32.find((row) => row.id === "s32-2-3-z1-mental")?.titlu).toBe(
-      "Rândul tău — trei schimburi",
+      "Balonul e ușor",
+    );
+    expect(s32.every((row) => row.tema_saptamana === "Balonul afară")).toBe(
+      true,
     );
   });
 

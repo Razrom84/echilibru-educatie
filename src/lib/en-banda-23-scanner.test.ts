@@ -41,17 +41,24 @@ describe("EN strip banda 2–3 (Lock A)", () => {
     expect(fails, JSON.stringify(fails, null, 2)).toEqual([]);
   });
 
-  test("S32 P0: zero Ball / My turn / Turn; minge / rând kept", () => {
+  test("S32 P0: zero Ball / My turn / Turn; balon lock, zero minge", () => {
     const s32 = loadBanda23SeedActivities().filter((row) => row.saptamana === 32);
     expect(s32).toHaveLength(28);
     const blob = s32
-      .flatMap((row) => [row.titlu, ...row.materiale, ...row.pasi, row.gata_cand])
+      .flatMap((row) => [
+        row.titlu,
+        ...row.materiale,
+        ...row.pasi,
+        row.gata_cand,
+        row.tema_saptamana,
+      ])
       .join("\n");
     expect(scanEnTokens(blob, ["ball", "my turn", "turn"])).toEqual([]);
-    expect(blob.toLowerCase()).toMatch(/minge/);
-    expect(blob.toLowerCase()).toMatch(/rând/);
+    expect(blob).not.toMatch(/minge/i);
+    expect(blob.toLowerCase()).toMatch(/balon/);
     const z1fizic = s32.find((row) => row.id === "s32-2-3-z1-fizic");
-    expect(z1fizic?.pasi.join(" ")).toMatch(/Minge/);
+    expect(z1fizic?.titlu).toBe("Ținem balonul de sfoară");
+    expect(z1fizic?.pasi.join(" ")).toMatch(/Balon/);
     expect(z1fizic?.pasi.join(" ")).not.toMatch(/\bBall\b/);
   });
 
