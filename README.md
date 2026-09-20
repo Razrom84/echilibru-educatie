@@ -124,11 +124,11 @@ Pilot GO (MannyQ + Răzvan), **doar** banda 1–2: **S1–S52 L–D** (anul înt
 8. S# **Săptămâna 8**: Frunzuliță, `Frunze și pământ.`, Luni fizic `Pași pe frunze`. S# **Săptămâna 9**: Suflare, `Vânt și aer.`. S# **Săptămâna 10**: Cutiuță, `Adunăm și sortăm.`.
 9. S# **Săptămâna 11**: Luminiță, `Lumină și umbră.`, Luni fizic `Pași până la lumină`. S# **Săptămâna 12**: Cănuță, `Cald și rece.`. S# **Săptămâna 13**: Hăinuță, `Haine pe vreme.`.
 10. S# **Săptămâna 14**: Potecuță, `Pași pe drum.`, Luni fizic `Pași pe hol`. S# **Săptămâna 15**: Linguriță, `Mâncare împreună.`. S# **Săptămâna 16**: Picătură, `Apă și sete.`. S# **Săptămâna 17**: Păsărică, `Auzim animale.`. S# **Săptămâna 18**: Mingiuță, `Joacă de-a rândul.`. S# **Săptămâna 19**: Cărticică, `Cartea de seară.`. S# **Săptămâna 20**: Coșuleț, `Ordine în cameră.`.
-10b. S# **Săptămâna 21**: Ferestruică, `Iarna pe pervaz.`, Luni fizic `Mâna pe geam`. S# **Săptămâna 32**: Balonaș. S# **Săptămâna 52**: Blânduț, `Anul, blând.`
+10b. S# **Săptămâna 21**: Ferestruică, `Iarna pe pervaz.`, Luni fizic `Mâna pe geam`. S# **Săptămâna 32**: Balonaș, `Ținem balonul de sfoară`. S# **Săptămâna 52**: Blânduț, `Anul, blând.`
 11. Setări → pornește **Sunet scurt la gata** → pe o zi de pilot (dacă e ziua curentă, nu viitoare), bifează al 4-lea pilon → se aude chime-ul. Reîncarcă pagina: nu se aude nimic până la o bifă nouă.
 12. Navighează la S21–S52: personaj + surpriză L–D.
 13. Azi / Săptămâna / Detaliu / Setări: **fără** buton `Ascultă` și **fără** toggle `Sunete S3 (vineri–duminică)`.
-14. S# **Săptămâna 4** → Vineri fizic: titlul e `Alunecăm cu mâna ușor pe pernă.` (mâna pe pernă, nu târâit).
+14. S# **Săptămâna 4** → Vineri fizic: titlul e `Mâna alunecă pe pernă` (mâna pe pernă, nu târâit).
 
 Poți folosi și săgețile S# de pe Azi / Săptămâna (nu mută săptămâna oficială). Dacă schimbi săptămâna oficială din Setări la o S# al cărei calendar e în viitor, Azi blochează ziua („Se deschide Vineri”) — comportament V1.5, nu al pilotului.
 

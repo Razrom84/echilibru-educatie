@@ -51,7 +51,7 @@
 - Social: `Pe care culoare?`
 
 **Sâmbătă**  
-- Fizic: `Culori afară, pe scurt`  
+- Fizic: `Culori afară`  
 - Mental: `Cer albastru — sau nor?`  
 - Resurse: `O frunză colorată`  
 - Social: `Tu atingi, eu numesc`
@@ -81,7 +81,7 @@
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Brațele: sus, jos`  
+- Fizic: `Brațele sus, brațele jos`  
 - Mental: `Sus pe raft, jos pe podea`  
 - Resurse: `Jucăria jos, la loc`  
 - Social: `Ridicăm brațele împreună`
@@ -111,10 +111,10 @@
 - Social: `Sus la fereastră`
 
 **Sâmbătă**  
-- Fizic: `Bordură: sus și jos`  
+- Fizic: `Pe bordură, sus și jos`  
 - Mental: `Frunză sus, frunză jos`  
 - Resurse: `Găleata jos pe iarbă`  
-- Social: `Eu sus-jos, tu pe lângă`
+- Social: `Sus și jos, împreună`
 
 **Duminică**  
 - Fizic: `Plimbare liberă`  
@@ -160,7 +160,7 @@
 
 **Joi**  
 - Fizic: `Afară și înapoi`  
-- Mental: `Jucăria: afară sau înăuntru?`  
+- Mental: `Jucăria e afară — sau în casă?`  
 - Resurse: `Jucăria înăuntru, la loc`  
 - Social: `Mână pe prag`
 

@@ -27,7 +27,7 @@
 - Social: `Arătăm lumina`
 
 **Marți**  
-- Fizic: `Mâna face umbră`  
+- Fizic: `Umbra pe perete`  
 - Mental: `Uite: umbra`  
 - Resurse: `Lampa la loc`  
 - Social: `Umbra împreună`
@@ -47,18 +47,18 @@
 **Vineri**  
 - Fizic: `Dans la lumină`  
 - Mental: `În lumină — sau în umbră?`  
-- Resurse: `Perdeaua la loc`  
+- Resurse: `Tragem perdeaua`  
 - Social: `Uite umbra`
 
 **Sâmbătă**  
-- Fizic: `Umbră afară, pe scurt`  
+- Fizic: `Umbră afară`  
 - Mental: `Soare pe cer`  
-- Resurse: `Pălăria la loc`  
-- Social: `Eu umbra, tu pe lângă`
+- Resurse: `Ne oprim, umbra stă`  
+- Social: `Umbra, unul lângă altul`
 
 **Duminică**  
 - Fizic: `Plimbare liberă`  
-- Mental: `Cartea: zi și noapte`  
+- Mental: `Cartea cu ziua și noaptea`  
 - Resurse: `Lumina mică de seară`  
 - Social: `Noapte bună`
 
@@ -96,7 +96,7 @@
 - Fizic: `Mâini calde, mâini reci`  
 - Mental: `Cald — sau rece?`  
 - Resurse: `Prosoapele la loc`  
-- Social: `Ținem mâinile: cald`
+- Social: `Ținem mâinile calde`
 
 **Joi**  
 - Fizic: `Haina caldă pe umeri`  
@@ -111,14 +111,14 @@
 - Social: `Încălzim mâinile`
 
 **Sâmbătă**  
-- Fizic: `Aer rece afară, pe scurt`  
+- Fizic: `Aer rece afară`  
 - Mental: `Înăuntru cald, afară rece`  
 - Resurse: `Papucii calzi la ușă`  
 - Social: `Intrăm din frig`
 
 **Duminică**  
 - Fizic: `Plimbare liberă`  
-- Mental: `Cartea: cald și rece`  
+- Mental: `Cartea cu cald și rece`  
 - Resurse: `Hainele groase pe cârlig`  
 - Social: `Noapte bună`
 
@@ -171,7 +171,7 @@
 - Social: `Ținem mâna cu mănușa`
 
 **Sâmbătă**  
-- Fizic: `Ieșim îmbrăcați, pe scurt`  
+- Fizic: `Ieșim îmbrăcați`  
 - Mental: `Afară cu haină, înăuntru fără`  
 - Resurse: `Haina după afară`  
 - Social: `Intrăm cu haina`

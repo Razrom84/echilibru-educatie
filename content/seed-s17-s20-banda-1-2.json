@@ -22,7 +22,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "fizic",
-      "titlu": "Urechi afară, pe scurt",
+      "titlu": "Ascultăm afară",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [],
@@ -894,7 +894,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "social",
-      "titlu": "Schimbăm pe scurt",
+      "titlu": "Schimbăm jucăria",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -1000,7 +1000,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "fizic",
-      "titlu": "Mingea afară, pe scurt",
+      "titlu": "Mingea în curte",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
@@ -1461,7 +1461,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "resurse",
-      "titlu": "Locul cărții",
+      "titlu": "Cartea la locul ei",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -2232,7 +2232,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "social",
-      "titlu": "Ordine scurtă",
+      "titlu": "Am strâns camera",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
