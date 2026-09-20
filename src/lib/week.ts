@@ -41,7 +41,7 @@ export const WEEK_THEMES: Record<ProgramWeek, string> = {
   29: "Muguri și iarbă nouă",
   30: "Păsări dimineața",
   31: "Semințe și udat",
-  32: "Mingea afară",
+  32: "Balonul afară",
   33: "Nisip și găleată",
   34: "Umbre pe pământ",
   35: "Apă afară (joc scurt)",

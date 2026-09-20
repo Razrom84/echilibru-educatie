@@ -244,7 +244,7 @@ export const PLAYFUL_CHARACTERS: Record<PlayfulCharacterId, PlayfulCharacter> = 
   },
   lopetica: {
     id: "lopetica",
-    name: "Lopețică",
+    name: "Lopățică",
     src: "/characters/lopetica.svg",
   },
   umbrita: {
@@ -873,18 +873,18 @@ const WEEK_31: WeekConfig = {
 };
 const WEEK_32: WeekConfig = {
   week: 32,
-  theme: "Mingea afară",
+  theme: "Balonul afară",
   character: PLAYFUL_CHARACTERS.balonas,
-  ritualOpen: "Mingea afară.",
-  ritualClose: "Mingea, gata.",
+  ritualOpen: "Balonul afară.",
+  ritualClose: "Balonul, gata.",
   surprises: {
-    1: "Mingea rulează 1 sec afară",
-    2: "El alege: minge mare sau mică",
-    3: "O aruncare scurtă",
-    4: "Mingea „dispare” 2 sec în iarbă",
-    5: "Dăm mingea pe rând",
-    6: "Un țopăit",
-    7: "Mingea în cutie",
+    1: "Balonul se leagănă 1 sec pe sfoară",
+    2: "El alege: sfoară lungă sau scurtă",
+    3: "O bătaie ușoară pe balon",
+    4: "Balonul „dispare” 2 sec după un arbore / mobilă",
+    5: "Ținem sfoara pe rând",
+    6: "Un pas cu balonul (sfoara în mână)",
+    7: "Balonul pe cui / la loc",
   },
 };
 const WEEK_33: WeekConfig = {

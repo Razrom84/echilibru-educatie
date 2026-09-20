@@ -394,8 +394,8 @@ describe("PLAYFUL PILOT scope", () => {
     {week:29,id:"muguras",name:"Muguraș",open:"Muguri și iarbă.",close:"Mugurii, gata.",s1:"Un mugure pe creangă",theme:"Muguri și iarbă nouă"},
     {week:30,id:"cioculet",name:"Cioculeț",open:"Păsări dimineața.",close:"Păsări, gata.",s1:"Urechea la geam dimineața",theme:"Păsări dimineața"},
     {week:31,id:"samantica",name:"Sămânțică",open:"Semințe și udat.",close:"Udat, gata.",s1:"O sămânță în palmă",theme:"Semințe și udat"},
-    {week:32,id:"balonas",name:"Balonaș",open:"Mingea afară.",close:"Mingea, gata.",s1:"Mingea rulează 1 sec afară",theme:"Mingea afară"},
-    {week:33,id:"lopetica",name:"Lopețică",open:"Nisip și găleată.",close:"Nisipul, gata.",s1:"Mâna în nisip 2 sec",theme:"Nisip și găleată"},
+    {week:32,id:"balonas",name:"Balonaș",open:"Balonul afară.",close:"Balonul, gata.",s1:"Balonul se leagănă 1 sec pe sfoară",theme:"Balonul afară"},
+    {week:33,id:"lopetica",name:"Lopățică",open:"Nisip și găleată.",close:"Nisipul, gata.",s1:"Mâna în nisip 2 sec",theme:"Nisip și găleată"},
     {week:34,id:"umbrita",name:"Umbriță",open:"Umbre pe pământ.",close:"Umbra, gata.",s1:"Mâna face umbră 2 sec",theme:"Umbre pe pământ"},
     {week:35,id:"stropulet",name:"Stropuleț",open:"Apă afară.",close:"Pe apă, gata.",s1:"Un strop pe mână",theme:"Apă afară (joc scurt)"},
     {week:36,id:"gandacel",name:"Gândăcel",open:"Insecte de departe.",close:"Departe, gata.",s1:"Privim de departe 2 sec",theme:"Insecte de departe"},
@@ -536,11 +536,11 @@ describe("PLAYFUL PILOT copy helpers", () => {
     expect(playfulHeaderLabel("Sămânțică", "Semințe și udat")).toBe(
       "Sămânțică · Semințe și udat",
     );
-    expect(playfulHeaderLabel("Balonaș", "Mingea afară")).toBe(
-      "Balonaș · Mingea afară",
+    expect(playfulHeaderLabel("Balonaș", "Balonul afară")).toBe(
+      "Balonaș · Balonul afară",
     );
-    expect(playfulHeaderLabel("Lopețică", "Nisip și găleată")).toBe(
-      "Lopețică · Nisip și găleată",
+    expect(playfulHeaderLabel("Lopățică", "Nisip și găleată")).toBe(
+      "Lopățică · Nisip și găleată",
     );
     expect(playfulHeaderLabel("Umbriță", "Umbre pe pământ")).toBe(
       "Umbriță · Umbre pe pământ",
@@ -850,9 +850,14 @@ describe("PLAYFUL PILOT copy helpers", () => {
     expect(PLAYFUL_CHARACTERS.balonas.name).toBe("Balonaș");
     expect(svgTitle("balonas.svg")).toBe("Balonaș");
     expect(chrome).toContain("<title>Balonaș</title>");
-    expect(PLAYFUL_CHARACTERS.lopetica.name).toBe("Lopețică");
-    expect(svgTitle("lopetica.svg")).toBe("Lopețică");
-    expect(chrome).toContain("<title>Lopețică</title>");
+    expect(PLAYFUL_CHARACTERS.lopetica.name).toBe("Lopățică");
+    expect(PLAYFUL_CHARACTERS.lopetica.name).not.toBe("Lopețică");
+    expect([...PLAYFUL_CHARACTERS.lopetica.name].map((ch) => ch.codePointAt(0))).toEqual([
+      0x004c, 0x006f, 0x0070, 0x0103, 0x021b, 0x0069, 0x0063, 0x0103,
+    ]);
+    expect(svgTitle("lopetica.svg")).toBe("Lopățică");
+    expect(chrome).toContain("<title>Lopățică</title>");
+    expect(chrome).not.toContain("<title>Lopețică</title>");
     expect(PLAYFUL_CHARACTERS.umbrita.name).toBe("Umbriță");
     expect(svgTitle("umbrita.svg")).toBe("Umbriță");
     expect(chrome).toContain("<title>Umbriță</title>");
@@ -1904,7 +1909,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       "s32-2-3-z1-resurse": "Balonul lângă ușă",
       "s32-2-3-z1-social": "Ținem balonul împreună",
       "s32-2-3-z2-fizic": "Bătem ușor în balon",
-      "s32-2-3-z2-mental": "Moale",
+      "s32-2-3-z2-mental": "Balonul e moale",
       "s32-2-3-z2-resurse": "Balonul pe scaun, la loc",
       "s32-2-3-z2-social": "Bătem pe rând",
       "s32-2-3-z3-fizic": "Balonul sus, deasupra capului",
@@ -2521,5 +2526,75 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
     expect(s21).not.toMatch(/Pervazul:/);
     const s33 = getSeedActivities(33).map((row) => row.titlu).join(" ");
     expect(s33).toMatch(/Lopăți/);
+  });
+
+  test("S32 lock is balloon: theme, ritual, surprises, zero minge in body", () => {
+    expect(playfulPilotFor(32, 1)?.theme).toBe("Balonul afară");
+    expect(playfulPilotFor(32, 1)?.ritualOpen).toBe("Balonul afară.");
+    expect(playfulPilotFor(32, 7)?.ritualClose).toBe("Balonul, gata.");
+    expect(
+      [1, 2, 3, 4, 5, 6, 7].map((day) => playfulPilotFor(32, day)?.surprise),
+    ).toEqual([
+      "Balonul se leagănă 1 sec pe sfoară",
+      "El alege: sfoară lungă sau scurtă",
+      "O bătaie ușoară pe balon",
+      "Balonul „dispare” 2 sec după un arbore / mobilă",
+      "Ținem sfoara pe rând",
+      "Un pas cu balonul (sfoara în mână)",
+      "Balonul pe cui / la loc",
+    ]);
+    const rows = getSeedActivities(32);
+    expect(rows).toHaveLength(28);
+    for (const row of rows) {
+      const blob = [
+        row.titlu,
+        row.tema_saptamana,
+        row.gata_cand,
+        ...row.materiale,
+        ...row.pasi,
+      ].join("\n");
+      expect(blob).not.toMatch(/minge/i);
+      expect(row.tema_saptamana).toBe("Balonul afară");
+    }
+    expect(rows.find((row) => row.id === "s32-2-3-z2-mental")?.titlu).toBe(
+      "Balonul e moale",
+    );
+    expect(rows.find((row) => row.id === "s32-2-3-z1-fizic")?.pasi).toEqual([
+      "În curte: țineți sfoara împreună pe scurt.",
+      "„Balon.” 10–20 de secunde.",
+    ]);
+  });
+
+  test("S33 lock: Lopățică chrome name; Z1 fizic / Z2 resurse / Z6 fizic aligned", () => {
+    expect(PLAYFUL_CHARACTERS.lopetica.name).toBe("Lopățică");
+    const z1 = getSeedActivities(33).find((row) => row.id === "s33-2-3-z1-fizic");
+    expect(z1?.titlu).toBe("Lopățica în nisip");
+    expect(z1?.materiale).toEqual([
+      "lopățică",
+      "nisip în cutie sau pe plajă mică",
+    ]);
+    expect(z1?.pasi).toEqual([
+      "Luați lopățica. Scoateți puțin nisip pe scurt.",
+      "„Lopățică. Nisip.” 10–20 de secunde.",
+    ]);
+    expect(z1?.gata_cand).toBe("A atins lopățica / nisipul sau a privit.");
+    const z2 = getSeedActivities(33).find(
+      (row) => row.id === "s33-2-3-z2-resurse",
+    );
+    expect(z2?.titlu).toBe("Lopățica la loc");
+    expect(z2?.materiale).toEqual(["lopățică"]);
+    expect(z2?.pasi).toEqual([
+      "Puneți lopățica pe raft sau lângă găleată.",
+      "„Lopățică. La loc.”",
+    ]);
+    expect(z2?.gata_cand).toBe("A ajutat să pună lopățica la loc.");
+    const z6 = getSeedActivities(33).find((row) => row.id === "s33-2-3-z6-fizic");
+    expect(z6?.titlu).toBe("Lopățica și găleata, apoi gata");
+    expect(z6?.materiale).toEqual(["lopățică", "găleată", "nisip"]);
+    expect(z6?.pasi).toEqual([
+      "Cu lopățica, puneți puțin nisip în găleată.",
+      "Apoi: „Gata.” pe scurt, cu adult.",
+    ]);
+    expect(z6?.gata_cand).toBe("A folosit lopățica / găleata sau a privit.");
   });
 });

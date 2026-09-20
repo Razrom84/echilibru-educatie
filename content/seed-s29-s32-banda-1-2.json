@@ -12,7 +12,7 @@
     "29": "Muguri și iarbă nouă",
     "30": "Păsări dimineața",
     "31": "Semințe și udat",
-    "32": "Mingea afară"
+    "32": "Balonul afară"
   },
   "activitati": [
     {
@@ -1715,14 +1715,14 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "minge moale"
+        "balon cu sfoară"
       ],
       "pasi": [
-        "În curte: țineți balonul cu ambele mâini pe scurt.",
+        "În curte: țineți sfoara împreună pe scurt.",
         "„Balon.” 10–20 de secunde."
       ],
-      "gata_cand": "A ținut balonul sau a atins-o.",
-      "tema_saptamana": "Mingea afară",
+      "gata_cand": "A ținut sfoara sau a atins balonul.",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -1736,14 +1736,14 @@
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
-        "minge"
+        "balon cu sfoară"
       ],
       "pasi": [
         "Arătați balonul: „Balon.”",
-        "„Rotundă.” pe scurt."
+        "„Ușor.” pe scurt."
       ],
-      "gata_cand": "A auzit balon și rotundă.",
-      "tema_saptamana": "Mingea afară",
+      "gata_cand": "A auzit balon și ușor.",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -1757,14 +1757,14 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "minge"
+        "balon cu sfoară"
       ],
       "pasi": [
-        "Așezați balonul lângă ușă înainte să ieșiți.",
+        "Așezați balonul (sfoara strânsă) lângă ușă înainte să ieșiți.",
         "„Balon. Aici.”"
       ],
       "gata_cand": "A ajutat să așeze balonul.",
-      "tema_saptamana": "Mingea afară",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -1778,14 +1778,14 @@
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
-        "minge"
+        "balon cu sfoară"
       ],
       "pasi": [
-        "Stați afară lângă adult cu balonul.",
+        "Stați afară lângă adult, amândoi pe sfoară.",
         "„Împreună. Balon.” fără forțare."
       ],
       "gata_cand": "A fost prezent cu balonul afară.",
-      "tema_saptamana": "Mingea afară",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -1799,14 +1799,14 @@
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "minge moale"
+        "balon cu sfoară"
       ],
       "pasi": [
-        "Dați balonul pe scurt o dată, pe iarbă sau pământ.",
-        "„Balon. Dat.” fără grabă."
+        "Bateți ușor o dată în balon, cu adult.",
+        "„Balon. Bătut.” fără grabă."
       ],
-      "gata_cand": "A dat balonul sau a atins-o.",
-      "tema_saptamana": "Mingea afară",
+      "gata_cand": "A bătut în balon sau a atins-o.",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -1816,18 +1816,18 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "mental",
-      "titlu": "Moale",
+      "titlu": "Balonul e moale",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
-        "minge"
+        "balon cu sfoară"
       ],
       "pasi": [
-        "Dați: „Dat.” pe scurt.",
-        "Primiți: „Primit.”"
+        "Atingeți balonul: „Moale.” pe scurt.",
+        "„Balon.”"
       ],
-      "gata_cand": "A auzit dat și primit.",
-      "tema_saptamana": "Mingea afară",
+      "gata_cand": "A auzit moale (și balon).",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -1841,14 +1841,14 @@
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
-        "minge"
+        "balon cu sfoară"
       ],
       "pasi": [
-        "Așezați balonul pe iarbă când nu jucați.",
+        "Așezați balonul pe scaun când nu jucați (sfoara strânsă).",
         "„Balon. Aici.”"
       ],
       "gata_cand": "A așezat balonul sau a privit.",
-      "tema_saptamana": "Mingea afară",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -1862,14 +1862,14 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "minge"
+        "balon cu sfoară"
       ],
       "pasi": [
-        "Voi dați. „Acum tu.”",
+        "Voi bateți ușor. „Acum tu.”",
         "Așteptați fără forțare."
       ],
-      "gata_cand": "A dat sau a privit rândul.",
-      "tema_saptamana": "Mingea afară",
+      "gata_cand": "A bătut sau a privit rândul.",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -1883,14 +1883,14 @@
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "minge moale"
+        "balon cu sfoară"
       ],
       "pasi": [
-        "Aruncați balonul jos pe iarbă o dată, cu adult.",
-        "„Aruncat. Jos.” pe scurt."
+        "Ridicați balonul deasupra capului pe scurt, cu adult.",
+        "„Sus. Balon.”"
       ],
-      "gata_cand": "A aruncat sau a privit balonul.",
-      "tema_saptamana": "Mingea afară",
+      "gata_cand": "A privit balonul sus sau a ținut sfoara.",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -1904,14 +1904,14 @@
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
-        "minge"
+        "balon cu sfoară"
       ],
       "pasi": [
-        "Ridicați balonul: „Sus.”",
-        "Lăsați-o jos: „Jos.”"
+        "Ridicați: „Sus.”",
+        "Coborâți aproape de sol: „Jos.”"
       ],
       "gata_cand": "A auzit sus și jos.",
-      "tema_saptamana": "Mingea afară",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -1925,15 +1925,14 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "minge",
-        "coș sau cutie"
+        "balon cu sfoară"
       ],
       "pasi": [
-        "Puneți balonul în coș pe scurt.",
-        "„Balon. În coș.”"
+        "Înfășurați sfoara pe scurt în mână.",
+        "„Sfoară. Strâns.”"
       ],
-      "gata_cand": "A pus balonul în coș.",
-      "tema_saptamana": "Mingea afară",
+      "gata_cand": "A atins sfoara strânsă sau a privit.",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -1947,14 +1946,14 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "minge"
+        "balon cu sfoară"
       ],
       "pasi": [
-        "Voi aruncați jos. „Acum tu.”",
-        "Așteptați fără forțare."
+        "Ridicați împreună pe scurt.",
+        "„Împreună. Sus.” fără forțare."
       ],
-      "gata_cand": "A aruncat sau a privit.",
-      "tema_saptamana": "Mingea afară",
+      "gata_cand": "A ținut sfoara la ridicare sau a privit.",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -1968,14 +1967,14 @@
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "minge"
+        "balon cu sfoară"
       ],
       "pasi": [
-        "Lăsați balonul să se rostogolească pe scurt.",
-        "Mergeți după ea câțiva pași: „Balon. Uite.”"
+        "Mergeți câțiva pași ținând sfoara.",
+        "„Balon. Pași.”"
       ],
-      "gata_cand": "A mers după balon sau a privit.",
-      "tema_saptamana": "Mingea afară",
+      "gata_cand": "A mers cu sfoara sau a privit.",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -1989,14 +1988,14 @@
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
-        "minge"
+        "balon cu sfoară"
       ],
       "pasi": [
-        "Întrebați: „Unde e balonul?”",
-        "Arătați-o: „Aici.”"
+        "Lăsați balonul să atingă iarba pe scurt. „Balon. Iarbă.”",
+        "Întrebați: „Unde e?”"
       ],
       "gata_cand": "A privit sau a arătat balonul.",
-      "tema_saptamana": "Mingea afară",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -2010,14 +2009,14 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "minge"
+        "balon cu sfoară"
       ],
       "pasi": [
         "Aduceți balonul lângă ușă după joacă.",
         "„Balon. La ușă.”"
       ],
       "gata_cand": "A adus balonul sau a ajutat.",
-      "tema_saptamana": "Mingea afară",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -2031,14 +2030,14 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "minge"
+        "balon cu sfoară"
       ],
       "pasi": [
-        "Căutați balonul pe scurt lângă adult.",
+        "Căutați / arătați balonul pe scurt lângă adult.",
         "„Împreună. Unde e?” fără grabă."
       ],
-      "gata_cand": "A căutat sau a găsit balonul.",
-      "tema_saptamana": "Mingea afară",
+      "gata_cand": "A căutat sau a arătat balonul.",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -2052,14 +2051,14 @@
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "minge moale"
+        "balon cu sfoară"
       ],
       "pasi": [
-        "Atingeți balonul ușor cu piciorul o dată.",
-        "„Picior. Balon.” fără forțare."
+        "Mergeți ținând sfoara (nu loviți cu piciorul).",
+        "„Sfoară. Pași.”"
       ],
-      "gata_cand": "A atins balonul cu piciorul sau a privit.",
-      "tema_saptamana": "Mingea afară",
+      "gata_cand": "A ținut sfoara la mers sau a privit.",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -2073,14 +2072,14 @@
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
-        "minge"
+        "balon cu sfoară"
       ],
       "pasi": [
-        "Arătați mâna: „Mână.”",
-        "Arătați piciorul: „Picior.” pe scurt."
+        "Arătați sfoara desfășurată: „Lungă.”",
+        "Apoi strânsă: „Scurtă.”"
       ],
-      "gata_cand": "A auzit mână și picior.",
-      "tema_saptamana": "Mingea afară",
+      "gata_cand": "A auzit lungă și scurtă.",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -2094,15 +2093,15 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "minge",
-        "cutie"
+        "balon cu sfoară",
+        "cui sau cutie"
       ],
       "pasi": [
-        "Puneți balonul în cutie după joacă afară.",
-        "„Balon. La loc.”"
+        "Înfășurați sfoara; puneți balonul pe cui / în cutie.",
+        "„La loc.”"
       ],
-      "gata_cand": "A pus balonul în cutie.",
-      "tema_saptamana": "Mingea afară",
+      "gata_cand": "A ajutat să pună balonul la loc.",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -2116,14 +2115,14 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "minge"
+        "balon cu sfoară"
       ],
       "pasi": [
-        "Voi atingeți cu piciorul. „Acum tu.”",
-        "Așteptați fără forțare."
+        "Mergeți amândoi pe sfoară pe scurt.",
+        "„Împreună. Pași.” fără forțare."
       ],
-      "gata_cand": "A încercat sau a privit.",
-      "tema_saptamana": "Mingea afară",
+      "gata_cand": "A mers lângă adult cu sfoara sau a privit.",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -2137,14 +2136,14 @@
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "minge"
+        "balon cu sfoară"
       ],
       "pasi": [
-        "Luați balonul din curte. Intrați pe scurt.",
-        "„Balon. Casă.”"
+        "Legănați ușor balonul de sfoară pe scurt.",
+        "„Balon. Legăn.”"
       ],
-      "gata_cand": "A adus balonul sau a ținut-o la ușă.",
-      "tema_saptamana": "Mingea afară",
+      "gata_cand": "A privit legănatul sau a ținut sfoara.",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -2157,13 +2156,15 @@
       "titlu": "Se mișcă în aer",
       "durata_min": 3,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Afară: „Afară. Balon.”",
-        "În casă: „Casă.” pe scurt."
+      "materiale": [
+        "balon cu sfoară"
       ],
-      "gata_cand": "A auzit afară și casă.",
-      "tema_saptamana": "Mingea afară",
+      "pasi": [
+        "Arătați mișcarea: „Aer.”",
+        "„Balon.” pe scurt."
+      ],
+      "gata_cand": "A auzit aer / balon.",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -2177,15 +2178,15 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "minge",
-        "raft sau cutie"
+        "balon cu sfoară",
+        "cui sau cutie"
       ],
       "pasi": [
-        "Puneți balonul pe raft sau în cutie.",
+        "Intrați; puneți balonul pe cui / în cutie.",
         "„Balon. La loc.”"
       ],
-      "gata_cand": "A pus balonul la loc.",
-      "tema_saptamana": "Mingea afară",
+      "gata_cand": "A pus balonul la loc sau a ajutat.",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -2199,14 +2200,14 @@
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
-        "minge"
+        "balon cu sfoară"
       ],
       "pasi": [
         "Intrați lângă adult cu balonul.",
-        "„Împreună. Casă.” fără grabă."
+        "„Împreună. Uite.” fără grabă."
       ],
       "gata_cand": "A intrat cu balonul sau a privit.",
-      "tema_saptamana": "Mingea afară",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -2220,14 +2221,14 @@
       "durata_min": 7,
       "mod_default": "A",
       "materiale": [
-        "minge dacă vrea"
+        "balon cu sfoară dacă vrea"
       ],
       "pasi": [
         "El dictează direcția în curte pe scurt, cu adult.",
-        "La final: un dat scurt cu balonul dacă vrea."
+        "La final: sfoara în mână dacă vrea."
       ],
       "gata_cand": "A mers liber pe scurt în curte.",
-      "tema_saptamana": "Mingea afară",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -2245,10 +2246,10 @@
       ],
       "pasi": [
         "El întoarce pagina.",
-        "Arătați balon, curte sau joacă dacă e clar: „Balon.”"
+        "Arătați balon / sfoară / afară dacă e clar: „Balon.”"
       ],
       "gata_cand": "A întors pagina sau a privit.",
-      "tema_saptamana": "Mingea afară",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -2262,15 +2263,15 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "minge",
+        "balon cu sfoară",
         "pantofi"
       ],
       "pasi": [
-        "Puneți balonul în cutie, pantofii lângă ușă.",
+        "Balonul pe cui; pantofii lângă ușă.",
         "„La loc. Gata.”"
       ],
       "gata_cand": "A ajutat să pună la loc.",
-      "tema_saptamana": "Mingea afară",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
     {
@@ -2289,7 +2290,7 @@
         "Lumină mică, fără grabă."
       ],
       "gata_cand": "A auzit ritualul de noapte.",
-      "tema_saptamana": "Mingea afară",
+      "tema_saptamana": "Balonul afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     }
   ]

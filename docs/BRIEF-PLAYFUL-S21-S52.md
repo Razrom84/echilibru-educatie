@@ -1,6 +1,6 @@
 # Brief playful S21–S52 · banda 1–2
 **20 Sep 2026 · Cristina · format ca pilot S14–S20 · zero sunete**
-**Personaje lock:** Ferestruică · Ghemotoc · Năsuc · Ușiță · Lampadar · Amintire · Fulgușor · Murdărel · Muguraș · Cioculeț · Sămânțică · Balonaș · Lopețică · Umbriță · Stropuleț · Gândăcel · Răcorică · Tălpiță · Merișor · Măturică · Portiță · Vântuleț · Săculeț · Inimioară · Plimbărel · Degețel · Grijuliul · Norocel · Scumpicel · Cumințel · Gospodărel · Blânduț
+**Personaje lock:** Ferestruică · Ghemotoc · Năsuc · Ușiță · Lampadar · Amintire · Fulgușor · Murdărel · Muguraș · Cioculeț · Sămânțică · Balonaș · Lopățică · Umbriță · Stropuleț · Gândăcel · Răcorică · Tălpiță · Merișor · Măturică · Portiță · Vântuleț · Săculeț · Inimioară · Plimbărel · Degețel · Grijuliul · Norocel · Scumpicel · Cumințel · Gospodărel · Blânduț
 
 Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poate refuza.
 
@@ -664,20 +664,20 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ---
 
-## S32 — temă: Mingea afară
+## S32 — temă: Balonul afară
 **Personaj:** **Balonaș**  
-**Ritual:** Open `Mingea afară.` · Close `Mingea, gata.`
+**Ritual:** Open `Balonul afară.` · Close `Balonul, gata.`
 
 ### Surprize L–D
 | Zi | Surpriză |
 |----|----------|
-| L | Mingea rulează 1 sec afară |
-| Ma | El alege: minge mare sau mică |
-| Mi | O aruncare scurtă |
-| J | Mingea „dispare” 2 sec în iarbă |
-| V | Dăm mingea pe rând |
-| S | Un țopăit |
-| D | Mingea în cutie |
+| L | Balonul se leagănă 1 sec pe sfoară |
+| Ma | El alege: sfoară lungă sau scurtă |
+| Mi | O bătaie ușoară pe balon |
+| J | Balonul „dispare” 2 sec după un arbore / mobilă |
+| V | Ținem sfoara pe rând |
+| S | Un pas cu balonul (sfoara în mână) |
+| D | Balonul pe cui / la loc |
 
 ### Titluri L–D × 4 piloni
 **Luni**  
@@ -688,7 +688,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 **Marți**  
 - Fizic: `Bătem ușor în balon`  
-- Mental: `Moale`  
+- Mental: `Balonul e moale`  
 - Resurse: `Balonul pe scaun, la loc`  
 - Social: `Bătem pe rând`  
 
@@ -719,13 +719,13 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 **Duminică**  
 - Fizic: `Plimbare cu balonul`  
 - Mental: `Cartea cu balonul`  
-- Resurse: `Mingea și pantofii la loc`  
+- Resurse: `Balonul pe cui`  
 - Social: `Noapte bună`  
 
 ---
 
 ## S33 — temă: Nisip și găleată
-**Personaj:** **Lopețică**  
+**Personaj:** **Lopățică**  
 **Ritual:** Open `Nisip și găleată.` · Close `Nisipul, gata.`
 
 ### Surprize L–D
@@ -1928,7 +1928,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 - **Ferestruică** (ă) · **Ghemotoc** · **Năsuc** (ă) · **Ușiță** (ș, ț, ă)
 - **Lampadar** · **Amintire** · **Fulgușor** (ș) · **Murdărel** (ă)
 - **Muguraș** (ș) · **Cioculeț** (ț) · **Sămânțică** (ă, â, ț, ă) · **Balonaș** (ș)
-- **Lopețică** (ț, ă) · **Umbriță** (ț, ă) · **Stropuleț** (ț) · **Gândăcel** (â, ă)
+- **Lopățică** (ă, ț, ă) · **Umbriță** (ț, ă) · **Stropuleț** (ț) · **Gândăcel** (â, ă)
 - **Răcorică** (ă, ă) · **Tălpiță** (ă, ț, ă) · **Merișor** (ș) · **Măturică** (ă, ă)
 - **Portiță** (ț, ă) · **Vântuleț** (â, ț) · **Săculeț** (ă, ț) · **Inimioară** (ă)
 - **Plimbărel** (ă) · **Degețel** (ț) · **Grijuliul** · **Norocel**

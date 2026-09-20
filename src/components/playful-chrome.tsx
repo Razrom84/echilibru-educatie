@@ -743,7 +743,7 @@ function BalonasSvg({ size }: { size: number }) {
 function LopeticaSvg({ size }: { size: number }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
-      <title>Lopețică</title>
+      <title>Lopățică</title>
       <rect x="29" y="6" width="6" height="28" rx="3" fill="#C4A15E"/>
       <path d="M18 34 L46 34 L42 54 L22 54 Z" fill="#8FBF8A" stroke="#6B8F4E" strokeWidth="1.5"/>
       <circle cx="26" cy="42" r="1.9" fill="#3D2E1A"/>
