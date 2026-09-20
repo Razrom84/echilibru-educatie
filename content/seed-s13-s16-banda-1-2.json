@@ -22,7 +22,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "fizic",
-      "titlu": "Haina pe umeri pe scurt",
+      "titlu": "Haina pe umeri",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
@@ -43,7 +43,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "mental",
-      "titlu": "Arătăm haina de afară",
+      "titlu": "Haina de afară",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -86,7 +86,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "social",
-      "titlu": "Arătăm haina mamei / tatei",
+      "titlu": "Uite haina",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -170,7 +170,7 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "social",
-      "titlu": "Ajutăm la șosetă pe rând",
+      "titlu": "Acum tu șoseta",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -212,7 +212,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "mental",
-      "titlu": "Papuc sau pantof?",
+      "titlu": "Papuc — sau pantof?",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -234,7 +234,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "resurse",
-      "titlu": "Papucii la loc lângă ușă",
+      "titlu": "Papucii la loc",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -255,7 +255,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "social",
-      "titlu": "Schimbăm papucii împreună",
+      "titlu": "Schimbăm papucii",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -276,7 +276,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "fizic",
-      "titlu": "Căciula pe cap pe scurt",
+      "titlu": "Căciula pe cap",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -339,7 +339,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "social",
-      "titlu": "Arătăm căciula adultului",
+      "titlu": "Uite căciula",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -381,7 +381,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "mental",
-      "titlu": "Mână cu mănușă, mână fără",
+      "titlu": "Cu mănușă — sau fără?",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -444,7 +444,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "fizic",
-      "titlu": "Ieșim îmbrăcați pe scurt",
+      "titlu": "Ieșim îmbrăcați, pe scurt",
       "durata_min": 6,
       "mod_default": "A",
       "materiale": [
@@ -486,7 +486,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "resurse",
-      "titlu": "Haina pe cârlig după afară",
+      "titlu": "Haina după afară",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -507,7 +507,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "social",
-      "titlu": "Intrăm împreună cu haina",
+      "titlu": "Intrăm cu haina",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -526,7 +526,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "fizic",
-      "titlu": "Plimbare liberă cu haine",
+      "titlu": "Plimbare liberă",
       "durata_min": 6,
       "mod_default": "A",
       "materiale": [],
@@ -545,7 +545,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "mental",
-      "titlu": "Carte: haine pe vreme",
+      "titlu": "Cartea cu haine",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -566,7 +566,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "resurse",
-      "titlu": "Hainele de afară pe cârlig",
+      "titlu": "Hainele pe cârlig",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
