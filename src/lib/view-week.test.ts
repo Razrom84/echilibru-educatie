@@ -13,7 +13,9 @@ import {
   VIEW_WEEK_READ_ONLY,
   applySessionViewWeek,
   clearSessionViewWeek,
+  isWritableCohortBand,
   officialProgramWeekForDigests,
+  previousBand,
   resolveViewWeek,
   showsLiveWeekNav,
   viewWeekBrowsingStatus,
@@ -89,6 +91,9 @@ describe("V1.5 session view week", () => {
     expect(viewWeekModeHint(2, 4)).toBe(VIEW_WEEK_PAST_HINT);
     expect(viewWeekModeHint(12, 4)).toBe(VIEW_WEEK_FUTURE_HINT);
     expect(viewWeekModeHint(4, 4)).toBeNull();
+    expect(viewWeekModeHint(52, 4, true)).toBeNull();
+    expect(viewWeekModeHint(2, 4, false)).toBeNull();
+    expect(viewWeekModeHint(12, 4, false)).toBe(VIEW_WEEK_FUTURE_HINT);
   });
 });
 
@@ -126,7 +131,65 @@ describe("V1.5 past editable / future read-only", () => {
     ).toBe(false);
   });
 
-  test("non-live preview band stays read-only even for past S#", () => {
+  test("live 2-3: write on 2-3 and previous 1-2 for past/current; future S# is RO on both", () => {
+    expect(previousBand("1-2")).toBeNull();
+    expect(previousBand("2-3")).toBe("1-2");
+    expect(previousBand("3-4")).toBe("2-3");
+    expect(isWritableCohortBand("1-2", "2-3")).toBe(true);
+    expect(isWritableCohortBand("2-3", "2-3")).toBe(true);
+    expect(isWritableCohortBand("3-4", "2-3")).toBe(false);
+    expect(isWritableCohortBand("1-2", "3-4")).toBe(false);
+    expect(
+      weekWritesAllowed({
+        viewWeek: 2,
+        officialWeek: 4,
+        viewBand: "2-3",
+        liveBand: "2-3",
+      }),
+    ).toBe(true);
+    expect(
+      weekWritesAllowed({
+        viewWeek: 4,
+        officialWeek: 4,
+        viewBand: "2-3",
+        liveBand: "2-3",
+      }),
+    ).toBe(true);
+    expect(
+      weekWritesAllowed({
+        viewWeek: 2,
+        officialWeek: 4,
+        viewBand: "1-2",
+        liveBand: "2-3",
+      }),
+    ).toBe(true);
+    expect(
+      weekWritesAllowed({
+        viewWeek: 4,
+        officialWeek: 4,
+        viewBand: "1-2",
+        liveBand: "2-3",
+      }),
+    ).toBe(true);
+    expect(
+      weekWritesAllowed({
+        viewWeek: 52,
+        officialWeek: 4,
+        viewBand: "2-3",
+        liveBand: "2-3",
+      }),
+    ).toBe(false);
+    expect(
+      weekWritesAllowed({
+        viewWeek: 52,
+        officialWeek: 4,
+        viewBand: "1-2",
+        liveBand: "2-3",
+      }),
+    ).toBe(false);
+  });
+
+  test("older than previous and newer than live stay read-only", () => {
     expect(
       weekWritesAllowed({
         viewWeek: 2,
@@ -137,10 +200,18 @@ describe("V1.5 past editable / future read-only", () => {
     ).toBe(false);
     expect(
       weekWritesAllowed({
+        viewWeek: 2,
+        officialWeek: 4,
+        viewBand: "1-2",
+        liveBand: "3-4",
+      }),
+    ).toBe(false);
+    expect(
+      weekWritesAllowed({
         viewWeek: 4,
         officialWeek: 4,
-        viewBand: "2-3",
-        liveBand: "1-2",
+        viewBand: "3-4",
+        liveBand: "2-3",
       }),
     ).toBe(false);
     expect(
