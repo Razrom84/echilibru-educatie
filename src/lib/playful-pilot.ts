@@ -11,7 +11,7 @@ export type PlayfulPilotWeek = (typeof PLAYFUL_PILOT_WEEKS)[number];
 
 export type PlayfulCharacterId =
   | "casuta"
-  | "galetuta"
+  | "galetusa"
   | "suntel"
   | "manuta"
   | "carioca"
@@ -53,10 +53,10 @@ export const PLAYFUL_CHARACTERS: Record<PlayfulCharacterId, PlayfulCharacter> = 
     name: "Căsuță",
     src: "/characters/casuta.svg",
   },
-  galetuta: {
-    id: "galetuta",
-    name: "Găletuță",
-    src: "/characters/galetuta.svg",
+  galetusa: {
+    id: "galetusa",
+    name: "Găletușă",
+    src: "/characters/galetusa.svg",
   },
   suntel: {
     id: "suntel",
@@ -181,7 +181,7 @@ const WEEK_1: WeekConfig = {
 const WEEK_2: WeekConfig = {
   week: 2,
   theme: "Apa în casă și afară",
-  character: PLAYFUL_CHARACTERS.galetuta,
+  character: PLAYFUL_CHARACTERS.galetusa,
   ritualOpen: "Apa în casă.",
   ritualClose: "Afară, gata.",
   surprises: {

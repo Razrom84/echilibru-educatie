@@ -1,6 +1,6 @@
 # Brief playful S1–S3 · banda 1–2
 **20 Sep 2026 · Cristina · format ca pilot S14–S20 · zero sunete**
-**Personaje lock:** Căsuță · Găletuță · Sunețel (S3 deja lock; acum L–D)
+**Personaje lock:** Căsuță · Găletușă · Sunețel (S3 deja lock; acum L–D)
 
 ---
 
@@ -65,7 +65,7 @@
 ---
 
 ## S2 — temă: Apa în casă și afară
-**Personaj:** **Găletuță**  
+**Personaj:** **Găletușă**  
 **Ritual:** Open `Apa în casă.` · Close `Afară, gata.`
 
 ### Surprize L–D
@@ -187,5 +187,5 @@
 ---
 
 ## Ortografie
-- **Căsuță** (ă, ț, ă) · **Găletuță** (ă, ț, ă) · **Sunețel** (ț) — neschimbat  
+- **Căsuță** (ă, ț, ă) · **Găletușă** (ă, ș, ă) · **Sunețel** (ț) — neschimbat  
 - Zero Hai-forțat · zero soft EN · zero sunete (S3 = auzit în lume / gura adultului, nu wav)

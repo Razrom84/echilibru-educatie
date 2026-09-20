@@ -537,10 +537,10 @@ function CasutaSvg({ size }: { size: number }) {
   );
 }
 
-function GaletutaSvg({ size }: { size: number }) {
+function GaletusaSvg({ size }: { size: number }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width={size} height={size} aria-hidden>
-      <title>Găletuță</title>
+      <title>Găletușă</title>
       <path d="M18 22 L22 52 C22 56 26 58 32 58 C38 58 42 56 42 52 L46 22 Z" fill="#7AA3C7" stroke="#5E86A8" strokeWidth="1.5" strokeLinejoin="round" />
       <path d="M18 22 C18 14 46 14 46 22" fill="none" stroke="#5E86A8" strokeWidth="2.4" strokeLinecap="round" />
       <path d="M22 34 L42 34" fill="none" stroke="#C5E4F5" strokeWidth="2" strokeLinecap="round" />
@@ -555,7 +555,7 @@ function GaletutaSvg({ size }: { size: number }) {
 
 const CHARACTER_SVG: Record<PlayfulCharacterId, (size: number) => ReactNode> = {
   casuta: (size) => <CasutaSvg size={size} />,
-  galetuta: (size) => <GaletutaSvg size={size} />,
+  galetusa: (size) => <GaletusaSvg size={size} />,
   suntel: (size) => <SuntelSvg size={size} />,
   manuta: (size) => <ManutaSvg size={size} />,
   carioca: (size) => <CariocaSvg size={size} />,

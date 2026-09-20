@@ -41,10 +41,10 @@ describe("PLAYFUL PILOT scope", () => {
     expect(playfulPilotFor(1, 7)?.surprise).toBe("Ultima pagină: casa din imagine");
   });
 
-  test("S2 overlay is L–D with Găletuță", () => {
-    expect(playfulPilotFor(2, 1)?.character.name).toBe("Găletuță");
-    expect(playfulPilotFor(2, 1)?.character.id).toBe("galetuta");
-    expect(playfulPilotFor(2, 1)?.character.src).toBe("/characters/galetuta.svg");
+  test("S2 overlay is L–D with Găletușă", () => {
+    expect(playfulPilotFor(2, 1)?.character.name).toBe("Găletușă");
+    expect(playfulPilotFor(2, 1)?.character.id).toBe("galetusa");
+    expect(playfulPilotFor(2, 1)?.character.src).toBe("/characters/galetusa.svg");
     expect(playfulPilotFor(2, 1)?.theme).toBe("Apa în casă și afară");
     expect(playfulPilotFor(2, 1)?.ritualOpen).toBe("Apa în casă.");
     expect(playfulPilotFor(2, 7)?.ritualClose).toBe("Afară, gata.");
@@ -402,8 +402,8 @@ describe("PLAYFUL PILOT copy helpers", () => {
     expect(playfulHeaderLabel("Căsuță", "Casa și curtea")).toBe(
       "Căsuță · Casa și curtea",
     );
-    expect(playfulHeaderLabel("Găletuță", "Apa în casă și afară")).toBe(
-      "Găletuță · Apa în casă și afară",
+    expect(playfulHeaderLabel("Găletușă", "Apa în casă și afară")).toBe(
+      "Găletușă · Apa în casă și afară",
     );
     expect(playfulHeaderLabel("Mânuță", "Mâini și degete")).toBe(
       "Mânuță · Mâini și degete",
@@ -651,18 +651,21 @@ describe("PLAYFUL PILOT copy helpers", () => {
     expect([...PLAYFUL_CHARACTERS.casuta.name].map((ch) => ch.codePointAt(0))).toEqual([
       0x0043, 0x0103, 0x0073, 0x0075, 0x021b, 0x0103,
     ]);
-    expect(PLAYFUL_CHARACTERS.galetuta.name).toBe("Găletuță");
-    expect(PLAYFUL_CHARACTERS.galetuta.name).not.toBe("Galetuta");
-    expect(PLAYFUL_CHARACTERS.galetuta.name).not.toBe("Picătură");
-    expect([...PLAYFUL_CHARACTERS.galetuta.name].map((ch) => ch.codePointAt(0))).toEqual([
-      0x0047, 0x0103, 0x006c, 0x0065, 0x0074, 0x0075, 0x021b, 0x0103,
+    expect(PLAYFUL_CHARACTERS.galetusa.name).toBe("Găletușă");
+    expect(PLAYFUL_CHARACTERS.galetusa.name).not.toBe("Găletuță");
+    expect(PLAYFUL_CHARACTERS.galetusa.name).not.toBe("Galetuta");
+    expect(PLAYFUL_CHARACTERS.galetusa.name).not.toBe("Galetusa");
+    expect(PLAYFUL_CHARACTERS.galetusa.name).not.toBe("Picătură");
+    expect([...PLAYFUL_CHARACTERS.galetusa.name].map((ch) => ch.codePointAt(0))).toEqual([
+      0x0047, 0x0103, 0x006c, 0x0065, 0x0074, 0x0075, 0x0219, 0x0103,
     ]);
     expect(svgTitle("casuta.svg")).toBe("Căsuță");
-    expect(svgTitle("galetuta.svg")).toBe("Găletuță");
+    expect(svgTitle("galetusa.svg")).toBe("Găletușă");
     const chrome = readFileSync(resolve("src/components/playful-chrome.tsx"), "utf8");
     expect(chrome).toContain("<title>Căsuță</title>");
-    expect(chrome).toContain("<title>Găletuță</title>");
+    expect(chrome).toContain("<title>Găletușă</title>");
     expect(chrome).not.toContain("<title>Casuta</title>");
+    expect(chrome).not.toContain("<title>Găletuță</title>");
     expect(chrome).not.toContain("<title>Galetuta</title>");
   });
 
