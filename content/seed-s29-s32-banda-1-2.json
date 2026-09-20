@@ -22,7 +22,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "fizic",
-      "titlu": "Atingem iarba nouă",
+      "titlu": "Degetul pe mugure",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [],
@@ -41,7 +41,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "mental",
-      "titlu": "Verde: iarbă nouă",
+      "titlu": "Uite iarba nouă",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -60,7 +60,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "resurse",
-      "titlu": "Ghiveciul pe pervaz la loc",
+      "titlu": "Ramura rămâne pe loc",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -81,7 +81,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "social",
-      "titlu": "Privim iarba împreună",
+      "titlu": "Arătăm mugurele",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -100,7 +100,7 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "fizic",
-      "titlu": "Deget pe mugure",
+      "titlu": "Pași scurți pe iarbă",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -121,7 +121,7 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "mental",
-      "titlu": "Mugure și frunză",
+      "titlu": "Verde, iarbă nouă",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -140,7 +140,7 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "resurse",
-      "titlu": "Ramura la loc",
+      "titlu": "Pantofii după iarbă",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -161,7 +161,7 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "social",
-      "titlu": "Mugurele cu adultul",
+      "titlu": "Pași pe iarbă împreună",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -180,7 +180,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "fizic",
-      "titlu": "Pași scurți pe iarbă",
+      "titlu": "Atingem o frunză mică",
       "durata_min": 6,
       "mod_default": "A",
       "materiale": [],
@@ -199,7 +199,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "mental",
-      "titlu": "Iarbă și pământ",
+      "titlu": "Mică — sau mare?",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -218,7 +218,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "resurse",
-      "titlu": "Pantofii lângă ușă după iarbă",
+      "titlu": "Frunza rămâne pe plantă",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -239,7 +239,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "social",
-      "titlu": "Pași pe iarbă cu adultul",
+      "titlu": "Atingem frunza pe rând",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [],
@@ -258,7 +258,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "fizic",
-      "titlu": "Mirosim planta verde",
+      "titlu": "Udăm puțin la rădăcină",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -279,7 +279,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "mental",
-      "titlu": "Plantă: verde și frunză",
+      "titlu": "Plantă verde",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -300,7 +300,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "resurse",
-      "titlu": "Planta pe pervaz după miros",
+      "titlu": "Stropitoarea la loc",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -321,7 +321,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "social",
-      "titlu": "Mirosim planta pe rând",
+      "titlu": "Udăm împreună",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -342,7 +342,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "fizic",
-      "titlu": "Udăm iarba",
+      "titlu": "Ne aplecăm la mugure",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
@@ -363,7 +363,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "mental",
-      "titlu": "Apă pentru plantă",
+      "titlu": "Mugure și frunză",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -382,7 +382,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "resurse",
-      "titlu": "Stropitoarea la loc",
+      "titlu": "Mâinile după plantă",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -403,7 +403,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "social",
-      "titlu": "Udăm pe rând",
+      "titlu": "Privim planta împreună",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -424,7 +424,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "fizic",
-      "titlu": "Culegem o frunză căzută",
+      "titlu": "Trei pași printre fire de iarbă",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [],
@@ -443,7 +443,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "mental",
-      "titlu": "Frunză pe pământ, iarbă pe loc",
+      "titlu": "Iarbă nouă sub picior",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -464,7 +464,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "resurse",
-      "titlu": "Frunza în coș",
+      "titlu": "Pantofii la ușă după iarbă",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -485,7 +485,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "social",
-      "titlu": "Arătăm frunza adultului",
+      "titlu": "Iarba, unul lângă altul",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -506,7 +506,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "fizic",
-      "titlu": "Plimbare liberă la iarbă",
+      "titlu": "Plimbare pe iarbă",
       "durata_min": 7,
       "mod_default": "A",
       "materiale": [],
@@ -525,7 +525,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "mental",
-      "titlu": "Carte: iarbă și plantă",
+      "titlu": "Cartea cu plante",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -546,7 +546,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "resurse",
-      "titlu": "Planta și stropitoarea la loc",
+      "titlu": "Stropitoarea și pantofii la loc",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -587,7 +587,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "fizic",
-      "titlu": "La geam dimineața: ascultăm",
+      "titlu": "Stăm la geam dimineața",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [],
@@ -606,7 +606,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "mental",
-      "titlu": "Pasăre: sunet afară",
+      "titlu": "Auzim o pasăre?",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -625,7 +625,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "resurse",
-      "titlu": "Perdeaua trasă pentru sunet",
+      "titlu": "Perdeaua la loc după geam",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -646,7 +646,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "social",
-      "titlu": "Ascultăm păsările împreună",
+      "titlu": "Ascultăm împreună",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -665,7 +665,7 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "fizic",
-      "titlu": "Arătăm spre cer",
+      "titlu": "Arătăm sus, pe creangă",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [],
@@ -684,7 +684,7 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "mental",
-      "titlu": "Sus: pasăre pe creangă",
+      "titlu": "Pasărea e sus",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -703,7 +703,7 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "resurse",
-      "titlu": "Geamul liber după privit",
+      "titlu": "Mâna jos după arătat",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -722,7 +722,7 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "social",
-      "titlu": "Arătăm pasărea adultului",
+      "titlu": "Arătăm pasărea",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -741,7 +741,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "fizic",
-      "titlu": "Ieșim scurt: urechi afară",
+      "titlu": "Ieșim scurt, urechile afară",
       "durata_min": 6,
       "mod_default": "A",
       "materiale": [],
@@ -760,7 +760,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "mental",
-      "titlu": "Casă și afară: sunete",
+      "titlu": "Sunet în casă — sau afară?",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -779,7 +779,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "resurse",
-      "titlu": "Ușa închisă după ascultat",
+      "titlu": "Pantofii după ascultat",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [],
@@ -798,7 +798,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "social",
-      "titlu": "Ascultăm afară cu adultul",
+      "titlu": "Ascultăm afară împreună",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [],
@@ -817,7 +817,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "fizic",
-      "titlu": "Imităm ciripit",
+      "titlu": "Brațele ca aripile",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [],
@@ -836,7 +836,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "mental",
-      "titlu": "Ciripit și liniște",
+      "titlu": "Aripile se mișcă",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -855,7 +855,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "resurse",
-      "titlu": "Jucăria-pasăre pe raft",
+      "titlu": "Facem loc pentru aripi",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -876,7 +876,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "social",
-      "titlu": "Ciripim pe rând",
+      "titlu": "Aripile împreună",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -895,7 +895,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "fizic",
-      "titlu": "Privim o pasăre",
+      "titlu": "Privim pasărea care zboară",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [],
@@ -914,7 +914,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "mental",
-      "titlu": "Pasăre: zboară",
+      "titlu": "Zboară",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -933,7 +933,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "resurse",
-      "titlu": "Binoclul de jucărie la loc",
+      "titlu": "Rămânem pe loc, privim",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -954,7 +954,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "social",
-      "titlu": "Privim pasărea împreună",
+      "titlu": "Zborul, unul lângă altul",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -973,7 +973,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "fizic",
-      "titlu": "Brațe ca aripile",
+      "titlu": "Ciripim încet, ca pasărea",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [],
@@ -992,7 +992,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "mental",
-      "titlu": "Aripi și corp",
+      "titlu": "Cioc, un sunet",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -1011,7 +1011,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "resurse",
-      "titlu": "Spațiu liber pentru aripi",
+      "titlu": "Gura, apoi liniște",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [],
@@ -1030,7 +1030,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "social",
-      "titlu": "Aripi împreună",
+      "titlu": "Ciripim pe rând",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [],
@@ -1049,7 +1049,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "fizic",
-      "titlu": "Plimbare liberă, urechi la final",
+      "titlu": "Plimbare de dimineață",
       "durata_min": 7,
       "mod_default": "A",
       "materiale": [],
@@ -1068,7 +1068,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "mental",
-      "titlu": "Carte: păsări",
+      "titlu": "Cartea cu păsări",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -1089,7 +1089,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "resurse",
-      "titlu": "Cartea și jucăria-pasăre la loc",
+      "titlu": "Cartea pe raft",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -1130,7 +1130,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "fizic",
-      "titlu": "Ținem o sămânță",
+      "titlu": "Punem sămânța în pământ",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -1151,7 +1151,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "mental",
-      "titlu": "Sămânță: mică",
+      "titlu": "Sămânța e mică",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -1172,7 +1172,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "resurse",
-      "titlu": "Semințele în cutie la loc",
+      "titlu": "Pământul acoperă sămânța",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -1194,7 +1194,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "social",
-      "titlu": "Arătăm sămânța adultului",
+      "titlu": "Punem sămânța împreună",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -1215,7 +1215,7 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "fizic",
-      "titlu": "Punem sămânța în pământ",
+      "titlu": "Udăm sămânța",
       "durata_min": 6,
       "mod_default": "A",
       "materiale": [
@@ -1238,7 +1238,7 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "mental",
-      "titlu": "Sămânță și pământ",
+      "titlu": "Pământ ud — sau uscat?",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -1257,7 +1257,7 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "resurse",
-      "titlu": "Ghiveciul pe masă după plantat",
+      "titlu": "Stropitoarea la loc",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -1278,7 +1278,7 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "social",
-      "titlu": "Plantăm pe rând",
+      "titlu": "Udăm pe rând",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -1300,7 +1300,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "fizic",
-      "titlu": "Udăm sămânța",
+      "titlu": "Așteptăm lângă ghiveci",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
@@ -1321,7 +1321,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "mental",
-      "titlu": "Udat: apă pe pământ",
+      "titlu": "Încă nu se vede",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -1340,7 +1340,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "resurse",
-      "titlu": "Paharul de udat la loc",
+      "titlu": "Ghiveciul pe pervaz",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -1361,7 +1361,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "social",
-      "titlu": "Udăm împreună",
+      "titlu": "Privim ghiveciul împreună",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -1382,7 +1382,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "fizic",
-      "titlu": "Deget în pământ umed",
+      "titlu": "Degetul pe pământul ud",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -1403,7 +1403,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "mental",
-      "titlu": "Umed și uscat",
+      "titlu": "Moale",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -1422,7 +1422,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "resurse",
-      "titlu": "Mâinile pe prosop după pământ",
+      "titlu": "Mâna pe prosop",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -1464,7 +1464,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "fizic",
-      "titlu": "Cărăm stropitoarea câțiva pași",
+      "titlu": "Cărăm stropitoarea",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
@@ -1485,7 +1485,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "mental",
-      "titlu": "Stropitoare și grijă",
+      "titlu": "Greu cu apă — sau ușor?",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -1506,7 +1506,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "resurse",
-      "titlu": "Stropitoarea lângă plantă la loc",
+      "titlu": "Stropitoarea lângă plantă",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -1527,7 +1527,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "social",
-      "titlu": "Cărăm pe rând stropitoarea",
+      "titlu": "Cărăm împreună",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -1548,7 +1548,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "fizic",
-      "titlu": "Privim ghiveciul: a crescut?",
+      "titlu": "A crescut ceva?",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -1569,7 +1569,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "mental",
-      "titlu": "Așteptăm: sămânță apoi plantă",
+      "titlu": "Sămânță, apoi plantă",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -1588,7 +1588,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "resurse",
-      "titlu": "Ghiveciul pe lumină la loc",
+      "titlu": "Ghiveciul rămâne la loc",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -1609,7 +1609,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "social",
-      "titlu": "Privim ghiveciul împreună",
+      "titlu": "Privim dacă a crescut",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -1628,7 +1628,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "fizic",
-      "titlu": "Plimbare liberă, udat la final",
+      "titlu": "Plimbare până la ghiveci",
       "durata_min": 7,
       "mod_default": "A",
       "materiale": [
@@ -1649,7 +1649,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "mental",
-      "titlu": "Carte: sămânță și plantă",
+      "titlu": "Cartea cu grădina",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -1670,7 +1670,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "resurse",
-      "titlu": "Semințele și stropitoarea la loc",
+      "titlu": "Stropitoarea la loc",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -1711,17 +1711,17 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "fizic",
-      "titlu": "Ținem mingea afară",
+      "titlu": "Ținem balonul de sfoară",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
         "minge moale"
       ],
       "pasi": [
-        "În curte: țineți mingea cu ambele mâini pe scurt.",
-        "„Minge.” 10–20 de secunde."
+        "În curte: țineți balonul cu ambele mâini pe scurt.",
+        "„Balon.” 10–20 de secunde."
       ],
-      "gata_cand": "A ținut mingea sau a atins-o.",
+      "gata_cand": "A ținut balonul sau a atins-o.",
       "tema_saptamana": "Mingea afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1732,17 +1732,17 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "mental",
-      "titlu": "Minge: rotundă",
+      "titlu": "Balonul e ușor",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
         "minge"
       ],
       "pasi": [
-        "Arătați mingea: „Minge.”",
+        "Arătați balonul: „Balon.”",
         "„Rotundă.” pe scurt."
       ],
-      "gata_cand": "A auzit minge și rotundă.",
+      "gata_cand": "A auzit balon și rotundă.",
       "tema_saptamana": "Mingea afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1753,17 +1753,17 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "resurse",
-      "titlu": "Mingea lângă ușă înainte de joacă",
+      "titlu": "Balonul lângă ușă",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
         "minge"
       ],
       "pasi": [
-        "Așezați mingea lângă ușă înainte să ieșiți.",
-        "„Minge. Aici.”"
+        "Așezați balonul lângă ușă înainte să ieșiți.",
+        "„Balon. Aici.”"
       ],
-      "gata_cand": "A ajutat să așeze mingea.",
+      "gata_cand": "A ajutat să așeze balonul.",
       "tema_saptamana": "Mingea afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1774,17 +1774,17 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "social",
-      "titlu": "Mingea afară cu adultul",
+      "titlu": "Ținem balonul împreună",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
         "minge"
       ],
       "pasi": [
-        "Stați afară lângă adult cu mingea.",
-        "„Împreună. Minge.” fără forțare."
+        "Stați afară lângă adult cu balonul.",
+        "„Împreună. Balon.” fără forțare."
       ],
-      "gata_cand": "A fost prezent cu mingea afară.",
+      "gata_cand": "A fost prezent cu balonul afară.",
       "tema_saptamana": "Mingea afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1795,17 +1795,17 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "fizic",
-      "titlu": "Dăm mingea afară",
+      "titlu": "Bătem ușor în balon",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
         "minge moale"
       ],
       "pasi": [
-        "Dați mingea pe scurt o dată, pe iarbă sau pământ.",
-        "„Minge. Dat.” fără grabă."
+        "Dați balonul pe scurt o dată, pe iarbă sau pământ.",
+        "„Balon. Dat.” fără grabă."
       ],
-      "gata_cand": "A dat mingea sau a atins-o.",
+      "gata_cand": "A dat balonul sau a atins-o.",
       "tema_saptamana": "Mingea afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1816,7 +1816,7 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "mental",
-      "titlu": "Dat și primit",
+      "titlu": "Moale",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -1837,17 +1837,17 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "resurse",
-      "titlu": "Mingea pe iarbă la loc scurt",
+      "titlu": "Balonul pe scaun, la loc",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
         "minge"
       ],
       "pasi": [
-        "Așezați mingea pe iarbă când nu jucați.",
-        "„Minge. Aici.”"
+        "Așezați balonul pe iarbă când nu jucați.",
+        "„Balon. Aici.”"
       ],
-      "gata_cand": "A așezat mingea sau a privit.",
+      "gata_cand": "A așezat balonul sau a privit.",
       "tema_saptamana": "Mingea afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1858,7 +1858,7 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "social",
-      "titlu": "Dăm mingea pe rând afară",
+      "titlu": "Bătem pe rând",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -1879,17 +1879,17 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "fizic",
-      "titlu": "Aruncăm mingea jos",
+      "titlu": "Balonul sus, deasupra capului",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
         "minge moale"
       ],
       "pasi": [
-        "Aruncați mingea jos pe iarbă o dată, cu adult.",
+        "Aruncați balonul jos pe iarbă o dată, cu adult.",
         "„Aruncat. Jos.” pe scurt."
       ],
-      "gata_cand": "A aruncat sau a privit mingea.",
+      "gata_cand": "A aruncat sau a privit balonul.",
       "tema_saptamana": "Mingea afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1900,14 +1900,14 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "mental",
-      "titlu": "Sus și jos: minge",
+      "titlu": "Sus — sau jos?",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
         "minge"
       ],
       "pasi": [
-        "Ridicați mingea: „Sus.”",
+        "Ridicați balonul: „Sus.”",
         "Lăsați-o jos: „Jos.”"
       ],
       "gata_cand": "A auzit sus și jos.",
@@ -1921,7 +1921,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "resurse",
-      "titlu": "Mingea în coș după aruncat",
+      "titlu": "Sfoara strânsă în mână",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -1929,10 +1929,10 @@
         "coș sau cutie"
       ],
       "pasi": [
-        "Puneți mingea în coș pe scurt.",
-        "„Minge. În coș.”"
+        "Puneți balonul în coș pe scurt.",
+        "„Balon. În coș.”"
       ],
-      "gata_cand": "A pus mingea în coș.",
+      "gata_cand": "A pus balonul în coș.",
       "tema_saptamana": "Mingea afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1943,7 +1943,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "social",
-      "titlu": "Aruncăm pe rând jos",
+      "titlu": "Ridicăm balonul împreună",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -1964,17 +1964,17 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "fizic",
-      "titlu": "Urmărim mingea pe iarbă",
+      "titlu": "Umblăm cu balonul în curte",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
         "minge"
       ],
       "pasi": [
-        "Lăsați mingea să se rostogolească pe scurt.",
-        "Mergeți după ea câțiva pași: „Minge. Uite.”"
+        "Lăsați balonul să se rostogolească pe scurt.",
+        "Mergeți după ea câțiva pași: „Balon. Uite.”"
       ],
-      "gata_cand": "A mers după minge sau a privit.",
+      "gata_cand": "A mers după balon sau a privit.",
       "tema_saptamana": "Mingea afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1985,17 +1985,17 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "mental",
-      "titlu": "Minge: unde e?",
+      "titlu": "Balonul pe iarbă",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
         "minge"
       ],
       "pasi": [
-        "Întrebați: „Unde e mingea?”",
+        "Întrebați: „Unde e balonul?”",
         "Arătați-o: „Aici.”"
       ],
-      "gata_cand": "A privit sau a arătat mingea.",
+      "gata_cand": "A privit sau a arătat balonul.",
       "tema_saptamana": "Mingea afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -2006,17 +2006,17 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "resurse",
-      "titlu": "Mingea adusă lângă ușă",
+      "titlu": "Balonul nu rămâne afară",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
         "minge"
       ],
       "pasi": [
-        "Aduceți mingea lângă ușă după joacă.",
-        "„Minge. La ușă.”"
+        "Aduceți balonul lângă ușă după joacă.",
+        "„Balon. La ușă.”"
       ],
-      "gata_cand": "A adus mingea sau a ajutat.",
+      "gata_cand": "A adus balonul sau a ajutat.",
       "tema_saptamana": "Mingea afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -2027,17 +2027,17 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "social",
-      "titlu": "Căutăm mingea împreună",
+      "titlu": "Ne jucăm cu balonul",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
         "minge"
       ],
       "pasi": [
-        "Căutați mingea pe scurt lângă adult.",
+        "Căutați balonul pe scurt lângă adult.",
         "„Împreună. Unde e?” fără grabă."
       ],
-      "gata_cand": "A căutat sau a găsit mingea.",
+      "gata_cand": "A căutat sau a găsit balonul.",
       "tema_saptamana": "Mingea afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -2048,17 +2048,17 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "fizic",
-      "titlu": "Picioarele lângă minge",
+      "titlu": "Mergem ținând sfoara",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
         "minge moale"
       ],
       "pasi": [
-        "Atingeți mingea ușor cu piciorul o dată.",
-        "„Picior. Minge.” fără forțare."
+        "Atingeți balonul ușor cu piciorul o dată.",
+        "„Picior. Balon.” fără forțare."
       ],
-      "gata_cand": "A atins mingea cu piciorul sau a privit.",
+      "gata_cand": "A atins balonul cu piciorul sau a privit.",
       "tema_saptamana": "Mingea afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -2069,7 +2069,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "mental",
-      "titlu": "Mână și picior la minge",
+      "titlu": "Sfoară lungă — sau scurtă?",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -2090,7 +2090,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "resurse",
-      "titlu": "Mingea în cutie după curte",
+      "titlu": "Sfoara înfășurată, la loc",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -2098,10 +2098,10 @@
         "cutie"
       ],
       "pasi": [
-        "Puneți mingea în cutie după joacă afară.",
-        "„Minge. La loc.”"
+        "Puneți balonul în cutie după joacă afară.",
+        "„Balon. La loc.”"
       ],
-      "gata_cand": "A pus mingea în cutie.",
+      "gata_cand": "A pus balonul în cutie.",
       "tema_saptamana": "Mingea afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -2112,7 +2112,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "social",
-      "titlu": "Mingea cu piciorul pe rând",
+      "titlu": "Mergem cu balonul împreună",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -2133,17 +2133,17 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "fizic",
-      "titlu": "Aducem mingea în casă",
+      "titlu": "Balonul se leagănă",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
         "minge"
       ],
       "pasi": [
-        "Luați mingea din curte. Intrați pe scurt.",
-        "„Minge. Casă.”"
+        "Luați balonul din curte. Intrați pe scurt.",
+        "„Balon. Casă.”"
       ],
-      "gata_cand": "A adus mingea sau a ținut-o la ușă.",
+      "gata_cand": "A adus balonul sau a ținut-o la ușă.",
       "tema_saptamana": "Mingea afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -2154,12 +2154,12 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "mental",
-      "titlu": "Afară și casă: minge",
+      "titlu": "Se mișcă în aer",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
       "pasi": [
-        "Afară: „Afară. Minge.”",
+        "Afară: „Afară. Balon.”",
         "În casă: „Casă.” pe scurt."
       ],
       "gata_cand": "A auzit afară și casă.",
@@ -2173,7 +2173,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "resurse",
-      "titlu": "Mingea pe raft după afară",
+      "titlu": "Balonul în casă, la loc",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -2181,10 +2181,10 @@
         "raft sau cutie"
       ],
       "pasi": [
-        "Puneți mingea pe raft sau în cutie.",
-        "„Minge. La loc.”"
+        "Puneți balonul pe raft sau în cutie.",
+        "„Balon. La loc.”"
       ],
-      "gata_cand": "A pus mingea la loc.",
+      "gata_cand": "A pus balonul la loc.",
       "tema_saptamana": "Mingea afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -2195,17 +2195,17 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "social",
-      "titlu": "Intrăm cu mingea împreună",
+      "titlu": "Arătăm balonul",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
         "minge"
       ],
       "pasi": [
-        "Intrați lângă adult cu mingea.",
+        "Intrați lângă adult cu balonul.",
         "„Împreună. Casă.” fără grabă."
       ],
-      "gata_cand": "A intrat cu mingea sau a privit.",
+      "gata_cand": "A intrat cu balonul sau a privit.",
       "tema_saptamana": "Mingea afară",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -2216,7 +2216,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "fizic",
-      "titlu": "Plimbare liberă, minge la final",
+      "titlu": "Plimbare cu balonul",
       "durata_min": 7,
       "mod_default": "A",
       "materiale": [
@@ -2224,7 +2224,7 @@
       ],
       "pasi": [
         "El dictează direcția în curte pe scurt, cu adult.",
-        "La final: un dat scurt cu mingea dacă vrea."
+        "La final: un dat scurt cu balonul dacă vrea."
       ],
       "gata_cand": "A mers liber pe scurt în curte.",
       "tema_saptamana": "Mingea afară",
@@ -2237,7 +2237,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "mental",
-      "titlu": "Carte: minge și afară",
+      "titlu": "Cartea cu balonul",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -2245,7 +2245,7 @@
       ],
       "pasi": [
         "El întoarce pagina.",
-        "Arătați minge, curte sau joacă dacă e clar: „Minge.”"
+        "Arătați balon, curte sau joacă dacă e clar: „Balon.”"
       ],
       "gata_cand": "A întors pagina sau a privit.",
       "tema_saptamana": "Mingea afară",
@@ -2258,7 +2258,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "resurse",
-      "titlu": "Mingea și pantofii la loc",
+      "titlu": "Balonul pe cui",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -2266,7 +2266,7 @@
         "pantofi"
       ],
       "pasi": [
-        "Puneți mingea în cutie, pantofii lângă ușă.",
+        "Puneți balonul în cutie, pantofii lângă ușă.",
         "„La loc. Gata.”"
       ],
       "gata_cand": "A ajutat să pună la loc.",

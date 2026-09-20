@@ -22,44 +22,44 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ### Titluri L–D × 4 piloni
 **Luni**  
 - Fizic: `Mâna pe geam`  
-- Mental: `Geam și afară`  
-- Resurse: `Perdeaua la loc`  
-- Social: `Privim geamul împreună`  
+- Mental: `Ce se vede afară?`  
+- Resurse: `Tragem perdeaua`  
+- Social: `Privim pe geam împreună`  
 
 **Marți**  
-- Fizic: `Deget pe geam rece`  
-- Mental: `Gheață pe geam?`  
-- Resurse: `Cârpa de geam`  
-- Social: `Arătăm geamul adultului`  
+- Fizic: `Degetul pe geamul rece`  
+- Mental: `E gheață pe geam?`  
+- Resurse: `Ștergem geamul`  
+- Social: `Arătăm afară`  
 
 **Miercuri**  
-- Fizic: `De la geam la canapea caldă`  
+- Fizic: `De la geam la canapea`  
 - Mental: `Rece afară, cald în casă`  
 - Resurse: `Pătura pe canapea`  
 - Social: `Ne încălzim împreună`  
 
 **Joi**  
 - Fizic: `Suflăm pe geam`  
-- Mental: `Abur pe geam`  
-- Resurse: `Ștergem aburul și cârpa la loc`  
-- Social: `Suflăm pe rând pe geam`  
+- Mental: `Uite aburul`  
+- Resurse: `Ștergem aburul`  
+- Social: `Suflăm pe rând`  
 
 **Vineri**  
-- Fizic: `Pervazul: mână pe pervaz`  
+- Fizic: `Stăm la fereastră`  
 - Mental: `Lumină la geam`  
 - Resurse: `Obiectul de pe pervaz la loc`  
-- Social: `Pervazul cu adultul`  
+- Social: `Uităm zăpada împreună`  
 
 **Sâmbătă**  
-- Fizic: `Geam, apoi pași în casă`  
+- Fizic: `De la geam, câțiva pași`  
 - Mental: `Iarnă afară, casă caldă`  
-- Resurse: `Șosetele la loc după geam`  
-- Social: `Spunem adultului: geam rece`  
+- Resurse: `Șosetele după geam`  
+- Social: `Spunem: e rece afară`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă în casă, geam la final`  
-- Mental: `Carte: iarnă și casă`  
-- Resurse: `Cartea și pătura pe raft`  
+- Fizic: `Plimbare prin casă, apoi la geam`  
+- Mental: `Cartea de iarnă`  
+- Resurse: `Cartea și pătura la loc`  
 - Social: `Noapte bună`  
 
 ---
@@ -81,45 +81,45 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Balans ușor pe loc`  
-- Mental: `Corp care se mișcă`  
-- Resurse: `Spațiu liber pe jos`  
+- Fizic: `Ne ghemuim și ne ridicăm`  
+- Mental: `Facem ghemotoc`  
+- Resurse: `Eliberăm covorul`  
 - Social: `Dansăm împreună`  
 
 **Marți**  
-- Fizic: `Târâit pe jos câțiva pași`  
+- Fizic: `Ne târâm câțiva pași`  
 - Mental: `Jos pe podea`  
-- Resurse: `Covorul — sau zona de joacă liberă`  
-- Social: `Târâim pe rând`  
+- Resurse: `Covorul la loc`  
+- Social: `Ne târâm unul lângă altul`  
 
 **Miercuri**  
 - Fizic: `Sărituri mici pe loc`  
-- Mental: `Unu, doi — sărituri`  
-- Resurse: `Pernuța pe canapea după sărituri`  
-- Social: `Sărim lângă adult`  
+- Mental: `Rotund ca un ghem`  
+- Resurse: `Perna de pe jos, la loc`  
+- Social: `Ne rostogolim pe rând`  
 
 **Joi**  
-- Fizic: `Brațe sus și jos`  
-- Mental: `Sus și jos cu brațele`  
-- Resurse: `Jucăria de dans la loc`  
+- Fizic: `Sărituri mici pe loc`  
+- Mental: `Sus și jos`  
+- Resurse: `Jucăria din drum, la loc`  
 - Social: `Brațe sus împreună`  
 
 **Vineri**  
-- Fizic: `Pași pe loc în casă`  
-- Mental: `Mișcare, apoi gata`  
-- Resurse: `Spațiul de mișcare strâns`  
-- Social: `Pași pe loc cu mama — sau tata`  
+- Fizic: `Brațele se învârt`  
+- Mental: `Învârtim încet`  
+- Resurse: `Facem loc în cameră`  
+- Social: `Învârtim împreună`  
 
 **Sâmbătă**  
-- Fizic: `Dans scurt, apoi așezat`  
-- Mental: `Mișcare și liniște în corp`  
-- Resurse: `Mingea moale în cutie după dans`  
-- Social: `Arătăm mișcarea adultului`  
+- Fizic: `Dans scurt prin casă`  
+- Mental: `Corpul se mișcă`  
+- Resurse: `Pantofii de casă, la loc`  
+- Social: `Dansăm unul lângă altul`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă, un dans la final`  
-- Mental: `Carte: copii care se mișcă`  
-- Resurse: `Jucăriile de mișcare pe raft`  
+- Fizic: `Plimbare prin casă`  
+- Mental: `Cartea cu copii care sar`  
+- Resurse: `Perna și cartea la loc`  
 - Social: `Noapte bună`  
 
 ---
@@ -141,45 +141,45 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Nas aproape de pâine`  
-- Mental: `Pâine: miros`  
-- Resurse: `Pâinea în coș — sau pe masă la loc`  
-- Social: `Mirosim pâinea împreună`  
+- Fizic: `Mirosim pâinea`  
+- Mental: `Miroase a pâine?`  
+- Resurse: `Pâinea pe masă, apoi la loc`  
+- Social: `Mirosim împreună`  
 
 **Marți**  
-- Fizic: `Mâini și săpun`  
-- Mental: `Săpun: miros curat`  
-- Resurse: `Săpunul la loc lângă chiuvetă`  
-- Social: `Spălăm mâinile cu adultul`  
+- Fizic: `Mirosim săpunul`  
+- Mental: `Miroase a curat?`  
+- Resurse: `Săpunul la chiuvetă`  
+- Social: `Spălăm mâinile împreună`  
 
 **Miercuri**  
-- Fizic: `Cană cu ceai răcit — miros`  
-- Mental: `Ceai: cald răcit, miros`  
-- Resurse: `Cana pe masă — sau la chiuvetă`  
-- Social: `Mirosim ceaiul cu adultul`  
+- Fizic: `Mirosim ceaiul răcit`  
+- Mental: `E cald — sau a răcit?`  
+- Resurse: `Cana la loc`  
+- Social: `Mirosim ceaiul pe rând`  
 
 **Joi**  
-- Fizic: `Prosopul curat la nas`  
-- Mental: `Curat: miros de rufe`  
-- Resurse: `Prosopul pe cârlig — sau la loc`  
-- Social: `Arătăm prosopul adultului`  
+- Fizic: `Mirosim rufele`  
+- Mental: `Miroase a rufe curate?`  
+- Resurse: `Rufele în coș`  
+- Social: `Aducem o husă împreună`  
 
 **Vineri**  
-- Fizic: `Măr sau fruct — miros`  
-- Mental: `Trei mirosuri: pâine, săpun, ceai`  
-- Resurse: `Fructul în farfurie — sau coș`  
-- Social: `Spunem adultului ce am mirosit`  
+- Fizic: `Mirosim în bucătărie`  
+- Mental: `Ce miroase?`  
+- Resurse: `Lingura la chiuvetă`  
+- Social: `Arătăm: uite, miroase`  
 
 **Sâmbătă**  
-- Fizic: `Bucătăria: pași și miros`  
-- Mental: `Miros în casă, gata`  
-- Resurse: `Farfuria și cana la loc`  
-- Social: `Mirosim în bucătărie cu adultul`  
+- Fizic: `Mirosim o floare`  
+- Mental: `Floare — sau frunză?`  
+- Resurse: `Floarea rămâne afară`  
+- Social: `Mirosim afară împreună`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă în casă, un miros la final`  
-- Mental: `Carte: mâncare și casă`  
-- Resurse: `Obiectele de miros la loc`  
+- Fizic: `Plimbare, nasul pe vânt`  
+- Mental: `Cartea cu mâncare`  
+- Resurse: `Cana și cartea la loc`  
 - Social: `Noapte bună`  
 
 ---
@@ -201,44 +201,44 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Mână ridicată: salut`  
-- Mental: `Bună — cuvânt scurt`  
-- Resurse: `Jucăria de salut pe raft`  
-- Social: `Spunem bună adultului`  
+- Fizic: `Mâna sus: bună`  
+- Mental: `Spunem „Bună”`  
+- Resurse: `Ușa se deschide`  
+- Social: `Spunem bună împreună`  
 
 **Marți**  
-- Fizic: `Fluturăm mâna: la revedere`  
-- Mental: `Bună și la revedere`  
-- Resurse: `Haina de oaspete pe cârlig`  
-- Social: `La revedere adultului`  
+- Fizic: `Fluturăm mâna: pa`  
+- Mental: `Spunem „Pa”`  
+- Resurse: `Ușa se închide`  
+- Social: `Spunem pa împreună`  
 
 **Miercuri**  
-- Fizic: `Ducem o jucărie „oaspetelui”`  
-- Mental: `Oaspete în casă`  
-- Resurse: `Scaunul liber pentru oaspete`  
-- Social: `Oferim jucăria adultului-oaspete`  
+- Fizic: `Batem în ușă`  
+- Mental: `Cine e la ușă?`  
+- Resurse: `Pantofii lângă ușă`  
+- Social: `Batem în ușă împreună`  
 
 **Joi**  
-- Fizic: `Ne așezăm lângă oaspete`  
-- Mental: `Aproape, lin`  
-- Resurse: `Paharul pe masă pentru oaspete`  
-- Social: `Stăm lângă oaspete fără forțare`  
+- Fizic: `Deschidem ușa, apoi o închidem`  
+- Mental: `Deschisă — sau închisă?`  
+- Resurse: `Mânerul, apoi mâna jos`  
+- Social: `Deschidem ușa împreună`  
 
 **Vineri**  
-- Fizic: `Pași până la ușă: salut`  
-- Mental: `Familie: mama, tata, copil`  
-- Resurse: `Pantofii de oaspete la loc`  
-- Social: `Salut la ușă cu adultul`  
+- Fizic: `Pași până la ușă, bună`  
+- Mental: `Mama, tata, tu`  
+- Resurse: `Haina oaspetelui pe cuier`  
+- Social: `Bună la ușă`  
 
 **Sâmbătă**  
-- Fizic: `Poză de familie — arătăm cu degetul`  
-- Mental: `Cine e în poză`  
-- Resurse: `Poza — sau albumul pe raft`  
-- Social: `Arătăm poza adultului`  
+- Fizic: `Stăm lângă ușă`  
+- Mental: `Cine a venit?`  
+- Resurse: `Haina pe cuier după vizită`  
+- Social: `Mulțumim pentru vizită`  
 
 **Duminică**  
 - Fizic: `Plimbare liberă, salut la final`  
-- Mental: `Carte: familie și casă`  
+- Mental: `Cartea cu familia`  
 - Resurse: `Jucăria-oaspete pe raft`  
 - Social: `Noapte bună`  
 
@@ -262,44 +262,44 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ### Titluri L–D × 4 piloni
 **Luni**  
 - Fizic: `Aprindem lampa`  
-- Mental: `Lumină și seară`  
-- Resurse: `Lampa pe noptieră la loc`  
-- Social: `Lumina de seară împreună`  
+- Mental: `E lumină`  
+- Resurse: `Lampa stă pe locul ei`  
+- Social: `Aprindem împreună`  
 
 **Marți**  
-- Fizic: `Tragem perdeaua seara`  
-- Mental: `Întuneric blând afară`  
-- Resurse: `Perdeaua închisă la loc`  
-- Social: `Perdeaua cu adultul`  
+- Fizic: `Stingem lampa`  
+- Mental: `E întuneric — sau lumină?`  
+- Resurse: `Întrerupătorul, apoi mâna jos`  
+- Social: `Stingem împreună`  
 
 **Miercuri**  
-- Fizic: `Pătura pe pat seara`  
-- Mental: `Pat și somn`  
-- Resurse: `Perna și pătura la loc`  
-- Social: `Ne așezăm pe pat împreună`  
+- Fizic: `Lumină mică de seară`  
+- Mental: `Lumină — sau umbră?`  
+- Resurse: `Perdeaua trasă seara`  
+- Social: `Lumină mică împreună`  
 
 **Joi**  
-- Fizic: `Cartea de seară: întoarcem pagina`  
-- Mental: `Imaginea din cartea de seară`  
-- Resurse: `Cartea pe noptieră`  
-- Social: `Citire scurtă lângă adult`  
+- Fizic: `Întoarcem o pagină la lampă`  
+- Mental: `Imagini la lumină`  
+- Resurse: `Cartea pe raft după seară`  
+- Social: `Citim la lampă împreună`  
 
 **Vineri**  
-- Fizic: `Mâinile la chiuvetă seara`  
-- Mental: `Curat și gata de somn`  
-- Resurse: `Prosopul la loc după spălat`  
-- Social: `Spălăm mâinile pe rând`  
+- Fizic: `Pași prin camera luminată`  
+- Mental: `Unde e lampa?`  
+- Resurse: `Lampa rămâne pe loc`  
+- Social: `Arătăm lampa`  
 
 **Sâmbătă**  
-- Fizic: `Stingem lumina`  
-- Mental: `Aprins și stins`  
-- Resurse: `Lumina de veghe pe noptieră`  
-- Social: `Stingem pe rând`  
+- Fizic: `Stăm lângă lampă`  
+- Mental: `Seară în casă`  
+- Resurse: `Tragem perdeaua`  
+- Social: `Seară liniștită împreună`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă, lumină la final`  
-- Mental: `Carte: noapte și lumină`  
-- Resurse: `Cartea și pătura la loc seara`  
+- Fizic: `Plimbare prin casă, seara`  
+- Mental: `Cartea de noapte`  
+- Resurse: `Cartea și lampa la loc`  
 - Social: `Noapte bună`  
 
 ---
@@ -321,44 +321,44 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Geamul favorit`  
-- Mental: `Ne amintim: geam`  
+- Fizic: `Ne uităm din nou pe geam`  
+- Mental: `Ți-aduci aminte geamul?`  
 - Resurse: `Perdeaua la loc, ca înainte`  
-- Social: `Privim geamul împreună din nou`  
+- Social: `Privim geamul din nou`  
 
 **Marți**  
-- Fizic: `Dansul favorit pe loc`  
-- Mental: `Ne amintim: corp și dans`  
-- Resurse: `Spațiu liber pentru dansul vechi`  
+- Fizic: `Dansăm din nou, ca atunci`  
+- Mental: `Ți-aduci aminte dansul?`  
+- Resurse: `Facem loc, ca înainte`  
 - Social: `Dansăm din nou împreună`  
 
 **Miercuri**  
-- Fizic: `Cartea iubită: pagina lui`  
-- Mental: `Ne amintim imaginea din carte`  
-- Resurse: `Cartea favorită pe raft`  
-- Social: `Citim favorita cu adultul`  
+- Fizic: `Cartea iubită, pagina ta`  
+- Mental: `Aceeași carte`  
+- Resurse: `Cartea pe raft, ca întotdeauna`  
+- Social: `Citim din nou împreună`  
 
 **Joi**  
-- Fizic: `Mingea favorită: dat`  
+- Fizic: `Mingea favorită, o dăm`  
 - Mental: `Ne amintim: minge și rând`  
 - Resurse: `Mingea în cutie din nou`  
 - Social: `Mingea pe rând, ca înainte`  
 
 **Vineri**  
 - Fizic: `Trei obiecte favorite pe masă`  
-- Mental: `Ne amintim: unde e?`  
-- Resurse: `Trei lucruri la loc, ca înainte`  
-- Social: `Arătăm favoritele adultului`  
+- Mental: `Unde era?`  
+- Resurse: `Jucăria la locul ei`  
+- Social: `Arătăm jucăria cunoscută`  
 
 **Sâmbătă**  
-- Fizic: `Mirosul favorit`  
-- Mental: `Pâine — sau săpun?`  
-- Resurse: `Obiectul de miros la loc`  
-- Social: `Mirosim din nou împreună`  
+- Fizic: `Alegem o favorită`  
+- Mental: `Care îți place?`  
+- Resurse: `Favorita pe raft`  
+- Social: `Alegem împreună`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă, un favorit la final`  
-- Mental: `Carte: jumătate de an împreună`  
+- Fizic: `Plimbare, ca de obicei`  
+- Mental: `Cartea de la jumătatea anului`  
 - Resurse: `Favoritele pe raft la final`  
 - Social: `Noapte bună`  
 
@@ -381,45 +381,45 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Mâna pe geam: vremea`  
-- Mental: `Zăpadă — sau ploaie?`  
-- Resurse: `Perdeaua trasă la geam`  
+- Fizic: `Mâna pe geam, uităm vremea`  
+- Mental: `Ninge — sau plouă?`  
+- Resurse: `Tragem perdeaua`  
 - Social: `Privim vremea împreună`  
 
 **Marți**  
-- Fizic: `Deget pe geam: urmărim picături`  
-- Mental: `Picătură — sau fulg?`  
-- Resurse: `Cârpa de geam după privire`  
-- Social: `Arătăm vremea adultului`  
+- Fizic: `Urmărim picăturile pe geam`  
+- Mental: `Picătura coboară`  
+- Resurse: `Ștergem o picătură`  
+- Social: `Urmărim picăturile pe rând`  
 
 **Miercuri**  
-- Fizic: `Urechea la geam`  
-- Mental: `Sunet afară, liniște în casă`  
-- Resurse: `Geamul și cârpa la loc`  
-- Social: `Ascultăm ploaia împreună`  
+- Fizic: `Cizmele la ușă`  
+- Mental: `Ieșim — sau stăm?`  
+- Resurse: `Cizmele după geam`  
+- Social: `Ne încălțăm împreună`  
 
 **Joi**  
-- Fizic: `De la geam rece la cameră caldă`  
+- Fizic: `Suflăm pe geamul ud`  
 - Mental: `Rece afară, cald în casă`  
-- Resurse: `Pătura după geamul rece`  
-- Social: `Ne încălzim după geam`  
+- Resurse: `Cârpa de geam, la loc`  
+- Social: `Suflăm pe rând`  
 
 **Vineri**  
-- Fizic: `Suflăm pe geam: abur și vreme`  
-- Mental: `Abur, apoi afară`  
-- Resurse: `Ștergem aburul, cârpa la loc`  
-- Social: `Suflăm pe rând la geam`  
+- Fizic: `Haina de ploaie pe umeri`  
+- Mental: `Haină — sau fără?`  
+- Resurse: `Haina pe cârlig`  
+- Social: `Te ajut la haină`  
 
 **Sâmbătă**  
-- Fizic: `Numărăm fulgi`  
-- Mental: `Multă zăpadă — sau ploaie?`  
+- Fizic: `Stăm la geam, vremea trece`  
+- Mental: `Ninge — sau plouă?`  
 - Resurse: `Obiectul de pe pervaz la loc`  
-- Social: `Spunem adultului ce e afară`  
+- Social: `Privim fulgii împreună`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă, geam la final`  
-- Mental: `Cartea cu vremea`  
-- Resurse: `Cartea și cârpa pe raft`  
+- Fizic: `Plimbare până la geam`  
+- Mental: `Cartea cu zăpadă`  
+- Resurse: `Haina și cartea la loc`  
 - Social: `Noapte bună`  
 
 ---
@@ -442,44 +442,44 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ### Titluri L–D × 4 piloni
 **Luni**  
 - Fizic: `Cizmele pe picioare`  
-- Mental: `Cizmă și picior`  
-- Resurse: `Cizmele lângă ușă la loc`  
-- Social: `Cizmele cu adultul`  
+- Mental: `Cizme pentru noroi`  
+- Resurse: `Cizmele la ușă, gata de ieșit`  
+- Social: `Ne încălțăm împreună`  
 
 **Marți**  
-- Fizic: `Deget pe noroi`  
-- Mental: `Moale — sau tare?`  
-- Resurse: `Cârpa de noroi la loc`  
-- Social: `Privim noroiul împreună`  
+- Fizic: `Pași în noroi, doi-trei`  
+- Mental: `Noroi moale`  
+- Resurse: `Cizmele se scutură`  
+- Social: `Pași în noroi, unul lângă altul`  
 
 **Miercuri**  
-- Fizic: `Pași scurți în curte cu cizme`  
-- Mental: `Curte și casă`  
-- Resurse: `Cizmele scuturate la ușă`  
-- Social: `Pași în curte cu adultul`  
+- Fizic: `Mâna pe cizmă, uităm noroiul`  
+- Mental: `Murdar — sau curat?`  
+- Resurse: `Cârpa de cizme, la loc`  
+- Social: `Arătăm cizma`  
 
 **Joi**  
-- Fizic: `Apă pe pământ: dezgheț`  
-- Mental: `Dezgheț: apă și pământ`  
-- Resurse: `Paharul de apă la loc`  
-- Social: `Turnăm apa pe rând`  
+- Fizic: `Băltoaca de dezgheț`  
+- Mental: `Apă pe pământ`  
+- Resurse: `Cizmele după băltoacă`  
+- Social: `Sărim băltoaca împreună`  
 
 **Vineri**  
-- Fizic: `Ștergem cizmele pe preș`  
-- Mental: `Murdar și curat`  
-- Resurse: `Cizmele curate lângă ușă`  
-- Social: `Ștergem pe rând pe preș`  
+- Fizic: `Spălăm mâinile după noroi`  
+- Mental: `Mâini curate`  
+- Resurse: `Prosopul la loc`  
+- Social: `Spălăm mâinile împreună`  
 
 **Sâmbătă**  
-- Fizic: `Mâini la chiuvetă după curte`  
-- Mental: `Texturi: noroi, apoi apă`  
-- Resurse: `Prosopul după curte la loc`  
-- Social: `Spălăm după curte împreună`  
+- Fizic: `Noroi, apoi apă`  
+- Mental: `Moale, apoi ud`  
+- Resurse: `Cizmele la loc, după curte`  
+- Social: `Ne ștergem împreună`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă în curte`  
-- Mental: `Carte: curte și primăvară`  
-- Resurse: `Cizmele și cârpa la loc`  
+- Fizic: `Plimbare cu cizmele`  
+- Mental: `Cartea cu curtea`  
+- Resurse: `Cizmele și haina la loc`  
 - Social: `Noapte bună`  
 
 ---
@@ -501,45 +501,45 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Atingem iarba nouă`  
-- Mental: `Verde: iarbă nouă`  
-- Resurse: `Ghiveciul pe pervaz la loc`  
+- Fizic: `Degetul pe mugure`  
+- Mental: `Uite iarba nouă`  
+- Resurse: `Ramura rămâne pe loc`  
 - Social: `Privim iarba împreună`  
 
 **Marți**  
-- Fizic: `Deget pe mugure`  
-- Mental: `Mugure și frunză`  
-- Resurse: `Ramura la loc`  
-- Social: `Mugurele cu adultul`  
+- Fizic: `Pași scurți pe iarbă`  
+- Mental: `Verde, iarbă nouă`  
+- Resurse: `Pantofii după iarbă`  
+- Social: `Pași pe iarbă împreună`  
 
 **Miercuri**  
-- Fizic: `Pași scurți pe iarbă`  
-- Mental: `Iarbă și pământ`  
-- Resurse: `Pantofii lângă ușă după iarbă`  
-- Social: `Pași pe iarbă cu adultul`  
+- Fizic: `Atingem o frunză mică`  
+- Mental: `Mică — sau mare?`  
+- Resurse: `Frunza rămâne pe plantă`  
+- Social: `Atingem frunza pe rând`  
 
 **Joi**  
-- Fizic: `Mirosim planta verde`  
-- Mental: `Plantă: verde și frunză`  
-- Resurse: `Planta pe pervaz după miros`  
-- Social: `Mirosim planta pe rând`  
+- Fizic: `Udăm puțin la rădăcină`  
+- Mental: `Plantă verde`  
+- Resurse: `Stropitoarea la loc`  
+- Social: `Privim ghiveciul împreună`  
 
 **Vineri**  
-- Fizic: `Udăm iarba`  
-- Mental: `Apă pentru plantă`  
+- Fizic: `Ne aplecăm la mugure`  
+- Mental: `Verde, iarbă nouă`  
 - Resurse: `Stropitoarea la loc`  
-- Social: `Udăm pe rând`  
+- Social: `Privim planta împreună`  
 
 **Sâmbătă**  
-- Fizic: `Culegem o frunză căzută`  
-- Mental: `Frunză pe pământ, iarbă pe loc`  
-- Resurse: `Frunza în coș`  
-- Social: `Arătăm frunza adultului`  
+- Fizic: `Trei pași printre fire de iarbă`  
+- Mental: `Iarbă nouă sub picior`  
+- Resurse: `Pantofii la ușă după iarbă`  
+- Social: `Iarba, unul lângă altul`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă la iarbă`  
-- Mental: `Carte: iarbă și plantă`  
-- Resurse: `Planta și stropitoarea la loc`  
+- Fizic: `Plimbare pe iarbă`  
+- Mental: `Cartea cu plante`  
+- Resurse: `Stropitoarea și pantofii la loc`  
 - Social: `Noapte bună`  
 
 ---
@@ -561,45 +561,45 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `La geam dimineața: ascultăm`  
-- Mental: `Pasăre: sunet afară`  
-- Resurse: `Perdeaua trasă pentru sunet`  
-- Social: `Ascultăm păsările împreună`  
+- Fizic: `Stăm la geam dimineața`  
+- Mental: `Auzim o pasăre?`  
+- Resurse: `Perdeaua la loc după geam`  
+- Social: `Ascultăm împreună`  
 
 **Marți**  
-- Fizic: `Arătăm spre cer`  
-- Mental: `Sus: pasăre pe creangă`  
-- Resurse: `Geamul liber după privit`  
-- Social: `Arătăm pasărea adultului`  
+- Fizic: `Arătăm sus, pe creangă`  
+- Mental: `Pasărea e sus`  
+- Resurse: `Mâna jos după arătat`  
+- Social: `Arătăm pasărea`  
 
 **Miercuri**  
-- Fizic: `Ieșim scurt: urechi afară`  
-- Mental: `Casă și afară: sunete`  
+- Fizic: `Ieșim scurt, urechile afară`  
+- Mental: `Sunet în casă — sau afară?`  
 - Resurse: `Ușa închisă după ascultat`  
-- Social: `Ascultăm afară cu adultul`  
+- Social: `Ascultăm afară împreună`  
 
 **Joi**  
-- Fizic: `Imităm ciripit`  
-- Mental: `Ciripit și liniște`  
-- Resurse: `Jucăria-pasăre pe raft`  
-- Social: `Ciripim pe rând`  
+- Fizic: `Brațele ca aripile`  
+- Mental: `Aripile se mișcă`  
+- Resurse: `Facem loc pentru aripi`  
+- Social: `Aripile împreună`  
 
 **Vineri**  
-- Fizic: `Privim o pasăre`  
-- Mental: `Pasăre: zboară`  
+- Fizic: `Privim pasărea care zboară`  
+- Mental: `Zboară`  
 - Resurse: `Binoclul de jucărie la loc`  
-- Social: `Privim pasărea împreună`  
+- Social: `Zborul, unul lângă altul`  
 
 **Sâmbătă**  
-- Fizic: `Brațe ca aripile`  
-- Mental: `Aripi și corp`  
-- Resurse: `Spațiu liber pentru aripi`  
-- Social: `Aripi împreună`  
+- Fizic: `Ciripim încet, ca pasărea`  
+- Mental: `Cioc, un sunet`  
+- Resurse: `Gura, apoi liniște`  
+- Social: `Ciripim pe rând`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă, urechi la final`  
-- Mental: `Carte: păsări`  
-- Resurse: `Cartea și jucăria-pasăre la loc`  
+- Fizic: `Plimbare de dimineață`  
+- Mental: `Cartea cu păsări`  
+- Resurse: `Cartea pe raft`  
 - Social: `Noapte bună`  
 
 ---
@@ -621,45 +621,45 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Ținem o sămânță`  
-- Mental: `Sămânță: mică`  
-- Resurse: `Semințele în cutie la loc`  
-- Social: `Arătăm sămânța adultului`  
+- Fizic: `Punem sămânța în pământ`  
+- Mental: `Sămânța e mică`  
+- Resurse: `Pământul acoperă sămânța`  
+- Social: `Punem sămânța împreună`  
 
 **Marți**  
-- Fizic: `Punem sămânța în pământ`  
-- Mental: `Sămânță și pământ`  
-- Resurse: `Ghiveciul pe masă după plantat`  
-- Social: `Plantăm pe rând`  
+- Fizic: `Așteptăm lângă ghiveci`  
+- Mental: `Pământ ud — sau uscat?`  
+- Resurse: `Stropitoarea la loc`  
+- Social: `Privim planta împreună`  
 
 **Miercuri**  
-- Fizic: `Udăm sămânța`  
-- Mental: `Udat: apă pe pământ`  
-- Resurse: `Paharul de udat la loc`  
-- Social: `Udăm împreună`  
+- Fizic: `Așteptăm lângă ghiveci`  
+- Mental: `Încă nu se vede`  
+- Resurse: `Ghiveciul pe pervaz`  
+- Social: `Privim ghiveciul împreună`  
 
 **Joi**  
-- Fizic: `Deget în pământ umed`  
-- Mental: `Umed și uscat`  
-- Resurse: `Mâinile pe prosop după pământ`  
+- Fizic: `Degetul pe pământul ud`  
+- Mental: `Moale`  
+- Resurse: `Mâna pe prosop`  
 - Social: `Atingem pământul pe rând`  
 
 **Vineri**  
-- Fizic: `Cărăm stropitoarea câțiva pași`  
-- Mental: `Stropitoare și grijă`  
-- Resurse: `Stropitoarea lângă plantă la loc`  
-- Social: `Cărăm pe rând stropitoarea`  
+- Fizic: `Cărăm stropitoarea`  
+- Mental: `Greu cu apă — sau ușor?`  
+- Resurse: `Stropitoarea lângă plantă`  
+- Social: `Măturăm împreună`  
 
 **Sâmbătă**  
-- Fizic: `Privim ghiveciul: a crescut?`  
-- Mental: `Așteptăm: sămânță apoi plantă`  
-- Resurse: `Ghiveciul pe lumină la loc`  
-- Social: `Privim ghiveciul împreună`  
+- Fizic: `A crescut ceva?`  
+- Mental: `Sămânță, apoi plantă`  
+- Resurse: `Ghiveciul rămâne la loc`  
+- Social: `Privim dacă a crescut`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă, udat la final`  
-- Mental: `Carte: sămânță și plantă`  
-- Resurse: `Semințele și stropitoarea la loc`  
+- Fizic: `Plimbare până la ghiveci`  
+- Mental: `Cartea cu grădina`  
+- Resurse: `Stropitoarea la loc`  
 - Social: `Noapte bună`  
 
 ---
@@ -681,44 +681,44 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Ținem mingea afară`  
-- Mental: `Minge: rotundă`  
-- Resurse: `Mingea lângă ușă înainte de joacă`  
-- Social: `Mingea afară cu adultul`  
+- Fizic: `Ținem balonul de sfoară`  
+- Mental: `Balonul e ușor`  
+- Resurse: `Balonul lângă ușă`  
+- Social: `Ținem balonul împreună`  
 
 **Marți**  
-- Fizic: `Dăm mingea afară`  
-- Mental: `Dat și primit`  
-- Resurse: `Mingea pe iarbă la loc scurt`  
-- Social: `Dăm mingea pe rând afară`  
+- Fizic: `Bătem ușor în balon`  
+- Mental: `Moale`  
+- Resurse: `Balonul pe scaun, la loc`  
+- Social: `Bătem pe rând`  
 
 **Miercuri**  
-- Fizic: `Aruncăm mingea jos`  
-- Mental: `Sus și jos: minge`  
-- Resurse: `Mingea în coș după aruncat`  
-- Social: `Aruncăm pe rând jos`  
+- Fizic: `Balonul sus, deasupra capului`  
+- Mental: `Sus — sau jos?`  
+- Resurse: `Sfoara strânsă în mână`  
+- Social: `Ridicăm balonul împreună`  
 
 **Joi**  
-- Fizic: `Urmărim mingea pe iarbă`  
-- Mental: `Minge: unde e?`  
-- Resurse: `Mingea adusă lângă ușă`  
-- Social: `Căutăm mingea împreună`  
+- Fizic: `Umblăm cu balonul în curte`  
+- Mental: `Balonul pe iarbă`  
+- Resurse: `Balonul nu rămâne afară`  
+- Social: `Ne jucăm cu balonul`  
 
 **Vineri**  
-- Fizic: `Picioarele lângă minge`  
-- Mental: `Mână și picior la minge`  
-- Resurse: `Mingea în cutie după curte`  
-- Social: `Mingea cu piciorul pe rând`  
+- Fizic: `Mergem ținând sfoara`  
+- Mental: `Sfoară lungă — sau scurtă?`  
+- Resurse: `Sfoara înfășurată, la loc`  
+- Social: `Mergem cu balonul împreună`  
 
 **Sâmbătă**  
-- Fizic: `Aducem mingea în casă`  
-- Mental: `Afară și casă: minge`  
-- Resurse: `Mingea pe raft după afară`  
-- Social: `Intrăm cu mingea împreună`  
+- Fizic: `Balonul se leagănă`  
+- Mental: `Se mișcă în aer`  
+- Resurse: `Balonul în casă, la loc`  
+- Social: `Arătăm balonul`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă, minge la final`  
-- Mental: `Carte: minge și afară`  
+- Fizic: `Plimbare cu balonul`  
+- Mental: `Cartea cu balonul`  
 - Resurse: `Mingea și pantofii la loc`  
 - Social: `Noapte bună`  
 
@@ -741,45 +741,45 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Mâna în nisip`  
-- Mental: `Nisip: moale`  
+- Fizic: `Lopățica în nisip`  
+- Mental: `Nisipul e moale`  
 - Resurse: `Găleata lângă nisip`  
-- Social: `Privim nisipul împreună`  
+- Social: `Umplem împreună`  
 
 **Marți**  
-- Fizic: `Umplem găleata puțin`  
-- Mental: `Găleată: plină și goală`  
-- Resurse: `Găleata pe raft după joacă`  
+- Fizic: `Punem nisip în găleată`  
+- Mental: `Plină — sau goală?`  
+- Resurse: `Lopățica la loc`  
 - Social: `Umplem pe rând`  
 
 **Miercuri**  
-- Fizic: `Turnăm nisip din găleată`  
-- Mental: `Jos: nisip pe pământ`  
-- Resurse: `Nisipul înapoi în cutie`  
-- Social: `Turnăm nisip cu adultul`  
+- Fizic: `Săpăm o gropiță`  
+- Mental: `Adânc — sau la suprafață?`  
+- Resurse: `Nisipul înapoi`  
+- Social: `Săpăm unul lângă altul`  
 
 **Joi**  
-- Fizic: `Degete prin nisip`  
-- Mental: `Urme în nisip`  
-- Resurse: `Lopata mică la loc`  
-- Social: `Arătăm urma adultului`  
+- Fizic: `Facem o formă`  
+- Mental: `Rotundă — sau lungă?`  
+- Resurse: `Nisipul rămâne afară`  
+- Social: `Arătăm forma`  
 
 **Vineri**  
-- Fizic: `Cărăm găleata doi pași`  
-- Mental: `Greu și ușor: găleata`  
-- Resurse: `Găleata și lopata împreună la loc`  
-- Social: `Cărăm găleata împreună`  
+- Fizic: `Cărăm găleata`  
+- Mental: `Greu — sau ușor?`  
+- Resurse: `Turnăm nisipul înapoi`  
+- Social: `Măturăm împreună`  
 
 **Sâmbătă**  
-- Fizic: `Formă mică în nisip`  
-- Mental: `Rotund: găleata pe nisip`  
-- Resurse: `Forma și nisipul la loc`  
-- Social: `Facem forma pe rând`  
+- Fizic: `Lopățica și găleata, apoi gata`  
+- Mental: `Nisip pe mână`  
+- Resurse: `Mâinile pe prosop`  
+- Social: `La nisip, unul lângă altul`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă la nisip`  
-- Mental: `Carte: nisip și găleată`  
-- Resurse: `Găleata și lopata la loc`  
+- Fizic: `Plimbare pe nisip`  
+- Mental: `Cartea cu plaja`  
+- Resurse: `Lopățica și găleata la loc`  
 - Social: `Noapte bună`  
 
 ---
@@ -801,45 +801,45 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Ieșim la soare`  
-- Mental: `Umbră pe pământ`  
-- Resurse: `Pantofii lângă ușă după soare`  
-- Social: `Privim umbra împreună`  
+- Fizic: `Mâna face umbră`  
+- Mental: `Uite umbra`  
+- Resurse: `Mâna jos, umbra dispare`  
+- Social: `Facem umbră împreună`  
 
 **Marți**  
-- Fizic: `Mâna face umbră`  
-- Mental: `Mână și umbră`  
-- Resurse: `Spațiu liber pe pământ`  
-- Social: `Arătăm umbra adultului`  
+- Fizic: `Umbra pe perete`  
+- Mental: `Mare — sau mică?`  
+- Resurse: `Ne dăm la o parte`  
+- Social: `Umbra pe rând`  
 
 **Miercuri**  
-- Fizic: `Pași pe umbră`  
-- Mental: `Lungă și scurtă: umbra`  
-- Resurse: `Ușa închisă după umbre`  
-- Social: `Pași pe umbră cu adultul`  
+- Fizic: `Umbra pe jos, lungă`  
+- Mental: `Lungă — sau scurtă?`  
+- Resurse: `Pașii lângă umbră`  
+- Social: `Urmărim umbra împreună`  
 
 **Joi**  
-- Fizic: `Umbră de frunză`  
-- Mental: `Copac și umbră`  
-- Resurse: `Frunza căzută în coș`  
-- Social: `Privim umbra copacului împreună`  
+- Fizic: `Stăm la umbră`  
+- Mental: `Soare — sau umbră?`  
+- Resurse: `Ieșim din umbră`  
+- Social: `Stăm în umbră împreună`  
 
 **Vineri**  
-- Fizic: `Corpul face umbră mare`  
-- Mental: `Eu și umbra mea`  
-- Resurse: `Pălăria la loc`  
-- Social: `Umbrele noastre una lângă alta`  
+- Fizic: `Umbra merge cu noi`  
+- Mental: `Umbra se mișcă`  
+- Resurse: `Ne oprim, umbra stă`  
+- Social: `Mergem cu umbra`  
 
 **Sâmbătă**  
-- Fizic: `Urmărim umbra care se mișcă`  
-- Mental: `Stă și se mișcă: umbra`  
-- Resurse: `Obiectul de umbră pe raft`  
-- Social: `Mișcăm umbra pe rând`  
+- Fizic: `Umbra unui copac`  
+- Mental: `Stă — sau se mișcă?`  
+- Resurse: `Ieșim de sub copac`  
+- Social: `Sub copac, unul lângă altul`  
 
 **Duminică**  
 - Fizic: `Plimbare liberă, umbră la final`  
-- Mental: `Carte: soare și umbră`  
-- Resurse: `Pantofii și pălăria la loc`  
+- Mental: `Cartea cu soarele`  
+- Resurse: `Ne oprim, umbra stă`  
 - Social: `Noapte bună`  
 
 ---
@@ -861,45 +861,45 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Atingem apa afară`  
-- Mental: `Apă: udă`  
-- Resurse: `Vasul cu apă pe masă afară`  
-- Social: `Privim apa împreună`  
+- Fizic: `Stropi pe mână, afară`  
+- Mental: `E ud`  
+- Resurse: `Prosopul afară, apoi la loc`  
+- Social: `Stropi împreună`  
 
 **Marți**  
-- Fizic: `Turnăm apă din pahar`  
-- Mental: `Pahar: plin și gol`  
-- Resurse: `Paharul la loc după turnat`  
+- Fizic: `Turnăm puțin pe pământ`  
+- Mental: `Pahar plin — sau gol?`  
+- Resurse: `Paharul la loc`  
 - Social: `Turnăm pe rând`  
 
 **Miercuri**  
-- Fizic: `Udăm o plantă afară`  
-- Mental: `Plantă bea apă`  
+- Fizic: `O băltoacă mică`  
+- Mental: `Adâncă — sau mică?`  
 - Resurse: `Stropitoarea la loc`  
-- Social: `Udăm planta cu adultul`  
+- Social: `Sărim băltoaca`  
 
 **Joi**  
-- Fizic: `Stropim pământul`  
-- Mental: `Pământ ud și uscat`  
-- Resurse: `Apa rămasă înapoi în vas`  
-- Social: `Stropim pe rând`  
+- Fizic: `Udăm o plantă afară`  
+- Mental: `Planta bea apă`  
+- Resurse: `Stropitoarea la loc`  
+- Social: `Privim ghiveciul împreună`  
 
 **Vineri**  
-- Fizic: `Mâinile în apă`  
-- Mental: `Rece: apa afară`  
-- Resurse: `Prosopul la loc după mâini`  
-- Social: `Mâinile în apă pe rând`  
+- Fizic: `Apa e rece afară`  
+- Mental: `Rece`  
+- Resurse: `Mâinile pe prosop`  
+- Social: `Atingem apa pe rând`  
 
 **Sâmbătă**  
-- Fizic: `Picături pe piatră`  
-- Mental: `Picătură: mică`  
-- Resurse: `Paharul și vasul la loc`  
-- Social: `Facem picături împreună`  
+- Fizic: `O picătură pe frunză`  
+- Mental: `Picătura e mică`  
+- Resurse: `Frunza rămâne afară`  
+- Social: `Uităm picătura împreună`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă, apă la final`  
-- Mental: `Carte: apă afară`  
-- Resurse: `Vasul și stropitoarea la loc`  
+- Fizic: `Plimbare lângă apă`  
+- Mental: `Cartea cu apa`  
+- Resurse: `Paharul și prosopul la loc`  
 - Social: `Noapte bună`  
 
 ---
@@ -921,45 +921,45 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Ieșim: privim`  
-- Mental: `Insectă: mică`  
-- Resurse: `Pantofii lângă ușă după privit`  
-- Social: `Privim insecta împreună de departe`  
+- Fizic: `Ieșim și privim`  
+- Mental: `E mic, gândăcelul`  
+- Resurse: `Rămânem pe loc, departe`  
+- Social: `Privim împreună`  
 
 **Marți**  
-- Fizic: `Arătăm cu degetul de departe`  
-- Mental: `Departe și aproape`  
-- Resurse: `Mâinile libere, fără prins`  
-- Social: `Arătăm insecta adultului`  
+- Fizic: `Arătăm gândăcelul`  
+- Mental: `Pe frunză`  
+- Resurse: `Mâna jos, nu-l luăm`  
+- Social: `Arătăm pe rând`  
 
 **Miercuri**  
-- Fizic: `Urmărim o insectă cu ochii`  
-- Mental: `Merge: insecta pe frunză`  
-- Resurse: `Spațiu liber pe potecă`  
-- Social: `Urmărim împreună de departe`  
+- Fizic: `Gândăcelul merge`  
+- Mental: `Merge încet`  
+- Resurse: `Nu-l atingem`  
+- Social: `Îl urmărim din ochi`  
 
 **Joi**  
-- Fizic: `Ascultăm zumzet`  
-- Mental: `Zumzet și liniște`  
+- Fizic: `Unul zboară`  
+- Mental: `Zboară`  
 - Resurse: `Ușa închisă după ascultat`  
-- Social: `Ascultăm zumzetul împreună`  
+- Social: `Privim zborul împreună`  
 
 **Vineri**  
-- Fizic: `Privim fluturele de departe`  
-- Mental: `Zboară: insectă în aer`  
+- Fizic: `Doar ne uităm, de departe`  
+- Mental: `Avem grijă, nu atingem`  
 - Resurse: `Binoclul de jucărie la loc`  
-- Social: `Privim fluturele împreună`  
+- Social: `Privim de departe împreună`  
 
 **Sâmbătă**  
-- Fizic: `Pași moi lângă insectă`  
-- Mental: `Grijă: nu atingem`  
-- Resurse: `Poteca liberă după pași`  
-- Social: `Pași moi cu adultul`  
+- Fizic: `Uite, pe pământ`  
+- Mental: `Pământ — sau frunză?`  
+- Resurse: `Pământul rămâne, noi plecăm`  
+- Social: `Arătăm pământul`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă, privit la final`  
-- Mental: `Carte: insecte`  
-- Resurse: `Cartea și binoclul la loc`  
+- Fizic: `Plimbare, ochii pe jos`  
+- Mental: `Cartea cu gândăcei`  
+- Resurse: `Cartea pe raft`  
 - Social: `Noapte bună`  
 
 ---
@@ -981,45 +981,45 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Intrăm în umbră`  
-- Mental: `Umbră: răcoare`  
-- Resurse: `Paharul cu apă la umbră`  
+- Fizic: `Stăm la umbră`  
+- Mental: `E răcoare`  
+- Resurse: `Pătura pe iarbă, la umbră`  
 - Social: `Stăm la umbră împreună`  
 
 **Marți**  
-- Fizic: `Așezăm pe scaun la umbră`  
-- Mental: `Soare și umbră`  
-- Resurse: `Pălăria pe scaun la umbră`  
-- Social: `Pauză scurtă cu adultul`  
+- Fizic: `Din soare, în umbră`  
+- Mental: `Cald — sau răcoare?`  
+- Resurse: `Pălăria pe cap, la soare`  
+- Social: `Intrăm în umbră împreună`  
 
 **Miercuri**  
 - Fizic: `Bem apă la umbră`  
-- Mental: `Apă: rece`  
-- Resurse: `Paharul gol pe masă`  
-- Social: `Bem pe rând la umbră`  
+- Mental: `Apa e rece`  
+- Resurse: `Paharul după umbră`  
+- Social: `Bem împreună, la umbră`  
 
 **Joi**  
-- Fizic: `Din soare în umbră, doi pași`  
-- Mental: `Cald și răcoare`  
-- Resurse: `Pantofii la umbră lângă ușă`  
-- Social: `Mergem în umbră cu adultul`  
+- Fizic: `Piciorul pe iarbă, la umbră`  
+- Mental: `Iarbă răcoroasă`  
+- Resurse: `Pantofii lângă patură`  
+- Social: `Pe iarbă, unul lângă altul`  
 
 **Vineri**  
-- Fizic: `Aer pe față la umbră`  
-- Mental: `Aer: blând`  
-- Resurse: `Evantaiul pe masă după`  
-- Social: `Facem aer pe rând`  
+- Fizic: `Aerul e blând`  
+- Mental: `Suflă încet`  
+- Resurse: `Haina pe braț, la umbră`  
+- Social: `Simțim aerul împreună`  
 
 **Sâmbătă**  
-- Fizic: `Odihnă scurtă pe pătură la umbră`  
-- Mental: `Loc răcoros: aici`  
-- Resurse: `Pătura rulată la loc`  
-- Social: `Pe pătură unul lângă altul`  
+- Fizic: `Aici e locul răcoros`  
+- Mental: `Aici, nu acolo`  
+- Resurse: `Pătura strânsă, la loc`  
+- Social: `Ne așezăm la umbră`  
 
 **Duminică**  
 - Fizic: `Plimbare liberă, umbră la final`  
-- Mental: `Carte: umbră și răcoare`  
-- Resurse: `Paharul și pălăria la loc`  
+- Mental: `Cartea de la umbră`  
+- Resurse: `Pătura și paharul la loc`  
 - Social: `Noapte bună`  
 
 ---
@@ -1041,45 +1041,45 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Piciorul pe iarbă`  
-- Mental: `Iarbă: verde`  
+- Fizic: `Descălțați, pe iarbă`  
+- Mental: `Iarba e verde`  
 - Resurse: `Pantofii lângă iarbă`  
 - Social: `Privim iarba împreună`  
 
 **Marți**  
-- Fizic: `Desculț pe iarbă, dacă e potrivit`  
-- Mental: `Moale: iarba`  
-- Resurse: `Șosetele în pantofi`  
-- Social: `Desculți pe rând pe iarbă`  
+- Fizic: `Tălpile pe iarbă`  
+- Mental: `Moale`  
+- Resurse: `Pantofii rămân lângă`  
+- Social: `Tălpile, unul lângă altul`  
 
 **Miercuri**  
-- Fizic: `Degetele de la picioare pe iarbă`  
-- Mental: `Gâdilă: iarba`  
-- Resurse: `Prosopul mic lângă pantofi`  
-- Social: `Arătăm iarba adultului`  
+- Fizic: `Iarba gâdilă`  
+- Mental: `Gâdilă`  
+- Resurse: `Ne așezăm, tălpile pe iarbă`  
+- Social: `Râdem, gâdilă iarba`  
 
 **Joi**  
-- Fizic: `Pași scurți pe iarbă`  
-- Mental: `Iarbă și drum`  
-- Resurse: `Ușa închisă după iarbă`  
-- Social: `Pași pe iarbă cu adultul`  
+- Fizic: `Trei pași desculți`  
+- Mental: `Iarbă — sau piatră?`  
+- Resurse: `Pantofii după pași`  
+- Social: `Pași desculți împreună`  
 
 **Vineri**  
-- Fizic: `Ne așezăm pe iarbă`  
-- Mental: `Jos pe iarbă`  
-- Resurse: `Pătura pe iarbă, apoi la loc`  
-- Social: `Pe iarbă unul lângă altul`  
+- Fizic: `Tălpi pe piatră, scurt`  
+- Mental: `Tare — sau moale?`  
+- Resurse: `Înapoi pe iarbă`  
+- Social: `Piatră, apoi iarbă`  
 
 **Sâmbătă**  
-- Fizic: `Picior pe iarbă, picior pe piatră`  
-- Mental: `Moale și tare`  
-- Resurse: `Pantofii pe raft după iarbă`  
-- Social: `Simțim pe rând: iarbă și piatră`  
+- Fizic: `Ne ștergem tălpile`  
+- Mental: `Curate`  
+- Resurse: `Pantofii la loc`  
+- Social: `Ne încălțăm împreună`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă, iarbă la final`  
-- Mental: `Carte: iarbă și picioare`  
-- Resurse: `Pantofii și prosopul la loc`  
+- Fizic: `Plimbare desculți, apoi pantofi`  
+- Mental: `Cartea cu picioarele`  
+- Resurse: `Pantofii și haina la loc`  
 - Social: `Noapte bună`  
 
 ---
@@ -1102,44 +1102,44 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ### Titluri L–D × 4 piloni
 **Luni**  
 - Fizic: `Ținem un fruct`  
-- Mental: `Fruct: rotund`  
-- Resurse: `Fructul în bol pe masă`  
-- Social: `Privim fructul împreună`  
+- Mental: `E rotund`  
+- Resurse: `Fructul în bol`  
+- Social: `Ținem fructul împreună`  
 
 **Marți**  
-- Fizic: `Arătăm fructul cu degetul`  
-- Mental: `Măr — sau roșie?`  
-- Resurse: `Bolul pe masă, la locul lui`  
-- Social: `Arătăm fructul adultului`  
+- Fizic: `Măr — sau cireașă?`  
+- Mental: `Miroase a dulce?`  
+- Resurse: `Fructul pe masă`  
+- Social: `Mirosim împreună`  
 
 **Miercuri**  
-- Fizic: `Mirosim fructul`  
-- Mental: `Miros dulce`  
-- Resurse: `Fructul înapoi în bol`  
-- Social: `Mirosim pe rând`  
+- Fizic: `Măr — sau cireașă?`  
+- Mental: `Roșu — sau verde?`  
+- Resurse: `Fructele în bol, la loc`  
+- Social: `Alegem un fruct`  
 
 **Joi**  
-- Fizic: `Atingem coaja fructului`  
-- Mental: `Netedă: coaja`  
-- Resurse: `Șervețelul lângă bol`  
-- Social: `Atingem fructul împreună`  
+- Fizic: `Mâna pe coajă`  
+- Mental: `Netedă`  
+- Resurse: `Fructul se spală`  
+- Social: `Atingem pe rând`  
 
 **Vineri**  
-- Fizic: `Gust mic de fruct`  
-- Mental: `Dulce: gustul`  
-- Resurse: `Farfuria mică la chiuvetă`  
-- Social: `Gustăm pe rând`  
+- Fizic: `Gustăm puțin, dacă vrea`  
+- Mental: `Dulce`  
+- Resurse: `Șervețelul la loc`  
+- Social: `Mulțumim pentru fruct`  
 
 **Sâmbătă**  
 - Fizic: `Spălăm fructul`  
-- Mental: `Ud: fructul spălat`  
-- Resurse: `Fructul pe prosopul de bucătărie`  
+- Mental: `E ud după spălat`  
+- Resurse: `Bolul la chiuvetă`  
 - Social: `Spălăm împreună`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă, fruct la final`  
-- Mental: `Carte: fructe`  
-- Resurse: `Bolul și farfuria la loc`  
+- Fizic: `Plimbare până la fructe`  
+- Mental: `Cartea cu fructe`  
+- Resurse: `Bolul cu fructe, la loc`  
 - Social: `Noapte bună`  
 
 ---
@@ -1161,45 +1161,45 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Cărăm un obiect doi pași`  
-- Mental: `Ajutor: da`  
+- Fizic: `Ținem mătura`  
+- Mental: `Ajutăm`  
 - Resurse: `Obiectul pe masă după cărat`  
-- Social: `Cărăm împreună`  
+- Social: `Măturăm împreună`  
 
 **Marți**  
-- Fizic: `Punem două lucruri la loc`  
-- Mental: `Unu și doi: la loc`  
-- Resurse: `Coșul pe raft după treabă`  
-- Social: `Punem pe rând la loc`  
+- Fizic: `Două lucruri de pe jos`  
+- Mental: `Unu și doi, la loc`  
+- Resurse: `Lucrurile în coș`  
+- Social: `Punem la loc pe rând`  
 
 **Miercuri**  
 - Fizic: `Ștergem masa`  
-- Mental: `Curat: masa`  
-- Resurse: `Cârpa la chiuvetă`  
-- Social: `Ștergem pe rând`  
+- Mental: `Masa e curată`  
+- Resurse: `Cârpa la loc`  
+- Social: `Ștergem împreună`  
 
 **Joi**  
-- Fizic: `Aducem șervețelul`  
-- Mental: `Unde e șervețelul`  
-- Resurse: `Șervețelul în suport`  
-- Social: `Dăm șervețelul adultului`  
+- Fizic: `Haina pe cuier`  
+- Mental: `Haina la locul ei`  
+- Resurse: `Cuierul e gata`  
+- Social: `Punem haina împreună`  
 
 **Vineri**  
-- Fizic: `Așezăm lingura pe masă`  
-- Mental: `Lingură lângă farfurie`  
-- Resurse: `Lingura în sertar după`  
-- Social: `Pregătim masa pe rând`  
+- Fizic: `Măturăm trei fire`  
+- Mental: `Jos, apoi în făraș`  
+- Resurse: `Fărașul golit, la loc`  
+- Social: `Măturăm pe rând`  
 
 **Sâmbătă**  
-- Fizic: `Sortăm trei lucruri`  
-- Mental: `Trei: la loc`  
-- Resurse: `Coșul plin pe raft`  
-- Social: `Sortăm împreună`  
+- Fizic: `Trei lucruri la loc`  
+- Mental: `Gata treaba`  
+- Resurse: `Mătura la loc`  
+- Social: `Am ajutat împreună`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă, treabă scurtă la final`  
-- Mental: `Carte: ajutor acasă`  
-- Resurse: `Trei lucruri la loc, gata`  
+- Fizic: `Plimbare după treabă`  
+- Mental: `Cartea cu casa`  
+- Resurse: `Mătura și cârpa la loc`  
 - Social: `Noapte bună`  
 
 ---
@@ -1221,26 +1221,26 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Pași spre poartă`  
-- Mental: `Drum: acolo`  
-- Resurse: `Pantofii lângă ușă înainte`  
-- Social: `Mergem pe drum împreună`  
+- Fizic: `Pași până la poartă`  
+- Mental: `Poarta e acolo`  
+- Resurse: `Pantofii înainte de drum`  
+- Social: `Mergem de mână până la poartă`  
 
 **Marți**  
-- Fizic: `Pași pe potecă`  
-- Mental: `Aproape și departe`  
-- Resurse: `Pălăria pe cuier după drum`  
-- Social: `Pași pe rând pe potecă`  
+- Fizic: `Mâna pe poartă`  
+- Mental: `Închisă — sau deschisă?`  
+- Resurse: `Mâna jos după poartă`  
+- Social: `Arătăm poarta`  
 
 **Miercuri**  
-- Fizic: `Atingem poarta`  
-- Mental: `Poartă: închisă`  
-- Resurse: `Mâna jos, poarta rămâne`  
+- Fizic: `Deschidem poarta, apoi o închidem`  
+- Mental: `Poarta se închide`  
+- Resurse: `Zăvorul, apoi mâna jos`  
 - Social: `Arătăm poarta adultului`  
 
 **Joi**  
-- Fizic: `Cărăm un obiect până la poartă`  
-- Mental: `Înainte pe drum`  
+- Fizic: `Cărăm ceva ușor spre poartă`  
+- Mental: `Spre poartă`  
 - Resurse: `Obiectul înapoi lângă ușă`  
 - Social: `Cărăm împreună spre poartă`  
 
@@ -1248,17 +1248,17 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 - Fizic: `Pauză la poartă, apoi înapoi`  
 - Mental: `Casă și poartă`  
 - Resurse: `Pantofii pe raft după drum`  
-- Social: `Pauză la poartă cu adultul`  
+- Social: `Pauză la poartă împreună`  
 
 **Sâmbătă**  
 - Fizic: `Privim dincolo de poartă`  
 - Mental: `Curte și drum`  
 - Resurse: `Haina pe cuier după plimbare`  
-- Social: `Joacă paralel pe drumul scurt`  
+- Social: `La poartă, unul lângă altul`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă, poarta la final`  
-- Mental: `Carte: drum și casă`  
+- Fizic: `Plimbare până la poartă`  
+- Mental: `Cartea cu drumul și casa`  
 - Resurse: `Pantofii și haina la loc`  
 - Social: `Noapte bună`  
 
@@ -1281,13 +1281,13 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Pași pe frunze din nou`  
+- Fizic: `Pași pe frunze`  
 - Mental: `Vânt și frunză`  
-- Resurse: `Frunza jos la loc`  
+- Resurse: `Frunza jos, la loc`  
 - Social: `Simțim vântul împreună`  
 
 **Marți**  
-- Fizic: `Culegem o frunză căzută`  
+- Fizic: `Trei pași printre fire de iarbă`  
 - Mental: `Frunza se mișcă`  
 - Resurse: `Frunza în coș, apoi afară`  
 - Social: `Dăm frunza din mână în mână`  
@@ -1302,7 +1302,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 - Fizic: `Eșarfa în vânt`  
 - Mental: `Eșarfa zboară puțin`  
 - Resurse: `Eșarfa pe cârlig`  
-- Social: `Ținem eșarfa doi`  
+- Social: `Ținem eșarfa amândoi`  
 
 **Vineri**  
 - Fizic: `Suflăm pe o frunză`  
@@ -1311,14 +1311,14 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 - Social: `Suflăm pe rând`  
 
 **Sâmbătă**  
-- Fizic: `Plimbare scurtă cu vânt și frunze`  
-- Mental: `Copacul se mișcă din nou`  
+- Fizic: `Plimbare scurtă cu vânt`  
+- Mental: `Copacul se mișcă`  
 - Resurse: `Găleata la loc după frunze`  
-- Social: `Joacă paralel cu frunze`  
+- Social: `Frunze, unul lângă altul`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă, frunză la final`  
-- Mental: `Carte: vânt și frunze`  
+- Fizic: `Plimbare, o frunză la final`  
+- Mental: `Cartea cu vântul`  
 - Resurse: `Haina de afară pe cârlig`  
 - Social: `Noapte bună`  
 
@@ -1348,15 +1348,15 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 **Marți**  
 - Fizic: `Cărăm coșul cinci pași`  
-- Mental: `Plin și gol`  
+- Mental: `Plin — sau gol?`  
 - Resurse: `Golim coșul pe masă, apoi la loc`  
 - Social: `Cărăm coșul împreună`  
 
 **Miercuri**  
-- Fizic: `Strângem jucării în coș`  
-- Mental: `Unde e coșul`  
+- Fizic: `Strângem jucăriile în coș`  
+- Mental: `Unde e coșul?`  
 - Resurse: `Coșul lângă jucării, pe raft`  
-- Social: `Arătăm coșul adultului`  
+- Social: `Arătăm coșul`  
 
 **Joi**  
 - Fizic: `Două grămezi în coș`  
@@ -1372,13 +1372,13 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 **Sâmbătă**  
 - Fizic: `Strângem camera cu coșul`  
-- Mental: `Mult și puțin`  
-- Resurse: `Coșul pe locul lui acasă`  
-- Social: `Strângem paralel cu adultul`  
+- Mental: `Mult — sau puțin?`  
+- Resurse: `Coșul pe locul lui`  
+- Social: `Strângem împreună`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă, coș dacă vrea`  
-- Mental: `Carte: multe obiecte`  
+- Fizic: `Plimbare, coșul dacă vrea`  
+- Mental: `Cartea cu multe obiecte`  
 - Resurse: `Jucăriile în coș`  
 - Social: `Noapte bună`  
 
@@ -1401,8 +1401,8 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Mână ridicată: bună`  
-- Mental: `Bună — cuvânt scurt`  
+- Fizic: `Mâna sus: bună`  
+- Mental: `Spunem „Bună”`  
 - Resurse: `Jucăria-oaspete pe raft`  
 - Social: `Stăm unul lângă altul`  
 
@@ -1414,31 +1414,31 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 **Miercuri**  
 - Fizic: `Dăm jucăria-prieten din mână`  
-- Mental: `Prieten: jucăria`  
+- Mental: `Prietenul e jucăria`  
 - Resurse: `Jucăria pe pat`  
-- Social: `Oferim jucăria adultului`  
+- Social: `Oferim jucăria`  
 
 **Joi**  
-- Fizic: `Pași până la ușă: salut`  
+- Fizic: `Pași până la ușă, salut`  
 - Mental: `La revedere`  
 - Resurse: `Pantofii lângă ușă după salut`  
-- Social: `Salut la ușă cu adultul`  
+- Social: `Salut la ușă`  
 
 **Vineri**  
 - Fizic: `Batem din palme o dată împreună`  
-- Mental: `Prieten și familie`  
+- Mental: `Prieteni și familie`  
 - Resurse: `Paharul de oaspete pe masă, apoi la loc`  
-- Social: `Salut pe rând cu mâna`  
+- Social: `Salut pe rând, cu mâna`  
 
 **Sâmbătă**  
-- Fizic: `Joacă liberă lângă jucăria-prieten`  
-- Mental: `Familie în carte`  
+- Fizic: `Joacă lângă jucăria-prieten`  
+- Mental: `Familia în carte`  
 - Resurse: `Jucăriile la loc după joacă`  
-- Social: `Joacă paralel cu adultul`  
+- Social: `Jucăm unul lângă altul`  
 
 **Duminică**  
 - Fizic: `Plimbare liberă, salut la final`  
-- Mental: `Carte: familie și casă`  
+- Mental: `Cartea cu familia`  
 - Resurse: `Haina și jucăria la loc`  
 - Social: `Noapte bună`  
 
@@ -1461,44 +1461,44 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Pași mulți în casă`  
-- Mental: `Corp: puternic`  
-- Resurse: `Pantofii înainte de pași`  
-- Social: `Pași puternici împreună`  
+- Fizic: `Mergem prin casă`  
+- Mental: `Pași mulți`  
+- Resurse: `Pantofii de casă`  
+- Social: `Mergem de mână`  
 
 **Marți**  
 - Fizic: `Sărituri mici pe loc`  
-- Mental: `Sus și jos: corp`  
-- Resurse: `Mingea ușoară în palmă`  
-- Social: `Sărim pe rând`  
+- Mental: `Departe — sau aproape?`  
+- Resurse: `Pantofii și haina la loc`  
+- Social: `Mergem împreună`  
 
 **Miercuri**  
-- Fizic: `Cărăm ceva ușor câțiva pași`  
-- Mental: `Greu și ușor`  
+- Fizic: `Cărăm ceva în plimbare`  
+- Mental: `Greu — sau ușor?`  
 - Resurse: `Obiectul pe masă după cărat`  
 - Social: `Cărăm pe rând`  
 
 **Joi**  
-- Fizic: `Brațe sus, corp puternic`  
-- Mental: `Brațe și picioare`  
-- Resurse: `Mâinile pe genunchi, apoi jos`  
+- Fizic: `Pași în curte`  
+- Mental: `Iarbă — sau pietre?`  
+- Resurse: `Pantofii după curte`  
 - Social: `Brațe sus împreună`  
 
 **Vineri**  
-- Fizic: `Pași pe loc, apoi înainte`  
-- Mental: `Înainte și pe loc`  
-- Resurse: `Calea liberă pe podea`  
-- Social: `Pași înainte cu adultul`  
+- Fizic: `Dus-întors pe hol`  
+- Mental: `Unu, doi, unu, doi`  
+- Resurse: `Calea liberă pe hol`  
+- Social: `Dus-întors împreună`  
 
 **Sâmbătă**  
-- Fizic: `Pași mulți dus-întors`  
-- Mental: `Mulți pași: unu și doi`  
-- Resurse: `Pantofii la loc după pași`  
-- Social: `Dus-întors cu adultul`  
+- Fizic: `Plimbare până la poartă`  
+- Mental: `Poartă și casă`  
+- Resurse: `Haina după plimbare`  
+- Social: `Plimbare de mână`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă, pași mulți`  
-- Mental: `Carte: corp și pași`  
+- Fizic: `Plimbare liberă`  
+- Mental: `Cartea cu drumul`  
 - Resurse: `Mingea și pantofii la loc`  
 - Social: `Noapte bună`  
 
@@ -1524,12 +1524,12 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 - Fizic: `Arătăm cu degetul`  
 - Mental: `Unde e mingea?`  
 - Resurse: `Mingea pe masă, la vedere`  
-- Social: `Arătăm mingea adultului`  
+- Social: `Arătăm mingea`  
 
 **Marți**  
 - Fizic: `Căutăm în cameră`  
 - Mental: `Unde e jucăria?`  
-- Resurse: `Jucăria pe scaun la vedere`  
+- Resurse: `Jucăria pe scaun, la vedere`  
 - Social: `Căutăm pe rând`  
 
 **Miercuri**  
@@ -1548,17 +1548,17 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 - Fizic: `Arătăm scaunul și masa`  
 - Mental: `Unde e scaunul?`  
 - Resurse: `Paharul pe masă, arătat`  
-- Social: `Arătăm pe rând: scaun, masă`  
+- Social: `Arătăm scaunul, apoi masa`  
 
 **Sâmbătă**  
 - Fizic: `Căutăm pantofii`  
 - Mental: `Unde sunt pantofii?`  
 - Resurse: `Pantofii la loc după arătat`  
-- Social: `Arătăm pantofii adultului`  
+- Social: `Arătăm pantofii`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă, arătăm`  
-- Mental: `Carte: unde e?`  
+- Fizic: `Plimbare, arătăm ce vedem`  
+- Mental: `Căutăm în carte: unde e?`  
 - Resurse: `Jucăria și cartea la loc`  
 - Social: `Noapte bună`  
 
@@ -1581,44 +1581,44 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Luăm o jucărie`  
-- Mental: `Al meu: jucăria`  
-- Resurse: `Jucăria pe masă, a mea`  
-- Social: `Arătăm jucăria: a mea`  
+- Fizic: `Luăm jucăria cu grijă`  
+- Mental: `E jucăria mea`  
+- Resurse: `Jucăria pe masă`  
+- Social: `Arătăm jucăria`  
 
 **Marți**  
 - Fizic: `Purtăm jucăria până la cutie`  
-- Mental: `La loc: cutie`  
+- Mental: `La loc, în cutie`  
 - Resurse: `Jucăria în cutie`  
 - Social: `Punem la loc pe rând`  
 
 **Miercuri**  
 - Fizic: `Strângem două lucruri`  
-- Mental: `Una și alta: la loc`  
+- Mental: `Una și alta, la loc`  
 - Resurse: `Două lucruri în cutie`  
 - Social: `Strângem împreună`  
 
 **Joi**  
 - Fizic: `Haina pe cuier`  
-- Mental: `Haina: a mea, la loc`  
-- Resurse: `Haina pe cuier, grijă`  
+- Mental: `Haina mea, la loc`  
+- Resurse: `Haina pe cuier, cu grijă`  
 - Social: `Punem haina împreună`  
 
 **Vineri**  
 - Fizic: `Cartea pe raft`  
-- Mental: `Cartea: unde stă?`  
-- Resurse: `Cartea pe raft, grijă`  
+- Mental: `Unde stă cartea?`  
+- Resurse: `Cartea pe raft, cu grijă`  
 - Social: `Cartea la loc pe rând`  
 
 **Sâmbătă**  
 - Fizic: `Trei lucruri la loc`  
-- Mental: `Grijă: al meu, la loc`  
-- Resurse: `Cutia cu lucruri la loc`  
-- Social: `Grijă de lucruri împreună`  
+- Mental: `Avem grijă de lucrurile noastre`  
+- Resurse: `Cutia cu lucruri, la loc`  
+- Social: `Grijă împreună`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă și un lucru la loc`  
-- Mental: `Carte: grijă de lucruri`  
+- Fizic: `Plimbare și un lucru la loc`  
+- Mental: `Cartea despre grijă`  
 - Resurse: `Jucăria și haina la loc`  
 - Social: `Noapte bună`  
 
@@ -1641,44 +1641,44 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Mâna sus: salut`  
-- Mental: `Salut: bună`  
-- Resurse: `Ușa deschisă, salut`  
-- Social: `Salutăm împreună`  
+- Fizic: `Mâna sus: bună`  
+- Mental: `Spunem „Bună”`  
+- Resurse: `Ușa deschisă la salut`  
+- Social: `Spunem bună împreună`  
 
 **Marți**  
-- Fizic: `Pași până la ușă, salut`  
+- Fizic: `Pași până la ușă, bună`  
 - Mental: `Cine e la ușă?`  
 - Resurse: `Haina pe cuier înainte de ieșire`  
-- Social: `Salut mamei`  
+- Social: `Bună mamei`  
 
 **Miercuri**  
-- Fizic: `Mâna flutură: la revedere`  
-- Mental: `La revedere`  
-- Resurse: `Ușa închisă după la revedere`  
-- Social: `La revedere împreună`  
+- Fizic: `Mâna flutură: pa`  
+- Mental: `Spunem „Pa”`  
+- Resurse: `Ușa închisă după pa`  
+- Social: `Spunem pa împreună`  
 
 **Joi**  
-- Fizic: `Salut, apoi câțiva pași`  
-- Mental: `Salut și la revedere`  
+- Fizic: `Bună, apoi câțiva pași`  
+- Mental: `Bună și pa`  
 - Resurse: `Pantofii lângă ușă la salut`  
-- Social: `Salut pe rând`  
+- Social: `Bună pe rând`  
 
 **Vineri**  
-- Fizic: `La revedere la fereastră`  
-- Mental: `Aici și acolo: salut`  
-- Resurse: `Perdeaua trasă după la revedere`  
-- Social: `La revedere pe rând`  
+- Fizic: `Pa de la fereastră`  
+- Mental: `Aici și acolo`  
+- Resurse: `Perdeaua după pa`  
+- Social: `Pa pe rând`  
 
 **Sâmbătă**  
-- Fizic: `Salut oaspetelui`  
+- Fizic: `Bună oaspetelui, noroc`  
 - Mental: `Mulțumesc`  
 - Resurse: `Haina pe cuier după oaspete`  
-- Social: `Salut și mulțumesc împreună`  
+- Social: `Noroc și mulțumesc`  
 
 **Duminică**  
 - Fizic: `Plimbare liberă, salut la final`  
-- Mental: `Carte: salut și la revedere`  
+- Mental: `Cartea cu salutul`  
 - Resurse: `Haina și pantofii la loc`  
 - Social: `Noapte bună`  
 
@@ -1701,44 +1701,44 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Alegem mingea favorită`  
-- Mental: `Prima favorită: minge`  
+- Fizic: `Alegem mingea scumpă`  
+- Mental: `Prima: mingea`  
 - Resurse: `Mingea pe masă, aleasă`  
-- Social: `Arătăm mingea favorită adultului`  
+- Social: `Arătăm mingea scumpă`  
 
 **Marți**  
-- Fizic: `Alegem cartea iubită: pagina lui`  
-- Mental: `A doua favorită: carte`  
+- Fizic: `Alegem cartea iubită`  
+- Mental: `A doua: cartea`  
 - Resurse: `Cartea pe raft, aleasă`  
-- Social: `Citim favorita împreună din nou`  
+- Social: `Citim favorita din nou`  
 
 **Miercuri**  
-- Fizic: `A treia favorită: dans pe loc`  
+- Fizic: `Dansul preferat, pe loc`  
 - Mental: `Trei favorite: unu, doi, trei`  
-- Resurse: `Spațiu liber pentru dansul ales`  
+- Resurse: `Facem loc pentru dans`  
 - Social: `Dansăm din nou pe rând`  
 
 **Joi**  
-- Fizic: `Repetăm mingea: dat`  
-- Mental: `Ne amintim: minge din nou`  
+- Fizic: `Dăm mingea din nou`  
+- Mental: `Mingea, ca înainte`  
 - Resurse: `Mingea în cutie din nou`  
 - Social: `Mingea pe rând, ca înainte`  
 
 **Vineri**  
 - Fizic: `Trei obiecte favorite pe masă`  
 - Mental: `Alege una din trei`  
-- Resurse: `Trei favorite la loc pe rând`  
-- Social: `Arătăm alegerea adultului`  
+- Resurse: `Cele trei, la loc`  
+- Social: `Arătăm alegerea`  
 
 **Sâmbătă**  
-- Fizic: `Repetăm pașii favoriți`  
-- Mental: `Ne amintim: pași și favorit`  
-- Resurse: `Pantofii la loc după pașii aleși`  
-- Social: `Pași favoriți împreună din nou`  
+- Fizic: `Pașii preferați, din nou`  
+- Mental: `Ți-aduci aminte pașii?`  
+- Resurse: `Pantofii după pașii aleși`  
+- Social: `Pași preferați împreună`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă: alege un favorit`  
-- Mental: `Carte: trei favorite în an`  
+- Fizic: `Plimbare: alege un lucru scump`  
+- Mental: `Cartea celor trei favorite`  
 - Resurse: `Favoritele pe raft la final`  
 - Social: `Noapte bună`  
 
@@ -1762,43 +1762,43 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ### Titluri L–D × 4 piloni
 **Luni**  
 - Fizic: `Pași moi în casă`  
-- Mental: `Liniște: casă`  
-- Resurse: `Ușa închisă blând`  
-- Social: `Stați liniștiți unul lângă altul`  
+- Mental: `În casă e liniște`  
+- Resurse: `Ușa se închide încet`  
+- Social: `Stăm cuminți, unul lângă altul`  
 
 **Marți**  
-- Fizic: `Așezare blândă pe pernă`  
-- Mental: `Calm: pernă și corp`  
+- Fizic: `Ne așezăm pe pernă`  
+- Mental: `Pernă și liniște`  
 - Resurse: `Perna la loc după așezare`  
-- Social: `Pernă liniștită cu adultul`  
+- Social: `Pe pernă împreună`  
 
 **Miercuri**  
-- Fizic: `Carte pe genunchi`  
-- Mental: `Imagini blânde din carte`  
+- Fizic: `Carte pe genunchi, încet`  
+- Mental: `Imagini liniștite`  
 - Resurse: `Cartea pe raft după liniște`  
-- Social: `Citim liniștiți împreună`  
+- Social: `Citim încet împreună`  
 
 **Joi**  
-- Fizic: `Mâini pe genunchi, respirație blândă`  
-- Mental: `Liniște: mâini și corp`  
+- Fizic: `Mâinile pe genunchi`  
+- Mental: `Respirăm încet`  
 - Resurse: `Lumina mică în cameră`  
 - Social: `Lumină mică împreună`  
 
 **Vineri**  
 - Fizic: `Pași la geam, lin`  
-- Mental: `Afară e, în casă e calm`  
-- Resurse: `Perdeaua trasă blând`  
-- Social: `Privim geamul liniștiți`  
+- Mental: `Afară e vuiet, în casă e calm`  
+- Resurse: `Perdeaua se trage încet`  
+- Social: `Privim geamul cuminți`  
 
 **Sâmbătă**  
-- Fizic: `Balans blând pe loc`  
+- Fizic: `Ne leagănăm încet, pe loc`  
 - Mental: `Sunete mici în casă`  
-- Resurse: `Jucăriile la loc, casă liniștită`  
+- Resurse: `Jucăriile la loc, casa e liniștită`  
 - Social: `Casă liniștită împreună`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă blândă în casă`  
-- Mental: `Carte: casă liniștită`  
+- Fizic: `Plimbare lină prin casă`  
+- Mental: `Cartea de liniște`  
 - Resurse: `Cartea și perna la loc`  
 - Social: `Noapte bună`  
 
@@ -1821,44 +1821,44 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Pași în curtea cunoscută`  
-- Mental: `Curte: locul nostru`  
+- Fizic: `Pași în curtea noastră`  
+- Mental: `E curtea noastră`  
 - Resurse: `Pantofii la ușă înainte de curte`  
 - Social: `Ieșim în curte împreună`  
 
 **Marți**  
 - Fizic: `Mâna pe gardul cunoscut`  
-- Mental: `Uite: gardul`  
+- Mental: `Uite gardul`  
 - Resurse: `Mâna jos după gard`  
-- Social: `Arătăm gardul adultului`  
+- Social: `Arătăm gardul`  
 
 **Miercuri**  
-- Fizic: `Pași până la copacul cunoscut`  
-- Mental: `Uite: frunza`  
-- Resurse: `O frunză ținută, apoi la loc`  
+- Fizic: `Pași până la copacul nostru`  
+- Mental: `Uite frunza`  
+- Resurse: `O frunză ținută, apoi jos`  
 - Social: `Privim copacul împreună`  
 
 **Joi**  
-- Fizic: `Atingem pământul cunoscut`  
-- Mental: `Uite: pământul`  
+- Fizic: `Atingem pământul din curte`  
+- Mental: `Uite pământul`  
 - Resurse: `Mâinile curate după pământ`  
 - Social: `Atingem pământul pe rând`  
 
 **Vineri**  
-- Fizic: `Drumul scurt la poarta cunoscută`  
-- Mental: `Uite: poarta`  
+- Fizic: `Drumul scurt la poarta noastră`  
+- Mental: `Uite poarta`  
 - Resurse: `Mâna pe poartă, apoi jos`  
 - Social: `Arătăm poarta adultului`  
 
 **Sâmbătă**  
-- Fizic: `Urechi afară: sunete cunoscute`  
+- Fizic: `Ascultăm în curte`  
 - Mental: `Pasăre — sau mașină?`  
 - Resurse: `Înapoi la ușă, pantofii la loc`  
 - Social: `Ascultăm afară împreună`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă în curtea cunoscută`  
-- Mental: `Carte: curte și locuri`  
+- Fizic: `Plimbare în curtea cunoscută`  
+- Mental: `Cartea cu curtea`  
 - Resurse: `Haina și pantofii la loc`  
 - Social: `Noapte bună`  
 
@@ -1881,45 +1881,45 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Pași blânzi prin casă`  
-- Mental: `Anul: blând`  
+- Fizic: `Pași liniștiți prin casă`  
+- Mental: `Anul se încheie`  
 - Resurse: `O jucărie pe masă, lin`  
-- Social: `Stați blând unul lângă altul`  
+- Social: `Stăm blând, unul lângă altul`  
 
 **Marți**  
 - Fizic: `Atingem trei locuri din casă`  
-- Mental: `Ne amintim casa`  
-- Resurse: `Trei lucruri la loc blând`  
-- Social: `Arătăm casa adultului`  
+- Mental: `Ți-aduci aminte casa?`  
+- Resurse: `Trei lucruri la loc, încet`  
+- Social: `Arătăm casa`  
 
 **Miercuri**  
-- Fizic: `Cartea anului: pagina lui`  
+- Fizic: `Cartea anului, pagina ta`  
 - Mental: `Imagini din an`  
-- Resurse: `Cartea pe raft la închidere`  
+- Resurse: `Cartea pe raft, la încheiere`  
 - Social: `Citim blând împreună`  
 
 **Joi**  
-- Fizic: `Mingea blândă: dat`  
+- Fizic: `Dăm mingea încet`  
 - Mental: `Ne amintim: minge și rând`  
-- Resurse: `Mingea în cutie la final`  
+- Resurse: `Mingea în cutie, la final`  
 - Social: `Mingea pe rând, blând`  
 
 **Vineri**  
-- Fizic: `Geamul: privim anul`  
-- Mental: `Afară și în casă: gata blând`  
-- Resurse: `Perdeaua la loc blând`  
-- Social: `Privim geamul împreună la final`  
+- Fizic: `Privim pe geam, încet`  
+- Mental: `Afară și în casă, e bine`  
+- Resurse: `Perdeaua la loc, încet`  
+- Social: `Privim geamul la final`  
 
 **Sâmbătă**  
-- Fizic: `Balans blând: anul se închide`  
-- Mental: `Gata blând`  
-- Resurse: `Favoritele pe raft, anul gata`  
-- Social: `Mulțumesc, blând`  
+- Fizic: `Ne leagănăm, anul se încheie`  
+- Mental: `Gata, încet`  
+- Resurse: `Favoritele pe raft`  
+- Social: `Mulțumim`  
 
 **Duminică**  
-- Fizic: `Plimbare liberă: anul se închide`  
-- Mental: `Carte: anul se închide blând`  
-- Resurse: `Totul la loc: an gata`  
+- Fizic: `Plimbare lină, anul se încheie`  
+- Mental: `Cartea de la capăt de an`  
+- Resurse: `Totul la loc`  
 - Social: `Noapte bună`  
 
 ---

@@ -125,7 +125,7 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "mental",
-      "titlu": "Cartea scurt",
+      "titlu": "Citim puțin",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
@@ -503,7 +503,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "social",
-      "titlu": "Eu în curte, tu pe lângă",
+      "titlu": "Jucăm unul lângă altul",
       "durata_min": 8,
       "mod_default": "A",
       "materiale": [

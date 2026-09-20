@@ -28,7 +28,7 @@
 
 **Marți**  
 - Fizic: `Sărituri mici`  
-- Mental: `Cartea scurt`  
+- Mental: `Citim puțin`  
 - Resurse: `Paharul gol — sau plin?`  
 - Social: `Mulțumesc`
 
@@ -54,7 +54,7 @@
 - Fizic: `Nisip, iarbă, pietre`  
 - Mental: `Pasăre — sau mașină?`  
 - Resurse: `Udăm o plantă`  
-- Social: `Eu în curte, tu pe lângă`
+- Social: `Jucăm unul lângă altul`
 
 **Duminică**  
 - Fizic: `Plimbare liberă`  
@@ -82,7 +82,7 @@
 ### Titluri L–D × 4 piloni
 **Luni**  
 - Fizic: `Pași până la robinet`  
-- Mental: `Uite apa`  
+- Mental: `Bem lângă apă`  
 - Resurse: `Paharul cu apă`  
 - Social: `Cer apă`
 
@@ -108,10 +108,10 @@
 - Fizic: `Stropi pe geam`  
 - Mental: `Auzim apa`  
 - Resurse: `Oprim robinetul`  
-- Social: `Uite apa`
+- Social: `Bem lângă apă`
 
 **Sâmbătă**  
-- Fizic: `Băltoaca, pe scurt`  
+- Fizic: `Cizmele în băltoacă`  
 - Mental: `Nor — sau soare?`  
 - Resurse: `Două frunze ude`  
 - Social: `Lângă apă`
@@ -167,19 +167,19 @@
 
 ### Titluri V–D (neschimbate, lock #32)
 **Vineri**  
-- Fizic: `Mergem pe vârfuri, încet.`  
-- Mental: `Ascultăm trei sunete din casă.`  
+- Fizic: `Mergem pe vârfuri, încet`  
+- Mental: `Ascultăm trei sunete din casă`  
 - Resurse: `Telefonul pe silențios`  
-- Social: `Spunem „Bună” cu vocea.`
+- Social: `Spunem „Bună” cu vocea`
 
 **Sâmbătă**  
 - Fizic: `Ieșim afară. Auzi pașii?`  
 - Mental: `Se aude vântul?`  
 - Resurse: `Piatra care nu scoate sunete`  
-- Social: `Îți spun ce auzi tu.`
+- Social: `Îți spun ce auzi tu`
 
 **Duminică**  
-- Fizic: `Plimbare liberă.`  
+- Fizic: `Plimbare liberă`  
 - Mental: `Carte în liniște`  
 - Resurse: `Stingem lumina încet`  
 - Social: `Noapte bună, șoptit`

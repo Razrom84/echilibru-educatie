@@ -22,7 +22,7 @@
 ### Titluri L–D × 4 piloni
 **Luni**  
 - Fizic: `Pași pe frunze`  
-- Mental: `Uite: frunza`  
+- Mental: `Uite frunza`  
 - Resurse: `Frunza jos, la loc`  
 - Social: `Arătăm frunza`
 
@@ -45,7 +45,7 @@
 - Social: `Mâini curate`
 
 **Vineri**  
-- Fizic: `Frunze sus, pe scurt`  
+- Fizic: `Frunze în vânt`  
 - Mental: `Frunză galbenă — sau verde?`  
 - Resurse: `Trei frunze la loc`  
 - Social: `Pe care frunză?`
@@ -54,7 +54,7 @@
 - Fizic: `Pe poteca cu frunze`  
 - Mental: `Frunze sus pe copac`  
 - Resurse: `Găleata la loc`  
-- Social: `Eu frunza, tu pe lângă`
+- Social: `Frunza, unul lângă altul`
 
 **Duminică**  
 - Fizic: `Plimbare liberă`  
@@ -93,7 +93,7 @@
 - Social: `Suflăm ușor împreună`
 
 **Miercuri**  
-- Fizic: `Brațele: aripă`  
+- Fizic: `Brațele ca aripile`  
 - Mental: `Unde e vântul?`  
 - Resurse: `Punga se umflă`  
 - Social: `Uite aerul`
@@ -102,7 +102,7 @@
 - Fizic: `Învârtim eșarfa`  
 - Mental: `Eșarfa zboară puțin`  
 - Resurse: `Eșarfa pe cârlig`  
-- Social: `Ținem eșarfa doi`
+- Social: `Ținem eșarfa amândoi`
 
 **Vineri**  
 - Fizic: `Suflăm pe frunză`  
@@ -114,11 +114,11 @@
 - Fizic: `Plimbare scurtă cu vânt`  
 - Mental: `Copacul se mișcă`  
 - Resurse: `Găleata jos pe iarbă`  
-- Social: `Eu vântul, tu pe lângă`
+- Social: `Simțim vântul împreună`
 
 **Duminică**  
 - Fizic: `Plimbare liberă`  
-- Mental: `Cartea: cer și nori`  
+- Mental: `Cartea cu cerul`  
 - Resurse: `Haina sus pe cârlig`  
 - Social: `Noapte bună`
 

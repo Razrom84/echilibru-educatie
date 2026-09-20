@@ -444,7 +444,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "fizic",
-      "titlu": "Ieșim îmbrăcați, pe scurt",
+      "titlu": "Ieșim îmbrăcați",
       "durata_min": 6,
       "mod_default": "A",
       "materiale": [
@@ -918,7 +918,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "fizic",
-      "titlu": "Alergăm pe scurt",
+      "titlu": "Alergăm până la poartă",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [],
@@ -1055,7 +1055,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "social",
-      "titlu": "Eu pe drum, tu pe lângă",
+      "titlu": "Mergem unul lângă altul",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
@@ -1114,7 +1114,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "resurse",
-      "titlu": "Pantofii la ușă",
+      "titlu": "Pantofii și haina la loc",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -1300,7 +1300,7 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "social",
-      "titlu": "Ține, gustarea",
+      "titlu": "Ține gustarea",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -1571,7 +1571,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "fizic",
-      "titlu": "Gustare pe scurt",
+      "titlu": "Gustare în curte",
       "durata_min": 6,
       "mod_default": "A",
       "materiale": [
@@ -2099,7 +2099,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "mental",
-      "titlu": "Sete? Apă.",
+      "titlu": "Ți-e sete?",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [
@@ -2165,7 +2165,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "fizic",
-      "titlu": "Apă afară, pe scurt",
+      "titlu": "Bem afară",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [

@@ -23,7 +23,7 @@
 **Luni**  
 - Fizic: `Pași pe hol`  
 - Mental: `Unde merge drumul?`  
-- Resurse: `Pantofii la ușă`  
+- Resurse: `Pantofii și haina la loc`  
 - Social: `Mergem de mână`
 
 **Marți**  
@@ -45,7 +45,7 @@
 - Social: `Uite drumul`
 
 **Vineri**  
-- Fizic: `Alergăm pe scurt`  
+- Fizic: `Alergăm până la poartă`  
 - Mental: `Repede — sau încet?`  
 - Resurse: `Pantofii după drum`  
 - Social: `Pași pe rând`
@@ -54,12 +54,12 @@
 - Fizic: `Plimbare scurtă`  
 - Mental: `Ce vedem pe drum?`  
 - Resurse: `Jucăria după plimbare`  
-- Social: `Eu pe drum, tu pe lângă`
+- Social: `Mergem unul lângă altul`
 
 **Duminică**  
 - Fizic: `Plimbare liberă`  
 - Mental: `Cartea cu pași`  
-- Resurse: `Pantofii la ușă`  
+- Resurse: `Pantofii și haina la loc`  
 - Social: `Noapte bună`
 
 ---
@@ -90,7 +90,7 @@
 - Fizic: `Gustare cu mâna`  
 - Mental: `Mâncare pe farfurie`  
 - Resurse: `Șervețelul la loc`  
-- Social: `Ține, gustarea`
+- Social: `Ține gustarea`
 
 **Miercuri**  
 - Fizic: `Lingura la gură`  
@@ -111,7 +111,7 @@
 - Social: `Venim la masă`
 
 **Sâmbătă**  
-- Fizic: `Gustare pe scurt`  
+- Fizic: `Gustare în curte`  
 - Mental: `Ce mâncăm azi?`  
 - Resurse: `Farfuria la loc`  
 - Social: `Împărțim`
@@ -166,12 +166,12 @@
 
 **Vineri**  
 - Fizic: `Bem când e sete`  
-- Mental: `Sete? Apă.`  
+- Mental: `Ți-e sete?`  
 - Resurse: `Paharul puțin, la loc`  
 - Social: `Oferim apă`
 
 **Sâmbătă**  
-- Fizic: `Apă afară, pe scurt`  
+- Fizic: `Bem afară`  
 - Mental: `Plantă și apă`  
 - Resurse: `Paharul după afară`  
 - Social: `Bem după joacă`
@@ -202,7 +202,7 @@
 
 ### Titluri L–D × 4 piloni
 **Luni**  
-- Fizic: `Urechi afară, pe scurt`  
+- Fizic: `Ascultăm afară`  
 - Mental: `Auzim ceva`  
 - Resurse: `Jucăria-animal la loc`  
 - Social: `Ascultăm`
@@ -214,10 +214,10 @@
 - Social: `Uite câinele`
 
 **Miercuri**  
-- Fizic: `Brațe ca aripile`  
+- Fizic: `Ciripim încet, ca pasărea`  
 - Mental: `Auzim pasărea`  
 - Resurse: `Pasărea de pluș la loc`  
-- Social: `Ciripim pe rând`
+- Social: `Aripile împreună`
 
 **Joi**  
 - Fizic: `Stăm la geam`  
@@ -283,7 +283,7 @@
 - Fizic: `Bătăi din palme`  
 - Mental: `Gata după două`  
 - Resurse: `Jucăria la loc`  
-- Social: `Schimbăm pe scurt`
+- Social: `Schimbăm jucăria`
 
 **Vineri**  
 - Fizic: `Mingea la perete`  
@@ -292,10 +292,10 @@
 - Social: `Pe rând`
 
 **Sâmbătă**  
-- Fizic: `Mingea afară, pe scurt`  
+- Fizic: `Mingea în curte`  
 - Mental: `Rând afară`  
 - Resurse: `Mingea după afară`  
-- Social: `Dăm mingea afară`
+- Social: `Bătem ușor în balon`
 
 **Duminică**  
 - Fizic: `Plimbare liberă`  
@@ -342,7 +342,7 @@
 **Joi**  
 - Fizic: `Cartea pe genunchi`  
 - Mental: `Coperta din nou`  
-- Resurse: `Locul cărții`  
+- Resurse: `Cartea la locul ei`  
 - Social: `Lumină mică, carte`
 
 **Vineri**  
@@ -415,7 +415,7 @@
 - Fizic: `Trei lucruri înainte`  
 - Mental: `Gata cu ordinea`  
 - Resurse: `Coșul la loc`  
-- Social: `Ordine scurtă`
+- Social: `Am strâns camera`
 
 **Duminică**  
 - Fizic: `Plimbare liberă`  
