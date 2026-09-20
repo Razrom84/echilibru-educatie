@@ -1,0 +1,2468 @@
+{
+  "version": 2,
+  "locale": "ro",
+  "banda": "2-3",
+  "saptamani": [
+    21,
+    22,
+    23,
+    24
+  ],
+  "teme": {
+    "21": "Iarna pe pervaz",
+    "22": "Corp care se mișcă în casă",
+    "23": "Mirosuri din casă",
+    "24": "Familia și oaspeții"
+  },
+  "activitati": [
+    {
+      "id": "s21-2-3-z1-fizic",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "fizic",
+      "titlu": "Privim la geam + întindere scurtă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră / pervaz"
+      ],
+      "pasi": [
+        "Mergeți la geam. Stați pe loc: „Geam.”",
+        "Brațele sus 3–5 secunde, apoi jos: „Sus… jos. Ne întindem.”",
+        "Dacă vrea: comparați blând cu ieri — „Ieri tot rece? Sau altfel?”"
+      ],
+      "gata_cand": "A privit la geam și s-a întins pe scurt.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z1-mental",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "mental",
+      "titlu": "Două detalii de vreme",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră"
+      ],
+      "pasi": [
+        "Priviți afară: „Ce vezi? Unu…” — numiți un detaliu.",
+        "„Doi…” — al doilea (rece / ploaie / nori / soare).",
+        "Dacă vrea: „Ieri era la fel?” — așteptați gest sau cuvânt."
+      ],
+      "gata_cand": "A numit sau auziți două detalii de vreme.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z1-resurse",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "resurse",
+      "titlu": "Înăuntru e cald — alegem unde stăm",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "2 locuri: lângă geam / mai înăuntru"
+      ],
+      "pasi": [
+        "Arătați geamul: „Afară — rece.”",
+        "Arătați camera: „Înăuntru — cald. Alegem unul.”",
+        "Dacă vrea: comparați cu unde ați stat ieri (dacă își amintește)."
+      ],
+      "gata_cand": "A ales un loc cald sau a privit alegerea.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z1-social",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "social",
+      "titlu": "Descrie vremea adultului",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră"
+      ],
+      "pasi": [
+        "Stați umăr la umăr la geam: „Geam.”",
+        "Modelați: „Rece.” — apoi: „Spune-i mamei / tatei.”",
+        "Dacă vrea: el arată ieri / azi cu gest (același / altfel)."
+      ],
+      "gata_cand": "A împărtășit ceva despre vreme cu adultul.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z2-fizic",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "fizic",
+      "titlu": "Mâna pe geam — rece pe scurt",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră curată"
+      ],
+      "pasi": [
+        "Atingeți sticla pe scurt: „Geam. Rece.”",
+        "Luați mâna: „Gata. Cald în palmă.”",
+        "Dacă vrea: „Ieri tot rece pe geam?” — gest da / nu."
+      ],
+      "gata_cand": "A atins geamul rece sau a privit.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z2-mental",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "mental",
+      "titlu": "Rece — ce e rece?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "geam / pervaz"
+      ],
+      "pasi": [
+        "Arătați geamul: „Rece.”",
+        "Arătați mâna sau un obiect cald din casă: „Nu rece. Cald.”",
+        "Dacă vrea: comparație cu ieri — același rece sau altul."
+      ],
+      "gata_cand": "A legat rece de ceva rece din casă.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z2-resurse",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "resurse",
+      "titlu": "Perdeaua la loc după privit",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "perdea / draperie"
+      ],
+      "pasi": [
+        "După privit: „La loc.” — trageți blând perdeaua.",
+        "„Ajunge. Gata.”",
+        "Dacă vrea: alegeți perdeaua deschisă sau închisă (1 din 2)."
+      ],
+      "gata_cand": "Perdeaua e așezată; jocul e închis.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z2-social",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "social",
+      "titlu": "Arată-i altcuiva geam",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră"
+      ],
+      "pasi": [
+        "Mergeți cu el la geam lângă o persoană dragă.",
+        "Modelați: „Geam. Rece. Geam.”",
+        "Dacă vrea: el arată singur și spune rece / ploaie."
+      ],
+      "gata_cand": "A arătat geamul cuiva din casă.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z3-fizic",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "fizic",
+      "titlu": "Ploaie pe geam — degetul urmărește",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră (ploaie sau imagine / sunet de ploaie)"
+      ],
+      "pasi": [
+        "Dacă plouă (sau mimați): „Ploaie.” Degetul pe sticlă.",
+        "Câteva linii blânde, apoi oprire: „Gata.”",
+        "Dacă vrea: „Ieri a plouat?” — gest sau cuvânt."
+      ],
+      "gata_cand": "A urmărit ploaie pe geam sau a mimat.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z3-mental",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "mental",
+      "titlu": "Ploaie sau rece — care e azi?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră"
+      ],
+      "pasi": [
+        "Întrebați: „Azi ploaie?” — arătați afară.",
+        "„Azi rece?” — gest pe brațe.",
+        "Dacă vrea: „Ieri care era?” — așteptați alegerea."
+      ],
+      "gata_cand": "A ales sau auziți ploaie / rece pentru azi.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z3-resurse",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "resurse",
+      "titlu": "Șervețelul de pe pervaz la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "șervețel / cârpă mică",
+        "pervaz"
+      ],
+      "pasi": [
+        "Ștergeți blând pervazul: „Curat.”",
+        "„La loc. Ajunge.”",
+        "Dacă vrea: alegeți șervețelul sau cârpa (1 din 2)."
+      ],
+      "gata_cand": "Șervețelul e la loc după pervaz.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z3-social",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "social",
+      "titlu": "Rândul la arătat ploaie",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră"
+      ],
+      "pasi": [
+        "Voi arătați: „Acum eu. Ploaie.”",
+        "Apoi: „Acum tu” — așteptați gestul spre geam.",
+        "Dacă vrea: încă un schimb, apoi comparați cu ieri."
+      ],
+      "gata_cand": "Ați schimbat rândul la arătat ploaia / geamul.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z4-fizic",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "fizic",
+      "titlu": "Întindere la geam — brațe și genunchi",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu lângă geam"
+      ],
+      "pasi": [
+        "La geam: brațele sus — „Geam.” — apoi genunchi ușor îndoiți.",
+        "2–3 repetări: „Sus… jos.”",
+        "Dacă vrea: „Ieri am făcut la fel?” — da / nu cu capul."
+      ],
+      "gata_cand": "A făcut întindere scurtă lângă geam.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z4-mental",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "mental",
+      "titlu": "Rece, ploaie, geam — pe obiecte",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră",
+        "opțional: imagine ploaie"
+      ],
+      "pasi": [
+        "Arătați geamul: „Geam.”",
+        "„Rece.” pe sticlă; „Ploaie” dacă e / pe imagine.",
+        "Dacă vrea: el alege un cuvânt și îl spune pe geam."
+      ],
+      "gata_cand": "A legat cele trei cuvinte de geam / vreme.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z4-resurse",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "resurse",
+      "titlu": "Alege: stăm la geam sau pe canapea",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "geam",
+        "canapea / scaun"
+      ],
+      "pasi": [
+        "„Înăuntru e cald. Unde stăm?” — arătați 2 locuri.",
+        "Stați pe alegerea lui: „Ajunge.”",
+        "Dacă vrea: „Ieri unde am stat?” — arătați ambele din nou."
+      ],
+      "gata_cand": "A ales un loc din două.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z4-social",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "social",
+      "titlu": "Eu spun rece, tu arăți geam",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră"
+      ],
+      "pasi": [
+        "Voi: „Rece.” El arată geamul: „Geam.”",
+        "Schimbați o dată: el spune / voi arătați.",
+        "Dacă vrea: adăugați ploaie dacă e vizibil."
+      ],
+      "gata_cand": "Ați legat cuvântul de arătat împreună.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z5-fizic",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "fizic",
+      "titlu": "Traseu: cameră → geam → întindere → gata",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "cale scurtă până la geam"
+      ],
+      "pasi": [
+        "Din cameră: „Mergem la geam.”",
+        "La geam întindere scurtă, apoi: „Gata. Înapoi.”",
+        "Dacă vrea: comparați traseul cu ieri (dacă ați făcut)."
+      ],
+      "gata_cand": "A făcut traseul scurt până la geam.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z5-mental",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "mental",
+      "titlu": "Ce e diferit azi la geam?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră"
+      ],
+      "pasi": [
+        "Priviți: „Azi… rece? Ploaie?”",
+        "Numiți un detaliu nou sau același.",
+        "Dacă vrea: „Ieri era X. Azi?” — așteptați gest."
+      ],
+      "gata_cand": "A observat un detaliu de vreme azi.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z5-resurse",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "resurse",
+      "titlu": "Ajunge — o privire la geam",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră"
+      ],
+      "pasi": [
+        "„Una. Privim.” — 10–20 de secunde.",
+        "„Ajunge. Gata.” — vă întoarceți.",
+        "Dacă vrea: alegeți încă 10 secunde sau gata acum."
+      ],
+      "gata_cand": "Privitul e închis cu ajunge.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z5-social",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "social",
+      "titlu": "Ajutor: vino la geam",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră"
+      ],
+      "pasi": [
+        "Cereți: „Vino la geam, te rog.”",
+        "Mulțumiți când vine: „Mulțumesc. Rece.”",
+        "Dacă vrea: el vă cheamă pe voi la geam."
+      ],
+      "gata_cand": "A venit la geam la cerere sau a chemat.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z6-fizic",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "fizic",
+      "titlu": "Privit liber scurt la geam",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră"
+      ],
+      "pasi": [
+        "Stați liber 30–60 de secunde: „Geam.”",
+        "Fără instrucțiuni multe — doar prezență.",
+        "Dacă vrea: un rece sau ploaie șoptit, apoi gata."
+      ],
+      "gata_cand": "A privit liber la geam pe scurt.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z6-mental",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "mental",
+      "titlu": "Ce am văzut la geam?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră"
+      ],
+      "pasi": [
+        "Întoarceți-vă din geam: „Am văzut…” — numiți 1 lucru.",
+        "„Rece? Ploaie?” — așteptați.",
+        "Dacă vrea: „Ieri am văzut altceva?”"
+      ],
+      "gata_cand": "A legat privitul de un cuvânt / detaliu.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z6-resurse",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "resurse",
+      "titlu": "Perdeaua / jucăria de pe pervaz la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "perdea sau 1 obiect de pe pervaz"
+      ],
+      "pasi": [
+        "„La loc.” După privitul liber.",
+        "„Ajunge. Gata.”",
+        "Dacă vrea: obiectul favorit rămâne la vedere pe pervaz."
+      ],
+      "gata_cand": "Pervazul e în ordine după joacă.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z6-social",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "social",
+      "titlu": "Joacă paralel: eu la un geam, tu la altul",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "1–2 ferestre / un geam împărțit"
+      ],
+      "pasi": [
+        "Fiecare privește o clipă din locul lui.",
+        "Comentați: „Eu — geam. Tu — geam.”",
+        "Dacă vrea: schimbați locurile o dată."
+      ],
+      "gata_cand": "Ați privit paralel pe scurt.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z7-fizic",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "fizic",
+      "titlu": "Mișcare liberă — geam sau întindere",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber / geam"
+      ],
+      "pasi": [
+        "El alege: la geam (geam) sau întindere pe loc; voi urmăriți blând.",
+        "Fără forțare.",
+        "Dacă vrea: spuneți cuvântul ales — „Geam” sau „Rece”."
+      ],
+      "gata_cand": "A ales liber tipul de mișcare / loc.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z7-mental",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "mental",
+      "titlu": "Favoritul: rece, ploaie sau geam?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră"
+      ],
+      "pasi": [
+        "Întrebați: „Îți place rece, ploaie sau geam?” — gesturi clare.",
+        "Stați pe alegerea lui.",
+        "Dacă vrea: „Ieri tot ăsta?” — un da / nu blând."
+      ],
+      "gata_cand": "A ales sau a privit favoritul de vreme / geam.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z7-resurse",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "resurse",
+      "titlu": "Totul la loc înainte de calm",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "perdea / obiecte de pe pervaz"
+      ],
+      "pasi": [
+        "Strângeți: „La loc.”",
+        "„Gata. Acum e liniște.”",
+        "Dacă vrea: o ultimă privire geam, apoi închideți."
+      ],
+      "gata_cand": "Pervazul e gata înainte de calm.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s21-2-3-z7-social",
+      "banda": "2-3",
+      "saptamana": 21,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "social",
+      "titlu": "Ritual: bună seara, geam blând",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră"
+      ],
+      "pasi": [
+        "Șoptiți: „Bună seara.” O privire: „Geam.”",
+        "„Noapte bună. Rece afară — cald aici.”",
+        "Dacă vrea: un ultim ploaie / rece pe amintire, apoi odihnă."
+      ],
+      "gata_cand": "Ați închis săptămâna pervazului cu ritual blând.",
+      "tema_saptamana": "Iarna pe pervaz",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z1-fizic",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "fizic",
+      "titlu": "Sărituri mici sau pași pe loc",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber pe jos"
+      ],
+      "pasi": [
+        "Arătați: „Sărim. Săritură.” — 2–4 sărituri mici (sau pe loc).",
+        "„Oprim. Stăm.”",
+        "Dacă vrea: el alege — încă sărim sau oprim acum."
+      ],
+      "gata_cand": "A sărit pe scurt sau a privit, apoi oprim.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z1-mental",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "mental",
+      "titlu": "Secvență: sărim → oprim",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber"
+      ],
+      "pasi": [
+        "Spuneți: „Întâi sărim. Apoi oprim.”",
+        "Faceți împreună o dată.",
+        "Dacă vrea: el alege ordinea — oprim întâi sau sărim întâi."
+      ],
+      "gata_cand": "A urmat sau auziți secvența de 2 mișcări.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z1-resurse",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "resurse",
+      "titlu": "Gata = pauză apă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pahar cu apă"
+      ],
+      "pasi": [
+        "După mișcare: „Gata. Apă.”",
+        "Beți pe rând sau el bea: „Ajunge.”",
+        "Dacă vrea: alege paharul sau sticla (1 din 2)."
+      ],
+      "gata_cand": "Pauza de apă a închis mișcarea.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z1-social",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "social",
+      "titlu": "Mișcare împreună — o rundă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber"
+      ],
+      "pasi": [
+        "„Împreună. Sărim.” — apoi „Oprim.”",
+        "O singură rundă scurtă.",
+        "Dacă vrea: el alege următoarea mișcare din rundă."
+      ],
+      "gata_cand": "Ați făcut o rundă de mișcare împreună.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z2-fizic",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "fizic",
+      "titlu": "Alergăm pe scurt în casă — apoi oprim",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "coridor / cameră liberă"
+      ],
+      "pasi": [
+        "Pași repezi pe scurt: „Alergăm.” — 5–8 pași.",
+        "„Oprim.” — înghețați pe loc.",
+        "Dacă vrea: el alege unde e oprim-ul (prag / covor)."
+      ],
+      "gata_cand": "A alergat pe scurt și s-a oprit.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z2-mental",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "mental",
+      "titlu": "Alergăm sau sărim — care?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Arătați: „Alergăm?” — pași repezi pe loc.",
+        "„Sărim?” — săritură mică.",
+        "Dacă vrea: el alege secvența — alergăm apoi sărim, sau invers."
+      ],
+      "gata_cand": "A ales sau auziți alergăm / sărim.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z2-resurse",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "resurse",
+      "titlu": "După alergăm — paharul la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pahar",
+        "masă / chiuvetă"
+      ],
+      "pasi": [
+        "După pauza de apă: „La loc.”",
+        "„Ajunge. Gata.”",
+        "Dacă vrea: el alege raftul sau masa."
+      ],
+      "gata_cand": "Paharul e la loc după mișcare.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z2-social",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "social",
+      "titlu": "Eu alerg, tu stai — apoi invers",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber"
+      ],
+      "pasi": [
+        "Voi: „Alergăm” pe loc; el: „Oprim.”",
+        "Schimbați: el alergăm, voi oprim.",
+        "Dacă vrea: el inventează ordinea rundei."
+      ],
+      "gata_cand": "Ați schimbat rolurile alergăm / oprim.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z3-fizic",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "fizic",
+      "titlu": "Târâit sau mers pe genunchi — traseu scurt",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "covor / spațiu pe jos"
+      ],
+      "pasi": [
+        "Traseu de 4–6 „pași” pe genunchi sau târâit: „Mergem.”",
+        "La final: „Oprim.”",
+        "Dacă vrea: el alege traseul — spre ușă sau spre canapea."
+      ],
+      "gata_cand": "A făcut traseul pe jos pe scurt.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z3-mental",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "mental",
+      "titlu": "Secvență de 3: alergăm → sărim → oprim",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber"
+      ],
+      "pasi": [
+        "Spuneți: „Unu — alergăm. Doi — sărim. Trei — oprim.”",
+        "Faceți o dată împreună, lent.",
+        "Dacă vrea: el alege o altă ordine a celor trei."
+      ],
+      "gata_cand": "A auzit / făcut o secvență de 3 mișcări.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z3-resurse",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "resurse",
+      "titlu": "Alege: apă acum sau după încă o rundă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pahar cu apă"
+      ],
+      "pasi": [
+        "„Gata curând. Apă acum sau după?” — arătați 2 opțiuni.",
+        "Respectați alegerea: „Ajunge.”",
+        "Dacă vrea: el alege și traseul scurt înainte de apă."
+      ],
+      "gata_cand": "A ales momentul pauzei de apă.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z3-social",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "social",
+      "titlu": "Rândul la sărim",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber"
+      ],
+      "pasi": [
+        "Voi: „Acum eu. Sărim.”",
+        "„Acum tu.” — așteptați săritura sau gestul.",
+        "Dacă vrea: încă un schimb, apoi oprim împreună."
+      ],
+      "gata_cand": "Ați schimbat rândul la săritură.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z4-fizic",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "fizic",
+      "titlu": "Dans scurt — oprim când spunem",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber",
+        "opțional: muzică blândă adult"
+      ],
+      "pasi": [
+        "Mișcare liberă 15–20 de secunde: „Dans.”",
+        "„Oprim.” — înghețați, zâmbiți.",
+        "Dacă vrea: el spune oprim când vrea el."
+      ],
+      "gata_cand": "A dansat pe scurt și s-a oprit la oprim.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z4-mental",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "mental",
+      "titlu": "Sărim, alergăm, oprim — pe corp",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Arătați pe corp: „Sărim” (genunchi), „Alergăm” (picioare), „Oprim” (palmă).",
+        "El repetă gestul sau cuvântul.",
+        "Dacă vrea: el alege secvența de gesturi."
+      ],
+      "gata_cand": "A legat cele trei cuvinte de gesturi pe corp.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z4-resurse",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "resurse",
+      "titlu": "După dans — apă și paharul pe masă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pahar",
+        "masă"
+      ],
+      "pasi": [
+        "„Gata. Apă.”",
+        "Paharul pe masă: „La loc. Ajunge.”",
+        "Dacă vrea: alegeți pahar plin puțin sau mai mult (adult toarnă)."
+      ],
+      "gata_cand": "Apa și paharul închid dansul.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z4-social",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "social",
+      "titlu": "Arată-i altcuiva sărim",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Mergeți la o persoană dragă.",
+        "Modelați: „Sărim!” — o săritură mică.",
+        "Dacă vrea: el alege să arate alergăm sau oprim în loc."
+      ],
+      "gata_cand": "A împărtășit o mișcare cu cineva.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z5-fizic",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "fizic",
+      "titlu": "Traseu: alergăm → sărim → oprim → apă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "cale scurtă în casă",
+        "pahar"
+      ],
+      "pasi": [
+        "„Alergăm” până la reper, „Sărim” o dată, „Oprim.”",
+        "Apoi: „Apă. Gata.”",
+        "Dacă vrea: el alege ordinea reperelor pe traseu."
+      ],
+      "gata_cand": "A făcut traseul de mișcare până la apă.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z5-mental",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "mental",
+      "titlu": "Ce mișcare urmează?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Faceți sărim: „Ce urmează?” — oferiți oprim sau alergăm.",
+        "Așteptați alegerea lui.",
+        "Dacă vrea: el inventează toată secvența de 2–3."
+      ],
+      "gata_cand": "A ales următoarea mișcare din secvență.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z5-resurse",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "resurse",
+      "titlu": "Ajunge — o rundă de mișcare",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber"
+      ],
+      "pasi": [
+        "„Una. O rundă.” — sărim / alergăm / oprim scurt.",
+        "„Ajunge. Gata.” — pauză apă.",
+        "Dacă vrea: el alege dacă mai e o rundă mică."
+      ],
+      "gata_cand": "Runda e închisă cu ajunge.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z5-social",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "social",
+      "titlu": "Ajutor: vino să facem oprim",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Cereți: „Vino, facem oprim împreună.”",
+        "Înghețați amândoi: „Oprim. Bravo.”",
+        "Dacă vrea: el vă cheamă pe voi la sărim."
+      ],
+      "gata_cand": "A venit la mișcarea comună.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z6-fizic",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "fizic",
+      "titlu": "Mișcare liberă scurtă în casă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber"
+      ],
+      "pasi": [
+        "30–60 de secunde liber: sărim / alergăm / târâit — ce vrea.",
+        "Voi: „Oprim” blând la final.",
+        "Dacă vrea: el alege când oprim."
+      ],
+      "gata_cand": "A mișcat liber pe scurt în casă.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z6-mental",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "mental",
+      "titlu": "Ce mișcare am făcut?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Amintiți: „Am făcut sărim? Alergăm?”",
+        "El arată sau spune.",
+        "Dacă vrea: ordonează 2 mișcări — care întâi."
+      ],
+      "gata_cand": "A denumit o mișcare din joacă.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z6-resurse",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "resurse",
+      "titlu": "Paharul la loc după joaca liberă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pahar"
+      ],
+      "pasi": [
+        "După apă: „La loc.”",
+        "„Ajunge. Gata.”",
+        "Dacă vrea: alegeți locul paharului (1 din 2)."
+      ],
+      "gata_cand": "Paharul e la loc.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z6-social",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "social",
+      "titlu": "Joacă paralel: eu sărim, tu alergi",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber"
+      ],
+      "pasi": [
+        "Voi săriți pe loc; el aleargă pe loc (sau invers).",
+        "Comentați: „Eu sărim. Tu alergi.”",
+        "Dacă vrea: oprim împreună, apoi schimbați."
+      ],
+      "gata_cand": "Ați mișcat paralel pe scurt.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z7-fizic",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "fizic",
+      "titlu": "Mișcare liberă — sărim, alergăm sau oprim",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber"
+      ],
+      "pasi": [
+        "El alege: sărim, alergăm pe loc sau doar oprim-stat; voi urmăriți blând.",
+        "Fără forțare.",
+        "Dacă vrea: el alege o secvență scurtă de 2."
+      ],
+      "gata_cand": "A ales liber tipul de mișcare.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z7-mental",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "mental",
+      "titlu": "Favoritul: sărim, alergăm sau oprim?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Întrebați: „Îți place sărim, alergăm sau oprim?” — gesturi.",
+        "Stați pe alegerea lui.",
+        "Dacă vrea: faceți o dată doar favoritul lui."
+      ],
+      "gata_cand": "A ales sau a privit mișcarea favorită.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z7-resurse",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "resurse",
+      "titlu": "Apă și pahar la loc înainte de calm",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pahar"
+      ],
+      "pasi": [
+        "„Apă. Gata.” Apoi: „La loc.”",
+        "„Acum e liniște.”",
+        "Dacă vrea: paharul favorit rămâne la vedere."
+      ],
+      "gata_cand": "Pauza de apă e închisă înainte de calm.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s22-2-3-z7-social",
+      "banda": "2-3",
+      "saptamana": 22,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "social",
+      "titlu": "Ritual: bună seara, oprim blând",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Șoptiți: „Bună seara.” O clipă pe loc: „Oprim.”",
+        "„Noapte bună.”",
+        "Dacă vrea: un ultim sărim mic pe pernă, apoi odihnă."
+      ],
+      "gata_cand": "Ați închis săptămâna mișcării cu ritual blând.",
+      "tema_saptamana": "Corp care se mișcă în casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z1-fizic",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "fizic",
+      "titlu": "Două mirosuri sigure în casă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "săpun",
+        "pâine / ceai răcit / fruct"
+      ],
+      "pasi": [
+        "Apropiați nasul de primul: „Miros.” — săpun / pâine.",
+        "Al doilea la fel, pe scurt.",
+        "Dacă vrea: numiți cele două — „Săpun și pâine.”"
+      ],
+      "gata_cand": "A mirosit două lucruri sigure pe scurt.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z1-mental",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "mental",
+      "titlu": "Care e care? — săpun sau pâine",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "săpun",
+        "pâine"
+      ],
+      "pasi": [
+        "Mirosiți unul cu ochii închiși blând: „Care? Săpun?”",
+        "Apoi celălalt: „Pâine?”",
+        "Dacă vrea: el numește ambele mirosuri cu gest sau cuvânt."
+      ],
+      "gata_cand": "A deosebit două mirosuri.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z1-resurse",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "resurse",
+      "titlu": "Săpunul / pâinea la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "săpun",
+        "pâine",
+        "raft / coș / masă"
+      ],
+      "pasi": [
+        "După miros: „La loc.” — întâi unul.",
+        "Apoi al doilea: „Ajunge.”",
+        "Dacă vrea: alegeți ordinea — săpun sau pâine întâi."
+      ],
+      "gata_cand": "Obiectele de miros sunt la loc.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z1-social",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "social",
+      "titlu": "Împărtășește mirosul",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "1 obiect cu miros sigur"
+      ],
+      "pasi": [
+        "Țineți obiectul: „Miros. Hai împreună.”",
+        "El miroase; voi: „Mmm. Săpun / pâine.”",
+        "Dacă vrea: numiți al doilea miros pe care l-ați avut azi."
+      ],
+      "gata_cand": "A împărtășit un miros cu adultul.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z2-fizic",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "fizic",
+      "titlu": "Nas aproape de săpun pe scurt",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "săpun (neascuțit / blând)"
+      ],
+      "pasi": [
+        "Apropiați: „Săpun. Miros.”",
+        "10–15 secunde, apoi: „Gata.”",
+        "Dacă vrea: numiți săpun și încă un miros din casă."
+      ],
+      "gata_cand": "A mirosit săpunul pe scurt.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z2-mental",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "mental",
+      "titlu": "Săpun — cum miroase?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "săpun"
+      ],
+      "pasi": [
+        "„Săpun. Miros.” — oferiți un cuvânt: „Curat / blând.”",
+        "El repetă săpun sau arată.",
+        "Dacă vrea: comparați cu pâine — „Alt miros.”"
+      ],
+      "gata_cand": "A legat săpun de miros.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z2-resurse",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "resurse",
+      "titlu": "Săpunul la chiuvetă / pe raft",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "săpun",
+        "chiuvetă / raft"
+      ],
+      "pasi": [
+        "„La loc.” Duceți împreună.",
+        "„Ajunge. Gata.”",
+        "Dacă vrea: alegeți chiuveta sau raftul (1 din 2)."
+      ],
+      "gata_cand": "Săpunul e la loc.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z2-social",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "social",
+      "titlu": "Arată-i altcuiva săpun",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "săpun"
+      ],
+      "pasi": [
+        "Mergeți la o persoană dragă cu săpunul.",
+        "Modelați: „Miros. Săpun.”",
+        "Dacă vrea: el ține și spune săpun / miros."
+      ],
+      "gata_cand": "A împărtășit mirosul de săpun.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z3-fizic",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "fizic",
+      "titlu": "Nas aproape de pâine pe scurt",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "pâine / cozonac rece / toast rece"
+      ],
+      "pasi": [
+        "Apropiați: „Pâine. Miros.”",
+        "10–15 secunde, fără a forța gustul.",
+        "Dacă vrea: numiți pâine și săpun — două mirosuri."
+      ],
+      "gata_cand": "A mirosit pâinea pe scurt.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z3-mental",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "mental",
+      "titlu": "Pâine — miros de casă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pâine"
+      ],
+      "pasi": [
+        "„Pâine. Miros.”",
+        "„E ca acasă.” — gest spre masă / bucătărie.",
+        "Dacă vrea: el numește pâine și încă un miros."
+      ],
+      "gata_cand": "A legat pâine de mirosul din casă.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z3-resurse",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "resurse",
+      "titlu": "Pâinea în coș / pe masă la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pâine",
+        "coș / masă"
+      ],
+      "pasi": [
+        "„La loc.”",
+        "„Ajunge. Gata.”",
+        "Dacă vrea: alegeți coșul sau masa."
+      ],
+      "gata_cand": "Pâinea e la loc.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z3-social",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "social",
+      "titlu": "Rândul la mirosit pâine",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pâine"
+      ],
+      "pasi": [
+        "Voi: „Acum eu. Miros. Pâine.”",
+        "„Acum tu.” — așteptați.",
+        "Dacă vrea: numiți și săpun ca al doilea miros al zilei."
+      ],
+      "gata_cand": "Ați schimbat rândul la mirosit pâinea.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z4-fizic",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "fizic",
+      "titlu": "Traseu mirosuri: săpun → pâine",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "săpun la chiuvetă",
+        "pâine la masă"
+      ],
+      "pasi": [
+        "La chiuvetă: „Săpun. Miros.”",
+        "La masă: „Pâine. Miros.” — apoi „Gata.”",
+        "Dacă vrea: el numește cele două pe drum înapoi."
+      ],
+      "gata_cand": "A făcut traseul scurt între două mirosuri.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z4-mental",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "mental",
+      "titlu": "Miros, săpun, pâine — pe obiecte",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "săpun",
+        "pâine"
+      ],
+      "pasi": [
+        "Arătați: „Miros” (nas). „Săpun.” „Pâine.”",
+        "El potrivește obiectul la cuvânt.",
+        "Dacă vrea: spune ambele mirosuri fără să privească."
+      ],
+      "gata_cand": "A legat cele trei cuvinte de obiecte.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z4-resurse",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "resurse",
+      "titlu": "Două obiecte — la loc pe rând",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "săpun",
+        "pâine"
+      ],
+      "pasi": [
+        "„Una. Săpun la loc.”",
+        "„Două. Pâine la loc. Ajunge.”",
+        "Dacă vrea: el alege care e primul."
+      ],
+      "gata_cand": "Ambele sunt la loc.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z4-social",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "social",
+      "titlu": "Eu miros săpun, tu pâine — apoi invers",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "săpun",
+        "pâine"
+      ],
+      "pasi": [
+        "Voi cu săpun; el cu pâine (sau invers).",
+        "„Miros.” pe rând.",
+        "Dacă vrea: fiecare numește mirosul celuilalt."
+      ],
+      "gata_cand": "Ați împărțit cele două mirosuri pe roluri.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z5-fizic",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "fizic",
+      "titlu": "Miros scurt la ceai / fruct — al treilea sigur",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "ceai răcit / fruct spălat",
+        "opțional săpun sau pâine"
+      ],
+      "pasi": [
+        "Un miros nou blând: „Miros.”",
+        "Comparați cu săpun sau pâine pe scurt.",
+        "Dacă vrea: numiți două din cele mirosite azi."
+      ],
+      "gata_cand": "A mirosit un al treilea lucru sigur pe scurt.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z5-mental",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "mental",
+      "titlu": "Care miros e săpun?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "săpun",
+        "pâine sau alt obiect"
+      ],
+      "pasi": [
+        "Apropiați ambele (sau pe rând): „Care e săpun?”",
+        "El arată.",
+        "Dacă vrea: „Și care e pâine?” — numește ambele."
+      ],
+      "gata_cand": "A identificat săpun dintre mirosuri.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z5-resurse",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "resurse",
+      "titlu": "Ajunge — un miros, apoi la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "1 obiect cu miros"
+      ],
+      "pasi": [
+        "„Una. Miros.” — scurt.",
+        "„La loc. Ajunge.”",
+        "Dacă vrea: alegeți săpun sau pâine pentru „una”."
+      ],
+      "gata_cand": "Un singur miros, apoi obiectul la loc.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z5-social",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "social",
+      "titlu": "Ajutor: adu săpun / pâine",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "săpun sau pâine la vedere"
+      ],
+      "pasi": [
+        "Cereți: „Adu săpun, te rog.” (sau pâine).",
+        "Mulțumiți: „Miros împreună.”",
+        "Dacă vrea: el cere obiectul celălalt."
+      ],
+      "gata_cand": "A adus obiectul de miros la cerere.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z6-fizic",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "fizic",
+      "titlu": "Miros liber scurt — ce alege el",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "2–3 obiecte sigure cu miros"
+      ],
+      "pasi": [
+        "El alege un obiect: „Miros.”",
+        "10–20 de secunde, fără listă lungă.",
+        "Dacă vrea: numiți două mirosuri din cele de pe masă."
+      ],
+      "gata_cand": "A ales și a mirosit liber pe scurt.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z6-mental",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "mental",
+      "titlu": "Ce am mirosit?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "„Am mirosit săpun? Pâine?”",
+        "El arată sau spune.",
+        "Dacă vrea: spune ambele pe care le ține minte."
+      ],
+      "gata_cand": "A denumit cel puțin un miros din joacă.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z6-resurse",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "resurse",
+      "titlu": "Toate obiectele de miros la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "obiectele folosite"
+      ],
+      "pasi": [
+        "„La loc.” pe rând.",
+        "„Ajunge. Gata.”",
+        "Dacă vrea: favoritul rămâne o clipă la vedere, apoi tot la loc."
+      ],
+      "gata_cand": "Obiectele de miros sunt la loc.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z6-social",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "social",
+      "titlu": "Joacă paralel: eu săpun, tu pâine",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "săpun",
+        "pâine"
+      ],
+      "pasi": [
+        "Fiecare cu obiectul lui: „Miros.”",
+        "Comentați blând fără a lua obiectul celuilalt.",
+        "Dacă vrea: schimbați obiectele o dată."
+      ],
+      "gata_cand": "Ați mirosit paralel pe scurt.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z7-fizic",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "fizic",
+      "titlu": "Mișcare liberă — un miros la final",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "1 obiect cu miros",
+        "spațiu liber"
+      ],
+      "pasi": [
+        "El alege mișcare liberă scurtă; la final un miros blând.",
+        "Fără forțare.",
+        "Dacă vrea: alege săpun sau pâine pentru final."
+      ],
+      "gata_cand": "A mișcat liber și a închis cu un miros.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z7-mental",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "mental",
+      "titlu": "Favoritul: săpun sau pâine?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "săpun",
+        "pâine"
+      ],
+      "pasi": [
+        "Întrebați: „Îți place săpun sau pâine?” — arătați ambele.",
+        "Stați pe alegerea lui.",
+        "Dacă vrea: numiți ambele, apoi stați pe favorit."
+      ],
+      "gata_cand": "A ales sau a privit mirosul favorit.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z7-resurse",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "resurse",
+      "titlu": "Mirosurile la loc înainte de calm",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "săpun / pâine"
+      ],
+      "pasi": [
+        "Strângeți: „La loc.”",
+        "„Gata. Acum e liniște.”",
+        "Dacă vrea: un ultim miros pe favorit, apoi la loc."
+      ],
+      "gata_cand": "Mirosurile sunt la loc înainte de calm.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s23-2-3-z7-social",
+      "banda": "2-3",
+      "saptamana": 23,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "social",
+      "titlu": "Ritual: bună seara, miros blând",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [
+        "opțional: săpun departe / aer curat"
+      ],
+      "pasi": [
+        "Șoptiți: „Bună seara.” O inspirare: „Miros.”",
+        "„Noapte bună.”",
+        "Dacă vrea: șoptiți săpun sau pâine pe amintire, apoi odihnă."
+      ],
+      "gata_cand": "Ați închis săptămâna mirosurilor cu ritual blând.",
+      "tema_saptamana": "Mirosuri din casă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z1-fizic",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "fizic",
+      "titlu": "Pregătim spațiul — un obiect",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "1 pernă / scaun / jucărie"
+      ],
+      "pasi": [
+        "Alegeți un obiect: „Pentru oaspete / prieten.”",
+        "Cărați-l împreună la locul pregătit.",
+        "Dacă vrea: o întrebare blândă — „Vrei să pui tu perna?” — poate refuza."
+      ],
+      "gata_cand": "A cărat un obiect pentru spațiul de oaspete.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z1-mental",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "mental",
+      "titlu": "Salut + un cuvânt blând",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Modelați: „Bună.” — undă cu mâna.",
+        "Adăugați un cuvânt: „Prieten” sau „Bun venit.”",
+        "Dacă vrea: „Vrei să spui bună?” — poate refuza, fără presiune."
+      ],
+      "gata_cand": "A auzit / încercat salutul blând.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z1-resurse",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "resurse",
+      "titlu": "Loc pentru oaspete — scaunul",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "scaun / pernă"
+      ],
+      "pasi": [
+        "Arătați: „Aici stă oaspetele / prieten.”",
+        "„Ajunge. Locul e gata.”",
+        "Dacă vrea: alegeți scaunul sau perna (1 din 2)."
+      ],
+      "gata_cand": "Locul pentru oaspete e marcat.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z1-social",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "social",
+      "titlu": "Bună fără forțare",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Voi spuneți: „Bună.” — undă.",
+        "El poate undă, spune sau doar privi — tot e bine.",
+        "Dacă vrea: o întrebare — „Vrei bună sau doar mâna?” — poate refuza."
+      ],
+      "gata_cand": "Ați practicat salutul fără forțare.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z2-fizic",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "fizic",
+      "titlu": "Mână ridicată — bună pe scurt",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Ridicați mâna: „Bună.” — 2–3 unde.",
+        "Jos: „Gata.”",
+        "Dacă vrea: „Vrei încă un bună?” — poate refuza."
+      ],
+      "gata_cand": "A unduit sau a privit salutul.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z2-mental",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "mental",
+      "titlu": "Bună — ce înseamnă?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "„Bună înseamnă bună.” — undă.",
+        "„La revedere înseamnă la revedere.” — undă de plecare.",
+        "Dacă vrea: el alege pe care îl arată acum."
+      ],
+      "gata_cand": "A legat bună / la revedere de gest.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z2-resurse",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "resurse",
+      "titlu": "Jucăria de salut pe raft",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "o jucărie „oaspete”",
+        "raft"
+      ],
+      "pasi": [
+        "După joacă: „Prieten la loc.”",
+        "„Ajunge. Gata.”",
+        "Dacă vrea: alegeți raftul sau scaunul pentru jucărie."
+      ],
+      "gata_cand": "Jucăria-oaspete e la loc.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z2-social",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "social",
+      "titlu": "Spunem bună adultului din casă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Mergeți la o persoană dragă.",
+        "Modelați: „Bună!” — undă.",
+        "Dacă vrea: „Vrei să spui tu?” — poate refuza."
+      ],
+      "gata_cand": "A împărtășit un bună în casă.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z3-fizic",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "fizic",
+      "titlu": "Așezăm scaunul pentru prieten",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "scaun ușor / pernă"
+      ],
+      "pasi": [
+        "Mutați împreună scaunul: „Pentru prieten.”",
+        "„Aici.” — arătați locul.",
+        "Dacă vrea: „Vrei tu să împingi?” — poate refuza."
+      ],
+      "gata_cand": "A mutat scaunul / perna pe scurt.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z3-mental",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "mental",
+      "titlu": "Prieten — cine e?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "jucărie sau poză persoană dragă"
+      ],
+      "pasi": [
+        "Arătați: „Prieten / familie.”",
+        "Numiți pe cineva drag din casă.",
+        "Dacă vrea: „Cine e prieten-ul tău?” — poate refuza dacă nu răspunde."
+      ],
+      "gata_cand": "A legat prieten de o persoană / jucărie.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z3-resurse",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "resurse",
+      "titlu": "Scaunul rămâne locul oaspetelui — gata",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "scaun"
+      ],
+      "pasi": [
+        "„Locul e gata. Ajunge.”",
+        "Nu mai mutați: „Gata.”",
+        "Dacă vrea: alegeți dacă prieten stă pe scaun sau pe pernă."
+      ],
+      "gata_cand": "Locul oaspetelui e stabilit.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z3-social",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "social",
+      "titlu": "Rândul la bună",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Voi: „Acum eu. Bună.”",
+        "„Acum tu” — așteptați undă sau cuvânt.",
+        "Dacă vrea: „Vrei încă un rând?” — poate refuza."
+      ],
+      "gata_cand": "Ați schimbat rândul la salut.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z4-fizic",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "fizic",
+      "titlu": "La revedere cu mâna — pași spre ușă pe scurt",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "ușă / prag"
+      ],
+      "pasi": [
+        "La ușă: „La revedere.” — undă.",
+        "2–3 pași înapoi în casă: „Rămânem.”",
+        "Dacă vrea: „Vrei la revedere încă o dată?” — poate refuza."
+      ],
+      "gata_cand": "A practicat la revedere la ușă pe scurt.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z4-mental",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "mental",
+      "titlu": "Bună, prieten, la revedere — pe gesturi",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "„Bună” — undă venire. „Prieten” — arătați pe cineva / jucăria.",
+        "„La revedere” — undă plecare.",
+        "Dacă vrea: el alege un gest de arătat."
+      ],
+      "gata_cand": "A legat cele trei cuvinte de gesturi.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z4-resurse",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "resurse",
+      "titlu": "După la revedere — jucăria prieten la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "jucărie oaspete",
+        "raft"
+      ],
+      "pasi": [
+        "„La revedere, prieten. La loc.”",
+        "„Ajunge.”",
+        "Dacă vrea: alegeți raftul sau patul jucăriei."
+      ],
+      "gata_cand": "Jucăria prieten e la loc după la revedere.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z4-social",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "social",
+      "titlu": "Eu bună, tu la revedere — apoi invers",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Voi: „Bună.” El: „La revedere” (sau undă).",
+        "Schimbați o dată.",
+        "Dacă vrea: o întrebare — „Care îți place?” — poate refuza."
+      ],
+      "gata_cand": "Ați schimbat rolurile bună / la revedere.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z5-fizic",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "fizic",
+      "titlu": "Traseu: pregătim → bună → scaun → la revedere",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "1 obiect",
+        "scaun"
+      ],
+      "pasi": [
+        "Cărați obiectul, spuneți bună, arătați scaunul, apoi la revedere.",
+        "Traseu scurt, o dată.",
+        "Dacă vrea: el alege unde e bună pe traseu."
+      ],
+      "gata_cand": "A făcut traseul de oaspete pe scurt.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z5-mental",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "mental",
+      "titlu": "Cine vine? — prieten",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "jucărie / poză"
+      ],
+      "pasi": [
+        "„Vine prieten.” — arătați.",
+        "„Bună, prieten.”",
+        "Dacă vrea: „Cum îl cheamă?” — poate refuza dacă nu spune."
+      ],
+      "gata_cand": "A legat venirea de prieten / bună.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z5-resurse",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "resurse",
+      "titlu": "Ajunge — un loc gata pentru oaspete",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "scaun / pernă"
+      ],
+      "pasi": [
+        "Verificați: „Locul e gata?”",
+        "„Una. Ajunge.”",
+        "Dacă vrea: adăugați un al doilea obiect sau opriți-vă aici."
+      ],
+      "gata_cand": "Un singur loc e suficient — ajunge.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z5-social",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "social",
+      "titlu": "Ajutor: adu scaunul / perna",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "scaun ușor / pernă"
+      ],
+      "pasi": [
+        "Cereți: „Adu perna pentru prieten, te rog.”",
+        "Mulțumiți: „Bună pe locul ăsta.”",
+        "Dacă vrea: el cere ajutorul vostru — poate refuza pe roluri."
+      ],
+      "gata_cand": "A ajutat la pregătirea locului.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z6-fizic",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "fizic",
+      "titlu": "Joacă liberă — bună / la revedere pe scurt",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "jucărie oaspete opțional"
+      ],
+      "pasi": [
+        "30–60 de secunde: undă bună sau la revedere când vrea.",
+        "Voi urmăriți, fără a corecta.",
+        "Dacă vrea: o întrebare blândă la final — poate refuza."
+      ],
+      "gata_cand": "A jucat liber salutul pe scurt.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z6-mental",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "mental",
+      "titlu": "Ce am spus oaspetelui?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "„Am spus bună? La revedere?”",
+        "El arată gestul.",
+        "Dacă vrea: „Și prieten?” — arătați jucăria / persoana."
+      ],
+      "gata_cand": "A denumit un salut din joacă.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z6-resurse",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "resurse",
+      "titlu": "Scaunul / jucăria la loc după joacă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "scaun sau jucărie"
+      ],
+      "pasi": [
+        "„La loc.” după joaca de oaspeți.",
+        "„Ajunge. Gata.”",
+        "Dacă vrea: prieten rămâne pe scaun până seara (apoi la loc)."
+      ],
+      "gata_cand": "Spațiul e strâns după joacă.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z6-social",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "social",
+      "titlu": "Joacă paralel: eu bună, tu cu prieten",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "jucărie"
+      ],
+      "pasi": [
+        "Voi unduiți bună; el ține prieten (sau invers).",
+        "Fără a lua obiectul celuilalt.",
+        "Dacă vrea: schimbați, apoi la revedere împreună."
+      ],
+      "gata_cand": "Ați jucat paralel pe tema oaspeților.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z7-fizic",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "fizic",
+      "titlu": "Mișcare liberă — bună sau la revedere la final",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber"
+      ],
+      "pasi": [
+        "El alege mișcare liberă; la final undă bună sau la revedere.",
+        "Fără forțare.",
+        "Dacă vrea: „Vrei bună sau la revedere?” — poate refuza pe ambele."
+      ],
+      "gata_cand": "A mișcat liber și a închis cu un salut.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z7-mental",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "mental",
+      "titlu": "Favoritul: bună, prieten sau la revedere?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Întrebați: „Îți place bună, prieten sau la revedere?” — gesturi.",
+        "Stați pe alegerea lui.",
+        "Dacă vrea: o singură rundă doar pe favorit — poate refuza."
+      ],
+      "gata_cand": "A ales sau a privit salutul / cuvântul favorit.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z7-resurse",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "resurse",
+      "titlu": "Locul oaspetelui strâns înainte de calm",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "scaun / jucărie / pernă"
+      ],
+      "pasi": [
+        "„La loc. La revedere, prieten.”",
+        "„Gata. Acum e liniște.”",
+        "Dacă vrea: un ultim bună șoptit, apoi totul la loc."
+      ],
+      "gata_cand": "Spațiul e gata înainte de calm.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s24-2-3-z7-social",
+      "banda": "2-3",
+      "saptamana": 24,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "social",
+      "titlu": "Ritual: bună seara, la revedere blând",
+      "durata_min": 3,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "Șoptiți: „Bună seara. La revedere.” — undă mică.",
+        "„Noapte bună, prieten.”",
+        "Dacă vrea: un bună de noapte bună, apoi odihnă — poate refuza."
+      ],
+      "gata_cand": "Ați închis săptămâna familiei / oaspeților cu ritual blând.",
+      "tema_saptamana": "Familia și oaspeții",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    }
+  ]
+}

@@ -1,0 +1,2538 @@
+{
+  "version": 2,
+  "locale": "ro",
+  "banda": "2-3",
+  "saptamani": [
+    33,
+    34,
+    35,
+    36
+  ],
+  "teme": {
+    "33": "Nisip și găleată",
+    "34": "Umbre pe pământ",
+    "35": "Apă afară (joc scurt)",
+    "36": "Insecte de departe"
+  },
+  "activitati": [
+    {
+      "id": "s33-2-3-z1-fizic",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "fizic",
+      "titlu": "Umplem găleata cu nisip pe scurt",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "nisip (cutie / curte)",
+        "găleată mică"
+      ],
+      "pasi": [
+        "Mâna în nisip: „Nisip.” — puneți puțin în găleată.",
+        "„Plin.” — arătați găleata când e plină pe jumătate.",
+        "Dacă vrea: umpleți cu scop — „Nisip în găleată, nu pe jos.”"
+      ],
+      "gata_cand": "A umplut găleata puțin cu nisip.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z1-mental",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "mental",
+      "titlu": "Plin și gol pe găleată",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "găleată",
+        "nisip"
+      ],
+      "pasi": [
+        "Arătați găleata cu nisip: „Plin.”",
+        "Goliți pe o zonă de nisip: „Gol.”",
+        "Dacă vrea: el arată care e plin și care e gol."
+      ],
+      "gata_cand": "A deosebit plin de gol pe scurt.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z1-resurse",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "resurse",
+      "titlu": "Nisipul rămâne în zonă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "zonă de nisip / cutie",
+        "găleată"
+      ],
+      "pasi": [
+        "Arătați zona: „Nisip aici.”",
+        "„Ajunge.” — nisipul rămâne în zonă, nu pe trepte.",
+        "Dacă vrea: umpleți cu scop — doar în cutie / pe preș."
+      ],
+      "gata_cand": "Nisipul a rămas în zona de joacă.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z1-social",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "social",
+      "titlu": "Schimb găleata pe rând",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "găleată",
+        "nisip"
+      ],
+      "pasi": [
+        "„Acum eu” — găleată cu nisip.",
+        "„Acum tu.” — schimb blând.",
+        "Dacă vrea: umpleți pe rând cu scop — fiecare o mână de nisip."
+      ],
+      "gata_cand": "Ați schimbat găleata pe rând.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z2-fizic",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "fizic",
+      "titlu": "Golește găleata — gol",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "găleată cu nisip",
+        "zonă de nisip"
+      ],
+      "pasi": [
+        "Răsturnați blând: „Gol.”",
+        "Atingeți nisipul golit: „Nisip.”",
+        "Dacă vrea: umpleți din nou cu scop — „Plin pentru golire.”"
+      ],
+      "gata_cand": "A golit găleata pe scurt.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z2-mental",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "mental",
+      "titlu": "Nisip: unde e? — în găleată sau pe jos",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "găleată",
+        "nisip"
+      ],
+      "pasi": [
+        "„Unde e nisip?” — arătați găleata: „Aici — plin.”",
+        "Arătați pe jos / cutie: „Aici — gol găleata.”",
+        "Dacă vrea: el spune (sau arată) unde e nisip acum."
+      ],
+      "gata_cand": "A localizat nisipul în găleată sau pe jos.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z2-resurse",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "resurse",
+      "titlu": "Găleata la loc după joacă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "găleată"
+      ],
+      "pasi": [
+        "După joacă: „La loc.”",
+        "„Gol. Ajunge.”",
+        "Dacă vrea: alegeți locul găleții (1 din 2 rafturi / colțuri)."
+      ],
+      "gata_cand": "Găleata e la loc.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z2-social",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "social",
+      "titlu": "Arată adultului găleata plin",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "găleată cu nisip"
+      ],
+      "pasi": [
+        "El arată (sau voi ghidați): „Uite. Plin.”",
+        "Voi: „Da. Nisip.” — o clipă împreună.",
+        "Dacă vrea: umpleți împreună cu scop — încă o mână."
+      ],
+      "gata_cand": "A arătat găleata plină adultului.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z3-fizic",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "fizic",
+      "titlu": "Lopată mică: nisip în găleată",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "lopată mică (sau mână)",
+        "găleată",
+        "nisip"
+      ],
+      "pasi": [
+        "O lopată / mână: „Nisip… plin.”",
+        "2–3 mișcări, fără grabă.",
+        "Dacă vrea: umpleți cu scop — „Până la linie / până aici.”"
+      ],
+      "gata_cand": "A pus nisip în găleată cu unealtă sau mână.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z3-mental",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "mental",
+      "titlu": "Trei cuvinte: nisip, plin, gol",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "găleată",
+        "nisip"
+      ],
+      "pasi": [
+        "„Nisip.” pe nisip; „Plin.” pe găleata plină; „Gol.” pe goală.",
+        "O rundă de etichete.",
+        "Dacă vrea: el alege ordinea cuvintelor — scopul lui de azi."
+      ],
+      "gata_cand": "A auzit cele trei etichete pe nisip.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z3-resurse",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "resurse",
+      "titlu": "Alege: încă o umplere sau ajunge",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "găleată",
+        "nisip"
+      ],
+      "pasi": [
+        "Arătați 2: „Încă nisip — plin. Sau ajunge — gol la loc.”",
+        "Alegeți: „Ajunge așa.”",
+        "Dacă vrea: umpleți o dată cu scop, apoi gata."
+      ],
+      "gata_cand": "Ați ales continuare sau închidere.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z3-social",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "social",
+      "titlu": "Rândul la lopată / mână",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "lopată sau mână",
+        "găleată"
+      ],
+      "pasi": [
+        "„Acum eu — nisip.”",
+        "„Acum tu.”",
+        "Dacă vrea: pe rând umpleți cu scop — „Fiecare o lopată.”"
+      ],
+      "gata_cand": "Ați schimbat rândul la umplut.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z4-fizic",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "fizic",
+      "titlu": "Cărăm găleata plin pe scurt",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "găleată cu puțin nisip"
+      ],
+      "pasi": [
+        "Cărați împreună: „Plin… nisip.” — 3–5 pași.",
+        "Așezați: „Aici.”",
+        "Dacă vrea: umpleți la destinație cu scop — o mână în plus."
+      ],
+      "gata_cand": "A cărat găleata pe scurt.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z4-mental",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "mental",
+      "titlu": "De ce umplem? — o frază",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "găleată",
+        "nisip"
+      ],
+      "pasi": [
+        "Arătați găleata: „Nisip. Plin.”",
+        "„De ce umplem?” — „Ca să căram / ca să turnăm.”",
+        "Dacă vrea: el repetă scopul — gest spre gol / turnat."
+      ],
+      "gata_cand": "A auzit un scop pentru umplere.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z4-resurse",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "resurse",
+      "titlu": "După joacă — nisipul în cutie, găleata la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "cutie de nisip",
+        "găleată"
+      ],
+      "pasi": [
+        "„Nisip în cutie.” — „La loc.”",
+        "„Ajunge.”",
+        "Dacă vrea: gol găleata în cutie cu scop, apoi raft."
+      ],
+      "gata_cand": "Zona e strânsă; găleata la loc.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z4-social",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "social",
+      "titlu": "Turnăm nisip împreună — gol",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "găleată cu nisip",
+        "zonă"
+      ],
+      "pasi": [
+        "Țineți împreună: „Gol.”",
+        "Nisip pe zonă: „Nisip.”",
+        "Dacă vrea: umpleți din nou cu scop — „Plin pentru gol împreună.”"
+      ],
+      "gata_cand": "Ați golit găleata împreună.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z5-fizic",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "fizic",
+      "titlu": "Degete în nisip — textură",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "nisip"
+      ],
+      "pasi": [
+        "Degete în nisip: „Nisip.” — 10–15 secunde.",
+        "Strângeți puțin: „Plin mână.” — deschideți: „Gol.”",
+        "Dacă vrea: umpleți găleata cu scop doar cu degetele."
+      ],
+      "gata_cand": "A simțit textura nisipului.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z5-mental",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "mental",
+      "titlu": "Plin mână și gol mână",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "nisip"
+      ],
+      "pasi": [
+        "Mână cu nisip: „Plin.”",
+        "Mână deschisă: „Gol.”",
+        "Dacă vrea: el arată plin / gol pe mâinile lui."
+      ],
+      "gata_cand": "A legat plin/gol de mână.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z5-resurse",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "resurse",
+      "titlu": "Limită: nisip doar în zonă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "zonă de nisip"
+      ],
+      "pasi": [
+        "„Nisip aici. Ajunge.”",
+        "Dacă a căzut afară: „Înapoi în zonă.”",
+        "Dacă vrea: umpleți cutia cu scop — „Plin cutie, gol afară.”"
+      ],
+      "gata_cand": "Limita zonei e clară.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z5-social",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "social",
+      "titlu": "Arată nisip unei persoane dragi",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "găleată / nisip"
+      ],
+      "pasi": [
+        "„Uite. Nisip.” — arătați împreună.",
+        "„Plin.” pe găleată dacă e plină.",
+        "Dacă vrea: umpleți cu scop ca să arătați — o lopată."
+      ],
+      "gata_cand": "A împărtășit nisipul cu cineva.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z6-fizic",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "fizic",
+      "titlu": "Traseu: cutie → găleată plin → gol pe zonă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "cutie de nisip",
+        "găleată"
+      ],
+      "pasi": [
+        "Din cutie: „Nisip… plin.”",
+        "Pe zonă: „Gol.” — 1–2 ture.",
+        "Dacă vrea: umpleți cu scop — „Plin pentru golire pe preș.”"
+      ],
+      "gata_cand": "A făcut traseul umple–golește pe scurt.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z6-mental",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "mental",
+      "titlu": "Scopul zilei — una singură",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "găleată",
+        "nisip"
+      ],
+      "pasi": [
+        "Alegeți un scop: „Plin găleată.” sau „Gol pe cutie.”",
+        "Spuneți-l o dată: „Scop.”",
+        "Dacă vrea: el alege scopul (1 din 2)."
+      ],
+      "gata_cand": "A auzit / ales un scop scurt.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z6-resurse",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "resurse",
+      "titlu": "Joaca cu nisip de azi — gata",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "găleată",
+        "cutie"
+      ],
+      "pasi": [
+        "„Ajunge. Nisip în cutie. Găleată la loc.”",
+        "„Gol. Gata.”",
+        "Dacă vrea: un ultim plin cu scop, apoi strâns."
+      ],
+      "gata_cand": "Joaca e închisă; nisipul la loc.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z6-social",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "social",
+      "titlu": "Joacă paralel: eu plin, tu gol",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "2 găleți sau rând clar"
+      ],
+      "pasi": [
+        "Voi: „Plin — nisip.”",
+        "El: „Gol” sau privește — fără forțare.",
+        "Dacă vrea: schimbați rolurile cu scop — „Acum tu plin.”"
+      ],
+      "gata_cand": "Ați jucat în paralel pe scurt.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z7-fizic",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "fizic",
+      "titlu": "Joacă liberă la nisip — el alege",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "nisip",
+        "găleată (opțional)"
+      ],
+      "pasi": [
+        "El alege umplut / golit / doar mână; voi urmăriți blând.",
+        "Fără grabă: „Nisip… gata.”",
+        "Dacă vrea: un scop blând ales de el — sau zero scop."
+      ],
+      "gata_cand": "A jucat liber cu nisipul pe scurt.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z7-mental",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "mental",
+      "titlu": "Favoritul: nisip, plin sau gol?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "amintiri din săptămână"
+      ],
+      "pasi": [
+        "Întrebați: „Îți place nisip, plin sau gol?” — gesturi.",
+        "Stați pe alegerea lui.",
+        "Dacă vrea: un mic scop de seară legat de alegere."
+      ],
+      "gata_cand": "A ales un cuvânt favorit din temă.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z7-resurse",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "resurse",
+      "titlu": "Găleata și nisip la loc — seara",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "găleată",
+        "cutie de nisip"
+      ],
+      "pasi": [
+        "„Nisip. La loc.”",
+        "„Ajunge. Acum e liniște.”",
+        "Dacă vrea: gol găleata o dată, apoi raft."
+      ],
+      "gata_cand": "Totul e la loc înainte de calm.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s33-2-3-z7-social",
+      "banda": "2-3",
+      "saptamana": 33,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "social",
+      "titlu": "Ritual: bună seara după nisip",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu de seară"
+      ],
+      "pasi": [
+        "Șoptiți: „Bună seara.” Gest: mâini fără nisip.",
+        "„Noapte bună. Nisip… gata.”",
+        "Dacă vrea: „Găleata doarme gol; noi dormim.”"
+      ],
+      "gata_cand": "Ați închis seara blând după nisip.",
+      "tema_saptamana": "Nisip și găleată",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z1-fizic",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "fizic",
+      "titlu": "Strângem frunză de pe pământ pe scurt",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "curte / pământ",
+        "2–3 frunze"
+      ],
+      "pasi": [
+        "Aplecați-vă: „Frunză.” — ridicați una de pe pământ.",
+        "„Toamnă.” — arătați unde a căzut / umbra pe pământ.",
+        "Dacă vrea: „De ce e diferit?” — frunză uscată față de pământ."
+      ],
+      "gata_cand": "A strâns o frunză de pe pământ.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z1-mental",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "mental",
+      "titlu": "Frunză și pământ — două tipuri",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "frunză",
+        "pământ / noroi uscat"
+      ],
+      "pasi": [
+        "Arătați: „Frunză.” — apoi „Pământ.”",
+        "„Ce e diferit?” — textură / culoare pe scurt.",
+        "Dacă vrea: el spune (sau arată) de ce e diferit."
+      ],
+      "gata_cand": "A deosebit frunză de pământ pe scurt.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z1-resurse",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "resurse",
+      "titlu": "Colectăm 3 — în cutie — gata",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "cutie mică",
+        "frunze / pietricele de pe pământ"
+      ],
+      "pasi": [
+        "„Unu… doi… trei.” — în cutie.",
+        "„Ajunge. Gata.”",
+        "Dacă vrea: „De ce e diferit?” pe obiectul 2 față de 1."
+      ],
+      "gata_cand": "Ați colectat 3 și ați închis cutia.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z1-social",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "social",
+      "titlu": "Împarte frunză cu adultul",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "frunză"
+      ],
+      "pasi": [
+        "Oferiți frunză: „Pentru tine.”",
+        "El poate da înapoi: „Frunză.”",
+        "Dacă vrea: „De ce e diferit?” — leafa lui față de a voastră."
+      ],
+      "gata_cand": "Ați împărțit o frunză pe scurt.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z2-fizic",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "fizic",
+      "titlu": "Urmărim umbra pe pământ — toamnă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "soare / lumină afară",
+        "pământ"
+      ],
+      "pasi": [
+        "Arătați umbra pe pământ: „Toamnă. Umbră pe pământ.”",
+        "Mutați corpul: umbra se mută — 10–20 secunde.",
+        "Dacă vrea: „De ce e diferit?” — umbră față de frunză pe pământ."
+      ],
+      "gata_cand": "A văzut umbra pe pământ.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z2-mental",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "mental",
+      "titlu": "Sortăm: frunză uscată și frunză verde",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "2 frunze diferite"
+      ],
+      "pasi": [
+        "„Frunză uscată.” — „Frunză verde.”",
+        "Sortați în 2 grămăjoare pe pământ.",
+        "Dacă vrea: „De ce e diferit?” — o frază scurtă."
+      ],
+      "gata_cand": "A sortat două tipuri de frunze.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z2-resurse",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "resurse",
+      "titlu": "Cutia cu frunză — la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "cutie"
+      ],
+      "pasi": [
+        "După colectat: „La loc.”",
+        "„Ajunge.”",
+        "Dacă vrea: alegeți unde stă cutia (1 din 2)."
+      ],
+      "gata_cand": "Cutia e la loc.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z2-social",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "social",
+      "titlu": "Arată umbra pe pământ adultului",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "lumină / soare",
+        "pământ"
+      ],
+      "pasi": [
+        "El arată (sau voi ghidați): „Uite. Toamnă pe pământ.”",
+        "Voi: „Da. Umbră.”",
+        "Dacă vrea: „De ce e diferit?” — umbra lui față de a voastră."
+      ],
+      "gata_cand": "A arătat umbra adultului.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z3-fizic",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "fizic",
+      "titlu": "Mână pe pământ lângă frunză",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "pământ",
+        "frunză"
+      ],
+      "pasi": [
+        "Mână pe pământ: „Pământ.”",
+        "Mână pe frunză: „Frunză.” — 5–8 secunde fiecare.",
+        "Dacă vrea: „De ce e diferit?” — moale / aspru."
+      ],
+      "gata_cand": "A atins pământul și frunza.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z3-mental",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "mental",
+      "titlu": "Trei cuvinte: frunză, pământ, toamnă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "frunză",
+        "pământ",
+        "umbră (opțional)"
+      ],
+      "pasi": [
+        "„Frunză.” pe frunză; „Pământ.” pe pământ; „Toamnă.” pe umbră / cădere.",
+        "O rundă de etichete.",
+        "Dacă vrea: el arată de ce e diferit frunză de pământ."
+      ],
+      "gata_cand": "A auzit cele trei etichete afară.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z3-resurse",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "resurse",
+      "titlu": "Alege: încă un frunză sau gata cutia",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "cutie",
+        "frunză"
+      ],
+      "pasi": [
+        "Arătați 2: „Încă un frunză. Sau ajunge — cutia gata.”",
+        "Alegeți: „Ajunge așa.”",
+        "Dacă vrea: „De ce?” — motiv scurt pe alegere."
+      ],
+      "gata_cand": "Ați ales continuare sau închidere.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z3-social",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "social",
+      "titlu": "Rândul la strâns frunză de pe pământ",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "frunze",
+        "pământ"
+      ],
+      "pasi": [
+        "„Acum eu — frunză.”",
+        "„Acum tu.”",
+        "Dacă vrea: pe rând spuneți de ce e diferit leaful vostru."
+      ],
+      "gata_cand": "Ați schimbat rândul la strâns.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z4-fizic",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "fizic",
+      "titlu": "Cărăm cutia cu 3 pe pământ",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "cutie cu 3 obiecte"
+      ],
+      "pasi": [
+        "Cărați împreună pe pământ: „Frunză… pământ.”",
+        "Așezați: „Aici. Gata.”",
+        "Dacă vrea: „De ce e diferit?” locul nou față de locul vechi."
+      ],
+      "gata_cand": "A cărat cutia pe scurt.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z4-mental",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "mental",
+      "titlu": "Texturi: frunză aspră și pământ fin",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "frunză",
+        "pământ"
+      ],
+      "pasi": [
+        "Atingeți: „Frunză — aspră.”",
+        "„Pământ — altfel.”",
+        "Dacă vrea: el spune de ce e diferit — un cuvânt / gest."
+      ],
+      "gata_cand": "A comparat două texturi.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z4-resurse",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "resurse",
+      "titlu": "După colectat — totul în cutie la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "cutie",
+        "frunze"
+      ],
+      "pasi": [
+        "„În cutie. La loc.”",
+        "„Ajunge.”",
+        "Dacă vrea: sortați frunză / pământ înainte de închis."
+      ],
+      "gata_cand": "Totul e strâns în cutie.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z4-social",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "social",
+      "titlu": "Oferă frunză — mulțumesc pe scurt",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "frunză"
+      ],
+      "pasi": [
+        "El oferă frunză: „Pentru tine.”",
+        "Voi: „Mulțumesc.” — fără forțare pe el.",
+        "Dacă vrea: „De ce e diferit?” leafa dată față de cea păstrată."
+      ],
+      "gata_cand": "Ați făcut un schimb blând cu frunza.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z5-fizic",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "fizic",
+      "titlu": "Pași pe pământ — umbră cade după noi",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "pământ / potecă",
+        "soare"
+      ],
+      "pasi": [
+        "3–5 pași pe pământ: „Pământ.”",
+        "Priviți umbra: „Toamnă.” — umbra vine după.",
+        "Dacă vrea: „De ce e diferit?” umbra față de frunză pe jos."
+      ],
+      "gata_cand": "A mers pe pământ și a văzut umbra.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z5-mental",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "mental",
+      "titlu": "Unde cade umbra — pe frunză sau pe pământ?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "lumină",
+        "frunză pe pământ"
+      ],
+      "pasi": [
+        "Puneți frunză pe pământ: „Unde cade umbra?”",
+        "Arătați: pe frunză / pe pământ.",
+        "Dacă vrea: „De ce e diferit?” locul umbrei când mutați frunză."
+      ],
+      "gata_cand": "A observat unde cade umbra.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z5-resurse",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "resurse",
+      "titlu": "Limită: 3 în cutie — nu mai mult",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "cutie"
+      ],
+      "pasi": [
+        "„Trei. Ajunge.”",
+        "Închideți: „Gata.”",
+        "Dacă vrea: „De ce doar 3?” — „Ca să putem căra.”"
+      ],
+      "gata_cand": "Limita de 3 e respectată.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z5-social",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "social",
+      "titlu": "Privim umbra pe pământ împreună",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "soare / lumină"
+      ],
+      "pasi": [
+        "Umăr la umăr: „Toamnă pe pământ.”",
+        "Arătați frunză dacă e lângă: „Frunză.”",
+        "Dacă vrea: „De ce e diferit?” umbra voastră față de a lui."
+      ],
+      "gata_cand": "Ați privit umbra împreună.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z6-fizic",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "fizic",
+      "titlu": "Traseu: frunză pe pământ → cutie → gata",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "frunză",
+        "cutie",
+        "pământ"
+      ],
+      "pasi": [
+        "Ridicați frunză de pe pământ: „Frunză.”",
+        "În cutie: „Gata.”",
+        "Dacă vrea: „De ce e diferit?” frunză în cutie față de pe pământ."
+      ],
+      "gata_cand": "A dus frunza din pământ în cutie.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z6-mental",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "mental",
+      "titlu": "De ce e diferit? — o frază",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "2 obiecte: frunză și pământ / pietricică"
+      ],
+      "pasi": [
+        "Arătați ambele: „Frunză. Pământ.”",
+        "„De ce e diferit?” — răspundeți scurt: „Unul e frunză, unul e pământ.”",
+        "Dacă vrea: el repetă gestul / cuvântul."
+      ],
+      "gata_cand": "A auzit de ce sunt diferite.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z6-resurse",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "resurse",
+      "titlu": "Colectatul de azi — gata",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "cutie"
+      ],
+      "pasi": [
+        "„Ajunge. Cutia la loc.”",
+        "„Gata.”",
+        "Dacă vrea: un frunză în plus doar dacă alege — apoi gata."
+      ],
+      "gata_cand": "Colectatul e închis.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z6-social",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "social",
+      "titlu": "Sortăm împreună pe pământ",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "frunze / pietricele",
+        "pământ"
+      ],
+      "pasi": [
+        "„Frunză aici. Pământ / piatră acolo.”",
+        "Rândul: „Acum eu… acum tu.”",
+        "Dacă vrea: pe rând spuneți de ce e diferit."
+      ],
+      "gata_cand": "Ați sortat împreună pe scurt.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z7-fizic",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "fizic",
+      "titlu": "Mișcare liberă pe pământ — el alege",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "curte / pământ"
+      ],
+      "pasi": [
+        "El alege pași / aplecat / umbră; voi urmăriți blând.",
+        "Fără grabă: „Pământ… gata.”",
+        "Dacă vrea: o frunză favorită ridicată — sau zero."
+      ],
+      "gata_cand": "A explorat liber pe pământ pe scurt.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z7-mental",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "mental",
+      "titlu": "Favoritul: frunză, pământ sau toamnă?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "amintiri din săptămână"
+      ],
+      "pasi": [
+        "Întrebați: „Îți place frunză, pământ sau toamnă?” — gesturi.",
+        "Stați pe alegerea lui.",
+        "Dacă vrea: „De ce e diferit?” favoritul față de celelalte."
+      ],
+      "gata_cand": "A ales un cuvânt favorit din temă.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z7-resurse",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "resurse",
+      "titlu": "Cutia și frunză la loc — seara",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "cutie"
+      ],
+      "pasi": [
+        "„Frunză. La loc.”",
+        "„Ajunge. Acum e liniște.”",
+        "Dacă vrea: o privire pe pământ pe geam — fără a colecta."
+      ],
+      "gata_cand": "Cutia e la loc înainte de calm.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s34-2-3-z7-social",
+      "banda": "2-3",
+      "saptamana": 34,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "social",
+      "titlu": "Ritual: bună seara după frunză și pământ",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu de seară"
+      ],
+      "pasi": [
+        "Șoptiți: „Bună seara.” Gest: mâini goale.",
+        "„Noapte bună. Frunză… pământ… gata.”",
+        "Dacă vrea: „Umbrele dorm; noi dormim.”"
+      ],
+      "gata_cand": "Ați închis seara blând după umbre pe pământ.",
+      "tema_saptamana": "Umbre pe pământ",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z1-fizic",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "fizic",
+      "titlu": "Turnat scurt afară — toarnă apă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "vas mic cu apă",
+        "curte / iarbă"
+      ],
+      "pasi": [
+        "Afară: „Apă.” — țineți vasul împreună.",
+        "„Toarnă.” — turnați puțin pe iarbă / în vas gol.",
+        "Dacă vrea: toarnă cu scop — pe plantă, nu pe pantofi."
+      ],
+      "gata_cand": "A turnat puțină apă afară.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z1-mental",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "mental",
+      "titlu": "Ud și uscat afară",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "iarbă / pământ",
+        "apă"
+      ],
+      "pasi": [
+        "Arătați locul ud: „Apă. Ud.”",
+        "Arătați loc uscat: „Uscat.”",
+        "Dacă vrea: toarnă pe uscat cu scop — „Ca plantă să bea.”"
+      ],
+      "gata_cand": "A deosebit ud de uscat afară.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z1-resurse",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "resurse",
+      "titlu": "Limită vas — fără risipă forțată",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "vas mic cu puțină apă"
+      ],
+      "pasi": [
+        "Arătați vasul: „Apă. Atât.”",
+        "„Ajunge.” — când e gol / aproape gol.",
+        "Dacă vrea: toarnă ultimul strop pe plantă cu scop."
+      ],
+      "gata_cand": "Limita vasului e clară.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z1-social",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "social",
+      "titlu": "Udăm plantă împreună",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "plantă / ghiveci afară sau pe treaptă",
+        "vas"
+      ],
+      "pasi": [
+        "Umăr la umăr: „Plantă. Apă.”",
+        "„Toarnă.” — puțin împreună.",
+        "Dacă vrea: toarnă cu scop — „Doar pe pământul plantă.”"
+      ],
+      "gata_cand": "Ați udat planta împreună pe scurt.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z2-fizic",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "fizic",
+      "titlu": "Cărăm vasul cu apă afară",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "vas mic cu puțină apă"
+      ],
+      "pasi": [
+        "Cărați: „Apă… afară.” — 3–5 pași.",
+        "Așezați lângă plantă: „Aici.”",
+        "Dacă vrea: toarnă cu scop imediat după așezat."
+      ],
+      "gata_cand": "A cărat vasul afară.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z2-mental",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "mental",
+      "titlu": "Toarnă pe plantă sau pe iarbă?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "vas",
+        "plantă",
+        "iarbă"
+      ],
+      "pasi": [
+        "Arătați 2: „Plantă — apă. Iarbă — apă.”",
+        "Alegeți unde toarnă — o dată.",
+        "Dacă vrea: el alege scopul toarnă (plantă sau iarbă)."
+      ],
+      "gata_cand": "A legat turnatul de un loc.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z2-resurse",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "resurse",
+      "titlu": "Vasul la loc după toarnă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "vas"
+      ],
+      "pasi": [
+        "După toarnă: „La loc.”",
+        "„Ajunge.”",
+        "Dacă vrea: alegeți unde stă vasul (1 din 2)."
+      ],
+      "gata_cand": "Vasul e la loc.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z2-social",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "social",
+      "titlu": "Rândul la toarnă pe plantă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "vas",
+        "plantă"
+      ],
+      "pasi": [
+        "„Acum eu — toarnă.”",
+        "„Acum tu.” — dacă vrea; altfel voi închideți.",
+        "Dacă vrea: fiecare toarnă cu scop — o picătură pe plantă."
+      ],
+      "gata_cand": "Ați schimbat rândul la turnat.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z3-fizic",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "fizic",
+      "titlu": "Degete pe apă — apoi pe uscat",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "vas / iarbă udă",
+        "loc uscat"
+      ],
+      "pasi": [
+        "Deget pe apă: „Apă. Ud.”",
+        "Deget pe uscat: „Uscat.”",
+        "Dacă vrea: toarnă puțin pe uscat cu scop — vedeți schimbarea."
+      ],
+      "gata_cand": "A simțit ud și uscat.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z3-mental",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "mental",
+      "titlu": "Trei cuvinte: toarnă, apă, plantă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "vas",
+        "plantă"
+      ],
+      "pasi": [
+        "„Apă.” pe vas; „Toarnă.” când turnați; „Plantă.” pe plantă.",
+        "O rundă de etichete.",
+        "Dacă vrea: el ordonează — toarnă pe plantă cu apă."
+      ],
+      "gata_cand": "A auzit cele trei etichete pe apă.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z3-resurse",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "resurse",
+      "titlu": "Alege: încă un toarnă sau ajunge",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "vas"
+      ],
+      "pasi": [
+        "Arătați 2: „Încă toarnă. Sau ajunge — vas la loc.”",
+        "Alegeți: „Ajunge așa.”",
+        "Dacă vrea: un toarnă cu scop pe plantă, apoi gata."
+      ],
+      "gata_cand": "Ați ales continuare sau închidere.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z3-social",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "social",
+      "titlu": "Arată adultului unde e plantă udată",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "plantă"
+      ],
+      "pasi": [
+        "El arată (sau voi ghidați): „Uite. Plantă. Apă.”",
+        "Voi: „Da. Toarnă.”",
+        "Dacă vrea: spuneți scopul — „Ca plantă să bea.”"
+      ],
+      "gata_cand": "A arătat planta udată.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z4-fizic",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "fizic",
+      "titlu": "Toarnă din vas în vas — afară",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "2 vase mici",
+        "apă puțină"
+      ],
+      "pasi": [
+        "„Apă.” — „Toarnă.” din vasul A în B.",
+        "O singură rundă, fără risipă pe jos dacă se poate.",
+        "Dacă vrea: toarnă cu scop — umpleți vasul plantă."
+      ],
+      "gata_cand": "A turnat din vas în vas pe scurt.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z4-mental",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "mental",
+      "titlu": "De ce toarnă pe plantă? — o frază",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "plantă",
+        "vas"
+      ],
+      "pasi": [
+        "Arătați plantă: „Plantă.”",
+        "„De ce toarnă apă?” — „Ca să bea / să crească.”",
+        "Dacă vrea: el repetă gestul toarnă pe plantă."
+      ],
+      "gata_cand": "A auzit de ce turnăm pe plantă.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z4-resurse",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "resurse",
+      "titlu": "După joc — vasele goale la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "2 vase"
+      ],
+      "pasi": [
+        "„La loc.” — vasele.",
+        "„Ajunge. Gata.”",
+        "Dacă vrea: alegeți care vas e pentru plantă (1 din 2)."
+      ],
+      "gata_cand": "Vasele sunt la loc.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z4-social",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "social",
+      "titlu": "Ținem vasul împreună la toarnă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "vas",
+        "plantă"
+      ],
+      "pasi": [
+        "Ambele mâini pe vas: „Apă… toarnă.”",
+        "Pe plantă: „Plantă.”",
+        "Dacă vrea: toarnă cu scop — opriți la „ajunge”."
+      ],
+      "gata_cand": "Ați turnat ținând vasul împreună.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z5-fizic",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "fizic",
+      "titlu": "Pași spre plantă cu apă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "vas",
+        "plantă afară / pe treaptă"
+      ],
+      "pasi": [
+        "Pași: „Apă… plantă.”",
+        "La plantă: „Toarnă.” — puțin.",
+        "Dacă vrea: toarnă cu scop doar pe pământ, nu pe frunze."
+      ],
+      "gata_cand": "A dus apa la plantă și a turnat.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z5-mental",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "mental",
+      "titlu": "Unde e apă acum — vas sau plantă?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "vas",
+        "plantă"
+      ],
+      "pasi": [
+        "Înainte de toarnă: „Apă în vas.”",
+        "După: „Apă la plantă.”",
+        "Dacă vrea: el arată unde a mers apă."
+      ],
+      "gata_cand": "A urmărit unde a mers apa.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z5-resurse",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "resurse",
+      "titlu": "Fără risipă — vasul e limita",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "vas mic"
+      ],
+      "pasi": [
+        "„Atât apă. Ajunge.”",
+        "Nu reumpleți forțat.",
+        "Dacă vrea: toarnă ultimul strop pe plantă cu scop, apoi gata jocul."
+      ],
+      "gata_cand": "Nu s-a forțat risipa; vasul e limita.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z5-social",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "social",
+      "titlu": "Oferă apă plantă — grijă împreună",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "vas",
+        "plantă"
+      ],
+      "pasi": [
+        "„Pentru plantă.” — toarnă mic.",
+        "Stați o clipă: „Apă. Plantă.”",
+        "Dacă vrea: el spune scopul — „Ca să bea.”"
+      ],
+      "gata_cand": "Ați oferit apă plantei împreună.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z6-fizic",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "fizic",
+      "titlu": "Traseu: casă → afară → toarnă pe plantă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "vas",
+        "ușă",
+        "plantă"
+      ],
+      "pasi": [
+        "Din casă: „Apă afară.”",
+        "La plantă: „Toarnă.” — 1 rundă.",
+        "Dacă vrea: toarnă cu scop — „Doar pe plantă azi.”"
+      ],
+      "gata_cand": "A dus apa afară și a turnat pe plantă.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z6-mental",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "mental",
+      "titlu": "Scopul toarnă de azi — unul",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "vas",
+        "plantă / iarbă"
+      ],
+      "pasi": [
+        "Alegeți: „Toarnă pe plantă.” sau „Toarnă pe iarbă.”",
+        "Spuneți scopul o dată.",
+        "Dacă vrea: el alege scopul (1 din 2)."
+      ],
+      "gata_cand": "A auzit / ales un scop de turnat.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z6-resurse",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "resurse",
+      "titlu": "Jocul cu apă de azi — gata",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "vas"
+      ],
+      "pasi": [
+        "„Ajunge. Vas la loc.”",
+        "„Gata.”",
+        "Dacă vrea: un toarnă mimă fără apă, apoi calm."
+      ],
+      "gata_cand": "Jocul e închis; vasul la loc.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z6-social",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "social",
+      "titlu": "Toarnă paralel: eu pe plantă, tu privești",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "vas",
+        "plantă"
+      ],
+      "pasi": [
+        "Voi: „Toarnă — plantă.”",
+        "El poate turna după sau doar privi: „Apă.”",
+        "Dacă vrea: schimbați — el toarnă cu scop, voi urmăriți."
+      ],
+      "gata_cand": "Ați împărțit rolurile la turnat.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z7-fizic",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "fizic",
+      "titlu": "Joacă liberă cu apă afară — el alege",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "vas mic (opțional)",
+        "curte"
+      ],
+      "pasi": [
+        "El alege toarnă / doar privire / degete pe ud; voi urmăriți blând.",
+        "Fără grabă: „Apă… gata.”",
+        "Dacă vrea: un toarnă pe plantă cu scop — sau zero."
+      ],
+      "gata_cand": "A explorat liber apa afară pe scurt.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z7-mental",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "mental",
+      "titlu": "Favoritul: toarnă, apă sau plantă?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "amintiri din săptămână"
+      ],
+      "pasi": [
+        "Întrebați: „Îți place toarnă, apă sau plantă?” — gesturi.",
+        "Stați pe alegerea lui.",
+        "Dacă vrea: un scop de seară legat de alegere."
+      ],
+      "gata_cand": "A ales un cuvânt favorit din temă.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z7-resurse",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "resurse",
+      "titlu": "Vasul la loc — seara",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "vas"
+      ],
+      "pasi": [
+        "„Apă. La loc.”",
+        "„Ajunge. Acum e liniște.”",
+        "Dacă vrea: vasul gol pe raft — ritual scurt."
+      ],
+      "gata_cand": "Vasul e la loc înainte de calm.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s35-2-3-z7-social",
+      "banda": "2-3",
+      "saptamana": 35,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "social",
+      "titlu": "Ritual: bună seara după apă afară",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu de seară"
+      ],
+      "pasi": [
+        "Șoptiți: „Bună seara.” Gest: mâini uscate.",
+        "„Noapte bună. Plantă… apă… gata.”",
+        "Dacă vrea: „Plantă doarme; noi dormim.”"
+      ],
+      "gata_cand": "Ați închis seara blând după apa afară.",
+      "tema_saptamana": "Apă afară (joc scurt)",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z1-fizic",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "fizic",
+      "titlu": "Afară: uite pe insecte de departe 2–3 min",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "curte / grădină",
+        "încălțăminte de afară"
+      ],
+      "pasi": [
+        "Stați liniștiți: „Uite.” — 30–60 secunde, de departe.",
+        "Dacă vedeți insectă: „Uite. Departe.” — fără a prinde.",
+        "Dacă vrea: „Ce face?” — o întrebare blândă (zboară / merge)."
+      ],
+      "gata_cand": "A privit afară de departe pe scurt.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z1-mental",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "mental",
+      "titlu": "Sunet sau uite — pasăre, câine sau insectă?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "urechi / ochi afară"
+      ],
+      "pasi": [
+        "Auziți / vedeți: „Pasăre?” — gest sus; „Câine?” — gest jos / gard.",
+        "Insectă: „Uite. Departe.” — fără etichetă forțată.",
+        "Dacă vrea: „Ce face?” pe ce ați observat."
+      ],
+      "gata_cand": "A legat sunet/privire de o direcție.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z1-resurse",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "resurse",
+      "titlu": "Observăm — fără a prinde",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "mâini vizibile"
+      ],
+      "pasi": [
+        "„Uite. Doar privim.” — mâinile jos.",
+        "„Ajunge.” — fără goană după insectă.",
+        "Dacă vrea: „Ce face?” — răspundeți voi dacă el tace."
+      ],
+      "gata_cand": "A observat fără a prinde.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z1-social",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "social",
+      "titlu": "Arată adultului ce uite vede",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "curte"
+      ],
+      "pasi": [
+        "El arată (sau voi ghidați): „Uite.”",
+        "Voi: „Da. Departe.”",
+        "Dacă vrea: „Ce face?” — o frază scurtă împreună."
+      ],
+      "gata_cand": "A arătat adultului ceva văzut.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z2-fizic",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "fizic",
+      "titlu": "Pași scurți — apoi uite pe loc",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "curte"
+      ],
+      "pasi": [
+        "3–5 pași: „Uite.”",
+        "Opriți-vă: corp calm 20–40 secunde — insecte de departe.",
+        "Dacă vrea: „Ce face?” pe o insectă / pasăre dacă apare."
+      ],
+      "gata_cand": "A mers scurt și a privit pe loc.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z2-mental",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "mental",
+      "titlu": "Pasăre sus, câine jos, insectă pe iarbă — uite",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "curte"
+      ],
+      "pasi": [
+        "„Pasăre — uite sus.”",
+        "„Câine — uite” (dacă e / mimă); insectă: „Uite pe iarbă.”",
+        "Dacă vrea: „Ce face?” — alegeți unul din trei."
+      ],
+      "gata_cand": "A orientat privirea pe direcții.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z2-resurse",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "resurse",
+      "titlu": "Limită: doar uite, nu alergăm",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "curte"
+      ],
+      "pasi": [
+        "„Uite. Ajunge.” — fără goană.",
+        "Mâinile rămân jos.",
+        "Dacă vrea: „Ce face?” fără a ne apropia mai mult."
+      ],
+      "gata_cand": "Limita de observare e clară.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z2-social",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "social",
+      "titlu": "Rândul la uite pe iarbă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "iarbă / curte"
+      ],
+      "pasi": [
+        "„Acum eu — uite.”",
+        "„Acum tu.”",
+        "Dacă vrea: pe rând „Ce face?” pe ce vedeți."
+      ],
+      "gata_cand": "Ați schimbat rândul la privire.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z3-fizic",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "fizic",
+      "titlu": "Corp liniștit: uite de pe treaptă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "treaptă / bancă / loc ridicat"
+      ],
+      "pasi": [
+        "Pe loc ridicat: „Uite.” — de departe.",
+        "20–40 secunde calm.",
+        "Dacă vrea: „Ce face?” pe insectă / pasăre văzută."
+      ],
+      "gata_cand": "A privit calm de pe un loc ridicat.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z3-mental",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "mental",
+      "titlu": "Trei cuvinte: pasăre, câine, uite",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "curte / geam"
+      ],
+      "pasi": [
+        "„Uite.” pe ce vedeți; „Pasăre.” sus; „Câine.” (dacă e / mimă).",
+        "Insectă rămâne „uite departe” în RO.",
+        "Dacă vrea: „Ce face pasărea / câine?” — o întrebare."
+      ],
+      "gata_cand": "A auzit cele trei etichete pe observare.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z3-resurse",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "resurse",
+      "titlu": "Alege: uite de la geam sau din curte",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "geam",
+        "curte"
+      ],
+      "pasi": [
+        "Arătați 2: „Geam — uite. Curte — uite.”",
+        "Alegeți: „Ajunge așa.”",
+        "Dacă vrea: „Ce face?” din locul ales."
+      ],
+      "gata_cand": "Ați ales locul de observare.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z3-social",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "social",
+      "titlu": "Uite împreună — umăr la umăr",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "curte"
+      ],
+      "pasi": [
+        "Stați împreună: „Uite.”",
+        "Arătați departe: insectă / pasăre dacă e.",
+        "Dacă vrea: „Ce face?” — răspundeți pe rând."
+      ],
+      "gata_cand": "Ați privit împreună de departe.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z4-fizic",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "fizic",
+      "titlu": "Deget pe aer — uite, nu atingere",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "curte"
+      ],
+      "pasi": [
+        "Degetul arată: „Uite.” — fără a atinge insecta.",
+        "Mâna jos după 5–10 secunde.",
+        "Dacă vrea: „Ce face?” — fără a ne apropia."
+      ],
+      "gata_cand": "A arătat fără a prinde.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z4-mental",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "mental",
+      "titlu": "Ce face? — zboară / merge / stă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "insectă sau pasăre văzută / mimă"
+      ],
+      "pasi": [
+        "„Uite. Ce face?”",
+        "Voi: „Zboară.” / „Merge.” / „Stă.” — un răspuns.",
+        "Dacă vrea: el alege gestul care potrivește."
+      ],
+      "gata_cand": "A legat observația de o acțiune.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z4-resurse",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "resurse",
+      "titlu": "După uite — ne întoarcem în casă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "ușă"
+      ],
+      "pasi": [
+        "„Ajunge. Înapoi.”",
+        "„Uite gata.”",
+        "Dacă vrea: o ultimă întrebare „ce face?” pe prag."
+      ],
+      "gata_cand": "V-ați întors după observare.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z4-social",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "social",
+      "titlu": "Arată uite unei persoane dragi",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "curte / geam"
+      ],
+      "pasi": [
+        "„Uite.” — arătați împreună de departe.",
+        "Pasăre / câine / insectă — ce e.",
+        "Dacă vrea: „Ce face?” spus persoanei dragi."
+      ],
+      "gata_cand": "A împărtășit privirea cu cineva.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z5-fizic",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "fizic",
+      "titlu": "Urechi afară, apoi uite",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "curte"
+      ],
+      "pasi": [
+        "Urechi: 15–20 secunde — pasăre / câine / liniște.",
+        "Apoi ochi: „Uite.” pe iarbă de departe.",
+        "Dacă vrea: „Ce face?” pe ce ați auzit sau văzut."
+      ],
+      "gata_cand": "A ascultat și a privit pe scurt.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z5-mental",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "mental",
+      "titlu": "Direcție: pasăre sus sau uite pe iarbă?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "curte"
+      ],
+      "pasi": [
+        "„Pasăre — uite sus.”",
+        "„Insectă — uite pe iarbă.”",
+        "Dacă vrea: „Ce face?” pe direcția aleasă."
+      ],
+      "gata_cand": "A ales o direcție de privire.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z5-resurse",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "resurse",
+      "titlu": "Mâinile jos — regula uite",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [],
+      "pasi": [
+        "„Uite. Mâinile jos. Ajunge.”",
+        "Fără prindere.",
+        "Dacă vrea: „Ce face?” doar cu ochii, nu cu mâinile."
+      ],
+      "gata_cand": "Regula mâinilor jos e clară.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z5-social",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "social",
+      "titlu": "Rândul: eu uite, tu uite",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "curte"
+      ],
+      "pasi": [
+        "„Acum eu — uite.”",
+        "„Acum tu — uite.”",
+        "Dacă vrea: pe rând „Ce face pasărea / câine / insecta?”"
+      ],
+      "gata_cand": "Ați schimbat rândul la uite.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z6-fizic",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "fizic",
+      "titlu": "Întindem scurt înainte de uite",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "curte"
+      ],
+      "pasi": [
+        "Brațele sus: „Uite sus — pasăre.”",
+        "Apoi brațele jos: „Uite pe iarbă.” — insecte de departe.",
+        "Dacă vrea: „Ce face?” după întindem."
+      ],
+      "gata_cand": "A făcut întindem și a privit.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z6-mental",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "mental",
+      "titlu": "Întrebarea zilei — ce face?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "curte / geam"
+      ],
+      "pasi": [
+        "Alegeți un țintă: insectă / pasăre / câine (sau mimă).",
+        "„Ce face?” — un răspuns scurt.",
+        "Dacă vrea: el pune întrebarea „ce face?” către voi."
+      ],
+      "gata_cand": "Ați folosit întrebarea „ce face?” o dată.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z6-resurse",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "resurse",
+      "titlu": "Uite de azi — gata",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "ușă / prag"
+      ],
+      "pasi": [
+        "„Ajunge. Uite gata.”",
+        "Înapoi în casă fără forțare.",
+        "Dacă vrea: un uite mimă pe geam, apoi gata."
+      ],
+      "gata_cand": "Observarea e închisă.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z6-social",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "social",
+      "titlu": "Uite paralel: eu pasăre, tu iarbă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "curte"
+      ],
+      "pasi": [
+        "Voi: „Uite — pasăre.”",
+        "El: „Uite” pe iarbă / insectă — sau privește liber.",
+        "Dacă vrea: schimbați ținta și „Ce face?” pe fiecare."
+      ],
+      "gata_cand": "Ați privit în paralel pe scurt.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z7-fizic",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "fizic",
+      "titlu": "Uite liber afară — el alege",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "curte / geam"
+      ],
+      "pasi": [
+        "El alege geam / curte / treaptă; voi urmăriți blând.",
+        "Fără grabă: „Uite… gata.”",
+        "Dacă vrea: o întrebare „ce face?” — sau zero."
+      ],
+      "gata_cand": "A privit liber pe scurt.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z7-mental",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "mental",
+      "titlu": "Favoritul: pasăre, câine sau uite?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "amintiri din săptămână"
+      ],
+      "pasi": [
+        "Întrebați: „Îți place pasăre, câine sau uite?” — gesturi.",
+        "Stați pe alegerea lui.",
+        "Dacă vrea: „Ce face?” legat de favorit."
+      ],
+      "gata_cand": "A ales un cuvânt favorit din temă.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z7-resurse",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "resurse",
+      "titlu": "La loc în casă după uite — seara",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "încălțăminte / ușă"
+      ],
+      "pasi": [
+        "„Înapoi. La loc.” — pantofi / prag.",
+        "„Ajunge. Acum e liniște.”",
+        "Dacă vrea: un uite pe geam seara, fără a ieși."
+      ],
+      "gata_cand": "Ați închis afară; liniște în casă.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s36-2-3-z7-social",
+      "banda": "2-3",
+      "saptamana": 36,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "social",
+      "titlu": "Ritual: bună seara după uite",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu de seară"
+      ],
+      "pasi": [
+        "Șoptiți: „Bună seara.” Gest: ochi închiși o clipă.",
+        "„Noapte bună. Uite… gata.”",
+        "Dacă vrea: „Insectele dorm departe; noi dormim.”"
+      ],
+      "gata_cand": "Ați închis seara blând după insecte de departe.",
+      "tema_saptamana": "Insecte de departe",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    }
+  ]
+}

@@ -48,7 +48,12 @@ import {
   completedAtForCivilDate,
   restampDatesForToggle,
 } from "@/lib/completion-date";
-import { getSeedActivities, getSeedActivityById, normalizeActivity } from "@/lib/seed/week1";
+import {
+  getSeedActivities,
+  getSeedActivityById,
+  normalizeActivity,
+  usesLocalSeedCatalog,
+} from "@/lib/seed/week1";
 import { DEMO_CALENDAR_TOKEN, generateCalendarToken } from "@/lib/calendar";
 import {
   ARCHIVE_BUCKET,
@@ -542,9 +547,9 @@ export function FamilyProvider({
 
     async function loadPreviewCatalog(band: PilotBand) {
       const applySeedFallback = () => {
-        const weekRows = getSeedActivities(viewWeek).filter((row) => row.banda === band);
+        const weekRows = getSeedActivities(viewWeek, band);
         const themeRows = PROGRAM_WEEKS.flatMap((week) =>
-          getSeedActivities(week).filter((row) => row.banda === band),
+          getSeedActivities(week, band),
         );
         setPreviewCatalog({
           band,
@@ -554,8 +559,14 @@ export function FamilyProvider({
         });
       };
 
-      // Preview reads the shared catalog. Demo still queries live `activities`
-      // when Supabase is configured — local seed is banda `1-2` only.
+      // Demo + Previzualizare 2–3 never read Familie for activity content.
+      // Stripped 2–3 lives in local v2 seed; live `activities` still has EN.
+      if (usesLocalSeedCatalog({ isDemo, band })) {
+        if (cancelled) return;
+        applySeedFallback();
+        return;
+      }
+
       const supabase = createBrowserSupabase();
       if (!supabase) {
         if (cancelled) return;
@@ -603,7 +614,7 @@ export function FamilyProvider({
     return () => {
       cancelled = true;
     };
-  }, [isPreviewing, previewBand, viewWeek]);
+  }, [isDemo, isPreviewing, previewBand, viewWeek]);
 
   useEffect(() => {
     if (isPreviewing) return;
@@ -615,9 +626,7 @@ export function FamilyProvider({
       const applySeed = () => {
         setLiveViewCatalog({
           week: viewWeek,
-          activities: getSeedActivities(viewWeek).filter(
-            (row) => row.banda === liveBand,
-          ),
+          activities: getSeedActivities(viewWeek, liveBand),
         });
       };
 

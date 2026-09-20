@@ -1,0 +1,2539 @@
+{
+  "version": 2,
+  "locale": "ro",
+  "banda": "2-3",
+  "saptamani": [
+    29,
+    30,
+    31,
+    32
+  ],
+  "teme": {
+    "29": "Muguri și iarbă nouă",
+    "30": "Păsări dimineața",
+    "31": "Semințe și udat",
+    "32": "Mingea afară"
+  },
+  "activitati": [
+    {
+      "id": "s29-2-3-z1-fizic",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "fizic",
+      "titlu": "Afară: pași pe iarbă nouă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "curte / iarbă",
+        "încălțăminte de afară"
+      ],
+      "pasi": [
+        "Ieșiți scurt: „Verde. Iarbă.” — 3–5 pași pe iarbă.",
+        "Atingeți iarba cu mâna: „Plantă. Verde.”",
+        "Dacă vrea: spuneți „Udăm ca să crește — să crească.” — gest pe iarbă."
+      ],
+      "gata_cand": "A făcut pași pe iarbă și a atins verdele.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z1-mental",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "mental",
+      "titlu": "Verde nou și verde vechi",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "iarbă / plantă pe pervaz",
+        "opțional: frunză uscată"
+      ],
+      "pasi": [
+        "Arătați iarba nouă: „Verde. Nou.”",
+        "Arătați o frunză mai veche / uscată: „Vechi.” — „Ce e diferit?”",
+        "Dacă vrea: el arată care e verde și spune (sau gest) de ce udăm."
+      ],
+      "gata_cand": "A deosebit verde nou de vechi pe scurt.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z1-resurse",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "resurse",
+      "titlu": "Apă pentru plantă — ajunge",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pahar mic cu apă",
+        "plantă / ghiveci"
+      ],
+      "pasi": [
+        "Turnați puțin: „Apă. Plantă.”",
+        "„Ajunge.” — opriți; paharul deoparte.",
+        "Dacă vrea: întrebați „De ce udăm?” — „Ca să crește.”"
+      ],
+      "gata_cand": "Planta a primit puțină apă; ajunge e clar.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z1-social",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "social",
+      "titlu": "Grijă împreună de plantă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "plantă / ghiveci"
+      ],
+      "pasi": [
+        "Stați umăr la umăr: „Plantă. Verde.”",
+        "Atingeți blând frunza împreună: „Crește.”",
+        "Dacă vrea: el spune (sau arată) de ce udăm — voi completați blând."
+      ],
+      "gata_cand": "Ați îngrijit planta împreună pe scurt.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z2-fizic",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "fizic",
+      "titlu": "Deget pe mugure",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "ramură cu muguri / plantă"
+      ],
+      "pasi": [
+        "Atingeți un mugure: „Mugure. Crește.”",
+        "10–15 secunde, fără apăsare: „Verde.”",
+        "Dacă vrea: spuneți „Udăm ca mugurii să crește.”"
+      ],
+      "gata_cand": "A atins mugurele blând.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z2-mental",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "mental",
+      "titlu": "Mugure și frunză — care e care?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "ramură / plantă"
+      ],
+      "pasi": [
+        "Arătați mugurele: „Mugure.”",
+        "Arătați o frunză: „Verde. Frunză.”",
+        "Dacă vrea: „De ce udăm plantă?” — gest spre apă / sol."
+      ],
+      "gata_cand": "A legat mugure și frunză de plantă.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z2-resurse",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "resurse",
+      "titlu": "Paharul după udat — la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pahar mic"
+      ],
+      "pasi": [
+        "După udat: „La loc.”",
+        "„Ajunge. Gata.”",
+        "Dacă vrea: alegeți paharul mic sau mai mic (1 din 2)."
+      ],
+      "gata_cand": "Paharul e la loc după udat.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z2-social",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "social",
+      "titlu": "Arată mugurele adultului",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "ramură / plantă"
+      ],
+      "pasi": [
+        "El arată (sau voi ghidați): „Uite. Crește.”",
+        "Voi: „Da. Verde.” — o clipă împreună.",
+        "Dacă vrea: spuneți împreună de ce udăm — o frază scurtă."
+      ],
+      "gata_cand": "A arătat mugurele adultului.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z3-fizic",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "fizic",
+      "titlu": "Îngenunchem lângă iarbă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "iarbă / curte"
+      ],
+      "pasi": [
+        "Îngenuncheați (sau așezați-vă): „Verde.”",
+        "Mâna pe iarbă 5–8 secunde: „Plantă.”",
+        "Dacă vrea: „Udăm ca să crește.” — gest pe sol."
+      ],
+      "gata_cand": "A stat scurt lângă iarbă.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z3-mental",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "mental",
+      "titlu": "Unde e verde pe plantă?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "plantă / iarbă"
+      ],
+      "pasi": [
+        "„Unde e verde?” — el arată frunză / iarbă.",
+        "„Da. Plantă.”",
+        "Dacă vrea: întrebați „De ce e verde?” — legați de udat / crește."
+      ],
+      "gata_cand": "A găsit verde pe plantă.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z3-resurse",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "resurse",
+      "titlu": "Alege: udăm azi sau mâine",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "plantă",
+        "pahar (opțional)"
+      ],
+      "pasi": [
+        "Arătați 2: „Azi — apă. Mâine — așteptăm.”",
+        "Alegeți împreună: „Ajunge așa.”",
+        "Dacă vrea: spuneți de ce ați ales — „Ca să crește / ca să nu fie prea mult.”"
+      ],
+      "gata_cand": "Ați ales când udați; fără forțare.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z3-social",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "social",
+      "titlu": "Rândul la atins iarba",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "iarbă"
+      ],
+      "pasi": [
+        "„Acum eu” — mână pe verde.",
+        "„Acum tu.”",
+        "Dacă vrea: pe rând spuneți „crește” după fiecare atingere."
+      ],
+      "gata_cand": "Ați schimbat rândul la atins iarba.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z4-fizic",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "fizic",
+      "titlu": "Cărăm paharul cu apă spre plantă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "pahar mic cu puțină apă",
+        "plantă"
+      ],
+      "pasi": [
+        "Cărați împreună paharul: „Apă… plantă.”",
+        "Turnați puțin: „Crește.” — apoi gata.",
+        "Dacă vrea: el spune de ce ați udat — „Ca să crește.”"
+      ],
+      "gata_cand": "A cărat apa și a udat pe scurt.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z4-mental",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "mental",
+      "titlu": "De ce udăm? — o frază",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "plantă",
+        "pahar"
+      ],
+      "pasi": [
+        "Arătați planta: „Plantă. Verde.”",
+        "„De ce udăm?” — răspundeți: „Ca să crește.”",
+        "Dacă vrea: el repetă gestul / cuvântul crește."
+      ],
+      "gata_cand": "A auzit de ce udăm legat de crește.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z4-resurse",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "resurse",
+      "titlu": "După udat — paharul și cârpa la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pahar",
+        "cârpă (dacă e nevoie)"
+      ],
+      "pasi": [
+        "„La loc.” — pahar și cârpă.",
+        "„Ajunge.”",
+        "Dacă vrea: alegeți unde stă paharul (1 din 2 locuri)."
+      ],
+      "gata_cand": "Totul e la loc după udat.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z4-social",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "social",
+      "titlu": "Udăm pe rând — o picătură",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pahar",
+        "plantă"
+      ],
+      "pasi": [
+        "„Acum eu” — o picătură.",
+        "„Acum tu” — dacă vrea; altfel voi închideți.",
+        "Dacă vrea: „De ce?” — „Ca plantă să crește.”"
+      ],
+      "gata_cand": "Ați udat pe rând pe scurt.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z5-fizic",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "fizic",
+      "titlu": "Întindem scurt lângă plantă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "plantă / pervaz",
+        "spațiu liber"
+      ],
+      "pasi": [
+        "Brațele sus: „Crește. Sus.” — 3–5 secunde.",
+        "Mâinile pe genunchi: „Verde. Jos.”",
+        "Dacă vrea: arătați planta — „Și ea crește.”"
+      ],
+      "gata_cand": "A făcut întindem scurt lângă plantă.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z5-mental",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "mental",
+      "titlu": "Trei cuvinte: plantă, verde, crește",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "plantă"
+      ],
+      "pasi": [
+        "Arătați planta: „Plantă.”",
+        "Frunza: „Verde.” — gest sus: „Crește.”",
+        "Dacă vrea: el arată care cuvânt vrea să-l audă iar."
+      ],
+      "gata_cand": "A auzit cele trei cuvinte pe plantă.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z5-resurse",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "resurse",
+      "titlu": "Ghiveciul pe pervaz — la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "ghiveci / plantă"
+      ],
+      "pasi": [
+        "Așezați ghiveciul: „Plantă. La loc.”",
+        "„Ajunge.”",
+        "Dacă vrea: alegeți pervazul sau masa (1 din 2)."
+      ],
+      "gata_cand": "Ghiveciul e așezat la loc.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z5-social",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "social",
+      "titlu": "Arată verde altcuiva",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "plantă",
+        "persoană dragă (sau foto)"
+      ],
+      "pasi": [
+        "Mergeți împreună: „Verde. Uite.”",
+        "El arată frunza / iarba.",
+        "Dacă vrea: spuneți celeilalte persoane de ce udăm."
+      ],
+      "gata_cand": "A arătat verdele altcuiva.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z6-fizic",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "fizic",
+      "titlu": "Plimbare scurtă: iarbă → plantă pe pervaz",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "curte / iarbă",
+        "plantă pe pervaz"
+      ],
+      "pasi": [
+        "Pași pe iarbă: „Verde.”",
+        "Înapoi la plantă: „Plantă. Crește.”",
+        "Dacă vrea: pe traseu spuneți de ce udăm — o frază."
+      ],
+      "gata_cand": "A legat iarba de planta din casă pe scurt.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z6-mental",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "mental",
+      "titlu": "Aceeași plantă — afară și pe pervaz?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "iarbă",
+        "plantă pe pervaz"
+      ],
+      "pasi": [
+        "„Afară — verde.” Gest pe iarbă.",
+        "„Aici — plantă.” pe pervaz. „Amândouă crește?”",
+        "Dacă vrea: el alege pe care o udăm azi."
+      ],
+      "gata_cand": "A legat verdele din afară de planta din casă.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z6-resurse",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "resurse",
+      "titlu": "Udatul de azi — gata",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pahar",
+        "plantă"
+      ],
+      "pasi": [
+        "Dacă ați udat: „Ajunge. Gata.”",
+        "Paharul la loc.",
+        "Dacă vrea: un ultim „Crește” pe plantă, apoi opriți."
+      ],
+      "gata_cand": "Udatul e închis; gata e clar.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z6-social",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "social",
+      "titlu": "Împreună: verde pe iarbă și pe plantă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "iarbă / plantă"
+      ],
+      "pasi": [
+        "Umăr la umăr: „Verde… plantă.”",
+        "O rundă scurtă de arătat.",
+        "Dacă vrea: inventați o frază scurtă — „Udăm ca să crește.”"
+      ],
+      "gata_cand": "Ați arătat verdele împreună.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z7-fizic",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "fizic",
+      "titlu": "Mișcare liberă lângă plantă sau iarbă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "plantă / iarbă",
+        "spațiu liber"
+      ],
+      "pasi": [
+        "El alege zona; voi urmăriți blând.",
+        "Fără grabă: „Verde… gata.”",
+        "Dacă vrea: alegeți întindem „crește” sau doar privit."
+      ],
+      "gata_cand": "A mișcat liber pe scurt lângă verde.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z7-mental",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "mental",
+      "titlu": "Favoritul: plantă, verde sau crește?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "amintiri din săptămână"
+      ],
+      "pasi": [
+        "Întrebați: „Îți place plantă, verde sau crește?” — gesturi.",
+        "Stați pe alegerea lui.",
+        "Dacă vrea: spuneți de ce udăm legat de alegerea lui."
+      ],
+      "gata_cand": "A ales un cuvânt favorit din temă.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z7-resurse",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "resurse",
+      "titlu": "Planta și paharul la loc — seara",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "plantă",
+        "pahar"
+      ],
+      "pasi": [
+        "„La loc.” — plantă / pahar.",
+        "„Ajunge. Acum e liniște.”",
+        "Dacă vrea: o ultimă privire verde, apoi calm."
+      ],
+      "gata_cand": "Totul e la loc înainte de calm.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s29-2-3-z7-social",
+      "banda": "2-3",
+      "saptamana": 29,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "social",
+      "titlu": "Ritual: bună seara, plantă blândă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "plantă / pervaz"
+      ],
+      "pasi": [
+        "Șoptiți: „Bună seara.” Gest pe plantă: „Plantă.”",
+        "„Noapte bună. Crește.”",
+        "Dacă vrea: un ultim „De ce udăm?” — răspuns șoptit, apoi odihnă."
+      ],
+      "gata_cand": "Ați închis seara blând la plantă.",
+      "tema_saptamana": "Muguri și iarbă nouă",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z1-fizic",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "fizic",
+      "titlu": "Afară dimineața: urechi și ochi 2–3 min",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "curte / fereastră deschisă",
+        "încălțăminte dacă ieșiți"
+      ],
+      "pasi": [
+        "Stați liniștiți: „Uite. Privim.” — 30–60 secunde.",
+        "Dacă auziți: „Pasăre.” — arătați direcția.",
+        "Dacă vrea: întrebați „Ce face pasărea?” — zboară / cântă (gest)."
+      ],
+      "gata_cand": "A ascultat / privit afară pe scurt.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z1-mental",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "mental",
+      "titlu": "Sunet → pasăre — unde?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră / curte"
+      ],
+      "pasi": [
+        "Auziți un sunet: „Pasăre?” — arătați sus / copac.",
+        "„Uite. Acolo.”",
+        "Dacă vrea: „Ce face?” — el gesticulează sau voi modelați."
+      ],
+      "gata_cand": "A legat sunetul de pasăre și direcție.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z1-resurse",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "resurse",
+      "titlu": "Observăm — fără a prinde",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră / curte"
+      ],
+      "pasi": [
+        "„Uite. Doar privim.” — mâinile jos.",
+        "„Ajunge. Gata.” — închideți jocul de prins (nu există).",
+        "Dacă vrea: alegeți uite de la geam sau 3 pași afară (1 din 2)."
+      ],
+      "gata_cand": "A observat fără a alerga după animal.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z1-social",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "social",
+      "titlu": "Arată adultului ce aude",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră / curte"
+      ],
+      "pasi": [
+        "El arată (sau voi ghidați): „Uite. Pasăre.”",
+        "Voi: „Da. Aud.” — o clipă împreună.",
+        "Dacă vrea: „Ce face pasărea?” — o întrebare blândă."
+      ],
+      "gata_cand": "A arătat adultului ce aude / vede.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z2-fizic",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "fizic",
+      "titlu": "Pași scurți spre fereastră — uite",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră"
+      ],
+      "pasi": [
+        "3–5 pași spre geam: „Uite.”",
+        "Stați: „Pasăre?” — 20–30 secunde.",
+        "Dacă vrea: „Ce face?” — priviți încă o clipă."
+      ],
+      "gata_cand": "A mers la geam și a privit.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z2-mental",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "mental",
+      "titlu": "Pasăre sau câine — care sunet?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră / curte",
+        "opțional: înregistrare scurtă adult"
+      ],
+      "pasi": [
+        "„Pasăre — cirip.” Gest sus.",
+        "„Câine — ham.” Gest jos / curte. „Care e?”",
+        "Dacă vrea: „Ce face câine?” / „Ce face pasărea?” — o întrebare."
+      ],
+      "gata_cand": "A deosebit pasăre de câine pe scurt.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z2-resurse",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "resurse",
+      "titlu": "Geamul — rămâne așa, gata",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră"
+      ],
+      "pasi": [
+        "După uite: „Ajunge.”",
+        "„Gata.” — nu mai deschideți / închideți degeaba.",
+        "Dacă vrea: alegeți geam deschis puțin sau închis (1 din 2, adult)."
+      ],
+      "gata_cand": "Geamul e lăsat; gata e clar.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z2-social",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "social",
+      "titlu": "Rândul la uite pe geam",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră"
+      ],
+      "pasi": [
+        "„Acum eu — uite.”",
+        "„Acum tu — uite.”",
+        "Dacă vrea: pe rând „Ce face pasărea?” — un gest."
+      ],
+      "gata_cand": "Ați schimbat rândul la privit.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z3-fizic",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "fizic",
+      "titlu": "Corp liniștit: uite pe loc",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "curte / geam",
+        "spațiu liber"
+      ],
+      "pasi": [
+        "Pe loc: „Uite.” — corp calm 20–40 secunde.",
+        "Dacă auziți pasăre: arătați fără a alerga.",
+        "Dacă vrea: „Ce face?” — zbura / stă (gest)."
+      ],
+      "gata_cand": "A stat calm și a privit / ascultat.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z3-mental",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "mental",
+      "titlu": "Direcție: pasăre sus sau câine jos?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "curte / geam"
+      ],
+      "pasi": [
+        "„Pasăre — uite sus.”",
+        "„Câine — uite jos / curte.”",
+        "Dacă vrea: el arată unde uite — apoi „Ce face?”"
+      ],
+      "gata_cand": "A legat pasăre/câine de direcție.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z3-resurse",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "resurse",
+      "titlu": "Limită: doar uite, nu alergăm",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "curte / geam"
+      ],
+      "pasi": [
+        "„Uite. Ajunge.” — fără goană.",
+        "„Gata.” dacă începe alergarea după animal.",
+        "Dacă vrea: alegeți 10 secunde uite sau 30 (1 din 2)."
+      ],
+      "gata_cand": "Limita de observare e respectată.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z3-social",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "social",
+      "titlu": "Uite împreună — umăr la umăr",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră"
+      ],
+      "pasi": [
+        "Stați împreună: „Uite. Pasăre.”",
+        "Șoptiți: „Aud.”",
+        "Dacă vrea: „Ce face pasărea?” — răspundeți împreună cu gest."
+      ],
+      "gata_cand": "Ați privit împreună pe scurt.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z4-fizic",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "fizic",
+      "titlu": "Deget pe geam — uite pasăre",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră curată"
+      ],
+      "pasi": [
+        "Deget pe geam: „Uite.”",
+        "Urmăriți o pasăre (sau nor): „Pasăre.”",
+        "Dacă vrea: „Ce face?” — zboară / stă."
+      ],
+      "gata_cand": "A urmărit pe geam pe scurt.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z4-mental",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "mental",
+      "titlu": "Trei cuvinte: pasăre, câine, uite",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră / curte"
+      ],
+      "pasi": [
+        "„Uite.” pe geam; „Pasăre.” sus; „Câine.” (dacă e / mimă).",
+        "Repetați o dată, blând.",
+        "Dacă vrea: el alege un cuvânt — voi întrebați „Ce face?”"
+      ],
+      "gata_cand": "A auzit cele trei cuvinte pe temă.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z4-resurse",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "resurse",
+      "titlu": "După uite — ne întoarcem în casă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "ușă / pantofi"
+      ],
+      "pasi": [
+        "„Ajunge. Înapoi.”",
+        "Pantofii / ușa: „La loc / gata.”",
+        "Dacă vrea: un ultim uite de 5 secunde, apoi închideți."
+      ],
+      "gata_cand": "V-ați întors; jocul de uite e închis.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z4-social",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "social",
+      "titlu": "Arată pasăre unei persoane dragi",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră",
+        "persoană dragă"
+      ],
+      "pasi": [
+        "„Uite. Pasăre.” — arătați împreună.",
+        "El trage de mână / arată.",
+        "Dacă vrea: întrebați persoana „Ce face pasărea?” — el ascultă."
+      ],
+      "gata_cand": "A arătat pasăre altcuiva.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z5-fizic",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "fizic",
+      "titlu": "Urechi afară, apoi pași în casă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "curte / geam",
+        "ușă"
+      ],
+      "pasi": [
+        "Afară: „Uite. Pasăre.” — 20–40 secunde.",
+        "Înapoi: 3–5 pași în casă: „Gata.”",
+        "Dacă vrea: pe prag „Ce face pasărea acum?” — gest."
+      ],
+      "gata_cand": "A ascultat afară și s-a întors.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z5-mental",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "mental",
+      "titlu": "Ce face pasărea? — zboară / cântă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră"
+      ],
+      "pasi": [
+        "„Pasăre. Ce face?” — voi: „Zboară.” sau „Cântă.”",
+        "Gest cu brațele / deget pe ureche.",
+        "Dacă vrea: el alege gestul — zbura sau cântă."
+      ],
+      "gata_cand": "A legat pasăre de o acțiune.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z5-resurse",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "resurse",
+      "titlu": "Alege: uite de la geam sau din curte",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "geam",
+        "ușă"
+      ],
+      "pasi": [
+        "Arătați 2: „Geam — uite. Curte — uite.”",
+        "Alegeți una: „Ajunge așa.”",
+        "Dacă vrea: după alegere, o întrebare „Ce face?”"
+      ],
+      "gata_cand": "Ați ales locul de uite; fără forțare.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z5-social",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "social",
+      "titlu": "Rândul: eu uite, tu uite",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră"
+      ],
+      "pasi": [
+        "„Acum eu — uite.”",
+        "„Acum tu.”",
+        "Dacă vrea: pe rând „Ce face câine / pasăre?” — o rundă."
+      ],
+      "gata_cand": "Ați schimbat rândul la uite.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z6-fizic",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "fizic",
+      "titlu": "Întindem scurt înainte de uite",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu liber",
+        "fereastră"
+      ],
+      "pasi": [
+        "Brațele sus: „Uite sus — pasăre.”",
+        "Mâinile pe genunchi: „Uite jos — câine?”",
+        "Dacă vrea: „Ce face?” pe fiecare gest."
+      ],
+      "gata_cand": "A legat întindem de uite sus/jos.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z6-mental",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "mental",
+      "titlu": "Pasăre dimineața — amintim sunetul",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră"
+      ],
+      "pasi": [
+        "„Dimineața — pasăre.” Mimă cirip.",
+        "„Uite.” pe geam acum.",
+        "Dacă vrea: „Ce face pasărea dimineața?” — cântă (gest)."
+      ],
+      "gata_cand": "A legat pasăre de dimineață.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z6-resurse",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "resurse",
+      "titlu": "Uite de azi — gata",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră"
+      ],
+      "pasi": [
+        "„Ajunge. Uite gata.”",
+        "„La loc” — dacă ați mutat un scaun la geam.",
+        "Dacă vrea: un ultim uite 5 secunde, apoi opriți."
+      ],
+      "gata_cand": "Uite-ul zilei e închis.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z6-social",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "social",
+      "titlu": "Joacă paralel: eu uite pasăre, tu uite",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră"
+      ],
+      "pasi": [
+        "Voi: „Eu — pasăre.”",
+        "El: „Tu — uite.” — fără forțare să vadă același lucru.",
+        "Dacă vrea: schimbați — „Ce face?” pe ce vede fiecare."
+      ],
+      "gata_cand": "Ați privit în paralel pe scurt.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z7-fizic",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "fizic",
+      "titlu": "Uite liber la geam — el alege",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră"
+      ],
+      "pasi": [
+        "El alege cât stă; voi urmăriți blând.",
+        "Fără grabă: „Uite… gata.”",
+        "Dacă vrea: o întrebare blândă „Ce face pasărea?” — refuz e în regulă."
+      ],
+      "gata_cand": "A privit liber pe scurt.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z7-mental",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "mental",
+      "titlu": "Favoritul: pasăre, câine sau uite?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "amintiri din săptămână"
+      ],
+      "pasi": [
+        "Întrebați: „Îți place pasăre, câine sau uite?” — gesturi.",
+        "Stați pe alegerea lui.",
+        "Dacă vrea: „Ce face [alegerea]?” — un gest scurt."
+      ],
+      "gata_cand": "A ales un cuvânt favorit din temă.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z7-resurse",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "resurse",
+      "titlu": "Geamul și scaunul la loc — seara",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră",
+        "scaun (dacă e)"
+      ],
+      "pasi": [
+        "„La loc.” — scaun / perdea cum vreți.",
+        "„Ajunge. Acum e liniște.”",
+        "Dacă vrea: un ultim uite blând, apoi calm."
+      ],
+      "gata_cand": "Totul e la loc înainte de calm.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s30-2-3-z7-social",
+      "banda": "2-3",
+      "saptamana": 30,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "social",
+      "titlu": "Ritual: bună seara, uite blând",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "fereastră"
+      ],
+      "pasi": [
+        "Șoptiți: „Bună seara.” O privire: „Uite.”",
+        "„Noapte bună. Pasăre… gata.”",
+        "Dacă vrea: „Ce face pasărea noaptea?” — „Doarme.” — apoi odihnă."
+      ],
+      "gata_cand": "Ați închis seara la geam blând.",
+      "tema_saptamana": "Păsări dimineața",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z1-fizic",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "fizic",
+      "titlu": "Mâini pe semințe — atins pe scurt",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "semințe mari sigure (fasole / floarea-soarelui)",
+        "farfurie / tavă"
+      ],
+      "pasi": [
+        "Atingeți o sămânță: „Sămânță. Plantă.”",
+        "Mutați 2–3 pe tavă: „Crește.” — blând.",
+        "Dacă vrea: spuneți „Udăm ca să crește.” — gest pe sămânță."
+      ],
+      "gata_cand": "A atins semințele pe scurt.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z1-mental",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "mental",
+      "titlu": "Sămânță și verde — ce urmează?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "sămânță",
+        "plantă mică / imagine frunză"
+      ],
+      "pasi": [
+        "„Sămânță.” Apoi: „Verde. Frunză.”",
+        "„Întâi sămânță… apoi crește.”",
+        "Dacă vrea: „De ce udăm?” — „Ca să crește.”"
+      ],
+      "gata_cand": "A legat sămânța de crește / verde.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z1-resurse",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "resurse",
+      "titlu": "Apă pe sămânță / pământ — ajunge",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pahar mic",
+        "ghiveci cu pământ / sămânță"
+      ],
+      "pasi": [
+        "Turnați puțin: „Apă. Plantă.”",
+        "„Ajunge.” — opriți.",
+        "Dacă vrea: întrebați „De ce udăm?” — „Ca să crește.”"
+      ],
+      "gata_cand": "A udat puțin; ajunge e clar.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z1-social",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "social",
+      "titlu": "Punem sămânța împreună",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "sămânță",
+        "ghiveci / pământ"
+      ],
+      "pasi": [
+        "Umăr la umăr: „Plantă. Sămânță.”",
+        "Apăsați blând în pământ: „Crește.”",
+        "Dacă vrea: el spune de ce urmați cu apă."
+      ],
+      "gata_cand": "Ați pus sămânța împreună.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z2-fizic",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "fizic",
+      "titlu": "Cărăm paharul spre semințe",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "pahar mic cu apă",
+        "ghiveci"
+      ],
+      "pasi": [
+        "Cărați paharul: „Apă… plantă.”",
+        "Turnați o picătură: „Crește.”",
+        "Dacă vrea: „De ce?” — „Ca sămânța să crește.”"
+      ],
+      "gata_cand": "A cărat apa și a udat pe scurt.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z2-mental",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "mental",
+      "titlu": "Uscat și ud — pământul seminței",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "pământ uscat",
+        "picătură apă"
+      ],
+      "pasi": [
+        "„Uscat.” pe pământ. Apoi: „Ud. Apă.”",
+        "„Plantă vrea ud ca să crește.”",
+        "Dacă vrea: el arată unde e ud acum."
+      ],
+      "gata_cand": "A deosebit uscat de ud pe pământ.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z2-resurse",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "resurse",
+      "titlu": "Paharul după semințe — la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pahar"
+      ],
+      "pasi": [
+        "„La loc.”",
+        "„Ajunge. Gata.”",
+        "Dacă vrea: alegeți paharul mic sau lingurița (1 din 2)."
+      ],
+      "gata_cand": "Paharul e la loc după udat.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z2-social",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "social",
+      "titlu": "Rândul la turnat o picătură",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pahar",
+        "ghiveci"
+      ],
+      "pasi": [
+        "„Acum eu” — o picătură.",
+        "„Acum tu” — dacă vrea.",
+        "Dacă vrea: pe rând „Crește” după fiecare picătură."
+      ],
+      "gata_cand": "Ați turnat pe rând pe scurt.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z3-fizic",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "fizic",
+      "titlu": "Deget în pământ lângă sămânță",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "ghiveci cu pământ",
+        "șervețel"
+      ],
+      "pasi": [
+        "Deget blând în pământ: „Plantă.”",
+        "Scoateți: „Verde vine… crește.” — fără a dezgropa forțat.",
+        "Dacă vrea: spuneți de ce nu scoatem sămânța — „Ca să crește.”"
+      ],
+      "gata_cand": "A atins pământul lângă sămânță.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z3-mental",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "mental",
+      "titlu": "Unde e sămânța acum?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "ghiveci"
+      ],
+      "pasi": [
+        "„Sămânța e în plantă / pământ.” — gest.",
+        "„Nu o vedem. Crește înăuntru.”",
+        "Dacă vrea: „De ce udăm dacă nu o vedem?” — „Ca să crește.”"
+      ],
+      "gata_cand": "A înțeles că sămânța e ascunsă în pământ.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z3-resurse",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "resurse",
+      "titlu": "Alege: udăm puțin sau mai puțin",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pahar",
+        "ghiveci"
+      ],
+      "pasi": [
+        "Arătați 2: „Puțin. Și mai puțin.”",
+        "Alegeți: „Ajunge așa.”",
+        "Dacă vrea: spuneți de ce puțin — „Ca plantă să crește bine.”"
+      ],
+      "gata_cand": "Ați ales cantitatea; fără risipă.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z3-social",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "social",
+      "titlu": "Grijă împreună — sămânța noastră",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "ghiveci"
+      ],
+      "pasi": [
+        "„Plantă a noastră.” — mână pe ghiveci.",
+        "„Verde… crește.”",
+        "Dacă vrea: inventați o frază — „Udăm ca să crește.”"
+      ],
+      "gata_cand": "Ați îngrijit sămânța împreună.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z4-fizic",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "fizic",
+      "titlu": "Pași: chiuvetă → ghiveci cu apă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "chiuvetă",
+        "pahar",
+        "ghiveci"
+      ],
+      "pasi": [
+        "Umpleți puțin la chiuvetă: „Apă.”",
+        "Pași spre plantă: „Crește.” — turnați puțin.",
+        "Dacă vrea: el spune de ce ați adus apa."
+      ],
+      "gata_cand": "A făcut traseul apă → plantă.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z4-mental",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "mental",
+      "titlu": "De ce udăm semințele? — o frază",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "ghiveci",
+        "pahar"
+      ],
+      "pasi": [
+        "„Plantă. Sămânță.”",
+        "„De ce udăm?” — „Ca să crește. Verde.”",
+        "Dacă vrea: el repetă „crește” sau arată apa."
+      ],
+      "gata_cand": "A auzit motivul udatului.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z4-resurse",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "resurse",
+      "titlu": "După udat — totul la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pahar",
+        "cârpă"
+      ],
+      "pasi": [
+        "„La loc.” — pahar și cârpă.",
+        "„Ajunge.”",
+        "Dacă vrea: alegeți locul paharului (1 din 2)."
+      ],
+      "gata_cand": "Totul e la loc după udat.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z4-social",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "social",
+      "titlu": "Arată sămânța / ghiveciul altcuiva",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "ghiveci",
+        "persoană dragă"
+      ],
+      "pasi": [
+        "„Plantă. Crește.” — arătați împreună.",
+        "El trage de mână / arată.",
+        "Dacă vrea: spuneți celeilalte persoane de ce udăm."
+      ],
+      "gata_cand": "A arătat ghiveciul altcuiva.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z5-fizic",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "fizic",
+      "titlu": "Întindem „crește” lângă ghiveci",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "ghiveci",
+        "spațiu liber"
+      ],
+      "pasi": [
+        "Din ghemuit: ridicați-vă încet: „Crește.”",
+        "Brațele ca frunze: „Verde.”",
+        "Dacă vrea: legați de udat — „Apă… apoi crește.”"
+      ],
+      "gata_cand": "A mimă crește cu corpul.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z5-mental",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "mental",
+      "titlu": "Trei cuvinte: plantă, verde, crește pe semințe",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "ghiveci / semințe"
+      ],
+      "pasi": [
+        "„Plantă” pe ghiveci; „Crește” gest sus; „Verde” pe frunză (dacă e).",
+        "O rundă blândă.",
+        "Dacă vrea: el alege ordinea celor trei cuvinte."
+      ],
+      "gata_cand": "A auzit cele trei cuvinte pe semințe.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z5-resurse",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "resurse",
+      "titlu": "Semințele rămase — la loc în plic / borcan",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "semințe rămase",
+        "plic / borcan"
+      ],
+      "pasi": [
+        "„La loc.” — semințele nefolosite.",
+        "„Ajunge. Nu risipim.”",
+        "Dacă vrea: alegeți plicul sau borcanul (1 din 2)."
+      ],
+      "gata_cand": "Semințele rămase sunt la loc.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z5-social",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "social",
+      "titlu": "Rândul: eu ud, tu ud",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pahar",
+        "ghiveci"
+      ],
+      "pasi": [
+        "„Acum eu — apă.”",
+        "„Acum tu.”",
+        "Dacă vrea: după rundă „De ce udăm?” — răspuns scurt."
+      ],
+      "gata_cand": "Ați udat pe rând.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z6-fizic",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "fizic",
+      "titlu": "Plimbare scurtă: ghiveci → lumină (pervaz)",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "ghiveci ușor",
+        "pervaz"
+      ],
+      "pasi": [
+        "Cărați ghiveciul împreună: „Plantă.”",
+        "Pe pervaz: „Verde. Crește — lumină.”",
+        "Dacă vrea: spuneți de ce e la lumină + de ce udăm."
+      ],
+      "gata_cand": "A mutat planta spre lumină pe scurt.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z6-mental",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "mental",
+      "titlu": "Lumină și apă — plantă are nevoie",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "ghiveci pe pervaz"
+      ],
+      "pasi": [
+        "„Lumină.” pe geam. „Apă.” pe pahar.",
+        "„Plantă: verde… crește.”",
+        "Dacă vrea: el alege ce dăm azi — lumină (mutat) sau apă."
+      ],
+      "gata_cand": "A legat lumină și apă de crește.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z6-resurse",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "resurse",
+      "titlu": "Udatul de azi la semințe — gata",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "pahar",
+        "ghiveci"
+      ],
+      "pasi": [
+        "„Ajunge. Gata.”",
+        "Paharul la loc.",
+        "Dacă vrea: un ultim „Crește” pe ghiveci, apoi opriți."
+      ],
+      "gata_cand": "Udatul e închis; gata e clar.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z6-social",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "social",
+      "titlu": "Împreună verificăm: e ud?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "ghiveci"
+      ],
+      "pasi": [
+        "Deget blând pe pământ: „Ud? Uscat?”",
+        "„Plantă… crește.”",
+        "Dacă vrea: decideți împreună dacă mai udați — „De ce da / nu.”"
+      ],
+      "gata_cand": "Ați verificat pământul împreună.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z7-fizic",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "fizic",
+      "titlu": "Mișcare liberă lângă ghiveci",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "ghiveci",
+        "spațiu liber"
+      ],
+      "pasi": [
+        "El alege zona; voi urmăriți blând.",
+        "Fără grabă: „Plantă… gata.”",
+        "Dacă vrea: alegeți întindem crește sau doar privit."
+      ],
+      "gata_cand": "A mișcat liber pe scurt lângă plantă.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z7-mental",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "mental",
+      "titlu": "Favoritul: plantă, verde sau crește?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "amintiri din săptămână"
+      ],
+      "pasi": [
+        "Întrebați: „Îți place plantă, verde sau crește?” — gesturi.",
+        "Stați pe alegerea lui.",
+        "Dacă vrea: legați alegerea de „De ce udăm?”"
+      ],
+      "gata_cand": "A ales un cuvânt favorit din temă.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z7-resurse",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "resurse",
+      "titlu": "Ghiveciul și paharul la loc — seara",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "ghiveci",
+        "pahar"
+      ],
+      "pasi": [
+        "„La loc.”",
+        "„Ajunge. Acum e liniște.”",
+        "Dacă vrea: o ultimă privire verde, apoi calm."
+      ],
+      "gata_cand": "Totul e la loc înainte de calm.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s31-2-3-z7-social",
+      "banda": "2-3",
+      "saptamana": 31,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "social",
+      "titlu": "Ritual: bună seara, sămânță blândă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "ghiveci"
+      ],
+      "pasi": [
+        "Șoptiți: „Bună seara.” Gest pe ghiveci: „Plantă.”",
+        "„Noapte bună. Crește.”",
+        "Dacă vrea: un ultim „De ce udăm?” — răspuns șoptit, apoi odihnă."
+      ],
+      "gata_cand": "Ați închis seara blând la semințe.",
+      "tema_saptamana": "Semințe și udat",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z1-fizic",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "fizic",
+      "titlu": "Mingea afară — aruncat scurt",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "minge moale",
+        "curte / spațiu liber"
+      ],
+      "pasi": [
+        "Țineți mingea: „Minge.”",
+        "Aruncați blând 1–2 m: „Rând.” — el prinde / aleargă.",
+        "Dacă vrea: inventați o regulă — „Mingea pe iarbă, nu pe trepte.”"
+      ],
+      "gata_cand": "A aruncat / alergat după minge pe scurt.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z1-mental",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "mental",
+      "titlu": "Rândul tău — trei schimburi",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "minge"
+      ],
+      "pasi": [
+        "„Rândul meu.” — aruncați voi.",
+        "„Rândul tău.” — așteptați; apoi iar „Rândul meu.” — 3 schimburi.",
+        "Dacă vrea: regula — „Numărăm până la trei, apoi gata.”"
+      ],
+      "gata_cand": "A făcut aproximativ 3 schimburi de rând.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z1-resurse",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "resurse",
+      "titlu": "Mingea la loc după joacă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "minge",
+        "coș / loc cunoscut"
+      ],
+      "pasi": [
+        "După joacă: „Minge. La loc.”",
+        "„Ajunge. Gata.”",
+        "Dacă vrea: regula — „Mingea în coș = gata jocul.”"
+      ],
+      "gata_cand": "Mingea e la loc; jocul e închis.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z1-social",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 1,
+      "zi_nume": "Luni",
+      "pilon": "social",
+      "titlu": "Trei schimburi sociale cu minge",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "minge"
+      ],
+      "pasi": [
+        "„Rândul meu” — voi. „Rând” — el. Încă o dată — 3 schimburi.",
+        "Zâmbiți / gest „gata” după trei.",
+        "Dacă vrea: regula scurtă — „După trei, pauză.”"
+      ],
+      "gata_cand": "Ați făcut 3 schimburi cu mingea.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z2-fizic",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "fizic",
+      "titlu": "Rulare pe iarbă — minge",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "minge",
+        "iarbă / preș afară"
+      ],
+      "pasi": [
+        "Rulați mingea: „Minge.”",
+        "El o oprește cu mâna / piciorul: „Rând.”",
+        "Dacă vrea: regula — „Mingea doar pe iarbă.”"
+      ],
+      "gata_cand": "A rulat / oprit mingea pe scurt.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z2-mental",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "mental",
+      "titlu": "Rândul meu și rând — care e acum?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "minge"
+      ],
+      "pasi": [
+        "Țineți mingea: „Rândul meu.”",
+        "O dați: „Rândul tău.” — „Care e acum?”",
+        "Dacă vrea: regula — „Cine ține mingea are rândul.”"
+      ],
+      "gata_cand": "A legat cine ține mingea de rând.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z2-resurse",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "resurse",
+      "titlu": "Alege: minge mare sau mică",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "2 mingi (sau 1 minge + alternativă)"
+      ],
+      "pasi": [
+        "Arătați 2: „Minge mare. Minge mică.”",
+        "Alegeți una: „Ajunge așa.”",
+        "Dacă vrea: regula — „Azi doar mingea aleasă.”"
+      ],
+      "gata_cand": "Ați ales o minge; cealaltă la loc.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z2-social",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 2,
+      "zi_nume": "Marți",
+      "pilon": "social",
+      "titlu": "Rândul: eu minge, tu minge",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "minge"
+      ],
+      "pasi": [
+        "„Rândul meu.” — o rulare.",
+        "„Rând.” — așteptați.",
+        "Dacă vrea: regula — „Spunem rândul meu înainte.”"
+      ],
+      "gata_cand": "Ați schimbat rândul la minge.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z3-fizic",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "fizic",
+      "titlu": "Pase scurte pe loc",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "minge moale"
+      ],
+      "pasi": [
+        "Pasă la 1 m: „Minge.”",
+        "Înapoi: „Rând.” — 3–4 pase.",
+        "Dacă vrea: regula — „Mingea pe jos, nu pe cap.”"
+      ],
+      "gata_cand": "A făcut pase scurte pe loc.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z3-mental",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "mental",
+      "titlu": "Numără rândul: unu, doi, trei",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "minge"
+      ],
+      "pasi": [
+        "„Rând unu… rând doi… rând trei.”",
+        "„Gata. Trei.”",
+        "Dacă vrea: regula — „Doar trei rânduri, apoi mingea la loc.”"
+      ],
+      "gata_cand": "A legat trei schimburi de gata.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z3-resurse",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "resurse",
+      "titlu": "După trei — mingea la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "minge",
+        "coș"
+      ],
+      "pasi": [
+        "„Trei. Ajunge.”",
+        "„Minge. La loc.”",
+        "Dacă vrea: el duce mingea — regula „Eu / tu cărați pe rând.”"
+      ],
+      "gata_cand": "După trei, mingea e la loc.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z3-social",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 3,
+      "zi_nume": "Miercuri",
+      "pilon": "social",
+      "titlu": "Așteaptă rând — fără grabă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "minge"
+      ],
+      "pasi": [
+        "Voi țineți: „Rândul meu.” — el așteaptă.",
+        "„Rând.” — îi dați mingea.",
+        "Dacă vrea: regula — „Mâinile pe genunchi când aștepți.”"
+      ],
+      "gata_cand": "A așteptat rândul pe scurt.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z4-fizic",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "fizic",
+      "titlu": "Alergare scurtă după minge",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "minge",
+        "curte liberă"
+      ],
+      "pasi": [
+        "Rulați mingea: „Minge — aleargă.”",
+        "El aduce mingea: „Rândul tău.”",
+        "Dacă vrea: regula — „O alergare, apoi pauză.”"
+      ],
+      "gata_cand": "A alergat scurt după minge.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z4-mental",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "mental",
+      "titlu": "Mingea afară — unde e locul ei?",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "minge",
+        "coș / colț"
+      ],
+      "pasi": [
+        "„Mingea joacă afară.” Gest pe curte.",
+        "„Mingea doarme aici.” Gest pe coș.",
+        "Dacă vrea: regula — „După joacă, mingea la loc.”"
+      ],
+      "gata_cand": "A legat mingea de locul de joacă și de la loc.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z4-resurse",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "resurse",
+      "titlu": "Mingea rămâne în zonă — limită",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "minge",
+        "zonă de joacă"
+      ],
+      "pasi": [
+        "„Minge aici.” — arătați zona.",
+        "„Ajunge afară din zonă — oprim.”",
+        "Dacă vrea: regula inventată — „Minge nu trece de… (reper).”"
+      ],
+      "gata_cand": "Limita de zonă e clară.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z4-social",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 4,
+      "zi_nume": "Joi",
+      "pilon": "social",
+      "titlu": "Trei schimburi — apoi gata împreună",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "minge"
+      ],
+      "pasi": [
+        "Trei schimburi: „Rândul meu… rând… rândul meu.”",
+        "Împreună: „Gata.”",
+        "Dacă vrea: regula — „După gata, batem din palme o dată.”"
+      ],
+      "gata_cand": "Ați închis cele 3 schimburi împreună.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z5-fizic",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "fizic",
+      "titlu": "Picior pe minge — atingere blândă",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "minge moale"
+      ],
+      "pasi": [
+        "Picior pe minge: „Minge.”",
+        "Împingeți blând: „Rând.” — o rundă.",
+        "Dacă vrea: regula — „Picior ușor, nu lovitură tare.”"
+      ],
+      "gata_cand": "A atins mingea cu piciorul pe scurt.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z5-mental",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "mental",
+      "titlu": "Trei cuvinte: minge, rând, rândul meu",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "minge"
+      ],
+      "pasi": [
+        "„Minge.” pe minge; „Rând.” când o dați; „Rândul meu.” când o luați.",
+        "O rundă de etichete.",
+        "Dacă vrea: el inventează ordinea — regula lui de azi."
+      ],
+      "gata_cand": "A auzit cele trei etichete pe minge.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z5-resurse",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "resurse",
+      "titlu": "Alege: încă un rând sau la loc",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "minge"
+      ],
+      "pasi": [
+        "Arătați 2: „Încă un rând. Sau mingea la loc.”",
+        "Alegeți: „Ajunge așa.”",
+        "Dacă vrea: regula — „Alegerea e gata, nu schimbăm.”"
+      ],
+      "gata_cand": "Ați ales continuare sau închidere.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z5-social",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 5,
+      "zi_nume": "Vineri",
+      "pilon": "social",
+      "titlu": "Rândul meu spus înainte de a lua mingea",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "minge"
+      ],
+      "pasi": [
+        "Modelați: „Rândul meu.” — apoi luați mingea.",
+        "El: „Rând / rândul meu” — apoi primește.",
+        "Dacă vrea: regula — „Spui, apoi iei mingea.”"
+      ],
+      "gata_cand": "A legat cuvântul de a lua mingea.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z6-fizic",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "fizic",
+      "titlu": "Traseu: ușa → iarbă cu minge",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "minge",
+        "ușă",
+        "iarbă"
+      ],
+      "pasi": [
+        "Din casă / prag: „Mingea afară.”",
+        "Pe iarbă: 1–2 aruncări: „Rând.”",
+        "Dacă vrea: regula — „Mingea joacă doar pe iarbă azi.”"
+      ],
+      "gata_cand": "A dus mingea pe iarbă și a jucat scurt.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z6-mental",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "mental",
+      "titlu": "Regula zilei — una singură",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "minge"
+      ],
+      "pasi": [
+        "Alegeți o regulă scurtă: „Mingea pe iarbă.” sau „Trei rânduri.”",
+        "Spuneți-o o dată: „Regula.”",
+        "Dacă vrea: el alege care regulă (1 din 2)."
+      ],
+      "gata_cand": "A auzit / ales o regulă scurtă.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z6-resurse",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "resurse",
+      "titlu": "Joaca cu minge de azi — gata",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "minge",
+        "coș"
+      ],
+      "pasi": [
+        "„Ajunge. Mingea la loc.”",
+        "„Gata.”",
+        "Dacă vrea: regula de închidere — „Mingea în coș = gata jocul.”"
+      ],
+      "gata_cand": "Joaca e închisă; mingea la loc.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z6-social",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 6,
+      "zi_nume": "Sâmbătă",
+      "pilon": "social",
+      "titlu": "Joacă paralel: eu cu minge, tu lângă",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "minge (sau 2)"
+      ],
+      "pasi": [
+        "Voi rulați: „Rândul meu — minge.”",
+        "El poate rula lângă sau privi: „Rând.”",
+        "Dacă vrea: regula — „Fiecare are minge / spațiu.”"
+      ],
+      "gata_cand": "Ați jucat în paralel pe scurt.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z7-fizic",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "fizic",
+      "titlu": "Joacă liberă cu minge — el alege",
+      "durata_min": 5,
+      "mod_default": "A",
+      "materiale": [
+        "minge",
+        "curte / preș"
+      ],
+      "pasi": [
+        "El alege aruncat / rulat / pe loc; voi urmăriți blând.",
+        "Fără grabă: „Minge… gata.”",
+        "Dacă vrea: o regulă blândă aleasă de el — sau zero regulă."
+      ],
+      "gata_cand": "A jucat liber cu mingea pe scurt.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z7-mental",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "mental",
+      "titlu": "Favoritul: minge, rând sau rândul meu?",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "amintiri din săptămână"
+      ],
+      "pasi": [
+        "Întrebați: „Îți place minge, rând sau rândul meu?” — gesturi.",
+        "Stați pe alegerea lui.",
+        "Dacă vrea: inventați o regulă de seară legată de alegere."
+      ],
+      "gata_cand": "A ales un cuvânt favorit din temă.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z7-resurse",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "resurse",
+      "titlu": "Mingea la loc — seara",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "minge",
+        "coș"
+      ],
+      "pasi": [
+        "„Minge. La loc.”",
+        "„Ajunge. Acum e liniște.”",
+        "Dacă vrea: un ultim rând mimă fără minge, apoi calm."
+      ],
+      "gata_cand": "Mingea e la loc înainte de calm.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    },
+    {
+      "id": "s32-2-3-z7-social",
+      "banda": "2-3",
+      "saptamana": 32,
+      "zi": 7,
+      "zi_nume": "Duminică",
+      "pilon": "social",
+      "titlu": "Ritual: bună seara după minge",
+      "durata_min": 4,
+      "mod_default": "A",
+      "materiale": [
+        "spațiu de seară"
+      ],
+      "pasi": [
+        "Șoptiți: „Bună seara.” Gest: mâini fără minge.",
+        "„Noapte bună. Minge… gata.”",
+        "Dacă vrea: regula de noapte — „Mingea doarme; noi dormim.”"
+      ],
+      "gata_cand": "Ați închis seara blând după mingea afară.",
+      "tema_saptamana": "Mingea afară",
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+    }
+  ]
+}
