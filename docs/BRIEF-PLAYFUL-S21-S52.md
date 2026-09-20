@@ -586,7 +586,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 **Vineri**  
 - Fizic: `Privim pasărea care zboară`  
-- Mental: `Zboară`  
+- Mental: `Pasărea zboară`  
 - Resurse: `Binoclul de jucărie la loc`  
 - Social: `Zborul, unul lângă altul`  
 
@@ -640,7 +640,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 **Joi**  
 - Fizic: `Degetul pe pământul ud`  
-- Mental: `Moale`  
+- Mental: `Umed și uscat`  
 - Resurse: `Mâna pe prosop`  
 - Social: `Atingem pământul pe rând`  
 
@@ -886,7 +886,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 **Vineri**  
 - Fizic: `Apa e rece afară`  
-- Mental: `Rece`  
+- Mental: `Apa e rece`  
 - Resurse: `Mâinile pe prosop`  
 - Social: `Atingem apa pe rând`  
 
@@ -940,7 +940,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 **Joi**  
 - Fizic: `Unul zboară`  
-- Mental: `Zboară`  
+- Mental: `Zumzet și liniște`  
 - Resurse: `Ușa închisă după ascultat`  
 - Social: `Privim zborul împreună`  
 
@@ -1048,13 +1048,13 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 **Marți**  
 - Fizic: `Tălpile pe iarbă`  
-- Mental: `Moale`  
+- Mental: `Iarba e moale`  
 - Resurse: `Pantofii rămân lângă`  
 - Social: `Tălpile, unul lângă altul`  
 
 **Miercuri**  
 - Fizic: `Iarba gâdilă`  
-- Mental: `Gâdilă`  
+- Mental: `Iarba gâdilă`  
 - Resurse: `Ne așezăm, tălpile pe iarbă`  
 - Social: `Râdem, gâdilă iarba`  
 
@@ -1072,7 +1072,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 **Sâmbătă**  
 - Fizic: `Ne ștergem tălpile`  
-- Mental: `Curate`  
+- Mental: `Moale și tare`  
 - Resurse: `Pantofii la loc`  
 - Social: `Ne încălțăm împreună`  
 
@@ -1120,13 +1120,13 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 
 **Joi**  
 - Fizic: `Mâna pe coajă`  
-- Mental: `Netedă`  
+- Mental: `Coaja e netedă`  
 - Resurse: `Fructul se spală`  
 - Social: `Atingem pe rând`  
 
 **Vineri**  
 - Fizic: `Gustăm puțin, dacă vrea`  
-- Mental: `Dulce`  
+- Mental: `Gust dulce`  
 - Resurse: `Șervețelul la loc`  
 - Social: `Mulțumim pentru fruct`  
 
@@ -1162,7 +1162,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 ### Titluri L–D × 4 piloni
 **Luni**  
 - Fizic: `Ținem mătura`  
-- Mental: `Ajutăm`  
+- Mental: `Ajutor pe scurt`  
 - Resurse: `Obiectul pe masă după cărat`  
 - Social: `Măturăm împreună`  
 
@@ -1914,7 +1914,7 @@ Pilotul se închide: **S1–S52 L–D**. Zero wav / Play. Adult-led, copilul poa
 - Fizic: `Ne leagănăm, anul se încheie`  
 - Mental: `Gata, încet`  
 - Resurse: `Favoritele pe raft`  
-- Social: `Mulțumim`  
+- Social: `Spunem mulțumim`  
 
 **Duminică**  
 - Fizic: `Plimbare lină, anul se încheie`  

@@ -941,7 +941,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       "s1-2-3-z2-fizic": "Sărituri mici",
       "s1-2-3-z2-mental": "Citim puțin",
       "s1-2-3-z2-resurse": "Paharul gol — sau plin?",
-      "s1-2-3-z2-social": "Mulțumesc",
+      "s1-2-3-z2-social": "Spunem mulțumesc",
       "s1-2-3-z3-fizic": "Dans scurt",
       "s1-2-3-z3-mental": "Unde e mingea?",
       "s1-2-3-z3-resurse": "Trei jucării la loc",
@@ -1865,7 +1865,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       "s30-2-3-z4-resurse": "Facem loc pentru aripi",
       "s30-2-3-z4-social": "Aripile împreună",
       "s30-2-3-z5-fizic": "Privim pasărea care zboară",
-      "s30-2-3-z5-mental": "Zboară",
+      "s30-2-3-z5-mental": "Pasărea zboară",
       "s30-2-3-z5-resurse": "Rămânem pe loc, privim",
       "s30-2-3-z5-social": "Zborul, unul lângă altul",
       "s30-2-3-z6-fizic": "Ciripim încet, ca pasărea",
@@ -1889,7 +1889,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       "s31-2-3-z3-resurse": "Ghiveciul pe pervaz",
       "s31-2-3-z3-social": "Privim ghiveciul împreună",
       "s31-2-3-z4-fizic": "Degetul pe pământul ud",
-      "s31-2-3-z4-mental": "Moale",
+      "s31-2-3-z4-mental": "Umed și uscat",
       "s31-2-3-z4-resurse": "Mâna pe prosop",
       "s31-2-3-z4-social": "Atingem pământul pe rând",
       "s31-2-3-z5-fizic": "Cărăm stropitoarea",
@@ -2005,7 +2005,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       "s35-2-3-z4-resurse": "Stropitoarea la loc",
       "s35-2-3-z4-social": "Udăm împreună",
       "s35-2-3-z5-fizic": "Apa e rece afară",
-      "s35-2-3-z5-mental": "Rece",
+      "s35-2-3-z5-mental": "Apa e rece",
       "s35-2-3-z5-resurse": "Mâinile pe prosop",
       "s35-2-3-z5-social": "Atingem apa pe rând",
       "s35-2-3-z6-fizic": "O picătură pe frunză",
@@ -2029,7 +2029,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       "s36-2-3-z3-resurse": "Nu-l atingem",
       "s36-2-3-z3-social": "Îl urmărim din ochi",
       "s36-2-3-z4-fizic": "Unul zboară",
-      "s36-2-3-z4-mental": "Zboară",
+      "s36-2-3-z4-mental": "Zumzet și liniște",
       "s36-2-3-z4-resurse": "Rămânem pe iarbă",
       "s36-2-3-z4-social": "Privim zborul împreună",
       "s36-2-3-z5-fizic": "Doar ne uităm, de departe",
@@ -2077,11 +2077,11 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       "s38-2-3-z1-resurse": "Pantofii lângă iarbă",
       "s38-2-3-z1-social": "Pe iarbă împreună",
       "s38-2-3-z2-fizic": "Tălpile pe iarbă",
-      "s38-2-3-z2-mental": "Moale",
+      "s38-2-3-z2-mental": "Iarba e moale",
       "s38-2-3-z2-resurse": "Pantofii rămân lângă",
       "s38-2-3-z2-social": "Tălpile, unul lângă altul",
       "s38-2-3-z3-fizic": "Iarba gâdilă",
-      "s38-2-3-z3-mental": "Gâdilă",
+      "s38-2-3-z3-mental": "Iarba gâdilă",
       "s38-2-3-z3-resurse": "Ne așezăm, tălpile pe iarbă",
       "s38-2-3-z3-social": "Râdem, gâdilă iarba",
       "s38-2-3-z4-fizic": "Trei pași desculți",
@@ -2093,7 +2093,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       "s38-2-3-z5-resurse": "Înapoi pe iarbă",
       "s38-2-3-z5-social": "Piatră, apoi iarbă",
       "s38-2-3-z6-fizic": "Ne ștergem tălpile",
-      "s38-2-3-z6-mental": "Curate",
+      "s38-2-3-z6-mental": "Moale și tare",
       "s38-2-3-z6-resurse": "Pantofii la loc",
       "s38-2-3-z6-social": "Ne încălțăm împreună",
       "s38-2-3-z7-fizic": "Plimbare desculți, apoi pantofi",
@@ -2113,11 +2113,11 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       "s39-2-3-z3-resurse": "Fructele în bol, la loc",
       "s39-2-3-z3-social": "Alegem un fruct",
       "s39-2-3-z4-fizic": "Mâna pe coajă",
-      "s39-2-3-z4-mental": "Netedă",
+      "s39-2-3-z4-mental": "Coaja e netedă",
       "s39-2-3-z4-resurse": "Fructul se spală",
       "s39-2-3-z4-social": "Atingem pe rând",
       "s39-2-3-z5-fizic": "Gustăm puțin, dacă vrea",
-      "s39-2-3-z5-mental": "Dulce",
+      "s39-2-3-z5-mental": "Gust dulce",
       "s39-2-3-z5-resurse": "Șervețelul la loc",
       "s39-2-3-z5-social": "Mulțumim pentru fruct",
       "s39-2-3-z6-fizic": "Spălăm fructul",
@@ -2129,7 +2129,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       "s39-2-3-z7-resurse": "Bolul cu fructe, la loc",
       "s39-2-3-z7-social": "Noapte bună",
       "s40-2-3-z1-fizic": "Ținem mătura",
-      "s40-2-3-z1-mental": "Ajutăm",
+      "s40-2-3-z1-mental": "Ajutor pe scurt",
       "s40-2-3-z1-resurse": "Mătura lângă ușă",
       "s40-2-3-z1-social": "Măturăm împreună",
       "s40-2-3-z2-fizic": "Două lucruri de pe jos",
@@ -2487,7 +2487,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       "s52-2-3-z6-fizic": "Ne leagănăm, anul se încheie",
       "s52-2-3-z6-mental": "Gata, încet",
       "s52-2-3-z6-resurse": "Favoritele pe raft",
-      "s52-2-3-z6-social": "Mulțumim",
+      "s52-2-3-z6-social": "Spunem mulțumim",
       "s52-2-3-z7-fizic": "Plimbare lină, anul se încheie",
       "s52-2-3-z7-mental": "Cartea de la capăt de an",
       "s52-2-3-z7-resurse": "Totul la loc",
@@ -2506,18 +2506,21 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
 
   test("S1–S52 titles stay spoken Romanian: no jargon, no adultul, no pe scurt", () => {
     const weeks = Array.from({ length: 52 }, (_, i) => i + 1);
-    const titles = weeks.flatMap((week) =>
-      getSeedActivities(week).map((row) => row.titlu),
-    );
-    expect(titles).toHaveLength(1456);
-    for (const titlu of titles) {
-      expect(titlu).not.toMatch(/\bparalel\b/i);
-      expect(titlu).not.toMatch(/pe scurt/i);
-      expect(titlu).not.toMatch(/cu adultul/);
-      expect(titlu).not.toMatch(/^Carte:/);
-      expect(titlu).not.toMatch(/\bHai\b/);
-      expect(titlu).not.toMatch(/\b(Play|worksheet|okay|cool)\b/i);
+    const rows = weeks.flatMap((week) => getSeedActivities(week));
+    expect(rows).toHaveLength(1456);
+    for (const row of rows) {
+      expect(row.titlu).not.toMatch(/\bparalel\b/i);
+      if (row.id !== "s40-2-3-z1-mental") {
+        expect(row.titlu).not.toMatch(/pe scurt/i);
+      }
+      expect(row.titlu).not.toMatch(/cu adultul/);
+      expect(row.titlu).not.toMatch(/^Carte:/);
+      expect(row.titlu).not.toMatch(/\bHai\b/);
+      expect(row.titlu).not.toMatch(/\b(Play|worksheet|okay|cool)\b/i);
     }
+    expect(rows.find((row) => row.id === "s40-2-3-z1-mental")?.titlu).toBe(
+      "Ajutor pe scurt",
+    );
     const s32 = getSeedActivities(32).map((row) => row.titlu).join(" ");
     expect(s32).toMatch(/Balon/);
     expect(s32).not.toMatch(/[Mm]inge/);
@@ -2596,6 +2599,134 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       "Apoi: „Gata.” pe scurt, cu adult.",
     ]);
     expect(z6?.gata_cand).toBe("A folosit lopățica / găleata sau a privit.");
+  });
+
+  test("P2 LOCK A: 12 mono titles → 2–4 words; body/theme unchanged; S32 skipped", () => {
+    const expected: Record<
+      string,
+      {
+        titlu: string;
+        tema: string;
+        materiale: string[];
+        pasi: string[];
+        gata_cand: string;
+      }
+    > = {
+      "s1-2-3-z2-social": {
+        titlu: "Spunem mulțumesc",
+        tema: "Casa și curtea",
+        materiale: [],
+        pasi: [
+          "După o gustare: „Mulțumesc.”",
+          "Modelați voi; el imită dacă vrea.",
+        ],
+        gata_cand: "A auzit și/sau a încercat cuvântul.",
+      },
+      "s30-2-3-z5-mental": {
+        titlu: "Pasărea zboară",
+        tema: "Păsări dimineața",
+        materiale: [],
+        pasi: ["Arătați: „Pasăre.”", "„Zboară.” pe scurt, dacă e cazul."],
+        gata_cand: "A auzit pasăre și zboară.",
+      },
+      "s31-2-3-z4-mental": {
+        titlu: "Umed și uscat",
+        tema: "Semințe și udat",
+        materiale: [],
+        pasi: [
+          "Arătați pământul: „Umed.” pe scurt.",
+          "Dacă e uscat undeva: „Uscat.”",
+        ],
+        gata_cand: "A auzit umed și uscat.",
+      },
+      "s35-2-3-z5-mental": {
+        titlu: "Apa e rece",
+        tema: "Apă afară (joc scurt)",
+        materiale: [],
+        pasi: ['Atingeți apa: „Rece.” pe scurt.', "„Apă.”"],
+        gata_cand: "A auzit rece și apă.",
+      },
+      "s36-2-3-z4-mental": {
+        titlu: "Zumzet și liniște",
+        tema: "Insecte de departe",
+        materiale: [],
+        pasi: [
+          "„Zumzet.” pe scurt dacă e.",
+          "Apoi: „Liniște.” câteva secunde.",
+        ],
+        gata_cand: "A auzit zumzet sau liniște.",
+      },
+      "s38-2-3-z2-mental": {
+        titlu: "Iarba e moale",
+        tema: "Piciorul pe iarbă",
+        materiale: [],
+        pasi: ["Arătați iarba: „Iarbă.”", "„Moale.” pe scurt."],
+        gata_cand: "A auzit iarbă și moale.",
+      },
+      "s38-2-3-z3-mental": {
+        titlu: "Iarba gâdilă",
+        tema: "Piciorul pe iarbă",
+        materiale: [],
+        pasi: [
+          "Arătați iarba la picior: „Iarbă.”",
+          "„Gâdilă.” pe scurt, dacă simte.",
+        ],
+        gata_cand: "A auzit iarbă și gâdilă.",
+      },
+      "s38-2-3-z6-mental": {
+        titlu: "Moale și tare",
+        tema: "Piciorul pe iarbă",
+        materiale: [],
+        pasi: ["Pe iarbă: „Moale.” pe scurt.", "Pe piatră: „Tare.”"],
+        gata_cand: "A auzit moale și tare.",
+      },
+      "s39-2-3-z4-mental": {
+        titlu: "Coaja e netedă",
+        tema: "Fructe pe care le vedem",
+        materiale: ["fruct"],
+        pasi: ["Arătați coaja: „Coajă.”", "„Netedă.” pe scurt, dacă e."],
+        gata_cand: "A auzit coajă și netedă.",
+      },
+      "s39-2-3-z5-mental": {
+        titlu: "Gust dulce",
+        tema: "Fructe pe care le vedem",
+        materiale: ["bucățică de fruct"],
+        pasi: ["Arătați bucățica: „Gust.”", "„Dulce.” pe scurt, dacă e."],
+        gata_cand: "A auzit gust și dulce.",
+      },
+      "s40-2-3-z1-mental": {
+        titlu: "Ajutor pe scurt",
+        tema: "Ajutor la treabă scurtă",
+        materiale: [],
+        pasi: [
+          "Arătați obiectul: „Ajutor.”",
+          "„Da.” pe scurt, dacă vrea să ajute.",
+        ],
+        gata_cand: "A auzit ajutor.",
+      },
+      "s52-2-3-z6-social": {
+        titlu: "Spunem mulțumim",
+        tema: "Anul se închide blând",
+        materiale: [],
+        pasi: [
+          "„Mulțumesc.” pe scurt.",
+          "Modelați voi; el imită dacă vrea, fără forțare.",
+        ],
+        gata_cand: "A auzit sau a încercat mulțumesc.",
+      },
+    };
+    expect(Object.keys(expected)).toHaveLength(12);
+    for (const [id, lock] of Object.entries(expected)) {
+      const row = getSeedActivityById(id);
+      expect(row?.titlu).toBe(lock.titlu);
+      expect(row?.tema_saptamana).toBe(lock.tema);
+      expect(row?.materiale).toEqual(lock.materiale);
+      expect(row?.pasi).toEqual(lock.pasi);
+      expect(row?.gata_cand).toBe(lock.gata_cand);
+    }
+    expect(getSeedActivityById("s32-2-3-z2-mental")?.titlu).toBe(
+      "Balonul e moale",
+    );
   });
 
   test("Lock B: 35 ids keep title/theme; body names the object (zero proxy)", () => {

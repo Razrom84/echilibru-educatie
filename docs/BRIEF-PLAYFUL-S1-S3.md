@@ -30,7 +30,7 @@
 - Fizic: `Sărituri mici`  
 - Mental: `Citim puțin`  
 - Resurse: `Paharul gol — sau plin?`  
-- Social: `Mulțumesc`
+- Social: `Spunem mulțumesc`
 
 **Miercuri**  
 - Fizic: `Dans scurt`  
