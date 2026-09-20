@@ -1327,12 +1327,14 @@
       "titlu": "Cizmele la ușă",
       "durata_min": 4,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Apropiați urechea de geam pe scurt dacă e ploaie.",
-        "„Sunet. Ploaie.” 10–15 de secunde."
+      "materiale": [
+        "cizme"
       ],
-      "gata_cand": "A ascultat sau a privit geamul.",
+      "pasi": [
+        "Puneți cizmele la ușă pe scurt.",
+        "„Cizme. Ușă.”"
+      ],
+      "gata_cand": "A ajutat cu cizmele sau a privit.",
       "tema_saptamana": "Zăpadă sau ploaie la geam",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1366,13 +1368,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "cârpă"
+        "cizme"
       ],
       "pasi": [
-        "Puneți cârpa la loc după geam.",
-        "„La loc.”"
+        "După geam: cizmele la loc.",
+        "„Cizme. La loc.”"
       ],
-      "gata_cand": "A ajutat cu cârpa.",
+      "gata_cand": "A ajutat cu cizmele.",
       "tema_saptamana": "Zăpadă sau ploaie la geam",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1606,13 +1608,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "obiect de pe pervaz"
+        "șosete"
       ],
       "pasi": [
-        "Luați obiectul pe scurt. Puneți-l la loc.",
-        "„La loc. Pervaz.”"
+        "După geam: șosetele la loc.",
+        "„Șosete. La loc.”"
       ],
-      "gata_cand": "A ajutat cu obiectul.",
+      "gata_cand": "A ajutat cu șosetele.",
       "tema_saptamana": "Zăpadă sau ploaie la geam",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -1950,12 +1952,14 @@
       "titlu": "Arătăm cizma",
       "durata_min": 4,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Mergeți câțiva pași lângă adult.",
-        "„Împreună. Curte.” fără forțare."
+      "materiale": [
+        "cizmă"
       ],
-      "gata_cand": "A mers lângă adult pe scurt.",
+      "pasi": [
+        "Arătați cizma împreună.",
+        "„Împreună. Cizmă.”"
+      ],
+      "gata_cand": "A privit cizma cu adultul.",
       "tema_saptamana": "Dezgheț și noroi",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -2010,13 +2014,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "pahar"
+        "cizme"
       ],
       "pasi": [
-        "Puneți paharul la chiuvetă sau pe masă.",
-        "„Pahar. La loc.”"
+        "După băltoacă: cizmele la loc.",
+        "„Cizme. La loc.”"
       ],
-      "gata_cand": "A ajutat cu paharul.",
+      "gata_cand": "A ajutat cu cizmele.",
       "tema_saptamana": "Dezgheț și noroi",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
@@ -2178,13 +2182,13 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "prosop"
+        "cizme"
       ],
       "pasi": [
-        "Ștergeți mâinile. Puneți prosopul la loc.",
-        "„Prosop. La loc.”"
+        "După curte: cizmele la loc.",
+        "„Cizme. La loc.”"
       ],
-      "gata_cand": "A ajutat cu prosopul.",
+      "gata_cand": "A ajutat cu cizmele.",
       "tema_saptamana": "Dezgheț și noroi",
       "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
     },
