@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-hidden="true">
-  <title>Blânduleț</title>
-  <path d="M40 16 C24 16 16 28 16 36 C16 48 26 54 32 54 C26 46 26 34 40 28 C44 26 46 22 44 18 C42 16 40 16 40 16 Z" fill="#F2E2A0" stroke="#C4A15E" stroke-width="1.5"/>
+  <title>Fulgușor</title>
+  <circle cx="32" cy="32" r="16" fill="#E8F2FA" stroke="#7AA3C7" stroke-width="1.5"/>
+  <path d="M32 16 L32 48 M18 32 L46 32 M22 22 L42 42 M42 22 L22 42" stroke="#7AA3C7" stroke-width="1.6" stroke-linecap="round"/>
   <circle cx="26" cy="32" r="1.9" fill="#3D2E1A"/>
   <circle cx="38" cy="32" r="1.9" fill="#3D2E1A"/>
   <circle cx="26.5" cy="31.5" r="0.55" fill="#FFF8EC"/>

@@ -383,38 +383,38 @@ describe("PLAYFUL PILOT scope", () => {
 
   test("S21–S52 overlays lock characters, rituals, surprises", () => {
     const rows = [
-    {week:21,id:"pervazut",name:"Pervazuț",open:"Iarna pe pervaz.",close:"Pe pervaz, gata.",s1:"Mâna pe geam 2 sec",theme:"Iarna pe pervaz"},
-    {week:22,id:"ghemut",name:"Ghemuț",open:"Corp în casă.",close:"Mișcat, gata.",s1:"Balans 2 sec pe loc",theme:"Corp care se mișcă în casă"},
-    {week:23,id:"nasut",name:"Năsuț",open:"Mirosuri din casă.",close:"Mirosit, gata.",s1:"Nas aproape de pâine 2 sec",theme:"Mirosuri din casă"},
+    {week:21,id:"ferestruica",name:"Ferestruică",open:"Iarna pe pervaz.",close:"Pe pervaz, gata.",s1:"Mâna pe geam 2 sec",theme:"Iarna pe pervaz"},
+    {week:22,id:"ghemotoc",name:"Ghemotoc",open:"Corp în casă.",close:"Mișcat, gata.",s1:"Balans 2 sec pe loc",theme:"Corp care se mișcă în casă"},
+    {week:23,id:"nasuc",name:"Năsuc",open:"Mirosuri din casă.",close:"Mirosit, gata.",s1:"Nas aproape de pâine 2 sec",theme:"Mirosuri din casă"},
     {week:24,id:"usita",name:"Ușiță",open:"Familia, oaspeții.",close:"La ușă, gata.",s1:"Mâna sus: salut",theme:"Familia și oaspeții"},
-    {week:25,id:"lampita",name:"Lămpiță",open:"Lumină de seară.",close:"Seara, gata.",s1:"Lampa se aprinde 2 sec",theme:"Lumină de seară"},
-    {week:26,id:"amintioara",name:"Amintioară",open:"Favoritele, din nou.",close:"Favorite, gata.",s1:"Geamul favorit 2 sec",theme:"Jumătate de an: repetăm favoritele"},
-    {week:27,id:"fulguta",name:"Fulguță",open:"Zăpadă sau ploaie.",close:"La geam, gata.",s1:"Mâna pe geam: vremea",theme:"Zăpadă sau ploaie la geam"},
-    {week:28,id:"noroiut",name:"Noroiuț",open:"Dezgheț și noroi.",close:"Noroiul, gata.",s1:"Cizmele pe picioare",theme:"Dezgheț și noroi"},
-    {week:29,id:"mugurel",name:"Mugurel",open:"Muguri și iarbă.",close:"Mugurii, gata.",s1:"Un mugure pe creangă",theme:"Muguri și iarbă nouă"},
+    {week:25,id:"lampadar",name:"Lampadar",open:"Lumină de seară.",close:"Seara, gata.",s1:"Lampa se aprinde 2 sec",theme:"Lumină de seară"},
+    {week:26,id:"amintire",name:"Amintire",open:"Favoritele, din nou.",close:"Favorite, gata.",s1:"Geamul favorit 2 sec",theme:"Jumătate de an: repetăm favoritele"},
+    {week:27,id:"fulgusor",name:"Fulgușor",open:"Zăpadă sau ploaie.",close:"La geam, gata.",s1:"Mâna pe geam: vremea",theme:"Zăpadă sau ploaie la geam"},
+    {week:28,id:"murdarel",name:"Murdărel",open:"Dezgheț și noroi.",close:"Noroiul, gata.",s1:"Cizmele pe picioare",theme:"Dezgheț și noroi"},
+    {week:29,id:"muguras",name:"Muguraș",open:"Muguri și iarbă.",close:"Mugurii, gata.",s1:"Un mugure pe creangă",theme:"Muguri și iarbă nouă"},
     {week:30,id:"cioculet",name:"Cioculeț",open:"Păsări dimineața.",close:"Păsări, gata.",s1:"Urechea la geam dimineața",theme:"Păsări dimineața"},
     {week:31,id:"samantica",name:"Sămânțică",open:"Semințe și udat.",close:"Udat, gata.",s1:"O sămânță în palmă",theme:"Semințe și udat"},
-    {week:32,id:"rotunduta",name:"Rotunduță",open:"Mingea afară.",close:"Mingea, gata.",s1:"Mingea rulează 1 sec afară",theme:"Mingea afară"},
-    {week:33,id:"nisiput",name:"Nisipuț",open:"Nisip și găleată.",close:"Nisipul, gata.",s1:"Mâna în nisip 2 sec",theme:"Nisip și găleată"},
+    {week:32,id:"balonas",name:"Balonaș",open:"Mingea afară.",close:"Mingea, gata.",s1:"Mingea rulează 1 sec afară",theme:"Mingea afară"},
+    {week:33,id:"lopetica",name:"Lopețică",open:"Nisip și găleată.",close:"Nisipul, gata.",s1:"Mâna în nisip 2 sec",theme:"Nisip și găleată"},
     {week:34,id:"umbrita",name:"Umbriță",open:"Umbre pe pământ.",close:"Umbra, gata.",s1:"Mâna face umbră 2 sec",theme:"Umbre pe pământ"},
     {week:35,id:"stropulet",name:"Stropuleț",open:"Apă afară.",close:"Pe apă, gata.",s1:"Un strop pe mână",theme:"Apă afară (joc scurt)"},
     {week:36,id:"gandacel",name:"Gândăcel",open:"Insecte de departe.",close:"Departe, gata.",s1:"Privim de departe 2 sec",theme:"Insecte de departe"},
-    {week:37,id:"racorita",name:"Răcoriță",open:"Umbră răcoroasă.",close:"Răcoare, gata.",s1:"Stăm 2 sec la umbră",theme:"Umbră și loc răcoros"},
+    {week:37,id:"racorica",name:"Răcorică",open:"Umbră răcoroasă.",close:"Răcoare, gata.",s1:"Stăm 2 sec la umbră",theme:"Umbră și loc răcoros"},
     {week:38,id:"talpita",name:"Tălpiță",open:"Picior pe iarbă.",close:"Pe iarbă, gata.",s1:"Tălpița pe iarbă 2 sec",theme:"Piciorul pe iarbă"},
-    {week:39,id:"marulet",name:"Măruleț",open:"Uite fructele.",close:"Fructe văzute.",s1:"Mărul pe masă 2 sec",theme:"Fructe pe care le vedem"},
-    {week:40,id:"maturita",name:"Măturiță",open:"Ajutor la treabă.",close:"Treaba, gata.",s1:"Mătura face 2 mișcări",theme:"Ajutor la treabă scurtă"},
+    {week:39,id:"merisor",name:"Merișor",open:"Uite fructele.",close:"Fructe văzute.",s1:"Mărul pe masă 2 sec",theme:"Fructe pe care le vedem"},
+    {week:40,id:"maturica",name:"Măturică",open:"Ajutor la treabă.",close:"Treaba, gata.",s1:"Mătura face 2 mișcări",theme:"Ajutor la treabă scurtă"},
     {week:41,id:"portita",name:"Portiță",open:"Drumul la poartă.",close:"La poartă, gata.",s1:"Pași până la poartă",theme:"Drumul până la poartă"},
     {week:42,id:"vantulet",name:"Vântuleț",open:"Vânt din nou.",close:"Vântul, gata.",s1:"O gură de vânt",theme:"Vânt și frunze din nou"},
     {week:43,id:"saculet",name:"Săculeț",open:"Coșul și strânsul.",close:"Strâns, gata.",s1:"Un lucru în săculeț",theme:"Coșul și strânsul"},
     {week:44,id:"inimioara",name:"Inimioară",open:"Prieteni și familie.",close:"Împreună, gata.",s1:"Mâna pe umăr 1 sec, dacă vrea",theme:"Prieteni și familie"},
-    {week:45,id:"pasulet",name:"Pașuleț",open:"Pași mulți.",close:"Pașii, gata.",s1:"Cinci pași, apoi stăm",theme:"Corp puternic, pași mulți"},
+    {week:45,id:"plimbarel",name:"Plimbărel",open:"Pași mulți.",close:"Pașii, gata.",s1:"Cinci pași, apoi stăm",theme:"Corp puternic, pași mulți"},
     {week:46,id:"degetel",name:"Degețel",open:"Arătăm împreună.",close:"Arătat, gata.",s1:"Arătăm mingea",theme:"Întrebări cu arătatul"},
-    {week:47,id:"grijita",name:"Grijiță",open:"Grijă de lucruri.",close:"Lucruri, gata.",s1:"Jucăria e a mea, 2 sec",theme:"Grijă de lucruri"},
-    {week:48,id:"salutel",name:"Salutel",open:"Salut și pa.",close:"Pa, gata.",s1:"Mâna sus: salut",theme:"Salut și la revedere"},
-    {week:49,id:"scumput",name:"Scumpuț",open:"Trei favorite.",close:"Cele trei, gata.",s1:"Mingea favorită 2 sec",theme:"Repetăm 3 favorite"},
-    {week:50,id:"linistita",name:"Liniștiță",open:"Casă liniștită.",close:"Liniște, gata.",s1:"Pași moi 2 sec",theme:"Casă liniștită"},
-    {week:51,id:"curtita",name:"Curtiță",open:"Curtea știută.",close:"Curtea, gata.",s1:"Pași în curtea cunoscută",theme:"Curtea cunoscută"},
-    {week:52,id:"blandulet",name:"Blânduleț",open:"Anul, blând.",close:"Anul, gata.",s1:"Pași blânzi prin casă",theme:"Anul se închide blând"},
+    {week:47,id:"grijuliul",name:"Grijuliul",open:"Grijă de lucruri.",close:"Lucruri, gata.",s1:"Jucăria e a mea, 2 sec",theme:"Grijă de lucruri"},
+    {week:48,id:"norocel",name:"Norocel",open:"Salut și pa.",close:"Pa, gata.",s1:"Mâna sus: salut",theme:"Salut și la revedere"},
+    {week:49,id:"scumpicel",name:"Scumpicel",open:"Trei favorite.",close:"Cele trei, gata.",s1:"Mingea favorită 2 sec",theme:"Repetăm 3 favorite"},
+    {week:50,id:"cumintel",name:"Cumințel",open:"Casă liniștită.",close:"Liniște, gata.",s1:"Pași moi 2 sec",theme:"Casă liniștită"},
+    {week:51,id:"gospodarel",name:"Gospodărel",open:"Curtea știută.",close:"Curtea, gata.",s1:"Pași în curtea cunoscută",theme:"Curtea cunoscută"},
+    {week:52,id:"blandut",name:"Blânduț",open:"Anul, blând.",close:"Anul, gata.",s1:"Pași blânzi prin casă",theme:"Anul se închide blând"},
     ] as const;
     expect(rows).toHaveLength(32);
     for (const row of rows) {
@@ -503,32 +503,32 @@ describe("PLAYFUL PILOT copy helpers", () => {
       "Coșuleț · Ordine mică în cameră",
     );
 
-    expect(playfulHeaderLabel("Pervazuț", "Iarna pe pervaz")).toBe(
-      "Pervazuț · Iarna pe pervaz",
+    expect(playfulHeaderLabel("Ferestruică", "Iarna pe pervaz")).toBe(
+      "Ferestruică · Iarna pe pervaz",
     );
-    expect(playfulHeaderLabel("Ghemuț", "Corp care se mișcă în casă")).toBe(
-      "Ghemuț · Corp care se mișcă în casă",
+    expect(playfulHeaderLabel("Ghemotoc", "Corp care se mișcă în casă")).toBe(
+      "Ghemotoc · Corp care se mișcă în casă",
     );
-    expect(playfulHeaderLabel("Năsuț", "Mirosuri din casă")).toBe(
-      "Năsuț · Mirosuri din casă",
+    expect(playfulHeaderLabel("Năsuc", "Mirosuri din casă")).toBe(
+      "Năsuc · Mirosuri din casă",
     );
     expect(playfulHeaderLabel("Ușiță", "Familia și oaspeții")).toBe(
       "Ușiță · Familia și oaspeții",
     );
-    expect(playfulHeaderLabel("Lămpiță", "Lumină de seară")).toBe(
-      "Lămpiță · Lumină de seară",
+    expect(playfulHeaderLabel("Lampadar", "Lumină de seară")).toBe(
+      "Lampadar · Lumină de seară",
     );
-    expect(playfulHeaderLabel("Amintioară", "Jumătate de an: repetăm favoritele")).toBe(
-      "Amintioară · Jumătate de an: repetăm favoritele",
+    expect(playfulHeaderLabel("Amintire", "Jumătate de an: repetăm favoritele")).toBe(
+      "Amintire · Jumătate de an: repetăm favoritele",
     );
-    expect(playfulHeaderLabel("Fulguță", "Zăpadă sau ploaie la geam")).toBe(
-      "Fulguță · Zăpadă sau ploaie la geam",
+    expect(playfulHeaderLabel("Fulgușor", "Zăpadă sau ploaie la geam")).toBe(
+      "Fulgușor · Zăpadă sau ploaie la geam",
     );
-    expect(playfulHeaderLabel("Noroiuț", "Dezgheț și noroi")).toBe(
-      "Noroiuț · Dezgheț și noroi",
+    expect(playfulHeaderLabel("Murdărel", "Dezgheț și noroi")).toBe(
+      "Murdărel · Dezgheț și noroi",
     );
-    expect(playfulHeaderLabel("Mugurel", "Muguri și iarbă nouă")).toBe(
-      "Mugurel · Muguri și iarbă nouă",
+    expect(playfulHeaderLabel("Muguraș", "Muguri și iarbă nouă")).toBe(
+      "Muguraș · Muguri și iarbă nouă",
     );
     expect(playfulHeaderLabel("Cioculeț", "Păsări dimineața")).toBe(
       "Cioculeț · Păsări dimineața",
@@ -536,11 +536,11 @@ describe("PLAYFUL PILOT copy helpers", () => {
     expect(playfulHeaderLabel("Sămânțică", "Semințe și udat")).toBe(
       "Sămânțică · Semințe și udat",
     );
-    expect(playfulHeaderLabel("Rotunduță", "Mingea afară")).toBe(
-      "Rotunduță · Mingea afară",
+    expect(playfulHeaderLabel("Balonaș", "Mingea afară")).toBe(
+      "Balonaș · Mingea afară",
     );
-    expect(playfulHeaderLabel("Nisipuț", "Nisip și găleată")).toBe(
-      "Nisipuț · Nisip și găleată",
+    expect(playfulHeaderLabel("Lopețică", "Nisip și găleată")).toBe(
+      "Lopețică · Nisip și găleată",
     );
     expect(playfulHeaderLabel("Umbriță", "Umbre pe pământ")).toBe(
       "Umbriță · Umbre pe pământ",
@@ -551,17 +551,17 @@ describe("PLAYFUL PILOT copy helpers", () => {
     expect(playfulHeaderLabel("Gândăcel", "Insecte de departe")).toBe(
       "Gândăcel · Insecte de departe",
     );
-    expect(playfulHeaderLabel("Răcoriță", "Umbră și loc răcoros")).toBe(
-      "Răcoriță · Umbră și loc răcoros",
+    expect(playfulHeaderLabel("Răcorică", "Umbră și loc răcoros")).toBe(
+      "Răcorică · Umbră și loc răcoros",
     );
     expect(playfulHeaderLabel("Tălpiță", "Piciorul pe iarbă")).toBe(
       "Tălpiță · Piciorul pe iarbă",
     );
-    expect(playfulHeaderLabel("Măruleț", "Fructe pe care le vedem")).toBe(
-      "Măruleț · Fructe pe care le vedem",
+    expect(playfulHeaderLabel("Merișor", "Fructe pe care le vedem")).toBe(
+      "Merișor · Fructe pe care le vedem",
     );
-    expect(playfulHeaderLabel("Măturiță", "Ajutor la treabă scurtă")).toBe(
-      "Măturiță · Ajutor la treabă scurtă",
+    expect(playfulHeaderLabel("Măturică", "Ajutor la treabă scurtă")).toBe(
+      "Măturică · Ajutor la treabă scurtă",
     );
     expect(playfulHeaderLabel("Portiță", "Drumul până la poartă")).toBe(
       "Portiță · Drumul până la poartă",
@@ -575,29 +575,29 @@ describe("PLAYFUL PILOT copy helpers", () => {
     expect(playfulHeaderLabel("Inimioară", "Prieteni și familie")).toBe(
       "Inimioară · Prieteni și familie",
     );
-    expect(playfulHeaderLabel("Pașuleț", "Corp puternic, pași mulți")).toBe(
-      "Pașuleț · Corp puternic, pași mulți",
+    expect(playfulHeaderLabel("Plimbărel", "Corp puternic, pași mulți")).toBe(
+      "Plimbărel · Corp puternic, pași mulți",
     );
     expect(playfulHeaderLabel("Degețel", "Întrebări cu arătatul")).toBe(
       "Degețel · Întrebări cu arătatul",
     );
-    expect(playfulHeaderLabel("Grijiță", "Grijă de lucruri")).toBe(
-      "Grijiță · Grijă de lucruri",
+    expect(playfulHeaderLabel("Grijuliul", "Grijă de lucruri")).toBe(
+      "Grijuliul · Grijă de lucruri",
     );
-    expect(playfulHeaderLabel("Salutel", "Salut și la revedere")).toBe(
-      "Salutel · Salut și la revedere",
+    expect(playfulHeaderLabel("Norocel", "Salut și la revedere")).toBe(
+      "Norocel · Salut și la revedere",
     );
-    expect(playfulHeaderLabel("Scumpuț", "Repetăm 3 favorite")).toBe(
-      "Scumpuț · Repetăm 3 favorite",
+    expect(playfulHeaderLabel("Scumpicel", "Repetăm 3 favorite")).toBe(
+      "Scumpicel · Repetăm 3 favorite",
     );
-    expect(playfulHeaderLabel("Liniștiță", "Casă liniștită")).toBe(
-      "Liniștiță · Casă liniștită",
+    expect(playfulHeaderLabel("Cumințel", "Casă liniștită")).toBe(
+      "Cumințel · Casă liniștită",
     );
-    expect(playfulHeaderLabel("Curtiță", "Curtea cunoscută")).toBe(
-      "Curtiță · Curtea cunoscută",
+    expect(playfulHeaderLabel("Gospodărel", "Curtea cunoscută")).toBe(
+      "Gospodărel · Curtea cunoscută",
     );
-    expect(playfulHeaderLabel("Blânduleț", "Anul se închide blând")).toBe(
-      "Blânduleț · Anul se închide blând",
+    expect(playfulHeaderLabel("Blânduț", "Anul se închide blând")).toBe(
+      "Blânduț · Anul se închide blând",
     );
     expect(PLAYFUL_CHARACTERS.manuta.name).toBe("Mânuță");
     expect(PLAYFUL_CHARACTERS.manuta.name).not.toBe("Mănuță");
@@ -814,45 +814,45 @@ describe("PLAYFUL PILOT copy helpers", () => {
 
   test("S21–S52 names lock Romanian diacritics on SVG + chrome", () => {
     const chrome = readFileSync(resolve("src/components/playful-chrome.tsx"), "utf8");
-    expect(PLAYFUL_CHARACTERS.pervazut.name).toBe("Pervazuț");
-    expect(svgTitle("pervazut.svg")).toBe("Pervazuț");
-    expect(chrome).toContain("<title>Pervazuț</title>");
-    expect(PLAYFUL_CHARACTERS.ghemut.name).toBe("Ghemuț");
-    expect(svgTitle("ghemut.svg")).toBe("Ghemuț");
-    expect(chrome).toContain("<title>Ghemuț</title>");
-    expect(PLAYFUL_CHARACTERS.nasut.name).toBe("Năsuț");
-    expect(svgTitle("nasut.svg")).toBe("Năsuț");
-    expect(chrome).toContain("<title>Năsuț</title>");
+    expect(PLAYFUL_CHARACTERS.ferestruica.name).toBe("Ferestruică");
+    expect(svgTitle("ferestruica.svg")).toBe("Ferestruică");
+    expect(chrome).toContain("<title>Ferestruică</title>");
+    expect(PLAYFUL_CHARACTERS.ghemotoc.name).toBe("Ghemotoc");
+    expect(svgTitle("ghemotoc.svg")).toBe("Ghemotoc");
+    expect(chrome).toContain("<title>Ghemotoc</title>");
+    expect(PLAYFUL_CHARACTERS.nasuc.name).toBe("Năsuc");
+    expect(svgTitle("nasuc.svg")).toBe("Năsuc");
+    expect(chrome).toContain("<title>Năsuc</title>");
     expect(PLAYFUL_CHARACTERS.usita.name).toBe("Ușiță");
     expect(svgTitle("usita.svg")).toBe("Ușiță");
     expect(chrome).toContain("<title>Ușiță</title>");
-    expect(PLAYFUL_CHARACTERS.lampita.name).toBe("Lămpiță");
-    expect(svgTitle("lampita.svg")).toBe("Lămpiță");
-    expect(chrome).toContain("<title>Lămpiță</title>");
-    expect(PLAYFUL_CHARACTERS.amintioara.name).toBe("Amintioară");
-    expect(svgTitle("amintioara.svg")).toBe("Amintioară");
-    expect(chrome).toContain("<title>Amintioară</title>");
-    expect(PLAYFUL_CHARACTERS.fulguta.name).toBe("Fulguță");
-    expect(svgTitle("fulguta.svg")).toBe("Fulguță");
-    expect(chrome).toContain("<title>Fulguță</title>");
-    expect(PLAYFUL_CHARACTERS.noroiut.name).toBe("Noroiuț");
-    expect(svgTitle("noroiut.svg")).toBe("Noroiuț");
-    expect(chrome).toContain("<title>Noroiuț</title>");
-    expect(PLAYFUL_CHARACTERS.mugurel.name).toBe("Mugurel");
-    expect(svgTitle("mugurel.svg")).toBe("Mugurel");
-    expect(chrome).toContain("<title>Mugurel</title>");
+    expect(PLAYFUL_CHARACTERS.lampadar.name).toBe("Lampadar");
+    expect(svgTitle("lampadar.svg")).toBe("Lampadar");
+    expect(chrome).toContain("<title>Lampadar</title>");
+    expect(PLAYFUL_CHARACTERS.amintire.name).toBe("Amintire");
+    expect(svgTitle("amintire.svg")).toBe("Amintire");
+    expect(chrome).toContain("<title>Amintire</title>");
+    expect(PLAYFUL_CHARACTERS.fulgusor.name).toBe("Fulgușor");
+    expect(svgTitle("fulgusor.svg")).toBe("Fulgușor");
+    expect(chrome).toContain("<title>Fulgușor</title>");
+    expect(PLAYFUL_CHARACTERS.murdarel.name).toBe("Murdărel");
+    expect(svgTitle("murdarel.svg")).toBe("Murdărel");
+    expect(chrome).toContain("<title>Murdărel</title>");
+    expect(PLAYFUL_CHARACTERS.muguras.name).toBe("Muguraș");
+    expect(svgTitle("muguras.svg")).toBe("Muguraș");
+    expect(chrome).toContain("<title>Muguraș</title>");
     expect(PLAYFUL_CHARACTERS.cioculet.name).toBe("Cioculeț");
     expect(svgTitle("cioculet.svg")).toBe("Cioculeț");
     expect(chrome).toContain("<title>Cioculeț</title>");
     expect(PLAYFUL_CHARACTERS.samantica.name).toBe("Sămânțică");
     expect(svgTitle("samantica.svg")).toBe("Sămânțică");
     expect(chrome).toContain("<title>Sămânțică</title>");
-    expect(PLAYFUL_CHARACTERS.rotunduta.name).toBe("Rotunduță");
-    expect(svgTitle("rotunduta.svg")).toBe("Rotunduță");
-    expect(chrome).toContain("<title>Rotunduță</title>");
-    expect(PLAYFUL_CHARACTERS.nisiput.name).toBe("Nisipuț");
-    expect(svgTitle("nisiput.svg")).toBe("Nisipuț");
-    expect(chrome).toContain("<title>Nisipuț</title>");
+    expect(PLAYFUL_CHARACTERS.balonas.name).toBe("Balonaș");
+    expect(svgTitle("balonas.svg")).toBe("Balonaș");
+    expect(chrome).toContain("<title>Balonaș</title>");
+    expect(PLAYFUL_CHARACTERS.lopetica.name).toBe("Lopețică");
+    expect(svgTitle("lopetica.svg")).toBe("Lopețică");
+    expect(chrome).toContain("<title>Lopețică</title>");
     expect(PLAYFUL_CHARACTERS.umbrita.name).toBe("Umbriță");
     expect(svgTitle("umbrita.svg")).toBe("Umbriță");
     expect(chrome).toContain("<title>Umbriță</title>");
@@ -862,18 +862,18 @@ describe("PLAYFUL PILOT copy helpers", () => {
     expect(PLAYFUL_CHARACTERS.gandacel.name).toBe("Gândăcel");
     expect(svgTitle("gandacel.svg")).toBe("Gândăcel");
     expect(chrome).toContain("<title>Gândăcel</title>");
-    expect(PLAYFUL_CHARACTERS.racorita.name).toBe("Răcoriță");
-    expect(svgTitle("racorita.svg")).toBe("Răcoriță");
-    expect(chrome).toContain("<title>Răcoriță</title>");
+    expect(PLAYFUL_CHARACTERS.racorica.name).toBe("Răcorică");
+    expect(svgTitle("racorica.svg")).toBe("Răcorică");
+    expect(chrome).toContain("<title>Răcorică</title>");
     expect(PLAYFUL_CHARACTERS.talpita.name).toBe("Tălpiță");
     expect(svgTitle("talpita.svg")).toBe("Tălpiță");
     expect(chrome).toContain("<title>Tălpiță</title>");
-    expect(PLAYFUL_CHARACTERS.marulet.name).toBe("Măruleț");
-    expect(svgTitle("marulet.svg")).toBe("Măruleț");
-    expect(chrome).toContain("<title>Măruleț</title>");
-    expect(PLAYFUL_CHARACTERS.maturita.name).toBe("Măturiță");
-    expect(svgTitle("maturita.svg")).toBe("Măturiță");
-    expect(chrome).toContain("<title>Măturiță</title>");
+    expect(PLAYFUL_CHARACTERS.merisor.name).toBe("Merișor");
+    expect(svgTitle("merisor.svg")).toBe("Merișor");
+    expect(chrome).toContain("<title>Merișor</title>");
+    expect(PLAYFUL_CHARACTERS.maturica.name).toBe("Măturică");
+    expect(svgTitle("maturica.svg")).toBe("Măturică");
+    expect(chrome).toContain("<title>Măturică</title>");
     expect(PLAYFUL_CHARACTERS.portita.name).toBe("Portiță");
     expect(svgTitle("portita.svg")).toBe("Portiță");
     expect(chrome).toContain("<title>Portiță</title>");
@@ -886,30 +886,30 @@ describe("PLAYFUL PILOT copy helpers", () => {
     expect(PLAYFUL_CHARACTERS.inimioara.name).toBe("Inimioară");
     expect(svgTitle("inimioara.svg")).toBe("Inimioară");
     expect(chrome).toContain("<title>Inimioară</title>");
-    expect(PLAYFUL_CHARACTERS.pasulet.name).toBe("Pașuleț");
-    expect(svgTitle("pasulet.svg")).toBe("Pașuleț");
-    expect(chrome).toContain("<title>Pașuleț</title>");
+    expect(PLAYFUL_CHARACTERS.plimbarel.name).toBe("Plimbărel");
+    expect(svgTitle("plimbarel.svg")).toBe("Plimbărel");
+    expect(chrome).toContain("<title>Plimbărel</title>");
     expect(PLAYFUL_CHARACTERS.degetel.name).toBe("Degețel");
     expect(svgTitle("degetel.svg")).toBe("Degețel");
     expect(chrome).toContain("<title>Degețel</title>");
-    expect(PLAYFUL_CHARACTERS.grijita.name).toBe("Grijiță");
-    expect(svgTitle("grijita.svg")).toBe("Grijiță");
-    expect(chrome).toContain("<title>Grijiță</title>");
-    expect(PLAYFUL_CHARACTERS.salutel.name).toBe("Salutel");
-    expect(svgTitle("salutel.svg")).toBe("Salutel");
-    expect(chrome).toContain("<title>Salutel</title>");
-    expect(PLAYFUL_CHARACTERS.scumput.name).toBe("Scumpuț");
-    expect(svgTitle("scumput.svg")).toBe("Scumpuț");
-    expect(chrome).toContain("<title>Scumpuț</title>");
-    expect(PLAYFUL_CHARACTERS.linistita.name).toBe("Liniștiță");
-    expect(svgTitle("linistita.svg")).toBe("Liniștiță");
-    expect(chrome).toContain("<title>Liniștiță</title>");
-    expect(PLAYFUL_CHARACTERS.curtita.name).toBe("Curtiță");
-    expect(svgTitle("curtita.svg")).toBe("Curtiță");
-    expect(chrome).toContain("<title>Curtiță</title>");
-    expect(PLAYFUL_CHARACTERS.blandulet.name).toBe("Blânduleț");
-    expect(svgTitle("blandulet.svg")).toBe("Blânduleț");
-    expect(chrome).toContain("<title>Blânduleț</title>");
+    expect(PLAYFUL_CHARACTERS.grijuliul.name).toBe("Grijuliul");
+    expect(svgTitle("grijuliul.svg")).toBe("Grijuliul");
+    expect(chrome).toContain("<title>Grijuliul</title>");
+    expect(PLAYFUL_CHARACTERS.norocel.name).toBe("Norocel");
+    expect(svgTitle("norocel.svg")).toBe("Norocel");
+    expect(chrome).toContain("<title>Norocel</title>");
+    expect(PLAYFUL_CHARACTERS.scumpicel.name).toBe("Scumpicel");
+    expect(svgTitle("scumpicel.svg")).toBe("Scumpicel");
+    expect(chrome).toContain("<title>Scumpicel</title>");
+    expect(PLAYFUL_CHARACTERS.cumintel.name).toBe("Cumințel");
+    expect(svgTitle("cumintel.svg")).toBe("Cumințel");
+    expect(chrome).toContain("<title>Cumințel</title>");
+    expect(PLAYFUL_CHARACTERS.gospodarel.name).toBe("Gospodărel");
+    expect(svgTitle("gospodarel.svg")).toBe("Gospodărel");
+    expect(chrome).toContain("<title>Gospodărel</title>");
+    expect(PLAYFUL_CHARACTERS.blandut.name).toBe("Blânduț");
+    expect(svgTitle("blandut.svg")).toBe("Blânduț");
+    expect(chrome).toContain("<title>Blânduț</title>");
   });
 
   test("S1–S52 overlays have no sound fields (S3 ritual lock contains Ascultăm)", () => {
