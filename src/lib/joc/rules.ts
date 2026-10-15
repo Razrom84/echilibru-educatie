@@ -82,15 +82,13 @@ export function clockFrom(clock: SceneClock, nowMs: number, sceneCount: number):
   };
 }
 
-/**
- * The next scene starts clean, but the idle clock stays on the last real touch.
- * A scene change is not an interaction, and it must not postpone the 10s exit.
- */
+/** The next scene starts its own hold. The session start does not move. */
 export function showNextScene(clock: SceneClock, nowMs: number): SceneClock {
   return {
     ...clock,
     sceneIndex: clock.sceneIndex + 1,
     sceneStartedAtMs: nowMs,
+    lastInteractionAtMs: nowMs,
     tappedAtMs: null,
   };
 }
@@ -107,7 +105,7 @@ export function createPlayClock(startedAtMs: number): SceneClock {
 
 /** A restarted effect keeps the original session and the original idle baseline. */
 export function resumePlayClock(clock: SceneClock | null, startedAtMs: number): SceneClock {
-  if (clock && clock.sessionStartedAtMs > 0) return clock;
+  if (clock) return clock;
   return createPlayClock(startedAtMs);
 }
 
@@ -132,20 +130,79 @@ export function clockTick(
   return { decision, clock: showNextScene(clock, nowMs) };
 }
 
+/**
+ * The 15-minute cap wins over everything.
+ * Each scene then moves on by itself after JOC_MIN_SCENE_MS, with or without a tap.
+ * Ten seconds without a touch leaves only when that scene is not ready to move yet.
+ */
 export function decidePlay(tick: PlayTick): PlayDecision {
   if (tick.sessionElapsedMs >= JOC_SESSION_MAX_MS) {
     return { type: "mission", reason: "cap" };
   }
+  if (tick.sceneElapsedMs >= JOC_MIN_SCENE_MS) {
+    if (tick.sceneIndex + 1 >= tick.sceneCount) {
+      return { type: "mission", reason: "finished" };
+    }
+    return { type: "next-scene" };
+  }
   if (tick.msSinceInteraction >= JOC_IDLE_MS) {
     return { type: "mission", reason: "idle" };
   }
-  const sceneReady =
-    tick.tapped &&
-    tick.sceneElapsedMs >= JOC_MIN_SCENE_MS &&
-    tick.msSinceTap >= JOC_MIN_SCENE_MS;
-  if (!sceneReady) return { type: "stay" };
-  if (tick.sceneIndex + 1 >= tick.sceneCount) {
-    return { type: "mission", reason: "finished" };
-  }
-  return { type: "next-scene" };
+  return { type: "stay" };
+}
+
+export type PlayLoop = {
+  stop: () => void;
+};
+
+/**
+ * Shared play clock. The 15-minute cap uses `startedAtMs` and still fires
+ * while a fade is holding the next scene.
+ */
+export function startPlayLoop(options: {
+  startedAtMs: number;
+  sceneCount: number;
+  getClock: () => SceneClock;
+  setClock: (clock: SceneClock) => void;
+  now?: () => number;
+  isSuspended?: () => boolean;
+  onScene: (sceneIndex: number, commit: () => void) => void;
+  onMission: (reason: Exclude<MissionReason, "parent">) => void;
+  intervalMs?: number;
+}): PlayLoop {
+  let waiting = false;
+  let stopped = false;
+  const now = options.now ?? (() => Date.now());
+  const finish = (reason: Exclude<MissionReason, "parent">) => {
+    if (stopped) return;
+    stopped = true;
+    clearInterval(timer);
+    options.onMission(reason);
+  };
+  const timer = setInterval(() => {
+    if (stopped || options.startedAtMs <= 0) return;
+    const tickNow = now();
+    if (tickNow - options.startedAtMs >= JOC_SESSION_MAX_MS) {
+      finish("cap");
+      return;
+    }
+    if (waiting || options.isSuspended?.()) return;
+    const decision = decidePlay(clockFrom(options.getClock(), tickNow, options.sceneCount));
+    if (decision.type === "mission") {
+      finish(decision.reason);
+      return;
+    }
+    if (decision.type !== "next-scene") return;
+    waiting = true;
+    options.onScene(options.getClock().sceneIndex + 1, () => {
+      options.setClock(showNextScene(options.getClock(), now()));
+      waiting = false;
+    });
+  }, options.intervalMs ?? 250);
+  return {
+    stop() {
+      stopped = true;
+      clearInterval(timer);
+    },
+  };
 }

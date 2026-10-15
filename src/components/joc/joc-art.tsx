@@ -33,6 +33,9 @@ export function JocObject({
   if (object === "palm") return <Palm className={motionClass} />;
   if (object === "cow") return <Cow className={motionClass} />;
   if (object === "leaf") return <Leaf className={motionClass} />;
+  if (object === "door") return <Door className={motionClass} />;
+  if (object === "shoe") return <Shoe className={motionClass} />;
+  if (object === "toy") return <Toy className={motionClass} />;
   return <Stone className={motionClass} />;
 }
 
@@ -48,6 +51,44 @@ function Stone({ className }: { className?: string }) {
       <g className={cn("joc-motion", className)} style={{ transformOrigin: "50% 70%" }}>
         <ellipse cx="100" cy="112" rx="58" ry="36" fill="#C4B59A" stroke="#8C7A62" strokeWidth="3" />
         <ellipse cx="78" cy="100" rx="16" ry="10" fill="#E4D7C4" opacity="0.9" />
+      </g>
+    </svg>
+  );
+}
+
+function Door({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 200 200" className="size-[74%] overflow-visible" aria-hidden>
+      <g className={cn("joc-motion", className)} style={{ transformOrigin: "50% 80%" }}>
+        <rect x="58" y="36" width="84" height="132" rx="6" fill="#E7D3A4" stroke="#B08968" strokeWidth="3" />
+        <circle cx="124" cy="104" r="5" fill="#B08968" />
+      </g>
+    </svg>
+  );
+}
+
+function Toy({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 200 200" className="size-[74%] overflow-visible" aria-hidden>
+      <g className={cn("joc-motion", className)} style={{ transformOrigin: "50% 60%" }}>
+        <circle cx="100" cy="96" r="52" fill="#E07A3D" stroke="#B56C32" strokeWidth="3" />
+        <path d="M62 78 C86 64 114 64 138 78" fill="none" stroke="#F6C7A4" strokeWidth="4" strokeLinecap="round" />
+        <path d="M70 118 C90 132 110 132 130 118" fill="none" stroke="#B56C32" strokeWidth="3" strokeLinecap="round" />
+      </g>
+    </svg>
+  );
+}
+
+function Shoe({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 200 200" className="size-[74%] overflow-visible" aria-hidden>
+      <g className={cn("joc-motion", className)} style={{ transformOrigin: "50% 70%" }}>
+        <path
+          d="M46 118 C70 92 96 96 112 104 C132 78 156 86 164 108 C172 128 150 142 46 142 Z"
+          fill="#F3C7A4"
+          stroke="#D9A07A"
+          strokeWidth="3"
+        />
       </g>
     </svg>
   );

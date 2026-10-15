@@ -18,6 +18,7 @@ export type JocActivitySource = {
   titlu: string;
   pasi: readonly string[];
   gata_cand: string;
+  materiale?: readonly string[];
   pilon?: string;
 };
 
@@ -38,10 +39,13 @@ const PILLAR_RANK: Record<string, number> = {
 
 const OBJECT_RULES: readonly { kind: JocObjectKind; label: string; pattern: RegExp }[] = [
   { kind: "balloon", label: "Balon", pattern: /balon/ },
+  { kind: "shoe", label: "Papuc", pattern: /papuc|pantof/ },
+  { kind: "door", label: "Ușă", pattern: /\busa\b|clanta|\bprag\b/ },
   { kind: "bucket", label: "Găleată", pattern: /galeat|lopat|pamant|nisip/ },
-  { kind: "palm", label: "Palmă", pattern: /\b(palma|palme|maini|bate)\b/ },
+  { kind: "palm", label: "Palmă", pattern: /\b(palma|palme|maini|mana|bate)\b/ },
   { kind: "cow", label: "Vacă", pattern: /\bvaca\b|\bmu\b/ },
   { kind: "leaf", label: "Frunză", pattern: /frunz/ },
+  { kind: "toy", label: "Jucărie", pattern: /jucarie|\bminge\b/ },
 ];
 
 const STONE_MOTIONS: readonly JocMotion[] = ["hold", "sway", "nod", "rise", "down"];
@@ -50,10 +54,24 @@ function fold(text: string): string {
   return text.toLocaleLowerCase("ro-RO").normalize("NFD").replace(/\p{M}/gu, "");
 }
 
-function objectFor(text: string): { kind: JocObjectKind; label: string } {
+function matchObject(text: string): { kind: JocObjectKind; label: string } | null {
   const folded = fold(text);
   for (const rule of OBJECT_RULES) {
     if (rule.pattern.test(folded)) return { kind: rule.kind, label: rule.label };
+  }
+  return null;
+}
+
+/** The line on screen wins, then the materials, then the rest of the activity. */
+function objectFor(prompt: string, activity?: JocActivitySource): { kind: JocObjectKind; label: string } {
+  const layers = [
+    prompt,
+    (activity?.materiale ?? []).join(" "),
+    `${activity?.titlu ?? ""} ${(activity?.pasi ?? []).join(" ")}`,
+  ];
+  for (const layer of layers) {
+    const match = matchObject(layer);
+    if (match) return match;
   }
   return { kind: "stone", label: "Piatră" };
 }
@@ -83,9 +101,10 @@ function sceneFrom(
   reaction: string,
   id: string,
 ): JocScene {
-  const object = objectFor(`${activity.titlu} ${activity.pasi.join(" ")} ${prompt}`);
+  const object = objectFor(prompt, activity);
   return {
     id,
+    caption: clean(activity.titlu),
     prompt,
     reaction,
     motion: motionFor(object.kind, index),
@@ -93,14 +112,22 @@ function sceneFrom(
   };
 }
 
+function actionLines(activity: JocActivitySource): string[] {
+  const steps = activity.pasi.map(clean).filter(Boolean);
+  if (steps.length > 0) return steps;
+  const title = clean(activity.titlu);
+  return title ? [title] : ["Încet."];
+}
+
 export function scenesForDay(activities: readonly JocActivitySource[]): JocScene[] {
   if (activities.length === 0) return [];
 
   if (activities.length >= JOC_SCENE_MIN) {
     return activities.slice(0, JOC_SCENE_MAX).map((activity, index) => {
-      const step = activity.pasi.map(clean).find(Boolean) ?? "Încet.";
-      const title = clean(activity.titlu) || step;
-      return sceneFrom(activity, index, title, step, activity.id);
+      const steps = actionLines(activity);
+      const action = steps[0] ?? "Încet.";
+      const reaction = steps[1] ?? action;
+      return sceneFrom(activity, index, action, reaction, activity.id);
     });
   }
 
@@ -136,10 +163,15 @@ export function scenesForDay(activities: readonly JocActivitySource[]): JocScene
   return scenes.slice(0, JOC_SCENE_MAX);
 }
 
-function missionParent(activities: readonly JocActivitySource[]): string {
-  const done = activities.map((activity) => clean(activity.gata_cand)).filter(Boolean);
-  if (done.length > 0) return done.join(" ");
-  return activities.map((activity) => clean(activity.titlu)).filter(Boolean).join(" ");
+/** One or two concrete steps, short enough for the parent card. */
+export function missionAction(activities: readonly JocActivitySource[]): string {
+  const steps = activities.flatMap((activity) => activity.pasi.map(clean).filter(Boolean));
+  const first = steps[0] ?? activities.map((activity) => clean(activity.titlu)).find(Boolean) ?? "";
+  const second = steps[1];
+  if (!second) return first;
+  const both = `${first} ${second}`;
+  if (both.length > 160) return first;
+  return both;
 }
 
 function ritualLine(ritualClose: string, characterName: string): string {
@@ -188,8 +220,9 @@ export function buildDayLevels(input: {
       characterSrc: input.character.src,
       objectLabel: object.label,
       cardLine: first ? clean(first.titlu) : getDayName(day),
-      missionParent: missionParent(dayActivities),
+      missionParent: missionAction(dayActivities),
       ritual: ritualLine(input.ritualClose, input.character.name),
+      activityIds: dayActivities.map((activity) => activity.id),
       scenes,
     });
   }
@@ -223,5 +256,11 @@ function activitySource(activity: Activity): JocActivitySource {
     pasi: activity.pasi,
     gata_cand: activity.gata_cand,
     pilon: activity.pilon,
+    materiale: activity.materiale,
   };
+}
+
+/** Only the Bucharest weekday opens. The other six stay on the list. */
+export function isPlayableJocDay(day: number, todayDay: number): boolean {
+  return day >= 1 && day <= 7 && day === todayDay;
 }

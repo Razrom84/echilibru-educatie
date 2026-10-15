@@ -5,35 +5,37 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { JocObject } from "@/components/joc/joc-art";
 import { JOC_COPY, openMissionLabel } from "@/lib/joc/copy";
-import { jocWeekLevels, type JocWeekPlay } from "@/lib/joc/day-levels";
+import { isPlayableJocDay, jocWeekLevels, type JocWeekPlay } from "@/lib/joc/day-levels";
 import {
+  activityIdsMarkedDone,
   compareEntriesNewestFirst,
   createJournalEntry,
   formatJournalDate,
   formatJournalText,
+  isMissionOpen,
+  missionUiLabel,
   readJournal,
   sessionsOnDate,
   updateJournalEntry,
   writeJournal,
   type JocJournalEntry,
+  type JocMissionStatus,
 } from "@/lib/joc/journal";
 import { jocLegacyLevelById, objectLabel, sceneObject, type JocLevel } from "@/lib/joc/levels";
 import {
   JOC_FADE_MS,
   canStartSession,
-  clockFrom,
   clockNudge,
   clockTap,
-  clockTick,
-  decidePlay,
   formatScreenDuration,
   resumePlayClock,
   screenDurationMs,
   sessionStatusLabel,
+  startPlayLoop,
   type SceneClock,
 } from "@/lib/joc/rules";
 import { useFamily } from "@/lib/family-context";
-import { bucharestToday } from "@/lib/program-week";
+import { bucharestToday, civilDayOfWeek } from "@/lib/program-week";
 
 type Mode =
   | { kind: "picker" }
@@ -47,13 +49,15 @@ function browserStorage(): Storage | null {
 }
 
 export function JocView() {
-  const { viewWeek } = useFamily();
+  const { viewWeek, completions, toggleComplete } = useFamily();
   const weekPlay = useMemo(() => jocWeekLevels(viewWeek), [viewWeek]);
   const [ready, setReady] = useState(false);
   const [entries, setEntries] = useState<JocJournalEntry[]>([]);
   const [mode, setMode] = useState<Mode>({ kind: "picker" });
   const startingRef = useRef(false);
+  const closingRef = useRef(false);
   const today = bucharestToday();
+  const todayDay = civilDayOfWeek(today);
 
   const findLevel = useCallback(
     (id: string) => weekPlay?.levels.find((level) => level.id === id) ?? jocLegacyLevelById(id),
@@ -92,6 +96,7 @@ export function JocView() {
 
   function startLevel(level: JocLevel) {
     if (startingRef.current) return;
+    if (!isPlayableJocDay(level.day, todayDay)) return;
     if (!canStartSession(sessionsOnDate(entries, today))) return;
     startingRef.current = true;
     const startedAtMs = Date.now();
@@ -105,10 +110,15 @@ export function JocView() {
     setMode({ kind: "play", levelId: level.id, entryId: entry.id, startedAtMs });
   }
 
-  function openRitual(levelId: string, entryId: string) {
+  function closeMission(level: JocLevel, entryId: string, status: JocMissionStatus) {
+    if (closingRef.current) return;
+    closingRef.current = true;
     startingRef.current = false;
-    patchEntry(entryId, { missionDone: true });
-    setMode({ kind: "ritual", levelId });
+    patchEntry(entryId, { missionStatus: status });
+    const done = new Set(completions.map((row) => row.activity_id));
+    const ids = activityIdsMarkedDone(status, level.activityIds ?? [], done);
+    setMode({ kind: "ritual", levelId: level.id });
+    for (const id of ids) void toggleComplete(id);
   }
 
   if (!ready) {
@@ -133,10 +143,15 @@ export function JocView() {
         <JocPicker
           weekPlay={weekPlay}
           today={today}
+          todayDay={todayDay}
           entries={entries}
           findLevel={findLevel}
           onStart={startLevel}
-          onDone={(entry) => openRitual(entry.levelId, entry.id)}
+          onClose={(entry, status) => {
+            const levelForEntry = findLevel(entry.levelId);
+            if (!levelForEntry) return;
+            closeMission(levelForEntry, entry.id, status);
+          }}
           onNote={(id, parentNote) => patchEntry(id, { parentNote })}
         />
       ) : null}
@@ -158,12 +173,18 @@ export function JocView() {
           level={level}
           note={entries.find((entry) => entry.id === mode.entryId)?.parentNote ?? ""}
           onNote={(parentNote) => patchEntry(mode.entryId, { parentNote })}
-          onDone={() => openRitual(level.id, mode.entryId)}
+          onClose={(status) => closeMission(level, mode.entryId, status)}
         />
       ) : null}
 
       {mode.kind === "ritual" && level ? (
-        <JocRitual level={level} onBack={() => setMode({ kind: "picker" })} />
+        <JocRitual
+          level={level}
+          onBack={() => {
+            closingRef.current = false;
+            setMode({ kind: "picker" });
+          }}
+        />
       ) : null}
     </div>
   );
@@ -172,24 +193,26 @@ export function JocView() {
 function JocPicker({
   weekPlay,
   today,
+  todayDay,
   entries,
   findLevel,
   onStart,
-  onDone,
+  onClose,
   onNote,
 }: {
   weekPlay: JocWeekPlay | null;
   today: string;
+  todayDay: number;
   entries: JocJournalEntry[];
   findLevel: (id: string) => JocLevel | null;
   onStart: (level: JocLevel) => void;
-  onDone: (entry: JocJournalEntry) => void;
+  onClose: (entry: JocJournalEntry, status: JocMissionStatus) => void;
   onNote: (id: string, note: string) => void;
 }) {
   const started = sessionsOnDate(entries, today);
   const canStart = canStartSession(started);
   const open = entries
-    .filter((entry) => entry.date === today && !entry.missionDone)
+    .filter((entry) => entry.date === today && isMissionOpen(entry))
     .sort(compareEntriesNewestFirst);
   const history = [...entries].sort(compareEntriesNewestFirst);
 
@@ -217,6 +240,7 @@ function JocPicker({
         {weekPlay?.theme ? <p className="text-base text-muted-foreground">{weekPlay.theme}</p> : null}
         <p className="max-w-xl text-base leading-relaxed text-muted-foreground">{JOC_COPY.intro}</p>
         <p className="text-sm font-medium">{sessionStatusLabel(started)}</p>
+        <p className="text-sm text-muted-foreground">{JOC_COPY.onlyToday}</p>
       </header>
 
       {open.length > 0 ? (
@@ -227,9 +251,7 @@ function JocPicker({
               return (
                 <article key={entry.id} className="space-y-3 rounded-2xl border border-border bg-card p-4">
                   <h2 className="font-heading text-2xl">{openMissionLabel(entry.levelName)}</h2>
-                  <Button type="button" className="h-12 px-5 text-base" onClick={() => onDone(entry)}>
-                    {JOC_COPY.done}
-                  </Button>
+                  <MissionActions onClose={(status) => onClose(entry, status)} />
                 </article>
               );
             }
@@ -237,9 +259,7 @@ function JocPicker({
               <article key={entry.id} className="space-y-3 rounded-2xl border border-border bg-card p-4">
                 <h2 className="font-heading text-2xl">{openMissionLabel(level.name)}</h2>
                 <p className="text-lg leading-relaxed">{level.missionParent}</p>
-                <Button type="button" className="h-12 px-5 text-base" onClick={() => onDone(entry)}>
-                  {JOC_COPY.done}
-                </Button>
+                <MissionActions onClose={(status) => onClose(entry, status)} />
               </article>
             );
           })}
@@ -248,19 +268,22 @@ function JocPicker({
 
       {weekPlay && weekPlay.levels.length > 0 ? (
         <ul className="grid gap-3 sm:grid-cols-2">
-          {weekPlay.levels.map((level) => (
-            <li key={level.id}>
-              <button
-                type="button"
-                disabled={!canStart}
-                onClick={() => onStart(level)}
-                className="flex min-h-20 w-full flex-col justify-center rounded-2xl border border-border bg-card p-4 text-left touch-manipulation disabled:opacity-50"
-              >
-                <span className="block font-heading text-2xl">{level.name}</span>
-                <span className="text-sm text-muted-foreground">{level.cardLine}</span>
-              </button>
-            </li>
-          ))}
+          {weekPlay.levels.map((level) => {
+            const playable = canStart && isPlayableJocDay(level.day, todayDay);
+            return (
+              <li key={level.id}>
+                <button
+                  type="button"
+                  disabled={!playable}
+                  onClick={() => onStart(level)}
+                  className="flex min-h-20 w-full flex-col justify-center rounded-2xl border border-border bg-card p-4 text-left touch-manipulation disabled:opacity-40"
+                >
+                  <span className="block font-heading text-2xl">{level.name}</span>
+                  <span className="text-sm text-muted-foreground">{level.cardLine}</span>
+                </button>
+              </li>
+            );
+          })}
         </ul>
       ) : (
         <p className="text-base text-muted-foreground">{JOC_COPY.emptyWeek}</p>
@@ -307,8 +330,7 @@ function JournalList({
             <li key={entry.id} className="space-y-2 rounded-2xl border border-border bg-card p-4">
               <p className="text-base leading-relaxed">
                 {formatJournalDate(entry.date)} · {entry.levelName} · timp pe ecran:{" "}
-                {formatScreenDuration(entry.screenDurationMs)} · misiune:{" "}
-                {entry.missionDone ? "gata" : "încă nu"}
+                {formatScreenDuration(entry.screenDurationMs)} · misiune: {missionUiLabel(entry)}
               </p>
               <label className="block space-y-1 text-sm" htmlFor={`nota-${entry.id}`}>
                 <span className="text-muted-foreground">{JOC_COPY.noteLabel}</span>
@@ -385,37 +407,38 @@ function JocPlay({
       if (startedAtMs > 0) onDurationRef.current(elapsed);
     };
     window.addEventListener("pagehide", save);
-    const id = window.setInterval(() => {
-      const clock = clockRef.current;
-      if (!clock || startedAtMs <= 0) return;
+    const saveId = window.setInterval(() => {
       const tickNow = Date.now();
       if (lastSave === 0 || tickNow - lastSave >= 1_000) {
         lastSave = tickNow;
         save();
       }
-      if (leavingRef.current && timer.current == null) leavingRef.current = false;
-      const decision = decidePlay(clockFrom(clock, tickNow, level.scenes.length));
-      if (decision.type === "stay") return;
-      if (leavingRef.current && decision.type === "next-scene") return;
-      beginTransition(() => {
-        const live = clockRef.current;
-        if (!live || decision.type === "mission") {
-          goMission();
-          return;
-        }
-        const stepped = clockTick(live, Date.now(), level.scenes.length);
-        clockRef.current = stepped.clock;
-        if (stepped.decision.type === "next-scene") {
-          setSceneIndex(stepped.clock.sceneIndex);
+    }, 1_000);
+    const loop = startPlayLoop({
+      startedAtMs,
+      sceneCount: level.scenes.length,
+      getClock: () => clockRef.current ?? resumePlayClock(null, startedAtMs),
+      setClock: (clock) => {
+        clockRef.current = clock;
+      },
+      isSuspended: () => leavingRef.current,
+      onScene: (index, commit) => {
+        beginTransition(() => {
+          commit();
+          setSceneIndex(index);
           setTapped(false);
-          return;
-        }
-        if (stepped.decision.type === "mission") goMission();
-      });
-    }, 250);
+        });
+      },
+      onMission: () => {
+        beginTransition(() => {
+          goMission();
+        });
+      },
+    });
 
     return () => {
-      window.clearInterval(id);
+      loop.stop();
+      window.clearInterval(saveId);
       window.removeEventListener("pagehide", save);
       save();
     };
@@ -478,12 +501,16 @@ function JocPlay({
             className="flex size-[min(72vw,280px)] items-center justify-center rounded-full bg-card ring-1 ring-border touch-manipulation focus-visible:ring-4 focus-visible:ring-ring/50"
           >
             <JocObject
+              key={scene.id}
               object={sceneObject(level.id, scene)}
               motion={scene.motion}
-              reacted={tapped}
+              reacted
               sceneIndex={sceneIndex}
             />
           </button>
+          {scene.caption ? (
+            <p className="text-sm text-muted-foreground">{scene.caption}</p>
+          ) : null}
           <p className="min-h-8 max-w-sm text-center text-xl leading-snug" aria-live="polite">
             {line}
           </p>
@@ -493,16 +520,34 @@ function JocPlay({
   );
 }
 
+function MissionActions({ onClose }: { onClose: (status: JocMissionStatus) => void }) {
+  return (
+    <div className="flex flex-col gap-3 sm:flex-row">
+      <Button type="button" className="h-14 flex-1 text-lg" onClick={() => onClose("real")}>
+        {JOC_COPY.done}
+      </Button>
+      <Button
+        type="button"
+        variant="outline"
+        className="h-14 flex-1 text-base"
+        onClick={() => onClose("doar_joc")}
+      >
+        {JOC_COPY.onlyInGame}
+      </Button>
+    </div>
+  );
+}
+
 function JocMission({
   level,
   note,
   onNote,
-  onDone,
+  onClose,
 }: {
   level: JocLevel;
   note: string;
   onNote: (note: string) => void;
-  onDone: () => void;
+  onClose: (status: JocMissionStatus) => void;
 }) {
   return (
     <article className="mx-auto max-w-lg space-y-6">
@@ -515,7 +560,7 @@ function JocMission({
           <p className="text-sm text-muted-foreground">{level.name}</p>
         </div>
       </div>
-      <p className="text-xl leading-relaxed">{level.missionParent}</p>
+      <p className="line-clamp-2 text-xl leading-relaxed">{level.missionParent}</p>
       <label className="block space-y-2" htmlFor="nota-misiune">
         <span className="text-sm font-medium">{JOC_COPY.noteLabel}</span>
         <Textarea
@@ -526,9 +571,7 @@ function JocMission({
           onChange={(event) => onNote(event.target.value)}
         />
       </label>
-      <Button type="button" className="h-14 w-full text-lg" onClick={onDone}>
-        {JOC_COPY.done}
-      </Button>
+      <MissionActions onClose={onClose} />
     </article>
   );
 }

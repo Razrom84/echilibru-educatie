@@ -13,10 +13,20 @@ export type JocLevelId = string;
 
 export type JocMotion = "rise" | "sway" | "down" | "hold" | "scoop" | "clap" | "nod" | "sweep";
 
-export type JocObjectKind = "balloon" | "bucket" | "palm" | "cow" | "leaf" | "stone";
+export type JocObjectKind =
+  | "balloon"
+  | "bucket"
+  | "palm"
+  | "cow"
+  | "leaf"
+  | "stone"
+  | "door"
+  | "shoe"
+  | "toy";
 
 export type JocScene = {
   id: string;
+  caption?: string;
   prompt: string;
   reaction: string;
   motion: JocMotion;
@@ -33,6 +43,7 @@ export type JocLevel = {
   cardLine: string;
   missionParent: string;
   ritual: string;
+  activityIds: readonly string[];
   scenes: readonly JocScene[];
 };
 
@@ -47,6 +58,7 @@ const JOC_LEGACY_LEVELS_RAW: readonly JocLevel[] = [
     cardLine: "Atinge balonul",
     missionParent: "Găsiți balonul real și țineți-l împreună de sfoară.",
     ritual: "Balonul, gata.",
+    activityIds: [],
     scenes: [
       {
         id: "balon-urca",
@@ -84,6 +96,7 @@ const JOC_LEGACY_LEVELS_RAW: readonly JocLevel[] = [
     cardLine: "Atinge găleata",
     missionParent: "Afară, puneți 3 lopățele de pământ în găleată.",
     ritual: "Pământul, gata.",
+    activityIds: [],
     scenes: [
       {
         id: "pamant-1",
@@ -121,6 +134,7 @@ const JOC_LEGACY_LEVELS_RAW: readonly JocLevel[] = [
     cardLine: "Batem din palme",
     missionParent: "Bateți din palme cu mama sau tata, apoi „gata”.",
     ritual: "Palmele, gata.",
+    activityIds: [],
     scenes: [
       {
         id: "palme-1",
@@ -158,6 +172,7 @@ const JOC_LEGACY_LEVELS_RAW: readonly JocLevel[] = [
     cardLine: "Atinge vaca",
     missionParent: "Arătați vaca dintr-o carte sau o jucărie din casă.",
     ritual: "Vaca, gata.",
+    activityIds: [],
     scenes: [
       {
         id: "vaca-mu",
@@ -195,6 +210,7 @@ const JOC_LEGACY_LEVELS_RAW: readonly JocLevel[] = [
     cardLine: "Atinge frunza",
     missionParent: "Strângeți împreună 3 frunze din curte într-o cutie.",
     ritual: "Frunzele, gata.",
+    activityIds: [],
     scenes: [
       {
         id: "frunza-1",
@@ -264,5 +280,8 @@ export function objectLabel(kind: JocObjectKind): string {
   if (kind === "palm") return "Palmă";
   if (kind === "cow") return "Vacă";
   if (kind === "leaf") return "Frunză";
+  if (kind === "door") return "Ușă";
+  if (kind === "shoe") return "Papuc";
+  if (kind === "toy") return "Jucărie";
   return "Piatră";
 }

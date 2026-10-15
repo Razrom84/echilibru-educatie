@@ -7,6 +7,8 @@ export const JOC_COPY = {
   noteLabel: "Notă (opțional)",
   notePlaceholder: "Ce a făcut în casă sau în curte",
   done: "Gata",
+  onlyInGame: "Am făcut-o doar în joc",
+  onlyToday: "Doar ziua de azi se deschide.",
   ritualBack: "Înapoi la joc",
   journalTitle: "Jurnal",
   journalHint: "Rămâne pe tabletă, în acest browser.",

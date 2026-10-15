@@ -1,14 +1,22 @@
-import { describe, expect, test } from "vitest";
+import { describe, expect, test, vi } from "vitest";
 import { JOC_COPY, openMissionLabel } from "./copy";
 import {
   JOC_NOTE_MAX,
+  activityIdsMarkedDone,
   createJournalEntry,
   formatJournalText,
   parseJournal,
   sessionsOnDate,
   updateJournalEntry,
 } from "./journal";
-import { buildDayLevels, jocWeekLevels, scenesForDay, type JocActivitySource } from "./day-levels";
+import {
+  buildDayLevels,
+  isPlayableJocDay,
+  jocWeekLevels,
+  missionAction,
+  scenesForDay,
+  type JocActivitySource,
+} from "./day-levels";
 import { JOC_LEGACY_LEVELS, isJocLevelId } from "./levels";
 import { getSeedActivities } from "@/lib/seed/week1";
 import {
@@ -27,7 +35,7 @@ import {
   resumePlayClock,
   screenDurationMs,
   sessionStatusLabel,
-  showNextScene,
+  startPlayLoop,
   type PlayTick,
   type SceneClock,
 } from "./rules";
@@ -87,8 +95,12 @@ describe("joc week levels", () => {
     const seedDay1 = getSeedActivities(1, "1-2").filter((row) => row.zi === 1);
     const luni = week1.levels.find((level) => level.day === 1);
     expect(luni?.id).toBe("s1-z1");
-    expect(luni?.scenes.map((scene) => scene.prompt)).toEqual(seedDay1.map((row) => row.titlu));
-    expect(luni?.missionParent).toContain(seedDay1[0]?.gata_cand);
+    expect(luni?.scenes.map((scene) => scene.prompt)).toEqual(
+      seedDay1.map((row) => row.pasi[0]),
+    );
+    expect(luni?.activityIds).toEqual(seedDay1.map((row) => row.id));
+    expect(luni?.missionParent).toBe(missionAction(seedDay1));
+    expect(luni?.missionParent).not.toContain(seedDay1[1]?.gata_cand);
     expect(luni?.ritual).toBe("Pe curte, gata.");
 
     for (const level of week1.levels) {
@@ -141,6 +153,27 @@ describe("joc week levels", () => {
     expect(isJocLevelId("balonas")).toBe(true);
   });
 
+  test("week 7 Monday is several different actions, and only today opens", () => {
+    const week = jocWeekLevels(7);
+    const monday = getSeedActivities(7, "1-2").filter((row) => row.zi === 1);
+    const level = week?.levels.find((row) => row.day === 1);
+    expect(level?.scenes).toHaveLength(4);
+    expect(level?.scenes.map((scene) => scene.prompt)).toEqual(monday.map((row) => row.pasi[0]));
+    expect(new Set(level?.scenes.map((scene) => scene.object))).toEqual(new Set(["door", "shoe"]));
+    expect(level?.missionParent).toBe(`${monday[0]?.pasi[0]} ${monday[0]?.pasi[1]}`);
+    expect((level?.missionParent.length ?? 0) <= 160).toBe(true);
+    expect(isPlayableJocDay(4, 4)).toBe(true);
+    expect(isPlayableJocDay(5, 4)).toBe(false);
+    expect(isPlayableJocDay(3, 4)).toBe(false);
+
+    const thursday = getSeedActivities(7, "1-2").filter((row) => row.zi === 4);
+    const joi = week?.levels.find((row) => row.day === 4);
+    expect(joi?.scenes).toHaveLength(4);
+    expect(joi?.scenes.map((scene) => scene.prompt)).toEqual(thursday.map((row) => row.pasi[0]));
+    expect(joi?.scenes.map((scene) => scene.object)).toEqual(["toy", "door", "toy", "palm"]);
+    expect(joi?.missionParent).toBe(`${thursday[0]?.pasi[0]} ${thursday[0]?.pasi[1]}`);
+  });
+
   test("visible copy stays in Romanian", () => {
     for (const line of userStrings()) {
       expect(line, line).not.toMatch(ENGLISH_UI);
@@ -160,32 +193,22 @@ describe("joc pacing and safety", () => {
     expect(canStartSession(2)).toBe(false);
   });
 
-  test("a tap does not cut the scene before five seconds", () => {
-    expect(
-      decidePlay(tick({ tapped: true, sceneElapsedMs: 4_999, msSinceTap: 4_999 })),
-    ).toEqual({ type: "stay" });
-    expect(
-      decidePlay(tick({ tapped: true, sceneElapsedMs: 5_000, msSinceTap: 4_999 })),
-    ).toEqual({ type: "stay" });
+  test("a scene stays five seconds, then moves on without a tap", () => {
+    expect(decidePlay(tick({ sceneElapsedMs: 4_999 }))).toEqual({ type: "stay" });
+    expect(decidePlay(tick({ sceneElapsedMs: 5_000, tapped: false, sceneIndex: 0 }))).toEqual({
+      type: "next-scene",
+    });
+    expect(decidePlay(tick({ sceneElapsedMs: 5_000, sceneIndex: 3 }))).toEqual({
+      type: "mission",
+      reason: "finished",
+    });
   });
 
-  test("the scene advances only after the minimum and a tap", () => {
-    expect(decidePlay(tick({ sceneElapsedMs: 8_000, msSinceInteraction: 1_000 }))).toEqual({
+  test("ten seconds without a touch leaves a scene that is not ready to move", () => {
+    expect(decidePlay(tick({ msSinceInteraction: 9_999, sceneElapsedMs: 1_000 }))).toEqual({
       type: "stay",
     });
-    expect(
-      decidePlay(tick({ tapped: true, sceneElapsedMs: 5_000, msSinceTap: 5_000, sceneIndex: 0 })),
-    ).toEqual({ type: "next-scene" });
-    expect(
-      decidePlay(tick({ tapped: true, sceneElapsedMs: 5_000, msSinceTap: 5_000, sceneIndex: 3 })),
-    ).toEqual({ type: "mission", reason: "finished" });
-  });
-
-  test("ten seconds without a touch goes to the real mission", () => {
-    expect(decidePlay(tick({ msSinceInteraction: 9_999, sceneElapsedMs: 9_999 }))).toEqual({
-      type: "stay",
-    });
-    expect(decidePlay(tick({ msSinceInteraction: 10_000, sceneElapsedMs: 10_000 }))).toEqual({
+    expect(decidePlay(tick({ msSinceInteraction: 10_000, sceneElapsedMs: 1_000 }))).toEqual({
       type: "mission",
       reason: "idle",
     });
@@ -253,61 +276,75 @@ describe("joc pacing and safety", () => {
     ]);
   });
 
-  test("one tap opens the next scene and idle still ends ten seconds after that tap", () => {
-    let clock: SceneClock = {
-      sceneIndex: 0,
-      sceneStartedAtMs: 0,
-      lastInteractionAtMs: 0,
-      tappedAtMs: null,
-      sessionStartedAtMs: 0,
-    };
-    clock = clockTap(clock, 0);
-    const advanced = showNextScene(clock, 5_000);
-    expect(advanced.lastInteractionAtMs).toBe(0);
-    expect(advanced.sessionStartedAtMs).toBe(0);
-    let missionAt: number | null = null;
-    let missionScene = -1;
+  test("untouched scenes still play through, one every five seconds", () => {
+    let clock: SceneClock = createPlayClock(0);
+    const events: string[] = [];
 
     for (let now = 0; now <= 30_000; now += 250) {
+      const before = clock.sceneIndex;
       const stepped = clockTick(clock, now, 4);
       clock = stepped.clock;
+      if (stepped.decision.type === "next-scene") {
+        expect(clock.sceneIndex).toBe(before + 1);
+        events.push(`next@${now}`);
+        expect(clock.sessionStartedAtMs).toBe(0);
+        continue;
+      }
       if (stepped.decision.type === "mission") {
-        missionAt = now;
-        missionScene = clock.sceneIndex;
-        expect(stepped.decision.reason).toBe("idle");
+        events.push(`mission:${stepped.decision.reason}@${now}`);
         break;
       }
     }
 
-    expect(missionAt).toBe(10_000);
-    expect(missionScene).toBe(1);
+    expect(events).toEqual([
+      "next@5000",
+      "next@10000",
+      "next@15000",
+      "mission:finished@20000",
+    ]);
+    const resumed = resumePlayClock(clock, 99_000);
+    expect(resumed.sessionStartedAtMs).toBe(0);
+    expect(screenDurationMs(0, 20_000)).toBe(0);
+    expect(screenDurationMs(null, 20_000)).toBe(0);
   });
 
-  test("idle still fires at 10s when the clock is resumed", () => {
-    const start = 1_700_000_000_000;
-    let clock = createPlayClock(start);
-    let missionAt: number | null = null;
+  test("the 15-minute cap switches to the mission on a fake clock", () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-10-15T08:00:00.000Z"));
+    const reasons: string[] = [];
+    const sceneMarks: number[] = [];
+    const startedAtMs = Date.now();
+    let clock = createPlayClock(startedAtMs);
+    let loop: { stop: () => void } | null = null;
+    try {
+    loop = startPlayLoop({
+      startedAtMs,
+      sceneCount: 500,
+      getClock: () => clock,
+      setClock: (next) => {
+        clock = next;
+      },
+      onScene: (index, commit) => {
+        sceneMarks.push(Date.now() - startedAtMs);
+        commit();
+        expect(index).toBe(clock.sceneIndex);
+      },
+      onMission: (reason) => {
+        reasons.push(reason);
+      },
+    });
 
-    for (let elapsed = 0; elapsed <= JOC_IDLE_MS; elapsed += 250) {
-      const now = start + elapsed;
-      clock = resumePlayClock(clock, now + 60_000);
-      const stepped = clockTick(clock, now, 4);
-      clock = stepped.clock;
-      expect(clock.sessionStartedAtMs).toBe(start);
-      expect(clock.lastInteractionAtMs).toBe(start);
-      if (elapsed < JOC_IDLE_MS) {
-        expect(stepped.decision).toEqual({ type: "stay" });
-      } else {
-        expect(stepped.decision).toEqual({ type: "mission", reason: "idle" });
-        missionAt = elapsed;
-      }
+    vi.advanceTimersByTime(JOC_MIN_SCENE_MS);
+    expect(sceneMarks[0]).toBe(JOC_MIN_SCENE_MS);
+    vi.advanceTimersByTime(JOC_SESSION_MAX_MS - JOC_MIN_SCENE_MS - 1_000);
+    expect(reasons).toEqual([]);
+    vi.advanceTimersByTime(1_000);
+    expect(reasons).toEqual(["cap"]);
+    expect(clock.sessionStartedAtMs).toBe(startedAtMs);
+    } finally {
+      loop?.stop();
+      vi.useRealTimers();
     }
-
-    expect(missionAt).toBe(JOC_IDLE_MS);
-    expect(screenDurationMs(start, start + JOC_IDLE_MS)).toBe(JOC_IDLE_MS);
-    expect(screenDurationMs(0, start + JOC_IDLE_MS)).toBe(0);
-    expect(screenDurationMs(null, start + JOC_IDLE_MS)).toBe(0);
-    expect(formatScreenDuration(screenDurationMs(0, start))).toBe("0 s");
   });
 
   test("taps postpone idle but the 15-minute cap still opens the mission", () => {
@@ -408,8 +445,26 @@ describe("joc journal", () => {
     })[0]!;
     const text = formatJournalText([done]);
     expect(text).toContain("Jurnalul jocului");
-    expect(text).toContain("15.10.2026 · Măturică · timp pe ecran: 20 s · misiune: gata");
+    expect(text).toContain("15.10.2026 · Măturică · timp pe ecran: 20 s · misiune: real");
     expect(text).toContain("Notă: Trei frunze în cutie");
     expect(formatJournalText([])).toContain("Încă nu este nicio sesiune.");
+  });
+
+  test("doar_joc is exported and does not tick the plan", () => {
+    const entry = createJournalEntry({
+      id: "joc-1",
+      date: "2026-10-15",
+      levelId: "s7-z4",
+      levelName: "Joi · Preșuleț",
+      startedAt: "2026-10-15T09:00:00.000Z",
+    });
+    const played = updateJournalEntry([entry], "joc-1", { missionStatus: "doar_joc" })[0]!;
+    expect(played.missionDone).toBe(false);
+    expect(played.missionStatus).toBe("doar_joc");
+    expect(formatJournalText([played])).toContain("misiune: doar_joc");
+    expect(activityIdsMarkedDone("doar_joc", ["a", "b"], new Set())).toEqual([]);
+    expect(activityIdsMarkedDone("real", ["a", "b"], new Set(["b"]))).toEqual(["a"]);
+    const legacy = parseJournal(JSON.stringify([{ ...entry, missionDone: true }]));
+    expect(legacy[0]?.missionStatus).toBe("real");
   });
 });

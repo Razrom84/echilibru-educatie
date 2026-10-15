@@ -4,6 +4,9 @@ import { clampScreenDuration, formatScreenDuration } from "@/lib/joc/rules";
 export const JOC_JOURNAL_KEY = "echilibru-joc-jurnal-v1";
 export const JOC_NOTE_MAX = 400;
 
+/** `real` ticks the plan. `doar_joc` stays in the journal only. */
+export type JocMissionStatus = "real" | "doar_joc";
+
 export type JocJournalEntry = {
   id: string;
   date: string;
@@ -11,12 +14,13 @@ export type JocJournalEntry = {
   levelName: string;
   screenDurationMs: number;
   missionDone: boolean;
+  missionStatus: JocMissionStatus | null;
   parentNote: string;
   startedAt: string;
 };
 
 export type JournalPatch = Partial<
-  Pick<JocJournalEntry, "screenDurationMs" | "missionDone" | "parentNote">
+  Pick<JocJournalEntry, "screenDurationMs" | "missionDone" | "missionStatus" | "parentNote">
 >;
 
 const DATE_ONLY = /^\d{4}-\d{2}-\d{2}$/;
@@ -39,9 +43,56 @@ export function createJournalEntry(input: {
     levelName: input.levelName,
     screenDurationMs: 0,
     missionDone: false,
+    missionStatus: null,
     parentNote: "",
     startedAt: input.startedAt,
   };
+}
+
+export function missionStatusOf(entry: {
+  missionStatus?: JocMissionStatus | null;
+  missionDone?: boolean;
+}): JocMissionStatus | null {
+  if (entry.missionStatus === "real" || entry.missionStatus === "doar_joc") return entry.missionStatus;
+  if (entry.missionDone) return "real";
+  return null;
+}
+
+export function isMissionOpen(entry: {
+  missionStatus?: JocMissionStatus | null;
+  missionDone?: boolean;
+}): boolean {
+  return missionStatusOf(entry) == null;
+}
+
+/** Only a real closing ticks activities that are not already done. */
+export function activityIdsMarkedDone(
+  status: JocMissionStatus,
+  activityIds: readonly string[],
+  alreadyDone: ReadonlySet<string>,
+): string[] {
+  if (status !== "real") return [];
+  return activityIds.filter((id) => id.length > 0 && !alreadyDone.has(id));
+}
+
+export function missionExportLabel(entry: {
+  missionStatus?: JocMissionStatus | null;
+  missionDone?: boolean;
+}): string {
+  const status = missionStatusOf(entry);
+  if (status === "real") return "real";
+  if (status === "doar_joc") return "doar_joc";
+  return "încă nu";
+}
+
+export function missionUiLabel(entry: {
+  missionStatus?: JocMissionStatus | null;
+  missionDone?: boolean;
+}): string {
+  const status = missionStatusOf(entry);
+  if (status === "real") return "gata";
+  if (status === "doar_joc") return "doar în joc";
+  return "încă nu";
 }
 
 export function isJournalEntry(value: unknown): value is JocJournalEntry {
@@ -69,11 +120,16 @@ export function parseJournal(raw: string | null): JocJournalEntry[] {
   try {
     const parsed = JSON.parse(raw) as unknown;
     if (!Array.isArray(parsed)) return [];
-    return parsed.filter(isJournalEntry).map((entry) => ({
-      ...entry,
-      screenDurationMs: clampScreenDuration(entry.screenDurationMs),
-      parentNote: normalizeParentNote(entry.parentNote),
-    }));
+    return parsed.filter(isJournalEntry).map((entry) => {
+      const missionStatus = missionStatusOf(entry);
+      return {
+        ...entry,
+        screenDurationMs: clampScreenDuration(entry.screenDurationMs),
+        parentNote: normalizeParentNote(entry.parentNote),
+        missionStatus,
+        missionDone: missionStatus === "real",
+      };
+    });
   } catch {
     return [];
   }
@@ -90,9 +146,19 @@ export function updateJournalEntry(
 ): JocJournalEntry[] {
   return entries.map((entry) => {
     if (entry.id !== id) return entry;
+    const missionStatus =
+      patch.missionStatus !== undefined
+        ? patch.missionStatus
+        : patch.missionDone === true
+          ? "real"
+          : patch.missionDone === false
+            ? null
+            : entry.missionStatus;
     return {
       ...entry,
       ...patch,
+      missionStatus,
+      missionDone: missionStatus === "real",
       screenDurationMs:
         patch.screenDurationMs === undefined
           ? entry.screenDurationMs
@@ -121,7 +187,7 @@ export function formatJournalText(entries: readonly JocJournalEntry[]): string {
     return `${lines.join("\n")}\n`;
   }
   for (const entry of sorted) {
-    const mission = entry.missionDone ? "gata" : "încă nu";
+    const mission = missionExportLabel(entry);
     lines.push(
       `${formatJournalDate(entry.date)} · ${entry.levelName} · timp pe ecran: ${formatScreenDuration(entry.screenDurationMs)} · misiune: ${mission}`,
     );
