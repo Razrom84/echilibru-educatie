@@ -507,3 +507,23 @@
   }
 }
 /* /cezar-motions */
+
+/* Nested SVG joints spin around their own viewport origin. */
+.mostra-stage {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.mostra-joint {
+  overflow: visible;
+  transform-box: view-box;
+  transform-origin: 0px 0px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mostra-stage {
+    opacity: 0;
+  }
+}

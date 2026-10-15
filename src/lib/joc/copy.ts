@@ -18,6 +18,10 @@ export const JOC_COPY = {
   emptyWeek: "Săptămâna aceasta nu are încă scene.",
   watch: "Mod privit",
   watchImitate: "Acum tu!",
+  sample: "Vezi jucăria",
+  sampleTitle: "Jucăria",
+  samplePrompt: "Duceți jucăria afară 5 pași.",
+  again: "Din nou",
 } as const;
 
 export function openMissionLabel(levelName: string): string {

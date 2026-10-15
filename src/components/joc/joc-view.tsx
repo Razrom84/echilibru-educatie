@@ -1,9 +1,11 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Cezar } from "@/components/joc/cezar";
+import { MostraStage } from "@/components/joc/cezar-mostra";
 import { JocObject } from "@/components/joc/joc-art";
 import { cezarAnimationForScene } from "@/lib/joc/cezar";
 import { JOC_COPY, openMissionLabel } from "@/lib/joc/copy";
@@ -26,6 +28,7 @@ import {
   type JocMissionStatus,
 } from "@/lib/joc/journal";
 import { jocLegacyLevelById, objectLabel, sceneObject, type JocLevel } from "@/lib/joc/levels";
+import { MOSTRA_SCENE_ID } from "@/lib/joc/mostra";
 import {
   JOC_FADE_MS,
   canStartSession,
@@ -55,6 +58,17 @@ type Mode =
   | { kind: "watch"; levelId: string; entryId: string; startedAtMs: number; dayWatchMs: number }
   | { kind: "mission"; levelId: string; entryId: string }
   | { kind: "ritual"; levelId: string };
+
+function useMostraHold(firstSceneId: string | undefined) {
+  const holdRef = useRef(firstSceneId === MOSTRA_SCENE_ID);
+  const release = useCallback(() => {
+    holdRef.current = false;
+  }, []);
+  const arm = useCallback((sceneId: string | undefined) => {
+    holdRef.current = sceneId === MOSTRA_SCENE_ID;
+  }, []);
+  return { holdRef, release, arm };
+}
 
 function browserStorage(): Storage | null {
   if (typeof window === "undefined") return null;
@@ -344,6 +358,14 @@ function JocPicker({
                     {JOC_COPY.watch}
                   </button>
                 ) : null}
+                {level.scenes.some((scene) => scene.id === MOSTRA_SCENE_ID) ? (
+                  <Link
+                    href="/joc/mostra"
+                    className="flex h-12 w-full items-center justify-center rounded-2xl border border-border bg-background px-4 text-base font-medium"
+                  >
+                    {JOC_COPY.sample}
+                  </Link>
+                ) : null}
               </li>
             );
           })}
@@ -426,6 +448,7 @@ function JocPlay({
 }) {
   const clockRef = useRef<SceneClock | null>(null);
   const leavingRef = useRef(false);
+  const { holdRef, release, arm } = useMostraHold(level.scenes[0]?.id);
   const timer = useRef<number | null>(null);
   const pending = useRef<(() => void) | null>(null);
   const onMissionRef = useRef(onMission);
@@ -484,9 +507,10 @@ function JocPlay({
       setClock: (clock) => {
         clockRef.current = clock;
       },
-      isSuspended: () => leavingRef.current,
+      isSuspended: () => leavingRef.current || holdRef.current,
       onScene: (index, commit) => {
         beginTransition(() => {
+          arm(level.scenes[index]?.id);
           commit();
           setSceneIndex(index);
           setTapped(false);
@@ -555,23 +579,27 @@ function JocPlay({
         aria-hidden={leaving}
       >
         <div className="flex flex-col items-center gap-6 pb-6">
-          <div className="flex w-full items-end justify-center gap-3">
-            <Cezar key={scene.id} animation={cezarAnimationForScene(level.day, sceneIndex)} />
-            <button
-              type="button"
-              aria-label={objectLabel(sceneObject(level.id, scene))}
-              onClick={onObjectTap}
-              className="flex size-[min(42vw,220px)] shrink-0 items-center justify-center rounded-full bg-card ring-1 ring-border touch-manipulation focus-visible:ring-4 focus-visible:ring-ring/50"
-            >
-              <JocObject
-                key={scene.id}
-                object={sceneObject(level.id, scene)}
-                motion={scene.motion}
-                reacted
-                sceneIndex={sceneIndex}
-              />
-            </button>
-          </div>
+          {scene.id === MOSTRA_SCENE_ID ? (
+            <MostraStage onDone={release} />
+          ) : (
+            <div className="flex w-full items-end justify-center gap-3">
+              <Cezar key={scene.id} animation={cezarAnimationForScene(level.day, sceneIndex)} />
+              <button
+                type="button"
+                aria-label={objectLabel(sceneObject(level.id, scene))}
+                onClick={onObjectTap}
+                className="flex size-[min(42vw,220px)] shrink-0 items-center justify-center rounded-full bg-card ring-1 ring-border touch-manipulation focus-visible:ring-4 focus-visible:ring-ring/50"
+              >
+                <JocObject
+                  key={scene.id}
+                  object={sceneObject(level.id, scene)}
+                  motion={scene.motion}
+                  reacted
+                  sceneIndex={sceneIndex}
+                />
+              </button>
+            </div>
+          )}
           {scene.caption ? (
             <p className="text-sm text-muted-foreground">{scene.caption}</p>
           ) : null}
@@ -600,6 +628,7 @@ function JocWatch({
   const scenes = level.scenes.slice(0, watchSceneCount(level.scenes.length));
   const clockRef = useRef<WatchClock | null>(null);
   const leavingRef = useRef(false);
+  const { holdRef, release, arm } = useMostraHold(scenes[0]?.id);
   const timer = useRef<number | null>(null);
   const pending = useRef<(() => void) | null>(null);
   const onMissionRef = useRef(onMission);
@@ -659,7 +688,7 @@ function JocWatch({
       setClock: (clock) => {
         clockRef.current = clock;
       },
-      isSuspended: () => leavingRef.current,
+      isSuspended: () => leavingRef.current || holdRef.current,
       onPause: (commit) => {
         beginTransition(() => {
           commit();
@@ -668,6 +697,7 @@ function JocWatch({
       },
       onScene: (index, commit) => {
         beginTransition(() => {
+          arm(scenes[index]?.id);
           commit();
           setSceneIndex(index);
           setPhase("scene");
@@ -723,22 +753,26 @@ function JocWatch({
         aria-hidden={leaving}
       >
         <div className="flex flex-col items-center gap-6 pb-6">
-          <div className="flex w-full items-end justify-center gap-3">
-            {/* Same key through the pause so the finished pose stays still. */}
-            <Cezar key={scene.id} animation={cezarAnimationForScene(level.day, sceneIndex)} />
-            <div
-              className="flex size-[min(42vw,220px)] shrink-0 items-center justify-center rounded-full bg-card ring-1 ring-border"
-              aria-hidden
-            >
-              <JocObject
-                key={scene.id}
-                object={sceneObject(level.id, scene)}
-                motion={scene.motion}
-                reacted
-                sceneIndex={sceneIndex}
-              />
+          {scene.id === MOSTRA_SCENE_ID ? (
+            <MostraStage onDone={release} />
+          ) : (
+            <div className="flex w-full items-end justify-center gap-3">
+              {/* Same key through the pause so the finished pose stays still. */}
+              <Cezar key={scene.id} animation={cezarAnimationForScene(level.day, sceneIndex)} />
+              <div
+                className="flex size-[min(42vw,220px)] shrink-0 items-center justify-center rounded-full bg-card ring-1 ring-border"
+                aria-hidden
+              >
+                <JocObject
+                  key={scene.id}
+                  object={sceneObject(level.id, scene)}
+                  motion={scene.motion}
+                  reacted
+                  sceneIndex={sceneIndex}
+                />
+              </div>
             </div>
-          </div>
+          )}
           {scene.caption ? (
             <p className="text-sm text-muted-foreground">{scene.caption}</p>
           ) : null}
