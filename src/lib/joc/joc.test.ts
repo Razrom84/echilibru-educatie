@@ -16,10 +16,13 @@ import {
   JOC_MIN_SCENE_MS,
   JOC_SESSION_MAX_MS,
   canStartSession,
+  clockTap,
+  clockTick,
   decidePlay,
   formatScreenDuration,
   sessionStatusLabel,
   type PlayTick,
+  type SceneClock,
 } from "./rules";
 
 const ENGLISH_UI =
@@ -185,6 +188,33 @@ describe("joc pacing and safety", () => {
       "next@15000",
       "mission:finished@20000",
     ]);
+  });
+
+  test("one tap opens the next scene and gives that scene its own quiet window", () => {
+    let clock: SceneClock = {
+      sceneIndex: 0,
+      sceneStartedAtMs: 0,
+      lastInteractionAtMs: 0,
+      tappedAtMs: null,
+      sessionStartedAtMs: 0,
+    };
+    clock = clockTap(clock, 0);
+    let missionAt: number | null = null;
+    let missionScene = -1;
+
+    for (let now = 0; now <= 30_000; now += 250) {
+      const stepped = clockTick(clock, now, 4);
+      clock = stepped.clock;
+      if (stepped.decision.type === "mission") {
+        missionAt = now;
+        missionScene = clock.sceneIndex;
+        expect(stepped.decision.reason).toBe("idle");
+        break;
+      }
+    }
+
+    expect(missionAt).toBe(15_000);
+    expect(missionScene).toBe(1);
   });
 
   test("duration labels stay short and capped", () => {

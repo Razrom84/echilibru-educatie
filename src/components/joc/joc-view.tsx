@@ -21,9 +21,14 @@ import {
   JOC_FADE_MS,
   canStartSession,
   clampScreenDuration,
+  clockFrom,
+  clockNudge,
+  clockTap,
+  clockTick,
   decidePlay,
   formatScreenDuration,
   sessionStatusLabel,
+  type SceneClock,
 } from "@/lib/joc/rules";
 import { bucharestToday } from "@/lib/program-week";
 
@@ -299,11 +304,13 @@ function JocPlay({
   onDuration: (screenDurationMs: number) => void;
   onMission: (screenDurationMs: number) => void;
 }) {
-  const startedAt = useRef(0);
-  const sceneStartedAt = useRef(0);
-  const lastInteractionAt = useRef(0);
-  const tappedAt = useRef<number | null>(null);
-  const sceneIndexRef = useRef(0);
+  const clockRef = useRef<SceneClock>({
+    sceneIndex: 0,
+    sceneStartedAtMs: 0,
+    lastInteractionAtMs: 0,
+    tappedAtMs: null,
+    sessionStartedAtMs: 0,
+  });
   const leavingRef = useRef(false);
   const timer = useRef<number | null>(null);
   const pending = useRef<(() => void) | null>(null);
@@ -321,7 +328,7 @@ function JocPlay({
   const scene = level.scenes[sceneIndex] ?? level.scenes[0];
 
   const durationNow = useCallback(
-    () => clampScreenDuration(Date.now() - startedAt.current),
+    () => clampScreenDuration(Date.now() - clockRef.current.sessionStartedAtMs),
     [],
   );
 
@@ -346,11 +353,16 @@ function JocPlay({
 
   useEffect(() => {
     const now = Date.now();
-    startedAt.current = now;
-    sceneStartedAt.current = now;
-    lastInteractionAt.current = now;
+    clockRef.current = {
+      sceneIndex: 0,
+      sceneStartedAtMs: now,
+      lastInteractionAtMs: now,
+      tappedAtMs: null,
+      sessionStartedAtMs: now,
+    };
     let lastSave = now;
-    const save = () => onDurationRef.current(clampScreenDuration(Date.now() - startedAt.current));
+    const save = () =>
+      onDurationRef.current(clampScreenDuration(Date.now() - clockRef.current.sessionStartedAtMs));
     window.addEventListener("pagehide", save);
     const id = window.setInterval(() => {
       const tickNow = Date.now();
@@ -358,24 +370,18 @@ function JocPlay({
         lastSave = tickNow;
         save();
       }
-      const tappedNow = tappedAt.current != null;
-      const decision = decidePlay({
-        sceneElapsedMs: tickNow - sceneStartedAt.current,
-        msSinceInteraction: tickNow - lastInteractionAt.current,
-        msSinceTap: tappedNow ? tickNow - (tappedAt.current as number) : 0,
-        sessionElapsedMs: tickNow - startedAt.current,
-        tapped: tappedNow,
-        sceneIndex: sceneIndexRef.current,
-        sceneCount: level.scenes.length,
-      });
+      const decision = decidePlay(clockFrom(clockRef.current, tickNow, level.scenes.length));
       if (decision.type === "stay") return;
       if (leavingRef.current && decision.type === "next-scene") return;
       beginTransition(() => {
-        if (decision.type === "next-scene") {
-          sceneIndexRef.current += 1;
-          sceneStartedAt.current = Date.now();
-          tappedAt.current = null;
-          setSceneIndex(sceneIndexRef.current);
+        if (decision.type === "mission") {
+          goMission();
+          return;
+        }
+        const stepped = clockTick(clockRef.current, Date.now(), level.scenes.length);
+        clockRef.current = stepped.clock;
+        if (stepped.decision.type === "next-scene") {
+          setSceneIndex(stepped.clock.sceneIndex);
           setTapped(false);
           return;
         }
@@ -394,15 +400,14 @@ function JocPlay({
   }, [level.id]);
 
   function onStagePointer() {
-    lastInteractionAt.current = Date.now();
+    clockRef.current = clockNudge(clockRef.current, Date.now());
   }
 
   function onObjectTap() {
-    const now = Date.now();
-    lastInteractionAt.current = now;
-    if (leavingRef.current || tappedAt.current != null) return;
-    tappedAt.current = now;
-    setTapped(true);
+    if (leavingRef.current) return;
+    const wasTapped = clockRef.current.tappedAtMs != null;
+    clockRef.current = clockTap(clockRef.current, Date.now());
+    if (!wasTapped) setTapped(true);
   }
 
   if (!scene) return null;
