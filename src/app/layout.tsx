@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Fraunces, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 
@@ -12,23 +12,10 @@ const fraunces = Fraunces({
   subsets: ["latin", "latin-ext"],
 });
 
-export const viewport: Viewport = {
-  themeColor: "#FAF3E5",
-  width: "device-width",
-  initialScale: 1,
-  viewportFit: "cover",
-};
-
 export const metadata: Metadata = {
   title: "Echilibru educație",
   description:
     "Platformă de educație în familie, în română. Banda 1–2 ani, săptămâna 1.",
-  applicationName: "Echilibru educație",
-  appleWebApp: {
-    capable: true,
-    title: "Echilibru",
-    statusBarStyle: "default",
-  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
