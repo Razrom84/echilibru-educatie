@@ -2,12 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Archive, CalendarDays, House, Settings2, Shapes, Sprout } from "lucide-react";
+import { Archive, CalendarDays, House, Settings2, Sprout } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const ITEMS = [
   { href: "/azi", label: "Azi", icon: House },
-  { href: "/joc", label: "Joc", icon: Shapes },
   { href: "/saptamana", label: "Săptămâna asta", icon: CalendarDays },
   { href: "/arhiva", label: "Arhivă", icon: Archive },
   { href: "/progres", label: "Progres", icon: Sprout },
@@ -22,7 +21,7 @@ export function NavBar() {
       aria-label="Navigare principală"
       className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-card/95 backdrop-blur md:hidden"
     >
-      <ul className="mx-auto grid max-w-lg grid-cols-6 px-1 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-1">
+      <ul className="mx-auto grid max-w-lg grid-cols-5 px-1 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-1">
         {ITEMS.map((item) => {
           const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
           const Icon = item.icon;
@@ -30,9 +29,8 @@ export function NavBar() {
             <li key={item.href}>
               <Link
                 href={item.href}
-                aria-current={active ? "page" : undefined}
                 className={cn(
-                  "flex flex-col items-center gap-1 rounded-xl px-1 py-2 text-center text-[10px] leading-tight font-medium",
+                  "flex flex-col items-center gap-1 rounded-xl px-2 py-2 text-center text-[11px] leading-tight font-medium",
                   active ? "text-primary" : "text-muted-foreground",
                 )}
               >
@@ -60,7 +58,6 @@ export function SideNav() {
             <li key={item.href}>
               <Link
                 href={item.href}
-                aria-current={active ? "page" : undefined}
                 className={cn(
                   "flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium",
                   active
