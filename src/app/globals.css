@@ -117,3 +117,126 @@
     letter-spacing: -0.02em;
   }
 }
+
+@keyframes joc-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes joc-rise {
+  from {
+    transform: translateY(18px);
+  }
+  to {
+    transform: translateY(-40px);
+  }
+}
+
+@keyframes joc-sway {
+  0% {
+    transform: rotate(0deg);
+  }
+  45% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(4deg);
+  }
+}
+
+@keyframes joc-down {
+  from {
+    transform: translateY(-16px);
+  }
+  to {
+    transform: translateY(22px);
+  }
+}
+
+@keyframes joc-hold {
+  from {
+    transform: translateY(-6px);
+  }
+  to {
+    transform: translateY(12px);
+  }
+}
+
+@keyframes joc-clap {
+  from {
+    transform: translateY(8px);
+  }
+  to {
+    transform: translateY(-26px);
+  }
+}
+
+@keyframes joc-nod {
+  0% {
+    transform: rotate(0deg);
+  }
+  55% {
+    transform: rotate(7deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes joc-sweep {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(34px, 26px);
+  }
+}
+
+.joc-enter {
+  animation: joc-fade-in 1.4s ease-in-out both;
+}
+
+.joc-motion {
+  animation-duration: 2.8s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+}
+
+.joc-rise {
+  animation-name: joc-rise;
+}
+
+.joc-sway {
+  animation-name: joc-sway;
+}
+
+.joc-down {
+  animation-name: joc-down;
+}
+
+.joc-hold {
+  animation-name: joc-hold;
+}
+
+.joc-clap {
+  animation-name: joc-clap;
+}
+
+.joc-nod {
+  animation-name: joc-nod;
+}
+
+.joc-sweep {
+  animation-name: joc-sweep;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .joc-motion {
+    animation: none;
+  }
+}

@@ -1,0 +1,503 @@
+"use client";
+
+import { useCallback, useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { JocObject } from "@/components/joc/joc-art";
+import { JOC_COPY, openMissionLabel } from "@/lib/joc/copy";
+import {
+  compareEntriesNewestFirst,
+  createJournalEntry,
+  formatJournalDate,
+  formatJournalText,
+  readJournal,
+  sessionsOnDate,
+  updateJournalEntry,
+  writeJournal,
+  type JocJournalEntry,
+} from "@/lib/joc/journal";
+import { JOC_LEVELS, jocLevelById, type JocLevel, type JocLevelId } from "@/lib/joc/levels";
+import {
+  JOC_FADE_MS,
+  canStartSession,
+  clampScreenDuration,
+  decidePlay,
+  formatScreenDuration,
+  sessionStatusLabel,
+} from "@/lib/joc/rules";
+import { bucharestToday } from "@/lib/program-week";
+
+type Mode =
+  | { kind: "picker" }
+  | { kind: "play"; levelId: JocLevelId; entryId: string }
+  | { kind: "mission"; levelId: JocLevelId; entryId: string }
+  | { kind: "ritual"; levelId: JocLevelId };
+
+function browserStorage(): Storage | null {
+  if (typeof window === "undefined") return null;
+  return window.localStorage;
+}
+
+export function JocView() {
+  const [ready, setReady] = useState(false);
+  const [entries, setEntries] = useState<JocJournalEntry[]>([]);
+  const [mode, setMode] = useState<Mode>({ kind: "picker" });
+  const startingRef = useRef(false);
+  const today = bucharestToday();
+
+  useEffect(() => {
+    let active = true;
+    queueMicrotask(() => {
+      if (!active) return;
+      setEntries(readJournal(browserStorage()));
+      setReady(true);
+    });
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const persist = useCallback((next: JocJournalEntry[]) => {
+    setEntries(next);
+    const storage = browserStorage();
+    if (storage) writeJournal(storage, next);
+  }, []);
+
+  const patchEntry = useCallback(
+    (id: string, patch: Parameters<typeof updateJournalEntry>[2]) => {
+      setEntries((current) => {
+        const next = updateJournalEntry(current, id, patch);
+        const storage = browserStorage();
+        if (storage) writeJournal(storage, next);
+        return next;
+      });
+    },
+    [],
+  );
+
+  function startLevel(level: JocLevel) {
+    if (startingRef.current) return;
+    if (!canStartSession(sessionsOnDate(entries, today))) return;
+    startingRef.current = true;
+    const entry = createJournalEntry({
+      date: today,
+      levelId: level.id,
+      levelName: level.name,
+      startedAt: new Date().toISOString(),
+    });
+    persist([...entries, entry]);
+    setMode({ kind: "play", levelId: level.id, entryId: entry.id });
+  }
+
+  function openRitual(levelId: JocLevelId, entryId: string) {
+    startingRef.current = false;
+    patchEntry(entryId, { missionDone: true });
+    setMode({ kind: "ritual", levelId });
+  }
+
+  if (!ready) {
+    return (
+      <p className="text-sm text-muted-foreground" role="status">
+        {JOC_COPY.loading}
+      </p>
+    );
+  }
+
+  const level = mode.kind === "picker" ? null : jocLevelById(mode.levelId);
+  if (mode.kind !== "picker" && !level) {
+    return null;
+  }
+
+  const screenKey =
+    mode.kind === "picker" ? "picker" : `${mode.kind}-${mode.levelId}-${"entryId" in mode ? mode.entryId : ""}`;
+
+  return (
+    <div key={screenKey} className="joc-enter">
+      {mode.kind === "picker" ? (
+        <JocPicker
+          today={today}
+          entries={entries}
+          onStart={startLevel}
+          onDone={(entry) => openRitual(entry.levelId, entry.id)}
+          onNote={(id, parentNote) => patchEntry(id, { parentNote })}
+        />
+      ) : null}
+
+      {mode.kind === "play" && level ? (
+        <JocPlay
+          level={level}
+          onDuration={(screenDurationMs) => patchEntry(mode.entryId, { screenDurationMs })}
+          onMission={(screenDurationMs) => {
+            patchEntry(mode.entryId, { screenDurationMs });
+            setMode({ kind: "mission", levelId: level.id, entryId: mode.entryId });
+          }}
+        />
+      ) : null}
+
+      {mode.kind === "mission" && level ? (
+        <JocMission
+          level={level}
+          note={entries.find((entry) => entry.id === mode.entryId)?.parentNote ?? ""}
+          onNote={(parentNote) => patchEntry(mode.entryId, { parentNote })}
+          onDone={() => openRitual(level.id, mode.entryId)}
+        />
+      ) : null}
+
+      {mode.kind === "ritual" && level ? (
+        <JocRitual level={level} onBack={() => setMode({ kind: "picker" })} />
+      ) : null}
+    </div>
+  );
+}
+
+function JocPicker({
+  today,
+  entries,
+  onStart,
+  onDone,
+  onNote,
+}: {
+  today: string;
+  entries: JocJournalEntry[];
+  onStart: (level: JocLevel) => void;
+  onDone: (entry: JocJournalEntry) => void;
+  onNote: (id: string, note: string) => void;
+}) {
+  const started = sessionsOnDate(entries, today);
+  const canStart = canStartSession(started);
+  const open = entries
+    .filter((entry) => entry.date === today && !entry.missionDone)
+    .sort(compareEntriesNewestFirst);
+  const history = [...entries].sort(compareEntriesNewestFirst);
+
+  function onExport() {
+    const blob = new Blob([formatJournalText(entries)], { type: "text/plain;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "jurnal-joc.txt";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+  }
+
+  return (
+    <div className="space-y-8">
+      <header className="space-y-2">
+        <h1 className="font-heading text-4xl">{JOC_COPY.title}</h1>
+        <p className="max-w-xl text-base leading-relaxed text-muted-foreground">{JOC_COPY.intro}</p>
+        <p className="text-sm font-medium">{sessionStatusLabel(started)}</p>
+      </header>
+
+      {open.length > 0 ? (
+        <section className="space-y-3" aria-label={JOC_COPY.missionPending}>
+          {open.map((entry) => {
+            const level = jocLevelById(entry.levelId);
+            if (!level) return null;
+            return (
+              <article key={entry.id} className="space-y-3 rounded-2xl border border-border bg-card p-4">
+                <h2 className="font-heading text-2xl">{openMissionLabel(level.name)}</h2>
+                <p className="text-lg leading-relaxed">{level.missionParent}</p>
+                <Button type="button" className="h-12 px-5 text-base" onClick={() => onDone(entry)}>
+                  {JOC_COPY.done}
+                </Button>
+              </article>
+            );
+          })}
+        </section>
+      ) : null}
+
+      <ul className="grid gap-3 sm:grid-cols-2">
+        {JOC_LEVELS.map((level) => (
+          <li key={level.id}>
+            <button
+              type="button"
+              disabled={!canStart}
+              onClick={() => onStart(level)}
+              className="flex min-h-24 w-full items-center gap-4 rounded-2xl border border-border bg-card p-4 text-left touch-manipulation disabled:opacity-50"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={level.characterSrc} alt="" className="size-16 shrink-0" />
+              <span>
+                <span className="block font-heading text-2xl">{level.name}</span>
+                <span className="text-sm text-muted-foreground">{level.cardLine}</span>
+              </span>
+            </button>
+          </li>
+        ))}
+      </ul>
+
+      <JournalList entries={history} onExport={onExport} onNote={onNote} />
+    </div>
+  );
+}
+
+function JournalList({
+  entries,
+  onExport,
+  onNote,
+}: {
+  entries: JocJournalEntry[];
+  onExport: () => void;
+  onNote: (id: string, note: string) => void;
+}) {
+  return (
+    <section className="space-y-3" aria-labelledby="jurnal-titlu">
+      <div className="flex items-end justify-between gap-3">
+        <div>
+          <h2 id="jurnal-titlu" className="font-heading text-2xl">
+            {JOC_COPY.journalTitle}
+          </h2>
+          <p className="text-sm text-muted-foreground">{JOC_COPY.journalHint}</p>
+        </div>
+        <Button
+          type="button"
+          variant="outline"
+          className="h-11 px-4"
+          onClick={onExport}
+          disabled={entries.length === 0}
+        >
+          {JOC_COPY.export}
+        </Button>
+      </div>
+      {entries.length === 0 ? (
+        <p className="text-sm text-muted-foreground">{JOC_COPY.journalEmpty}</p>
+      ) : (
+        <ul className="space-y-3">
+          {entries.map((entry) => (
+            <li key={entry.id} className="space-y-2 rounded-2xl border border-border bg-card p-4">
+              <p className="text-base leading-relaxed">
+                {formatJournalDate(entry.date)} · {entry.levelName} · timp pe ecran:{" "}
+                {formatScreenDuration(entry.screenDurationMs)} · misiune:{" "}
+                {entry.missionDone ? "gata" : "încă nu"}
+              </p>
+              <label className="block space-y-1 text-sm" htmlFor={`nota-${entry.id}`}>
+                <span className="text-muted-foreground">{JOC_COPY.noteLabel}</span>
+                <Textarea
+                  id={`nota-${entry.id}`}
+                  value={entry.parentNote}
+                  maxLength={400}
+                  placeholder={JOC_COPY.notePlaceholder}
+                  onChange={(event) => onNote(entry.id, event.target.value)}
+                />
+              </label>
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  );
+}
+
+function JocPlay({
+  level,
+  onDuration,
+  onMission,
+}: {
+  level: JocLevel;
+  onDuration: (screenDurationMs: number) => void;
+  onMission: (screenDurationMs: number) => void;
+}) {
+  const startedAt = useRef(0);
+  const sceneStartedAt = useRef(0);
+  const lastInteractionAt = useRef(0);
+  const tappedAt = useRef<number | null>(null);
+  const sceneIndexRef = useRef(0);
+  const leavingRef = useRef(false);
+  const timer = useRef<number | null>(null);
+  const pending = useRef<(() => void) | null>(null);
+  const onMissionRef = useRef(onMission);
+  const onDurationRef = useRef(onDuration);
+
+  useEffect(() => {
+    onMissionRef.current = onMission;
+    onDurationRef.current = onDuration;
+  });
+
+  const [sceneIndex, setSceneIndex] = useState(0);
+  const [tapped, setTapped] = useState(false);
+  const [leaving, setLeaving] = useState(false);
+  const scene = level.scenes[sceneIndex] ?? level.scenes[0];
+
+  const durationNow = useCallback(
+    () => clampScreenDuration(Date.now() - startedAt.current),
+    [],
+  );
+
+  function beginTransition(apply: () => void) {
+    pending.current = apply;
+    leavingRef.current = true;
+    setLeaving(true);
+    if (timer.current != null) return;
+    timer.current = window.setTimeout(() => {
+      timer.current = null;
+      const applyPending = pending.current;
+      pending.current = null;
+      leavingRef.current = false;
+      setLeaving(false);
+      applyPending?.();
+    }, JOC_FADE_MS);
+  }
+
+  function goMission() {
+    onMissionRef.current(durationNow());
+  }
+
+  useEffect(() => {
+    const now = Date.now();
+    startedAt.current = now;
+    sceneStartedAt.current = now;
+    lastInteractionAt.current = now;
+    let lastSave = now;
+    const save = () => onDurationRef.current(clampScreenDuration(Date.now() - startedAt.current));
+    window.addEventListener("pagehide", save);
+    const id = window.setInterval(() => {
+      const tickNow = Date.now();
+      if (tickNow - lastSave >= 5_000) {
+        lastSave = tickNow;
+        save();
+      }
+      const tappedNow = tappedAt.current != null;
+      const decision = decidePlay({
+        sceneElapsedMs: tickNow - sceneStartedAt.current,
+        msSinceInteraction: tickNow - lastInteractionAt.current,
+        msSinceTap: tappedNow ? tickNow - (tappedAt.current as number) : 0,
+        sessionElapsedMs: tickNow - startedAt.current,
+        tapped: tappedNow,
+        sceneIndex: sceneIndexRef.current,
+        sceneCount: level.scenes.length,
+      });
+      if (decision.type === "stay") return;
+      if (leavingRef.current && decision.type === "next-scene") return;
+      beginTransition(() => {
+        if (decision.type === "next-scene") {
+          sceneIndexRef.current += 1;
+          sceneStartedAt.current = Date.now();
+          tappedAt.current = null;
+          setSceneIndex(sceneIndexRef.current);
+          setTapped(false);
+          return;
+        }
+        goMission();
+      });
+    }, 250);
+
+    return () => {
+      window.clearInterval(id);
+      window.removeEventListener("pagehide", save);
+      if (timer.current != null) window.clearTimeout(timer.current);
+      save();
+    };
+    // The clock reads refs. Restarting it would drop the fade timer.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [level.id]);
+
+  function onStagePointer() {
+    lastInteractionAt.current = Date.now();
+  }
+
+  function onObjectTap() {
+    const now = Date.now();
+    lastInteractionAt.current = now;
+    if (leavingRef.current || tappedAt.current != null) return;
+    tappedAt.current = now;
+    setTapped(true);
+  }
+
+  if (!scene) return null;
+  const line = tapped ? scene.reaction : scene.prompt;
+
+  return (
+    <div className="flex flex-col gap-4">
+      <div className="sticky top-0 z-30 flex items-center justify-between gap-3 bg-background/95 py-2 backdrop-blur">
+        <h1 className="font-heading text-3xl">{level.name}</h1>
+        <Button
+          type="button"
+          variant="outline"
+          className="h-12 px-4 text-base"
+          onClick={() => beginTransition(goMission)}
+        >
+          {JOC_COPY.toMission}
+        </Button>
+      </div>
+      <div
+        className="transition-opacity ease-in-out"
+        style={{ transitionDuration: `${JOC_FADE_MS}ms`, opacity: leaving ? 0 : 1 }}
+        onPointerDown={onStagePointer}
+        aria-hidden={leaving}
+      >
+        <div className="flex flex-col items-center gap-6 pb-6">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={level.characterSrc} alt="" className="size-28" />
+          <button
+            type="button"
+            aria-label={level.objectLabel}
+            onClick={onObjectTap}
+            className="flex size-[min(72vw,280px)] items-center justify-center rounded-full bg-card ring-1 ring-border touch-manipulation focus-visible:ring-4 focus-visible:ring-ring/50"
+          >
+            <JocObject
+              levelId={level.id}
+              motion={scene.motion}
+              reacted={tapped}
+              sceneIndex={sceneIndex}
+            />
+          </button>
+          <p className="min-h-8 max-w-sm text-center text-xl leading-snug" aria-live="polite">
+            {line}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function JocMission({
+  level,
+  note,
+  onNote,
+  onDone,
+}: {
+  level: JocLevel;
+  note: string;
+  onNote: (note: string) => void;
+  onDone: () => void;
+}) {
+  return (
+    <article className="mx-auto max-w-lg space-y-6">
+      <p className="text-sm font-medium text-muted-foreground">{JOC_COPY.forParent}</p>
+      <div className="flex items-center gap-4">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={level.characterSrc} alt="" className="size-20" />
+        <h1 className="font-heading text-4xl">{level.name}</h1>
+      </div>
+      <p className="text-xl leading-relaxed">{level.missionParent}</p>
+      <label className="block space-y-2" htmlFor="nota-misiune">
+        <span className="text-sm font-medium">{JOC_COPY.noteLabel}</span>
+        <Textarea
+          id="nota-misiune"
+          value={note}
+          maxLength={400}
+          placeholder={JOC_COPY.notePlaceholder}
+          onChange={(event) => onNote(event.target.value)}
+        />
+      </label>
+      <Button type="button" className="h-14 w-full text-lg" onClick={onDone}>
+        {JOC_COPY.done}
+      </Button>
+    </article>
+  );
+}
+
+function JocRitual({ level, onBack }: { level: JocLevel; onBack: () => void }) {
+  return (
+    <div className="mx-auto flex min-h-[50vh] max-w-lg flex-col items-center justify-center gap-8 text-center">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={level.characterSrc} alt="" className="size-28" />
+      <p className="font-heading text-4xl">{level.ritual}</p>
+      <Button type="button" variant="outline" className="h-12 px-6 text-base" onClick={onBack}>
+        {JOC_COPY.ritualBack}
+      </Button>
+    </div>
+  );
+}
