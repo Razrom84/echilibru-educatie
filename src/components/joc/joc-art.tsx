@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import type { JocLevelId, JocMotion } from "@/lib/joc/levels";
+import type { JocMotion, JocObjectKind } from "@/lib/joc/levels";
 
 const MOTION_CLASS: Record<JocMotion, string> = {
   rise: "joc-rise",
@@ -15,30 +15,42 @@ const MOTION_CLASS: Record<JocMotion, string> = {
 };
 
 export function JocObject({
-  levelId,
+  object,
   motion,
   reacted,
   sceneIndex,
 }: {
-  levelId: JocLevelId;
+  object: JocObjectKind;
   motion: JocMotion;
   reacted: boolean;
   sceneIndex: number;
 }) {
   const motionClass = reacted ? MOTION_CLASS[motion] : undefined;
-  if (levelId === "balonas") return <Balloon className={motionClass} />;
-  if (levelId === "lopatica") {
+  if (object === "balloon") return <Balloon className={motionClass} />;
+  if (object === "bucket") {
     return <Bucket className={motionClass} scoop={scoopCount(sceneIndex, reacted)} />;
   }
-  if (levelId === "manuta") return <Palm className={motionClass} />;
-  if (levelId === "sunetel") return <Cow className={motionClass} />;
-  return <Leaf className={motionClass} />;
+  if (object === "palm") return <Palm className={motionClass} />;
+  if (object === "cow") return <Cow className={motionClass} />;
+  if (object === "leaf") return <Leaf className={motionClass} />;
+  return <Stone className={motionClass} />;
 }
 
 function scoopCount(sceneIndex: number, reacted: boolean): number {
   const base = Math.min(Math.max(sceneIndex, 0), 3);
   if (sceneIndex < 3 && reacted) return base + 1;
   return base;
+}
+
+function Stone({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 200 200" className="size-[70%] overflow-visible" aria-hidden>
+      <g className={cn("joc-motion", className)} style={{ transformOrigin: "50% 70%" }}>
+        <ellipse cx="100" cy="112" rx="58" ry="36" fill="#C4B59A" stroke="#8C7A62" strokeWidth="3" />
+        <ellipse cx="78" cy="100" rx="16" ry="10" fill="#E4D7C4" opacity="0.9" />
+      </g>
+    </svg>
+  );
 }
 
 function Balloon({ className }: { className?: string }) {

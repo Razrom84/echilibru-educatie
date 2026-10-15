@@ -13,6 +13,7 @@ export const JOC_COPY = {
   journalEmpty: "Încă nu este nicio sesiune.",
   export: "Exportă",
   missionPending: "Misiune deschisă",
+  emptyWeek: "Săptămâna aceasta nu are încă scene.",
 } as const;
 
 export function openMissionLabel(levelName: string): string {

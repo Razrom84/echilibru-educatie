@@ -1,4 +1,4 @@
-import { isJocLevelId, type JocLevelId } from "@/lib/joc/levels";
+import { isJocLevelId } from "@/lib/joc/levels";
 import { clampScreenDuration, formatScreenDuration } from "@/lib/joc/rules";
 
 export const JOC_JOURNAL_KEY = "echilibru-joc-jurnal-v1";
@@ -7,7 +7,7 @@ export const JOC_NOTE_MAX = 400;
 export type JocJournalEntry = {
   id: string;
   date: string;
-  levelId: JocLevelId;
+  levelId: string;
   levelName: string;
   screenDurationMs: number;
   missionDone: boolean;
@@ -28,7 +28,7 @@ export function normalizeParentNote(note: string): string {
 export function createJournalEntry(input: {
   id?: string;
   date: string;
-  levelId: JocLevelId;
+  levelId: string;
   levelName: string;
   startedAt: string;
 }): JocJournalEntry {

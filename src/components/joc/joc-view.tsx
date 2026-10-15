@@ -1,10 +1,11 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { JocObject } from "@/components/joc/joc-art";
 import { JOC_COPY, openMissionLabel } from "@/lib/joc/copy";
+import { jocWeekLevels, type JocWeekPlay } from "@/lib/joc/day-levels";
 import {
   compareEntriesNewestFirst,
   createJournalEntry,
@@ -16,27 +17,29 @@ import {
   writeJournal,
   type JocJournalEntry,
 } from "@/lib/joc/journal";
-import { JOC_LEVELS, jocLevelById, type JocLevel, type JocLevelId } from "@/lib/joc/levels";
+import { jocLegacyLevelById, objectLabel, sceneObject, type JocLevel } from "@/lib/joc/levels";
 import {
   JOC_FADE_MS,
   canStartSession,
-  clampScreenDuration,
   clockFrom,
   clockNudge,
   clockTap,
   clockTick,
   decidePlay,
   formatScreenDuration,
+  resumePlayClock,
+  screenDurationMs,
   sessionStatusLabel,
   type SceneClock,
 } from "@/lib/joc/rules";
+import { useFamily } from "@/lib/family-context";
 import { bucharestToday } from "@/lib/program-week";
 
 type Mode =
   | { kind: "picker" }
-  | { kind: "play"; levelId: JocLevelId; entryId: string }
-  | { kind: "mission"; levelId: JocLevelId; entryId: string }
-  | { kind: "ritual"; levelId: JocLevelId };
+  | { kind: "play"; levelId: string; entryId: string; startedAtMs: number }
+  | { kind: "mission"; levelId: string; entryId: string }
+  | { kind: "ritual"; levelId: string };
 
 function browserStorage(): Storage | null {
   if (typeof window === "undefined") return null;
@@ -44,11 +47,18 @@ function browserStorage(): Storage | null {
 }
 
 export function JocView() {
+  const { viewWeek } = useFamily();
+  const weekPlay = useMemo(() => jocWeekLevels(viewWeek), [viewWeek]);
   const [ready, setReady] = useState(false);
   const [entries, setEntries] = useState<JocJournalEntry[]>([]);
   const [mode, setMode] = useState<Mode>({ kind: "picker" });
   const startingRef = useRef(false);
   const today = bucharestToday();
+
+  const findLevel = useCallback(
+    (id: string) => weekPlay?.levels.find((level) => level.id === id) ?? jocLegacyLevelById(id),
+    [weekPlay],
+  );
 
   useEffect(() => {
     let active = true;
@@ -84,17 +94,18 @@ export function JocView() {
     if (startingRef.current) return;
     if (!canStartSession(sessionsOnDate(entries, today))) return;
     startingRef.current = true;
+    const startedAtMs = Date.now();
     const entry = createJournalEntry({
       date: today,
       levelId: level.id,
-      levelName: level.name,
-      startedAt: new Date().toISOString(),
+      levelName: `${level.name} · ${level.characterName}`,
+      startedAt: new Date(startedAtMs).toISOString(),
     });
     persist([...entries, entry]);
-    setMode({ kind: "play", levelId: level.id, entryId: entry.id });
+    setMode({ kind: "play", levelId: level.id, entryId: entry.id, startedAtMs });
   }
 
-  function openRitual(levelId: JocLevelId, entryId: string) {
+  function openRitual(levelId: string, entryId: string) {
     startingRef.current = false;
     patchEntry(entryId, { missionDone: true });
     setMode({ kind: "ritual", levelId });
@@ -108,7 +119,7 @@ export function JocView() {
     );
   }
 
-  const level = mode.kind === "picker" ? null : jocLevelById(mode.levelId);
+  const level = mode.kind === "picker" ? null : findLevel(mode.levelId);
   if (mode.kind !== "picker" && !level) {
     return null;
   }
@@ -120,8 +131,10 @@ export function JocView() {
     <div key={screenKey} className="joc-enter">
       {mode.kind === "picker" ? (
         <JocPicker
+          weekPlay={weekPlay}
           today={today}
           entries={entries}
+          findLevel={findLevel}
           onStart={startLevel}
           onDone={(entry) => openRitual(entry.levelId, entry.id)}
           onNote={(id, parentNote) => patchEntry(id, { parentNote })}
@@ -131,6 +144,7 @@ export function JocView() {
       {mode.kind === "play" && level ? (
         <JocPlay
           level={level}
+          startedAtMs={mode.startedAtMs}
           onDuration={(screenDurationMs) => patchEntry(mode.entryId, { screenDurationMs })}
           onMission={(screenDurationMs) => {
             patchEntry(mode.entryId, { screenDurationMs });
@@ -156,14 +170,18 @@ export function JocView() {
 }
 
 function JocPicker({
+  weekPlay,
   today,
   entries,
+  findLevel,
   onStart,
   onDone,
   onNote,
 }: {
+  weekPlay: JocWeekPlay | null;
   today: string;
   entries: JocJournalEntry[];
+  findLevel: (id: string) => JocLevel | null;
   onStart: (level: JocLevel) => void;
   onDone: (entry: JocJournalEntry) => void;
   onNote: (id: string, note: string) => void;
@@ -190,7 +208,13 @@ function JocPicker({
   return (
     <div className="space-y-8">
       <header className="space-y-2">
+        {weekPlay ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={weekPlay.characterSrc} alt="" className="size-24" />
+        ) : null}
         <h1 className="font-heading text-4xl">{JOC_COPY.title}</h1>
+        {weekPlay ? <p className="font-heading text-3xl">{weekPlay.characterName}</p> : null}
+        {weekPlay?.theme ? <p className="text-base text-muted-foreground">{weekPlay.theme}</p> : null}
         <p className="max-w-xl text-base leading-relaxed text-muted-foreground">{JOC_COPY.intro}</p>
         <p className="text-sm font-medium">{sessionStatusLabel(started)}</p>
       </header>
@@ -198,8 +222,17 @@ function JocPicker({
       {open.length > 0 ? (
         <section className="space-y-3" aria-label={JOC_COPY.missionPending}>
           {open.map((entry) => {
-            const level = jocLevelById(entry.levelId);
-            if (!level) return null;
+            const level = findLevel(entry.levelId);
+            if (!level) {
+              return (
+                <article key={entry.id} className="space-y-3 rounded-2xl border border-border bg-card p-4">
+                  <h2 className="font-heading text-2xl">{openMissionLabel(entry.levelName)}</h2>
+                  <Button type="button" className="h-12 px-5 text-base" onClick={() => onDone(entry)}>
+                    {JOC_COPY.done}
+                  </Button>
+                </article>
+              );
+            }
             return (
               <article key={entry.id} className="space-y-3 rounded-2xl border border-border bg-card p-4">
                 <h2 className="font-heading text-2xl">{openMissionLabel(level.name)}</h2>
@@ -213,25 +246,25 @@ function JocPicker({
         </section>
       ) : null}
 
-      <ul className="grid gap-3 sm:grid-cols-2">
-        {JOC_LEVELS.map((level) => (
-          <li key={level.id}>
-            <button
-              type="button"
-              disabled={!canStart}
-              onClick={() => onStart(level)}
-              className="flex min-h-24 w-full items-center gap-4 rounded-2xl border border-border bg-card p-4 text-left touch-manipulation disabled:opacity-50"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={level.characterSrc} alt="" className="size-16 shrink-0" />
-              <span>
+      {weekPlay && weekPlay.levels.length > 0 ? (
+        <ul className="grid gap-3 sm:grid-cols-2">
+          {weekPlay.levels.map((level) => (
+            <li key={level.id}>
+              <button
+                type="button"
+                disabled={!canStart}
+                onClick={() => onStart(level)}
+                className="flex min-h-20 w-full flex-col justify-center rounded-2xl border border-border bg-card p-4 text-left touch-manipulation disabled:opacity-50"
+              >
                 <span className="block font-heading text-2xl">{level.name}</span>
                 <span className="text-sm text-muted-foreground">{level.cardLine}</span>
-              </span>
-            </button>
-          </li>
-        ))}
-      </ul>
+              </button>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="text-base text-muted-foreground">{JOC_COPY.emptyWeek}</p>
+      )}
 
       <JournalList entries={history} onExport={onExport} onNote={onNote} />
     </div>
@@ -297,20 +330,16 @@ function JournalList({
 
 function JocPlay({
   level,
+  startedAtMs,
   onDuration,
   onMission,
 }: {
   level: JocLevel;
+  startedAtMs: number;
   onDuration: (screenDurationMs: number) => void;
   onMission: (screenDurationMs: number) => void;
 }) {
-  const clockRef = useRef<SceneClock>({
-    sceneIndex: 0,
-    sceneStartedAtMs: 0,
-    lastInteractionAtMs: 0,
-    tappedAtMs: null,
-    sessionStartedAtMs: 0,
-  });
+  const clockRef = useRef<SceneClock | null>(null);
   const leavingRef = useRef(false);
   const timer = useRef<number | null>(null);
   const pending = useRef<(() => void) | null>(null);
@@ -327,10 +356,7 @@ function JocPlay({
   const [leaving, setLeaving] = useState(false);
   const scene = level.scenes[sceneIndex] ?? level.scenes[0];
 
-  const durationNow = useCallback(
-    () => clampScreenDuration(Date.now() - clockRef.current.sessionStartedAtMs),
-    [],
-  );
+  const durationNow = useCallback(() => screenDurationMs(startedAtMs, Date.now()), [startedAtMs]);
 
   function beginTransition(apply: () => void) {
     pending.current = apply;
@@ -352,61 +378,68 @@ function JocPlay({
   }
 
   useEffect(() => {
-    const now = Date.now();
-    clockRef.current = {
-      sceneIndex: 0,
-      sceneStartedAtMs: now,
-      lastInteractionAtMs: now,
-      tappedAtMs: null,
-      sessionStartedAtMs: now,
+    clockRef.current = resumePlayClock(clockRef.current, startedAtMs);
+    let lastSave = 0;
+    const save = () => {
+      const elapsed = screenDurationMs(startedAtMs, Date.now());
+      if (startedAtMs > 0) onDurationRef.current(elapsed);
     };
-    let lastSave = now;
-    const save = () =>
-      onDurationRef.current(clampScreenDuration(Date.now() - clockRef.current.sessionStartedAtMs));
     window.addEventListener("pagehide", save);
     const id = window.setInterval(() => {
+      const clock = clockRef.current;
+      if (!clock || startedAtMs <= 0) return;
       const tickNow = Date.now();
-      if (tickNow - lastSave >= 5_000) {
+      if (lastSave === 0 || tickNow - lastSave >= 1_000) {
         lastSave = tickNow;
         save();
       }
-      const decision = decidePlay(clockFrom(clockRef.current, tickNow, level.scenes.length));
+      if (leavingRef.current && timer.current == null) leavingRef.current = false;
+      const decision = decidePlay(clockFrom(clock, tickNow, level.scenes.length));
       if (decision.type === "stay") return;
       if (leavingRef.current && decision.type === "next-scene") return;
       beginTransition(() => {
-        if (decision.type === "mission") {
+        const live = clockRef.current;
+        if (!live || decision.type === "mission") {
           goMission();
           return;
         }
-        const stepped = clockTick(clockRef.current, Date.now(), level.scenes.length);
+        const stepped = clockTick(live, Date.now(), level.scenes.length);
         clockRef.current = stepped.clock;
         if (stepped.decision.type === "next-scene") {
           setSceneIndex(stepped.clock.sceneIndex);
           setTapped(false);
           return;
         }
-        goMission();
+        if (stepped.decision.type === "mission") goMission();
       });
     }, 250);
 
     return () => {
       window.clearInterval(id);
       window.removeEventListener("pagehide", save);
-      if (timer.current != null) window.clearTimeout(timer.current);
       save();
     };
-    // The clock reads refs. Restarting it would drop the fade timer.
+    // The fade timer lives outside this effect so a restart cannot drop the mission.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [level.id]);
+  }, [level.id, level.scenes.length, startedAtMs]);
+
+  useEffect(() => {
+    return () => {
+      if (timer.current != null) window.clearTimeout(timer.current);
+    };
+  }, []);
 
   function onStagePointer() {
-    clockRef.current = clockNudge(clockRef.current, Date.now());
+    const clock = clockRef.current;
+    if (!clock) return;
+    clockRef.current = clockNudge(clock, Date.now());
   }
 
   function onObjectTap() {
-    if (leavingRef.current) return;
-    const wasTapped = clockRef.current.tappedAtMs != null;
-    clockRef.current = clockTap(clockRef.current, Date.now());
+    const clock = clockRef.current;
+    if (!clock || leavingRef.current) return;
+    const wasTapped = clock.tappedAtMs != null;
+    clockRef.current = clockTap(clock, Date.now());
     if (!wasTapped) setTapped(true);
   }
 
@@ -416,7 +449,10 @@ function JocPlay({
   return (
     <div className="flex flex-col gap-4">
       <div className="sticky top-0 z-30 flex items-center justify-between gap-3 bg-background/95 py-2 backdrop-blur">
-        <h1 className="font-heading text-3xl">{level.name}</h1>
+        <div>
+          <h1 className="font-heading text-3xl">{level.characterName}</h1>
+          <p className="text-sm text-muted-foreground">{level.name}</p>
+        </div>
         <Button
           type="button"
           variant="outline"
@@ -437,12 +473,12 @@ function JocPlay({
           <img src={level.characterSrc} alt="" className="size-28" />
           <button
             type="button"
-            aria-label={level.objectLabel}
+            aria-label={objectLabel(sceneObject(level.id, scene))}
             onClick={onObjectTap}
             className="flex size-[min(72vw,280px)] items-center justify-center rounded-full bg-card ring-1 ring-border touch-manipulation focus-visible:ring-4 focus-visible:ring-ring/50"
           >
             <JocObject
-              levelId={level.id}
+              object={sceneObject(level.id, scene)}
               motion={scene.motion}
               reacted={tapped}
               sceneIndex={sceneIndex}
@@ -474,7 +510,10 @@ function JocMission({
       <div className="flex items-center gap-4">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={level.characterSrc} alt="" className="size-20" />
-        <h1 className="font-heading text-4xl">{level.name}</h1>
+        <div>
+          <h1 className="font-heading text-4xl">{level.characterName}</h1>
+          <p className="text-sm text-muted-foreground">{level.name}</p>
+        </div>
       </div>
       <p className="text-xl leading-relaxed">{level.missionParent}</p>
       <label className="block space-y-2" htmlFor="nota-misiune">

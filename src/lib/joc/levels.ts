@@ -4,22 +4,30 @@
  * Textul misiunilor urmează secțiunea 3 din concept.
  */
 
-export const JOC_LEVEL_IDS = ["balonas", "lopatica", "manuta", "sunetel", "maturica"] as const;
+export const JOC_LEGACY_LEVEL_IDS = ["balonas", "lopatica", "manuta", "sunetel", "maturica"] as const;
 
-export type JocLevelId = (typeof JOC_LEVEL_IDS)[number];
+export type JocLegacyLevelId = (typeof JOC_LEGACY_LEVEL_IDS)[number];
+
+/** Day levels are `s{week}-z{day}` for the viewed week. Legacy ids still parse. */
+export type JocLevelId = string;
 
 export type JocMotion = "rise" | "sway" | "down" | "hold" | "scoop" | "clap" | "nod" | "sweep";
+
+export type JocObjectKind = "balloon" | "bucket" | "palm" | "cow" | "leaf" | "stone";
 
 export type JocScene = {
   id: string;
   prompt: string;
   reaction: string;
   motion: JocMotion;
+  object?: JocObjectKind;
 };
 
 export type JocLevel = {
-  id: JocLevelId;
+  id: string;
+  day: number;
   name: string;
+  characterName: string;
   characterSrc: string;
   objectLabel: string;
   cardLine: string;
@@ -28,10 +36,12 @@ export type JocLevel = {
   scenes: readonly JocScene[];
 };
 
-export const JOC_LEVELS: readonly JocLevel[] = [
+const JOC_LEGACY_LEVELS_RAW: readonly JocLevel[] = [
   {
     id: "balonas",
+    day: 0,
     name: "Balonaș",
+    characterName: "Balonaș",
     characterSrc: "/characters/balonas.svg",
     objectLabel: "Balon",
     cardLine: "Atinge balonul",
@@ -66,7 +76,9 @@ export const JOC_LEVELS: readonly JocLevel[] = [
   },
   {
     id: "lopatica",
+    day: 0,
     name: "Lopățică",
+    characterName: "Lopățică",
     characterSrc: "/characters/lopetica.svg",
     objectLabel: "Găleată",
     cardLine: "Atinge găleata",
@@ -101,7 +113,9 @@ export const JOC_LEVELS: readonly JocLevel[] = [
   },
   {
     id: "manuta",
+    day: 0,
     name: "Mănuță",
+    characterName: "Mănuță",
     characterSrc: "/characters/manuta.svg",
     objectLabel: "Palmă",
     cardLine: "Batem din palme",
@@ -136,7 +150,9 @@ export const JOC_LEVELS: readonly JocLevel[] = [
   },
   {
     id: "sunetel",
+    day: 0,
     name: "Sunețel",
+    characterName: "Sunețel",
     characterSrc: "/characters/suntel.svg",
     objectLabel: "Vacă",
     cardLine: "Atinge vaca",
@@ -171,7 +187,9 @@ export const JOC_LEVELS: readonly JocLevel[] = [
   },
   {
     id: "maturica",
+    day: 0,
     name: "Măturică",
+    characterName: "Măturică",
     characterSrc: "/characters/maturica.svg",
     objectLabel: "Frunză",
     cardLine: "Atinge frunza",
@@ -206,10 +224,45 @@ export const JOC_LEVELS: readonly JocLevel[] = [
   },
 ];
 
-export function jocLevelById(id: string): JocLevel | null {
-  return JOC_LEVELS.find((level) => level.id === id) ?? null;
+/** Older trial entries. The picker no longer offers these five levels. */
+export const JOC_LEGACY_LEVELS = JOC_LEGACY_LEVELS_RAW;
+
+const DAY_LEVEL_ID = /^s(\d+)-z([1-7])$/;
+
+export function isDayJocLevelId(id: string): boolean {
+  const match = DAY_LEVEL_ID.exec(id);
+  if (!match) return false;
+  const week = Number(match[1]);
+  return week >= 1 && week <= 52;
+}
+
+export function isLegacyJocLevelId(id: string): id is JocLegacyLevelId {
+  return (JOC_LEGACY_LEVEL_IDS as readonly string[]).includes(id);
 }
 
 export function isJocLevelId(id: string): id is JocLevelId {
-  return (JOC_LEVEL_IDS as readonly string[]).includes(id);
+  return isLegacyJocLevelId(id) || isDayJocLevelId(id);
+}
+
+export function jocLegacyLevelById(id: string): JocLevel | null {
+  return JOC_LEGACY_LEVELS.find((level) => level.id === id) ?? null;
+}
+
+export function sceneObject(levelId: string, scene: JocScene): JocObjectKind {
+  if (scene.object) return scene.object;
+  if (levelId === "balonas") return "balloon";
+  if (levelId === "lopatica") return "bucket";
+  if (levelId === "manuta") return "palm";
+  if (levelId === "sunetel") return "cow";
+  if (levelId === "maturica") return "leaf";
+  return "stone";
+}
+
+export function objectLabel(kind: JocObjectKind): string {
+  if (kind === "balloon") return "Balon";
+  if (kind === "bucket") return "Găleată";
+  if (kind === "palm") return "Palmă";
+  if (kind === "cow") return "Vacă";
+  if (kind === "leaf") return "Frunză";
+  return "Piatră";
 }

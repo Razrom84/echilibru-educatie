@@ -32,6 +32,16 @@ export function clampScreenDuration(ms: number): number {
   return Math.min(Math.round(ms), JOC_SESSION_MAX_MS);
 }
 
+/**
+ * Screen time is the elapsed time since the session was opened.
+ * A missing or zero start is 0 — never the 15-minute cap.
+ */
+export function screenDurationMs(startedAtMs: number | null, nowMs: number): number {
+  if (startedAtMs == null || !Number.isFinite(startedAtMs) || !Number.isFinite(nowMs)) return 0;
+  if (startedAtMs <= 0 || nowMs <= startedAtMs) return 0;
+  return clampScreenDuration(nowMs - startedAtMs);
+}
+
 export function formatScreenDuration(ms: number): string {
   const totalSeconds = Math.round(clampScreenDuration(ms) / 1000);
   const minutes = Math.floor(totalSeconds / 60);
@@ -72,15 +82,33 @@ export function clockFrom(clock: SceneClock, nowMs: number, sceneCount: number):
   };
 }
 
-/** A new scene starts its own 10s quiet window. The previous tap does not skip it. */
+/**
+ * The next scene starts clean, but the idle clock stays on the last real touch.
+ * A scene change is not an interaction, and it must not postpone the 10s exit.
+ */
 export function showNextScene(clock: SceneClock, nowMs: number): SceneClock {
   return {
     ...clock,
     sceneIndex: clock.sceneIndex + 1,
     sceneStartedAtMs: nowMs,
-    lastInteractionAtMs: nowMs,
     tappedAtMs: null,
   };
+}
+
+export function createPlayClock(startedAtMs: number): SceneClock {
+  return {
+    sceneIndex: 0,
+    sceneStartedAtMs: startedAtMs,
+    lastInteractionAtMs: startedAtMs,
+    tappedAtMs: null,
+    sessionStartedAtMs: startedAtMs,
+  };
+}
+
+/** A restarted effect keeps the original session and the original idle baseline. */
+export function resumePlayClock(clock: SceneClock | null, startedAtMs: number): SceneClock {
+  if (clock && clock.sessionStartedAtMs > 0) return clock;
+  return createPlayClock(startedAtMs);
 }
 
 export function clockTap(clock: SceneClock, nowMs: number): SceneClock {
