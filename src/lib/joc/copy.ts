@@ -16,6 +16,8 @@ export const JOC_COPY = {
   export: "Exportă",
   missionPending: "Misiune deschisă",
   emptyWeek: "Săptămâna aceasta nu are încă scene.",
+  watch: "Mod privit",
+  watchImitate: "Acum tu!",
 } as const;
 
 export function openMissionLabel(levelName: string): string {

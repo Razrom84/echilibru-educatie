@@ -3,7 +3,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import { Cezar } from "@/components/joc/cezar";
 import { JocObject } from "@/components/joc/joc-art";
+import { cezarAnimationForScene } from "@/lib/joc/cezar";
 import { JOC_COPY, openMissionLabel } from "@/lib/joc/copy";
 import { isPlayableJocDay, jocWeekLevels, type JocWeekPlay } from "@/lib/joc/day-levels";
 import {
@@ -17,6 +19,8 @@ import {
   readJournal,
   sessionsOnDate,
   updateJournalEntry,
+  watchScreenMs,
+  watchSessionsOnDate,
   writeJournal,
   type JocJournalEntry,
   type JocMissionStatus,
@@ -25,14 +29,22 @@ import { jocLegacyLevelById, objectLabel, sceneObject, type JocLevel } from "@/l
 import {
   JOC_FADE_MS,
   canStartSession,
+  canStartWatch,
   clockNudge,
   clockTap,
+  createWatchClock,
   formatScreenDuration,
   resumePlayClock,
+  resumeWatchClock,
   screenDurationMs,
   sessionStatusLabel,
   startPlayLoop,
+  startWatchLoop,
+  watchSceneCount,
+  watchStatusLabel,
   type SceneClock,
+  type WatchClock,
+  type WatchPhase,
 } from "@/lib/joc/rules";
 import { useFamily } from "@/lib/family-context";
 import { bucharestToday, civilDayOfWeek } from "@/lib/program-week";
@@ -40,6 +52,7 @@ import { bucharestToday, civilDayOfWeek } from "@/lib/program-week";
 type Mode =
   | { kind: "picker" }
   | { kind: "play"; levelId: string; entryId: string; startedAtMs: number }
+  | { kind: "watch"; levelId: string; entryId: string; startedAtMs: number; dayWatchMs: number }
   | { kind: "mission"; levelId: string; entryId: string }
   | { kind: "ritual"; levelId: string };
 
@@ -110,6 +123,25 @@ export function JocView() {
     setMode({ kind: "play", levelId: level.id, entryId: entry.id, startedAtMs });
   }
 
+  function startWatch(level: JocLevel) {
+    if (startingRef.current) return;
+    if (!isPlayableJocDay(level.day, todayDay)) return;
+    if (watchSceneCount(level.scenes.length) === 0) return;
+    const dayWatchMs = watchScreenMs(entries, today);
+    if (!canStartWatch(watchSessionsOnDate(entries, today), dayWatchMs)) return;
+    startingRef.current = true;
+    const startedAtMs = Date.now();
+    const entry = createJournalEntry({
+      date: today,
+      levelId: level.id,
+      levelName: `${level.name} · ${level.characterName}`,
+      startedAt: new Date(startedAtMs).toISOString(),
+      mode: "privit",
+    });
+    persist([...entries, entry]);
+    setMode({ kind: "watch", levelId: level.id, entryId: entry.id, startedAtMs, dayWatchMs });
+  }
+
   function closeMission(level: JocLevel, entryId: string, status: JocMissionStatus) {
     if (closingRef.current) return;
     closingRef.current = true;
@@ -147,6 +179,7 @@ export function JocView() {
           entries={entries}
           findLevel={findLevel}
           onStart={startLevel}
+          onWatch={startWatch}
           onClose={(entry, status) => {
             const levelForEntry = findLevel(entry.levelId);
             if (!levelForEntry) return;
@@ -160,6 +193,19 @@ export function JocView() {
         <JocPlay
           level={level}
           startedAtMs={mode.startedAtMs}
+          onDuration={(screenDurationMs) => patchEntry(mode.entryId, { screenDurationMs })}
+          onMission={(screenDurationMs) => {
+            patchEntry(mode.entryId, { screenDurationMs });
+            setMode({ kind: "mission", levelId: level.id, entryId: mode.entryId });
+          }}
+        />
+      ) : null}
+
+      {mode.kind === "watch" && level ? (
+        <JocWatch
+          level={level}
+          startedAtMs={mode.startedAtMs}
+          dayWatchMs={mode.dayWatchMs}
           onDuration={(screenDurationMs) => patchEntry(mode.entryId, { screenDurationMs })}
           onMission={(screenDurationMs) => {
             patchEntry(mode.entryId, { screenDurationMs });
@@ -197,6 +243,7 @@ function JocPicker({
   entries,
   findLevel,
   onStart,
+  onWatch,
   onClose,
   onNote,
 }: {
@@ -206,11 +253,15 @@ function JocPicker({
   entries: JocJournalEntry[];
   findLevel: (id: string) => JocLevel | null;
   onStart: (level: JocLevel) => void;
+  onWatch: (level: JocLevel) => void;
   onClose: (entry: JocJournalEntry, status: JocMissionStatus) => void;
   onNote: (id: string, note: string) => void;
 }) {
   const started = sessionsOnDate(entries, today);
   const canStart = canStartSession(started);
+  const watchStarts = watchSessionsOnDate(entries, today);
+  const watchedMs = watchScreenMs(entries, today);
+  const watchAllowed = canStartWatch(watchStarts, watchedMs);
   const open = entries
     .filter((entry) => entry.date === today && isMissionOpen(entry))
     .sort(compareEntriesNewestFirst);
@@ -240,6 +291,7 @@ function JocPicker({
         {weekPlay?.theme ? <p className="text-base text-muted-foreground">{weekPlay.theme}</p> : null}
         <p className="max-w-xl text-base leading-relaxed text-muted-foreground">{JOC_COPY.intro}</p>
         <p className="text-sm font-medium">{sessionStatusLabel(started)}</p>
+        <p className="text-sm font-medium">{watchStatusLabel(watchStarts, watchedMs)}</p>
         <p className="text-sm text-muted-foreground">{JOC_COPY.onlyToday}</p>
       </header>
 
@@ -270,8 +322,9 @@ function JocPicker({
         <ul className="grid gap-3 sm:grid-cols-2">
           {weekPlay.levels.map((level) => {
             const playable = canStart && isPlayableJocDay(level.day, todayDay);
+            const todayLevel = isPlayableJocDay(level.day, todayDay);
             return (
-              <li key={level.id}>
+              <li key={level.id} className="flex flex-col gap-2">
                 <button
                   type="button"
                   disabled={!playable}
@@ -281,6 +334,16 @@ function JocPicker({
                   <span className="block font-heading text-2xl">{level.name}</span>
                   <span className="text-sm text-muted-foreground">{level.cardLine}</span>
                 </button>
+                {todayLevel ? (
+                  <button
+                    type="button"
+                    disabled={!watchAllowed}
+                    onClick={() => onWatch(level)}
+                    className="h-12 w-full rounded-2xl border border-border bg-background px-4 text-base font-medium touch-manipulation disabled:opacity-40"
+                  >
+                    {JOC_COPY.watch}
+                  </button>
+                ) : null}
               </li>
             );
           })}
@@ -492,28 +555,205 @@ function JocPlay({
         aria-hidden={leaving}
       >
         <div className="flex flex-col items-center gap-6 pb-6">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={level.characterSrc} alt="" className="size-28" />
-          <button
-            type="button"
-            aria-label={objectLabel(sceneObject(level.id, scene))}
-            onClick={onObjectTap}
-            className="flex size-[min(72vw,280px)] items-center justify-center rounded-full bg-card ring-1 ring-border touch-manipulation focus-visible:ring-4 focus-visible:ring-ring/50"
-          >
-            <JocObject
-              key={scene.id}
-              object={sceneObject(level.id, scene)}
-              motion={scene.motion}
-              reacted
-              sceneIndex={sceneIndex}
-            />
-          </button>
+          <div className="flex w-full items-end justify-center gap-3">
+            <Cezar key={scene.id} animation={cezarAnimationForScene(level.day, sceneIndex)} />
+            <button
+              type="button"
+              aria-label={objectLabel(sceneObject(level.id, scene))}
+              onClick={onObjectTap}
+              className="flex size-[min(42vw,220px)] shrink-0 items-center justify-center rounded-full bg-card ring-1 ring-border touch-manipulation focus-visible:ring-4 focus-visible:ring-ring/50"
+            >
+              <JocObject
+                key={scene.id}
+                object={sceneObject(level.id, scene)}
+                motion={scene.motion}
+                reacted
+                sceneIndex={sceneIndex}
+              />
+            </button>
+          </div>
           {scene.caption ? (
             <p className="text-sm text-muted-foreground">{scene.caption}</p>
           ) : null}
           <p className="min-h-8 max-w-sm text-center text-xl leading-snug" aria-live="polite">
             {line}
           </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function JocWatch({
+  level,
+  startedAtMs,
+  dayWatchMs,
+  onDuration,
+  onMission,
+}: {
+  level: JocLevel;
+  startedAtMs: number;
+  dayWatchMs: number;
+  onDuration: (screenDurationMs: number) => void;
+  onMission: (screenDurationMs: number) => void;
+}) {
+  const scenes = level.scenes.slice(0, watchSceneCount(level.scenes.length));
+  const clockRef = useRef<WatchClock | null>(null);
+  const leavingRef = useRef(false);
+  const timer = useRef<number | null>(null);
+  const pending = useRef<(() => void) | null>(null);
+  const onMissionRef = useRef(onMission);
+  const onDurationRef = useRef(onDuration);
+
+  useEffect(() => {
+    onMissionRef.current = onMission;
+    onDurationRef.current = onDuration;
+  });
+
+  const [sceneIndex, setSceneIndex] = useState(0);
+  const [phase, setPhase] = useState<WatchPhase>("scene");
+  const [leaving, setLeaving] = useState(false);
+  const scene = scenes[sceneIndex] ?? scenes[0];
+
+  const durationNow = useCallback(() => screenDurationMs(startedAtMs, Date.now()), [startedAtMs]);
+
+  function beginTransition(apply: () => void) {
+    pending.current = apply;
+    leavingRef.current = true;
+    setLeaving(true);
+    if (timer.current != null) return;
+    timer.current = window.setTimeout(() => {
+      timer.current = null;
+      const applyPending = pending.current;
+      pending.current = null;
+      leavingRef.current = false;
+      setLeaving(false);
+      applyPending?.();
+    }, JOC_FADE_MS);
+  }
+
+  function goMission() {
+    onMissionRef.current(durationNow());
+  }
+
+  useEffect(() => {
+    clockRef.current = resumeWatchClock(clockRef.current, startedAtMs);
+    let lastSave = 0;
+    const save = () => {
+      const elapsed = screenDurationMs(startedAtMs, Date.now());
+      if (startedAtMs > 0) onDurationRef.current(elapsed);
+    };
+    window.addEventListener("pagehide", save);
+    const saveId = window.setInterval(() => {
+      const tickNow = Date.now();
+      if (lastSave === 0 || tickNow - lastSave >= 1_000) {
+        lastSave = tickNow;
+        save();
+      }
+    }, 1_000);
+    const loop = startWatchLoop({
+      startedAtMs,
+      sceneCount: scenes.length,
+      dayWatchMs,
+      getClock: () => clockRef.current ?? createWatchClock(startedAtMs),
+      setClock: (clock) => {
+        clockRef.current = clock;
+      },
+      isSuspended: () => leavingRef.current,
+      onPause: (commit) => {
+        beginTransition(() => {
+          commit();
+          setPhase("pause");
+        });
+      },
+      onScene: (index, commit) => {
+        beginTransition(() => {
+          commit();
+          setSceneIndex(index);
+          setPhase("scene");
+        });
+      },
+      onMission: () => {
+        beginTransition(() => {
+          goMission();
+        });
+      },
+    });
+
+    return () => {
+      loop.stop();
+      window.clearInterval(saveId);
+      window.removeEventListener("pagehide", save);
+      save();
+    };
+    // The fade timer lives outside this effect so a restart cannot drop the mission.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [level.id, scenes.length, startedAtMs, dayWatchMs]);
+
+  useEffect(() => {
+    return () => {
+      if (timer.current != null) window.clearTimeout(timer.current);
+    };
+  }, []);
+
+  if (!scene) return null;
+  const imitating = phase === "pause";
+
+  return (
+    <div className="flex flex-col gap-4">
+      <div className="sticky top-0 z-30 flex items-center justify-between gap-3 bg-background/95 py-2 backdrop-blur">
+        <div>
+          <h1 className="font-heading text-3xl">{level.characterName}</h1>
+          <p className="text-sm text-muted-foreground">
+            {JOC_COPY.watch} · {level.name}
+          </p>
+        </div>
+        <Button
+          type="button"
+          variant="outline"
+          className="h-12 px-4 text-base"
+          onClick={() => beginTransition(goMission)}
+        >
+          {JOC_COPY.toMission}
+        </Button>
+      </div>
+      <div
+        className="transition-opacity ease-in-out"
+        style={{ transitionDuration: `${JOC_FADE_MS}ms`, opacity: leaving ? 0 : 1 }}
+        aria-hidden={leaving}
+      >
+        <div className="flex flex-col items-center gap-6 pb-6">
+          <div className="flex w-full items-end justify-center gap-3">
+            {/* Same key through the pause so the finished pose stays still. */}
+            <Cezar key={scene.id} animation={cezarAnimationForScene(level.day, sceneIndex)} />
+            <div
+              className="flex size-[min(42vw,220px)] shrink-0 items-center justify-center rounded-full bg-card ring-1 ring-border"
+              aria-hidden
+            >
+              <JocObject
+                key={scene.id}
+                object={sceneObject(level.id, scene)}
+                motion={scene.motion}
+                reacted
+                sceneIndex={sceneIndex}
+              />
+            </div>
+          </div>
+          {scene.caption ? (
+            <p className="text-sm text-muted-foreground">{scene.caption}</p>
+          ) : null}
+          {imitating ? (
+            <div className="space-y-1 text-center">
+              <p className="text-sm font-medium text-muted-foreground">{JOC_COPY.forParent}</p>
+              <p className="min-h-8 font-heading text-4xl" aria-live="polite">
+                {JOC_COPY.watchImitate}
+              </p>
+            </div>
+          ) : (
+            <p className="min-h-8 max-w-sm text-center text-xl leading-snug" aria-live="polite">
+              {scene.prompt}
+            </p>
+          )}
         </div>
       </div>
     </div>

@@ -8,6 +8,8 @@ import {
   parseJournal,
   sessionsOnDate,
   updateJournalEntry,
+  watchScreenMs,
+  watchSessionsOnDate,
 } from "./journal";
 import {
   buildDayLevels,
@@ -25,19 +27,32 @@ import {
   JOC_MAX_SESSIONS_PER_DAY,
   JOC_MIN_SCENE_MS,
   JOC_SESSION_MAX_MS,
+  JOC_WATCH_DAY_MAX_MS,
+  JOC_WATCH_MAX_PER_DAY,
+  JOC_WATCH_PAUSE_MS,
+  JOC_WATCH_SCENE_COUNT,
   canStartSession,
+  canStartWatch,
   clockNudge,
   clockTap,
   clockTick,
   createPlayClock,
+  createWatchClock,
   decidePlay,
+  decideWatch,
   formatScreenDuration,
   resumePlayClock,
   screenDurationMs,
   sessionStatusLabel,
   startPlayLoop,
+  startWatchLoop,
+  watchPlanMs,
+  watchSceneCount,
+  watchStatusLabel,
   type PlayTick,
   type SceneClock,
+  type WatchClock,
+  type WatchPhase,
 } from "./rules";
 
 const ENGLISH_UI =
@@ -47,6 +62,12 @@ function userStrings(): string[] {
   const strings: string[] = Object.values(JOC_COPY);
   strings.push(openMissionLabel("Luni"));
   strings.push(sessionStatusLabel(0), sessionStatusLabel(1), sessionStatusLabel(2));
+  strings.push(
+    watchStatusLabel(0, 0),
+    watchStatusLabel(1, 0),
+    watchStatusLabel(2, 0),
+    watchStatusLabel(1, JOC_WATCH_DAY_MAX_MS),
+  );
   const week = jocWeekLevels(1);
   if (week) {
     strings.push(week.characterName, week.theme);
@@ -466,5 +487,225 @@ describe("joc journal", () => {
     expect(activityIdsMarkedDone("real", ["a", "b"], new Set(["b"]))).toEqual(["a"]);
     const legacy = parseJournal(JSON.stringify([{ ...entry, missionDone: true }]));
     expect(legacy[0]?.missionStatus).toBe("real");
+  });
+
+  test("a watch start does not use a play session, and an old save stays a play session", () => {
+    const play = createJournalEntry({
+      id: "joc-1",
+      date: "2026-10-15",
+      levelId: "s1-z1",
+      levelName: "Luni · Căsuță",
+      startedAt: "2026-10-15T08:00:00.000Z",
+    });
+    const watched = createJournalEntry({
+      id: "joc-privit",
+      date: "2026-10-15",
+      levelId: "s1-z1",
+      levelName: "Luni · Căsuță",
+      startedAt: "2026-10-15T18:00:00.000Z",
+      mode: "privit",
+    });
+    expect(play.mode).toBe("joc");
+    expect(sessionsOnDate([play, watched], "2026-10-15")).toBe(1);
+    expect(watchSessionsOnDate([play, watched], "2026-10-15")).toBe(1);
+    expect(watchScreenMs([play, watched], "2026-10-15")).toBe(0);
+
+    const saved = JSON.parse(JSON.stringify(play)) as { mode?: string };
+    delete saved.mode;
+    const parsed = parseJournal(JSON.stringify([saved]));
+    expect(parsed[0]?.mode).toBe("joc");
+    expect(sessionsOnDate(parsed, "2026-10-15")).toBe(1);
+    expect(canStartSession(sessionsOnDate(parsed, "2026-10-15"))).toBe(true);
+  });
+});
+
+describe("mod privit", () => {
+  test("two watches stay under ten minutes and inside the fifteen-minute cap", () => {
+    expect(JOC_WATCH_SCENE_COUNT).toBe(4);
+    expect(JOC_WATCH_PAUSE_MS).toBeGreaterThanOrEqual(5_000);
+    expect(JOC_WATCH_PAUSE_MS).toBeLessThanOrEqual(10_000);
+    expect(JOC_WATCH_DAY_MAX_MS).toBeLessThan(JOC_SESSION_MAX_MS);
+    expect(watchSceneCount(5)).toBe(4);
+    expect(watchSceneCount(3)).toBe(3);
+    expect(watchSceneCount(0)).toBe(0);
+    const oneRun = watchPlanMs(4);
+    expect(oneRun).toBe(4 * (JOC_MIN_SCENE_MS + JOC_WATCH_PAUSE_MS + JOC_FADE_MS * 2));
+    expect(oneRun * JOC_WATCH_MAX_PER_DAY).toBeLessThan(JOC_WATCH_DAY_MAX_MS);
+    expect(oneRun).toBeLessThan(JOC_SESSION_MAX_MS);
+    expect(canStartWatch(0, 0)).toBe(true);
+    expect(canStartWatch(1, 0)).toBe(true);
+    expect(canStartWatch(2, 0)).toBe(false);
+    expect(canStartWatch(1, JOC_WATCH_DAY_MAX_MS)).toBe(false);
+    expect(watchStatusLabel(2, 0)).toContain("două ori");
+  });
+
+  test("ten seconds without a touch does not leave a watch scene", () => {
+    expect(
+      decidePlay(tick({ msSinceInteraction: JOC_IDLE_MS, sceneElapsedMs: 1_000 })),
+    ).toEqual({ type: "mission", reason: "idle" });
+    expect(
+      decideWatch({
+        phase: "scene",
+        phaseElapsedMs: 1_000,
+        sessionElapsedMs: JOC_IDLE_MS,
+        sceneIndex: 0,
+        sceneCount: 4,
+        dayWatchMs: 0,
+      }),
+    ).toEqual({ type: "stay" });
+  });
+
+  test("four scenes each hold, then pause, and the last pause opens the mission", () => {
+    let phase: WatchPhase = "scene";
+    let phaseStarted = 0;
+    let sceneIndex = 0;
+    const events: string[] = [];
+
+    for (let now = 0; now <= 80_000; now += 250) {
+      const decision = decideWatch({
+        phase,
+        phaseElapsedMs: now - phaseStarted,
+        sessionElapsedMs: now,
+        sceneIndex,
+        sceneCount: 4,
+        dayWatchMs: 0,
+      });
+      if (decision.type === "pause") {
+        events.push(`pause@${now}`);
+        phase = "pause";
+        phaseStarted = now;
+        continue;
+      }
+      if (decision.type === "next-scene") {
+        events.push(`next@${now}`);
+        sceneIndex += 1;
+        phase = "scene";
+        phaseStarted = now;
+        continue;
+      }
+      if (decision.type === "mission") {
+        events.push(`mission:${decision.reason}@${now}`);
+        break;
+      }
+    }
+
+    expect(events).toEqual([
+      "pause@5000",
+      "next@13000",
+      "pause@18000",
+      "next@26000",
+      "pause@31000",
+      "next@39000",
+      "pause@44000",
+      "mission:finished@52000",
+    ]);
+  });
+
+  test("the daily ten minutes and the fifteen-minute cap both end the watch", () => {
+    expect(
+      decideWatch({
+        phase: "scene",
+        phaseElapsedMs: 0,
+        sessionElapsedMs: JOC_WATCH_DAY_MAX_MS - 1,
+        sceneIndex: 0,
+        sceneCount: 4,
+        dayWatchMs: 0,
+      }),
+    ).toEqual({ type: "stay" });
+    expect(
+      decideWatch({
+        phase: "scene",
+        phaseElapsedMs: 0,
+        sessionElapsedMs: 1_000,
+        sceneIndex: 0,
+        sceneCount: 4,
+        dayWatchMs: JOC_WATCH_DAY_MAX_MS - 1_000,
+      }),
+    ).toEqual({ type: "mission", reason: "cap" });
+    expect(
+      decideWatch({
+        phase: "pause",
+        phaseElapsedMs: 0,
+        sessionElapsedMs: JOC_SESSION_MAX_MS,
+        sceneIndex: 1,
+        sceneCount: 4,
+        dayWatchMs: Number.NaN,
+      }),
+    ).toEqual({ type: "mission", reason: "cap" });
+  });
+
+  test("the watch loop finishes four scenes with no touch and stops a third-long day", () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-10-15T08:00:00.000Z"));
+    const startedAtMs = Date.now();
+    let clock: WatchClock = createWatchClock(startedAtMs);
+    const events: string[] = [];
+    const loop = startWatchLoop({
+      startedAtMs,
+      sceneCount: watchSceneCount(5),
+      dayWatchMs: 0,
+      getClock: () => clock,
+      setClock: (next) => {
+        clock = next;
+      },
+      onPause: (commit) => {
+        events.push(`pause@${Date.now() - startedAtMs}`);
+        commit();
+      },
+      onScene: (index, commit) => {
+        events.push(`scene@${Date.now() - startedAtMs}:${index}`);
+        commit();
+      },
+      onMission: (reason) => {
+        events.push(`mission:${reason}@${Date.now() - startedAtMs}`);
+      },
+    });
+
+    try {
+      vi.advanceTimersByTime(JOC_IDLE_MS);
+      expect(events.some((event) => event.startsWith("mission"))).toBe(false);
+      vi.advanceTimersByTime(60_000);
+      expect(events).toEqual([
+        "pause@5000",
+        "scene@13000:1",
+        "pause@18000",
+        "scene@26000:2",
+        "pause@31000",
+        "scene@39000:3",
+        "pause@44000",
+        "mission:finished@52000",
+      ]);
+      expect(clock.sessionStartedAtMs).toBe(startedAtMs);
+    } finally {
+      loop.stop();
+      vi.useRealTimers();
+    }
+
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-10-15T20:00:00.000Z"));
+    const later = Date.now();
+    let capped: WatchClock = createWatchClock(later);
+    const reasons: string[] = [];
+    const cappedLoop = startWatchLoop({
+      startedAtMs: later,
+      sceneCount: 4,
+      dayWatchMs: JOC_WATCH_DAY_MAX_MS - 1_000,
+      getClock: () => capped,
+      setClock: (next) => {
+        capped = next;
+      },
+      onPause: (commit) => commit(),
+      onScene: (_index, commit) => commit(),
+      onMission: (reason) => {
+        reasons.push(reason);
+      },
+    });
+    try {
+      vi.advanceTimersByTime(1_000);
+      expect(reasons).toEqual(["cap"]);
+    } finally {
+      cappedLoop.stop();
+      vi.useRealTimers();
+    }
   });
 });

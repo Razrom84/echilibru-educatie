@@ -236,7 +236,274 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .joc-motion {
+  .joc-motion,
+  .joc-cezar .cezar-part,
+  .joc-cezar .cezar-body,
+  .joc-cezar .cezar-zoom {
     animation: none;
   }
 }
+
+/* cezar-motions: one slow pass each, no loop and no flash */
+.joc-cezar .cezar-part,
+.joc-cezar .cezar-body,
+.joc-cezar .cezar-zoom {
+  transform-box: fill-box;
+  animation-duration: var(--cezar-dur, 2.8s);
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+}
+
+.joc-cezar-mers .cezar-body {
+  animation-name: cezar-mers-body;
+}
+
+.joc-cezar-mers .cezar-leg-l {
+  animation-name: cezar-mers-leg-l;
+}
+
+.joc-cezar-mers .cezar-leg-r {
+  animation-name: cezar-mers-leg-r;
+}
+
+.joc-cezar-mers .cezar-arm-far {
+  animation-name: cezar-mers-arm-far;
+}
+
+.joc-cezar-mers .cezar-arm-near {
+  animation-name: cezar-mers-arm-near;
+}
+
+.joc-cezar-sarit .cezar-body {
+  animation-name: cezar-sarit-body;
+}
+
+.joc-cezar-sarit .cezar-arm-far {
+  animation-name: cezar-sarit-arm-far;
+}
+
+.joc-cezar-sarit .cezar-arm-near {
+  animation-name: cezar-sarit-arm-near;
+}
+
+.joc-cezar-palme .cezar-arm-far {
+  animation-name: cezar-palme-far;
+}
+
+.joc-cezar-palme .cezar-arm-near {
+  animation-name: cezar-palme-near;
+}
+
+.joc-cezar-aratat .cezar-arm-near {
+  animation-name: cezar-aratat-near;
+}
+
+.joc-cezar-aplecat .cezar-lean {
+  animation-name: cezar-aplecat-lean;
+}
+
+.joc-cezar-apucat .cezar-lean {
+  animation-name: cezar-apucat-lean;
+}
+
+.joc-cezar-apucat .cezar-arm-near {
+  animation-name: cezar-apucat-near;
+}
+
+.joc-cezar-apucat .cezar-arm-far {
+  animation-name: cezar-apucat-far;
+}
+
+.joc-cezar-zoom-maini .cezar-zoom {
+  transform-origin: 50% 68%;
+  animation-name: cezar-zoom-in;
+}
+
+.joc-cezar-zoom-picioare .cezar-zoom {
+  transform-origin: 50% 90%;
+  animation-name: cezar-zoom-in;
+}
+
+.joc-cezar-zoom-cap .cezar-zoom {
+  transform-origin: 50% 28%;
+  animation-name: cezar-zoom-in;
+}
+
+@keyframes cezar-mers-body {
+  0% {
+    transform: translate(0, 0);
+  }
+  45% {
+    transform: translate(5px, -3px);
+  }
+  100% {
+    transform: translate(8px, 0);
+  }
+}
+
+@keyframes cezar-mers-leg-l {
+  0% {
+    transform: rotate(0deg);
+  }
+  45% {
+    transform: rotate(18deg);
+  }
+  100% {
+    transform: rotate(6deg);
+  }
+}
+
+@keyframes cezar-mers-leg-r {
+  0% {
+    transform: rotate(0deg);
+  }
+  45% {
+    transform: rotate(-16deg);
+  }
+  100% {
+    transform: rotate(-4deg);
+  }
+}
+
+@keyframes cezar-mers-arm-far {
+  0% {
+    transform: rotate(0deg);
+  }
+  45% {
+    transform: rotate(-12deg);
+  }
+  100% {
+    transform: rotate(-4deg);
+  }
+}
+
+@keyframes cezar-mers-arm-near {
+  0% {
+    transform: rotate(0deg);
+  }
+  45% {
+    transform: rotate(12deg);
+  }
+  100% {
+    transform: rotate(4deg);
+  }
+}
+
+@keyframes cezar-sarit-body {
+  0% {
+    transform: translateY(0);
+  }
+  24% {
+    transform: translateY(7px);
+  }
+  62% {
+    transform: translateY(-26px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes cezar-sarit-arm-far {
+  0% {
+    transform: rotate(0deg);
+  }
+  62% {
+    transform: rotate(-32deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes cezar-sarit-arm-near {
+  0% {
+    transform: rotate(0deg);
+  }
+  62% {
+    transform: rotate(32deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes cezar-palme-far {
+  0% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(50deg);
+  }
+  100% {
+    transform: rotate(44deg);
+  }
+}
+
+@keyframes cezar-palme-near {
+  0% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(-50deg);
+  }
+  100% {
+    transform: rotate(-44deg);
+  }
+}
+
+@keyframes cezar-aratat-near {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(58deg);
+  }
+}
+
+@keyframes cezar-aplecat-lean {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(16deg);
+  }
+}
+
+@keyframes cezar-apucat-lean {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(12deg);
+  }
+}
+
+@keyframes cezar-apucat-near {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(34deg);
+  }
+}
+
+@keyframes cezar-apucat-far {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(18deg);
+  }
+}
+
+@keyframes cezar-zoom-in {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.28);
+  }
+}
+/* /cezar-motions */

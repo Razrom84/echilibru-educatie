@@ -7,6 +7,9 @@ export const JOC_NOTE_MAX = 400;
 /** `real` ticks the plan. `doar_joc` stays in the journal only. */
 export type JocMissionStatus = "real" | "doar_joc";
 
+/** `privit` is the parent watch mode. Older saves have no mode and stay `joc`. */
+export type JocSessionMode = "joc" | "privit";
+
 export type JocJournalEntry = {
   id: string;
   date: string;
@@ -17,6 +20,7 @@ export type JocJournalEntry = {
   missionStatus: JocMissionStatus | null;
   parentNote: string;
   startedAt: string;
+  mode: JocSessionMode;
 };
 
 export type JournalPatch = Partial<
@@ -29,12 +33,17 @@ export function normalizeParentNote(note: string): string {
   return note.slice(0, JOC_NOTE_MAX);
 }
 
+export function sessionModeOf(entry: { mode?: unknown }): JocSessionMode {
+  return entry.mode === "privit" ? "privit" : "joc";
+}
+
 export function createJournalEntry(input: {
   id?: string;
   date: string;
   levelId: string;
   levelName: string;
   startedAt: string;
+  mode?: JocSessionMode;
 }): JocJournalEntry {
   return {
     id: input.id ?? `joc-${Math.random().toString(36).slice(2, 10)}`,
@@ -46,6 +55,7 @@ export function createJournalEntry(input: {
     missionStatus: null,
     parentNote: "",
     startedAt: input.startedAt,
+    mode: sessionModeOf(input),
   };
 }
 
@@ -128,6 +138,7 @@ export function parseJournal(raw: string | null): JocJournalEntry[] {
         parentNote: normalizeParentNote(entry.parentNote),
         missionStatus,
         missionDone: missionStatus === "real",
+        mode: sessionModeOf(entry),
       };
     });
   } catch {
@@ -136,7 +147,18 @@ export function parseJournal(raw: string | null): JocJournalEntry[] {
 }
 
 export function sessionsOnDate(entries: readonly JocJournalEntry[], date: string): number {
-  return entries.filter((entry) => entry.date === date).length;
+  return entries.filter((entry) => entry.date === date && entry.mode !== "privit").length;
+}
+
+export function watchSessionsOnDate(entries: readonly JocJournalEntry[], date: string): number {
+  return entries.filter((entry) => entry.date === date && entry.mode === "privit").length;
+}
+
+export function watchScreenMs(entries: readonly JocJournalEntry[], date: string): number {
+  return entries.reduce((sum, entry) => {
+    if (entry.date !== date || entry.mode !== "privit") return sum;
+    return sum + entry.screenDurationMs;
+  }, 0);
 }
 
 export function updateJournalEntry(
