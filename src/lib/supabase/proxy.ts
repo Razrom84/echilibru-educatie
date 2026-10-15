@@ -41,7 +41,8 @@ export async function updateSession(request: NextRequest) {
     path.startsWith("/_next") ||
     path.startsWith("/api/calendar") ||
     path.startsWith("/api/cron") ||
-    path === "/apple-icon";
+    path === "/apple-icon" ||
+    path === "/manifest.webmanifest";
 
   if (!authenticated && !isPublic && path !== "/") {
     const url = request.nextUrl.clone();
