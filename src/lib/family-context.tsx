@@ -21,7 +21,6 @@ import { completionsForChild } from "@/lib/child-scope";
 import {
   addDemoChild,
   clearDemoSession,
-  demoActivities,
   demoArchiveDaysForChild,
   demoDayNotesForWeek,
   readDemoState,
@@ -51,10 +50,14 @@ import {
   restampDatesForToggle,
 } from "@/lib/completion-date";
 import {
+  readPreviewCatalog,
+  readWeekCatalog,
+  type CatalogOrigin,
+} from "@/lib/catalog-source";
+import {
   getSeedActivities,
   getSeedActivityById,
   normalizeActivity,
-  usesLocalSeedCatalog,
 } from "@/lib/seed/week1";
 import { DEMO_CALENDAR_TOKEN, generateCalendarToken } from "@/lib/calendar";
 import {
@@ -86,7 +89,7 @@ import {
   programWeekNumber,
   programWeekRange,
 } from "@/lib/program-week";
-import { getWeekTheme, PROGRAM_WEEK, PROGRAM_WEEKS } from "@/lib/week";
+import { getWeekTheme, PROGRAM_WEEK } from "@/lib/week";
 import type { SeedActivity } from "@/lib/types";
 import { aziDayOfWeek } from "@/lib/azi";
 import {
@@ -97,7 +100,6 @@ import {
   isBandPreview,
   liveChildBand,
   previewActivitiesPending,
-  themesFromActivityRows,
   viewBandFromSession,
   viewProgramWeek,
   type PilotBand,
@@ -125,6 +127,7 @@ type FamilyContextValue = {
   viewCivilDate: string;
   previewLoading: boolean;
   previewWeekLoading: boolean;
+  usingLocalCatalog: boolean;
   bandHasContent: boolean;
   bandWeekThemes: Partial<Record<number, string>> | null;
   activities: Activity[];
@@ -232,6 +235,9 @@ export function FamilyProvider({
     themes: Partial<Record<number, string>>;
   } | null>(null);
   const [activities, setActivities] = useState<Activity[]>([]);
+  const [catalogOrigin, setCatalogOrigin] = useState<CatalogOrigin>("database");
+  const [previewOrigin, setPreviewOrigin] = useState<CatalogOrigin>("database");
+  const [liveViewOrigin, setLiveViewOrigin] = useState<CatalogOrigin>("database");
   const [completions, setCompletions] = useState<Completion[]>([]);
   const [dayNotes, setDayNotes] = useState<DayNote[]>([]);
   const [todayArchive, setTodayArchive] = useState<ArchiveDay | null>(null);
@@ -291,6 +297,14 @@ export function FamilyProvider({
         bandHasContent,
       })
     : viewWeek !== selectedWeek && liveViewCatalog?.week !== viewWeek;
+  const usingLocalCatalog =
+    previewLoading || previewWeekLoading
+      ? false
+      : isPreviewing
+        ? previewOrigin === "local"
+        : viewWeek !== selectedWeek
+          ? liveViewCatalog?.week === viewWeek && liveViewOrigin === "local"
+          : catalogOrigin === "local";
   const viewActivities = useMemo(() => {
     if (isPreviewing) return catalogForWeek?.activities ?? EMPTY_PREVIEW_ACTIVITIES;
     if (viewWeek === selectedWeek) return activities;
@@ -322,11 +336,9 @@ export function FamilyProvider({
         kids.find((child) => child.id === state.selectedChildId)?.id ??
         kids[0]?.id ??
         null;
-      const selected = kids.find((child) => child.id === selectedId) ?? null;
       setFamily(state.family);
       setKids(kids);
       setSelectedChildId(selectedId);
-      setActivities(demoActivities(week, liveChildBand(selected?.age_band)));
       setCompletions(completionsForChild(state.completions, selectedId));
       setDayNotes(demoDayNotesForWeek({ ...state, selectedChildId: selectedId }, week));
       const today = bucharestToday();
@@ -365,6 +377,21 @@ export function FamilyProvider({
           return null;
         });
       }
+      const selectedForCatalog =
+        state.children.find((child) => child.id === state.selectedChildId) ??
+        state.children.find((child) => child.active) ??
+        null;
+      const catalog = await readWeekCatalog(
+        createBrowserSupabase(),
+        liveChildBand(
+          selectedForCatalog
+            ? applyCohortAgeBand(selectedForCatalog).age_band
+            : null,
+        ),
+        selectedWeek,
+      );
+      setActivities(catalog.activities);
+      setCatalogOrigin(catalog.origin);
       setStatus("ready");
       return;
     }
@@ -553,75 +580,26 @@ export function FamilyProvider({
     let cancelled = false;
 
     async function loadPreviewCatalog(band: PilotBand) {
-      const applySeedFallback = () => {
-        const weekRows = getSeedActivities(viewWeek, band);
-        const themeRows = PROGRAM_WEEKS.flatMap((week) =>
-          getSeedActivities(week, band),
-        );
-        setPreviewCatalog({
-          band,
-          week: viewWeek,
-          activities: weekRows,
-          themes: themesFromActivityRows(themeRows),
-        });
-      };
-
-      // Demo + Previzualizare 2–3 never read Familie for activity content.
-      // Stripped 2–3 lives in local v2 seed; live `activities` still has EN.
-      if (usesLocalSeedCatalog({ isDemo, band })) {
-        if (cancelled) return;
-        applySeedFallback();
-        return;
-      }
-
-      const supabase = createBrowserSupabase();
-      if (!supabase) {
-        if (cancelled) return;
-        applySeedFallback();
-        return;
-      }
-
-      const [
-        { data: activityRows, error: activityError },
-        { data: themeRows, error: themeError },
-      ] = await Promise.all([
-        supabase
-          .from("activities")
-          .select("*")
-          .eq("saptamana", viewWeek)
-          // Filter by `banda` text (live `1-2` / `2-3`; other pilots stay preview).
-          .eq("banda", band)
-          .order("zi", { ascending: true }),
-        supabase
-          .from("activities")
-          .select("saptamana, tema_saptamana")
-          .eq("banda", band),
-      ]);
-
+      const catalog = await readPreviewCatalog(
+        createBrowserSupabase(),
+        band,
+        viewWeek,
+      );
       if (cancelled) return;
-      if (activityError || themeError) {
-        setPreviewCatalog({
-          band,
-          week: viewWeek,
-          activities: [],
-          themes: {},
-        });
-        return;
-      }
-
       setPreviewCatalog({
         band,
         week: viewWeek,
-        activities: ((activityRows ?? []) as SeedActivity[]).map(normalizeActivity),
-        themes: themesFromActivityRows(themeRows ?? []),
+        activities: catalog.activities,
+        themes: catalog.themes,
       });
+      setPreviewOrigin(catalog.origin);
     }
 
     void loadPreviewCatalog(previewBand);
     return () => {
       cancelled = true;
     };
-  }, [isDemo, isPreviewing, previewBand, viewWeek]);
+  }, [isPreviewing, previewBand, viewWeek]);
 
   useEffect(() => {
     if (isPreviewing) return;
@@ -630,17 +608,25 @@ export function FamilyProvider({
     let cancelled = false;
 
     async function loadLiveViewCatalog() {
+      if (isDemo) {
+        const catalog = await readWeekCatalog(
+          createBrowserSupabase(),
+          liveBand,
+          viewWeek,
+        );
+        if (cancelled) return;
+        setLiveViewCatalog({ week: viewWeek, activities: catalog.activities });
+        setLiveViewOrigin(catalog.origin);
+        return;
+      }
+
       const applySeed = () => {
         setLiveViewCatalog({
           week: viewWeek,
           activities: getSeedActivities(viewWeek, liveBand),
         });
+        setLiveViewOrigin("database");
       };
-
-      if (isDemo) {
-        if (!cancelled) applySeed();
-        return;
-      }
 
       const supabase = createBrowserSupabase();
       if (!supabase) {
@@ -658,12 +644,14 @@ export function FamilyProvider({
       if (cancelled) return;
       if (error) {
         setLiveViewCatalog({ week: viewWeek, activities: [] });
+        setLiveViewOrigin("unavailable");
         return;
       }
       setLiveViewCatalog({
         week: viewWeek,
         activities: ((data ?? []) as SeedActivity[]).map(normalizeActivity),
       });
+      setLiveViewOrigin("database");
     }
 
     void loadLiveViewCatalog();
@@ -680,12 +668,13 @@ export function FamilyProvider({
         const state = { ...readDemoState(), selectedChildId: childId };
         writeDemoState(state);
         const selected = state.children.find((child) => child.id === childId);
-        setActivities(
-          demoActivities(
-            selectedWeek,
-            liveChildBand(selected ? applyCohortAgeBand(selected).age_band : null),
-          ),
+        const catalog = await readWeekCatalog(
+          createBrowserSupabase(),
+          liveChildBand(selected ? applyCohortAgeBand(selected).age_band : null),
+          selectedWeek,
         );
+        setActivities(catalog.activities);
+        setCatalogOrigin(catalog.origin);
         setCompletions(completionsForChild(state.completions, childId));
         setDayNotes(demoDayNotesForWeek(state, viewWeek));
         const row =
@@ -779,6 +768,14 @@ export function FamilyProvider({
         const next = addDemoChild(readDemoState(), input);
         writeDemoState(next);
         applyDemo(next, selectedWeek);
+        const added = next.children.find((child) => child.id === next.selectedChildId);
+        const catalog = await readWeekCatalog(
+          createBrowserSupabase(),
+          liveChildBand(added ? applyCohortAgeBand(added).age_band : null),
+          selectedWeek,
+        );
+        setActivities(catalog.activities);
+        setCatalogOrigin(catalog.origin);
         return;
       }
       const supabase = createBrowserSupabase();
@@ -1388,9 +1385,7 @@ export function FamilyProvider({
         day_of_week: row.day_of_week,
       }));
       const byId = new Map(fromSeed.map((row) => [row.id, row]));
-      for (const row of loaded) {
-        if (!byId.has(row.id)) byId.set(row.id, row);
-      }
+      for (const row of loaded) byId.set(row.id, row);
       const catalog = [...byId.values()];
       if (!selectedChild) {
         return { programYearStart: yearStart, notes: [], completions: [], activities: catalog };
@@ -1583,6 +1578,7 @@ export function FamilyProvider({
       viewCivilDate,
       previewLoading,
       previewWeekLoading,
+      usingLocalCatalog,
       bandHasContent,
       bandWeekThemes,
       activities,
@@ -1632,6 +1628,7 @@ export function FamilyProvider({
       loadBookletLive,
       previewLoading,
       previewWeekLoading,
+      usingLocalCatalog,
       refresh,
       removeDayPhoto,
       resetViewWeek,

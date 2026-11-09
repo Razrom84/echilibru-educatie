@@ -119,8 +119,8 @@ describe("V1.4 age-band preview", () => {
       false,
     );
     expect(getSeedActivities(1, "3-4")).toHaveLength(0);
-    expect(usesLocalSeedCatalog({ isDemo: true, band: "6-7" })).toBe(true);
-    expect(usesLocalSeedCatalog({ isDemo: false, band: "2-3" })).toBe(true);
+    expect(usesLocalSeedCatalog({ isDemo: true, band: "6-7" })).toBe(false);
+    expect(usesLocalSeedCatalog({ isDemo: false, band: "2-3" })).toBe(false);
     expect(usesLocalSeedCatalog({ isDemo: false, band: "1-2" })).toBe(false);
   });
 
