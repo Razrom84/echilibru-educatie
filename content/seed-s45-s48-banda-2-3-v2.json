@@ -391,7 +391,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "mental",
-      "titlu": "Pași, oprim, hai — pe corpul puternic",
+      "titlu": "Pași, ne oprim, hai — pe corpul puternic",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [],
@@ -569,7 +569,7 @@
       "materiale": [],
       "pasi": [
         "Întrebați: „Îți place să mergi sau să stai?” — arătați ambele.",
-        "Stați pe alegerea lui.",
+        "Rămâneți la alegerea lui.",
         "Dacă vrea: o rundă scurtă doar pe favorit."
       ],
       "gata_cand": "A ales sau a privit favoritul mergem / oprim.",
@@ -605,12 +605,12 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "social",
-      "titlu": "Ritual: bună seara — oprim, pașii gata",
+      "titlu": "Ritual: bună seara — ne oprim, gata cu pașii",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
       "pasi": [
-        "Șoptiți: „Bună seara. Oprim. Pașii mulți sunt gata.”",
+        "Șoptiți: „Bună seara. Ne oprim. Gata cu pașii.”",
         "„Corp puternic. Noapte bună.”",
         "Dacă vrea: un mergem de 2 pași spre pat, apoi odihnă."
       ],
@@ -669,7 +669,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "resurse",
-      "titlu": "Găsit = gata jocul",
+      "titlu": "Găsit — gata jocul",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -818,7 +818,7 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "mental",
-      "titlu": "Unde pe cameră — două locuri",
+      "titlu": "Unde în cameră — două locuri",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -882,7 +882,7 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "fizic",
-      "titlu": "Vânătoare: aia departe",
+      "titlu": "Vânătoare: aia de departe",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
@@ -1172,7 +1172,7 @@
       "materiale": [],
       "pasi": [
         "Întrebați: „Îți place unde, asta sau aia?” — gesturi.",
-        "Stați pe alegerea lui.",
+        "Rămâneți la alegerea lui.",
         "Dacă vrea: o rundă scurtă doar pe favorit."
       ],
       "gata_cand": "A ales sau a privit cuvântul / gestul favorit.",
@@ -1785,7 +1785,7 @@
       "materiale": [],
       "pasi": [
         "Întrebați: „Îți place la loc, al meu sau al tău?” — gesturi.",
-        "Stați pe alegerea lui.",
+        "Rămâneți la alegerea lui.",
         "Dacă vrea: o rundă scurtă doar pe favorit."
       ],
       "gata_cand": "A ales sau a privit cuvântul favorit.",
@@ -1841,7 +1841,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "fizic",
-      "titlu": "Gest de salut — undă bună",
+      "titlu": "Gest de salut — unda mâinii",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [],
@@ -2367,7 +2367,7 @@
       "materiale": [],
       "pasi": [
         "Întrebați: „Îți place bună, bună sau la revedere?” — gesturi.",
-        "Stați pe alegerea lui.",
+        "Rămâneți la alegerea lui.",
         "Dacă vrea: o rundă scurtă doar pe favorit."
       ],
       "gata_cand": "A ales sau a privit formula favorită.",
@@ -2409,7 +2409,7 @@
       "materiale": [],
       "pasi": [
         "Șoptiți: „Bună seara. La revedere.” — undă mică.",
-        "„Bună, noapte bună.” — fără forțare.",
+        "„Noapte bună.” — fără forțare.",
         "Dacă vrea: alege formula de închidere, apoi odihnă."
       ],
       "gata_cand": "Ați închis săptămâna salutului cu ritual blând.",

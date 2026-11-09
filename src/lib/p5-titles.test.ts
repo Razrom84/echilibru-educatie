@@ -496,7 +496,8 @@ const P5_TITLES: P5Row[] = [
     week: 8,
     titlu: "Privim împreună frunza",
     otherTitle: "Pe care frunză?",
-    bodySha256: "b53386ef595c5d88bbca12a969f5eaa1fea2331f4e74f52890dddf6c54c50665",
+    // T5 a scos paranteza goală din pas. Titlul P5 rămâne.
+    bodySha256: "fdb072ec8f966d4ca754fd43eabc65ee043ad525bb8b807795520ea50497f572",
   },
   {
     liveId: "s10-b23-z6-fizic",

@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { BirthdateField } from "@/components/birthdate-field";
 import { LoadingState } from "@/components/status-blocks";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -58,14 +59,7 @@ export function OnboardingForm() {
       </div>
       <div className="space-y-2">
         <Label htmlFor="birthdate">Data nașterii</Label>
-        <Input
-          id="birthdate"
-          type="date"
-          required
-          value={birthdate}
-          onChange={(event) => setBirthdate(event.target.value)}
-          className="h-11"
-        />
+        <BirthdateField id="birthdate" value={birthdate} onChange={setBirthdate} />
       </div>
       <p className="text-sm leading-6 text-muted-foreground">
         Din data de naștere, copilul e pus pe banda anului școlar

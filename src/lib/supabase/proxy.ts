@@ -12,7 +12,9 @@ export async function updateSession(request: NextRequest) {
 
   let authenticated = demo;
 
-  if (env) {
+  // Demo already has a session cookie. Skipping the auth round trip keeps
+  // Azi, Săptămâna and Progres under a second in demonstrație.
+  if (env && !demo) {
     const supabase = createServerClient(env.url, env.anonKey, {
       cookies: {
         getAll() {

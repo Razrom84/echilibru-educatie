@@ -24,9 +24,9 @@ export function CompleteToggle({
       onClick={onToggle}
       disabled={disabled}
       aria-pressed={done}
+      data-compact={compact ? "true" : undefined}
       className={cn(
-        "flex shrink-0 items-center justify-center rounded-full border-2 transition",
-        compact ? "size-9" : "size-11",
+        "flex size-11 min-h-11 min-w-11 shrink-0 items-center justify-center rounded-full border-2 transition",
         done
           ? pending
             ? "border-amber-700/40 bg-amber-100 text-amber-900"

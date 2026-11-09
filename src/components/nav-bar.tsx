@@ -3,14 +3,20 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Archive, CalendarDays, House, Settings2, Sprout } from "lucide-react";
+import { MOBILE_WEEK_NAV_LABEL } from "@/lib/saptamana";
 import { cn } from "@/lib/utils";
 
 const ITEMS = [
-  { href: "/azi", label: "Azi", icon: House },
-  { href: "/saptamana", label: "Săptămâna asta", icon: CalendarDays },
-  { href: "/arhiva", label: "Arhivă", icon: Archive },
-  { href: "/progres", label: "Progres", icon: Sprout },
-  { href: "/setari", label: "Setări", icon: Settings2 },
+  { href: "/azi", label: "Azi", shortLabel: "Azi", icon: House },
+  {
+    href: "/saptamana",
+    label: "Săptămâna asta",
+    shortLabel: MOBILE_WEEK_NAV_LABEL,
+    icon: CalendarDays,
+  },
+  { href: "/arhiva", label: "Arhivă", shortLabel: "Arhivă", icon: Archive },
+  { href: "/progres", label: "Progres", shortLabel: "Progres", icon: Sprout },
+  { href: "/setari", label: "Setări", shortLabel: "Setări", icon: Settings2 },
 ];
 
 export function NavBar() {
@@ -30,12 +36,12 @@ export function NavBar() {
               <Link
                 href={item.href}
                 className={cn(
-                  "flex flex-col items-center gap-1 rounded-xl px-2 py-2 text-center text-[11px] leading-tight font-medium",
+                  "flex flex-col items-center gap-1 rounded-xl px-1 py-2 text-center text-[11px] leading-none font-medium whitespace-nowrap",
                   active ? "text-primary" : "text-muted-foreground",
                 )}
               >
                 <Icon className="size-5" />
-                {item.label}
+                {item.shortLabel}
               </Link>
             </li>
           );

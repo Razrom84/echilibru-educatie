@@ -11,7 +11,7 @@ import { completionForActivity } from "@/lib/child-scope";
 import { useFamily } from "@/lib/family-context";
 import { PILLAR_META } from "@/lib/pillars";
 import { bucharestToday, familyProgramYearStart, programDayCivilDate } from "@/lib/program-week";
-import { futureDayHint } from "@/lib/view-week";
+import { activityReadOnlyHint } from "@/lib/view-week";
 import { getDayName } from "@/lib/week";
 
 export default function ActivitatePage({
@@ -28,6 +28,7 @@ export default function ActivitatePage({
     family,
     writesAllowed,
     selectedChild,
+    selectedWeek,
   } = useFamily();
   const [busy, setBusy] = useState(false);
   const activity = viewActivities.find((item) => item.id === id);
@@ -39,14 +40,15 @@ export default function ActivitatePage({
           familyProgramYearStart(family),
         )
       : null;
-  const aheadHint =
-    activityCivilDate == null
-      ? null
-      : futureDayHint({
-          civilDate: activityCivilDate,
-          today: bucharestToday(),
-          weekWritable: writesAllowed,
-        });
+  const aheadHint = activity
+    ? activityReadOnlyHint({
+        civilDate: activityCivilDate,
+        today: bucharestToday(),
+        viewWeek: activity.week_number,
+        officialWeek: selectedWeek,
+        weekWritable: writesAllowed,
+      })
+    : null;
   const canWrite = writesAllowed && aheadHint == null;
   const completion =
     canWrite && selectedChild

@@ -22,7 +22,10 @@ export const VIEW_WEEK_PREV = "Săptămâna anterioară";
 export const VIEW_WEEK_NEXT = "Săptămâna următoare";
 export const VIEW_WEEK_BACK = "Înapoi la săptămâna de azi";
 export const VIEW_WEEK_READ_ONLY = "doar citire";
-export const VIEW_WEEK_FUTURE_HINT = "Săptămână viitoare — doar citire.";
+export const VIEW_WEEK_FUTURE_HINT =
+  "Săptămâna asta n-a venit încă. Deocamdată o poți doar citi.";
+/** După alegerea unui copil, Azi și Săptămâna revin la săptămâna lui curentă. */
+export const CHILD_SWITCH_HREF = "/azi";
 export const VIEW_WEEK_PAST_HINT = "Săptămână trecută — poți bifa, nota și poza.";
 /** Shown on a weekday that has not arrived yet, inside an otherwise writable week. */
 export const VIEW_DAY_FUTURE_HINT = "Ziua n-a venit încă. Deocamdată o poți doar citi.";
@@ -49,6 +52,14 @@ export function clearSessionViewWeek(
   session: ViewWeekSession = { sessionWeek: null },
 ): ViewWeekSession {
   return { ...session, sessionWeek: null };
+}
+
+/**
+ * Switching child drops the browsed S#. Azi and Săptămâna then show that
+ * child's official week (the calendar week), not the week left on screen.
+ */
+export function viewWeekAfterChildSwitch(officialWeek: number): number {
+  return officialWeek;
 }
 
 /**
@@ -131,6 +142,32 @@ export function futureDayHint(args: {
   if (!args.weekWritable) return null;
   if (!isCivilDayAfterToday(args.civilDate, args.today)) return null;
   return VIEW_DAY_FUTURE_HINT;
+}
+
+/**
+ * Read-only line on an activity page. A later day inside the current week
+ * uses the day hint (S11). A week that has not started uses the week hint,
+ * in the same place.
+ */
+export function activityReadOnlyHint(args: {
+  civilDate: string | null;
+  today: string;
+  viewWeek: number;
+  officialWeek: number;
+  weekWritable: boolean;
+}): string | null {
+  if (args.civilDate) {
+    const dayHint = futureDayHint({
+      civilDate: args.civilDate,
+      today: args.today,
+      weekWritable: args.weekWritable,
+    });
+    if (dayHint) return dayHint;
+  }
+  if (weekRelation(args.viewWeek, args.officialWeek) === "future") {
+    return VIEW_WEEK_FUTURE_HINT;
+  }
+  return null;
 }
 
 /** Join-day trim applies only to the official current week on the live band. */
