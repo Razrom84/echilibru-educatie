@@ -136,9 +136,10 @@ export async function runMondayDigest(
   const familyIds = families.map((row) => row.id);
   const { data: childRows, error: childError } = await opts.supabase
     .from("children")
-    .select("id, name, family_id, age_band")
+    .select("id, name, family_id, age_band, created_at, active")
     .eq("active", true)
-    .in("family_id", familyIds);
+    .in("family_id", familyIds)
+    .order("created_at", { ascending: true });
   if (childError) throw new Error(childError.message);
 
   const childrenByFamily = new Map<string, ArchiveChildRow[]>();
@@ -146,6 +147,12 @@ export async function runMondayDigest(
     const list = childrenByFamily.get(row.family_id) ?? [];
     list.push(row);
     childrenByFamily.set(row.family_id, list);
+  }
+  for (const list of childrenByFamily.values()) {
+    list.sort(
+      (a, b) =>
+        (a.created_at ?? "").localeCompare(b.created_at ?? "") || a.id.localeCompare(b.id),
+    );
   }
 
   for (const family of families) {

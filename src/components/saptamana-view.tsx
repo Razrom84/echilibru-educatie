@@ -15,6 +15,7 @@ import {
 } from "@/components/playful-chrome";
 import { EmptyState, LoadingState } from "@/components/status-blocks";
 import { PREVIEW_EMPTY } from "@/lib/band-preview";
+import { completionForActivity, completionsForChild } from "@/lib/child-scope";
 import { dayNoteEditorKey } from "@/lib/day-note";
 import { useFamily } from "@/lib/family-context";
 import { PILLARS } from "@/lib/pillars";
@@ -142,10 +143,11 @@ export function SaptamanaView({
 
   async function onToggle(activityId: string, dayOfWeek: number, dayIds: string[]) {
     if (readOnly) return;
-    const wasAlreadyDone = completions.some((row) => row.activity_id === activityId);
+    const mine = completionsForChild(completions, selectedChild?.id);
+    const wasAlreadyDone = mine.some((row) => row.activity_id === activityId);
     const completingLast = isCompletingLastActivity({
       activityIds: dayIds,
-      completedIds: completions.map((row) => row.activity_id),
+      completedIds: mine.map((row) => row.activity_id),
       toggledId: activityId,
       wasAlreadyDone,
     });
@@ -226,7 +228,9 @@ export function SaptamanaView({
               .sort((a, b) => PILLARS.indexOf(a.pillar) - PILLARS.indexOf(b.pillar));
             const done = showProgress
               ? items.filter((activity) =>
-                  completions.some((row) => row.activity_id === activity.id),
+                  completionsForChild(completions, selectedChild?.id).some(
+                    (row) => row.activity_id === activity.id,
+                  ),
                 ).length
               : 0;
             const civilDate = civilByDay[day];
@@ -268,7 +272,7 @@ export function SaptamanaView({
                 <ul className="mt-3 space-y-2">
                   {items.map((activity) => {
                     const completion = showProgress
-                      ? completions.find((row) => row.activity_id === activity.id)
+                      ? completionForActivity(completions, selectedChild?.id, activity.id)
                       : null;
                     return (
                       <li key={activity.id} className="flex items-center gap-2">
