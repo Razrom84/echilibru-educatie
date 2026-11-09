@@ -243,7 +243,7 @@ describe("T5 activity copy", () => {
 
   test("the migration updates each id only in band 2–3 and stops if one is missing", () => {
     const sql = readFileSync(
-      resolve("supabase/migrations/20261109240000_t5_formulari_p3.sql"),
+      resolve("supabase/migrations/20261109233000_t5_formulari_p3.sql"),
       "utf8",
     );
     expect(sql).toMatch(/and a\.banda = v\.banda/);
