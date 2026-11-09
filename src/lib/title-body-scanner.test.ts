@@ -40,11 +40,8 @@ describe("title↔body scanner (Anti-P5)", () => {
     );
     const { fails, nits } = scanTitleBody(rows, families);
     expect(fails, JSON.stringify(fails, null, 2)).toEqual([]);
-    expect(nits.map((hit) => hit.id).sort()).toEqual([
-      "s2-2-3-z6-fizic",
-      "s23-2-3-z4-fizic",
-      "s23-2-3-z4-mental",
-    ]);
+    // P5 a schimbat doar titlul: cele trei NIT-uri moi nu mai numesc cizmă / rufe.
+    expect(nits, JSON.stringify(nits, null, 2)).toEqual([]);
     const rufeInCos = rows.find((row) => row.id === "s23-2-3-z4-resurse");
     expect(rufeInCos?.titlu).toBe("Rufele în coș");
     const blob = [

@@ -309,7 +309,7 @@ insert into public.activities (
     2,
     6,
     'fizic'::public.pillar,
-    'Cizmele în băltoacă',
+    'Pași lângă baltă',
     6,
     'A'::public.completion_mode,
     ARRAY['curte']::text[],

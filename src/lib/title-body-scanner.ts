@@ -32,9 +32,9 @@ export type TitleBodyHit = {
 
 /** Documented soft proxies — NIT, not FAIL (FINAL-CHECK-BANDA-1-2-RERUN). */
 export const SOFT_TITLE_BODY_NITS = new Set([
-  "s2-2-3-z6-fizic", // Cizmele în băltoacă — outdoor implied
-  "s23-2-3-z4-fizic", // Mirosim rufele — prosop smell proxy
-  "s23-2-3-z4-mental", // Miroase a rufe curate? — acceptable soft
+  "s2-2-3-z6-fizic", // P5: titlul nu mai numește cizmele; rămâne moale dacă reapare
+  "s23-2-3-z4-fizic", // P5: titlul nu mai numește rufele; rămâne moale dacă reapare
+  "s23-2-3-z4-mental", // P5: titlul nu mai numește rufele; rămâne moale dacă reapare
 ]);
 
 /**

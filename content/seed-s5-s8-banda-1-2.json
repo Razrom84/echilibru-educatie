@@ -621,7 +621,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "mental",
-      "titlu": "Sus pe raft, jos pe podea",
+      "titlu": "Sus și jos",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -1052,7 +1052,7 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "resurse",
-      "titlu": "Găleata jos pe iarbă",
+      "titlu": "Punem găleata jos",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
@@ -2259,7 +2259,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "mental",
-      "titlu": "Cartea cu frunze",
+      "titlu": "Întoarcem o pagină",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
