@@ -914,17 +914,20 @@ export function FamilyProvider({
           ? args.photoPath
           : (existing?.photo_path ?? null);
 
-      let notesForDay = args.dayNotes;
+      let notesForDay = args.dayNotes.filter(
+        (note) => note.child_id === selectedChild.id,
+      );
       const hasNote = notesForDay.some(
         (note) =>
-          note.child_id === selectedChild.id &&
           note.program_year_start === yearStart &&
           note.week_number === week &&
           note.day_of_week === civilDayOfWeek(args.civilDate),
       );
       if (!hasNote) {
         if (isDemo) {
-          notesForDay = readDemoState().dayNotes;
+          notesForDay = readDemoState().dayNotes.filter(
+            (note) => note.child_id === selectedChild.id,
+          );
         } else {
           const notesClient = createBrowserSupabase();
           if (notesClient) {
@@ -936,7 +939,9 @@ export function FamilyProvider({
               .eq("week_number", week)
               .eq("day_of_week", civilDayOfWeek(args.civilDate));
             if (extraNotes?.length) {
-              notesForDay = [...notesForDay, ...(extraNotes as DayNote[])];
+              notesForDay = [...notesForDay, ...(extraNotes as DayNote[])].filter(
+                (note) => note.child_id === selectedChild.id,
+              );
             }
           }
         }
@@ -951,6 +956,7 @@ export function FamilyProvider({
           noteForCivilDate({
             civilDate: args.civilDate,
             programYearStart: yearStart,
+            childId: selectedChild.id,
             notes: notesForDay,
           }) || (existing?.day_note ?? ""),
         doneTitles: (() => {

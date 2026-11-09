@@ -7,11 +7,16 @@ import { describe, expect, test } from "vitest";
 import {
   ARCHIVE_EMPTY_PERIOD,
   ARCHIVE_QUIET_DAY,
+  buildArchiveDraft,
   calendarMonthPeriod,
   calendarYearPeriod,
   civilIntervalPeriod,
   civilWeekPeriod,
+  expandBookletDays,
+  noteForCivilDate,
 } from "./archive";
+import { PROGRAM_YEAR_START_MONDAY_2026_27 } from "@/lib/fixtures/program-year-2026-27";
+import { civilDayOfWeek, programWeekNumber } from "./program-week";
 import { ARCHIVE_FONT_PATH, buildArchiveBookletPdf } from "./archive-pdf";
 
 async function fontBytes(): Promise<Uint8Array> {
@@ -60,6 +65,33 @@ function ttfCodepoints(data: Uint8Array): Set<number> {
     }
   }
   return codepoints;
+}
+
+function pdfShownText(bytes: Uint8Array): string {
+  const raw = inflatedPdf(bytes);
+  const cmap = new Map<string, string>();
+  const block = raw.match(/beginbfchar([\s\S]*?)endbfchar/i);
+  if (block) {
+    const pairs = /<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>/g;
+    let pair: RegExpExecArray | null;
+    while ((pair = pairs.exec(block[1]))) {
+      cmap.set(pair[1].toUpperCase(), String.fromCodePoint(Number.parseInt(pair[2], 16)));
+    }
+  }
+  const decode = (hex: string) => {
+    let text = "";
+    const upper = hex.toUpperCase();
+    for (let index = 0; index + 4 <= upper.length; index += 4) {
+      text += cmap.get(upper.slice(index, index + 4)) ?? "";
+    }
+    return text;
+  };
+  const body = raw.replace(/beginbfchar[\s\S]*?endbfchar/gi, "");
+  let text = "";
+  const shows = /<([0-9A-Fa-f]+)>/g;
+  let show: RegExpExecArray | null;
+  while ((show = shows.exec(body))) text += decode(show[1]);
+  return text;
 }
 
 function pdfLatin1(bytes: Uint8Array): string {
@@ -246,6 +278,80 @@ describe("archive booklet PDF", () => {
     const asString = pdfLatin1(bytes);
     expect(asString).toContain("%PDF");
     expect(asString.toLowerCase()).not.toContain("video");
+  });
+
+  test("Tudor's booklet keeps Mara's 9 Nov note out of his page", async () => {
+    const civilDate = "2026-11-09";
+    const maraNote = {
+      child_id: "demo-mara",
+      program_year_start: PROGRAM_YEAR_START_MONDAY_2026_27,
+      week_number: programWeekNumber(civilDate, PROGRAM_YEAR_START_MONDAY_2026_27),
+      day_of_week: civilDayOfWeek(civilDate),
+      body: "test Mara",
+    };
+    const tudorRow = buildArchiveDraft({
+      childId: "demo-tudor",
+      civilDate,
+      ageBand: "2-3",
+      dayNote: noteForCivilDate({
+        civilDate,
+        programYearStart: PROGRAM_YEAR_START_MONDAY_2026_27,
+        childId: "demo-tudor",
+        notes: [maraNote],
+      }),
+      doneTitles: ["Mutăm corpul: lumină și umbră"],
+      photoPath: null,
+    });
+    expect(tudorRow.day_note).toBe("");
+    const visible = expandBookletDays({
+      period: civilIntervalPeriod(civilDate, civilDate),
+      today: civilDate,
+      children: [{ id: "demo-tudor", age_band_label: "2–3" }],
+      days: [tudorRow],
+      live: {
+        programYearStart: PROGRAM_YEAR_START_MONDAY_2026_27,
+        notes: [maraNote],
+        completions: [],
+        activities: [],
+      },
+    });
+    expect(visible.every((day) => day.day_note === "")).toBe(true);
+
+    const font = await fontBytes();
+    const tudorPdf = await buildArchiveBookletPdf({
+      period: civilIntervalPeriod(civilDate, civilDate),
+      children: [{ id: "demo-tudor", name: "Tudor" }],
+      days: [tudorRow],
+      fontBytes: font,
+      today: civilDate,
+      live: {
+        programYearStart: PROGRAM_YEAR_START_MONDAY_2026_27,
+        notes: [maraNote],
+        completions: [],
+        activities: [],
+      },
+    });
+    const maraPdf = await buildArchiveBookletPdf({
+      period: civilIntervalPeriod(civilDate, civilDate),
+      children: [{ id: "demo-mara", name: "Mara" }],
+      days: [
+        {
+          child_id: "demo-mara",
+          civil_date: civilDate,
+          age_band_label: "1–2",
+          day_note: "test Mara",
+          done_titles: ["Pași spre fereastră luminoasă"],
+          photo_path: null,
+        },
+      ],
+      fontBytes: font,
+      today: civilDate,
+    });
+    const tudorText = pdfShownText(tudorPdf);
+    const maraText = pdfShownText(maraPdf);
+    expect(maraText).toContain("test Mara");
+    expect(tudorText).not.toContain("test Mara");
+    expect(tudorText).not.toContain("Mara");
   });
 
   test("empty interval booklet still draws the empty-period line", async () => {

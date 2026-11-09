@@ -208,10 +208,11 @@ export function doneTitlesForCivilDate(args: {
 export function noteForCivilDate(args: {
   civilDate: string;
   programYearStart: string;
-  notes: readonly Pick<
+  childId: string;
+  notes: readonly (Pick<
     DayNote,
     "program_year_start" | "week_number" | "day_of_week" | "body"
-  >[];
+  > & { child_id?: string | null })[];
 }): string {
   if (toDateOnlyString(args.civilDate) < toDateOnlyString(args.programYearStart)) {
     return "";
@@ -223,7 +224,8 @@ export function noteForCivilDate(args: {
     (row) =>
       row.program_year_start === args.programYearStart &&
       row.week_number === week &&
-      row.day_of_week === day,
+      row.day_of_week === day &&
+      (row.child_id == null || row.child_id === args.childId),
   );
   return note?.body.trim() ?? "";
 }
@@ -278,6 +280,7 @@ export function missingArchiveDrafts(args: {
       const dayNote = noteForCivilDate({
         civilDate,
         programYearStart: args.programYearStart,
+        childId: child.id,
         notes: notes.filter((note) => note.child_id === child.id),
       });
       const doneTitles = doneTitlesForCivilDate({
@@ -498,6 +501,7 @@ function liveContentForDay(
     ? noteForCivilDate({
         civilDate,
         programYearStart: live.programYearStart,
+        childId: child.id,
         notes: live.notes.filter((row) => row.child_id === child.id),
       })
     : "";

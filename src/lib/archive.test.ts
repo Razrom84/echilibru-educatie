@@ -36,6 +36,7 @@ import { isLikelyVideoFile, PHOTO_ACCEPT, rejectIfNotPhoto } from "./archive-pho
 import { renderArchiveReadyEmail } from "./archive-email";
 import { composeArchiveMail } from "./mail/compose-archive-mail";
 import { DIGEST_ARHIVA_URL } from "./monday-digest";
+import { civilDayOfWeek, programWeekNumber } from "./program-week";
 
 describe("archive snapshots", () => {
   test("age-band label is copied with an en dash and not a live join key", () => {
@@ -653,6 +654,7 @@ describe("note mapping", () => {
     const body = noteForCivilDate({
       civilDate: "2026-09-01",
       programYearStart: PROGRAM_YEAR_START_MONDAY_2026_27,
+      childId: "c1",
       notes: [
         {
           program_year_start: PROGRAM_YEAR_START_MONDAY_2026_27,
@@ -697,6 +699,7 @@ describe("note mapping", () => {
   test("does not clamp pre-year Sundays onto S1 (Aug 23/30 vs Sep 6)", () => {
     const args = {
       programYearStart: PROGRAM_YEAR_START_MONDAY_2026_27,
+      childId: "c1",
       notes: s1SundayNotes,
     };
     expect(noteForCivilDate({ ...args, civilDate: "2026-08-23" })).toBe("");
@@ -769,6 +772,65 @@ describe("note mapping", () => {
     });
     expect(drafts.map((row) => row.civil_date)).toEqual(["2026-09-06"]);
     expect(drafts[0]?.day_note).toBe("Pipăit pietre…");
+  });
+
+  test("Mara's 9 Nov note stays off Tudor's archive row", () => {
+    const civilDate = "2026-11-09";
+    const notes = [
+      {
+        child_id: "demo-mara",
+        program_year_start: PROGRAM_YEAR_START_MONDAY_2026_27,
+        week_number: programWeekNumber(civilDate, PROGRAM_YEAR_START_MONDAY_2026_27),
+        day_of_week: civilDayOfWeek(civilDate),
+        body: "test Mara",
+      },
+    ];
+    expect(
+      noteForCivilDate({
+        civilDate,
+        programYearStart: PROGRAM_YEAR_START_MONDAY_2026_27,
+        childId: "demo-tudor",
+        notes,
+      }),
+    ).toBe("");
+    expect(
+      noteForCivilDate({
+        civilDate,
+        programYearStart: PROGRAM_YEAR_START_MONDAY_2026_27,
+        childId: "demo-mara",
+        notes,
+      }),
+    ).toBe("test Mara");
+
+    const tudor = buildArchiveDraft({
+      childId: "demo-tudor",
+      civilDate,
+      ageBand: "2-3",
+      dayNote: noteForCivilDate({
+        civilDate,
+        programYearStart: PROGRAM_YEAR_START_MONDAY_2026_27,
+        childId: "demo-tudor",
+        notes,
+      }),
+      doneTitles: ["Mutăm corpul: lumină și umbră"],
+      photoPath: null,
+    });
+    expect(tudor.day_note).toBe("");
+    expect(tudor.child_id).toBe("demo-tudor");
+
+    const booklet = expandBookletDays({
+      period: civilIntervalPeriod(civilDate, civilDate),
+      today: civilDate,
+      children: [{ id: "demo-tudor", age_band_label: "2–3" }],
+      days: [tudor],
+      live: {
+        programYearStart: PROGRAM_YEAR_START_MONDAY_2026_27,
+        notes,
+        completions: [],
+        activities: [],
+      },
+    });
+    expect(booklet.find((day) => day.child_id === "demo-tudor")?.day_note).toBe("");
   });
 
   test("interval picker start clips to joined_at", () => {
