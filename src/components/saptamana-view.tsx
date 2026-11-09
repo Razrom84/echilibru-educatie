@@ -33,7 +33,7 @@ import {
 import { aziDayOfWeek } from "@/lib/azi";
 import { addCivilDays } from "@/lib/archive";
 import { cn } from "@/lib/utils";
-import { trimsJoinDays, weekRelation } from "@/lib/view-week";
+import { futureDayHint, trimsJoinDays, weekRelation } from "@/lib/view-week";
 import {
   isCompletingLastActivity,
   playDoneChime,
@@ -142,7 +142,14 @@ export function SaptamanaView({
   }, [loadArchiveDays, readOnly, signedPhotoUrl, viewWeek, yearStart]);
 
   async function onToggle(activityId: string, dayOfWeek: number, dayIds: string[]) {
-    if (readOnly) return;
+    const civilDate = civilByDay[dayOfWeek];
+    if (
+      readOnly ||
+      (civilDate != null &&
+        futureDayHint({ civilDate, today, weekWritable: writesAllowed }) != null)
+    ) {
+      return;
+    }
     const mine = completionsForChild(completions, selectedChild?.id);
     const wasAlreadyDone = mine.some((row) => row.activity_id === activityId);
     const completingLast = isCompletingLastActivity({
@@ -236,6 +243,14 @@ export function SaptamanaView({
             const civilDate = civilByDay[day];
             const photo = civilDate ? photos[civilDate] : undefined;
             const dayOverlay = playfulPilotFor(viewWeek, day);
+            const aheadHint = civilDate
+              ? futureDayHint({
+                  civilDate,
+                  today,
+                  weekWritable: writesAllowed,
+                })
+              : null;
+            const dayEditable = writesAllowed && aheadHint == null;
 
             return (
               <section
@@ -269,6 +284,9 @@ export function SaptamanaView({
                     </p>
                   ) : null}
                 </div>
+                {aheadHint ? (
+                  <p className="mt-1 text-xs leading-5 text-muted-foreground">{aheadHint}</p>
+                ) : null}
                 <ul className="mt-3 space-y-2">
                   {items.map((activity) => {
                     const completion = showProgress
@@ -294,7 +312,7 @@ export function SaptamanaView({
                           <PillarMark pillar={activity.pillar} />
                           <span className="truncate text-sm">{activity.title}</span>
                         </Link>
-                        {readOnly ? null : (
+                        {dayEditable ? (
                           <CompleteToggle
                             completion={completion ?? null}
                             disabled={busyId === activity.id}
@@ -307,7 +325,7 @@ export function SaptamanaView({
                               )
                             }
                           />
-                        )}
+                        ) : null}
                       </li>
                     );
                   })}
@@ -317,7 +335,7 @@ export function SaptamanaView({
                     <PlayfulSurprise surprise={dayOverlay.surprise} compact />
                   </div>
                 ) : null}
-                {readOnly ? null : (
+                {dayEditable ? (
                   <>
                     <DayNoteEditor
                       key={dayNoteEditorKey(selectedChild.id, viewWeek, day)}
@@ -336,7 +354,7 @@ export function SaptamanaView({
                       </div>
                     ) : null}
                   </>
-                )}
+                ) : null}
               </section>
             );
           })}

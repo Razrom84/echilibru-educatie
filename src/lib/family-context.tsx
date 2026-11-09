@@ -102,7 +102,7 @@ import {
   viewProgramWeek,
   type PilotBand,
 } from "@/lib/band-preview";
-import { weekWritesAllowed } from "@/lib/view-week";
+import { isCivilDayAfterToday, weekWritesAllowed } from "@/lib/view-week";
 
 type Status = "loading" | "ready" | "error";
 
@@ -881,6 +881,7 @@ export function FamilyProvider({
       preferExistingDone?: boolean;
     }): Promise<ArchiveDay | null> => {
       if (!writesAllowed) return null;
+      if (isCivilDayAfterToday(args.civilDate, bucharestToday())) return null;
       if (!selectedChild || !family) return null;
       const yearStart = familyProgramYearStart(family);
       const week = programWeekNumber(args.civilDate, yearStart);
@@ -1052,6 +1053,7 @@ export function FamilyProvider({
       const programCivilDate = activity
         ? programDayCivilDate(activity.week_number, activity.day_of_week, yearStart)
         : bucharestToday();
+      if (isCivilDayAfterToday(programCivilDate, bucharestToday())) return;
       const existing = completions.find(
         (row) => row.child_id === selectedChild.id && row.activity_id === activityId,
       );
@@ -1147,6 +1149,8 @@ export function FamilyProvider({
       if (!writesAllowed) return;
       if (!selectedChild || !family) return;
       const programYearStart = familyProgramYearStart(family);
+      const noteCivilDate = programDayCivilDate(viewWeek, dayOfWeek, programYearStart);
+      if (isCivilDayAfterToday(noteCivilDate, bucharestToday())) return;
       const normalized = normalizeDayNoteBody(body);
       if (isDemo) {
         const next = upsertDemoDayNote(readDemoState(), {
@@ -1262,6 +1266,7 @@ export function FamilyProvider({
   const saveDayPhoto = useCallback(
     async (civilDate: string, file: File) => {
       if (!writesAllowed) return;
+      if (isCivilDayAfterToday(civilDate, bucharestToday())) return;
       if (!selectedChild) throw new Error("Alege un copil mai întâi.");
       const rejected = rejectIfNotPhoto(file);
       if (rejected) throw new Error(rejected);
@@ -1318,6 +1323,7 @@ export function FamilyProvider({
   const removeDayPhoto = useCallback(
     async (civilDate: string) => {
       if (!writesAllowed) return;
+      if (isCivilDayAfterToday(civilDate, bucharestToday())) return;
       if (!selectedChild) return;
       const path = archivePhotoPath(selectedChild.id, civilDate);
       if (isDemo) {
@@ -1436,6 +1442,18 @@ export function FamilyProvider({
     async (activityId: string) => {
       if (!writesAllowed) return;
       if (!selectedChild) return;
+      const activity =
+        viewActivities.find((row) => row.id === activityId) ??
+        activities.find((row) => row.id === activityId) ??
+        getSeedActivityById(activityId);
+      if (activity && family) {
+        const civilDate = programDayCivilDate(
+          activity.week_number,
+          activity.day_of_week,
+          familyProgramYearStart(family),
+        );
+        if (isCivilDayAfterToday(civilDate, bucharestToday())) return;
+      }
       const existing = completions.find(
         (row) => row.child_id === selectedChild.id && row.activity_id === activityId,
       );
@@ -1465,7 +1483,7 @@ export function FamilyProvider({
         current.map((row) => (row.id === existing.id ? (data as Completion) : row)),
       );
     },
-    [completions, isDemo, selectedChild, writesAllowed],
+    [activities, completions, family, isDemo, selectedChild, viewActivities, writesAllowed],
   );
 
   const ensureCalendarToken = useCallback(async () => {
