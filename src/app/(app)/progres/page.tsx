@@ -2,6 +2,7 @@
 
 import { EmptyState } from "@/components/status-blocks";
 import { Progress } from "@/components/ui/progress";
+import { completionsForChild } from "@/lib/child-scope";
 import { useFamily } from "@/lib/family-context";
 import { PILLAR_META, PILLARS } from "@/lib/pillars";
 import { getDayName } from "@/lib/week";
@@ -18,7 +19,9 @@ export default function ProgresPage() {
 
   const weekActs = activities.filter((activity) => activity.week_number === selectedWeek);
   const weekIds = new Set(weekActs.map((activity) => activity.id));
-  const weekCompletions = completions.filter((row) => weekIds.has(row.activity_id));
+  const weekCompletions = completionsForChild(completions, selectedChild.id).filter((row) =>
+    weekIds.has(row.activity_id),
+  );
   const doneIds = new Set(weekCompletions.map((row) => row.activity_id));
   const approved = weekCompletions.filter(
     (row) => row.mode === "A" || row.parent_approved === true,

@@ -7,6 +7,7 @@ import { CompleteToggle } from "@/components/complete-toggle";
 import { PillarMark } from "@/components/pillar-mark";
 import { EmptyState } from "@/components/status-blocks";
 import { Button } from "@/components/ui/button";
+import { completionForActivity } from "@/lib/child-scope";
 import { useFamily } from "@/lib/family-context";
 import { PILLAR_META } from "@/lib/pillars";
 import { getDayName } from "@/lib/week";
@@ -24,12 +25,14 @@ export default function ActivitatePage({
     approveCompletion,
     family,
     writesAllowed,
+    selectedChild,
   } = useFamily();
   const [busy, setBusy] = useState(false);
   const activity = viewActivities.find((item) => item.id === id);
-  const completion = writesAllowed
-    ? completions.find((row) => row.activity_id === id) ?? null
-    : null;
+  const completion =
+    writesAllowed && selectedChild
+      ? completionForActivity(completions, selectedChild.id, id)
+      : null;
   const pending = completion?.mode === "B" && completion.parent_approved === false;
 
   if (!activity) {

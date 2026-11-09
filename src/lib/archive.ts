@@ -26,6 +26,11 @@ import {
   toDateOnlyString,
   type DateInput,
 } from "@/lib/program-week";
+import {
+  attributeMissingChildId,
+  childForUnscopedRows,
+  type ScopeChild,
+} from "@/lib/child-scope";
 import { completionCivilDate, type ActivityDayRef } from "@/lib/completion-date";
 import { getSeedActivities } from "@/lib/seed/week1";
 import type { ArchiveDay, DayNote } from "@/lib/types";
@@ -159,7 +164,24 @@ export function normalizeDoneTitles(titles: readonly string[]): string[] {
 export type ArchiveActivityRef = ActivityDayRef & {
   id: string;
   title: string;
+  /** Când e pusă, titlul se ia din banda copilului. Altfel id-urile se amestecă între 1–2 și 2–3. */
+  age_band?: string | null;
 };
+
+export function ageBandFromLabel(label?: string | null): string | null {
+  const band = label?.replace(/–/g, "-").trim() ?? "";
+  return band || null;
+}
+
+/** Catalogul copilului. Dacă benzile sunt marcate, nu împrumutăm titlurile celuilalt. */
+export function activitiesForChild<T extends { age_band?: string | null }>(
+  activities: readonly T[],
+  ageBand: string | null | undefined,
+): T[] {
+  const tagged = activities.some((row) => Boolean(row.age_band));
+  if (!tagged || !ageBand) return [...activities];
+  return activities.filter((row) => row.age_band === ageBand);
+}
 
 export function doneTitlesForCivilDate(args: {
   civilDate: string;
@@ -242,8 +264,12 @@ export function missingArchiveDrafts(args: {
   activities: readonly ArchiveActivityRef[];
   programYearStart: string;
 }): ArchiveDayDraft[] {
+  const ownerId = childForUnscopedRows(args.children).child?.id ?? null;
+  const notes = attributeMissingChildId(args.notes, ownerId).rows;
+  const completions = attributeMissingChildId(args.completions, ownerId).rows;
+  const existing = attributeMissingChildId(args.existing, ownerId).rows;
   const have = new Set(
-    args.existing.map((row) => `${row.child_id}:${row.civil_date}`),
+    existing.map((row) => `${row.child_id}:${row.civil_date}`),
   );
   const drafts: ArchiveDayDraft[] = [];
   for (const child of args.children) {
@@ -252,13 +278,13 @@ export function missingArchiveDrafts(args: {
       const dayNote = noteForCivilDate({
         civilDate,
         programYearStart: args.programYearStart,
-        notes: args.notes.filter((note) => note.child_id === child.id),
+        notes: notes.filter((note) => note.child_id === child.id),
       });
       const doneTitles = doneTitlesForCivilDate({
         civilDate,
         programYearStart: args.programYearStart,
-        activities: args.activities,
-        completions: args.completions.filter((row) => row.child_id === child.id),
+        activities: activitiesForChild(args.activities, child.age_band),
+        completions: completions.filter((row) => row.child_id === child.id),
       });
       const draft = buildArchiveDraft({
         childId: child.id,
@@ -403,9 +429,9 @@ export function bookletCivilDates(
   return eachCivilDate(period.start, end);
 }
 
-export type BookletChild = {
-  id: string;
+export type BookletChild = ScopeChild & {
   age_band_label?: string | null;
+  age_band?: string | null;
 };
 
 /** Completions + notes for the PDF — not only archive_days stamped when a photo was saved. */
@@ -444,6 +470,7 @@ export function seedTitlesForDates(
           title: activity.title,
           week_number: activity.week_number,
           day_of_week: activity.day_of_week,
+          ...(band ? { age_band: band } : {}),
         });
       }
     }
@@ -452,7 +479,7 @@ export function seedTitlesForDates(
 }
 
 function liveContentForDay(
-  childId: string,
+  child: BookletChild,
   civilDate: string,
   live: BookletLiveSources | undefined,
 ): { done: string[]; note: string } {
@@ -460,20 +487,33 @@ function liveContentForDay(
   if (!isCivilDateInProgramYear(civilDate, live.programYearStart)) {
     return { done: [], note: "" };
   }
+  const band = child.age_band ?? ageBandFromLabel(child.age_band_label);
   const done = doneTitlesForCivilDate({
     civilDate,
     programYearStart: live.programYearStart,
-    activities: live.activities,
-    completions: live.completions.filter((row) => row.child_id === childId),
+    activities: activitiesForChild(live.activities, band),
+    completions: live.completions.filter((row) => row.child_id === child.id),
   });
   const note = live.notes
     ? noteForCivilDate({
         civilDate,
         programYearStart: live.programYearStart,
-        notes: live.notes.filter((row) => row.child_id === childId),
+        notes: live.notes.filter((row) => row.child_id === child.id),
       })
     : "";
   return { done, note };
+}
+
+function scopeBookletLive(
+  children: readonly BookletChild[],
+  live: BookletLiveSources,
+): BookletLiveSources {
+  const ownerId = childForUnscopedRows(children).child?.id ?? null;
+  return {
+    ...live,
+    completions: attributeMissingChildId(live.completions, ownerId).rows,
+    notes: live.notes ? attributeMissingChildId(live.notes, ownerId).rows : live.notes,
+  };
 }
 
 /** Every civil day in range, including quiet days with no photo and no note. */
@@ -485,14 +525,17 @@ export function expandBookletDays<T extends ArchiveDayDraft>(args: {
   live?: BookletLiveSources;
 }): ArchiveDayDraft[] {
   const dates = bookletCivilDates(args.period, args.today);
+  const ownerId = childForUnscopedRows(args.children).child?.id ?? null;
+  const days = attributeMissingChildId(args.days, ownerId).rows;
+  const live = args.live ? scopeBookletLive(args.children, args.live) : undefined;
   const byKey = new Map(
-    args.days.map((day) => [`${day.child_id}:${day.civil_date}`, day] as const),
+    days.map((day) => [`${day.child_id}:${day.civil_date}`, day] as const),
   );
   const result: ArchiveDayDraft[] = [];
   for (const date of dates) {
     for (const child of args.children) {
       const existing = byKey.get(`${child.id}:${date}`);
-      const liveBits = liveContentForDay(child.id, date, args.live);
+      const liveBits = liveContentForDay(child, date, live);
       result.push({
         child_id: existing?.child_id ?? child.id,
         civil_date: date,

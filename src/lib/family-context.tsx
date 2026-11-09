@@ -17,6 +17,7 @@ import {
   WEEK_COOKIE,
   WEEK_STORAGE_KEY,
 } from "@/lib/config";
+import { completionsForChild } from "@/lib/child-scope";
 import {
   addDemoChild,
   clearDemoSession,
@@ -32,6 +33,7 @@ import {
   writeDemoState,
   type DemoState,
 } from "@/lib/demo/store";
+import { migrateUnscopedDemoPhotos } from "@/lib/demo/photos";
 import { createBrowserSupabase } from "@/lib/supabase/client";
 import type {
   Activity,
@@ -325,7 +327,7 @@ export function FamilyProvider({
       setKids(kids);
       setSelectedChildId(selectedId);
       setActivities(demoActivities(week, liveChildBand(selected?.age_band)));
-      setCompletions(state.completions);
+      setCompletions(completionsForChild(state.completions, selectedId));
       setDayNotes(demoDayNotesForWeek({ ...state, selectedChildId: selectedId }, week));
       const today = bucharestToday();
       const row =
@@ -341,6 +343,9 @@ export function FamilyProvider({
     if (isDemo) {
       const state = readDemoState();
       applyDemo(state, selectedWeek);
+      void migrateUnscopedDemoPhotos(state.children).then((notices) => {
+        for (const notice of notices) console.info(notice);
+      });
       setDayNotes(demoDayNotesForWeek(state, viewWeek));
       const childId = state.selectedChildId;
       const row =
@@ -511,7 +516,9 @@ export function FamilyProvider({
         setStatus("error");
         return;
       }
-      setCompletions((doneRows ?? []) as Completion[]);
+      setCompletions(
+        completionsForChild((doneRows ?? []) as Completion[], nextSelected),
+      );
       setDayNotes((noteRows ?? []) as DayNote[]);
       const archive = (archiveRow as ArchiveDay | null) ?? null;
       setTodayArchive(archive);
@@ -679,7 +686,7 @@ export function FamilyProvider({
             liveChildBand(selected ? applyCohortAgeBand(selected).age_band : null),
           ),
         );
-        setCompletions(state.completions);
+        setCompletions(completionsForChild(state.completions, childId));
         setDayNotes(demoDayNotesForWeek(state, viewWeek));
         const row =
           demoArchiveDaysForChild(state, childId).find(
@@ -750,7 +757,7 @@ export function FamilyProvider({
         return;
       }
       setActivities(((activityRows ?? []) as SeedActivity[]).map(normalizeActivity));
-      setCompletions((data ?? []) as Completion[]);
+      setCompletions(completionsForChild((data ?? []) as Completion[], childId));
       setDayNotes((noteRows ?? []) as DayNote[]);
       const archive = (archiveRow as ArchiveDay | null) ?? null;
       setTodayArchive(archive);
@@ -1045,12 +1052,14 @@ export function FamilyProvider({
       const programCivilDate = activity
         ? programDayCivilDate(activity.week_number, activity.day_of_week, yearStart)
         : bucharestToday();
-      const existing = completions.find((row) => row.activity_id === activityId);
+      const existing = completions.find(
+        (row) => row.child_id === selectedChild.id && row.activity_id === activityId,
+      );
       if (existing) {
         if (isDemo) {
           const next = removeDemoCompletion(readDemoState(), selectedChild.id, activityId);
           writeDemoState(next);
-          setCompletions(next.completions);
+          setCompletions(completionsForChild(next.completions, selectedChild.id));
           for (const civilDate of restampDatesForToggle({
             programCivilDate,
             previousCompletedAt: existing.completed_at,
@@ -1068,7 +1077,8 @@ export function FamilyProvider({
         const { error: deleteError } = await supabase
           .from("completions")
           .delete()
-          .eq("id", existing.id);
+          .eq("id", existing.id)
+          .eq("child_id", selectedChild.id);
         if (deleteError) throw new Error(deleteError.message);
         const nextCompletions = completions.filter((row) => row.id !== existing.id);
         setCompletions(nextCompletions);
@@ -1097,7 +1107,7 @@ export function FamilyProvider({
           completedAt,
         });
         writeDemoState(next);
-        setCompletions(next.completions);
+        setCompletions(completionsForChild(next.completions, selectedChild.id));
         await stampArchiveDay({
           civilDate: programCivilDate,
           completions: next.completions,
@@ -1214,9 +1224,9 @@ export function FamilyProvider({
   const signedPhotoUrl = useCallback(
     async (path: string | null): Promise<string | null> => {
       if (!path || !selectedChild) return null;
+      if (!path.startsWith(`${selectedChild.id}/`)) return null;
       if (isDemo) {
-        const [, civilDate] = path.split("/");
-        const date = civilDate?.replace(/\.jpg$/, "") ?? "";
+        const date = path.slice(selectedChild.id.length + 1).replace(/\.jpg$/, "");
         return demoPhotoObjectUrl(selectedChild.id, date);
       }
       const supabase = createBrowserSupabase();
@@ -1233,8 +1243,9 @@ export function FamilyProvider({
   const downloadPhotoBytes = useCallback(
     async (path: string): Promise<Uint8Array | null> => {
       if (!selectedChild) return null;
+      if (!path.startsWith(`${selectedChild.id}/`)) return null;
       if (isDemo) {
-        const date = path.split("/")[1]?.replace(/\.jpg$/, "") ?? "";
+        const date = path.slice(selectedChild.id.length + 1).replace(/\.jpg$/, "");
         const blob = await readDemoPhoto(selectedChild.id, date);
         if (!blob) return null;
         return new Uint8Array(await blob.arrayBuffer());
@@ -1425,7 +1436,9 @@ export function FamilyProvider({
     async (activityId: string) => {
       if (!writesAllowed) return;
       if (!selectedChild) return;
-      const existing = completions.find((row) => row.activity_id === activityId);
+      const existing = completions.find(
+        (row) => row.child_id === selectedChild.id && row.activity_id === activityId,
+      );
       if (!existing) return;
       if (isDemo) {
         const next = upsertDemoCompletion(readDemoState(), {
@@ -1435,7 +1448,7 @@ export function FamilyProvider({
           parentApproved: true,
         });
         writeDemoState(next);
-        setCompletions(next.completions);
+        setCompletions(completionsForChild(next.completions, selectedChild.id));
         return;
       }
       const supabase = createBrowserSupabase();
@@ -1444,6 +1457,7 @@ export function FamilyProvider({
         .from("completions")
         .update({ parent_approved: true })
         .eq("id", existing.id)
+        .eq("child_id", selectedChild.id)
         .select("*")
         .single();
       if (updateError || !data) throw new Error(updateError?.message ?? "Nu am putut aproba.");

@@ -24,6 +24,7 @@ import {
   aziTitle,
 } from "@/lib/azi";
 import { PREVIEW_EMPTY } from "@/lib/band-preview";
+import { completionForActivity, completionsForChild } from "@/lib/child-scope";
 import { dayNoteEditorKey } from "@/lib/day-note";
 import { useFamily } from "@/lib/family-context";
 import { PILLARS } from "@/lib/pillars";
@@ -66,11 +67,12 @@ export function AziView({ today }: { today: string }) {
     joinedAt: family?.joined_at ?? family?.created_at,
   });
 
+  const mine = completionsForChild(completions, selectedChild?.id);
   const todayActivities = viewActivities
     .filter((activity) => activity.day_of_week === day && activity.week_number === week)
     .sort((a, b) => PILLARS.indexOf(a.pillar) - PILLARS.indexOf(b.pillar));
   const doneCount = todayActivities.filter((activity) =>
-    completions.some((row) => row.activity_id === activity.id),
+    mine.some((row) => row.activity_id === activity.id),
   ).length;
   const allDone = aziAllDone(todayActivities.length, doneCount);
   const overlay = playfulPilotFor(week, day);
@@ -80,10 +82,10 @@ export function AziView({ today }: { today: string }) {
 
   async function onToggle(activityId: string) {
     if (readOnly) return;
-    const wasAlreadyDone = completions.some((row) => row.activity_id === activityId);
+    const wasAlreadyDone = mine.some((row) => row.activity_id === activityId);
     const completingLast = isCompletingLastActivity({
       activityIds: todayActivities.map((activity) => activity.id),
-      completedIds: completions.map((row) => row.activity_id),
+      completedIds: mine.map((row) => row.activity_id),
       toggledId: activityId,
       wasAlreadyDone,
     });
@@ -163,7 +165,7 @@ export function AziView({ today }: { today: string }) {
               activity={activity}
               completion={
                 writesAllowed
-                  ? completions.find((row) => row.activity_id === activity.id) ?? null
+                  ? completionForActivity(mine, selectedChild?.id, activity.id)
                   : null
               }
               busy={busyId === activity.id}

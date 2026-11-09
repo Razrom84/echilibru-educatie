@@ -1,3 +1,4 @@
+import { scopeFamilyRecords } from "@/lib/child-scope";
 import { getSeedActivities } from "@/lib/seed/week1";
 import {
   buildMonthlyDigest,
@@ -34,6 +35,9 @@ export type DigestDayNote = {
 export type DigestChild = {
   id: string;
   name: string;
+  age_band?: string | null;
+  created_at?: string | null;
+  active?: boolean | null;
 };
 
 export type ComposeFamily = {
@@ -54,9 +58,12 @@ function weekNumbersFromModel(weeks: readonly number[]): number[] {
   return [...new Set(weeks)].sort((a, b) => a - b);
 }
 
-export function catalogForWeeks(weeks: readonly number[]): DigestActivity[] {
+export function catalogForWeeks(
+  weeks: readonly number[],
+  band?: string | null,
+): DigestActivity[] {
   return weekNumbersFromModel(weeks).flatMap((week) =>
-    getSeedActivities(week).map((row) => ({
+    getSeedActivities(week, band).map((row) => ({
       id: row.id,
       week_number: row.week_number,
     })),
@@ -70,9 +77,11 @@ function childProgress(
   weeks: readonly number[],
 ): DigestChildProgress[] {
   const weekSet = new Set(weeks);
-  const weekActs = activities.filter((row) => weekSet.has(row.week_number));
-  const ids = new Set(weekActs.map((row) => row.id));
   return children.map((child) => {
+    const weekActs = (
+      child.age_band ? catalogForWeeks(weeks, child.age_band) : activities
+    ).filter((row) => weekSet.has(row.week_number));
+    const ids = new Set(weekActs.map((row) => row.id));
     const done = new Set(
       completions
         .filter((row) => row.child_id === child.id && ids.has(row.activity_id))
@@ -95,9 +104,10 @@ function notesForWeeks(
   const weekSet = new Set(weeks);
   const childName = new Map(children.map((child) => [child.id, child.name]));
   const showChild = children.length > 1;
+  const childIds = new Set(children.map((child) => child.id));
   return visibleNotes(
     notes
-      .filter((note) => weekSet.has(note.week_number))
+      .filter((note) => childIds.has(note.child_id) && weekSet.has(note.week_number))
       .map((note) => ({
         week: note.week_number,
         dayOfWeek: note.day_of_week,
@@ -121,6 +131,12 @@ export function composeMondayDigest(args: {
     return { status: "skipped-toggle" };
   }
 
+  const scoped = scopeFamilyRecords(args.children, {
+    completions: args.completions,
+    notes: args.notes,
+  });
+  const completions = scoped.completions;
+  const notes = scoped.notes;
   const selected = digestSelection(args.now, args.family, args.kindOverride);
 
   if (selected.kind === "weekly") {
@@ -132,8 +148,8 @@ export function composeMondayDigest(args: {
       theme: selected.closed.theme,
       start: selected.closed.start,
       end: selected.closed.end,
-      children: childProgress(args.children, activities, args.completions, weeks),
-      notes: notesForWeeks(args.children, args.notes, weeks),
+      children: childProgress(args.children, activities, completions, weeks),
+      notes: notesForWeeks(args.children, notes, weeks),
     });
     if (shouldSkipDigest(model)) return { status: "skipped-empty", model };
     return { status: "ready", model };
@@ -151,8 +167,8 @@ export function composeMondayDigest(args: {
     year: selected.month.year,
     month: selected.month.month,
     themes,
-    children: childProgress(args.children, activities, args.completions, weeks),
-    notes: notesForWeeks(args.children, args.notes, weeks),
+    children: childProgress(args.children, activities, completions, weeks),
+    notes: notesForWeeks(args.children, notes, weeks),
   });
   if (shouldSkipDigest(model)) return { status: "skipped-empty", model };
   return { status: "ready", model };

@@ -1,5 +1,10 @@
 import { CHILD_COOKIE, DEMO_COOKIE, DEMO_STORAGE_KEY } from "@/lib/config";
 import { bandFromBirthdate } from "@/lib/band";
+import {
+  attributeMissingChildId,
+  childForUnscopedRows,
+  childScopeNotice,
+} from "@/lib/child-scope";
 import { getSeedActivities } from "@/lib/seed/week1";
 import type { ArchiveDay, Child, Completion, CompletionMode, DayNote, Family } from "@/lib/types";
 import { dayNoteMatches, normalizeDayNoteBody } from "@/lib/day-note";
@@ -46,6 +51,58 @@ export function emptyDemoState(): DemoState {
   };
 }
 
+/** Pune copilul pe bifele, notele și zilele vechi. A doua rulare nu mai mută nimic. */
+export function migrateDemoState(state: DemoState): {
+  state: DemoState;
+  notices: string[];
+  changed: boolean;
+} {
+  const { child, several } = childForUnscopedRows(state.children);
+  const ownerId = child?.id ?? null;
+  const name = child?.name?.trim() || "copilul din familie";
+  const completions = attributeMissingChildId(state.completions ?? [], ownerId);
+  const dayNotes = attributeMissingChildId(state.dayNotes ?? [], ownerId);
+  const archiveDays = attributeMissingChildId(state.archiveDays ?? [], ownerId);
+  const notices = [
+    childScopeNotice({
+      kind: "bife",
+      childName: name,
+      severalChildren: several,
+      count: completions.assigned,
+    }),
+    childScopeNotice({
+      kind: "note",
+      childName: name,
+      severalChildren: several,
+      count: dayNotes.assigned,
+    }),
+    childScopeNotice({
+      kind: "zile",
+      childName: name,
+      severalChildren: several,
+      count: archiveDays.assigned,
+    }),
+  ].filter((line): line is string => Boolean(line));
+  const changed =
+    completions.assigned > 0 ||
+    dayNotes.assigned > 0 ||
+    archiveDays.assigned > 0 ||
+    completions.normalized ||
+    dayNotes.normalized ||
+    archiveDays.normalized;
+  if (!changed) return { state, notices: [], changed: false };
+  return {
+    state: {
+      ...state,
+      completions: completions.rows as Completion[],
+      dayNotes: dayNotes.rows as DayNote[],
+      archiveDays: archiveDays.rows as ArchiveDay[],
+    },
+    notices,
+    changed: true,
+  };
+}
+
 export function readDemoState(): DemoState {
   if (typeof window === "undefined") return emptyDemoState();
   try {
@@ -53,13 +110,21 @@ export function readDemoState(): DemoState {
     if (!raw) return emptyDemoState();
     const parsed = JSON.parse(raw) as DemoState;
     const defaults = emptyDemoState();
-    return {
+    const loaded: DemoState = {
       ...defaults,
       ...parsed,
       family: { ...defaults.family, ...parsed.family },
+      children: parsed.children ?? [],
+      completions: parsed.completions ?? [],
       dayNotes: parsed.dayNotes ?? [],
       archiveDays: parsed.archiveDays ?? [],
     };
+    const migrated = migrateDemoState(loaded);
+    if (migrated.changed) {
+      writeDemoState(migrated.state);
+      for (const notice of migrated.notices) console.info(notice);
+    }
+    return migrated.state;
   } catch {
     return emptyDemoState();
   }
