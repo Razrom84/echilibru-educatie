@@ -8,7 +8,7 @@ do $$
 declare
   missing text;
   updated bigint;
-  expected int := 12;
+  expected int := 9;
 begin
   create temporary table t5_copy (
     id text primary key,
@@ -18,18 +18,6 @@ begin
   ) on commit drop;
 
   insert into t5_copy (id, banda, titlu, pasi) values
-    (
-      's45-b23-z5-mental',
-      '2-3',
-      'Pași, ne oprim, hai — pe corpul puternic',
-      null
-    ),
-    (
-      's48-b23-z1-fizic',
-      '2-3',
-      'Gest de salut — unda mâinii',
-      null
-    ),
     (
       's46-b23-z3-mental',
       '2-3',
@@ -74,16 +62,6 @@ begin
       null,
       array[
         'Întrebați: „Îți place la loc, al meu sau al tău?” — gesturi.',
-        'Rămâneți la alegerea lui.',
-        'Dacă vrea: o rundă scurtă doar pe favorit.'
-      ]
-    ),
-    (
-      's48-b23-z7-mental',
-      '2-3',
-      null,
-      array[
-        'Întrebați: „Îți place bună, bună sau la revedere?” — gesturi.',
         'Rămâneți la alegerea lui.',
         'Dacă vrea: o rundă scurtă doar pe favorit.'
       ]
@@ -152,4 +130,94 @@ begin
   if updated <> expected then
     raise exception 'T5: actualizate % din %', updated, expected;
   end if;
+end $$;
+
+-- s45, s48 z1 și s48 z7: valoarea din live (după T4 și lustruirea „bună, salut”),
+-- nu textul intermediar. Dacă rândul e deja la forma nouă, scrierea e un no-op.
+-- Altfel se cere exact textul live. Un alt text oprește migrarea.
+do $$
+declare
+  r public.activities%rowtype;
+begin
+  select * into r from public.activities
+  where id = 's45-b23-z5-mental' and banda = '2-3';
+  if not found then
+    raise exception 'T5: id lipsă din banda așteptată: s45-b23-z5-mental (2-3)';
+  end if;
+  if coalesce(array_length(r.pasi, 1), 0) <> 3
+     or r.pasi[1] is distinct from 'Spuneți: „Mergem” și mergeți.'
+     or r.pasi[3] is distinct from 'Dacă vrea: el spune unul din cele trei cuvinte (sau arată).' then
+    raise exception 'T5: s45-b23-z5-mental pașii 1 și 3 nu sunt cei din live';
+  end if;
+  if r.titlu not in (
+    'Pași, oprim, hai — pe corpul puternic',
+    'Mergem, ne oprim, pornim iar'
+  ) then
+    raise exception 'T5: s45-b23-z5-mental titlu neașteptat: %', r.titlu;
+  end if;
+  if r.pasi[2] not in (
+    '„Oprim” — stați; „Hai” — porniți din nou.',
+    '„Ne oprim” — stați; „Hai” — porniți din nou.'
+  ) then
+    raise exception 'T5: s45-b23-z5-mental pasul 2 neașteptat: %', r.pasi[2];
+  end if;
+  if r.gata_cand not in (
+    'A legat pași / oprim / hai de mișcare.',
+    'A legat „mergem”, „ne oprim” și „hai” de mișcare.'
+  ) then
+    raise exception 'T5: s45-b23-z5-mental gata_cand neașteptat: %', r.gata_cand;
+  end if;
+  update public.activities
+  set
+    titlu = 'Mergem, ne oprim, pornim iar',
+    pasi = array[
+      'Spuneți: „Mergem” și mergeți.',
+      '„Ne oprim” — stați; „Hai” — porniți din nou.',
+      'Dacă vrea: el spune unul din cele trei cuvinte (sau arată).'
+    ],
+    gata_cand = 'A legat „mergem”, „ne oprim” și „hai” de mișcare.'
+  where id = 's45-b23-z5-mental' and banda = '2-3';
+
+  select * into r from public.activities
+  where id = 's48-b23-z1-fizic' and banda = '2-3';
+  if not found then
+    raise exception 'T5: id lipsă din banda așteptată: s48-b23-z1-fizic (2-3)';
+  end if;
+  if r.pasi is distinct from array[
+    'Modelați unda: „Bună.” — mâna se mișcă.',
+    'El încearcă unda (sau privește) — fără forțare.',
+    'Dacă vrea: alege formula — bună sau salut (cu același gest).'
+  ]::text[] then
+    raise exception 'T5: s48-b23-z1-fizic pașii nu sunt cei din live';
+  end if;
+  if r.titlu not in ('Gest de salut — undă bună', 'Salut — facem cu mâna') then
+    raise exception 'T5: s48-b23-z1-fizic titlu neașteptat: %', r.titlu;
+  end if;
+  update public.activities
+  set titlu = 'Salut — facem cu mâna'
+  where id = 's48-b23-z1-fizic' and banda = '2-3';
+
+  select * into r from public.activities
+  where id = 's48-b23-z7-mental' and banda = '2-3';
+  if not found then
+    raise exception 'T5: id lipsă din banda așteptată: s48-b23-z7-mental (2-3)';
+  end if;
+  if r.titlu is distinct from 'Favoritul: bună, salut sau la revedere?' then
+    raise exception 'T5: s48-b23-z7-mental titlul live nu e cel așteptat: %', r.titlu;
+  end if;
+  if coalesce(array_length(r.pasi, 1), 0) <> 3
+     or r.pasi[1] is distinct from 'Întrebați: „Îți place bună, salut sau la revedere?” — gesturi.'
+     or r.pasi[3] is distinct from 'Dacă vrea: o rundă scurtă doar pe favorit.' then
+    raise exception 'T5: s48-b23-z7-mental pașii 1 și 3 nu sunt cei din live';
+  end if;
+  if r.pasi[2] not in ('Stați pe alegerea lui.', 'Rămâneți la alegerea lui.') then
+    raise exception 'T5: s48-b23-z7-mental pasul 2 neașteptat: %', r.pasi[2];
+  end if;
+  update public.activities
+  set pasi = array[
+    'Întrebați: „Îți place bună, salut sau la revedere?” — gesturi.',
+    'Rămâneți la alegerea lui.',
+    'Dacă vrea: o rundă scurtă doar pe favorit.'
+  ]
+  where id = 's48-b23-z7-mental' and banda = '2-3';
 end $$;

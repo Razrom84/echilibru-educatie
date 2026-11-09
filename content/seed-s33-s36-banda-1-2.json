@@ -1999,13 +1999,13 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "resurse",
-      "titlu": "Intrăm, ușa se închide",
+      "titlu": "Intrăm, insecta rămâne afară",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [],
       "pasi": [
-        "Intrați. Închideți ușa pe scurt.",
-        "„Ușă. Gata.”"
+        "Intrați din curte. Închideți ușa împreună, încet. Aveți grijă la degete.",
+        "„Ușă. Insecta rămâne afară.”"
       ],
       "gata_cand": "A ajutat la ușă sau a intrat.",
       "tema_saptamana": "Insecte de departe",

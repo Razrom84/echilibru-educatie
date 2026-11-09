@@ -41,12 +41,12 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "mental",
-      "titlu": "Aerul pe față",
+      "titlu": "Simțim aerul pe față",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
       "pasi": [
-        "Stați pe loc afară sau la fereastră deschisă.",
+        "Stați pe loc afară sau la fereastră deschisă. Țineți-l în brațe sau de mână.",
         "Atingeți-i obrazul ușor: „Aer pe față.”"
       ],
       "gata_cand": "A simțit aerul pe față.",

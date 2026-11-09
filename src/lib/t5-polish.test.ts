@@ -24,6 +24,7 @@ type CopyFix = {
   week: number;
   titlu?: string;
   step?: string;
+  gata?: string;
   untouchedOnBand12: string;
 };
 
@@ -32,14 +33,16 @@ const COPY_FIXES: CopyFix[] = [
     seedId: "s45-2-3-z5-mental",
     liveId: "s45-b23-z5-mental",
     week: 45,
-    titlu: "Pași, ne oprim, hai — pe corpul puternic",
+    titlu: "Mergem, ne oprim, pornim iar",
+    step: "„Ne oprim” — stați; „Hai” — porniți din nou.",
+    gata: "A legat „mergem”, „ne oprim” și „hai” de mișcare.",
     untouchedOnBand12: "Unu, doi, unu, doi",
   },
   {
     seedId: "s48-2-3-z1-fizic",
     liveId: "s48-b23-z1-fizic",
     week: 48,
-    titlu: "Gest de salut — unda mâinii",
+    titlu: "Salut — facem cu mâna",
     untouchedOnBand12: "Mâna sus: bună",
   },
   {
@@ -88,7 +91,8 @@ const COPY_FIXES: CopyFix[] = [
     seedId: "s48-2-3-z7-mental",
     liveId: "s48-b23-z7-mental",
     week: 48,
-    step: "Rămâneți la alegerea lui.",
+    titlu: "Favoritul: bună, salut sau la revedere?",
+    step: "Întrebați: „Îți place bună, salut sau la revedere?” — gesturi.",
     untouchedOnBand12: "Cartea cu salutul",
   },
   {
@@ -206,6 +210,11 @@ describe("T5 activity copy", () => {
       expect(row?.banda).toBe("2-3");
       if (fix.titlu) expect(row?.titlu).toBe(fix.titlu);
       if (fix.step) expect(row?.pasi).toContain(fix.step);
+      if (fix.gata) expect(row?.gata_cand).toBe(fix.gata);
+      if (fix.liveId === "s48-b23-z7-mental") {
+        expect(row?.pasi[1]).toBe("Rămâneți la alegerea lui.");
+        expect(row?.titlu).toContain("bună, salut");
+      }
       const other = getSeedActivities(fix.week, "1-2").find(
         (activity) => activity.id === fix.seedId,
       );

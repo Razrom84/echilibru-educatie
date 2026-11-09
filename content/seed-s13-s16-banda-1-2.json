@@ -1451,14 +1451,14 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "resurse",
-      "titlu": "Paharul la chiuvetă",
+      "titlu": "Paharul la chiuvetă după masă",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
         "pahar"
       ],
       "pasi": [
-        "Duceți paharul la chiuvetă împreună.",
+        "După masă, duceți paharul la chiuvetă împreună.",
         "„La loc.”"
       ],
       "gata_cand": "A ajutat cu paharul.",
@@ -1472,12 +1472,12 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "social",
-      "titlu": "Mulțumesc",
+      "titlu": "Mulțumesc la masă",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
       "pasi": [
-        "După o înghițitură: „Mulțumesc.”",
+        "La masă, după o înghițitură: „Mulțumesc.”",
         "Modelați voi; el imită dacă vrea."
       ],
       "gata_cand": "A auzit și/sau a încercat cuvântul.",
@@ -1676,7 +1676,7 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "mental",
-      "titlu": "Cartea de la masă",
+      "titlu": "Carte cu mâncare",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [

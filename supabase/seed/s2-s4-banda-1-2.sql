@@ -1063,7 +1063,7 @@ insert into public.activities (
     4,
     'A'::public.completion_mode,
     ARRAY['cârpă']::text[],
-    ARRAY['Mișcări scurte.', '„Curat.”']::text[],
+    ARRAY['Ștergeți masa cu mișcări scurte.', '„Curat.”']::text[],
     'A ținut cârpa.',
     'Vârsta 1–2: scurt, fără forțare; el poate refuza.',
     'Mâini și degete'

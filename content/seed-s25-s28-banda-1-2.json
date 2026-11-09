@@ -347,7 +347,7 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "fizic",
-      "titlu": "Ne spălăm pe mâini",
+      "titlu": "Aprindem lumina, ne spălăm pe mâini",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [
@@ -355,8 +355,8 @@
         "săpun"
       ],
       "pasi": [
-        "Spălați mâinile pe scurt împreună.",
-        "„Mâini. Apă.” fără grabă."
+        "Seara, aprindeți împreună lumina din baie: „Lumină.”",
+        "Spălați mâinile pe scurt împreună: „Mâini. Apă.” fără grabă."
       ],
       "gata_cand": "A atins apa sau săpunul.",
       "tema_saptamana": "Lumină de seară",

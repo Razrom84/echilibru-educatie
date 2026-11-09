@@ -391,16 +391,16 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "mental",
-      "titlu": "Pași, ne oprim, hai — pe corpul puternic",
+      "titlu": "Mergem, ne oprim, pornim iar",
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [],
       "pasi": [
         "Spuneți: „Mergem” și mergeți.",
-        "„Oprim” — stați; „Hai” — porniți din nou.",
+        "„Ne oprim” — stați; „Hai” — porniți din nou.",
         "Dacă vrea: el spune unul din cele trei cuvinte (sau arată)."
       ],
-      "gata_cand": "A legat pași / oprim / hai de mișcare.",
+      "gata_cand": "A legat „mergem”, „ne oprim” și „hai” de mișcare.",
       "tema_saptamana": "Corp puternic, pași mulți",
       "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
     },
@@ -741,7 +741,7 @@
         "2 obiecte diferite"
       ],
       "pasi": [
-        "Arătați aproape: „Asta.” Apoi departe: „Aia.”",
+        "Puneți-le pe masă. Arătați aproape: „Asta.” Apoi departe: „Aia.”",
         "Întrebați: „Unde? Unde e asta?”",
         "Dacă vrea: el inventează — arată și spune (sau gest) asta / aia."
       ],
@@ -1841,7 +1841,7 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "fizic",
-      "titlu": "Gest de salut — unda mâinii",
+      "titlu": "Salut — facem cu mâna",
       "durata_min": 5,
       "mod_default": "A",
       "materiale": [],
@@ -2361,12 +2361,12 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "mental",
-      "titlu": "Favoritul: bună, bună sau la revedere?",
+      "titlu": "Favoritul: bună, salut sau la revedere?",
       "durata_min": 3,
       "mod_default": "A",
       "materiale": [],
       "pasi": [
-        "Întrebați: „Îți place bună, bună sau la revedere?” — gesturi.",
+        "Întrebați: „Îți place bună, salut sau la revedere?” — gesturi.",
         "Rămâneți la alegerea lui.",
         "Dacă vrea: o rundă scurtă doar pe favorit."
       ],
