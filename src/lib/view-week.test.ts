@@ -1,9 +1,14 @@
 import { describe, expect, test } from "vitest";
 import { PROGRAM_YEAR_START_MONDAY_2026_27 } from "./fixtures/program-year-2026-27";
 import { closedWeekContext, familyWantsMondayDigest } from "./monday-digest";
-import { familyProgramWeek } from "./program-week";
+import {
+  bucharestToday,
+  familyProgramWeek,
+  programDayCivilDate,
+} from "./program-week";
 import { clampProgramWeek } from "./week";
 import {
+  VIEW_DAY_FUTURE_HINT,
   VIEW_WEEK_BACK,
   VIEW_WEEK_FUTURE_HINT,
   VIEW_WEEK_LABEL,
@@ -13,6 +18,9 @@ import {
   VIEW_WEEK_READ_ONLY,
   applySessionViewWeek,
   clearSessionViewWeek,
+  dayWritesAllowed,
+  futureDayHint,
+  isCivilDayAfterToday,
   isWritableCohortBand,
   officialProgramWeekForDigests,
   previousBand,
@@ -42,6 +50,7 @@ describe("V1.5 session view week", () => {
     expect(VIEW_WEEK_PAST_HINT).toBe(
       "Săptămână trecută — poți bifa, nota și poza.",
     );
+    expect(VIEW_DAY_FUTURE_HINT).toBe("Ziua încă n-a venit — doar citire.");
     expect(viewWeekControlLabel(3)).toBe("Săptămâna 3");
     expect(viewWeekControlLabel(4)).toBe("Săptămâna 4");
     expect(viewWeekControlLabel(14)).toBe("Săptămâna 14");
@@ -241,6 +250,214 @@ describe("V1.5 past editable / future read-only", () => {
         liveBand: "1-2",
       }),
     ).toBe(false);
+  });
+
+  test("current week: today and yesterday stay writable, tomorrow does not", () => {
+    const yearStart = PROGRAM_YEAR_START_MONDAY_2026_27;
+    const monday = "2026-11-09";
+    expect(programDayCivilDate(11, 1, yearStart)).toBe(monday);
+    expect(programDayCivilDate(11, 2, yearStart)).toBe("2026-11-10");
+    expect(programDayCivilDate(10, 7, yearStart)).toBe("2026-11-08");
+    expect(familyProgramWeek({ program_year_start: yearStart }, monday)).toBe(11);
+
+    const current = weekWritesAllowed({
+      viewWeek: 11,
+      officialWeek: 11,
+      viewBand: "1-2",
+      liveBand: "1-2",
+    });
+    expect(current).toBe(true);
+    expect(
+      dayWritesAllowed({
+        civilDate: programDayCivilDate(11, 1, yearStart),
+        today: monday,
+        weekWritable: current,
+      }),
+    ).toBe(true);
+    expect(
+      dayWritesAllowed({
+        civilDate: programDayCivilDate(11, 2, yearStart),
+        today: monday,
+        weekWritable: current,
+      }),
+    ).toBe(false);
+    expect(
+      futureDayHint({
+        civilDate: "2026-11-10",
+        today: monday,
+        weekWritable: current,
+      }),
+    ).toBe(VIEW_DAY_FUTURE_HINT);
+    expect(
+      futureDayHint({
+        civilDate: monday,
+        today: monday,
+        weekWritable: current,
+      }),
+    ).toBeNull();
+
+    const previousWeek = weekWritesAllowed({
+      viewWeek: 10,
+      officialWeek: 11,
+      viewBand: "1-2",
+      liveBand: "1-2",
+    });
+    expect(
+      dayWritesAllowed({
+        civilDate: "2026-11-08",
+        today: monday,
+        weekWritable: previousWeek,
+      }),
+    ).toBe(true);
+    expect(isCivilDayAfterToday("2026-11-08", monday)).toBe(false);
+    expect(isCivilDayAfterToday("2026-11-10", monday)).toBe(true);
+  });
+
+  test("Wednesday splits the live week: Mon–Wed open, Thu–Sun closed", () => {
+    const wednesday = "2026-11-11";
+    const current = weekWritesAllowed({
+      viewWeek: 11,
+      officialWeek: 11,
+      viewBand: "2-3",
+      liveBand: "2-3",
+    });
+    for (const day of [1, 2, 3] as const) {
+      expect(
+        dayWritesAllowed({
+          civilDate: programDayCivilDate(11, day, PROGRAM_YEAR_START_MONDAY_2026_27),
+          today: wednesday,
+          weekWritable: current,
+        }),
+      ).toBe(true);
+    }
+    for (const day of [4, 5, 6, 7] as const) {
+      const civilDate = programDayCivilDate(
+        11,
+        day,
+        PROGRAM_YEAR_START_MONDAY_2026_27,
+      );
+      expect(
+        dayWritesAllowed({ civilDate, today: wednesday, weekWritable: current }),
+      ).toBe(false);
+      expect(
+        futureDayHint({ civilDate, today: wednesday, weekWritable: current }),
+      ).toBe(VIEW_DAY_FUTURE_HINT);
+    }
+  });
+
+  test("previous band keeps today writable and a later weekday read-only", () => {
+    const monday = "2026-11-09";
+    const weekWritable = weekWritesAllowed({
+      viewWeek: 11,
+      officialWeek: 11,
+      viewBand: "1-2",
+      liveBand: "2-3",
+    });
+    expect(weekWritable).toBe(true);
+    expect(
+      dayWritesAllowed({
+        civilDate: "2026-11-09",
+        today: monday,
+        weekWritable,
+      }),
+    ).toBe(true);
+    expect(
+      dayWritesAllowed({
+        civilDate: "2026-11-10",
+        today: monday,
+        weekWritable,
+      }),
+    ).toBe(false);
+  });
+
+  test("a future S# stays read-only and does not repeat the day hint", () => {
+    const weekWritable = weekWritesAllowed({
+      viewWeek: 12,
+      officialWeek: 11,
+      viewBand: "1-2",
+      liveBand: "1-2",
+    });
+    expect(weekWritable).toBe(false);
+    const mondayNext = programDayCivilDate(
+      12,
+      1,
+      PROGRAM_YEAR_START_MONDAY_2026_27,
+    );
+    expect(mondayNext).toBe("2026-11-16");
+    expect(
+      dayWritesAllowed({
+        civilDate: mondayNext,
+        today: "2026-11-09",
+        weekWritable,
+      }),
+    ).toBe(false);
+    expect(
+      futureDayHint({
+        civilDate: mondayNext,
+        today: "2026-11-09",
+        weekWritable,
+      }),
+    ).toBeNull();
+  });
+
+  test("Bucharest midnight opens the new day and keeps yesterday writable", () => {
+    const yearStart = PROGRAM_YEAR_START_MONDAY_2026_27;
+    const weekWritable = true;
+    // 9 Nov 2026 is EET (UTC+2): 21:59 UTC is still Monday, 22:00 UTC is Tuesday.
+    const mondayNight = new Date("2026-11-09T21:59:00.000Z");
+    const tuesdayMidnight = new Date("2026-11-09T22:00:00.000Z");
+    expect(bucharestToday(mondayNight)).toBe("2026-11-09");
+    expect(bucharestToday(tuesdayMidnight)).toBe("2026-11-10");
+
+    const tuesday = programDayCivilDate(11, 2, yearStart);
+    expect(
+      dayWritesAllowed({
+        civilDate: tuesday,
+        today: bucharestToday(mondayNight),
+        weekWritable,
+      }),
+    ).toBe(false);
+    expect(
+      dayWritesAllowed({
+        civilDate: tuesday,
+        today: bucharestToday(tuesdayMidnight),
+        weekWritable,
+      }),
+    ).toBe(true);
+    expect(
+      dayWritesAllowed({
+        civilDate: "2026-11-09",
+        today: bucharestToday(tuesdayMidnight),
+        weekWritable,
+      }),
+    ).toBe(true);
+
+    // 2 Sep 2026 is EEST (UTC+3): 20:59 UTC is still Wednesday, 21:00 UTC is Thursday.
+    const wednesdayNight = new Date("2026-09-02T20:59:00.000Z");
+    const thursdayMidnight = new Date("2026-09-02T21:00:00.000Z");
+    expect(bucharestToday(wednesdayNight)).toBe("2026-09-02");
+    expect(bucharestToday(thursdayMidnight)).toBe("2026-09-03");
+    expect(
+      dayWritesAllowed({
+        civilDate: "2026-09-03",
+        today: bucharestToday(wednesdayNight),
+        weekWritable,
+      }),
+    ).toBe(false);
+    expect(
+      dayWritesAllowed({
+        civilDate: "2026-09-03",
+        today: bucharestToday(thursdayMidnight),
+        weekWritable,
+      }),
+    ).toBe(true);
+    expect(
+      dayWritesAllowed({
+        civilDate: "2026-09-02",
+        today: bucharestToday(thursdayMidnight),
+        weekWritable,
+      }),
+    ).toBe(true);
   });
 
   test("join-day trim stays on the official current week only", () => {

@@ -10,6 +10,8 @@ import { Button } from "@/components/ui/button";
 import { completionForActivity } from "@/lib/child-scope";
 import { useFamily } from "@/lib/family-context";
 import { PILLAR_META } from "@/lib/pillars";
+import { bucharestToday, familyProgramYearStart, programDayCivilDate } from "@/lib/program-week";
+import { futureDayHint } from "@/lib/view-week";
 import { getDayName } from "@/lib/week";
 
 export default function ActivitatePage({
@@ -29,8 +31,25 @@ export default function ActivitatePage({
   } = useFamily();
   const [busy, setBusy] = useState(false);
   const activity = viewActivities.find((item) => item.id === id);
+  const activityCivilDate =
+    activity && family
+      ? programDayCivilDate(
+          activity.week_number,
+          activity.day_of_week,
+          familyProgramYearStart(family),
+        )
+      : null;
+  const aheadHint =
+    activityCivilDate == null
+      ? null
+      : futureDayHint({
+          civilDate: activityCivilDate,
+          today: bucharestToday(),
+          weekWritable: writesAllowed,
+        });
+  const canWrite = writesAllowed && aheadHint == null;
   const completion =
-    writesAllowed && selectedChild
+    canWrite && selectedChild
       ? completionForActivity(completions, selectedChild.id, id)
       : null;
   const pending = completion?.mode === "B" && completion.parent_approved === false;
@@ -52,7 +71,7 @@ export default function ActivitatePage({
   const current = activity;
 
   async function onToggle() {
-    if (!writesAllowed) return;
+    if (!canWrite) return;
     setBusy(true);
     try {
       await toggleComplete(current.id);
@@ -62,7 +81,7 @@ export default function ActivitatePage({
   }
 
   async function onApprove() {
-    if (!writesAllowed) return;
+    if (!canWrite) return;
     setBusy(true);
     try {
       await approveCompletion(current.id);
@@ -116,7 +135,11 @@ export default function ActivitatePage({
         ) : null}
       </div>
 
-      {writesAllowed ? (
+      {aheadHint ? (
+        <p className="text-xs leading-5 text-muted-foreground">{aheadHint}</p>
+      ) : null}
+
+      {canWrite ? (
         <>
           <div className="flex items-center justify-between gap-3 rounded-2xl border border-border bg-card px-4 py-3">
             <div>

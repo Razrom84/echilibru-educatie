@@ -18,7 +18,6 @@ import {
   aziAllDone,
   aziAllDoneMessage,
   aziDayOfWeek,
-  aziFutureLocked,
   aziGate,
   aziSubtitle,
   aziTitle,
@@ -35,7 +34,7 @@ import {
   shouldPlayDoneChime,
 } from "@/lib/playful-chime";
 import { playfulPilotFor } from "@/lib/playful-pilot";
-import { weekRelation } from "@/lib/view-week";
+import { futureDayHint, weekRelation } from "@/lib/view-week";
 import Link from "next/link";
 
 export function AziView({ today }: { today: string }) {
@@ -76,9 +75,13 @@ export function AziView({ today }: { today: string }) {
   ).length;
   const allDone = aziAllDone(todayActivities.length, doneCount);
   const overlay = playfulPilotFor(week, day);
-  const readOnly = !writesAllowed;
+  const aheadHint = futureDayHint({
+    civilDate: viewCivilDate,
+    today,
+    weekWritable: writesAllowed,
+  });
+  const readOnly = !writesAllowed || aheadHint != null;
   const hideForJoin = relation === "current" && gate === "before_join";
-  const hideFutureDay = relation === "current" && gate === "locked";
 
   async function onToggle(activityId: string) {
     if (readOnly) return;
@@ -145,8 +148,6 @@ export function AziView({ today }: { today: string }) {
         <EmptyState title={PREVIEW_EMPTY} />
       ) : hideForJoin ? (
         <EmptyState title={AZI_BEFORE_JOIN} body={aziSubtitle(day)} />
-      ) : hideFutureDay ? (
-        <EmptyState title={aziFutureLocked(day)} body={aziSubtitle(day)} />
       ) : todayActivities.length === 0 ? (
         <EmptyState
           title="Încă nu e conținut pentru ziua asta"
@@ -154,6 +155,9 @@ export function AziView({ today }: { today: string }) {
         />
       ) : (
         <div className="space-y-3">
+          {aheadHint ? (
+            <p className="text-xs leading-5 text-muted-foreground">{aheadHint}</p>
+          ) : null}
           {!readOnly && allDone && !overlay ? (
             <p className="rounded-2xl bg-muted px-4 py-3 text-sm font-medium">
               {aziAllDoneMessage(day)}
@@ -194,7 +198,7 @@ export function AziView({ today }: { today: string }) {
         </div>
       )}
 
-      {!readOnly && !hideForJoin && !hideFutureDay && todayActivities.length === 0 ? (
+      {!readOnly && !hideForJoin && todayActivities.length === 0 ? (
         <>
           <DayNoteEditor
             key={dayNoteEditorKey(selectedChild.id, week, day)}

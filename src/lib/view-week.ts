@@ -9,10 +9,13 @@
  * band, **and** the viewed S# is not future. Example: child on 2–3 can
  * edit 2–3 and 1–2 for past/current S#; 3–4 is read-only; future S# is
  * read-only on both writable bands. Live `1-2` has no previous.
+ *
+ * Inside a writable week, a civil day after today (Europe/Bucharest) is
+ * still read-only. Today and earlier days stay writable.
  */
 
 import { clampProgramWeek, isProgramWeek } from "@/lib/week";
-import { familyProgramWeek } from "@/lib/program-week";
+import { compareCivilDates, familyProgramWeek } from "@/lib/program-week";
 
 export const VIEW_WEEK_LABEL = "Săptămâna";
 export const VIEW_WEEK_PREV = "Săptămâna anterioară";
@@ -21,6 +24,8 @@ export const VIEW_WEEK_BACK = "Înapoi la săptămâna de azi";
 export const VIEW_WEEK_READ_ONLY = "doar citire";
 export const VIEW_WEEK_FUTURE_HINT = "Săptămână viitoare — doar citire.";
 export const VIEW_WEEK_PAST_HINT = "Săptămână trecută — poți bifa, nota și poza.";
+/** Shown on a weekday that has not arrived yet, inside an otherwise writable week. */
+export const VIEW_DAY_FUTURE_HINT = "Ziua încă n-a venit — doar citire.";
 
 export type WeekRelation = "past" | "current" | "future";
 
@@ -93,6 +98,39 @@ export function weekWritesAllowed(args: {
 }): boolean {
   if (!isWritableCohortBand(args.viewBand, args.liveBand)) return false;
   return weekRelation(args.viewWeek, args.officialWeek) !== "future";
+}
+
+/** True when `civilDate` is strictly after `today`. Both are `YYYY-MM-DD`. */
+export function isCivilDayAfterToday(civilDate: string, today: string): boolean {
+  return compareCivilDates(civilDate, today) > 0;
+}
+
+/**
+ * Week lock first, then the civil day. A writable week still refuses
+ * tomorrow and the rest of the week. `today` must already be the
+ * Europe/Bucharest civil date (`bucharestToday`).
+ */
+export function dayWritesAllowed(args: {
+  civilDate: string;
+  today: string;
+  weekWritable: boolean;
+}): boolean {
+  if (!args.weekWritable) return false;
+  return !isCivilDayAfterToday(args.civilDate, args.today);
+}
+
+/**
+ * Discreet hint for a future weekday inside a week that is otherwise
+ * writable. Future weeks keep the week-level hint and return null here.
+ */
+export function futureDayHint(args: {
+  civilDate: string;
+  today: string;
+  weekWritable: boolean;
+}): string | null {
+  if (!args.weekWritable) return null;
+  if (!isCivilDayAfterToday(args.civilDate, args.today)) return null;
+  return VIEW_DAY_FUTURE_HINT;
 }
 
 /** Join-day trim applies only to the official current week on the live band. */
