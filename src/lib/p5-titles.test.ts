@@ -577,7 +577,7 @@ describe("P5 titluri aprobate (T4)", () => {
 
   test("migrarea actualizează doar titlu, cu banda așteptată, și se oprește dacă lipsește un id", () => {
     const sql = readFileSync(
-      resolve("supabase/migrations/20261109120000_p5_titluri_56.sql"),
+      resolve("supabase/migrations/20261109230000_p5_titluri_56.sql"),
       "utf8",
     );
     expect(sql).toMatch(/set titlu = v\.titlu/);
