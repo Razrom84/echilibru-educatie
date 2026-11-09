@@ -29,11 +29,11 @@
         "ușă / balcon / curte"
       ],
       "pasi": [
-        "Ieșiți împreună 2–3 minute. Stați pe loc: „Urechi. Ascultăm.”",
+        "Ieșiți împreună 2–3 minute. Stați pe loc: „Urechi. Ascultăm.” Pe balcon, țineți-l de mână.",
         "Arătați spre sunet dacă apare: „Uite. Acolo.”",
         "Dacă vrea: întrebați blând — „Ce face?” — și așteptați gest sau sunet."
       ],
-      "gata_cand": "A staționar afară pe scurt și a ascultat.",
+      "gata_cand": "A stat afară pe scurt și a ascultat.",
       "tema_saptamana": "Animale pe care le auzim",
       "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
     },
@@ -472,7 +472,7 @@
         "ușă / balcon"
       ],
       "pasi": [
-        "Ieșiți 20–40 de secunde: „Uite. Ascultăm.”",
+        "Ieșiți 20–40 de secunde: „Uite. Ascultăm.” Pe balcon, țineți-l de mână.",
         "Intrați: „În casă. Gata.”",
         "Dacă vrea: încă un dus-întors; pe un sunet — „Ce face?”"
       ],

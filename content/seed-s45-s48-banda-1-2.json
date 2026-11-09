@@ -956,7 +956,7 @@
       "mod_default": "A",
       "materiale": [],
       "pasi": [
-        "Voi arătați scaunul pe scurt.",
+        "Voi arătați scaunul, apoi masa, pe scurt.",
         "„Acum tu.” Așteptați fără forțare."
       ],
       "gata_cand": "A auzit rândul sau a arătat.",

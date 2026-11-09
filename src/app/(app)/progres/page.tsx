@@ -5,6 +5,7 @@ import { Progress } from "@/components/ui/progress";
 import { completionsForChild } from "@/lib/child-scope";
 import { useFamily } from "@/lib/family-context";
 import { PILLAR_META, PILLARS } from "@/lib/pillars";
+import { weekProgress } from "@/lib/progress";
 import { getDayName } from "@/lib/week";
 import type { Pillar } from "@/lib/types";
 
@@ -17,18 +18,19 @@ export default function ProgresPage() {
     );
   }
 
+  const mine = completionsForChild(completions, selectedChild.id);
+  const summary = weekProgress({
+    activities,
+    completions: mine,
+    week: selectedWeek,
+  });
   const weekActs = activities.filter((activity) => activity.week_number === selectedWeek);
-  const weekIds = new Set(weekActs.map((activity) => activity.id));
-  const weekCompletions = completionsForChild(completions, selectedChild.id).filter((row) =>
-    weekIds.has(row.activity_id),
+  const doneIds = new Set(
+    mine
+      .filter((row) => weekActs.some((activity) => activity.id === row.activity_id))
+      .map((row) => row.activity_id),
   );
-  const doneIds = new Set(weekCompletions.map((row) => row.activity_id));
-  const approved = weekCompletions.filter(
-    (row) => row.mode === "A" || row.parent_approved === true,
-  ).length;
-  const pending = weekCompletions.filter(
-    (row) => row.mode === "B" && row.parent_approved === false,
-  ).length;
+  const { pending } = summary;
 
   const byPillar = PILLARS.map((pillar: Pillar) => {
     const total = weekActs.filter((activity) => activity.pillar === pillar).length;
@@ -74,7 +76,7 @@ export default function ProgresPage() {
             </div>
             <Progress value={weekPct} className="mt-3 h-3" />
             <p className="mt-2 text-xs text-muted-foreground">
-              {approved} aprobate
+              {summary.approvedLabel}
               {pending ? ` · ${pending} în așteptare (mod B)` : ""}
             </p>
           </div>

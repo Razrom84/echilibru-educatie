@@ -1,12 +1,16 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { BirthdateField } from "@/components/birthdate-field";
 import { EmptyState } from "@/components/status-blocks";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { childBandLine } from "@/lib/child-line";
 import { useFamily } from "@/lib/family-context";
+import { CHILD_SWITCH_HREF } from "@/lib/view-week";
 import { cn } from "@/lib/utils";
 
 export default function CopiiPage() {
@@ -56,10 +60,10 @@ export default function CopiiPage() {
             const active = selectedChild?.id === child.id;
             return (
               <li key={child.id}>
-                <button
-                  type="button"
+                <Link
+                  href={CHILD_SWITCH_HREF}
                   onClick={() => {
-                    void selectChild(child.id).then(() => router.push("/azi"));
+                    void selectChild(child.id);
                   }}
                   className={cn(
                     "flex w-full items-center justify-between rounded-2xl border px-4 py-4 text-left",
@@ -71,14 +75,13 @@ export default function CopiiPage() {
                   <span>
                     <span className="block font-heading text-xl">{child.name}</span>
                     <span className="text-sm text-muted-foreground">
-                      banda {child.age_band}
-                      {child.birthdate ? ` · n. ${child.birthdate}` : ""}
+                      {childBandLine(child.age_band, child.birthdate)}
                     </span>
                   </span>
                   <span className="text-sm font-medium text-primary">
                     {active ? "activ" : "alege"}
                   </span>
-                </button>
+                </Link>
               </li>
             );
           })}
@@ -100,13 +103,10 @@ export default function CopiiPage() {
           </div>
           <div className="space-y-2">
             <Label htmlFor="new-birth">Data nașterii</Label>
-            <Input
+            <BirthdateField
               id="new-birth"
-              type="date"
-              required
               value={birthdate}
-              onChange={(event) => setBirthdate(event.target.value)}
-              className="h-11"
+              onChange={setBirthdate}
             />
           </div>
           {error ? <p className="text-sm text-destructive">{error}</p> : null}

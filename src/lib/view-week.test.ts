@@ -9,6 +9,7 @@ import {
 } from "./program-week";
 import { clampProgramWeek } from "./week";
 import {
+  CHILD_SWITCH_HREF,
   VIEW_DAY_FUTURE_HINT,
   VIEW_WEEK_BACK,
   VIEW_WEEK_FUTURE_HINT,
@@ -17,6 +18,7 @@ import {
   VIEW_WEEK_PAST_HINT,
   VIEW_WEEK_PREV,
   VIEW_WEEK_READ_ONLY,
+  activityReadOnlyHint,
   applySessionViewWeek,
   clearSessionViewWeek,
   dayWritesAllowed,
@@ -27,6 +29,7 @@ import {
   previousBand,
   resolveViewWeek,
   showsLiveWeekNav,
+  viewWeekAfterChildSwitch,
   viewWeekBrowsingStatus,
   viewWeekControlLabel,
   viewWeekModeHint,
@@ -47,7 +50,10 @@ describe("V1.5 session view week", () => {
     expect(VIEW_WEEK_NEXT).toBe("Săptămâna următoare");
     expect(VIEW_WEEK_BACK).toBe("Înapoi la săptămâna de azi");
     expect(VIEW_WEEK_READ_ONLY).toBe("doar citire");
-    expect(VIEW_WEEK_FUTURE_HINT).toBe("Săptămână viitoare — doar citire.");
+    expect(VIEW_WEEK_FUTURE_HINT).toBe(
+      "Săptămâna asta n-a venit încă. Deocamdată o poți doar citi.",
+    );
+    expect(CHILD_SWITCH_HREF).toBe("/azi");
     expect(VIEW_WEEK_PAST_HINT).toBe(
       "Săptămână trecută — poți bifa, nota și poza.",
     );
@@ -604,5 +610,78 @@ describe("V1.5 nav does not move the digest week", () => {
     expect(closed.week).toBe(3);
     expect(closed.week).not.toBe(session.sessionWeek);
     expect(familyWantsMondayDigest({ monday_digest_email: true })).toBe(true);
+  });
+});
+
+describe("T5 child switch and future-week reading", () => {
+  test("switching child drops the browsed week and opens Azi on the current week", () => {
+    const official = 11;
+    const browsing = applySessionViewWeek(10, official);
+    expect(browsing.officialWeek).toBe(11);
+    expect(resolveViewWeek(official, browsing.session.sessionWeek)).toBe(10);
+    const cleared = clearSessionViewWeek(browsing.session);
+    expect(cleared.sessionWeek).toBeNull();
+    expect(resolveViewWeek(official, cleared.sessionWeek)).toBe(
+      viewWeekAfterChildSwitch(official),
+    );
+    expect(viewWeekAfterChildSwitch(official)).toBe(11);
+    expect(CHILD_SWITCH_HREF).toBe("/azi");
+  });
+
+  test("S11 future day keeps the day hint; S16 shows the week hint on the activity", () => {
+    const today = "2026-11-09";
+    const yearStart = PROGRAM_YEAR_START_MONDAY_2026_27;
+    const currentWritable = weekWritesAllowed({
+      viewWeek: 11,
+      officialWeek: 11,
+      viewBand: "1-2",
+      liveBand: "1-2",
+    });
+    expect(
+      activityReadOnlyHint({
+        civilDate: programDayCivilDate(11, 2, yearStart),
+        today,
+        viewWeek: 11,
+        officialWeek: 11,
+        weekWritable: currentWritable,
+      }),
+    ).toBe(VIEW_DAY_FUTURE_HINT);
+    expect(
+      activityReadOnlyHint({
+        civilDate: programDayCivilDate(11, 1, yearStart),
+        today,
+        viewWeek: 11,
+        officialWeek: 11,
+        weekWritable: currentWritable,
+      }),
+    ).toBeNull();
+
+    const futureWeek = weekWritesAllowed({
+      viewWeek: 16,
+      officialWeek: 11,
+      viewBand: "1-2",
+      liveBand: "1-2",
+    });
+    expect(futureWeek).toBe(false);
+    expect(
+      activityReadOnlyHint({
+        civilDate: programDayCivilDate(16, 1, yearStart),
+        today,
+        viewWeek: 16,
+        officialWeek: 11,
+        weekWritable: futureWeek,
+      }),
+    ).toBe(VIEW_WEEK_FUTURE_HINT);
+    expect(
+      activityReadOnlyHint({
+        civilDate: programDayCivilDate(12, 1, yearStart),
+        today,
+        viewWeek: 12,
+        officialWeek: 11,
+        weekWritable: false,
+      }),
+    ).toBe(
+      "Săptămâna asta n-a venit încă. Deocamdată o poți doar citi.",
+    );
   });
 });

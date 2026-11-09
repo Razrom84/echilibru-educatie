@@ -10,6 +10,8 @@ export const PREVIEW_HELP =
   "Vezi temele altei vârste fără să muți copilul de pe banda lui.";
 export const PREVIEW_EXIT = "Înapoi la banda copilului";
 export const PREVIEW_LIVE_MARK = "Azi copilul";
+export const PREVIEW_NOT_CHILD_BAND =
+  "Nu e banda copilului. Îl lași pe banda lui și doar privești.";
 export const PREVIEW_EMPTY = "Conținutul pentru această vârstă vine curând.";
 export const PREVIEW_WEEK_LABEL = "Săptămâna";
 export const PREVIEW_WEEK_PREV = "Săptămâna anterioară";
@@ -120,6 +122,11 @@ export function previewActivitiesPending(args: {
 }): boolean {
   if (!args.bandHasContent) return false;
   return args.catalogWeek !== args.viewWeek;
+}
+
+/** Settings label while a band other than the child's is open, e.g. „Previzualizare 2–3”. */
+export function previewSessionLabel(band: string): string {
+  return `Previzualizare ${bandLabel(band)}`;
 }
 
 export function previewBannerText(band: string, writesAllowed = false): string {

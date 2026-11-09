@@ -5,13 +5,16 @@ import {
   PILOT_BANDS,
   PREVIEW_HELP,
   PREVIEW_LIVE_MARK,
+  PREVIEW_NOT_CHILD_BAND,
   PREVIEW_TITLE,
   bandLabel,
+  previewSessionLabel,
 } from "@/lib/band-preview";
 import { cn } from "@/lib/utils";
 
 export function AgePreviewSettings() {
-  const { liveBand, viewBand, selectPreviewBand } = useFamily();
+  const { liveBand, viewBand, isBandPreview, selectPreviewBand } = useFamily();
+  const otherBand = isBandPreview && viewBand !== liveBand;
 
   return (
     <section className="space-y-3 rounded-2xl border border-border bg-card p-4">
@@ -19,6 +22,14 @@ export function AgePreviewSettings() {
         <h2 className="font-heading text-xl">{PREVIEW_TITLE}</h2>
         <p className="mt-1 text-xs leading-5 text-muted-foreground">{PREVIEW_HELP}</p>
       </div>
+      {otherBand ? (
+        <div role="status" className="rounded-xl bg-muted px-3 py-2">
+          <p className="text-sm font-medium">{previewSessionLabel(viewBand)}</p>
+          <p className="mt-0.5 text-xs leading-5 text-muted-foreground">
+            {PREVIEW_NOT_CHILD_BAND}
+          </p>
+        </div>
+      ) : null}
       <div
         role="radiogroup"
         aria-label={PREVIEW_TITLE}

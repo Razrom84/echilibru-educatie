@@ -15,6 +15,8 @@ type P5Row = {
   band: "1-2" | "2-3";
   week: number;
   titlu: string;
+  /** Titlu din catalog după T5b, când înlocuiește titlul T4. Migrarea P5 rămâne cu `titlu`. */
+  seedTitlu?: string;
   /** Titlul din catalogul celeilalte benzi. Nu îl schimbăm în acest lot. */
   otherTitle: string;
   bodySha256: string;
@@ -234,8 +236,9 @@ const P5_TITLES: P5Row[] = [
     band: "1-2",
     week: 25,
     titlu: "Ne spălăm pe mâini",
+    seedTitlu: "Aprindem lumina, ne spălăm pe mâini",
     otherTitle: "Sărituri mici în lumină, pași lenți în umbră",
-    bodySha256: "0e266387fdd1ca53a86e5dbff0ca88325695382bb7a7dd12b4f23506d82a4a10",
+    bodySha256: "9038b43889170f8e753525f91c0fdbb28f477878cac42b94c2a01d5714fc6964",
   },
   {
     liveId: "s26-2-3-z6-resurse",
@@ -369,8 +372,9 @@ const P5_TITLES: P5Row[] = [
     band: "1-2",
     week: 36,
     titlu: "Intrăm, ușa se închide",
+    seedTitlu: "Intrăm, insecta rămâne afară",
     otherTitle: "După uite — ne întoarcem în casă",
-    bodySha256: "b81c10866d8ad40e12ba13d3a37eaa20c4111c6d666b374258a8ad6947210ae6",
+    bodySha256: "6e674160d389ad51e96bfcfc4f9d678c417f2714d0741c4d6d9bfbbb0d154775",
   },
   {
     liveId: "s37-2-3-z1-resurse",
@@ -496,7 +500,8 @@ const P5_TITLES: P5Row[] = [
     week: 8,
     titlu: "Privim împreună frunza",
     otherTitle: "Pe care frunză?",
-    bodySha256: "b53386ef595c5d88bbca12a969f5eaa1fea2331f4e74f52890dddf6c54c50665",
+    // T5 a scos paranteza goală din pas. Titlul P5 rămâne.
+    bodySha256: "fdb072ec8f966d4ca754fd43eabc65ee043ad525bb8b807795520ea50497f572",
   },
   {
     liveId: "s10-b23-z6-fizic",
@@ -505,7 +510,8 @@ const P5_TITLES: P5Row[] = [
     week: 10,
     titlu: "Colectăm în cutie",
     otherTitle: "Trei pietre afară",
-    bodySha256: "da0bf2fac3248768d26eff4503984f5e9a98483d754951bd72694ff94f344caf",
+    // T5b adaugă fraza de siguranță în pasul 1. Titlul P5 rămâne.
+    bodySha256: "bf57a4a1079e9daacdae6cc7dcb974032f873ade49de9216868e21570552f22d",
   },
   {
     liveId: "s31-b23-z4-social",
@@ -563,7 +569,7 @@ describe("P5 titluri aprobate (T4)", () => {
       );
       expect(own, row.liveId).toBeTruthy();
       expect(own?.banda, row.liveId).toBe(row.band);
-      expect(own?.titlu, row.liveId).toBe(row.titlu);
+      expect(own?.titlu, row.liveId).toBe(row.seedTitlu ?? row.titlu);
       expect(bodySha256(own!), row.liveId).toBe(row.bodySha256);
 
       const otherBand = row.band === "1-2" ? "2-3" : "1-2";

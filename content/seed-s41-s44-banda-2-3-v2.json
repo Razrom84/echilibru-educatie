@@ -462,8 +462,8 @@
         "curte / balcon / potecă"
       ],
       "pasi": [
-        "Mergeți liber 30–60 de secunde: „Mergem.”",
-        "Alegeți un reper spre poartă și opriți: „Oprim.”",
+        "Mergeți liber 30–60 de secunde: „Mergem.” Pe balcon, rămâneți lângă el.",
+        "Alegeți un reper spre poartă și opriți-vă: „Ne oprim.”",
         "Dacă vrea: denumiți două lucruri văzute pe drum."
       ],
       "gata_cand": "A făcut o plimbare liberă scurtă cu o oprire spre poartă.",
@@ -1113,7 +1113,7 @@
         "pământ în vas"
       ],
       "pasi": [
-        "Atingeți pe rând: „Frunză. Piatră. Pământ.”",
+        "Puneți-le pe masă și atingeți-le pe rând: „Frunză. Piatră. Pământ.”",
         "„Care e moale?”",
         "Dacă vrea: sortați în două grupe: naturale pe care le atingem."
       ],
@@ -1729,7 +1729,7 @@
         "coș"
       ],
       "pasi": [
-        "Colectați 2–3 lucruri sigure (frunză, piatră mică, jucărie).",
+        "Colectați 2–3 lucruri sigure (frunză, piatră mare, jucărie). Pe balcon, rămâneți lângă el.",
         "Cărați-le la coș: „În cutie. În coș.”",
         "Dacă vrea: încă un obiect, sau opriți-vă."
       ],
@@ -1751,7 +1751,7 @@
         "6 obiecte pe 3 tipuri"
       ],
       "pasi": [
-        "Așezați: „Una. Două. Trei.” — trei grămezi.",
+        "Așezați pe masă: „Una. Două. Trei.” — trei grămezi.",
         "Numiți criteriul: „Culoare” sau „Mărime.”",
         "Dacă vrea: el arată grămada pe care o numiți."
       ],

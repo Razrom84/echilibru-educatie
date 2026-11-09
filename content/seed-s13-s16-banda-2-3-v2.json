@@ -484,7 +484,7 @@
         "ușă / balcon"
       ],
       "pasi": [
-        "Îmbrăcați, ieșiți 20–30 de secunde: „Rece afară.”",
+        "Îmbrăcați-l, ieșiți 20–30 de secunde: „Rece afară.” Pe balcon, țineți-l de mână.",
         "Intrați și scoateți: „În casă. Haina jos.”",
         "Dacă vrea: încă un dus-întors scurt."
       ],
@@ -1096,8 +1096,8 @@
         "curte / balcon / hol spre ușă"
       ],
       "pasi": [
-        "Mergeți liber 30–60 de secunde: „Mergem.”",
-        "Alegeți un reper și opriți: „Oprim.”",
+        "Mergeți liber 30–60 de secunde: „Mergem.” Pe balcon, rămâneți lângă el.",
+        "Alegeți un reper și opriți-vă: „Ne oprim.”",
         "Dacă vrea: denumiți două lucruri văzute pe drum."
       ],
       "gata_cand": "A făcut o plimbare liberă scurtă cu o oprire.",

@@ -1247,7 +1247,7 @@
         "curte / balcon / potecă"
       ],
       "pasi": [
-        "Mergeți pe drum-ul pe care îl știți: „Drum.”",
+        "Mergeți pe drumul pe care îl știți: „Drum.” Pe balcon, rămâneți lângă el.",
         "Opriți-vă la un loc cunoscut: „Curte.”",
         "Dacă vrea: denumiți 3 locuri pe traseu — poartă / copac / iarbă."
       ],
@@ -2162,10 +2162,10 @@
       "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "3 obiecte favorita"
+        "3 obiecte preferate"
       ],
       "pasi": [
-        "„Trei. Alege favorita.”",
+        "Puneți-le pe masă: „Trei. Alege favorita.”",
         "Celelalte: „La loc. Gata.”",
         "Dacă vrea: ordonați cele 3 înainte de a alege."
       ],

@@ -6,6 +6,7 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from "react";
 import { useRouter } from "next/navigation";
@@ -105,6 +106,10 @@ import {
   type PilotBand,
 } from "@/lib/band-preview";
 import { isCivilDayAfterToday, weekWritesAllowed } from "@/lib/view-week";
+import {
+  PROGRESS_ACTIVITY_COLUMNS,
+  PROGRESS_COMPLETION_COLUMNS,
+} from "@/lib/progress";
 
 type Status = "loading" | "ready" | "error";
 
@@ -277,6 +282,10 @@ export function FamilyProvider({
       familyProgramYearStart(family),
     );
   }, [family, viewWeek]);
+  const browseRef = useRef({ week: viewWeek, civil: viewCivilDate });
+  useEffect(() => {
+    browseRef.current = { week: viewWeek, civil: viewCivilDate };
+  }, [viewCivilDate, viewWeek]);
   const catalogForBand =
     isPreviewing && previewCatalog && previewCatalog.band === viewBand
       ? previewCatalog
@@ -358,15 +367,16 @@ export function FamilyProvider({
       void migrateUnscopedDemoPhotos(state.children).then((notices) => {
         for (const notice of notices) console.info(notice);
       });
-      setDayNotes(demoDayNotesForWeek(state, viewWeek));
+      const browsed = browseRef.current;
+      setDayNotes(demoDayNotesForWeek(state, browsed.week));
       const childId = state.selectedChildId;
       const row =
         demoArchiveDaysForChild(state, childId).find(
-          (item) => item.civil_date === viewCivilDate,
+          (item) => item.civil_date === browsed.civil,
         ) ?? null;
       setTodayArchive(row);
       if (childId && row?.photo_path) {
-        const url = await demoPhotoObjectUrl(childId, viewCivilDate);
+        const url = await demoPhotoObjectUrl(childId, browsed.civil);
         setTodayPhotoUrl((prev) => {
           if (prev) URL.revokeObjectURL(prev);
           return url;
@@ -479,15 +489,66 @@ export function FamilyProvider({
 
     const selected = nextKids.find((child) => child.id === nextSelected) ?? null;
     const catalogBand = liveChildBand(selected?.age_band);
-    const { data: activityRows, error: activityError } = await supabase
-      .from("activities")
-      .select("*")
-      .eq("saptamana", selectedWeek)
-      .eq("banda", catalogBand)
-      .order("zi", { ascending: true });
+    const browsed = browseRef.current;
+    const yearStart = familyProgramYearStart(currentFamily);
+    const emptyRead = Promise.resolve({ data: [] as unknown[] | null, error: null });
+    const emptyArchive = Promise.resolve({
+      data: null as ArchiveDay | null,
+      error: null,
+    });
+    const [
+      { data: activityRows, error: activityError },
+      { data: doneRows, error: doneError },
+      { data: noteRows, error: noteError },
+      { data: archiveRow, error: archiveError },
+    ] = await Promise.all([
+      supabase
+        .from("activities")
+        .select(PROGRESS_ACTIVITY_COLUMNS)
+        .eq("saptamana", selectedWeek)
+        .eq("banda", catalogBand)
+        .order("zi", { ascending: true }),
+      nextSelected
+        ? supabase
+            .from("completions")
+            .select(PROGRESS_COMPLETION_COLUMNS)
+            .eq("child_id", nextSelected)
+        : emptyRead,
+      nextSelected
+        ? supabase
+            .from("day_notes")
+            .select("id, child_id, program_year_start, week_number, day_of_week, body, created_at, updated_at")
+            .eq("child_id", nextSelected)
+            .eq("program_year_start", yearStart)
+            .eq("week_number", browsed.week)
+        : emptyRead,
+      nextSelected
+        ? supabase
+            .from("archive_days")
+            .select("id, child_id, civil_date, age_band_label, day_note, done_titles, photo_path, created_at, updated_at")
+            .eq("child_id", nextSelected)
+            .eq("civil_date", browsed.civil)
+            .maybeSingle()
+        : emptyArchive,
+    ]);
 
     if (activityError) {
       setError(activityError.message);
+      setStatus("error");
+      return;
+    }
+    if (doneError) {
+      setError(doneError.message);
+      setStatus("error");
+      return;
+    }
+    if (noteError) {
+      setError(noteError.message);
+      setStatus("error");
+      return;
+    }
+    if (archiveError) {
+      setError(archiveError.message);
       setStatus("error");
       return;
     }
@@ -508,64 +569,28 @@ export function FamilyProvider({
     }
 
     if (nextSelected) {
-      const yearStart = familyProgramYearStart(currentFamily);
-      const [
-        { data: doneRows, error: doneError },
-        { data: noteRows, error: noteError },
-        { data: archiveRow, error: archiveError },
-      ] = await Promise.all([
-        supabase.from("completions").select("*").eq("child_id", nextSelected),
-        supabase
-          .from("day_notes")
-          .select("*")
-          .eq("child_id", nextSelected)
-          .eq("program_year_start", yearStart)
-          .eq("week_number", viewWeek),
-        supabase
-          .from("archive_days")
-          .select("*")
-          .eq("child_id", nextSelected)
-          .eq("civil_date", viewCivilDate)
-          .maybeSingle(),
-      ]);
-      if (doneError) {
-        setError(doneError.message);
-        setStatus("error");
-        return;
-      }
-      if (noteError) {
-        setError(noteError.message);
-        setStatus("error");
-        return;
-      }
-      if (archiveError) {
-        setError(archiveError.message);
-        setStatus("error");
-        return;
-      }
       setCompletions(
         completionsForChild((doneRows ?? []) as Completion[], nextSelected),
       );
       setDayNotes((noteRows ?? []) as DayNote[]);
       const archive = (archiveRow as ArchiveDay | null) ?? null;
       setTodayArchive(archive);
+      setTodayPhotoUrl(null);
+      setStatus("ready");
       if (archive?.photo_path) {
         const signed = await supabase.storage
           .from(ARCHIVE_BUCKET)
           .createSignedUrl(archive.photo_path, 3600);
         setTodayPhotoUrl(signed.data?.signedUrl ?? null);
-      } else {
-        setTodayPhotoUrl(null);
       }
     } else {
       setCompletions([]);
       setDayNotes([]);
       setTodayArchive(null);
       setTodayPhotoUrl(null);
+      setStatus("ready");
     }
-
-    setStatus("ready");
-  }, [applyDemo, isDemo, selectedWeek, viewCivilDate, viewWeek]);
+  }, [applyDemo, isDemo, selectedWeek]);
 
   useEffect(() => {
     const frame = requestAnimationFrame(() => {
@@ -573,6 +598,88 @@ export function FamilyProvider({
     });
     return () => cancelAnimationFrame(frame);
   }, [refresh]);
+
+  useEffect(() => {
+    if (status !== "ready") return;
+    const browsed = browseRef.current;
+    if (isDemo) {
+      const state = readDemoState();
+      setDayNotes(demoDayNotesForWeek(state, browsed.week));
+      const childId = state.selectedChildId;
+      const row =
+        demoArchiveDaysForChild(state, childId).find(
+          (item) => item.civil_date === browsed.civil,
+        ) ?? null;
+      setTodayArchive(row);
+      let cancelled = false;
+      void (async () => {
+        if (childId && row?.photo_path) {
+          const url = await demoPhotoObjectUrl(childId, browsed.civil);
+          if (cancelled) {
+            if (url) URL.revokeObjectURL(url);
+            return;
+          }
+          setTodayPhotoUrl((prev) => {
+            if (prev) URL.revokeObjectURL(prev);
+            return url;
+          });
+          return;
+        }
+        if (!cancelled) {
+          setTodayPhotoUrl((prev) => {
+            if (prev) URL.revokeObjectURL(prev);
+            return null;
+          });
+        }
+      })();
+      return () => {
+        cancelled = true;
+      };
+    }
+
+    const childId = selectedChildId;
+    if (!childId || !family) return;
+    const supabase = createBrowserSupabase();
+    if (!supabase) return;
+    let cancelled = false;
+    const yearStart = familyProgramYearStart(family);
+    void (async () => {
+      const [{ data: noteRows, error: noteError }, { data: archiveRow, error: archiveError }] =
+        await Promise.all([
+          supabase
+            .from("day_notes")
+            .select(
+              "id, child_id, program_year_start, week_number, day_of_week, body, created_at, updated_at",
+            )
+            .eq("child_id", childId)
+            .eq("program_year_start", yearStart)
+            .eq("week_number", browsed.week),
+          supabase
+            .from("archive_days")
+            .select(
+              "id, child_id, civil_date, age_band_label, day_note, done_titles, photo_path, created_at, updated_at",
+            )
+            .eq("child_id", childId)
+            .eq("civil_date", browsed.civil)
+            .maybeSingle(),
+        ]);
+      if (cancelled || noteError || archiveError) return;
+      setDayNotes((noteRows ?? []) as DayNote[]);
+      const archive = (archiveRow as ArchiveDay | null) ?? null;
+      setTodayArchive(archive);
+      if (archive?.photo_path) {
+        const signed = await supabase.storage
+          .from(ARCHIVE_BUCKET)
+          .createSignedUrl(archive.photo_path, 3600);
+        if (!cancelled) setTodayPhotoUrl(signed.data?.signedUrl ?? null);
+      } else if (!cancelled) {
+        setTodayPhotoUrl(null);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [family, isDemo, selectedChildId, status, viewCivilDate, viewWeek]);
 
   useEffect(() => {
     if (!isPreviewing || !previewBand) return;
@@ -636,7 +743,7 @@ export function FamilyProvider({
 
       const { data, error } = await supabase
         .from("activities")
-        .select("*")
+        .select(PROGRESS_ACTIVITY_COLUMNS)
         .eq("saptamana", viewWeek)
         .eq("banda", liveBand)
         .order("zi", { ascending: true });
@@ -663,7 +770,16 @@ export function FamilyProvider({
   const selectChild = useCallback(
     async (childId: string) => {
       setSelectedChildId(childId);
+      setPreviewWeek(null);
       writeChildCookie(childId);
+      const today = bucharestToday();
+      const officialCivil = family
+        ? programDayCivilDate(
+            selectedWeek,
+            aziDayOfWeek(today),
+            familyProgramYearStart(family),
+          )
+        : today;
       if (isDemo) {
         const state = { ...readDemoState(), selectedChildId: childId };
         writeDemoState(state);
@@ -676,14 +792,14 @@ export function FamilyProvider({
         setActivities(catalog.activities);
         setCatalogOrigin(catalog.origin);
         setCompletions(completionsForChild(state.completions, childId));
-        setDayNotes(demoDayNotesForWeek(state, viewWeek));
+        setDayNotes(demoDayNotesForWeek(state, selectedWeek));
         const row =
           demoArchiveDaysForChild(state, childId).find(
-            (item) => item.civil_date === viewCivilDate,
+            (item) => item.civil_date === officialCivil,
           ) ?? null;
         setTodayArchive(row);
         if (row?.photo_path) {
-          const url = await demoPhotoObjectUrl(childId, viewCivilDate);
+          const url = await demoPhotoObjectUrl(childId, officialCivil);
           setTodayPhotoUrl((prev) => {
             if (prev) URL.revokeObjectURL(prev);
             return url;
@@ -709,22 +825,29 @@ export function FamilyProvider({
         { data: archiveRow, error: archiveError },
         { data: activityRows, error: activityError },
       ] = await Promise.all([
-        supabase.from("completions").select("*").eq("child_id", childId),
+        supabase
+          .from("completions")
+          .select(PROGRESS_COMPLETION_COLUMNS)
+          .eq("child_id", childId),
         supabase
           .from("day_notes")
-          .select("*")
+          .select(
+            "id, child_id, program_year_start, week_number, day_of_week, body, created_at, updated_at",
+          )
           .eq("child_id", childId)
           .eq("program_year_start", yearStart)
-          .eq("week_number", viewWeek),
+          .eq("week_number", selectedWeek),
         supabase
           .from("archive_days")
-          .select("*")
+          .select(
+            "id, child_id, civil_date, age_band_label, day_note, done_titles, photo_path, created_at, updated_at",
+          )
           .eq("child_id", childId)
-          .eq("civil_date", viewCivilDate)
+          .eq("civil_date", officialCivil)
           .maybeSingle(),
         supabase
           .from("activities")
-          .select("*")
+          .select(PROGRESS_ACTIVITY_COLUMNS)
           .eq("saptamana", selectedWeek)
           .eq("banda", catalogBand)
           .order("zi", { ascending: true }),
@@ -759,7 +882,7 @@ export function FamilyProvider({
         setTodayPhotoUrl(null);
       }
     },
-    [family, isDemo, kids, selectedWeek, viewCivilDate, viewWeek],
+    [family, isDemo, kids, selectedWeek],
   );
 
   const addChild = useCallback(
@@ -768,6 +891,7 @@ export function FamilyProvider({
         const next = addDemoChild(readDemoState(), input);
         writeDemoState(next);
         applyDemo(next, selectedWeek);
+        setPreviewWeek(null);
         const added = next.children.find((child) => child.id === next.selectedChildId);
         const catalog = await readWeekCatalog(
           createBrowserSupabase(),
@@ -795,6 +919,7 @@ export function FamilyProvider({
       const child = applyCohortAgeBand(data as Child);
       setKids((current) => [...current, child]);
       setSelectedChildId(child.id);
+      setPreviewWeek(null);
       writeChildCookie(child.id);
       setCompletions([]);
       setDayNotes([]);
@@ -802,7 +927,7 @@ export function FamilyProvider({
       setTodayPhotoUrl(null);
       const { data: activityRows, error: activityError } = await supabase
         .from("activities")
-        .select("*")
+        .select(PROGRESS_ACTIVITY_COLUMNS)
         .eq("saptamana", selectedWeek)
         .eq("banda", liveChildBand(child.age_band))
         .order("zi", { ascending: true });

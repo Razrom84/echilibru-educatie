@@ -12,6 +12,11 @@ import {
 } from "@/lib/program-week";
 
 export const SAPTAMANA_TITLE = "Săptămâna asta";
+/** Bottom nav at 390px: the long label wraps, so the menu uses the short form. */
+export const MOBILE_WEEK_NAV_LABEL = "Săptămâna";
+/** Week list titles wrap onto as many lines as they need. No ellipsis. */
+export const WEEK_ACTIVITY_TITLE_CLASS =
+  "min-w-0 flex-1 whitespace-normal break-words text-sm leading-5";
 
 export const PROGRAM_WEEK_DAYS = [1, 2, 3, 4, 5, 6, 7] as const;
 export type ProgramWeekDay = (typeof PROGRAM_WEEK_DAYS)[number];

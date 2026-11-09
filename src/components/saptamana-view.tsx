@@ -27,6 +27,7 @@ import {
   midweekJoinHelper,
   saptamanaSubtitle,
   visibleProgramWeekDays,
+  WEEK_ACTIVITY_TITLE_CLASS,
   weekDayHeading,
   weekDaySectionId,
 } from "@/lib/saptamana";
@@ -293,14 +294,14 @@ export function SaptamanaView({
                       ? completionForActivity(completions, selectedChild?.id, activity.id)
                       : null;
                     return (
-                      <li key={activity.id} className="flex items-center gap-2">
+                      <li key={activity.id} className="flex items-start gap-2">
                         <Link
                           href={`/activitate/${activity.id}`}
-                          className="flex min-w-0 flex-1 items-center gap-2 rounded-xl px-1 py-1 hover:bg-muted"
+                          className="flex min-w-0 flex-1 items-start gap-2 rounded-xl px-1 py-1 hover:bg-muted"
                         >
                           <span
                             className={cn(
-                              "size-2.5 rounded-full",
+                              "mt-1.5 size-2.5 shrink-0 rounded-full",
                               completion
                                 ? completion.mode === "B" &&
                                   completion.parent_approved === false
@@ -310,7 +311,7 @@ export function SaptamanaView({
                             )}
                           />
                           <PillarMark pillar={activity.pillar} />
-                          <span className="truncate text-sm">{activity.title}</span>
+                          <span className={WEEK_ACTIVITY_TITLE_CLASS}>{activity.title}</span>
                         </Link>
                         {dayEditable ? (
                           <CompleteToggle

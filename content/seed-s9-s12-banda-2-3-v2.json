@@ -382,7 +382,7 @@
         "ușă / fereastră"
       ],
       "pasi": [
-        "Parcurgeți: de la interior până la ușă/fereastră deschisă.",
+        "Parcurgeți: de la interior până la ușă/fereastră deschisă. La fereastră, țineți-l de mână.",
         "Numiți: „De aici… până la aer.”",
         "Dacă vrea: faceți traseul invers, el alege ritmul."
       ],
@@ -472,7 +472,7 @@
         "curte, balcon sau fereastră"
       ],
       "pasi": [
-        "Stați afară sau la fereastră 30–60 de secunde.",
+        "Stați afară sau la fereastră 30–60 de secunde. Rămâneți lângă el; pe balcon sau la fereastră deschisă, țineți-l de mână.",
         "Arătați: „Uite vântul” — pe frunze, pe păr, pe eșarfă.",
         "Dacă vrea: faceți 5 pași spre locul cu mai mult aer."
       ],
@@ -581,7 +581,7 @@
       "mod_default": "A",
       "materiale": [],
       "pasi": [
-        "Întrebați: „Îți place vântul sau liniștea?” — arătați ambele (fereastră deschisă / închisă).",
+        "Întrebați: „Îți place vântul sau liniștea?” — arătați ambele (fereastră deschisă / închisă). La fereastra deschisă, rămâneți lângă el.",
         "Stați un moment pe alegerea lui.",
         "Dacă vrea: spuneți: „Vânt” sau „Aer” doar pe favorit."
       ],
@@ -1100,7 +1100,7 @@
         "2–3 obiecte sigure"
       ],
       "pasi": [
-        "Colectați 2–3 lucruri sigure (frunză, piatră mică, jucărie).",
+        "Colectați 2–3 lucruri sigure (frunză, piatră mare, jucărie). Pe balcon, rămâneți lângă el.",
         "Cărați-le la cutie: „În cutie. În cutie.”",
         "Dacă vrea: încă un obiect, sau opriți-vă."
       ],
@@ -1122,7 +1122,7 @@
         "6 obiecte pe 3 tipuri"
       ],
       "pasi": [
-        "Așezați: „Una. Două. Trei.” — trei grămezi.",
+        "Așezați pe masă: „Una. Două. Trei.” — trei grămezi.",
         "Numiți criteriul: „Culoare” sau „Mărime.”",
         "Dacă vrea: el arată grămada pe care o numiți."
       ],
@@ -2338,7 +2338,7 @@
         "ușă / balcon"
       ],
       "pasi": [
-        "Ieșiți 20–30 de secunde: „Rece afară.”",
+        "Ieșiți 20–30 de secunde: „Rece afară.” Pe balcon, țineți-l de mână.",
         "Intrați: „Cald în casă.”",
         "Dacă vrea: încă un dus-întors scurt."
       ],
