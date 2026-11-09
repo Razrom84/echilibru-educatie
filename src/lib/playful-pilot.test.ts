@@ -3464,7 +3464,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       expect(blob).not.toMatch(leftoverProxy);
     }
     const migration = readFileSync(
-      resolve("supabase/migrations/20260920270000_align_title_body_8.sql"),
+      resolve("supabase/migrations/20260920265000_align_title_body_8.sql"),
       "utf8",
     );
     expect(migration).toMatch(/^\s*materiale = v\.materiale,/m);
