@@ -25,7 +25,7 @@ export const VIEW_WEEK_READ_ONLY = "doar citire";
 export const VIEW_WEEK_FUTURE_HINT = "Săptămână viitoare — doar citire.";
 export const VIEW_WEEK_PAST_HINT = "Săptămână trecută — poți bifa, nota și poza.";
 /** Shown on a weekday that has not arrived yet, inside an otherwise writable week. */
-export const VIEW_DAY_FUTURE_HINT = "Ziua încă n-a venit — doar citire.";
+export const VIEW_DAY_FUTURE_HINT = "Ziua n-a venit încă. Deocamdată o poți doar citi.";
 
 export type WeekRelation = "past" | "current" | "future";
 

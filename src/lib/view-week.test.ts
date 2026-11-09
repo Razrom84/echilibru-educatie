@@ -3,6 +3,7 @@ import { PROGRAM_YEAR_START_MONDAY_2026_27 } from "./fixtures/program-year-2026-
 import { closedWeekContext, familyWantsMondayDigest } from "./monday-digest";
 import {
   bucharestToday,
+  civilDayOfWeek,
   familyProgramWeek,
   programDayCivilDate,
 } from "./program-week";
@@ -50,7 +51,9 @@ describe("V1.5 session view week", () => {
     expect(VIEW_WEEK_PAST_HINT).toBe(
       "Săptămână trecută — poți bifa, nota și poza.",
     );
-    expect(VIEW_DAY_FUTURE_HINT).toBe("Ziua încă n-a venit — doar citire.");
+    expect(VIEW_DAY_FUTURE_HINT).toBe(
+      "Ziua n-a venit încă. Deocamdată o poți doar citi.",
+    );
     expect(viewWeekControlLabel(3)).toBe("Săptămâna 3");
     expect(viewWeekControlLabel(4)).toBe("Săptămâna 4");
     expect(viewWeekControlLabel(14)).toBe("Săptămâna 14");
@@ -455,6 +458,117 @@ describe("V1.5 past editable / future read-only", () => {
       dayWritesAllowed({
         civilDate: "2026-09-02",
         today: bucharestToday(thursdayMidnight),
+        weekWritable,
+      }),
+    ).toBe(true);
+  });
+
+  test("DST midnight: last Sunday of March and last Sunday of October", () => {
+    const weekWritable = true;
+    // EU spring-forward 2026 is Sunday 29 March. Midnight is still EET (UTC+2);
+    // the clock jumps at 03:00. Sunday night into Monday is already EEST (UTC+3).
+    expect(civilDayOfWeek("2026-03-29")).toBe(7);
+    const beforeSpringSunday = new Date("2026-03-28T21:59:00.000Z");
+    const springSunday = new Date("2026-03-28T22:00:00.000Z");
+    const endOfSpringSunday = new Date("2026-03-29T20:59:00.000Z");
+    const springMonday = new Date("2026-03-29T21:00:00.000Z");
+    expect(bucharestToday(beforeSpringSunday)).toBe("2026-03-28");
+    expect(bucharestToday(springSunday)).toBe("2026-03-29");
+    expect(bucharestToday(endOfSpringSunday)).toBe("2026-03-29");
+    expect(bucharestToday(springMonday)).toBe("2026-03-30");
+    expect(
+      dayWritesAllowed({
+        civilDate: "2026-03-29",
+        today: bucharestToday(beforeSpringSunday),
+        weekWritable,
+      }),
+    ).toBe(false);
+    expect(
+      dayWritesAllowed({
+        civilDate: "2026-03-29",
+        today: bucharestToday(springSunday),
+        weekWritable,
+      }),
+    ).toBe(true);
+    expect(
+      dayWritesAllowed({
+        civilDate: "2026-03-28",
+        today: bucharestToday(springSunday),
+        weekWritable,
+      }),
+    ).toBe(true);
+    expect(
+      dayWritesAllowed({
+        civilDate: "2026-03-30",
+        today: bucharestToday(endOfSpringSunday),
+        weekWritable,
+      }),
+    ).toBe(false);
+    expect(
+      dayWritesAllowed({
+        civilDate: "2026-03-30",
+        today: bucharestToday(springMonday),
+        weekWritable,
+      }),
+    ).toBe(true);
+    expect(
+      dayWritesAllowed({
+        civilDate: "2026-03-29",
+        today: bucharestToday(springMonday),
+        weekWritable,
+      }),
+    ).toBe(true);
+
+    // EU fall-back 2026 is Sunday 25 October. Midnight is still EEST (UTC+3);
+    // the clock goes back at 04:00. Sunday night into Monday is EET (UTC+2).
+    expect(civilDayOfWeek("2026-10-25")).toBe(7);
+    const beforeAutumnSunday = new Date("2026-10-24T20:59:00.000Z");
+    const autumnSunday = new Date("2026-10-24T21:00:00.000Z");
+    const endOfAutumnSunday = new Date("2026-10-25T21:59:00.000Z");
+    const autumnMonday = new Date("2026-10-25T22:00:00.000Z");
+    expect(bucharestToday(beforeAutumnSunday)).toBe("2026-10-24");
+    expect(bucharestToday(autumnSunday)).toBe("2026-10-25");
+    expect(bucharestToday(endOfAutumnSunday)).toBe("2026-10-25");
+    expect(bucharestToday(autumnMonday)).toBe("2026-10-26");
+    expect(
+      dayWritesAllowed({
+        civilDate: "2026-10-25",
+        today: bucharestToday(beforeAutumnSunday),
+        weekWritable,
+      }),
+    ).toBe(false);
+    expect(
+      dayWritesAllowed({
+        civilDate: "2026-10-25",
+        today: bucharestToday(autumnSunday),
+        weekWritable,
+      }),
+    ).toBe(true);
+    expect(
+      dayWritesAllowed({
+        civilDate: "2026-10-24",
+        today: bucharestToday(autumnSunday),
+        weekWritable,
+      }),
+    ).toBe(true);
+    expect(
+      dayWritesAllowed({
+        civilDate: "2026-10-26",
+        today: bucharestToday(endOfAutumnSunday),
+        weekWritable,
+      }),
+    ).toBe(false);
+    expect(
+      dayWritesAllowed({
+        civilDate: "2026-10-26",
+        today: bucharestToday(autumnMonday),
+        weekWritable,
+      }),
+    ).toBe(true);
+    expect(
+      dayWritesAllowed({
+        civilDate: "2026-10-25",
+        today: bucharestToday(autumnMonday),
         weekWritable,
       }),
     ).toBe(true);
