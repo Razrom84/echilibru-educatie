@@ -28,6 +28,15 @@ function id(prefix: string) {
   return `${prefix}-${Math.random().toString(36).slice(2, 10)}`;
 }
 
+export const DEMO_MARA_ID = "demo-mara";
+export const DEMO_TUDOR_ID = "demo-tudor";
+
+/** Copiii cu care pornește demonstrația, ca verificarea să nu ceară date scrise de mână. */
+export const DEMO_HOUSEHOLD = [
+  { id: DEMO_MARA_ID, name: "Mara", birthdate: "2025-06-11" },
+  { id: DEMO_TUDOR_ID, name: "Tudor", birthdate: "2024-06-01" },
+] as const;
+
 export function emptyDemoState(): DemoState {
   const createdAt = nowIso();
   const join = familyJoinFields(createdAt);
@@ -137,11 +146,44 @@ export function writeDemoState(state: DemoState) {
   }
 }
 
+export function freshDemoState(): DemoState {
+  const base = emptyDemoState();
+  const children: Child[] = DEMO_HOUSEHOLD.map((child) => ({
+    id: child.id,
+    family_id: base.family.id,
+    name: child.name,
+    birthdate: child.birthdate,
+    age_band: bandFromBirthdate(child.birthdate),
+    active: true,
+    created_at: base.family.created_at,
+  }));
+  return {
+    ...base,
+    children,
+    selectedChildId: DEMO_MARA_ID,
+  };
+}
+
+/** O demonstrație fără niciun copil activ primește gospodăria Mara + Tudor. */
+export function withDemoHousehold(state: DemoState): DemoState {
+  if (state.children.some((child) => child.active)) return state;
+  const seeded = freshDemoState();
+  return {
+    ...state,
+    children: seeded.children,
+    selectedChildId: seeded.selectedChildId,
+  };
+}
+
 export function startDemoSession() {
   document.cookie = `${DEMO_COOKIE}=1; path=/; max-age=31536000; samesite=lax`;
   if (!window.localStorage.getItem(DEMO_STORAGE_KEY)) {
-    writeDemoState(emptyDemoState());
+    writeDemoState(freshDemoState());
+    return;
   }
+  const current = readDemoState();
+  const next = withDemoHousehold(current);
+  if (next !== current) writeDemoState(next);
 }
 
 export function clearDemoSession() {

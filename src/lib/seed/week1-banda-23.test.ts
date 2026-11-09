@@ -52,15 +52,16 @@ describe("Demo / preview 2–3 seed wiring", () => {
     }
   });
 
-  test("Demo and preview 2–3 never fall through to Familie", () => {
+  test("Demo and preview try the database; local seed is only the offline copy", () => {
     expect(hasLocalSeedBand("2-3")).toBe(true);
     expect(hasLocalSeedBand("1-2")).toBe(true);
     expect(hasLocalSeedBand("3-4")).toBe(false);
-    expect(usesLocalSeedCatalog({ isDemo: true, band: "2-3" })).toBe(true);
-    expect(usesLocalSeedCatalog({ isDemo: true, band: "1-2" })).toBe(true);
-    expect(usesLocalSeedCatalog({ isDemo: true, band: "6-7" })).toBe(true);
-    expect(usesLocalSeedCatalog({ isDemo: false, band: "2-3" })).toBe(true);
+    expect(usesLocalSeedCatalog({ isDemo: true, band: "2-3" })).toBe(false);
+    expect(usesLocalSeedCatalog({ isDemo: true, band: "1-2" })).toBe(false);
+    expect(usesLocalSeedCatalog({ isDemo: true, band: "6-7" })).toBe(false);
+    expect(usesLocalSeedCatalog({ isDemo: false, band: "2-3" })).toBe(false);
     expect(usesLocalSeedCatalog({ isDemo: false, band: "1-2" })).toBe(false);
     expect(usesLocalSeedCatalog({ isDemo: false, band: "4-5" })).toBe(false);
+    expect(usesLocalSeedCatalog()).toBe(false);
   });
 });

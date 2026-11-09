@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { AppHeader } from "@/components/app-header";
+import { LocalCatalogBanner } from "@/components/local-catalog-banner";
 import { NavBar, SideNav } from "@/components/nav-bar";
 import { ErrorState, LoadingState } from "@/components/status-blocks";
 import { FamilyProvider, useFamily } from "@/lib/family-context";
@@ -36,7 +37,12 @@ function Gate({ children }: { children: React.ReactNode }) {
     );
   }
 
-  return <>{children}</>;
+  return (
+    <>
+      <LocalCatalogBanner />
+      {children}
+    </>
+  );
 }
 
 export function AppShell({

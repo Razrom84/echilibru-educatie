@@ -46,7 +46,7 @@ const ALL_SEED = [
   ...(seedS49S52.activitati as SeedActivity[]),
 ];
 
-/** Stripped RO catalog for Demo / Previzualizare bandă 2–3. IDs collide with 1–2. */
+/** Offline copy for band 2–3. Live ids are `sN-b23-…`, not these `sN-2-3-…` ids. */
 const SEED_BANDA_23 = [
   ...(seed23S1.activitati as SeedActivity[]),
   ...(seed23S2S4.activitati as SeedActivity[]),
@@ -76,15 +76,16 @@ export function hasLocalSeedBand(band?: string | null): boolean {
 }
 
 /**
- * Demo always serves local seed (never Familie activities).
- * Previzualizare 2–3 always serves the stripped v2 seed (never live EN).
+ * Demo and Previzualizare read `activities` from the database.
+ * The local JSON is only the offline fallback when that read fails,
+ * so this never skips the database up front.
  */
-export function usesLocalSeedCatalog(opts: {
+export function usesLocalSeedCatalog(opts?: {
   isDemo?: boolean;
   band?: string | null;
 }): boolean {
-  if (opts.isDemo) return true;
-  return opts.band === "2-3";
+  void opts;
+  return false;
 }
 
 /** Theme of the default week (S1). Prefer `getWeekTheme(selectedWeek)`. */
