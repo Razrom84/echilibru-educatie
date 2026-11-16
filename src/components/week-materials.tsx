@@ -6,6 +6,7 @@ import { ChevronDown, Hammer, Package, ShoppingCart } from "lucide-react";
 import {
   buyCaption,
   HOME_KIND_LABEL,
+  materialSubtitle,
   materialUseLabel,
   seenOn,
   weekBuyTotal,
@@ -65,7 +66,7 @@ export function MaterialRow({
   const [panel, setPanel] = useState<"acasa" | "cumparati" | null>(null);
   const caption = buyCaption(material);
   const canBuy = Boolean(material.link);
-  const store = material.sursa.replace(/^\(|\)$/g, "");
+  const store = materialSubtitle(material.sursa);
 
   function hrefFor(activityId: string) {
     if (!activityIds || activityIds.has(activityId)) return `/activitate/${activityId}`;

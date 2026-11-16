@@ -172,6 +172,11 @@ export function seenOn(iso: string | null): string | null {
   return `${match[3]}.${match[2]}.${match[1]}`;
 }
 
+/** Subtitle under a material name. The source line is shown whole, parentheses included. */
+export function materialSubtitle(sursa: string): string {
+  return sursa;
+}
+
 export function buyCaption(material: CatalogMaterial): string | null {
   if (!material.pret) return null;
   const date = seenOn(material.data_verificare);

@@ -7,6 +7,7 @@ import {
   applyGiftedCatalog,
   buyCaption,
   localWeekMaterials,
+  materialSubtitle,
   materialsForActivity,
   priceAmount,
   showsActivityNote,
@@ -366,5 +367,40 @@ describe("gifted S1–S4 catalog", () => {
       "utf8",
     );
     expect(rollback).toContain("nota = snap.nota");
+    for (const row of gifted) {
+      expect(row.nota ?? "").not.toContain("Vârsta 2–3");
+    }
+  });
+
+  test("material subtitles keep the opening parenthesis", () => {
+    const lines = [
+      "(colecția „De ce? De ce? De ce?”), Editura Casa",
+      "(tamburină, maracas, clapetă), Eurostoc",
+      "(6 cilindri de 10 cm), Edudrag",
+    ];
+    const stored = allCatalogMaterials().map((material) => material.sursa);
+    const sql = readFileSync(
+      resolve("supabase/migrations/20261116110022_gifted_s1s4_continut.sql"),
+      "utf8",
+    );
+    for (const line of lines) {
+      expect(stored).toContain(line);
+      expect(materialSubtitle(line)).toBe(line);
+      expect(sql).toContain(line);
+    }
+  });
+
+  test("plain Acasă lines start with a capital; the S4 household list does not", () => {
+    const byId = new Map(allCatalogMaterials().map((material) => [material.id, material]));
+    expect(byId.get("s1-m2")?.acasa[0]?.linii[0]).toMatch(/^Nu recomand\./);
+    expect(byId.get("s2-m1")?.acasa[0]?.linii[0]).toMatch(/^O cană gradată/);
+    expect(byId.get("s2-m4")?.acasa[0]?.linii[0]).toMatch(/^Nu se face acasă\./);
+    expect(byId.get("s2-m5")?.acasa[0]?.linii[0]).toMatch(/^Nu se face acasă\./);
+    expect(byId.get("s3-m3")?.acasa[0]?.linii[0]).toMatch(/^Nu se face acasă\./);
+    expect(byId.get("s3-m2")?.link).toBe(
+      "https://www.edudrag.ro/jucarii-educative/tamburina-girafa-719.html",
+    );
+    expect(localWeekMaterials("2-3", 4).gratuit).toContain("linguri și teluri");
+    expect(localWeekMaterials("2-3", 4).gratuit?.startsWith("Linguri")).toBe(false);
   });
 });

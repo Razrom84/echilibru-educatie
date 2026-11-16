@@ -206,6 +206,10 @@ def parse_home_heading(text: str) -> tuple[str, str | None, str]:
         kind = "nu"
     else:
         kind = home_kind(label)
+    # „**Acasă:** nu recomand…” pierde prefixul și rămâne cu literă mică.
+    # Doar acest caz, fără etichetă între paranteze, primește majusculă la prima literă.
+    if not raw_label and rest[:1].islower():
+        rest = rest[0].upper() + rest[1:]
     return kind, title, rest
 
 
