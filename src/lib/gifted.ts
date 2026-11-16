@@ -76,6 +76,13 @@ export function showsActivityNote(nota?: string | null): boolean {
   return Boolean(nota?.trim());
 }
 
+/** „niciunul” means there is nothing to bring. Anything else is listed. */
+export function listedMaterials(materiale: readonly string[]): string[] {
+  const items = materiale.map((item) => item.trim()).filter(Boolean);
+  if (items.length === 1 && items[0] === "niciunul") return [];
+  return items;
+}
+
 /** Steps and notes the activity page may show. Missing text stays hidden. */
 export function visibleActivityExtras(activity: {
   pas_in_plus?: string | null;

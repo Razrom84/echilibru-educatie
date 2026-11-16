@@ -6,6 +6,7 @@ import { ChevronDown, Hammer, Package, ShoppingCart } from "lucide-react";
 import {
   buyCaption,
   HOME_KIND_LABEL,
+  listedMaterials,
   materialSubtitle,
   materialUseLabel,
   seenOn,
@@ -88,9 +89,6 @@ export function MaterialRow({
           <p className="shrink-0 text-sm text-muted-foreground">gratuit</p>
         )}
       </div>
-      {material.folosita ? (
-        <p className="mt-2 text-sm leading-6 text-muted-foreground">{material.folosita}</p>
-      ) : null}
       <div className="mt-2 flex flex-wrap gap-2">
         {material.activitati.map((activityId) => (
           <Link
@@ -160,7 +158,7 @@ export function MaterialRow({
               <RichLine text={note} />
             </p>
           ))}
-          {material.data_verificare ? (
+          {material.data_verificare && !material.detaliu_pret?.includes("Preț văzut") ? (
             <p className="text-muted-foreground">
               Preț văzut pe {seenOn(material.data_verificare)}.
             </p>
@@ -233,11 +231,12 @@ export function ActivityMaterialsLine({
   activityIds?: ReadonlySet<string>;
 }) {
   const [open, setOpen] = useState(false);
+  const items = listedMaterials(materiale);
   if (linked.length === 0) {
-    return materiale.length > 0 ? (
+    return items.length > 0 ? (
       <p className="mt-4 text-sm">
         <span className="font-medium">Materiale: </span>
-        {materiale.join(", ")}
+        {items.join(", ")}
       </p>
     ) : (
       <p className="mt-4 text-sm text-muted-foreground">Fără materiale extra.</p>
@@ -247,10 +246,10 @@ export function ActivityMaterialsLine({
   return (
     <div className="mt-4">
       <p className="text-sm">
-        {materiale.length > 0 ? (
+        {items.length > 0 ? (
           <>
             <span className="font-medium">Materiale: </span>
-            {materiale.join(", ")}
+            {items.join(", ")}
           </>
         ) : (
           <span className="text-muted-foreground">Fără materiale extra.</span>

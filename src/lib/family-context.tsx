@@ -53,6 +53,7 @@ import {
 import {
   readPreviewCatalog,
   readWeekCatalog,
+  selectWeekActivities,
   type CatalogOrigin,
 } from "@/lib/catalog-source";
 import {
@@ -111,10 +112,7 @@ import {
   type PilotBand,
 } from "@/lib/band-preview";
 import { isCivilDayAfterToday, weekWritesAllowed } from "@/lib/view-week";
-import {
-  PROGRESS_ACTIVITY_COLUMNS,
-  PROGRESS_COMPLETION_COLUMNS,
-} from "@/lib/progress";
+import { PROGRESS_COMPLETION_COLUMNS } from "@/lib/progress";
 
 type Status = "loading" | "ready" | "error";
 
@@ -541,12 +539,7 @@ export function FamilyProvider({
       { data: noteRows, error: noteError },
       { data: archiveRow, error: archiveError },
     ] = await Promise.all([
-      supabase
-        .from("activities")
-        .select(PROGRESS_ACTIVITY_COLUMNS)
-        .eq("saptamana", selectedWeek)
-        .eq("banda", catalogBand)
-        .order("zi", { ascending: true }),
+      selectWeekActivities(supabase, catalogBand, selectedWeek),
       nextSelected
         ? supabase
             .from("completions")
@@ -780,12 +773,7 @@ export function FamilyProvider({
         return;
       }
 
-      const { data, error } = await supabase
-        .from("activities")
-        .select(PROGRESS_ACTIVITY_COLUMNS)
-        .eq("saptamana", viewWeek)
-        .eq("banda", liveBand)
-        .order("zi", { ascending: true });
+      const { data, error } = await selectWeekActivities(supabase, liveBand, viewWeek);
 
       if (cancelled) return;
       if (error) {
@@ -884,12 +872,7 @@ export function FamilyProvider({
           .eq("child_id", childId)
           .eq("civil_date", officialCivil)
           .maybeSingle(),
-        supabase
-          .from("activities")
-          .select(PROGRESS_ACTIVITY_COLUMNS)
-          .eq("saptamana", selectedWeek)
-          .eq("banda", catalogBand)
-          .order("zi", { ascending: true }),
+        selectWeekActivities(supabase, catalogBand, selectedWeek),
       ]);
       if (doneError) {
         setError(doneError.message);
@@ -964,12 +947,11 @@ export function FamilyProvider({
       setDayNotes([]);
       setTodayArchive(null);
       setTodayPhotoUrl(null);
-      const { data: activityRows, error: activityError } = await supabase
-        .from("activities")
-        .select(PROGRESS_ACTIVITY_COLUMNS)
-        .eq("saptamana", selectedWeek)
-        .eq("banda", liveChildBand(child.age_band))
-        .order("zi", { ascending: true });
+      const { data: activityRows, error: activityError } = await selectWeekActivities(
+        supabase,
+        liveChildBand(child.age_band),
+        selectedWeek,
+      );
       if (activityError) throw new Error(activityError.message);
       setActivities(((activityRows ?? []) as SeedActivity[]).map(normalizeActivity));
     },

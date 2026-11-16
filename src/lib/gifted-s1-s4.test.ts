@@ -6,6 +6,7 @@ import {
   allCatalogMaterials,
   applyGiftedCatalog,
   buyCaption,
+  listedMaterials,
   localWeekMaterials,
   materialSubtitle,
   materialsForActivity,
@@ -226,7 +227,9 @@ describe("gifted S1–S4 catalog", () => {
     expect(previous.at(-1)).toBe("20261109234500_t5b_texte_aprobate.sql");
 
     const sql = files.map((file) => file.sql).join("\n");
-    expect(sql).not.toMatch(/\bDROP\b/);
+    const withoutTempDrop = sql.replace(/on commit drop/gi, "");
+    expect(withoutTempDrop).not.toMatch(/\bDROP\b/);
+    expect(sql).toMatch(/create temporary table gifted_plan \([\s\S]*?\) on commit drop;/);
     expect(sql).not.toMatch(/\bDELETE\b/);
     expect(sql).not.toMatch(/\balter\s+column\b/i);
     expect(sql).toContain("pas_in_plus");
@@ -402,5 +405,32 @@ describe("gifted S1–S4 catalog", () => {
     );
     expect(localWeekMaterials("2-3", 4).gratuit).toContain("linguri și teluri");
     expect(localWeekMaterials("2-3", 4).gratuit?.startsWith("Linguri")).toBe(false);
+  });
+
+  test("two approved wording fixes stay in the new text only", () => {
+    const rows = getSeedActivities(2, "2-3");
+    expect(rows.find((row) => row.id === "s2-2-3-z3-mental")?.pas_in_plus).toBe(
+      "Cine ia cea mai multă apă: stoarceți fiecare obiect într-un pahar și comparați.",
+    );
+    expect(rows.find((row) => row.id === "s2-2-3-z3-fizic")?.gata_cand).toBe(
+      "A mutat apa dintr-un bol în altul prin stoarcere, de cel puțin 4 ori.",
+    );
+    const sql = readFileSync(
+      resolve("supabase/migrations/20261116110022_gifted_s1s4_continut.sql"),
+      "utf8",
+    );
+    expect(sql).toContain("stoarceți fiecare obiect");
+    expect(sql).toContain("prin stoarcere, de cel puțin 4 ori.");
+    expect(sql).not.toContain("storceți");
+    expect(sql).toContain("Stropi pe mână");
+  });
+
+  test("„niciunul” is shown as no extra materials", () => {
+    const rows = [1, 2, 3, 4].flatMap((week) => getSeedActivities(week, "2-3"));
+    const none = rows.filter((row) => row.materiale.length === 1 && row.materiale[0] === "niciunul");
+    expect(none).toHaveLength(7);
+    expect(none.every((row) => listedMaterials(row.materiale).length === 0)).toBe(true);
+    expect(listedMaterials(["niciunul sau o tobă"])).toEqual(["niciunul sau o tobă"]);
+    expect(listedMaterials([])).toEqual([]);
   });
 });

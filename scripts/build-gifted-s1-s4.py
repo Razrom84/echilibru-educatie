@@ -732,7 +732,7 @@ begin
     pas_in_plus text not null,
     provocare text not null,
     siguranta text
-  );
+  ) on commit drop;
 
   insert into gifted_plan (
     id, old_titlu, old_pasi, old_nota, titlu, materiale, durata_min, pasi, gata_cand,

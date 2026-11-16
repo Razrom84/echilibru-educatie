@@ -6,8 +6,10 @@ import {
   readActivityRows,
   readPreviewCatalog,
   readWeekCatalog,
+  selectWeekActivities,
   settleCatalog,
 } from "./catalog-source";
+import { PROGRESS_ACTIVITY_COLUMNS } from "./progress";
 
 const CEDILLA = /[şţŞŢ]/;
 
@@ -188,6 +190,42 @@ describe("activity catalog source", () => {
       "s11-2-3-z1-mental",
       "s11-2-3-z1-social",
     ]);
+  });
+
+  test("a missing gifted column falls back instead of failing Azi", async () => {
+    const calls: string[] = [];
+    const client = {
+      from() {
+        return {
+          select(columns: string) {
+            calls.push(columns);
+            const missing = columns.includes("pas_in_plus");
+            const result = missing
+              ? {
+                  data: null,
+                  error: {
+                    code: "42703",
+                    message: "column activities.pas_in_plus does not exist",
+                  },
+                }
+              : { data: [{ id: "s1-b23-z1-mental", titlu: "Vechi" }], error: null };
+            const builder = {
+              eq() {
+                return builder;
+              },
+              order: () => Promise.resolve(result),
+            };
+            return builder;
+          },
+        };
+      },
+    } as unknown as SupabaseClient;
+
+    const read = await selectWeekActivities(client, "2-3", 1);
+    expect(read.error).toBeNull();
+    expect(calls[0]).toBe(PROGRESS_ACTIVITY_COLUMNS);
+    expect(calls[1]).not.toContain("pas_in_plus");
+    expect(read.data).toEqual([{ id: "s1-b23-z1-mental", titlu: "Vechi" }]);
   });
 
   test("preview falls back together when the week read fails", async () => {

@@ -4,8 +4,12 @@ import type { CompletionMode, Pillar } from "@/lib/types";
  * Columns Progres needs from the week already loaded for the child.
  * The page does not start a second catalog query.
  */
-export const PROGRESS_ACTIVITY_COLUMNS =
+/** Used only if the gifted columns are not in the database yet (error 42703). */
+export const PROGRESS_ACTIVITY_COLUMNS_BASE =
   "id, banda, saptamana, zi, pilon, titlu, durata_min, mod_default, materiale, pasi, gata_cand, tema_saptamana, nota";
+
+export const PROGRESS_ACTIVITY_COLUMNS =
+  `${PROGRESS_ACTIVITY_COLUMNS_BASE}, pas_in_plus, provocare, siguranta`;
 
 export const PROGRESS_COMPLETION_COLUMNS =
   "id, child_id, activity_id, completed_at, mode, parent_approved";

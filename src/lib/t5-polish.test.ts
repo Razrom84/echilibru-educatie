@@ -193,6 +193,9 @@ describe("T5 copy and agreement", () => {
     expect(PROGRESS_ACTIVITY_COLUMNS).not.toContain("*");
     expect(PROGRESS_COMPLETION_COLUMNS).not.toContain("*");
     expect(PROGRESS_ACTIVITY_COLUMNS).toContain("saptamana");
+    expect(PROGRESS_ACTIVITY_COLUMNS).toContain("pas_in_plus");
+    expect(PROGRESS_ACTIVITY_COLUMNS).toContain("provocare");
+    expect(PROGRESS_ACTIVITY_COLUMNS).toContain("siguranta");
     expect(PROGRESS_COMPLETION_COLUMNS).toContain("activity_id");
     expect(PROGRESS_COMPLETION_COLUMNS).toContain("parent_approved");
   });
