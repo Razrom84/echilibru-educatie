@@ -42,6 +42,7 @@ import {
   shouldPlayDoneChime,
 } from "@/lib/playful-chime";
 import { playfulPilotFor, playfulPilotWeek } from "@/lib/playful-pilot";
+import { WeekMaterialsCard } from "@/components/week-materials";
 
 export function SaptamanaView({
   today,
@@ -67,6 +68,8 @@ export function SaptamanaView({
     previewWeekLoading,
     loadArchiveDays,
     signedPhotoUrl,
+    weekMaterials,
+    weekMaterialsNote,
   } = useFamily();
   const [busyId, setBusyId] = useState<string | null>(null);
   const [photos, setPhotos] = useState<
@@ -216,6 +219,11 @@ export function SaptamanaView({
           ritualOpen={weekOverlay.ritualOpen}
         />
       ) : null}
+      <WeekMaterialsCard
+        materials={weekMaterials}
+        gratuit={weekMaterialsNote}
+        activityIds={new Set(weekItems.map((activity) => activity.id))}
+      />
 
       {isBandPreview && (previewLoading || previewWeekLoading) ? (
         <LoadingState label="Se încarcă previzualizarea…" />

@@ -45,6 +45,12 @@ export type SeedActivity = {
   gata_cand: string;
   tema_saptamana: string;
   nota?: string | null;
+  /** Optional deeper step. Empty on every row outside gifted S1–S4. */
+  pas_in_plus?: string | null;
+  /** Optional challenge step. Empty on every row outside gifted S1–S4. */
+  provocare?: string | null;
+  /** Optional safety note. Shown only when the row has one. */
+  siguranta?: string | null;
 };
 
 export type Activity = SeedActivity & {

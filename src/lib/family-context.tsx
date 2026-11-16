@@ -56,6 +56,11 @@ import {
   type CatalogOrigin,
 } from "@/lib/catalog-source";
 import {
+  localWeekMaterials,
+  readWeekMaterials,
+  type CatalogMaterial,
+} from "@/lib/gifted";
+import {
   getSeedActivities,
   getSeedActivityById,
   normalizeActivity,
@@ -129,6 +134,8 @@ type FamilyContextValue = {
   writesAllowed: boolean;
   viewActivities: Activity[];
   viewWeekTheme: string;
+  weekMaterials: CatalogMaterial[];
+  weekMaterialsNote: string | null;
   viewCivilDate: string;
   previewLoading: boolean;
   previewWeekLoading: boolean;
@@ -251,6 +258,12 @@ export function FamilyProvider({
     week: number;
     activities: Activity[];
   } | null>(null);
+  const [remoteMaterials, setRemoteMaterials] = useState<{
+    band: string;
+    week: number;
+    materials: CatalogMaterial[];
+    gratuit: string | null;
+  } | null>(null);
 
   const selectedChild = useMemo(
     () => kids.find((child) => child.id === selectedChildId) ?? kids[0] ?? null,
@@ -286,6 +299,32 @@ export function FamilyProvider({
   useEffect(() => {
     browseRef.current = { week: viewWeek, civil: viewCivilDate };
   }, [viewCivilDate, viewWeek]);
+
+  useEffect(() => {
+    let cancelled = false;
+    const band = viewBand;
+    const week = viewWeek;
+    void readWeekMaterials(createBrowserSupabase(), band, week).then((bundle) => {
+      if (cancelled) return;
+      setRemoteMaterials({
+        band,
+        week,
+        materials: bundle.materials,
+        gratuit: bundle.gratuit,
+      });
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [viewBand, viewWeek]);
+  const localMaterials = useMemo(
+    () => localWeekMaterials(viewBand, viewWeek),
+    [viewBand, viewWeek],
+  );
+  const remoteMatches =
+    remoteMaterials?.band === viewBand && remoteMaterials.week === viewWeek;
+  const weekMaterials = remoteMatches ? remoteMaterials.materials : localMaterials.materials;
+  const weekMaterialsNote = remoteMatches ? remoteMaterials.gratuit : localMaterials.gratuit;
   const catalogForBand =
     isPreviewing && previewCatalog && previewCatalog.band === viewBand
       ? previewCatalog
@@ -1706,6 +1745,8 @@ export function FamilyProvider({
       writesAllowed,
       viewActivities,
       viewWeekTheme,
+      weekMaterials,
+      weekMaterialsNote,
       viewCivilDate,
       previewLoading,
       previewWeekLoading,
@@ -1783,6 +1824,8 @@ export function FamilyProvider({
       viewCivilDate,
       viewWeek,
       viewWeekTheme,
+      weekMaterials,
+      weekMaterialsNote,
       writesAllowed,
     ],
   );

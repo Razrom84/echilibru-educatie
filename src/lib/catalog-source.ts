@@ -1,5 +1,6 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { themesFromActivityRows } from "@/lib/band-preview";
+import { applyGiftedCatalog } from "@/lib/gifted";
 import {
   getSeedActivities,
   hasLocalSeedBand,
@@ -113,7 +114,7 @@ export async function readWeekCatalog(
         ? settleCatalog({ ok: false, value: [], fallback, canFallback })
         : settleCatalog({
             ok: true,
-            value: read.rows.map(normalizeActivity),
+            value: applyGiftedCatalog(read.rows, band, week).map(normalizeActivity),
             fallback,
             canFallback,
           });

@@ -16,21 +16,24 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "fizic",
-      "titlu": "Pași din casă în curte",
-      "durata_min": 5,
+      "titlu": "Traseul casă–curte în 4 opriri",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "pantofi dacă e nevoie",
-        "ușă spre curte"
+        "ușa spre curte; pantofi; 4 repere (treapta, nucul, banca, poarta închisă)"
       ],
       "pasi": [
-        "Deschideți ușa împreună și faceți câțiva pași în curte.",
-        "Arătați: „Aici e curtea. Am ieșit din casă.”",
-        "Dacă vrea: alegeți împreună unde stați 10 secunde — lângă ușă sau mai departe."
+        "Spuneți traseul o dată, înainte de a ieși: „Treapta, nucul, banca, apoi înapoi la ușă.”",
+        "Pornește el în față; la fiecare oprire întrebați: „Unde mergem acum?”",
+        "La fiecare reper face un gest ales de el (bate palma de copac, se așază pe bancă).",
+        "La ușă, spune traseul înapoi, din memorie, cu sprijinul vostru."
       ],
-      "gata_cand": "A făcut pași din casă în curte cu adultul.",
+      "gata_cand": "A condus cel puțin 3 opriri în ordinea spusă la început.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "Un mod de mers pe fiecare porțiune: în vârfuri până la nuc, cu pași de urs până la bancă.",
+      "provocare": "Planifică el traseul pentru voi (3 opriri), iar voi îl urmați exact; dacă greșiți intenționat, vă corectează.",
+      "siguranta": "Poarta rămâne închisă; un adult stă la un braț distanță lângă trepte și fântână."
     },
     {
       "id": "s1-2-3-z1-mental",
@@ -39,22 +42,23 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "mental",
-      "titlu": "Trei locuri din casă",
-      "durata_min": 5,
+      "titlu": "Turul casei: ce e și la ce folosește",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "ușă",
-        "fereastră",
-        "scaun (sau 3 locuri vizibile)"
+        "casa întreagă; un coșuleț; 4–5 obiecte de-ale lui"
       ],
       "pasi": [
-        "Arătați trei locuri: „Ușă. Fereastră. Scaun.”",
-        "Întrebați blând: „Unde e ușa?” și așteptați arătarea.",
-        "Dacă vrea: spuneți o dată: „Casă.” și arătați camera."
+        "Faceți turul a trei camere. În fiecare, el numește 3 lucruri, iar voi extindeți: „Da, fereastra, pe unde intră lumina.”",
+        "Întrebați „La ce folosim ușa? Dar scaunul?” și așteptați 5–10 secunde răspunsul lui.",
+        "Puneți în coș 4 obiecte (lingură, carte, pernă, periuță) și întrebați: „În ce cameră stă fiecare?”",
+        "Duce el fiecare obiect în camera lui și spune propoziția: „Lingura stă în bucătărie.”"
       ],
-      "gata_cand": "A auzit și a privit cele trei locuri.",
+      "gata_cand": "A spus în ce cameră stau cel puțin 3 obiecte și la ce folosește unul dintre ele, într-o propoziție.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "Lucrul fără loc fix: „Unde stă umbrela? De ce acolo, lângă ușă?”",
+      "provocare": "Ghicitoare inversă: voi descrieți („E moale, stă în dormitor, punem capul pe ea”), el ghicește. Apoi îl lăsați pe el să vă dea o ghicitoare."
     },
     {
       "id": "s1-2-3-z1-resurse",
@@ -63,21 +67,23 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "resurse",
-      "titlu": "Jucăria la loc după joacă",
-      "durata_min": 4,
+      "titlu": "Fiecare lucru are casa lui",
+      "durata_min": 6,
       "mod_default": "A",
       "materiale": [
-        "1 jucărie",
-        "cutie sau raft"
+        "5–6 jucării folosite; cutii și raft cu loc fix"
       ],
       "pasi": [
-        "Luați o jucărie folosită și mergeți la locul ei.",
-        "Puneți-o împreună: „La loc. Gata joaca.”",
-        "Dacă vrea: alegeți între cutie și raft unde o puneți."
+        "Întrebați: „Unde e casa mașinii? Dar a cărții?”",
+        "Duce el fiecare jucărie la locul ei, fără să-i arătați voi, doar cu întrebări.",
+        "Pentru una, întrebați „De ce stă aici și nu pe jos?”",
+        "La final, verifică el raftul: „Mai lipsește ceva de la locul lui?”"
       ],
-      "gata_cand": "Jucăria e pe locul ei.",
+      "gata_cand": "A dus singur cel puțin 4 jucării la locul lor și a verificat raftul.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "Instrucțiune în 3 pași: „Pune cartea pe raft, mingea în coș și vino să-mi spui gata.”",
+      "provocare": "Voi puneți intenționat un lucru la locul greșit (o lingură în cutia cu cuburi): „E ceva care nu stă unde trebuie?”"
     },
     {
       "id": "s1-2-3-z1-social",
@@ -86,18 +92,23 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "social",
-      "titlu": "Salut spațiului: bună, casă",
-      "durata_min": 3,
+      "titlu": "Spunem bună și explicăm cui",
+      "durata_min": 5,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "La intrare, bateți ușor în ușă și spuneți: „Bună, casă!”",
-        "Zâmbiți și așteptați dacă vrea să imite gestul.",
-        "Dacă vrea: adăugați: „Ușă.” când atingeți clanța."
+      "materiale": [
+        "niciunul"
       ],
-      "gata_cand": "A participat la salutul spațiului (privire, gest sau cuvânt).",
+      "pasi": [
+        "La intrare, spuneți „Bună, casă!” și întrebați-l: „Cui mai spunem bună?”",
+        "Mergeți la 3 locuri sau oameni aleși de el (bunica, pisica, nucul) și salută el fiecare.",
+        "Întrebați: „Ce-i spunem nucului, în afară de bună?” Ascultați propoziția lui.",
+        "Închideți: „Pe cine ai salutat azi?” El enumeră."
+      ],
+      "gata_cand": "A salutat cel puțin 3 locuri sau oameni și și-a amintit cel puțin 2 dintre ei la final.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "Salut cu o urare: „Bună, nucule, să crești mare!”",
+      "provocare": "Salutul diferit după cine e: „Cum o saluți pe bunica? Dar un bebeluș? Dar un câine?” (voce, gest, cuvinte potrivite)."
     },
     {
       "id": "s1-2-3-z2-fizic",
@@ -106,21 +117,24 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "fizic",
-      "titlu": "Explorează două zone",
-      "durata_min": 6,
+      "titlu": "Zonele curții: iarbă, pietriș, umbră",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "curte sau balcon",
-        "un colț din casă"
+        "curtea; 3 obiecte-semn (găleată, cerc de sfoară, baston)"
       ],
       "pasi": [
-        "Mergeți la o zonă (de exemplu iarbă sau hol), stați 20 de secunde. Pe balcon, țineți-l de mână.",
-        "Mergeți la a doua zonă și numiți-o: „Aici e…”.",
-        "Dacă vrea: întrebați: „Unde mergem din nou?” și urmați alegerea lui."
+        "Puneți câte un semn în trei zone: pe iarbă, pe pietriș, la umbră.",
+        "Spuneți: „Când zic iarbă, alergi la găleată; pietriș, la cerc; umbră, la baston.”",
+        "Jucați 5–6 runde; schimbați ordinea.",
+        "La final, întrebați: „Care zonă e cea mai caldă? De ce?”"
       ],
-      "gata_cand": "A vizitat două zone distincte.",
+      "gata_cand": "A ajuns la zona potrivită în cel puțin 4 runde din 6.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "Două zone la rând: „Iarbă, apoi umbră!”",
+      "provocare": "Regula pe dos o rundă: „Acum mergi oriunde, numai nu unde zic eu.”",
+      "siguranta": "Fără alergat pe pietriș cu papuci; verificați curtea de obiecte ascuțite înainte."
     },
     {
       "id": "s1-2-3-z2-mental",
@@ -129,20 +143,23 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "mental",
-      "titlu": "Unde e curtea?",
-      "durata_min": 4,
+      "titlu": "La fereastră: ce e în curte și ce lipsește",
+      "durata_min": 8,
       "mod_default": "A",
       "materiale": [
-        "fereastră sau ușă cu vedere"
+        "fereastra spre curte"
       ],
       "pasi": [
-        "Stați la fereastră/ușă: „Unde e curtea?”",
-        "Arătați și spuneți: „Curte.”",
-        "Dacă vrea: comparați: „În casă e cald. Afară e curtea.”"
+        "Priviți împreună și întrebați: „Ce vezi în curte?” Extindeți fiecare răspuns cu o însușire: „Da, găleata roșie, lângă gard.”",
+        "Întrebați unde e fiecare lucru: „Lângă ce e găleata? Ce e lângă nuc?”",
+        "Închideți ochii amândoi: „Spune-mi 3 lucruri din curte, fără să te uiți.”",
+        "Deschideți și verificați: „Ai spus găleata, nucul, poarta. Le-ai nimerit pe toate?”"
       ],
-      "gata_cand": "A privit spre curte când ați arătat.",
+      "gata_cand": "A numit din memorie cel puțin 3 lucruri din curte și a folosit „lângă” sau „după” pentru unul.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "Ce s-a schimbat față de ieri (frunze căzute, găleata mutată).",
+      "provocare": "Un părinte mută ceva în curte cât el nu se uită (scaunul, găleata): „Ce s-a schimbat?”"
     },
     {
       "id": "s1-2-3-z2-resurse",
@@ -151,21 +168,23 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "resurse",
-      "titlu": "Pantofii la loc după ieșire",
-      "durata_min": 4,
+      "titlu": "Pantofii la ușă, perechi și ordine",
+      "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "pantofi",
-        "locul pantofilor"
+        "3–4 perechi de pantofi ai familiei; preșul de la ușă"
       ],
       "pasi": [
-        "După ce ați fost afară, luați pantofii împreună.",
-        "Puneți-i pe loc: „Pantofii la loc.”",
-        "Dacă vrea: numărați: „Un pantof. Doi pantofi. Gata.”"
+        "După ieșire, întrebați: „Ai cui sunt pantofii aceștia?”",
+        "Face el perechile: „Care e perechea acestui pantof?”",
+        "Îi așază pe preș de la cei mai mari la cei mai mici.",
+        "Întrebați: „De ce lăsăm pantofii la ușă?”"
       ],
-      "gata_cand": "Pantofii sunt pe locul lor.",
+      "gata_cand": "A făcut cel puțin 2 perechi corecte și a spus ai cui sunt.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "Al doilea criteriu: pantofi de curte și pantofi de casă, în două rânduri.",
+      "provocare": "Un pantof lipsă (ascuns de voi): „Care pantof n-are pereche? Unde l-am putea căuta?”"
     },
     {
       "id": "s1-2-3-z2-social",
@@ -174,18 +193,23 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "social",
-      "titlu": "Arătăm curtea adultului",
-      "durata_min": 4,
+      "titlu": "Ghidul curții pentru un oaspete",
+      "durata_min": 8,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Invitați-l să arate cu mâna un loc din curte.",
-        "Spuneți: „Uite ce arată el!” și denumiți locul.",
-        "Dacă vrea: lăsați-l să aleagă ce arată — copac, poartă sau iarbă."
+      "materiale": [
+        "un ursuleț sau un membru al familiei, ca oaspete"
       ],
-      "gata_cand": "A arătat ceva din curte adultului.",
+      "pasi": [
+        "Spuneți: „Ursulețul n-a mai fost la noi. Îi arăți tu curtea?”",
+        "Îl duce el pe oaspete în 3 locuri și spune ce e acolo: „Aici e nucul. Aici ne jucăm.”",
+        "Oaspetele pune o întrebare la fiecare loc: „De ce e iarba udă?”",
+        "La final, oaspetele mulțumește, iar el spune ce i-a plăcut cel mai mult să arate."
+      ],
+      "gata_cand": "A arătat cel puțin 3 locuri și a spus despre fiecare o propoziție.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "O regulă a curții pentru oaspete: „Aici nu călcăm, sunt flori.”",
+      "provocare": "Oaspetele face o greșeală (vrea să deschidă poarta): copilul explică de ce nu e voie și ce facem în schimb."
     },
     {
       "id": "s1-2-3-z3-fizic",
@@ -194,20 +218,24 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "fizic",
-      "titlu": "Pași până la ușă și înapoi",
-      "durata_min": 5,
+      "titlu": "Până la ușă și înapoi, de trei feluri",
+      "durata_min": 8,
       "mod_default": "A",
       "materiale": [
-        "ușă de la intrare"
+        "holul spre ușa de la intrare"
       ],
       "pasi": [
-        "Mergeți împreună până la ușă: „Ușa.”",
-        "Întoarceți-vă câțiva pași în casă: „Înapoi acasă.”",
-        "Dacă vrea: faceți traseul încă o dată, el alege ritmul."
+        "Întrebați: „În câte feluri putem merge până la ușă?” Ascultați propunerile.",
+        "Faceți drumul în trei feluri alese de el (de-a bușilea, în vârfuri, cu spatele, cu sprijin).",
+        "După fiecare, întrebați: „Care a fost cel mai greu? De ce?”",
+        "Al patrulea drum îl inventează el."
       ],
-      "gata_cand": "A mers până la ușă și înapoi.",
+      "gata_cand": "A făcut drumul în cel puțin 3 feluri și a spus care a fost cel mai greu.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "Drumul cu o oprire la jumătate: „Când bat din palme, statuie!”",
+      "provocare": "Drum cu o regulă de ținut minte: „Până la ușă mergi ca ursul, înapoi ca pisica.” Spuneți o singură dată.",
+      "siguranta": "Mersul cu spatele doar cu adult lângă el și pe hol liber."
     },
     {
       "id": "s1-2-3-z3-mental",
@@ -216,20 +244,24 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "mental",
-      "titlu": "Casă sau curte?",
-      "durata_min": 4,
+      "titlu": "Casă sau curte? Și din ce e făcut?",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "două obiecte: unul din casă, unul din curte (frunză/piatră)"
+        "8 obiecte, toate mai mari decât pumnul lui: 4 din casă (cană de plastic, lingură de lemn, șosetă, carte), 4 din curte (con de brad, piatră mare, frunză mare, băț scurt); două coșuri"
       ],
       "pasi": [
-        "Arătați obiectul din casă: „Din casă.”",
-        "Arătați cel din curte: „Din curte.” Întrebați: „Care e din curte?”",
-        "Dacă vrea: lăsați-l să sorteze încă un obiect în cele două grupe."
+        "Sortează el în două coșuri: casă și curte. Întrebați la fiecare: „De ce aici?”",
+        "Amestecați totul și sortați din nou, după o regulă nouă: „tare” și „moale”.",
+        "Întrebați: „Lingura de lemn și bățul sunt în coșuri diferite. Ce au la fel?”",
+        "Lăsați-l să inventeze el o a treia regulă."
       ],
-      "gata_cand": "A participat la sortarea casă / curte.",
+      "gata_cand": "A sortat singur după două reguli diferite, una după alta.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "Două criterii deodată: o grilă din două sfori pe jos (casă / curte × tare / moale), în care pune el fiecare obiect.",
+      "provocare": "Obiectul care nu încape în nicio categorie (o frunză uscată adusă în casă): „E din casă sau din curte acum?” Acceptați orice răspuns argumentat.",
+      "siguranta": "Obiecte mai mari decât 3,17 cm pe toate laturile; spălați mâinile după obiectele din curte."
     },
     {
       "id": "s1-2-3-z3-resurse",
@@ -238,21 +270,23 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "resurse",
-      "titlu": "Trei lucruri strânse",
-      "durata_min": 5,
+      "titlu": "Strângem după o regulă aleasă de el",
+      "durata_min": 6,
       "mod_default": "A",
       "materiale": [
-        "3 obiecte mici pe jos",
-        "cutie"
+        "8–10 lucruri împrăștiate pe covor; 2 cutii"
       ],
       "pasi": [
-        "Alegeți trei lucruri de pe jos: „Una. Două. Trei.”",
-        "Puneți-le în cutie: „Ajunge. La loc.”",
-        "Dacă vrea: alegeți împreună un al patrulea lucru sau opriți-vă."
+        "Întrebați: „Cum strângem: întâi ce?” Lăsați-l să aleagă regula (întâi cuburile, întâi ce e roșu).",
+        "Strânge el după regula lui, iar voi după aceeași regulă.",
+        "La jumătate, întrebați: „Câte au mai rămas: multe sau puține?”",
+        "Închide el cutiile și le duce la loc."
       ],
-      "gata_cand": "Cele trei lucruri sunt în cutie.",
+      "gata_cand": "A ales o regulă de strâns și a respectat-o până la capăt.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "Numărați împreună ultimele lucruri rămase (numărul doar în context).",
+      "provocare": "Cursă cu clepsidra sau cu un cântec: „Reușim până se termină cântecul?” Apoi întrebați: „Ce ne-a ajutat să fim repede?”"
     },
     {
       "id": "s1-2-3-z3-social",
@@ -261,18 +295,23 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "social",
-      "titlu": "Bună pe prag",
-      "durata_min": 3,
+      "titlu": "Pe prag: povestim ziua de ieri",
+      "durata_min": 6,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Pe prag, spuneți unul altuia: „Bună!”",
-        "Așteptați răspunsul fără grabă.",
-        "Dacă vrea: adăugați un salut scurt spre curte: „Bună, curte!”"
+      "materiale": [
+        "pragul ușii; două scăunele"
       ],
-      "gata_cand": "Ați schimbat un salut pe prag.",
+      "pasi": [
+        "Stați pe prag și spuneți: „Ieri am fost în curte. Ce am făcut acolo?”",
+        "Ascultați și întrebați „Și apoi?” până spune 2–3 lucruri.",
+        "Voi spuneți un lucru greșit, cu zâmbet: „Și apoi am văzut un elefant!” Așteptați să vă corecteze.",
+        "Încheiați: „Ce facem azi în curte?”"
+      ],
+      "gata_cand": "A povestit cel puțin 2 lucruri de ieri, în ordine.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "„Cum te-ai simțit când…?” (vesel, supărat, obosit).",
+      "provocare": "Planul de azi în 3 pași, spus de el: „Întâi…, apoi…, la final…”, apoi verificați seara dacă l-ați respectat."
     },
     {
       "id": "s1-2-3-z4-fizic",
@@ -281,20 +320,24 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "fizic",
-      "titlu": "Cărăm ceva ușor afară",
-      "durata_min": 5,
+      "titlu": "Transport de marfă în curte",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "obiect ușor (jucărie, găleată goală)"
+        "o găleată, un coș, 4–5 lucruri de cărat (pernă, minge mare, sticlă de plastic plină cu apă, 2 cuburi de lemn)"
       ],
       "pasi": [
-        "Dați-i ceva ușor de cărat câțiva pași spre ușă.",
-        "Spuneți: „Tu porți. Mergem în curte.”",
-        "Dacă vrea: lăsați-l să aleagă ce cără — jucăria sau găleata."
+        "Spuneți: „Avem de mutat lucrurile în curte, lângă bancă.”",
+        "Întrebați înainte: „Care e cel mai greu? Pe care îl cari în brațe și pe care în găleată?”",
+        "Le cară el; voi ajutați doar dacă cere.",
+        "Întrebați la final: „Ai avut dreptate? Care a fost cel mai greu?”"
       ],
-      "gata_cand": "A cărat obiectul pe scurt traseu.",
+      "gata_cand": "A prezis care obiect e cel mai greu și a verificat cărându-le.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "Două lucruri deodată, unul în fiecare mână: „Cum faci să nu cadă?”",
+      "provocare": "Lucru prea mare pentru el (un coș plin): „Cum îl ducem fără să-l ridici?” (îl tragem, îl împărțim, chemăm ajutor).",
+      "siguranta": "Greutăți mici, potrivite lui; drumul fără trepte."
     },
     {
       "id": "s1-2-3-z4-mental",
@@ -303,20 +346,24 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "mental",
-      "titlu": "Ușa se deschide, ușa se închide",
-      "durata_min": 4,
+      "titlu": "Deschis, închis, încuiat: ce se întâmplă dacă…",
+      "durata_min": 8,
       "mod_default": "A",
       "materiale": [
-        "ușă (cu adult)"
+        "ușa unei camere; o ușă de dulap; o cutie cu capac; sertarul de jos"
       ],
       "pasi": [
-        "Deschideți încet: „Deschis.”",
-        "Închideți blând: „Închis.” Repetați o dată.",
-        "Dacă vrea: el alege: „Deschidem sau închidem?”"
+        "Arătați trei uși: a camerei, a dulapului și capacul cutiei. „Ce au la fel?”",
+        "Întrebați: „Ce se întâmplă dacă lăsăm ușa de la curte deschisă?” Ascultați ideile lui (intră frigul, iese pisica).",
+        "Verificați una dintre idei: deschideți ușa un minut și simțiți aerul.",
+        "Încheiați cu propoziția lui: „Închidem ușa ca să…”"
       ],
-      "gata_cand": "A văzut deschis / închis pe ușă.",
+      "gata_cand": "A spus o urmare a ușii lăsate deschise și a verificat-o.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "Jumătate deschis: „E deschisă sau închisă acum?” Discutați.",
+      "provocare": "„Ce ușă din casă nu se deschide niciodată fără un adult? De ce?” (ușa de la intrare, dulapul cu detergenți).",
+      "siguranta": "Atenție la degete în balamale; ușa o mișcă adultul."
     },
     {
       "id": "s1-2-3-z4-resurse",
@@ -325,21 +372,23 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "resurse",
-      "titlu": "Haina pe cârlig după curte",
-      "durata_min": 4,
+      "titlu": "Cuierul familiei",
+      "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "haină",
-        "cârlig sau scaun"
+        "cuierul; hainele și căciulile familiei"
       ],
       "pasi": [
-        "După ieșire, luați haina împreună.",
-        "Puneți-o pe cârlig: „Haina la loc.”",
-        "Dacă vrea: întrebați: „Pe cârlig sau pe scaun?”"
+        "După curte, întrebați: „A cui e haina asta? Unde stă?”",
+        "Agață el hainele lui și duce hainele celorlalți la cuier.",
+        "Întrebați: „Cine mai are haina pe jos?”",
+        "Verifică el cuierul: „Are fiecare haina la loc?”"
       ],
-      "gata_cand": "Haina e pe locul ei.",
+      "gata_cand": "A pus cel puțin 2 haine la cuier și a spus ale cui sunt.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "Ordinea la cuier: „Haina mamei în stânga, a ta în mijloc.” (stânga și dreapta doar arătate).",
+      "provocare": "„Mâine plouă. Ce mai punem lângă cuier, ca să găsim repede?” (cizmele, umbrela)."
     },
     {
       "id": "s1-2-3-z4-social",
@@ -348,20 +397,24 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "social",
-      "titlu": "Rândul la deschis ușa",
-      "durata_min": 4,
+      "titlu": "Paznicul ușii",
+      "durata_min": 6,
       "mod_default": "A",
       "materiale": [
-        "ușă"
+        "o ușă de cameră"
       ],
       "pasi": [
-        "Voi deschideți puțin: „Acum eu.”",
-        "Apoi: „Acum tu” — țineți mâna lui pe clanță dacă vrea.",
-        "Dacă vrea: încă un schimb de rând, apoi gata."
+        "El e paznicul. Oricine vrea să intre bate la ușă și spune parola, aleasă de el.",
+        "Voi bateți și spuneți parola; el deschide.",
+        "Schimbați: voi sunteți paznicul, el bate și spune parola.",
+        "O rundă cu parolă greșită: paznicul nu deschide până nu e spusă parola corectă."
       ],
-      "gata_cand": "Ați făcut un schimb de rând la ușă.",
+      "gata_cand": "A ales o parolă, a ținut minte regula și a deschis doar la parola corectă.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "Două parole: una pentru intrare și una pentru ieșire.",
+      "provocare": "Parola se schimbă la fiecare rundă: „Acum parola e un animal.” Ține minte noua regulă.",
+      "siguranta": "Ușa se deschide încet; nimeni nu ține degetele în balamale."
     },
     {
       "id": "s1-2-3-z5-fizic",
@@ -370,18 +423,24 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "fizic",
-      "titlu": "Traseu: cameră, hol, ușă",
-      "durata_min": 6,
+      "titlu": "Traseul cu obstacole din casă",
+      "durata_min": 10,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Parcurgeți împreună: cameră → hol → ușă.",
-        "La fiecare oprire numiți locul.",
-        "Dacă vrea: el alege ordinea: „Întâi holul sau ușa?”"
+      "materiale": [
+        "perne, un scaun, o pătură; holul"
       ],
-      "gata_cand": "A parcurs cele trei repere.",
+      "pasi": [
+        "Construiți împreună un traseu cu 4 obstacole: peste pernă, pe sub scaun, prin „tunelul” din pătură, până la ușă.",
+        "El spune traseul înainte să înceapă: „Întâi perna, apoi…”",
+        "Face traseul; voi spuneți ce face: „Acum ești sub scaun.”",
+        "Întrebați: „Ce schimbăm ca să fie mai greu?”"
+      ],
+      "gata_cand": "A parcurs traseul în ordinea spusă și a propus o schimbare.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "Traseul cu ceva în mână (o minge pe care nu trebuie s-o scape).",
+      "provocare": "Traseul invers, de la ușă spre cameră, fără să-l mai spuneți voi.",
+      "siguranta": "Scaunul stabil, perne pe covor; fără cățărat pe mobilă."
     },
     {
       "id": "s1-2-3-z5-mental",
@@ -390,18 +449,23 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "mental",
-      "titlu": "Hartă scurtă: trei cuvinte",
-      "durata_min": 5,
+      "titlu": "Harta casei pe o foaie mare",
+      "durata_min": 12,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Spuneți: „Casă. Ușă. Curte.” arătând fiecare.",
-        "Cereți: „Arată casa” — așteptați gestul.",
-        "Dacă vrea: includeți: „Casă.” lângă camera principală."
+      "materiale": [
+        "o foaie mare sau carton; creioane colorate groase; 3 jucării mici (mai mari decât pumnul lui)"
       ],
-      "gata_cand": "A asociat cel puțin un loc cu gestul.",
+      "pasi": [
+        "Desenați voi, în fața lui, trei dreptunghiuri: bucătăria, camera lui, ușa spre curte. Spuneți ce desenați.",
+        "El pune câte o jucărie pe hartă: „Ursul doarme în camera ta.”",
+        "Apoi duce jucăria în locul real de pe hartă.",
+        "Întrebați: „Unde e ursul pe hartă? Dar în casă?”"
+      ],
+      "gata_cand": "A legat cel puțin 2 locuri de pe hartă de locurile reale.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "Comoara: ascundeți o jucărie, faceți un X pe hartă, el o caută.",
+      "provocare": "El face X-ul pe hartă și ascunde comoara, iar voi căutați după harta lui."
     },
     {
       "id": "s1-2-3-z5-resurse",
@@ -410,20 +474,23 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "resurse",
-      "titlu": "Cheile sau coșul la loc",
-      "durata_min": 4,
+      "titlu": "Locul cheilor: ce stă la intrare și de ce",
+      "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "coș / bol pentru chei sau obiecte de la ușă"
+        "obiectele de la intrare (chei, coș, umbrelă, lesă)"
       ],
       "pasi": [
-        "Luați un obiect de la intrare (chei, eșarfă, coș).",
-        "Puneți-l pe locul lui: „Aici stă. La loc.”",
-        "Dacă vrea: verificați dacă mai e ceva de pus — alegeți 1 din 2."
+        "Întrebați: „Ce stă la intrare și de ce?”",
+        "Pune el fiecare obiect la locul lui și spune pentru ce e: „Cheile, ca să încuiem.”",
+        "Voi ascundeți cheile (vizibil, pe raftul greșit): „Ne trebuie cheile. Unde sunt?”",
+        "Le pune el la loc și întrebați: „De ce e bine să stea mereu în același loc?”"
       ],
-      "gata_cand": "Obiectul de la intrare e pe loc.",
+      "gata_cand": "A pus cel puțin 3 obiecte la loc și a spus pentru ce e unul.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "„Ce luăm când ieșim la plimbare? Dar când plouă?” (lista de ieșire, spusă de el).",
+      "provocare": "„Ce s-ar întâmpla dacă cheile n-ar avea un loc al lor?” Povestiți împreună o mică întâmplare."
     },
     {
       "id": "s1-2-3-z5-social",
@@ -432,18 +499,23 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "social",
-      "titlu": "Invită adultul în curte",
-      "durata_min": 4,
+      "titlu": "Invitația, de la cap la coadă",
+      "durata_min": 6,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Modelați: „Hai în curte!” și întindeți mâna.",
-        "Mergeți împreună doar dacă vrea; altfel stați pe prag.",
-        "Dacă vrea: el „conduce” — voi urmați pașii lui."
+      "materiale": [
+        "niciunul"
       ],
-      "gata_cand": "Ați făcut invitația și ați mers sau ați rămas pe prag împreună.",
+      "pasi": [
+        "El invită pe cineva din familie în curte, cu o propoziție întreagă: „Tata, vii cu mine în curte?”",
+        "Dacă persoana spune „Acum nu pot”, întrebați: „Ce facem? Când îl mai întrebăm?”",
+        "La ieșire, conduce el și spune unde merg.",
+        "La întoarcere, mulțumește: „Mulțumesc că ai venit.”"
+      ],
+      "gata_cand": "A făcut o invitație într-o propoziție și a reacționat la un răspuns.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "Invitația cu motiv: „Vino să vezi melcul.”",
+      "provocare": "Doi invitați care vor lucruri diferite: „Mama vrea la leagăn, tata la nuc. Ce facem?” Caută el o soluție (pe rând, întâi unul)."
     },
     {
       "id": "s1-2-3-z6-fizic",
@@ -452,20 +524,24 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "fizic",
-      "titlu": "Iarbă, piatră, potecă",
-      "durata_min": 6,
+      "titlu": "Colecția de texturi a curții",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "curte cu texturi (iarbă/piatră/potecă)"
+        "curtea; un carton cu 4 pătrate desenate"
       ],
       "pasi": [
-        "Pășiți pe două texturi diferite (cu pantofi dacă e nevoie).",
-        "Numeți: „Moale. Dur.” sau „Iarbă. Piatră.”",
-        "Dacă vrea: alegeți o a treia textură de explorat 10 secunde."
+        "Mergeți desculți (unde e sigur) sau cu mâna pe 4 texturi: iarbă, pietriș, scoarță, pământ.",
+        "La fiecare, el caută cuvântul: „moale”, „înțeapă”, „rece”, „aspru”.",
+        "Aduceți câte o bucată mare din fiecare (o frunză, o piatră mare, o bucată de scoarță) și le pune el pe carton.",
+        "Ordonați-le: „de la cea mai moale la cea mai aspră”."
       ],
-      "gata_cand": "A pășit pe cel puțin două texturi.",
+      "gata_cand": "A descris cel puțin 3 texturi cu cuvinte diferite și le-a ordonat.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "Pe nevăzute: cu ochii închiși, recunoaște textura după atingere.",
+      "provocare": "„Unde ar dormi cel mai bine un arici? De ce?” Alege textura și explică.",
+      "siguranta": "Verificați zona de cioburi și înțepături; spălați mâinile după."
     },
     {
       "id": "s1-2-3-z6-mental",
@@ -474,21 +550,24 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "mental",
-      "titlu": "Ce e al casei, ce e al curții",
-      "durata_min": 5,
+      "titlu": "Detectivul de obiecte: al casei sau al curții?",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "cană",
-        "frunză sau piatră"
+        "un săculeț opac; 6 obiecte mari (cană de plastic, con de brad, lingură de lemn, piatră mare, șosetă, frunză mare)"
       ],
       "pasi": [
-        "Arătați cana: „Din casă.” Frunza: „Din curte.”",
-        "Întrebați: „Unde stă cana?”",
-        "Dacă vrea: inventați un joc scurt de rol: „Eu sunt în casă, tu ești în curte.”"
+        "El bagă mâna în săculeț fără să se uite: „Ce simți? E tare sau moale? Neted sau zgrunțuros?”",
+        "Ghicește obiectul, apoi îl scoate și verifică.",
+        "Pune obiectul în grămada casei sau a curții și spune de ce.",
+        "La final: „Care a fost cel mai greu de ghicit?”"
       ],
-      "gata_cand": "A participat la categoria casă / curte.",
+      "gata_cand": "A descris prin atingere și a ghicit cel puțin 3 obiecte.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "Voi descrieți un obiect din săculeț, el îl găsește doar prin atingere.",
+      "provocare": "Obiect-surpriză nemaiîntâlnit (un fluier mare din lemn): „Ce crezi că e? La ce folosește?”",
+      "siguranta": "Fără obiecte ascuțite sau mici în săculeț."
     },
     {
       "id": "s1-2-3-z6-resurse",
@@ -497,21 +576,24 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "resurse",
-      "titlu": "Frunza sau piatra în cutie",
-      "durata_min": 4,
+      "titlu": "Cutia comorilor din curte",
+      "durata_min": 6,
       "mod_default": "A",
       "materiale": [
-        "1–2 obiecte din curte",
-        "cutie"
+        "o cutie de pantofi; 3–4 comori mari din curte"
       ],
       "pasi": [
-        "Aduceți o frunză sau o piatră în casă pe scurt.",
-        "Puneți-o în cutie: „Ajunge. La loc în cutie.”",
-        "Dacă vrea: alegeți să o lăsați afară în loc de cutie."
+        "Întrebați: „Ce comori păstrăm și ce lăsăm afară?”",
+        "Alege el 3 comori și spune de ce o păstrează pe fiecare.",
+        "Le aranjează în cutie după o regulă aleasă de el (mare–mic, după culoare).",
+        "Le duce afară pe cele care rămân: „Frunza udă rămâne afară, altfel…?”"
       ],
-      "gata_cand": "Obiectul are un loc decis împreună.",
+      "gata_cand": "A ales ce păstrează, cu un motiv, și a decis unde stă fiecare lucru.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "Etichetă desenată: voi desenați pe cutie ce e înăuntru, el alege ce desen.",
+      "provocare": "„Ce se întâmplă cu frunza în cutie, peste o săptămână?” Verificați duminica viitoare.",
+      "siguranta": "Fără ciuperci, bobițe sau pietricele mici."
     },
     {
       "id": "s1-2-3-z6-social",
@@ -520,20 +602,23 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "social",
-      "titlu": "Joacă paralel în curte",
-      "durata_min": 5,
+      "titlu": "Joaca de-a casa, cu roluri",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "2 jucării simple"
+        "o cutie mare de carton sau o pătură peste masă; câteva obiecte de bucătărie"
       ],
       "pasi": [
-        "Stați lângă el cu propria jucărie; comentați ce face el.",
-        "Nu preluați jocul; oferiți un cuvânt: „Tu construiești.”",
-        "Dacă vrea: schimbați pe rând o jucărie o dată."
+        "Construiți împreună o „casă” din cutie sau pătură.",
+        "Întrebați: „Cine locuiește aici? Ce rol vrei tu? Ce rol am eu?”",
+        "Jucați scena aleasă de el (gătit, venirea unui musafir); voi intrați în rol și urmați regulile lui.",
+        "La final, întrebați: „Ce s-a întâmplat în povestea noastră?”"
       ],
-      "gata_cand": "Ați jucat paralel fără a forța schimbul.",
+      "gata_cand": "A împărțit rolurile și a condus cel puțin o scenă.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "O problemă în joc: „S-a stricat ușa casei! Ce facem?”",
+      "provocare": "Plan înainte de joc: el spune cine e fiecare și ce face, apoi jucați exact planul (după ghidul Harvard pentru 3–5 ani)."
     },
     {
       "id": "s1-2-3-z7-fizic",
@@ -542,18 +627,23 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "fizic",
-      "titlu": "Plimbare liberă pe traseul cunoscut",
-      "durata_min": 6,
+      "titlu": "Plimbarea condusă de el",
+      "durata_min": 10,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "El dictează ritmul pe un traseu scurt casă–curte.",
-        "Voi numiți ce arată, fără grabă.",
-        "Dacă vrea: reluați locul favorit al săptămânii 20 de secunde."
+      "materiale": [
+        "casa și curtea"
       ],
-      "gata_cand": "A mers liber pe traseul scurt.",
+      "pasi": [
+        "Spuneți: „Azi ești ghidul. Unde mergem?”",
+        "Conduce el traseul; voi întrebați la fiecare oprire: „Ce vedem aici?”",
+        "Se opresc la locul favorit al săptămânii, iar el spune de ce l-a ales.",
+        "Întoarcerea o face tot el, pe același drum."
+      ],
+      "gata_cand": "A condus un traseu de cel puțin 3 opriri și a explicat alegerea locului favorit.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "Un mod de mers ales de el pentru întoarcere.",
+      "provocare": "„Pe ce drum ajungem cel mai repede la poartă?” Încercați două drumuri și comparați."
     },
     {
       "id": "s1-2-3-z7-mental",
@@ -562,18 +652,23 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "mental",
-      "titlu": "Locul favorit al săptămânii",
-      "durata_min": 4,
+      "titlu": "Povestim săptămâna cu harta și comorile",
+      "durata_min": 10,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Întrebați: „Unde ți-a plăcut cel mai mult?” — arătați 2–3 opțiuni.",
-        "Stați acolo un moment și numiți locul.",
-        "Dacă vrea: spuneți de ce e frumos, într-o frază scurtă."
+      "materiale": [
+        "harta casei de vineri; cutia comorilor"
       ],
-      "gata_cand": "Ați ales și ați vizitat locul favorit.",
+      "pasi": [
+        "Așezați harta și comorile pe masă: „Ce am făcut săptămâna asta?”",
+        "El alege o comoară și povestește unde a găsit-o.",
+        "Întrebați: „Ce ți-a plăcut cel mai mult? De ce?”",
+        "Voi povestiți un moment, iar el completează ce ați uitat."
+      ],
+      "gata_cand": "A povestit cel puțin 2 momente din săptămână, cu un motiv pentru favorit.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "Momentele în ordine: „Ce a fost primul? Și pe urmă?”",
+      "provocare": "„Ce vrei să facem săptămâna viitoare în curte?” Spune el un plan, iar voi îl notați pe hartă."
     },
     {
       "id": "s1-2-3-z7-resurse",
@@ -582,20 +677,23 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "resurse",
-      "titlu": "Totul la loc înainte de calm",
-      "durata_min": 4,
+      "titlu": "Strânsul de duminică: el face planul",
+      "durata_min": 6,
       "mod_default": "A",
       "materiale": [
-        "1–2 obiecte de strâns"
+        "4–6 lucruri rămase prin casă"
       ],
       "pasi": [
-        "Strângeți împreună un obiect sau două: „La loc.”",
-        "Spuneți: „Gata. Acum e liniște.”",
-        "Dacă vrea: alegeți un obiect favorit să rămână la vedere."
+        "Întrebați: „Ce trebuie strâns înainte de somn? Cu ce începem?”",
+        "Strânge el după planul lui; voi ajutați la ce e greu.",
+        "Alege un obiect favorit care rămâne la vedere și spune de ce.",
+        "Verificați împreună: „E totul la loc?”"
       ],
-      "gata_cand": "Spațiul e strâns pe scurt.",
+      "gata_cand": "A făcut un plan de strâns în 2–3 pași și l-a dus la capăt.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "Împarte sarcinile: „Tu strângi cărțile, eu strâng cuburile.”",
+      "provocare": "Estimare: „Cât crezi că durează? Cât un cântec sau două?” Verificați."
     },
     {
       "id": "s1-2-3-z7-social",
@@ -604,20 +702,23 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "social",
-      "titlu": "Ritual: bună seara, casă",
-      "durata_min": 3,
+      "titlu": "Bună seara, casă: ce mulțumim azi",
+      "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "lumină mică opțională"
+        "lumină mică"
       ],
       "pasi": [
-        "Șoptiți: „Bună seara, casă.”",
-        "Îmbrățișați-vă doar dacă vrea; fără forțare.",
-        "Dacă vrea: adăugați: „Curte — la revedere până mâine.”"
+        "Stingeți lumina mare și spuneți încet: „Bună seara, casă.”",
+        "Întrebați: „Pentru ce mulțumim casei azi?” (că ne-a ținut de cald, pentru patul moale).",
+        "Spune el o mulțumire; voi spuneți una.",
+        "Îmbrățișare doar dacă vrea."
       ],
-      "gata_cand": "Ați închis ziua cu ritualul blând.",
+      "gata_cand": "A spus o mulțumire, cu propoziția lui.",
       "tema_saptamana": "Casa și curtea",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+      "pas_in_plus": "O mulțumire pentru un om din familie.",
+      "provocare": "„Ce urăm curții pentru noaptea asta?” Inventează el urarea."
     }
   ]
 }
