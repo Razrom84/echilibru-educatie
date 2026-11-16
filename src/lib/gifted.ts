@@ -71,6 +71,11 @@ export function giftedWeek(band: string, week: number): boolean {
   return band === "2-3" && week >= 1 && week <= 4;
 }
 
+/** The activity page prints a note only when this is true. */
+export function showsActivityNote(nota?: string | null): boolean {
+  return Boolean(nota?.trim());
+}
+
 /** Steps and notes the activity page may show. Missing text stays hidden. */
 export function visibleActivityExtras(activity: {
   pas_in_plus?: string | null;
@@ -119,6 +124,7 @@ export function applyGiftedCatalog(
       pas_in_plus: gift.pas_in_plus ?? null,
       provocare: gift.provocare ?? null,
       siguranta: gift.siguranta ?? null,
+      nota: null,
     };
   });
 }

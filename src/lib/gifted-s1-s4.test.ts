@@ -9,6 +9,7 @@ import {
   localWeekMaterials,
   materialsForActivity,
   priceAmount,
+  showsActivityNote,
   visibleActivityExtras,
 } from "./gifted";
 import { getSeedActivities } from "./seed/week1";
@@ -198,6 +199,7 @@ describe("gifted S1–S4 catalog", () => {
     expect(overlaid[0]?.pasi).toHaveLength(4);
     expect(overlaid[0]?.pas_in_plus?.length).toBeGreaterThan(0);
     expect(overlaid[0]?.tema_saptamana).toBe("Casa și curtea");
+    expect(overlaid[0]?.nota).toBeNull();
 
     const already = applyGiftedCatalog(
       [{ ...old, titlu: "Din bază", pas_in_plus: "Deja scris." }],
@@ -258,5 +260,111 @@ describe("gifted S1–S4 catalog", () => {
     for (const { activity } of sourceActivities) {
       expect(content).toContain(activity.title);
     }
+  });
+
+  test("material texts carry no markdown bold markers", () => {
+    const catalog = readFileSync(
+      resolve("content/materiale-s1-s4-banda-2-3.json"),
+      "utf8",
+    );
+    const migration = readFileSync(
+      resolve("supabase/migrations/20261116110022_gifted_s1s4_continut.sql"),
+      "utf8",
+    );
+    expect(catalog).not.toContain("**");
+    expect(migration).not.toContain("**");
+    for (const file of [
+      "content/seed-s1-banda-2-3-v2.json",
+      "content/seed-s2-s4-banda-2-3-v2.json",
+    ]) {
+      expect(readFileSync(resolve(file), "utf8")).not.toContain("**");
+    }
+
+    const cylinders = allCatalogMaterials().find((material) => material.id === "s3-m2");
+    expect(cylinders?.link).toBe(
+      "https://www.edudrag.ro/jucarii-educative/tamburina-girafa-719.html",
+    );
+    expect(cylinders?.varsta).toBe("3 ani+, peste vârsta lui Cezar");
+    expect(cylinders?.detaliu_pret).toContain("Vârsta: 3 ani+, peste vârsta lui Cezar.");
+    expect(cylinders?.detaliu_pret).not.toContain("**");
+  });
+
+  test("S1–S4 on band 2–3 have an empty note; other rows keep theirs", () => {
+    const gifted = [1, 2, 3, 4].flatMap((week) => getSeedActivities(week, "2-3"));
+    expect(gifted.every((row) => !showsActivityNote(row.nota))).toBe(true);
+    expect(showsActivityNote(null)).toBe(false);
+    expect(showsActivityNote("  ")).toBe(false);
+    expect(showsActivityNote("Vârsta 2–3: scurt.")).toBe(true);
+
+    const later = getSeedActivities(5, "2-3");
+    expect(later.every((row) => showsActivityNote(row.nota))).toBe(true);
+    expect(later[0]?.nota).toBe(
+      "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+    );
+
+    const band12 = getSeedActivities(1);
+    expect(band12.find((row) => row.id === "s1-2-3-z1-fizic")?.nota).toBe(
+      "Vârsta 1–2: scurt, fără forțare; el poate refuza.",
+    );
+
+    const cleared = applyGiftedCatalog(
+      [
+        {
+          id: "s1-b23-z1-mental",
+          banda: "2-3",
+          saptamana: 1,
+          zi: 1,
+          pilon: "mental",
+          titlu: "Vechi",
+          durata_min: 5,
+          mod_default: "A",
+          materiale: [],
+          pasi: ["Vechi."],
+          gata_cand: "Vechi.",
+          tema_saptamana: "Casa și curtea",
+          nota: "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+        },
+      ],
+      "2-3",
+      1,
+    );
+    expect(showsActivityNote(cleared[0]?.nota)).toBe(false);
+
+    const untouched = applyGiftedCatalog(
+      [
+        {
+          id: "s5-b23-z1-fizic",
+          banda: "2-3",
+          saptamana: 5,
+          zi: 1,
+          pilon: "fizic",
+          titlu: "Plimbare după culoare",
+          durata_min: 5,
+          mod_default: "A",
+          materiale: [],
+          pasi: ["Un pas."],
+          gata_cand: "Gata.",
+          tema_saptamana: "Temă",
+          nota: "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională.",
+        },
+      ],
+      "2-3",
+      5,
+    );
+    expect(untouched[0]?.nota).toContain("Vârsta 2–3");
+
+    const sql = readFileSync(
+      resolve("supabase/migrations/20261116110022_gifted_s1s4_continut.sql"),
+      "utf8",
+    );
+    expect(sql).toContain("nota = null");
+    expect(sql).toContain("snap_nota is distinct from plan.old_nota");
+    expect(sql).toContain("and nota is not distinct from plan.old_nota");
+    expect(sql).toContain("backup-ul nu are coloana nota");
+    const rollback = readFileSync(
+      resolve("supabase/rollback/20261116110022_gifted_s1s4_rollback.sql"),
+      "utf8",
+    );
+    expect(rollback).toContain("nota = snap.nota");
   });
 });

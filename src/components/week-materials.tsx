@@ -15,13 +15,10 @@ import {
 import { cn } from "@/lib/utils";
 
 function RichLine({ text }: { text: string }) {
-  const chunks = text.split(/(\*\*[^*]+\*\*|https?:\/\/[^\s)]+)/g);
+  const chunks = text.split(/(https?:\/\/[^\s)]+)/g);
   return (
     <>
       {chunks.map((chunk, index) => {
-        if (chunk.startsWith("**") && chunk.endsWith("**")) {
-          return <strong key={index}>{chunk.slice(2, -2)}</strong>;
-        }
         if (chunk.startsWith("http")) {
           return (
             <a

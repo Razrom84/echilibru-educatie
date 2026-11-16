@@ -13,7 +13,7 @@ import { PILLAR_META } from "@/lib/pillars";
 import { bucharestToday, familyProgramYearStart, programDayCivilDate } from "@/lib/program-week";
 import { activityReadOnlyHint } from "@/lib/view-week";
 import { getDayName } from "@/lib/week";
-import { materialsForActivity, visibleActivityExtras } from "@/lib/gifted";
+import { materialsForActivity, showsActivityNote, visibleActivityExtras } from "@/lib/gifted";
 import { ActivityMaterialsLine } from "@/components/week-materials";
 
 export default function ActivitatePage({
@@ -175,7 +175,7 @@ export default function ActivitatePage({
             {activity.siguranta}
           </p>
         ) : null}
-        {activity.nota ? (
+        {showsActivityNote(activity.nota) ? (
           <p className="mt-3 text-xs leading-5 text-muted-foreground">{activity.nota}</p>
         ) : null}
       </div>

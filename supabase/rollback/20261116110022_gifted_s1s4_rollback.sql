@@ -35,6 +35,7 @@ begin
     durata_min = snap.durata_min,
     pasi = snap.pasi,
     gata_cand = snap.gata_cand,
+    nota = snap.nota,
     pas_in_plus = null,
     provocare = null,
     siguranta = null

@@ -58,6 +58,17 @@ def dump_json(path: Path, payload) -> None:
     )
 
 
+def strip_markdown(value):
+    """Drop bold markers. The words stay; the app does not render Markdown."""
+    if isinstance(value, str):
+        return value.replace("**", "")
+    if isinstance(value, list):
+        return [strip_markdown(item) for item in value]
+    if isinstance(value, dict):
+        return {key: strip_markdown(item) for key, item in value.items()}
+    return value
+
+
 def blank_to_none(value: str | None) -> str | None:
     if value is None:
         return None
@@ -371,6 +382,7 @@ def main() -> None:
             seed["siguranta"] = safety
         else:
             seed.pop("siguranta", None)
+        seed["nota"] = None
 
     weeks_meta = []
     materials = []
@@ -384,7 +396,7 @@ def main() -> None:
         )
         audit(f"S{week['n']} gratuit", week.get("free") or "", issues)
         for raw in week["materials"]:
-            parsed = parse_material(week["n"], raw)
+            parsed = strip_markdown(parse_material(week["n"], raw))
             materials.append(parsed)
             audit(f"{parsed['id']} nume", parsed["nume"], issues)
             for line in [parsed["sursa"], parsed["folosita"] or "", parsed["detaliu_pret"] or ""]:
@@ -394,6 +406,8 @@ def main() -> None:
                     audit(f"{home['id']}", line, issues)
             if not parsed["acasa"]:
                 issues.append(f"{parsed['id']}: fără variantă de acasă")
+            if "**" in json.dumps(parsed, ensure_ascii=False):
+                issues.append(f"{parsed['id']}: a rămas un marcaj **")
 
     if len(materials) != 18:
         raise SystemExit(f"expected 18 materials, got {len(materials)}")
@@ -577,6 +591,7 @@ def write_content(activities: list[tuple[int, str, dict]], backup: dict[str, dic
                     sql_text(activity["live_id"]),
                     sql_text(old["titlu"]),
                     sql_array(old["pasi"]),
+                    sql_text(old.get("nota")),
                     sql_text(activity["title"]),
                     sql_array([activity["materiale"]]),
                     str(int(activity["dur"])),
@@ -663,10 +678,11 @@ def write_content(activities: list[tuple[int, str, dict]], backup: dict[str, dic
     CONTENT_SQL.write_text(
         f"""-- Înlocuiește textele celor 112 activități din banda 2–3, S1–S4.
 -- Întâi copiază rândurile, exact cum sunt înainte de UPDATE, în
--- backup_20261116_gifted_s1s4. Apoi fiecare UPDATE cere id-ul, banda 2–3
--- și textul vechi (titlul și pașii) din acel backup. Dacă un rând nu se
--- potrivește, migrarea se oprește și tranzacția se anulează.
--- Dacă textele noi sunt deja scrise, rularea nu mai schimbă nimic.
+-- backup_20261116_gifted_s1s4, inclusiv nota. Apoi fiecare UPDATE cere
+-- id-ul, banda 2–3 și textul vechi (titlul, pașii și nota) din acel backup.
+-- Dacă un rând nu se potrivește, migrarea se oprește și tranzacția se anulează.
+-- Nota celor 112 rânduri devine goală. Dacă textele noi sunt deja scrise și
+-- nota e deja goală, rularea nu mai schimbă nimic.
 -- Nu atinge copiii, bifele sau săptămânile din afara S1–S4.
 -- Nu se aplică pe Familie din acest PR.
 
@@ -675,6 +691,7 @@ declare
   plan record;
   snap_titlu text;
   snap_pasi text[];
+  snap_nota text;
   cur_titlu text;
   cur_pasi text[];
   cur_materiale text[];
@@ -683,6 +700,7 @@ declare
   cur_plus text;
   cur_provocare text;
   cur_siguranta text;
+  cur_nota text;
   updated_count int := 0;
   skipped_count int := 0;
   touched int;
@@ -701,6 +719,7 @@ begin
     id text primary key,
     old_titlu text not null,
     old_pasi text[] not null,
+    old_nota text,
     titlu text not null,
     materiale text[] not null,
     durata_min integer not null,
@@ -712,7 +731,7 @@ begin
   );
 
   insert into gifted_plan (
-    id, old_titlu, old_pasi, titlu, materiale, durata_min, pasi, gata_cand,
+    id, old_titlu, old_pasi, old_nota, titlu, materiale, durata_min, pasi, gata_cand,
     pas_in_plus, provocare, siguranta
   ) values
     {plan};
@@ -733,6 +752,16 @@ begin
   alter table public.backup_20261116_gifted_s1s4 enable row level security;
   revoke all on public.backup_20261116_gifted_s1s4 from public, anon, authenticated;
 
+  if not exists (
+    select 1
+    from information_schema.columns
+    where table_schema = 'public'
+      and table_name = 'backup_20261116_gifted_s1s4'
+      and column_name = 'nota'
+  ) then
+    raise exception 'Gifted S1–S4: backup-ul nu are coloana nota';
+  end if;
+
   if (select count(*) from public.backup_20261116_gifted_s1s4) <> 112 then
     raise exception 'Gifted S1–S4: backup-ul are % rânduri, așteptam 112',
       (select count(*) from public.backup_20261116_gifted_s1s4);
@@ -751,7 +780,7 @@ begin
   end if;
 
   for plan in select * from gifted_plan order by id loop
-    select titlu, pasi into snap_titlu, snap_pasi
+    select titlu, pasi, nota into snap_titlu, snap_pasi, snap_nota
     from public.backup_20261116_gifted_s1s4
     where id = plan.id
       and banda = '2-3';
@@ -761,12 +790,13 @@ begin
     end if;
 
     if snap_titlu is distinct from plan.old_titlu
-       or snap_pasi is distinct from plan.old_pasi then
-      raise exception 'Gifted S1–S4: backup-ul pentru % nu are titlul și pașii exportați pe 16.11.2026', plan.id;
+       or snap_pasi is distinct from plan.old_pasi
+       or snap_nota is distinct from plan.old_nota then
+      raise exception 'Gifted S1–S4: backup-ul pentru % nu are titlul, pașii sau nota exportate pe 16.11.2026', plan.id;
     end if;
 
-    select titlu, pasi, materiale, durata_min, gata_cand, pas_in_plus, provocare, siguranta
-      into cur_titlu, cur_pasi, cur_materiale, cur_durata, cur_gata, cur_plus, cur_provocare, cur_siguranta
+    select titlu, pasi, materiale, durata_min, gata_cand, pas_in_plus, provocare, siguranta, nota
+      into cur_titlu, cur_pasi, cur_materiale, cur_durata, cur_gata, cur_plus, cur_provocare, cur_siguranta, cur_nota
     from public.activities
     where id = plan.id
       and banda = '2-3';
@@ -782,14 +812,40 @@ begin
        and cur_gata = plan.gata_cand
        and cur_plus is not distinct from plan.pas_in_plus
        and cur_provocare is not distinct from plan.provocare
-       and cur_siguranta is not distinct from plan.siguranta then
+       and cur_siguranta is not distinct from plan.siguranta
+       and cur_nota is null then
       skipped_count := skipped_count + 1;
       continue;
     end if;
 
+    if cur_titlu = plan.titlu
+       and cur_pasi = plan.pasi
+       and cur_materiale = plan.materiale
+       and cur_durata = plan.durata_min
+       and cur_gata = plan.gata_cand
+       and cur_plus is not distinct from plan.pas_in_plus
+       and cur_provocare is not distinct from plan.provocare
+       and cur_siguranta is not distinct from plan.siguranta then
+      if cur_nota is distinct from plan.old_nota then
+        raise exception 'Gifted S1–S4: % nu are nota veche din backup', plan.id;
+      end if;
+      update public.activities
+      set nota = null
+      where id = plan.id
+        and banda = '2-3'
+        and nota is not distinct from plan.old_nota;
+      get diagnostics touched = row_count;
+      if touched <> 1 then
+        raise exception 'Gifted S1–S4: % nota nu s-a golit (rânduri %)', plan.id, touched;
+      end if;
+      updated_count := updated_count + 1;
+      continue;
+    end if;
+
     if cur_titlu is distinct from plan.old_titlu
-       or cur_pasi is distinct from plan.old_pasi then
-      raise exception 'Gifted S1–S4: % nu are titlul și pașii vechi din backup', plan.id;
+       or cur_pasi is distinct from plan.old_pasi
+       or cur_nota is distinct from plan.old_nota then
+      raise exception 'Gifted S1–S4: % nu are titlul, pașii sau nota veche din backup', plan.id;
     end if;
 
     update public.activities
@@ -801,11 +857,13 @@ begin
       gata_cand = plan.gata_cand,
       pas_in_plus = plan.pas_in_plus,
       provocare = plan.provocare,
-      siguranta = plan.siguranta
+      siguranta = plan.siguranta,
+      nota = null
     where id = plan.id
       and banda = '2-3'
       and titlu = plan.old_titlu
-      and pasi = plan.old_pasi;
+      and pasi = plan.old_pasi
+      and nota is not distinct from plan.old_nota;
 
     get diagnostics touched = row_count;
     if touched <> 1 then
@@ -887,6 +945,7 @@ begin
     durata_min = snap.durata_min,
     pasi = snap.pasi,
     gata_cand = snap.gata_cand,
+    nota = snap.nota,
     pas_in_plus = null,
     provocare = null,
     siguranta = null
