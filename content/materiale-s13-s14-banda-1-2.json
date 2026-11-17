@@ -63,7 +63,8 @@
         }
       ],
       "produs_cheie": "cos-de-la-usa-diy",
-      "categorie": "viata_practica"
+      "categorie": "viata_practica",
+      "varsta_min_luni": 12
     },
     {
       "id": "b12-s13-m2",
@@ -114,7 +115,8 @@
         }
       ],
       "produs_cheie": "cos-perechi-haine",
-      "categorie": "sortare"
+      "categorie": "sortare",
+      "varsta_min_luni": 12
     },
     {
       "id": "b12-s13-m3",
@@ -161,7 +163,8 @@
         }
       ],
       "produs_cheie": "cartonase-vreme-print",
-      "categorie": "sortare"
+      "categorie": "sortare",
+      "varsta_min_luni": 12
     },
     {
       "id": "b12-s13-m4",
@@ -208,7 +211,8 @@
         }
       ],
       "produs_cheie": "cartea-lui-cezar-print",
-      "categorie": "carti"
+      "categorie": "carti",
+      "varsta_min_luni": 12
     },
     {
       "id": "b12-s13-m5",
@@ -256,7 +260,8 @@
         }
       ],
       "produs_cheie": "scaun-mic-usa",
-      "categorie": "viata_practica"
+      "categorie": "viata_practica",
+      "varsta_min_luni": 12
     },
     {
       "id": "b12-s14-m1",
@@ -307,7 +312,8 @@
         }
       ],
       "produs_cheie": "drum-de-banda-diy",
-      "categorie": "miscare"
+      "categorie": "miscare",
+      "varsta_min_luni": 12
     },
     {
       "id": "b12-s14-m2",
@@ -355,7 +361,8 @@
         }
       ],
       "produs_cheie": "toba-cratita",
-      "categorie": "senzorial"
+      "categorie": "senzorial",
+      "varsta_min_luni": 12
     },
     {
       "id": "b12-s14-m3",
@@ -403,7 +410,8 @@
         }
       ],
       "produs_cheie": "pozele-drumului-print",
-      "categorie": "natura"
+      "categorie": "natura",
+      "varsta_min_luni": 12
     },
     {
       "id": "b12-s14-m4",
@@ -453,7 +461,8 @@
         }
       ],
       "produs_cheie": "galeata-si-lopatica",
-      "categorie": "apa_nisip"
+      "categorie": "apa_nisip",
+      "varsta_min_luni": 12
     },
     {
       "id": "b12-s14-m5",
@@ -500,7 +509,8 @@
         }
       ],
       "produs_cheie": "cartea-lui-cezar-print",
-      "categorie": "carti"
+      "categorie": "carti",
+      "varsta_min_luni": 12
     },
     {
       "id": "b12-s14-m6",
@@ -549,7 +559,8 @@
         }
       ],
       "produs_cheie": "cos-de-la-usa-diy",
-      "categorie": "viata_practica"
+      "categorie": "viata_practica",
+      "varsta_min_luni": 12
     }
   ]
 }

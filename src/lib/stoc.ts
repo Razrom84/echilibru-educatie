@@ -289,12 +289,20 @@ export function categoryForMaterial(material: {
  */
 export function parseMinAgeMonths(varsta: string | null | undefined): number | null {
   const text = varsta ?? "";
-  const numbers = [...text.matchAll(/\d+/g)].map((match) => Number(match[0]));
-  if (numbers.length === 0) return null;
-  const months = /lun[ăai]/i.test(text) && !/\ban(i)?\b/i.test(text);
-  if (!months && !/\ban(i)?\b|\bani\b/i.test(text)) return null;
-  const min = Math.min(...numbers);
-  return months ? min : min * 12;
+  // Each number takes the next unit after it: „18 luni – 3 ani” → 18 și 36.
+  const tokens = [...text.matchAll(/(\d+)|(?<!\p{L})(lun[ăai]|ani|an)(?!\p{L})/giu)];
+  const ages: number[] = [];
+  let pending: number[] = [];
+  for (const token of tokens) {
+    if (token[1] != null) {
+      pending.push(Number(token[1]));
+      continue;
+    }
+    const factor = /^lun/i.test(token[2]) ? 1 : 12;
+    ages.push(...pending.map((n) => n * factor));
+    pending = [];
+  }
+  return ages.length ? Math.min(...ages) : null;
 }
 
 /**

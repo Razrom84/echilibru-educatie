@@ -237,6 +237,9 @@ describe("catalog age and safety text", () => {
     expect(parseMinAgeMonths("peste 1 an")).toBe(12);
     expect(parseMinAgeMonths("de la 18 luni")).toBe(18);
     expect(parseMinAgeMonths("1 lună")).toBe(1);
+    expect(parseMinAgeMonths("18 luni – 3 ani")).toBe(18);
+    expect(parseMinAgeMonths("12 luni+")).toBe(12);
+    expect(parseMinAgeMonths("3 animale, 2 ani")).toBe(24);
     expect(parseMinAgeMonths("3–10 ani, peste vârsta lui Cezar; pagina spune „nu este recomandat copiilor sub 3 ani”")).toBe(36);
     expect(parseMinAgeMonths(null)).toBeNull();
     expect(parseMinAgeMonths("fără vârstă")).toBeNull();
@@ -257,12 +260,10 @@ describe("catalog age and safety text", () => {
     }
     // „Mergem la vânătoare de urși”: 12, not 36 from „3–5 ani”.
     expect(minAgeForMaterial(allCatalogMaterials("2-3").find((m) => m.id === "s3-m3"))).toBe(12);
-    // 1–2 home materials have no age in the catalog: unknown, not 12 or 24.
-    const m4 = allCatalogMaterials("1-2").find((m) => m.id === "b12-s14-m4")!;
-    expect(minAgeForMaterial(m4)).toBeNull();
-    expect(ageBadge({ varsta_min_luni: minAgeForMaterial(m4) }, 17)?.label).toBe(
-      "Vârstă necunoscută: verificați piesele mici",
-    );
+    // The 11 home materials for 1–2 S13–S14: 12 months, never unknown.
+    const b12 = allCatalogMaterials("1-2");
+    expect(b12).toHaveLength(11);
+    for (const material of b12) expect(minAgeForMaterial(material), material.id).toBe(12);
     expect(minAgeForMaterial({ varsta: null })).toBeNull();
   });
 

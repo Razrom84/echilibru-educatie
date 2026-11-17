@@ -91,6 +91,8 @@ def material_json(week: int, raw: dict) -> dict:
         "acasa": homes,
         "produs_cheie": raw["produs_cheie"],
         "categorie": raw["categorie"],
+        # Lucruri din casă pentru 1–2 ani: vârsta minimă a benzii, nu „necunoscută”.
+        "varsta_min_luni": 12,
     }
 
 

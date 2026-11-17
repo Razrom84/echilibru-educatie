@@ -204,7 +204,7 @@ function ManualForm({ onDone }: { onDone: () => void }) {
       {error ? <p className="text-sm text-destructive">{error}</p> : null}
       <div className="flex flex-wrap gap-2">
         <button type="submit" disabled={saving} className="rounded-xl bg-primary px-4 py-2 text-sm font-medium text-primary-foreground disabled:opacity-60">
-          {saving ? "Se salvează…" : savedId ? "Încearcă din nou poza" : "Salvează în stoc"}
+          {saving ? "Se salvează…" : savedId ? "Reîncărcați poza" : "Salvează în stoc"}
         </button>
         <button type="button" onClick={onDone} className="rounded-xl border border-border px-4 py-2 text-sm font-medium">
           Renunță
