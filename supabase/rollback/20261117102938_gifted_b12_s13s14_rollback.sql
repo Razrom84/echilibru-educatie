@@ -1,4 +1,4 @@
--- Revenire manuală pentru 20261117130000_gifted_b12_s13s14_continut.sql. NU se rulează automat.
+-- Revenire manuală pentru 20261117102938_gifted_b12_s13s14_continut.sql. NU se rulează automat.
 -- Pune înapoi cele 56 activități din backup_20261117_b12_s13s14 (titlu, materiale, durata, pași,
 -- „gata când”, nota) și golește treptele. Scoate materialele b12 S13–S14.
 -- Nu șterge activități, nu atinge copiii, bifele, notele sau pozele.

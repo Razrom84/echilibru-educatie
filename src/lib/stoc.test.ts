@@ -192,7 +192,7 @@ describe("stock lists", () => {
   });
 
   it("migration keys match the app keys", () => {
-    const sql = fs.readFileSync("supabase/migrations/20261117120000_stoc_materiale.sql", "utf8");
+    const sql = fs.readFileSync("supabase/migrations/20261117102924_stoc_materiale.sql", "utf8");
     for (const g of GIFTED_STARTER.flatMap((week) => week.items)) {
       expect(sql).toContain(`('${g.material_id}', '${g.produs_cheie}')`);
     }
@@ -379,7 +379,7 @@ describe("stock errors are Romanian", () => {
   });
 
   it("stock rollback allows the bucket delete Familie guards", () => {
-    const sql = fs.readFileSync("supabase/rollback/20261117120000_stoc_materiale_rollback.sql", "utf8");
+    const sql = fs.readFileSync("supabase/rollback/20261117102924_stoc_materiale_rollback.sql", "utf8");
     expect(sql.indexOf("set local storage.allow_delete_query = 'true';")).toBeGreaterThan(sql.indexOf("begin;"));
   });
 });

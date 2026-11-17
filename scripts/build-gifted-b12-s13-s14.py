@@ -17,8 +17,8 @@ BACKUP_PATH = ROOT / "docs" / "backup" / "live-1-2-S13-S14-backup-20261117.json"
 BACKUP_SHA = "5c9039d9c3c26e22aa1f5d92a81540f10b15830092afe10b927e31f2e1ee2076"
 SEED_PATH = ROOT / "content" / "seed-s13-s16-banda-1-2.json"
 MATERIALS_PATH = ROOT / "content" / "materiale-s13-s14-banda-1-2.json"
-CONTENT_SQL = ROOT / "supabase" / "migrations" / "20261117130000_gifted_b12_s13s14_continut.sql"
-ROLLBACK_SQL = ROOT / "supabase" / "rollback" / "20261117130000_gifted_b12_s13s14_rollback.sql"
+CONTENT_SQL = ROOT / "supabase" / "migrations" / "20261117102938_gifted_b12_s13s14_continut.sql"
+ROLLBACK_SQL = ROOT / "supabase" / "rollback" / "20261117102938_gifted_b12_s13s14_rollback.sql"
 BACKUP_TABLE = "backup_20261117_b12_s13s14"
 N = 56
 
@@ -221,7 +221,7 @@ def write_content(plan_rows, materials, weeks_meta) -> None:
     J = ",\n    ".join
     CONTENT_SQL.write_text(
         f"""-- Banda 1–2, S13–S14: înlocuiește textele celor {N} activități cu varianta în trepte.
--- Cere întâi 20261117120000_stoc_materiale.sql (coloana materiale.produs_cheie).
+-- Cere întâi 20261117102924_stoc_materiale.sql (coloana materiale.produs_cheie).
 -- 1. Copiază cele {N} rânduri, exact cum sunt, în {BACKUP_TABLE}.
 -- 2. UPDATE pe id + banda 1–2, numai dacă titlul, pașii, nota, materialele,
 --    durata și „gata când” sunt cele din backup-ul din 17.11.2026 (sha256 5c9039d9…2076).
@@ -250,7 +250,7 @@ begin
     select 1 from information_schema.columns
     where table_schema = 'public' and table_name = 'materiale' and column_name = 'produs_cheie'
   ) then
-    raise exception 'B12 S13–S14: lipsește materiale.produs_cheie. Aplică întâi 20261117120000_stoc_materiale.sql.';
+    raise exception 'B12 S13–S14: lipsește materiale.produs_cheie. Aplică întâi 20261117102924_stoc_materiale.sql.';
   end if;
 
   create temporary table b12_plan (
@@ -385,7 +385,7 @@ $b12$;
 def write_rollback(materials) -> None:
     ids = ", ".join(sql_text(m["id"]) for m in materials)
     ROLLBACK_SQL.write_text(
-        f"""-- Revenire manuală pentru 20261117130000_gifted_b12_s13s14_continut.sql. NU se rulează automat.
+        f"""-- Revenire manuală pentru 20261117102938_gifted_b12_s13s14_continut.sql. NU se rulează automat.
 -- Pune înapoi cele {N} activități din {BACKUP_TABLE} (titlu, materiale, durata, pași,
 -- „gata când”, nota) și golește treptele. Scoate materialele b12 S13–S14.
 -- Nu șterge activități, nu atinge copiii, bifele, notele sau pozele.
