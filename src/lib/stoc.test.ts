@@ -19,6 +19,9 @@ import {
   categoryForMaterial,
   GIFTED_STARTER,
   hasInStock,
+  minAgeForMaterial,
+  parseMinAgeMonths,
+  STOC_SAFETY_NOTE,
   reuseSummary,
   STARTER_LIST,
   starterDrafts,
@@ -219,6 +222,31 @@ describe("stock matching", () => {
   it("category for a catalog material", () => {
     expect(categoryForMaterial({ produs_cheie: "percutie-hape", nume: "x" })).toBe("senzorial");
     expect(categoryForMaterial({ nume: "Găleată mică" })).toBe("apa_nisip");
+  });
+});
+
+describe("catalog age and safety text", () => {
+  it("min age from catalog text, gifted key, then band", () => {
+    expect(parseMinAgeMonths("2–4 ani")).toBe(24);
+    expect(parseMinAgeMonths("1 an+")).toBe(12);
+    expect(parseMinAgeMonths("peste 1 an")).toBe(12);
+    expect(parseMinAgeMonths("de la 18 luni")).toBe(18);
+    expect(parseMinAgeMonths(null)).toBeNull();
+    expect(minAgeForMaterial({ varsta: "3 ani+, peste vârsta lui Cezar", banda: "2-3" })).toBe(36);
+    expect(minAgeForMaterial({ produs_cheie: "set-plaja-dantoy", varsta: null, banda: "2-3" })).toBe(24);
+    const m4 = allCatalogMaterials("1-2").find((m) => m.id === "b12-s14-m4")!;
+    expect(minAgeForMaterial(m4)).toBe(12);
+    for (const material of [...allCatalogMaterials("2-3"), ...allCatalogMaterials("1-2")]) {
+      expect(minAgeForMaterial(material)).not.toBeNull();
+    }
+  });
+
+  it("safety note spells șnururi", () => {
+    expect(STOC_SAFETY_NOTE).toContain("șnururi");
+  });
+
+  it("home-made 1–2 materials have no buy link", () => {
+    expect(allCatalogMaterials("1-2").every((m) => m.doar_acasa && !m.link)).toBe(true);
   });
 });
 

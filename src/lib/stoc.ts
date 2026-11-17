@@ -283,9 +283,35 @@ export function categoryForMaterial(material: {
   return CATEGORY_WORDS.find(([, words]) => words.test(name))?.[0] ?? "viata_practica";
 }
 
-export function minAgeForMaterial(produsCheie: string | null | undefined): number | null {
-  return produsCheie ? (GIFTED_BY_KEY.get(produsCheie)?.varsta_min_luni ?? null) : null;
+/** Lowest age in months from catalog text: „2–4 ani”, „1 an+”, „peste 1 an”, „de la 18 luni”. */
+export function parseMinAgeMonths(varsta: string | null | undefined): number | null {
+  const match = /(\d+)\s*(?:[–-]\s*\d+\s*)?(luni|lună|an|ani)\b/i.exec(varsta ?? "");
+  if (!match) return null;
+  const value = Number(match[1]);
+  return /^lun/i.test(match[2]) ? value : value * 12;
 }
+
+export const BAND_MIN_MONTHS: Record<string, number> = { "1-2": 12, "2-3": 24 };
+
+/**
+ * Minimum age for a stock item added from a catalog card: the catalog's age
+ * text, then the known gifted product, then the band the material belongs to.
+ */
+export function minAgeForMaterial(
+  material: { produs_cheie?: string | null; varsta?: string | null; banda?: string } | string | null | undefined,
+): number | null {
+  if (material == null || typeof material === "string") {
+    return material ? (GIFTED_BY_KEY.get(material)?.varsta_min_luni ?? null) : null;
+  }
+  return (
+    parseMinAgeMonths(material.varsta) ??
+    (material.produs_cheie ? GIFTED_BY_KEY.get(material.produs_cheie)?.varsta_min_luni : undefined) ??
+    (material.banda ? BAND_MIN_MONTHS[material.banda] : undefined) ??
+    null
+  );
+}
+
+export type StocPatch = Partial<Pick<StocItem, "stare" | "loc" | "varsta_min_luni" | "varsta_max_luni" | "note">>;
 
 /** Stock items that cover a catalog material: by `produs_cheie`, then `material_id`. Lost ones never count. */
 export function stockForMaterial(
@@ -327,7 +353,7 @@ export function ageInMonths(birthdate: string | null | undefined, today: string)
   return Math.max(0, months);
 }
 
-export const STOC_SAFETY_NOTE = "Atenție la piese sub 3,2 cm, snururi și sticlă.";
+export const STOC_SAFETY_NOTE = "Atenție la piese sub 3,2 cm, șnururi și sticlă.";
 
 export type AgeBadge = { kind: "peste" | "necunoscut"; label: string } | null;
 

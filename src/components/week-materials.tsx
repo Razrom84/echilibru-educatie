@@ -97,6 +97,8 @@ export function MaterialRow({
   const caption = buyCaption(material);
   const price = formatPrice(material.pret, material.moneda);
   const canBuy = Boolean(material.link);
+  // Home-made, printed or from the house: no buy button at all.
+  const showBuy = canBuy && !material.doar_acasa;
   const store = materialSubtitle(material.sursa);
 
   async function addToStock() {
@@ -111,7 +113,7 @@ export function MaterialRow({
           categorie: categoryForMaterial(material),
           produs_cheie: material.produs_cheie ?? null,
           material_id: material.id,
-          varsta_min_luni: minAgeForMaterial(material.produs_cheie),
+          varsta_min_luni: minAgeForMaterial(material),
           sursa: "din_activitate",
         },
       ]);
@@ -187,7 +189,7 @@ export function MaterialRow({
           <Hammer className="size-4" aria-hidden />
           Faceți acasă
         </button>
-        {inStock ? null : buyButton}
+        {inStock || !showBuy ? null : buyButton}
         {inStock ? null : (
           <button
             type="button"
@@ -200,7 +202,7 @@ export function MaterialRow({
             {adding ? "Se salvează…" : "Adaugă în stoc"}
           </button>
         )}
-        {inStock && canBuy ? (
+        {inStock && showBuy ? (
           <button
             type="button"
             className="px-1 py-2 text-sm text-muted-foreground underline"
@@ -211,7 +213,7 @@ export function MaterialRow({
           </button>
         ) : null}
       </div>
-      {inStock && moreOpen ? <div className="mt-2">{buyButton}</div> : null}
+      {inStock && showBuy && moreOpen ? <div className="mt-2">{buyButton}</div> : null}
       {addError ? <p className="mt-2 text-sm text-destructive">{addError}</p> : null}
       {panel === "acasa" ? (
         <div className="mt-3 space-y-2">
@@ -226,7 +228,7 @@ export function MaterialRow({
           ) : null}
         </div>
       ) : null}
-      {panel === "cumparati" && canBuy ? (
+      {panel === "cumparati" && showBuy ? (
         <div className="mt-3 space-y-2 text-sm leading-6">
           {material.detaliu_pret ? (
             <p>

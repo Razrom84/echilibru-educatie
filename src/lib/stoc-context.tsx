@@ -13,6 +13,7 @@ import {
   type StocDraft,
   type StocFolosire,
   type StocItem,
+  type StocPatch,
 } from "@/lib/stoc";
 import { createBrowserSupabase } from "@/lib/supabase/client";
 
@@ -26,6 +27,7 @@ type StocContextValue = {
   addItems: (drafts: StocDraft[], photo?: File | null) => Promise<StocItem[]>;
   setPhoto: (itemId: string, file: File) => Promise<void>;
   removeItem: (itemId: string) => Promise<void>;
+  updateItem: (itemId: string, patch: StocPatch) => Promise<void>;
   markUsed: (stocId: string, activityId: string) => Promise<void>;
   photoUrl: (item: StocItem) => Promise<string | null>;
 };
@@ -238,6 +240,40 @@ export function StocProvider({ children }: { children: React.ReactNode }) {
     [isDemo, items],
   );
 
+  const updateItem = useCallback(
+    async (itemId: string, patch: StocPatch) => {
+      const current = items.find((row) => row.id === itemId);
+      if (!current) return;
+      const problem = validateDraft({ ...current, ...patch });
+      if (problem) throw new Error(problem);
+      const clean: StocPatch = {
+        ...patch,
+        ...(patch.loc !== undefined ? { loc: patch.loc?.trim() || null } : {}),
+        ...(patch.note !== undefined ? { note: patch.note?.trim() || null } : {}),
+      };
+      if (isDemo) {
+        const state = readDemo();
+        state.items = state.items.map((row) =>
+          row.id === itemId ? { ...row, ...clean, updated_at: new Date().toISOString() } : row,
+        );
+        writeDemo(state);
+        setItems(state.items);
+        return;
+      }
+      const supabase = createBrowserSupabase();
+      if (!supabase) return;
+      const { data, error } = await supabase
+        .from("stoc_materiale")
+        .update(clean)
+        .eq("id", itemId)
+        .select(COLUMNS)
+        .single();
+      if (error) throw new Error(error.message);
+      setItems((rows) => rows.map((row) => (row.id === itemId ? (data as StocItem) : row)));
+    },
+    [isDemo, items],
+  );
+
   const markUsed = useCallback(
     async (stocId: string, activityId: string) => {
       if (!familyId) return;
@@ -283,8 +319,8 @@ export function StocProvider({ children }: { children: React.ReactNode }) {
   );
 
   const value = useMemo(
-    () => ({ status, items, uses, childMonths, addItems, setPhoto, removeItem, markUsed, photoUrl }),
-    [status, items, uses, childMonths, addItems, setPhoto, removeItem, markUsed, photoUrl],
+    () => ({ status, items, uses, childMonths, addItems, setPhoto, removeItem, updateItem, markUsed, photoUrl }),
+    [status, items, uses, childMonths, addItems, setPhoto, removeItem, updateItem, markUsed, photoUrl],
   );
   return <StocContext.Provider value={value}>{children}</StocContext.Provider>;
 }
@@ -297,6 +333,7 @@ const EMPTY: StocContextValue = {
   addItems: async () => [],
   setPhoto: async () => {},
   removeItem: async () => {},
+  updateItem: async () => {},
   markUsed: async () => {},
   photoUrl: async () => null,
 };

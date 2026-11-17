@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Camera, ListChecks, Package, PackagePlus, Trash2 } from "lucide-react";
+import { Camera, ListChecks, Package, PackagePlus, Pencil, Trash2 } from "lucide-react";
 import { EmptyState } from "@/components/status-blocks";
 import { useFamily } from "@/lib/family-context";
 import {
@@ -21,6 +21,7 @@ import {
   type StarterItem,
   type StocCategorie,
   type StocItem,
+  type StocPatch,
   type StocStare,
   type StocTip,
 } from "@/lib/stoc";
@@ -97,7 +98,10 @@ function ManualForm({ onDone }: { onDone: () => void }) {
           id="stoc-nume"
           className={field}
           value={nume}
-          onChange={(event) => setNume(event.target.value)}
+          onChange={(event) => {
+            setNume(event.target.value);
+            if (error) setError(null);
+          }}
           placeholder="de exemplu: tobă veche, găleată albastră"
           autoComplete="off"
         />
@@ -106,7 +110,16 @@ function ManualForm({ onDone }: { onDone: () => void }) {
         <legend className="text-sm font-medium">Tip *</legend>
         <div className="flex flex-wrap gap-2">
           {(Object.keys(STOC_TIP_LABEL) as StocTip[]).map((key) => (
-            <button key={key} type="button" className={chip(tip === key)} aria-pressed={tip === key} onClick={() => setTip(key)}>
+            <button
+              key={key}
+              type="button"
+              className={chip(tip === key)}
+              aria-pressed={tip === key}
+              onClick={() => {
+                setTip(key);
+                setError(null);
+              }}
+            >
               {STOC_TIP_LABEL[key]}
             </button>
           ))}
@@ -121,7 +134,10 @@ function ManualForm({ onDone }: { onDone: () => void }) {
               type="button"
               className={chip(categorie === item.key)}
               aria-pressed={categorie === item.key}
-              onClick={() => setCategorie(item.key)}
+              onClick={() => {
+                setCategorie(item.key);
+                setError(null);
+              }}
             >
               {item.label}
             </button>
@@ -246,7 +262,7 @@ function StarterChecklist({ onDone }: { onDone: () => void }) {
   };
 
   return (
-    <section className="space-y-4 rounded-2xl border border-border bg-card p-4" data-testid="stoc-lista-inceput">
+    <section className="space-y-4 rounded-2xl border border-border bg-card p-4 pr-5" data-testid="stoc-lista-inceput">
       <div>
         <h2 className="font-heading text-xl">Lista de început</h2>
         <p className="text-sm text-muted-foreground">Bifați ce aveți deja în casă. Le salvăm pe toate deodată.</p>
@@ -258,8 +274,7 @@ function StarterChecklist({ onDone }: { onDone: () => void }) {
         </div>
       ))}
       <div className="border-t border-border pt-3">
-        <h3 className="font-medium">Din planul gifted</h3>
-        <p className="text-sm text-muted-foreground">Cele 18 materiale din banda 2–3, săptămânile 1–4.</p>
+        <h3 className="font-medium">Din planul avansat: cele 18 materiale din banda 2–3, săptămânile 1–4</h3>
         {GIFTED_STARTER.map((week) => (
           <div key={week.saptamana} className="mt-2">
             <h4 className="text-sm font-medium">S{week.saptamana}</h4>
@@ -285,11 +300,84 @@ function StarterChecklist({ onDone }: { onDone: () => void }) {
   );
 }
 
+function EditItem({
+  item,
+  busy,
+  onSave,
+  onCancel,
+}: {
+  item: StocItem;
+  busy: boolean;
+  onSave: (patch: StocPatch) => void;
+  onCancel: () => void;
+}) {
+  const [stare, setStare] = useState<StocStare>(item.stare);
+  const [loc, setLoc] = useState(item.loc ?? "");
+  const [min, setMin] = useState(item.varsta_min_luni?.toString() ?? "");
+  const [max, setMax] = useState(item.varsta_max_luni?.toString() ?? "");
+  const [note, setNote] = useState(item.note ?? "");
+  const id = (name: string) => `edit-${item.id}-${name}`;
+  return (
+    <form
+      className="mt-3 space-y-3 rounded-xl bg-muted/40 p-3"
+      data-testid="stoc-editeaza"
+      onSubmit={(event) => {
+        event.preventDefault();
+        onSave({
+          stare,
+          loc,
+          note,
+          varsta_min_luni: numberOrNull(min),
+          varsta_max_luni: numberOrNull(max),
+        });
+      }}
+    >
+      <div className="space-y-1">
+        <label htmlFor={id("stare")} className="text-sm">Stare</label>
+        <select id={id("stare")} className={field} value={stare} onChange={(event) => setStare(event.target.value as StocStare)}>
+          {(Object.keys(STOC_STARE_LABEL) as StocStare[]).map((key) => (
+            <option key={key} value={key}>
+              {STOC_STARE_LABEL[key]}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div className="space-y-1">
+        <label htmlFor={id("loc")} className="text-sm">Unde e ținut</label>
+        <input id={id("loc")} className={field} value={loc} onChange={(event) => setLoc(event.target.value)} />
+      </div>
+      <div className="grid grid-cols-2 gap-3">
+        <div className="space-y-1">
+          <label htmlFor={id("min")} className="text-sm">Vârsta de la (luni)</label>
+          <input id={id("min")} inputMode="numeric" className={field} value={min} onChange={(event) => setMin(event.target.value)} />
+        </div>
+        <div className="space-y-1">
+          <label htmlFor={id("max")} className="text-sm">până la (luni)</label>
+          <input id={id("max")} inputMode="numeric" className={field} value={max} onChange={(event) => setMax(event.target.value)} />
+        </div>
+      </div>
+      <div className="space-y-1">
+        <label htmlFor={id("note")} className="text-sm">Note</label>
+        <textarea id={id("note")} className={field} rows={2} value={note} onChange={(event) => setNote(event.target.value)} />
+      </div>
+      <div className="flex flex-wrap gap-2">
+        <button type="submit" disabled={busy} className="rounded-xl bg-primary px-4 py-2 text-sm font-medium text-primary-foreground disabled:opacity-60">
+          {busy ? "Se salvează…" : "Salvează"}
+        </button>
+        <button type="button" onClick={onCancel} className="rounded-xl border border-border px-4 py-2 text-sm font-medium">
+          Renunță
+        </button>
+      </div>
+    </form>
+  );
+}
+
 function ItemCard({ item }: { item: StocItem }) {
   const stoc = useStoc();
   const [url, setUrl] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [editing, setEditing] = useState(false);
   useEffect(() => {
     let cancelled = false;
     void stoc.photoUrl(item).then((value) => {
@@ -357,19 +445,44 @@ function ItemCard({ item }: { item: StocItem }) {
         ) : null}
         {badge?.kind === "peste" ? <p className="mt-1 text-xs text-muted-foreground">{STOC_SAFETY_NOTE}</p> : null}
         {item.note ? <p className="mt-1">{item.note}</p> : null}
+        {editing ? (
+          <EditItem
+            item={item}
+            busy={busy}
+            onCancel={() => setEditing(false)}
+            onSave={(patch) =>
+              void run(async () => {
+                await stoc.updateItem(item.id, patch);
+                setEditing(false);
+              })
+            }
+          />
+        ) : null}
         {error ? <p className="mt-1 text-destructive">{error}</p> : null}
       </div>
-      <button
-        type="button"
-        aria-label={`Șterge ${item.nume}`}
-        className="self-start rounded-full p-2 text-muted-foreground hover:bg-muted"
-        disabled={busy}
-        onClick={() => {
-          if (window.confirm(`Ștergem „${item.nume}” din stoc?`)) void run(() => stoc.removeItem(item.id));
-        }}
-      >
-        <Trash2 className="size-4" aria-hidden />
-      </button>
+      <div className="flex shrink-0 flex-col items-center gap-1 self-start">
+        <button
+          type="button"
+          aria-label={`Modifică ${item.nume}`}
+          aria-expanded={editing}
+          className="rounded-full p-2 text-muted-foreground hover:bg-muted"
+          disabled={busy}
+          onClick={() => setEditing((current) => !current)}
+        >
+          <Pencil className="size-4" aria-hidden />
+        </button>
+        <button
+          type="button"
+          aria-label={`Șterge ${item.nume}`}
+          className="rounded-full p-2 text-muted-foreground hover:bg-muted"
+          disabled={busy}
+          onClick={() => {
+            if (window.confirm(`Ștergem „${item.nume}” din stoc?`)) void run(() => stoc.removeItem(item.id));
+          }}
+        >
+          <Trash2 className="size-4" aria-hidden />
+        </button>
+      </div>
     </li>
   );
 }
@@ -405,7 +518,7 @@ export default function StocPage() {
   })).filter((group) => group.items.length > 0);
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-5 pb-24 md:pb-8">
       <header className="space-y-3">
         <div>
           <h1 className="font-heading text-3xl">Stoc</h1>
