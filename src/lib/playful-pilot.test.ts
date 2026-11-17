@@ -143,7 +143,7 @@ describe("PLAYFUL PILOT scope", () => {
     expect(playfulPilotFor(6, 5)?.surprise).toBe("O săritură mică împreună");
     expect(playfulPilotFor(6, 6)?.surprise).toBe("Bordură: un pas sus, unul jos");
     expect(playfulPilotFor(6, 7)?.surprise).toBe(
-      "Haina pe cârlig — el „trage” sus",
+      "Haina pe scaun — el o întinde",
     );
   });
 
@@ -282,7 +282,7 @@ describe("PLAYFUL PILOT scope", () => {
       "Aer rece pe obraz (doar el îl simte)",
     );
     expect(playfulPilotFor(12, 7)?.surprise).toBe(
-      "Verificăm cârligul: haina la loc",
+      "Verificăm coșul de la ușă: haina la loc",
     );
   });
 
@@ -292,7 +292,7 @@ describe("PLAYFUL PILOT scope", () => {
     expect(playfulPilotFor(13, 1)?.character.src).toBe("/characters/hainuta.svg");
     expect(playfulPilotFor(13, 1)?.theme).toBe("Haine pe vreme");
     expect(playfulPilotFor(13, 1)?.ritualOpen).toBe("Haine pe vreme.");
-    expect(playfulPilotFor(13, 7)?.ritualClose).toBe("Pe cârlig, gata.");
+    expect(playfulPilotFor(13, 7)?.ritualClose).toBe("Pe scaun, gata.");
     expect(playfulPilotFor(13, 1)?.ritualOpen).not.toMatch(/\bHai\b/);
     expect(playfulPilotFor(13, 1)?.surprise).toBe("Haina pe umeri 2 sec, apoi jos");
     expect(playfulPilotFor(13, 2)?.surprise).toBe("O șosetă „dispare” pe picior");
