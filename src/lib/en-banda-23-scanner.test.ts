@@ -25,7 +25,7 @@ describe("EN strip banda 2–3 (Lock A)", () => {
     expect(rows.filter((row) => row.banda === "2-3")).toHaveLength(0);
   });
 
-  test("2–3 seed has 1456 rows, appendix 463, zero EN tokens", () => {
+  test("2–3 seed has 1456 rows, appendix 463, and no EN tokens from S5 on", () => {
     const { rows, fails, tokens } = scanBanda23Seed();
     expect(rows).toHaveLength(1456);
     expect(rows.every((row) => row.banda === "2-3")).toBe(true);
@@ -38,7 +38,18 @@ describe("EN strip banda 2–3 (Lock A)", () => {
     expect(appendix.filter((id) => !ids.has(id))).toEqual([]);
 
     expect(tokens).toEqual(expect.arrayContaining(["ball", "my turn", "turn"]));
-    expect(fails, JSON.stringify(fails, null, 2)).toEqual([]);
+    const weekOf = (id: string) => Number(/^s(\d+)/.exec(id)?.[1] ?? 0);
+    // S1–S4 is the gifted catalog. The four hits are Romanian, not English cues:
+    // „cu mine”, „stop!” spus cu vocea, „un turn” / „în turn” (un turn de boluri).
+    expect(fails.filter((hit) => weekOf(hit.id) >= 5), JSON.stringify(fails, null, 2)).toEqual(
+      [],
+    );
+    expect(fails.map((hit) => `${hit.id}:${hit.tokens.join(",")}`).sort()).toEqual([
+      "s1-2-3-z5-social:mine",
+      "s2-2-3-z2-fizic:stop",
+      "s4-2-3-z1-social:turn",
+      "s4-2-3-z4-resurse:turn",
+    ]);
   });
 
   test("S32 P0: zero Ball / My turn / Turn; balon lock, zero minge", () => {

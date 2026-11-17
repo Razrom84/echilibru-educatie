@@ -132,6 +132,9 @@ describe("T5b texte aprobate", () => {
 
   test("catalogul local are textul nou, iar câmpurile neatinse rămân ca în live", () => {
     for (const row of LIVE) {
+      // S1–S4 on band 2–3 are the gifted catalog now. The older T5b wording
+      // stays in the fixture as the pre-image; gifted-s1-s4.test.ts checks it.
+      if (row.banda === "2-3" && row.saptamana <= 4) continue;
       const seed = seedOf(row);
       const step1 = A_STEP1[row.id] ?? B_STEP1[row.id];
       const rewroteSteps =

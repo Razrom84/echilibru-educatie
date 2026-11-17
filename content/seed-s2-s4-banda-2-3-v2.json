@@ -20,20 +20,24 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "fizic",
-      "titlu": "Pași până la robinet",
-      "durata_min": 4,
+      "titlu": "Cu paharul plin până la robinet și înapoi",
+      "durata_min": 8,
       "mod_default": "A",
       "materiale": [
-        "robinet"
+        "un pahar de plastic; o tavă; prosop"
       ],
       "pasi": [
-        "Mergeți împreună până la chiuvetă.",
-        "Arătați: „Aici e apa.” Faceți un pas pe loc.",
-        "Dacă vrea: alegeți chiuveta din baie sau din bucătărie."
+        "Umpleți paharul pe jumătate; el îl duce de la chiuvetă la masă, fără să verse.",
+        "Întrebați: „Cum ai făcut să nu verși?” (încet, cu două mâini).",
+        "Încă o dată, cu paharul pe tavă.",
+        "Comparați: „Cu tava sau fără, ce a fost mai ușor?”"
       ],
-      "gata_cand": "A ajuns la robinet cu adultul.",
+      "gata_cand": "A dus paharul pe jumătate plin cel puțin o dată fără să verse și a explicat cum.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Paharul mai plin: „Până la semnul acesta.”",
+      "provocare": "Un drum cu o cotitură (pe după scaun): „Cum faci la colț?”",
+      "siguranta": "Pahar de plastic; podeaua ștearsă imediat."
     },
     {
       "id": "s2-2-3-z1-mental",
@@ -42,21 +46,24 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "mental",
-      "titlu": "Apa curge — etichete bogate",
-      "durata_min": 5,
+      "titlu": "Drumul apei: de unde vine, unde se duce",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "robinet",
-        "vas"
+        "robinetul; un vas; un prosop"
       ],
       "pasi": [
-        "Deschideți un fir subțire: „Apă. Curge. Rece.”",
-        "Spuneți: „Apă.” și arătați firul.",
-        "Dacă vrea: întrebați: „Unde se duce apa?” și arătați scurgerea."
+        "Deschideți un fir subțire și întrebați: „De unde crezi că vine apa?” Ascultați orice idee.",
+        "Spuneți simplu: „Vine prin țevi, de la fântână.” Arătați țeava de sub chiuvetă.",
+        "Puneți dopul și lăsați să se strângă puțină apă: „Ce se întâmplă dacă scoatem dopul?”",
+        "Scoate el dopul și privesc cum se scurge: „Unde s-a dus?”"
       ],
-      "gata_cand": "A observat apa curgând și a auzit etichetele.",
+      "gata_cand": "A făcut o presupunere despre de unde vine sau unde se duce apa și a verificat cu dopul.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Vârtejul: „De ce se învârte apa când se scurge?” Ascultați explicația lui, fără să o corectați.",
+      "provocare": "„Unde mai merge apa din casă?” Căutați împreună: baia, mașina de spălat, burlanul din curte.",
+      "siguranta": "Doar apă rece sau călduță; robinetul îl deschide adultul."
     },
     {
       "id": "s2-2-3-z1-resurse",
@@ -65,21 +72,23 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "resurse",
-      "titlu": "Pahar: ajunge puțin",
-      "durata_min": 4,
+      "titlu": "Câtă apă ne trebuie?",
+      "durata_min": 6,
       "mod_default": "A",
       "materiale": [
-        "pahar",
-        "apă"
+        "3 pahare de mărimi diferite; o carafă"
       ],
       "pasi": [
-        "Turnați puțin: „Ajunge atâta.”",
-        "Arătați: „Nu mai turnăm.”",
-        "Dacă vrea: alegeți pahar mic sau pahar mare pentru puțină apă."
+        "Întrebați: „Ți-e sete puțin sau tare? Ce pahar alegi?”",
+        "Toarnă el puțin și bea. „Mai vrei?”",
+        "Dacă mai rămâne apă, întrebați: „Ce facem cu ce a rămas?” (udăm floarea, nu o aruncăm).",
+        "Spune el regula: „Turnăm cât bem.”"
       ],
-      "gata_cand": "Ați turnat puțin și v-ați oprit.",
+      "gata_cand": "A ales paharul după cât de sete îi e și a decis ce face cu apa rămasă.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Comparați: „Câte pahare mici încap într-unul mare?” Verificați turnând.",
+      "provocare": "„De ce nu lăsăm robinetul să curgă degeaba?” Ascultați motivele lui, apoi spuneți simplu: „Apa din fântână se poate termina.”"
     },
     {
       "id": "s2-2-3-z1-social",
@@ -88,20 +97,24 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "social",
-      "titlu": "Arătăm apa adultului",
-      "durata_min": 3,
+      "titlu": "Barmanul familiei",
+      "durata_min": 8,
       "mod_default": "A",
       "materiale": [
-        "pahar cu puțină apă"
+        "o carafă mică; 3 pahare de plastic; o tavă"
       ],
       "pasi": [
-        "Invitați-l să arate paharul cuiva din casă.",
-        "Spuneți: „Uite apa!”",
-        "Dacă vrea: el alege cui arată — mama, tata sau bunica (dacă e)."
+        "Întreabă el pe fiecare: „Vrei apă? Multă sau puțină?”",
+        "Ține minte răspunsurile (2–3 persoane).",
+        "Toarnă din carafă cât a cerut fiecare (cu ajutor la carafă, dacă e grea).",
+        "Duce paharele și spune: „Poftim, apa ta.”"
       ],
-      "gata_cand": "A arătat paharul cu apă.",
+      "gata_cand": "A ținut minte ce a cerut fiecare și a dus paharele la persoanele potrivite.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "O persoană spune „nu, mulțumesc”: „Câte pahare ne trebuie acum?”",
+      "provocare": "Cererea cu condiție: „Eu vreau apă doar dacă e rece.” Verifică el temperatura și decide.",
+      "siguranta": "Carafă ușoară, de plastic sau metal; fără sticlă."
     },
     {
       "id": "s2-2-3-z2-fizic",
@@ -110,22 +123,23 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "fizic",
-      "titlu": "Turnăm cu grijă în vas",
-      "durata_min": 5,
+      "titlu": "Turnăm până la linie",
+      "durata_min": 8,
       "mod_default": "A",
       "materiale": [
-        "pahar",
-        "vas adânc",
-        "prosop"
+        "o cană mică de turnat; 3 pahare transparente cu câte un elastic la înălțimi diferite; tavă; burete"
       ],
       "pasi": [
-        "Țineți mâna lui pe pahar și turnați puțin în vas.",
-        "Spuneți: „Încet. Turnăm.”",
-        "Dacă vrea: încă o turnare mică, apoi gata."
+        "Puneți elasticul pe un pahar, la jumătate: „Turnăm până aici, nu mai sus.”",
+        "El toarnă încet; voi spuneți „încet… încet… stop!” prima dată.",
+        "A doua oară se oprește singur la linie.",
+        "Dacă varsă, șterge el cu buretele: „Ce facem data viitoare?”"
       ],
-      "gata_cand": "A turnat puțin cu ajutor.",
+      "gata_cand": "S-a oprit singur la linie cel puțin o dată.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Trei pahare cu linii la înălțimi diferite: „puțin”, „jumătate”, „plin”.",
+      "provocare": "Turnat dintr-o carafă în două pahare, egal: „Acum fiecare are la fel?”"
     },
     {
       "id": "s2-2-3-z2-mental",
@@ -134,21 +148,23 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "mental",
-      "titlu": "Gol și plin",
-      "durata_min": 4,
+      "titlu": "Gol, puțin, jumătate, plin: în ordine",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "pahar",
-        "apă"
+        "4 pahare transparente identice; o carafă; colorant alimentar (opțional)"
       ],
       "pasi": [
-        "Arătați paharul gol: „Gol.”",
-        "Turnați puțin: „Plin puțin.” Comparați.",
-        "Dacă vrea: el alege: „Vrei gol sau plin?” pe pahar."
+        "Umple el paharele: unul gol, unul cu puțin, unul pe jumătate, unul plin.",
+        "Le amestecați, iar el le pune în ordine, de la gol la plin.",
+        "Întrebați: „Unde e cea mai multă apă? Dar cea mai puțină?”",
+        "Voi mutați un pahar din rând: „Ce s-a schimbat?”"
       ],
-      "gata_cand": "A văzut gol și plin.",
+      "gata_cand": "A ordonat singur cele 4 pahare și a spus unde e cel mai mult.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "„Fă-le pe toate la fel!” Mută el apa dintre pahare până arată la fel.",
+      "provocare": "Un pahar înalt și subțire și unul scund și lat, cu aceeași cantitate: „Unde e mai multă apă?” Turnați apoi în două pahare identice și verificați. (E normal ca la vârsta asta să spună că în cel înalt e mai multă.)"
     },
     {
       "id": "s2-2-3-z2-resurse",
@@ -157,21 +173,23 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "resurse",
-      "titlu": "Udăm planta — ajunge",
-      "durata_min": 5,
+      "titlu": "Câtă apă vrea planta?",
+      "durata_min": 8,
       "mod_default": "A",
       "materiale": [
-        "plantă",
-        "pahar mic cu apă"
+        "2 plante în ghiveci; o cană mică; un deget de verificat pământul"
       ],
       "pasi": [
-        "Turnați puțin la rădăcină: „Dăm apă. Ajunge.”",
-        "Opriți-vă: „Gata udatul.”",
-        "Dacă vrea: ștergeți o picătură de pe masă împreună."
+        "Pune el degetul în pământ la fiecare plantă: „E uscat sau ud?”",
+        "Decide care plantă are nevoie de apă.",
+        "Toarnă puțin, încet, la rădăcină. Se oprește când apa începe să iasă în farfurioară.",
+        "Întrebați: „De ce ne-am oprit? Ce se întâmplă dacă turnăm prea mult?”"
       ],
-      "gata_cand": "Planta a primit puțină apă și v-ați oprit.",
+      "gata_cand": "A verificat pământul și a decis singur care plantă primește apă.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Comparați o plantă udată acum cu una udată ieri: „Care e mai udă?”",
+      "provocare": "Experiment pe o săptămână: două fire de grâu sau fasole într-un pahar, unul udat și unul nu. Verificați duminica."
     },
     {
       "id": "s2-2-3-z2-social",
@@ -180,20 +198,23 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "social",
-      "titlu": "Beau cu tine pe rând",
-      "durata_min": 4,
+      "titlu": "Picnicul cu apă pentru jucării",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "apă de băut"
+        "3 jucării; pahare mici de plastic; o carafă mică"
       ],
       "pasi": [
-        "Beți voi o înghițitură: „Acum eu.”",
-        "Oferiți: „Acum tu” — fără forțare.",
-        "Dacă vrea: încă un schimb de rând."
+        "Spuneți: „Jucăriile au venit la picnic și le e sete.”",
+        "El le întreabă pe rând (voi le dați glas): „Ursule, vrei apă?”",
+        "Ursul răspunde: „Da, dar puțină.” Iepurele: „Eu vreau multă.” El toarnă după cerere.",
+        "La final, întrebați: „Cine a primit cea mai multă apă?”"
       ],
-      "gata_cand": "Ați împărțit un moment de băut pe rând.",
+      "gata_cand": "A turnat după cerere pentru cel puțin 2 jucării și a comparat cantitățile.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "O jucărie e supărată că a primit mai puțin: „Ce facem?”",
+      "provocare": "Apa se termină în carafă: „Mai sunt două jucării. Cum împărțim ce a rămas?”"
     },
     {
       "id": "s2-2-3-z3-fizic",
@@ -202,21 +223,23 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "fizic",
-      "titlu": "Stropi pe mână",
-      "durata_min": 4,
+      "titlu": "Stoarcem buretele",
+      "durata_min": 6,
       "mod_default": "A",
       "materiale": [
-        "apă",
-        "prosop"
+        "un burete mare; două boluri, unul cu apă"
       ],
       "pasi": [
-        "Udați ușor dosul mâinii: „Ud. Rece.”",
-        "Ștergeți împreună: „Uscat.”",
-        "Dacă vrea: repetați pe cealaltă mână."
+        "Înmoaie el buretele în bolul cu apă și îl stoarce în bolul gol.",
+        "Întrebați: „Câte stoarceri până mutăm toată apa?” Numărați împreună.",
+        "Comparați: cu o mână și cu două mâini.",
+        "La final, întrebați: „Ce ai simțit în mâini?”"
       ],
-      "gata_cand": "A simțit ud și uscat pe mână.",
+      "gata_cand": "A mutat apa dintr-un bol în altul prin stoarcere, de cel puțin 4 ori.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Stoarce până la linia de pe bolul gol.",
+      "provocare": "Cu un burete mic și unul mare: „Cu care terminăm mai repede? De ce?”"
     },
     {
       "id": "s2-2-3-z3-mental",
@@ -225,21 +248,23 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "mental",
-      "titlu": "Ud sau uscat?",
-      "durata_min": 4,
+      "titlu": "Ce absoarbe apa?",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "cârpă udă",
-        "cârpă uscată"
+        "o tavă cu puțină apă; burete, cârpă, hârtie, folie de plastic, lingură de metal, frunză"
       ],
       "pasi": [
-        "Atingeți ambele: „Ud. Uscat.”",
-        "Spuneți: „Ud.” pe cârpa udă.",
-        "Dacă vrea: ascundeți una și întrebați: „Unde e cea udă?”"
+        "Întrebați la fiecare obiect: „Crezi că ia apa sau nu?”",
+        "Pune el obiectul în apă și îl ridică: „A luat apă?”",
+        "Sortează în două grămezi: „ia apa” și „nu ia apa”.",
+        "Întrebați: „Cu ce ștergem masa? De ce nu cu folia?”"
       ],
-      "gata_cand": "A comparat ud și uscat.",
+      "gata_cand": "A prezis și a verificat cel puțin 4 obiecte, apoi le-a sortat după rezultat.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Cine ia cea mai multă apă: stoarceți fiecare obiect într-un pahar și comparați.",
+      "provocare": "„Avem apă vărsată pe jos. Ce alegi din toate obiectele?” Explică alegerea și încearcă."
     },
     {
       "id": "s2-2-3-z3-resurse",
@@ -248,21 +273,23 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "resurse",
-      "titlu": "Ștergem picătura — prosopul la loc",
-      "durata_min": 4,
+      "titlu": "Masa udă: cum o ștergem bine?",
+      "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "prosop",
-        "picătură pe masă"
+        "puțină apă vărsată intenționat; burete; cârpă; prosop de hârtie"
       ],
       "pasi": [
-        "Ștergeți o picătură împreună: „Ștergem.”",
-        "Puneți prosopul pe cârlig: „Prosopul la loc.”",
-        "Dacă vrea: alegeți cârligul sau spătarul scaunului."
+        "„S-a vărsat apa. Ce facem întâi?” Lăsați-l să propună.",
+        "Șterge el cu ce a ales.",
+        "Întrebați: „E uscat acum? Cum verificăm?” (cu palma).",
+        "Pune el cârpa la uscat și spune unde."
       ],
-      "gata_cand": "Picătura e ștearsă și prosopul e la loc.",
+      "gata_cand": "A șters masa, a verificat cu palma și a pus cârpa la uscat.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Ordinea: întâi buretele pentru multă apă, apoi cârpa pentru ce rămâne.",
+      "provocare": "„Dacă vărsăm suc, nu apă, ce mai facem în plus?” (ștergem cu apă, ca să nu fie lipicios)."
     },
     {
       "id": "s2-2-3-z3-social",
@@ -271,20 +298,23 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "social",
-      "titlu": "Mulțumesc pentru apă",
-      "durata_min": 3,
+      "titlu": "Mulțumesc, poftim, te rog: la masă cu apa",
+      "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "pahar cu apă"
+        "carafa; paharele familiei"
       ],
       "pasi": [
-        "După ce bea (sau voi beți), modelați: „Mulțumesc.”",
-        "Așteptați imitația fără presiune.",
-        "Dacă vrea: el oferă paharul gol înapoi pe masă."
+        "La masă, modelați: „Îmi dai, te rog, apa?”",
+        "El cere apa cu „te rog” și mulțumește când o primește.",
+        "Apoi el oferă: „Mai vrea cineva apă?”",
+        "Întrebați: „Cum te simți când cineva îți spune mulțumesc?”"
       ],
-      "gata_cand": "Ați modelat mulțumirea după apă.",
+      "gata_cand": "A cerut cu „te rog”, a mulțumit și a oferit apă cuiva.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Formule noi: „Cu plăcere”, „Poftim”.",
+      "provocare": "Scenă jucată cu jucăriile: ursul ia apa fără să ceară. „Ce-i spunem ursului? Cum ar fi trebuit să ceară?”"
     },
     {
       "id": "s2-2-3-z4-fizic",
@@ -293,20 +323,24 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "fizic",
-      "titlu": "Cărăm paharul gol",
-      "durata_min": 4,
+      "titlu": "Cursa cu găletușa",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "pahar gol ușor"
+        "o găletușă cu puțină apă; un lighean gol în curte"
       ],
       "pasi": [
-        "Cărați împreună paharul gol 5–8 pași.",
-        "Spuneți: „Tu porți paharul.”",
-        "Dacă vrea: alegeți traseul — spre masă sau spre chiuvetă."
+        "Duce el apă cu găletușa de la robinetul de afară la ligheanul gol, la 5–6 metri.",
+        "Întrebați: „De câte drumuri e nevoie ca să umplem până la linie?”",
+        "Lasă-l să încerce să meargă mai repede: „Ce se întâmplă când alergi?”",
+        "Comparați ce a rămas în găletușă după un drum încet și după unul repede."
       ],
-      "gata_cand": "A cărat paharul pe scurt.",
+      "gata_cand": "A cărat apă de mai multe ori și a observat diferența dintre mers încet și repede.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Cu un pahar în loc de găletușă: „Care e mai bun pentru cărat apa?”",
+      "provocare": "Problema găurii: o găletușă cu o gaură mică în fund. „Cum aducem totuși apă?”",
+      "siguranta": "Ligheanul gol după joc; un adult lângă el tot timpul lângă apă."
     },
     {
       "id": "s2-2-3-z4-mental",
@@ -315,18 +349,23 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "mental",
-      "titlu": "Unde e apa în casă?",
-      "durata_min": 5,
+      "titlu": "Turul apei prin casă și curte",
+      "durata_min": 10,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Arătați două locuri cu apă: chiuvetă și pahar (sau plantă).",
-        "Întrebați: „Unde mai e apă?”",
-        "Dacă vrea: comparați: „Aici e multă. Aici e puțină.”"
+      "materiale": [
+        "un carton cu pătrate pentru desene; creion"
       ],
-      "gata_cand": "A vizitat sau arătat două locuri cu apă.",
+      "pasi": [
+        "Întrebați: „Unde e apă în casa noastră?” Faceți lista împreună, din memorie.",
+        "Mergeți în tur să verificați fiecare loc. Voi desenați un semn mic pentru fiecare (robinet, cadă, floare).",
+        "Întrebați: „Unde e cea mai multă apă? Dar cea mai puțină?”",
+        "Adăugați un loc la care nu v-ați gândit (câinele are un bol cu apă)."
+      ],
+      "gata_cand": "A numit din memorie cel puțin 3 locuri cu apă și le-a verificat.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Apa pe care n-o vedem: în fructe (strângeți o felie de portocală), în frunze.",
+      "provocare": "„Unde e apă în curte după ploaie, dar nu și când e soare?” (băltoace, rouă)."
     },
     {
       "id": "s2-2-3-z4-resurse",
@@ -335,20 +374,23 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "resurse",
-      "titlu": "Paharul la loc pe masă",
-      "durata_min": 3,
+      "titlu": "Paharul fiecăruia",
+      "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "pahar",
-        "masă"
+        "paharele familiei, de culori diferite"
       ],
       "pasi": [
-        "Luați paharul.",
-        "Puneți-l pe masă: „La loc. Masă.”"
+        "Fiecare om are un pahar de altă culoare. Întrebați: „Al cui e paharul verde?”",
+        "Pune el paharele la locul fiecăruia pe masă.",
+        "După masă, le duce la chiuvetă.",
+        "Întrebați: „De ce e bine ca fiecare să aibă paharul lui?”"
       ],
-      "gata_cand": "Paharul e pe masă.",
+      "gata_cand": "A pus paharele la locurile potrivite și le-a strâns după masă.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Paharul lipsă: „Câte pahare sunt și câți suntem?”",
+      "provocare": "„Vine un musafir. Ce culoare îi dăm, ca să nu se încurce?”"
     },
     {
       "id": "s2-2-3-z4-social",
@@ -357,20 +399,23 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "social",
-      "titlu": "Împărțim o înghițitură",
-      "durata_min": 4,
+      "titlu": "Cine ce bea? Ancheta familiei",
+      "durata_min": 6,
       "mod_default": "A",
       "materiale": [
-        "un pahar cu apă"
+        "niciunul"
       ],
       "pasi": [
-        "Beți voi, apoi oferiți: „Rândul tău.”",
-        "Fără forțare dacă refuză.",
-        "Dacă vrea: inventați regula: „Întâi tu, apoi eu.”"
+        "El întreabă pe fiecare din casă: „Ce-ți place să bei?”",
+        "Ține minte răspunsurile și vi le spune la final.",
+        "Întrebați: „Cine bea același lucru?”",
+        "La masa de seară, servește fiecăruia băutura preferată (cu ajutor)."
       ],
-      "gata_cand": "Ați oferit schimbul de rând la pahar.",
+      "gata_cand": "A întrebat cel puțin 2 persoane și și-a amintit răspunsurile.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Întrebare în plus: „Rece sau caldă?”",
+      "provocare": "Răspuns neașteptat (bunica spune „ceai de mentă”): „Avem? Dacă nu, ce-i oferim în schimb?”"
     },
     {
       "id": "s2-2-3-z5-fizic",
@@ -379,21 +424,24 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "fizic",
-      "titlu": "Deget pe urma de apă pe geam",
-      "durata_min": 5,
+      "titlu": "Desene cu apă pe gard",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "geam",
-        "picături de apă (opțional)"
+        "o pensulă mare; un pahar cu apă; gardul sau peretele de beton din curte"
       ],
       "pasi": [
-        "Dacă e umed pe geam sau stropiți ușor, trasați cu degetul.",
-        "Mișcați brațul: „Urme de apă.”",
-        "Dacă vrea: desenați un cerc sau o linie împreună."
+        "Desenează el cu apă pe beton: o linie, un cerc, ce vrea.",
+        "Întrebați: „Ce se întâmplă cu desenul după un minut?”",
+        "Faceți un desen la soare și unul la umbră: „Care dispare mai repede?”",
+        "Verificați după câteva minute."
       ],
-      "gata_cand": "A mișcat degetul pe urma de apă.",
+      "gata_cand": "A observat că apa dispare și a comparat soarele cu umbra.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Desenați după instrucțiune: „O linie lungă, apoi una scurtă, apoi un cerc.”",
+      "provocare": "„De ce a dispărut desenul? Unde s-a dus apa?” Acceptați ideile lui, apoi spuneți: „S-a uscat, a plecat în aer.”",
+      "siguranta": "Pălărie dacă e soare puternic."
     },
     {
       "id": "s2-2-3-z5-mental",
@@ -402,20 +450,23 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "mental",
-      "titlu": "Ascultăm apa",
-      "durata_min": 4,
+      "titlu": "Apa cântă: sunete de apă",
+      "durata_min": 8,
       "mod_default": "A",
       "materiale": [
-        "robinet"
+        "robinetul; un pahar de metal; un bol de plastic; o sticlă"
       ],
       "pasi": [
-        "Deschideți un fir: „Auzi apa?”",
-        "Închideți: „Liniște. Apa s-a oprit.”",
-        "Dacă vrea: întrebați: „Vrei să o auzim iar?”"
+        "Lăsați să curgă un fir subțire în pahar, apoi în bol: „Sună la fel?”",
+        "Umpleți sticla sub robinet: „Ascultă cum se schimbă sunetul pe măsură ce se umple.”",
+        "Închide el ochii: „Curge în pahar sau în bol?”",
+        "Întrebați: „Ce sunet face ploaia? Dar marea?”"
       ],
-      "gata_cand": "A ascultat apa și oprirea ei.",
+      "gata_cand": "A recunoscut cu ochii închiși cel puțin o dată în ce vas curge apa.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Fir subțire și fir gros: „Care sună mai tare?”",
+      "provocare": "„Cum știm că sticla e aproape plină, fără să ne uităm?” (sunetul devine mai subțire). Verificați."
     },
     {
       "id": "s2-2-3-z5-resurse",
@@ -424,20 +475,24 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "resurse",
-      "titlu": "Oprim robinetul — gata",
-      "durata_min": 3,
+      "titlu": "Robinetul: puțin, mult, oprit",
+      "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "robinet"
+        "robinetul de la chiuvetă"
       ],
       "pasi": [
-        "Închideți împreună robinetul: „Oprit. Gata.”",
-        "Arătați că nu mai curge.",
-        "Dacă vrea: el „ajută” să apese mânerul cu mâna voastră peste a lui."
+        "Deschideți voi robinetul puțin, apoi mai mult: „Puțin. Mult.”",
+        "Mâna lui pe mâna voastră, închideți: „Oprit.”",
+        "Întrebați: „Când lăsăm apa să curgă și când o oprim?”",
+        "La spălatul mâinilor: închide el robinetul cât se săpunește."
       ],
-      "gata_cand": "Robinetul e oprit.",
+      "gata_cand": "A închis robinetul cât s-a săpunit, cu propria idee sau la întrebare.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Regula spusă de el: „Mă săpunesc cu apa oprită.”",
+      "provocare": "Detectivul de picături: ascultați seara dacă picură vreun robinet. „Ce facem dacă picură?”",
+      "siguranta": "Robinetul de apă caldă îl folosește doar adultul."
     },
     {
       "id": "s2-2-3-z5-social",
@@ -446,20 +501,23 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "social",
-      "titlu": "Arătăm paharul cuiva drag",
-      "durata_min": 4,
+      "titlu": "Dăm apă păsărilor",
+      "durata_min": 8,
       "mod_default": "A",
       "materiale": [
-        "pahar"
+        "un vas lat și puțin adânc; o piatră mare în mijloc"
       ],
       "pasi": [
-        "Arătați paharul unei persoane dragi 1–2 minute.",
-        "Salut scurt: „Bună! Uite apa.”",
-        "Dacă vrea: el ține paharul când arată."
+        "Întrebați: „Cine bea apă în curtea noastră, în afară de noi?”",
+        "Pregătiți împreună un bol pentru păsări: apă puțină, o piatră pe care să stea.",
+        "El alege locul: „Unde îl punem, ca să-l vadă păsările, dar să nu le prindă pisica?”",
+        "Verificați a doua zi: „A venit cineva?”"
       ],
-      "gata_cand": "Ați arătat apa cuiva drag.",
+      "gata_cand": "A ales locul bolului cu un motiv.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Schimbă el apa a doua zi.",
+      "provocare": "„Cum aflăm ce păsări vin, fără să le speriem?” (ne uităm pe geam, stăm liniștiți)."
     },
     {
       "id": "s2-2-3-z6-fizic",
@@ -468,20 +526,24 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "fizic",
-      "titlu": "Apă afară: baltă sau iarbă udă",
-      "durata_min": 6,
+      "titlu": "Băltoaca: săritură, măsurătoare, desen",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "curte; pantofi potriviți"
+        "cizme; o băltoacă (sau una făcută cu o găleată pe pământ); un băț"
       ],
       "pasi": [
-        "Dacă e ud afară, pășiți lângă baltă sau pe iarbă umedă (nu în adânc).",
-        "Spuneți: „Apă jos. Ud afară.”",
-        "Dacă vrea: alegeți unde pășiți — lângă baltă sau pe iarbă uscată."
+        "Sare el în băltoacă și privește stropii: „Unde au ajuns?”",
+        "Măsurați băltoaca cu pași: „Câți pași are?”",
+        "Desenați cu bățul conturul ei pe pământ.",
+        "Întrebați: „Mâine va fi mai mare sau mai mică?”"
       ],
-      "gata_cand": "A explorat pe scurt apa afară (sau alternativa uscată).",
+      "gata_cand": "A măsurat băltoaca cu pași și a făcut o predicție.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Săritură mică și săritură mare: „Care face stropi mai mari?”",
+      "provocare": "Verificarea de a doua zi: comparați cu conturul desenat și explică el ce s-a întâmplat.",
+      "siguranta": "Doar băltoace mici, fără apă adâncă; haine de schimb."
     },
     {
       "id": "s2-2-3-z6-mental",
@@ -490,18 +552,23 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "mental",
-      "titlu": "Nor sau soare — legat de apă",
-      "durata_min": 4,
+      "titlu": "Nori, ploaie, băltoace: ce se leagă de ce?",
+      "durata_min": 8,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Arătați cerul: „Nor.” sau „Soare.”",
-        "Legătura: „Din nori vine apa.” (simplu, o frază).",
-        "Dacă vrea: întrebați: „Crezi că e ud sau uscat afară?”"
+      "materiale": [
+        "fereastra; o carte cu vremea (opțional)"
       ],
-      "gata_cand": "A privit cerul și a auzit legătura cu apa.",
+      "pasi": [
+        "Priviți cerul: „Ce fel de nori sunt? Albi sau gri?”",
+        "Întrebați: „Când sunt nori gri, ce poate veni?”",
+        "Legați: „Ploaia face… băltoace. Soarele usucă… băltoacele.”",
+        "Spune el lanțul în cuvintele lui."
+      ],
+      "gata_cand": "A făcut cel puțin o legătură de tip „când…, atunci…” despre vreme și apă.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Prognoza lui: „Crezi că plouă azi?” Verificați seara.",
+      "provocare": "„Unde se duc băltoacele când nu mai sunt?” Acceptați ideile lui; marcați o băltoacă cu bețe și verificați a doua zi."
     },
     {
       "id": "s2-2-3-z6-resurse",
@@ -510,21 +577,23 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "resurse",
-      "titlu": "Două frunze ude în cutie",
-      "durata_min": 5,
+      "titlu": "Frunzele ude și frunzele uscate",
+      "durata_min": 6,
       "mod_default": "A",
       "materiale": [
-        "2 frunze",
-        "cutie"
+        "4 frunze mari, 2 ude și 2 uscate; o cutie; un prosop"
       ],
       "pasi": [
-        "Luați două frunze (ude dacă se poate): „Una. Două.”",
-        "Puneți-le în cutie: „La loc. Ajunge.”",
-        "Dacă vrea: comparați o frunză udă cu una uscată."
+        "Întrebați: „Care sunt ude? Cum știi?”",
+        "Sortează el.",
+        "Puneți o frunză udă pe prosop, la soare: „Ce se întâmplă cu ea până diseară?”",
+        "Seara verificați: „E tot udă?”"
       ],
-      "gata_cand": "Frunzele sunt în cutie.",
+      "gata_cand": "A sortat frunzele ude și uscate și a verificat ce s-a întâmplat cu cea lăsată la soare.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Două frunze ude: una la soare, una la umbră. Care se usucă prima?",
+      "provocare": "„Cum uscăm repede o frunză udă?” Încercați ideea lui (o ștergem, o punem la vânt)."
     },
     {
       "id": "s2-2-3-z6-social",
@@ -533,21 +602,24 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "social",
-      "titlu": "Joacă lângă adult la apă",
-      "durata_min": 5,
+      "titlu": "Atelierul de apă, împreună",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "vas cu puțină apă",
-        "prosop"
+        "un lighean cu puțină apă; pahare, pâlnie, burete, lingură"
       ],
       "pasi": [
-        "Voi turnați puțin; el stă lângă și observă.",
-        "Comentați ce face el, fără a prelua jocul.",
-        "Dacă vrea: un schimb — el toarnă o dată cu mâna voastră."
+        "Spuneți: „Facem un proiect împreună: umplem sticla asta.”",
+        "Împărțiți rolurile: el ține pâlnia, voi turnați; apoi schimbați.",
+        "Discutați ce nu merge: „Curge pe lângă. Ce facem?”",
+        "La final: „Cum am lucrat împreună?”"
       ],
-      "gata_cand": "Ați jucat lângă apă fără forțare.",
+      "gata_cand": "A lucrat cu voi la un scop comun, cu rolurile schimbate cel puțin o dată.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "El dă instrucțiunile: „Toarnă mai încet!”",
+      "provocare": "Problema fără pâlnie: „Cum umplem sticla cu gât îngust fără pâlnie?” (o hârtie făcută sul, o lingură).",
+      "siguranta": "Adultul stă lângă lighean tot timpul."
     },
     {
       "id": "s2-2-3-z7-fizic",
@@ -556,18 +628,23 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "fizic",
-      "titlu": "Plimbare liberă — unde e apa?",
-      "durata_min": 6,
+      "titlu": "Plimbarea apei: el e ghidul",
+      "durata_min": 10,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "El dictează ritmul în casă sau curte.",
-        "Dacă arată apă (pahar, plantă, baltă), numiți-o.",
-        "Dacă vrea: opriți-vă la locul cu apă favorit al săptămânii."
+      "materiale": [
+        "curtea"
       ],
-      "gata_cand": "A mers liber; apa a fost numită dacă a apărut.",
+      "pasi": [
+        "Spuneți: „Arată-mi toate locurile cu apă din curte.”",
+        "Conduce el; la fiecare loc spune ce e acolo.",
+        "Întrebați: „Unde a fost apă săptămâna asta și acum nu mai e?”",
+        "Se opresc la locul favorit; spune el de ce."
+      ],
+      "gata_cand": "A condus turul și a găsit cel puțin 2 locuri cu apă.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Locul ascuns: rouă pe iarbă dimineața, apă în scorbură.",
+      "provocare": "„Unde ar trebui să punem un butoi pentru apa de ploaie? De ce acolo?” (sub burlan)."
     },
     {
       "id": "s2-2-3-z7-mental",
@@ -576,20 +653,23 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "mental",
-      "titlu": "Carte sau imagine cu apă",
-      "durata_min": 5,
+      "titlu": "Povestea apei din săptămâna asta",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "carte cu apă / baie / ploaie, sau orice carte"
+        "o carte cu apă; obiectele din săptămână (burete, pahare)"
       ],
       "pasi": [
-        "Răsfoiți împreună; el întoarce pagina dacă vrea.",
-        "Când vedeți apă: „Apă.”",
-        "Dacă vrea: spuneți: „Apă.” pe pagina aleasă."
+        "Așezați obiectele pe masă: „Ce am făcut cu fiecare?”",
+        "El alege un obiect și povestește.",
+        "Citiți cartea și întrebați la fiecare pagină: „Ce crezi că urmează?”",
+        "Întrebați: „Ce ți-a plăcut cel mai mult cu apa? De ce?”"
       ],
-      "gata_cand": "Ați răsfoit scurt și ați denumit apa dacă a apărut.",
+      "gata_cand": "A povestit cel puțin 2 activități ale săptămânii și a ghicit ce urmează în carte.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Ordinea: „Ce am făcut mai întâi, luni? Dar vineri?”",
+      "provocare": "Inventați împreună o poveste: „O picătură pleacă din nor…” El continuă fiecare frază."
     },
     {
       "id": "s2-2-3-z7-resurse",
@@ -598,20 +678,23 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "resurse",
-      "titlu": "Prosopul la loc — ritual",
-      "durata_min": 3,
+      "titlu": "Prosoapele familiei",
+      "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "prosop"
+        "prosoapele familiei, pe cârlige"
       ],
       "pasi": [
-        "După mâini sau baie: prosopul pe cârlig.",
-        "„La loc. Gata.”",
-        "Dacă vrea: alegeți prosopul colorat preferat pentru mâine."
+        "Întrebați: „Al cui e fiecare prosop?”",
+        "Agață el prosopul lui și al încă cuiva.",
+        "Verifică dacă vreunul e ud: „Pe care îl punem la uscat?”",
+        "Întrebați: „De ce nu împăturim prosopul ud?”"
       ],
-      "gata_cand": "Prosopul e la loc.",
+      "gata_cand": "A agățat cel puțin 2 prosoape și a recunoscut unul ud.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Împăturire simplă a unui prosop uscat, în două.",
+      "provocare": "„Ce se întâmplă cu un prosop ud lăsat strâns grămadă?” Verificați cu o cârpă mică până a doua zi (miros, umezeală)."
     },
     {
       "id": "s2-2-3-z7-social",
@@ -620,20 +703,23 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "social",
-      "titlu": "Noapte bună după apă",
-      "durata_min": 3,
+      "titlu": "Noapte bună, cu o mulțumire pentru apă",
+      "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "lumină mică opțională"
+        "lumină mică"
       ],
       "pasi": [
-        "Spuneți: „Noapte bună.” după ritualul de apă/mâini.",
-        "Lumină mică, calm, fără grabă.",
-        "Dacă vrea: reamintiți locul favorit cu apă din săptămână."
+        "După spălat, spuneți încet: „Noapte bună.”",
+        "Întrebați: „Pentru ce am folosit azi apa?”",
+        "Spune el un lucru; voi altul.",
+        "„Mulțumim, apă.” Îmbrățișare doar dacă vrea."
       ],
-      "gata_cand": "Ați închis ziua blând.",
+      "gata_cand": "A spus cel puțin un lucru pentru care am folosit apa azi.",
       "tema_saptamana": "Apa în casă și afară",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Cine a mai primit apă azi (planta, păsările)?",
+      "provocare": "„Ce am face fără apă o zi întreagă?” Discuție scurtă, liniștită."
     },
     {
       "id": "s3-2-3-z1-fizic",
@@ -642,20 +728,24 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "fizic",
-      "titlu": "Urechi afară două minute",
-      "durata_min": 5,
+      "titlu": "Harta sunetelor din curte",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "curte sau balcon"
+        "curtea; o pătură"
       ],
       "pasi": [
-        "Ieșiți scurt; stați pe loc și ascultați aproximativ 1–2 minute. Pe balcon, țineți-l de mână.",
-        "Arătați urechea: „Ascultăm.”",
-        "Dacă vrea: alegeți unde stați — lângă ușă sau mai departe."
+        "Stați întinși pe pătură, cu ochii închiși, un minut.",
+        "Ridicați câte un deget pentru fiecare sunet auzit.",
+        "Spune el sunetele și de unde vin; mergeți spre unul dintre ele.",
+        "Întrebați: „Care sunet a fost cel mai aproape? Dar cel mai departe?”"
       ],
-      "gata_cand": "Ați ascultat afară pe scurt.",
+      "gata_cand": "A numit cel puțin 3 sunete și a mers spre sursa unuia.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Sunetele ordonate de la cel mai tare la cel mai încet.",
+      "provocare": "„Ce sunet ai auzi dacă ar ploua acum? Dar noaptea?” Imaginează el.",
+      "siguranta": "Pe balcon sau lângă poartă, țineți-l de mână."
     },
     {
       "id": "s3-2-3-z1-mental",
@@ -664,20 +754,23 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "mental",
-      "titlu": "Aproape și departe",
-      "durata_min": 5,
+      "titlu": "Aproape sau departe? Ghicim cu urechile",
+      "durata_min": 8,
       "mod_default": "A",
       "materiale": [
-        "jucărie care face sunet sau bătăi din palme"
+        "un clopoțel sau o jucărie sonoră; două camere alăturate"
       ],
       "pasi": [
-        "Faceți un sunet aproape: „Aproape.”",
-        "Un sunet mai departe: „Departe.”",
-        "Dacă vrea: spuneți: „Ascultăm. Ascultă.” înainte de al doilea sunet."
+        "El închide ochii. Voi sunați clopoțelul aproape, apoi departe: „Aproape sau departe?”",
+        "Schimbați rolurile: el sună, voi ghiciți.",
+        "Întrebați: „De unde vine sunetul? Arată cu mâna.”",
+        "Încheiați: „Cum ai știut că e departe?” (mai încet)."
       ],
-      "gata_cand": "A auzit diferența aproape / departe.",
+      "gata_cand": "A ghicit corect aproape sau departe de cel puțin 3 ori și a explicat cum.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Direcția: „Din stânga, din dreapta, din spate?” (doar arătat, fără etichete obligatorii).",
+      "provocare": "Clopoțelul ascuns în cameră, el îl găsește după sunet, apropiindu-se."
     },
     {
       "id": "s3-2-3-z1-resurse",
@@ -686,20 +779,23 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "resurse",
-      "titlu": "Oprim jucăria — gata",
-      "durata_min": 4,
+      "titlu": "Oprim când vrem, nu când se termină",
+      "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "jucărie sonoră"
+        "o jucărie sonoră cu buton"
       ],
       "pasi": [
-        "Lăsați un sunet scurt, apoi opriți: „Gata. Liniște.”",
-        "Puneți jucăria în cutie: „La loc.”",
-        "Dacă vrea: el apasă butonul de oprire cu ajutor."
+        "Întrebați: „Câte sunete vrei să asculți? Două sau trei?”",
+        "Pornește el și oprește exact la numărul ales.",
+        "Pune jucăria în cutie.",
+        "Întrebați: „Când e bine să oprim jucăria?” (când doarme cineva, la masă)."
       ],
-      "gata_cand": "Jucăria e oprită și la loc.",
+      "gata_cand": "A oprit jucăria la numărul de sunete stabilit dinainte.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Un sunet scurt și unul lung, după comandă.",
+      "provocare": "„Bunica doarme. Cum ne jucăm acum?” Propune el o variantă liniștită."
     },
     {
       "id": "s3-2-3-z1-social",
@@ -708,18 +804,23 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "social",
-      "titlu": "Joacă liniște–sunet o rundă",
-      "durata_min": 4,
+      "titlu": "Liniștea și sunetul, cu dirijor",
+      "durata_min": 6,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Spuneți: „Acum liniște” — 5 secunde.",
-        "Apoi: „Acum sunet” — o bătaie din palme împreună.",
-        "Dacă vrea: încă o rundă; el alege cine începe."
+      "materiale": [
+        "niciunul sau o tobă"
       ],
-      "gata_cand": "Ați făcut o rundă liniște–sunet.",
+      "pasi": [
+        "Regula: când dirijorul ridică mâna, toată lumea tace; când o coboară, facem zgomot.",
+        "Voi sunteți dirijorul primele runde.",
+        "Apoi el devine dirijorul.",
+        "Încheiați: „A fost greu să taci? Ce te-a ajutat?”"
+      ],
+      "gata_cand": "A respectat liniștea la semnal și a fost dirijor cel puțin o rundă.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Un al treilea semn: mâna în lateral înseamnă „șoptim”.",
+      "provocare": "Regula pe dos: mâna sus înseamnă zgomot, jos liniște."
     },
     {
       "id": "s3-2-3-z2-fizic",
@@ -728,18 +829,23 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "fizic",
-      "titlu": "Bătăi din palme și calm",
-      "durata_min": 4,
+      "titlu": "Ritmul: bate ce bat eu",
+      "durata_min": 8,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Bateți din palme de 2–4 ori împreună.",
-        "Apoi mâinile pe genunchi: „Calm.”",
-        "Dacă vrea: el alege câte bătăi — două sau patru."
+      "materiale": [
+        "palmele; o tobă sau o oală întoarsă"
       ],
-      "gata_cand": "Ați bătut din palme și ați trecut la calm.",
+      "pasi": [
+        "Bateți voi un ritm scurt (lung, scurt, scurt); el îl repetă.",
+        "Creșteți la 4 bătăi.",
+        "Schimbați: bate el, voi repetați.",
+        "Încheiați cu bătăi tot mai rare, până la liniște."
+      ],
+      "gata_cand": "A repetat corect cel puțin 2 ritmuri de 3 bătăi.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Ritm cu palme și genunchi (palmă, genunchi, palmă).",
+      "provocare": "Tipar repetat ABAB: „palmă, genunchi, palmă, genunchi…”, apoi el continuă singur."
     },
     {
       "id": "s3-2-3-z2-mental",
@@ -748,18 +854,23 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "mental",
-      "titlu": "Numește două sunete",
-      "durata_min": 5,
+      "titlu": "Ce sunet a fost? Memorie de sunete",
+      "durata_min": 10,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Ascultați în casă: numiți două sunete (voce, apă, ușă).",
-        "Arătați sursa fiecăruia.",
-        "Dacă vrea: adăugați: „Tare.” pe sunetul mai puternic."
+      "materiale": [
+        "4 surse de sunet din casă (ușa, robinetul, un clopoțel, hârtie mototolită)"
       ],
-      "gata_cand": "Ați denumit două sunete.",
+      "pasi": [
+        "El ascultă cu ochii închiși 2 sunete, unul după altul.",
+        "Spune ce a auzit și în ce ordine.",
+        "Creșteți la 3 sunete.",
+        "Apoi el face sunetele, iar voi ghiciți."
+      ],
+      "gata_cand": "A spus în ordine cel puțin 2 sunete auzite cu ochii închiși.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "3 sunete în ordine.",
+      "provocare": "4 sunete, sau ordinea inversă: „Spune-le de la ultimul la primul.”"
     },
     {
       "id": "s3-2-3-z2-resurse",
@@ -768,21 +879,23 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "resurse",
-      "titlu": "Jucăria sonoră în cutie",
-      "durata_min": 3,
+      "titlu": "Cutia sunetelor, ordonată",
+      "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "jucărie sonoră",
-        "cutie"
+        "3–4 jucării sonore; o cutie"
       ],
       "pasi": [
-        "După joacă, puneți jucăria în cutie.",
-        "„La loc. Ajunge sunetul.”",
-        "Dacă vrea: alegeți cutia mare sau raftul."
+        "Pune el jucăriile în rând, de la cea mai tare la cea mai încetă.",
+        "Verificați: „Sună încet aceasta?”",
+        "Le pune în cutie în aceeași ordine.",
+        "Întrebați: „Care e cea mai bună pentru seară? De ce?”"
       ],
-      "gata_cand": "Jucăria sonoră e la loc.",
+      "gata_cand": "A ordonat jucăriile după cât de tare sună și le-a strâns.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Două grupe: care sună când le scuturi și care sună când le apeși.",
+      "provocare": "„Care jucărie nu face sunet deloc? Cum am putea-o face să sune?” (o lovim cu o lingură)."
     },
     {
       "id": "s3-2-3-z2-social",
@@ -791,18 +904,23 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "social",
-      "titlu": "Ascultăm împreună la fereastră",
-      "durata_min": 4,
+      "titlu": "Ascultăm și povestim ce s-a întâmplat afară",
+      "durata_min": 8,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Stați ureche spre fereastră 15–20 de secunde.",
-        "Spuneți: „Auzim împreună.”",
-        "Dacă vrea: arătați unul altuia ce ați auzit."
+      "materiale": [
+        "fereastra"
       ],
-      "gata_cand": "Ați ascultat împreună pe scurt.",
+      "pasi": [
+        "Stați la fereastră 1 minut și ascultați.",
+        "Întrebați: „Ce crezi că se întâmplă afară?” (o mașină trece, cineva taie lemne).",
+        "Inventați împreună o poveste scurtă cu sunetele auzite.",
+        "El o povestește cuiva din familie."
+      ],
+      "gata_cand": "A legat un sunet de o întâmplare și a povestit-o cuiva.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "„Cine face sunetul? Ce face el?”",
+      "provocare": "Povestea continuă: „Și apoi ce s-a întâmplat?” El adaugă trei momente."
     },
     {
       "id": "s3-2-3-z3-fizic",
@@ -811,20 +929,24 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "fizic",
-      "titlu": "Dans scurt, apoi oprire",
-      "durata_min": 5,
+      "titlu": "Dansul statuilor",
+      "durata_min": 8,
       "mod_default": "A",
       "materiale": [
-        "melodie scurtă sau bătăi din palme"
+        "o melodie (cântată sau de pe telefonul adultului)"
       ],
       "pasi": [
-        "Mișcați-vă 30–60 de secunde pe sunet.",
-        "Opriți muzica sau bătăile: „Gata. Liniște.”",
-        "Dacă vrea: încă 20 de secunde de dans, apoi iar oprire."
+        "Când e muzică, dansați; când se oprește, statuie.",
+        "După câteva runde, statuile au o formă: „Statuie de copac!”",
+        "El alege forma statuii pentru voi.",
+        "Încheiați cu un dans foarte încet, apoi foarte repede."
       ],
-      "gata_cand": "Ați dansat și v-ați oprit împreună.",
+      "gata_cand": "A înghețat când s-a oprit muzica, de cel puțin 4 ori.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Statuie pe un picior (cu sprijin dacă e nevoie).",
+      "provocare": "Regula pe dos: când e muzică, stai; când e liniște, dansezi.",
+      "siguranta": "Spațiu liber, fără colțuri ascuțite."
     },
     {
       "id": "s3-2-3-z3-mental",
@@ -833,18 +955,23 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "mental",
-      "titlu": "Voce tare, voce încet",
-      "durata_min": 4,
+      "titlu": "Tare, încet, șoptit: același lucru, trei voci",
+      "durata_min": 8,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Spuneți același cuvânt tare, apoi încet: „Tare. Încet.”",
-        "Spuneți: „Liniște.” pe varianta încet.",
-        "Dacă vrea: el alege: „Spunem tare sau încet?”"
+      "materiale": [
+        "o jucărie sau un ursuleț"
       ],
-      "gata_cand": "A auzit tare și încet.",
+      "pasi": [
+        "Spuneți aceeași propoziție în trei feluri: tare, încet, șoptit.",
+        "El repetă în cele trei feluri.",
+        "Voi spuneți un loc, el alege vocea: „La bibliotecă? În curte? Când doarme bebe?”",
+        "Întrebați: „De ce vorbim încet la bibliotecă?”"
+      ],
+      "gata_cand": "A folosit cele trei voci și a potrivit vocea cu cel puțin 2 locuri.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Vocea după emoție: vesel, supărat, obosit.",
+      "provocare": "Ursulețul vorbește prea tare la culcare: „Cum îi explici?” El îi spune ursului regula și motivul."
     },
     {
       "id": "s3-2-3-z3-resurse",
@@ -853,20 +980,23 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "resurse",
-      "titlu": "Oprim muzica — gata",
-      "durata_min": 3,
+      "titlu": "Când oprim muzica?",
+      "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "telefon sau difuzor cu adult"
+        "telefonul sau difuzorul adultului"
       ],
       "pasi": [
-        "Apăsați împreună oprirea: „Oprit.”",
-        "Puneți aparatul deoparte: „La loc.”",
-        "Dacă vrea: alegeți să lăsați liniștea încă 10 secunde."
+        "Întrebați: „Cât ascultăm? Un cântec sau două?”",
+        "Oprește el la final (cu adult).",
+        "Pune aparatul la locul lui.",
+        "Întrebați: „Ce facem acum, după muzică?”"
       ],
-      "gata_cand": "Muzica e oprită.",
+      "gata_cand": "A respectat numărul de cântece stabilit și a oprit muzica.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Volumul: „Dăm puțin mai încet.”",
+      "provocare": "„Cine din casă vrea liniște acum? Cum știm?” (bunica citește, bebe doarme)."
     },
     {
       "id": "s3-2-3-z3-social",
@@ -875,18 +1005,23 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "social",
-      "titlu": "Cântec scurt cu familia",
-      "durata_min": 5,
+      "titlu": "Cântecul cu mișcări care se adaugă",
+      "durata_min": 8,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Cântați un refren cunoscut aproximativ un minut.",
-        "Nu forțați să cânte; poate doar asculta.",
-        "Dacă vrea: el alege cântecul dintre două pe care le știți."
+      "materiale": [
+        "un cântec cunoscut al familiei"
       ],
-      "gata_cand": "Ați împărtășit un cântec scurt.",
+      "pasi": [
+        "Cântați împreună un refren cunoscut.",
+        "Adăugați o mișcare pentru un cuvânt (la „soare”, mâinile sus).",
+        "La a doua strofă, mai adăugați o mișcare; el ține minte amândouă.",
+        "El inventează a treia mișcare."
+      ],
+      "gata_cand": "A ținut minte cel puțin 2 mișcări legate de cuvinte din cântec.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Cântecul cântat tot mai repede.",
+      "provocare": "Cântec fără un cuvânt: în locul cuvântului facem doar mișcarea."
     },
     {
       "id": "s3-2-3-z4-fizic",
@@ -895,18 +1030,24 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "fizic",
-      "titlu": "Sărituri pe bătăi",
-      "durata_min": 4,
+      "titlu": "Sărim după numărul de bătăi",
+      "durata_min": 8,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Bateți din palme; o săritură mică (cu sprijin dacă e nevoie).",
-        "2–4 repetări, apoi pauză.",
-        "Dacă vrea: el bate din palme, voi săriți o dată."
+      "materiale": [
+        "palmele"
       ],
-      "gata_cand": "Ați legat bătaia de o săritură pe scurt.",
+      "pasi": [
+        "Bateți o dată: o săritură. De două ori: două sărituri.",
+        "Creșteți până la 3.",
+        "El bate, voi săriți.",
+        "Încheiați cu o săritură foarte mică și una foarte mare."
+      ],
+      "gata_cand": "A făcut atâtea sărituri câte bătăi a auzit, de cel puțin 3 ori.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Bătaie tare înseamnă săritură mare, bătaie încet înseamnă săritură mică.",
+      "provocare": "Regula pe dos: o bătaie înseamnă două sărituri, două bătăi o săritură.",
+      "siguranta": "Pe covor sau iarbă, fără sărituri de pe înălțime."
     },
     {
       "id": "s3-2-3-z4-mental",
@@ -915,18 +1056,24 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "mental",
-      "titlu": "Pasăre sau mașină?",
-      "durata_min": 5,
+      "titlu": "Sunetele de afară, în categorii",
+      "durata_min": 10,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Ascultați afară sau din memorie: „Pasăre? Mașină?”",
-        "Arătați direcția sunetului dacă e real.",
-        "Dacă vrea: clasificați un al treilea sunet (voce, vânt)."
+      "materiale": [
+        "fereastra sau curtea; un carton cu 3 desene (pasăre, mașină, om)"
       ],
-      "gata_cand": "Ați denumit cel puțin un sunet din afară.",
+      "pasi": [
+        "Ascultați 2 minute afară. La fiecare sunet, întrebați: „Cine face sunetul?”",
+        "Puneți câte o pietricică mare pe desenul potrivit (pasăre, mașină, om).",
+        "Întrebați: „Ce am auzit cel mai des?”",
+        "Sunetul care nu încape: „Vântul. Unde-l punem?”"
+      ],
+      "gata_cand": "A clasificat cel puțin 4 sunete în categorii.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Sunete de animale și sunete de mașini: „Care sunt mai multe azi?”",
+      "provocare": "„Ce sunete am auzi într-un oraș mare? Dar în pădure?” Comparați.",
+      "siguranta": "Pietricele mai mari de 3,17 cm."
     },
     {
       "id": "s3-2-3-z4-resurse",
@@ -935,20 +1082,24 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "resurse",
-      "titlu": "Închidem ușa încet",
-      "durata_min": 3,
+      "titlu": "Ușa care nu trântește",
+      "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "ușă"
+        "o ușă"
       ],
       "pasi": [
-        "Închideți fără trântit: „Încet. Liniște.”",
-        "Arătați diferența față de un zgomot tare (voi modelați blând).",
-        "Dacă vrea: el împinge ușa ultimele centimetri cu ajutor."
+        "Închideți ușa tare (o singură dată, ca demonstrație) și apoi încet: „Ce diferență auzi?”",
+        "Închide el încet.",
+        "Întrebați: „De ce închidem încet?”",
+        "Când pleacă din cameră, închide singur încet."
       ],
-      "gata_cand": "Ușa e închisă încet.",
+      "gata_cand": "A închis ușa încet și a spus de ce.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Sertarul la fel: tare și încet.",
+      "provocare": "„Cum ieșim din cameră fără să-l trezim pe tata?” Planifică el ieșirea în liniște.",
+      "siguranta": "Degetele departe de balamale."
     },
     {
       "id": "s3-2-3-z4-social",
@@ -957,18 +1108,23 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "social",
-      "titlu": "Rândul la sunet",
-      "durata_min": 4,
+      "titlu": "Ecou: eu spun, tu răspunzi",
+      "durata_min": 6,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Voi faceți un sunet: „Acum eu.”",
-        "Apoi: „Acum tu” — așteptați.",
-        "Dacă vrea: încă un schimb, apoi gata."
+      "materiale": [
+        "niciunul"
       ],
-      "gata_cand": "Ați schimbat rândul la un sunet.",
+      "pasi": [
+        "Spuneți un sunet sau un cuvânt; el repetă ca un ecou.",
+        "Creșteți la o propoziție scurtă.",
+        "Schimbați: spune el, voi faceți ecoul.",
+        "Faceți ecoul „greșit” o dată: „Ce n-am spus bine?”"
+      ],
+      "gata_cand": "A repetat cel puțin 3 propoziții scurte și a observat greșeala.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Ecoul în șoaptă.",
+      "provocare": "Ecoul cu o schimbare: el spune „pisica mare”, voi spuneți „pisica mică”, el găsește diferența și o inventează pe următoarea."
     },
     {
       "id": "s3-2-3-z5-fizic",
@@ -977,18 +1133,23 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "fizic",
-      "titlu": "Mers pe vârfuri — încercare",
-      "durata_min": 4,
+      "titlu": "Pași de pisică, pași de urs",
+      "durata_min": 8,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Arătați mers ușor pe câțiva pași.",
-        "Spuneți: „Pași liniștiți.”",
-        "Dacă vrea: comparați cu pași apăsați pe hol."
+      "materiale": [
+        "holul; podeaua de lemn sau pietrișul"
       ],
-      "gata_cand": "A încercat pași mai liniștiți.",
+      "pasi": [
+        "Mergeți ca pisica, fără zgomot, apoi ca ursul, apăsat.",
+        "Întrebați: „Cum faci pașii să nu se audă?”",
+        "Joc: voi stați cu ochii închiși, el se apropie ca pisica. Dacă îl auziți, o luați de la capăt.",
+        "Schimbați rolurile."
+      ],
+      "gata_cand": "A ajuns la voi cel puțin o dată fără să fie auzit.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Pe două suprafețe: „Unde e mai ușor să mergi fără zgomot?”",
+      "provocare": "Pisica duce ceva în mână (o pernă) fără zgomot."
     },
     {
       "id": "s3-2-3-z5-mental",
@@ -997,18 +1158,24 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "mental",
-      "titlu": "Trei sunete din casă",
-      "durata_min": 5,
+      "titlu": "Perechile de sunete",
+      "durata_min": 10,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Numeți trei surse: frigider, apă, voce (ce aveți).",
-        "Arătați fiecare pe scurt.",
-        "Dacă vrea: el alege care sunet îi place cel mai mult."
+      "materiale": [
+        "6 recipiente identice, opace, cu capac lipit (două cu orez, două cu fasole, două goale) sau cilindrii sonori"
       ],
-      "gata_cand": "Ați numit trei sunete din casă.",
+      "pasi": [
+        "Scuturați două recipiente: „Sună la fel?”",
+        "El caută perechea fiecărui sunet.",
+        "Verificați deschizând doar recipientele voastre de control (sau întorcând cilindrii, dacă au semn dedesubt).",
+        "Întrebați: „Cum ai știut care e perechea?”"
+      ],
+      "gata_cand": "A găsit cel puțin 2 perechi de sunete.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Toate trei perechile.",
+      "provocare": "Ordonați recipientele de la cel mai tare la cel mai încet sunet.",
+      "siguranta": "Capacele lipite bine; orezul și fasolea nu ajung la el."
     },
     {
       "id": "s3-2-3-z5-resurse",
@@ -1017,20 +1184,23 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "resurse",
-      "titlu": "Telefonul pe silențios (exemplu)",
-      "durata_min": 3,
+      "titlu": "Ora liniștită a casei",
+      "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "telefon adult"
+        "telefonul adultului; o lumină"
       ],
       "pasi": [
-        "Puneți telefonul pe silențios vizibil: „Acum liniște la telefon.”",
-        "Arătați că nu mai sună.",
-        "Dacă vrea: așezați telefonul pe locul lui de pe masă."
+        "Spuneți: „Acum e ora liniștită. Ce facem ca să fie liniște?”",
+        "Face el o listă: telefonul pe silențios, muzica oprită, ușa închisă încet.",
+        "Verifică el fiecare lucru.",
+        "Întrebați: „Ce se aude acum?”"
       ],
-      "gata_cand": "Telefonul e pe silențios și deoparte.",
+      "gata_cand": "A propus și a verificat cel puțin 2 lucruri pentru liniște.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Pune el telefonul pe silențios cu voi (arătat, fără să-l folosească).",
+      "provocare": "„Ce sunet nu putem opri?” (frigiderul, vântul). Discutați."
     },
     {
       "id": "s3-2-3-z5-social",
@@ -1039,18 +1209,23 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "social",
-      "titlu": "Salut pe voce blândă",
-      "durata_min": 3,
+      "titlu": "Salutul cu vocea potrivită",
+      "durata_min": 5,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Spuneți: „Bună!” cu zâmbet, voce blândă.",
-        "Așteptați privirea sau răspunsul.",
-        "Dacă vrea: el alege voce tare sau blândă pentru salut."
+      "materiale": [
+        "niciunul"
       ],
-      "gata_cand": "Ați schimbat un salut blând.",
+      "pasi": [
+        "Întrebați: „Cum îl saluți pe bebe care doarme? Dar pe tata, care e departe în curte?”",
+        "Salută el pe fiecare în felul potrivit.",
+        "Voi salutați greșit (strigați lângă cineva care doarme): „Am făcut bine?”",
+        "El vă corectează și arată cum."
+      ],
+      "gata_cand": "A potrivit vocea cu situația de cel puțin 2 ori.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Salut fără voce (doar cu mâna) pentru cineva care vorbește la telefon.",
+      "provocare": "Inventează el o situație nouă și vocea potrivită."
     },
     {
       "id": "s3-2-3-z6-fizic",
@@ -1059,20 +1234,23 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "fizic",
-      "titlu": "Pași pe pietriș sau iarbă",
-      "durata_min": 6,
+      "titlu": "Drumul sunetelor: pietriș, iarbă, frunze",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "curte"
+        "curtea cu suprafețe diferite"
       ],
       "pasi": [
-        "Pășiți pe două suprafețe care sună diferit.",
-        "„Auzi? Diferit.”",
-        "Dacă vrea: alegeți suprafața preferată și rămâneți 15 secunde."
+        "Mergeți pe pietriș, pe iarbă, pe frunze uscate: „Cum sună fiecare?”",
+        "El închide ochii; voi pășiți pe o suprafață: „Unde merg?”",
+        "Schimbați rolurile.",
+        "Întrebați: „Pe unde ai merge ca să nu te audă nimeni?”"
       ],
-      "gata_cand": "A auzit diferența de pași pe două suprafețe.",
+      "gata_cand": "A recunoscut cel puțin 2 suprafețe după sunet.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Cuvinte pentru sunete: „scârțâie”, „foșnește”, „scrâșnește”.",
+      "provocare": "Un traseu pe care trebuie să-l facă fără zgomot (alegerea suprafețelor e a lui)."
     },
     {
       "id": "s3-2-3-z6-mental",
@@ -1081,18 +1259,24 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "mental",
-      "titlu": "Vântul se aude?",
-      "durata_min": 4,
+      "titlu": "Detectivul de vânt",
+      "durata_min": 10,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Stați 15 secunde afară sau la fereastră.",
-        "„Vânt.” sau „Liniște.” — spuneți ce e adevărat.",
-        "Dacă vrea: clasificați: vânt / pasăre / liniște."
+      "materiale": [
+        "o panglică sau o pungă de plastic legată de un băț; fereastra sau curtea"
       ],
-      "gata_cand": "Ați hotărât împreună ce ați auzit.",
+      "pasi": [
+        "Ascultați 15 secunde: „Se aude vântul?”",
+        "Ieșiți cu panglica: „Cum știm că bate vântul, chiar dacă nu-l auzim?”",
+        "Comparați: panglica la adăpost de zid și în mijlocul curții.",
+        "Întrebați: „Unde bate vântul mai tare? De ce?”"
+      ],
+      "gata_cand": "A folosit panglica pentru a verifica vântul și a comparat două locuri.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Ce alte lucruri mișcă vântul (frunze, rufe)?",
+      "provocare": "„Cum facem un lucru care cântă când bate vântul?” (clopoței, o sticlă). Încercați o idee.",
+      "siguranta": "Panglica scurtă, fără sfoară lungă la gât."
     },
     {
       "id": "s3-2-3-z6-resurse",
@@ -1101,22 +1285,24 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "resurse",
-      "titlu": "Piatră liniștită față de jucăria sonoră",
-      "durata_min": 4,
+      "titlu": "Ce sună și ce nu: sortăm",
+      "durata_min": 6,
       "mod_default": "A",
       "materiale": [
-        "piatră",
-        "jucărie sonoră",
-        "cutie"
+        "6 obiecte (piatră mare, clopoțel, cutie cu orez lipită, burete, lingură de metal, pernă); o cutie"
       ],
       "pasi": [
-        "Comparați: piatra nu sună, jucăria sună.",
-        "Puneți ambele la loc după: „La loc.”",
-        "Dacă vrea: alegeți pe care o țineți 5 secunde."
+        "Scutură el fiecare obiect: „Sună?”",
+        "Sortează în două grămezi: „sună” și „nu sună”.",
+        "Întrebați: „Cum facem buretele să sune?” Încearcă el.",
+        "Strânge totul în cutie, la loc."
       ],
-      "gata_cand": "Ambele obiecte sunt la loc după comparație.",
+      "gata_cand": "A sortat obiectele după sunet și a strâns cutia.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Sortare după două reguli: sună / nu sună și tare / moale.",
+      "provocare": "Încercați cu o lingură: „Acum sună piatra? Dar perna?” Cum s-a schimbat regula?",
+      "siguranta": "Obiectele mai mari de 3,17 cm; cutia cu orez lipită bine."
     },
     {
       "id": "s3-2-3-z6-social",
@@ -1125,18 +1311,24 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "social",
-      "titlu": "Comentăm sunetele lui",
-      "durata_min": 5,
+      "titlu": "Orchestra familiei",
+      "durata_min": 10,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Joacă paralel: comentați sunetele pe care le face el.",
-        "Nu preluați jocul.",
-        "Dacă vrea: imitați o dată sunetul lui, apoi lăsați-l pe el."
+      "materiale": [
+        "instrumente sau obiecte de casă (oală, lingură de lemn, cutie cu orez lipită)"
       ],
-      "gata_cand": "Ați comentat fără a prelua jocul.",
+      "pasi": [
+        "Fiecare alege un instrument.",
+        "El e dirijorul: arată cine cântă și când.",
+        "Încercați: tare, încet, toți împreună, câte unul.",
+        "La final, întrebați: „Cum a sunat cel mai frumos?”"
+      ],
+      "gata_cand": "A condus orchestra cu semne, cel puțin 3 schimbări.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Un instrument cântă doar când dirijorul arată spre el.",
+      "provocare": "Povestea cântată: el spune o poveste scurtă, iar fiecare instrument e un personaj.",
+      "siguranta": "Instrumentele DIY bine închise."
     },
     {
       "id": "s3-2-3-z7-fizic",
@@ -1145,18 +1337,23 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "fizic",
-      "titlu": "Plimbare liberă cu urechile deschise",
-      "durata_min": 6,
+      "titlu": "Plimbarea cu urechile ciulite",
+      "durata_min": 10,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "El dictează ritmul; voi numiți sunete dacă apar.",
-        "Fără grabă, fără test.",
-        "Dacă vrea: reveniți la locul cel mai liniștit al săptămânii."
+      "materiale": [
+        "curtea"
       ],
-      "gata_cand": "A mers liber; sunetele au fost numite blând.",
+      "pasi": [
+        "El conduce; la fiecare oprire, ascultați 10 secunde.",
+        "Spune ce aude și de unde vine.",
+        "Revine la locul cel mai liniștit al săptămânii.",
+        "Întrebați: „De ce e liniște aici?”"
+      ],
+      "gata_cand": "A condus plimbarea și a numit sunetele la cel puțin 2 opriri.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Cel mai zgomotos loc: „De ce e zgomot aici?”",
+      "provocare": "„Unde ne-am ascunde, ca să nu ne audă nimeni?” Alege el și explică."
     },
     {
       "id": "s3-2-3-z7-mental",
@@ -1165,20 +1362,23 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "mental",
-      "titlu": "Carte liniștită",
-      "durata_min": 5,
+      "titlu": "Cartea cu sunete: o citim și o continuăm",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "carte"
+        "„Mergem la vânătoare de urși” sau altă carte cu multe sunete"
       ],
       "pasi": [
-        "Răsfoiți încet, fără ecran.",
-        "Șoptiți cuvintele dacă citiți.",
-        "Dacă vrea: alegeți cartea favorită a săptămânii."
+        "Citiți cartea și faceți împreună sunetele („fâș-fâș”, „pleosc-pleosc”).",
+        "La pagina următoare, întrebați: „Ce sunet urmează?”",
+        "El face sunetele singur la o recitire.",
+        "Întrebați: „Ce sunet ți-a plăcut cel mai mult săptămâna asta?”"
       ],
-      "gata_cand": "Ați răsfoit o carte în liniște.",
+      "gata_cand": "A ghicit cel puțin un sunet care urmează și a făcut sunetele singur.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Ordinea locurilor din carte (iarbă, râu, noroi…).",
+      "provocare": "Inventează el un loc nou în carte și sunetul lui."
     },
     {
       "id": "s3-2-3-z7-resurse",
@@ -1187,20 +1387,23 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "resurse",
-      "titlu": "Lumina stinsă încet",
-      "durata_min": 3,
+      "titlu": "Stingem lumina după plan",
+      "durata_min": 4,
       "mod_default": "A",
       "materiale": [
-        "întrerupător cu adult"
+        "întrerupătorul, cu adult"
       ],
       "pasi": [
-        "Stingeți cu adult: „Stins. Liniște.”",
-        "Respirați o dată împreună.",
-        "Dacă vrea: aprindeți iar puțin, apoi stingeți — ritual."
+        "Întrebați: „Ce facem înainte să stingem lumina?” (jucăriile la loc, apă, baie).",
+        "Face el lista în ordine și o urmează.",
+        "Stinge lumina cu voi.",
+        "Respirați împreună de trei ori."
       ],
-      "gata_cand": "Lumina e stinsă blând.",
+      "gata_cand": "A spus și a urmat un plan de 2–3 pași înainte de a stinge lumina.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Lumina de veghe: „O lăsăm aprinsă sau stinsă? De ce?”",
+      "provocare": "Planul pentru mâine dimineață, spus de el în 3 pași."
     },
     {
       "id": "s3-2-3-z7-social",
@@ -1209,18 +1412,23 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "social",
-      "titlu": "Noapte bună șoptit",
-      "durata_min": 3,
+      "titlu": "Noapte bună, în șoaptă, cu sunetul zilei",
+      "durata_min": 4,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Șoaptă: „Noapte bună.”",
-        "Calm, fără grabă.",
-        "Dacă vrea: reamintiți sunetul preferat al săptămânii într-un cuvânt."
+      "materiale": [
+        "lumină mică"
       ],
-      "gata_cand": "Ați închis ziua în șoaptă.",
+      "pasi": [
+        "Șoptiți: „Noapte bună.”",
+        "Întrebați în șoaptă: „Ce sunet ți-a plăcut azi?”",
+        "Îl imită el, foarte încet.",
+        "Îmbrățișare doar dacă vrea."
+      ],
+      "gata_cand": "A ales și a imitat încet un sunet al zilei.",
       "tema_saptamana": "Sunete și liniște",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Un sunet pe care l-ați auzit amândoi.",
+      "provocare": "„Ce sunete se aud noaptea?” Ascultați împreună 10 secunde."
     },
     {
       "id": "s4-2-3-z1-fizic",
@@ -1229,18 +1437,23 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "fizic",
-      "titlu": "Deschide și strânge pumnul",
-      "durata_min": 4,
+      "titlu": "Gimnastica degetelor",
+      "durata_min": 8,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Arătați: deschideți palma, apoi strângeți pumnul. De 3 ori.",
-        "Spuneți: „Deschis. Strâns.”",
-        "Dacă vrea: alegeți mâna dreaptă sau stângă pentru încă o rundă."
+      "materiale": [
+        "niciunul"
       ],
-      "gata_cand": "A imitat sau a privit deschis / strâns.",
+      "pasi": [
+        "Faceți împreună: pumn, palmă deschisă, degetele „merg” pe masă.",
+        "Fiecare deget salută pe rând: „Bună, degetul mare!”",
+        "Încercați să ridicați un singur deget, apoi două.",
+        "El inventează o mișcare nouă pentru degete."
+      ],
+      "gata_cand": "A făcut cel puțin 3 mișcări diferite cu degetele și a inventat una.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Cântecul cu degete („Degetul mare a mers la piață…”), cu mișcări.",
+      "provocare": "Imitați o formă cu mâinile (un iepure, o casă, o pasăre), el ghicește, apoi el face una pentru voi."
     },
     {
       "id": "s4-2-3-z1-mental",
@@ -1249,18 +1462,23 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "mental",
-      "titlu": "Numește degete și acțiuni",
-      "durata_min": 5,
+      "titlu": "Ce face mâna? Verbe în acțiune",
+      "durata_min": 10,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Arătați: „Mână. Deget.” Atingeți-i palma blând.",
-        "Spuneți: „Mână.” pe palma voastră.",
-        "Dacă vrea: numiți un deget: „Acesta e degetul mare.”"
+      "materiale": [
+        "un coș cu 5 obiecte (cană, minge, burete, cutie cu capac, carte)"
       ],
-      "gata_cand": "A auzit etichetele mână / deget.",
+      "pasi": [
+        "Luați un obiect și întrebați: „Ce poate face mâna cu el?” (apucă, strânge, deschide, întoarce, aruncă).",
+        "El face acțiunea și o numește: „Strâng buretele.”",
+        "Voi spuneți o acțiune, el alege obiectul potrivit: „Ceva ce putem deschide.”",
+        "Întrebați: „Ce nu poate face mâna?” (zbura, mirosi)."
+      ],
+      "gata_cand": "A numit și a făcut cel puțin 4 acțiuni diferite ale mâinii.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Două acțiuni la rând: „Deschide cutia și pune mingea înăuntru.”",
+      "provocare": "Trei acțiuni la rând, spuse o singură dată: „Ia cartea, întoarce o pagină, apoi pune-o pe raft.”"
     },
     {
       "id": "s4-2-3-z1-resurse",
@@ -1269,20 +1487,24 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "resurse",
-      "titlu": "Capacul pe cutie — la loc",
-      "durata_min": 4,
+      "titlu": "Capace și cutii: potrivirea",
+      "durata_min": 6,
       "mod_default": "A",
       "materiale": [
-        "cutie cu capac mare"
+        "4–5 cutii și borcane de plastic cu capace diferite"
       ],
       "pasi": [
-        "Puneți capacul împreună: „Capac. La loc.”",
-        "Fără frustrare — ajutați cât trebuie.",
-        "Dacă vrea: alegeți cutia mare sau cea mică."
+        "Amestecați capacele lângă cutii: „Care capac e al cui?”",
+        "Încearcă el; voi întrebați „Se potrivește? Cum știi?”",
+        "Închide toate cutiile și le pune pe raft.",
+        "Întrebați: „Care a fost cel mai greu de închis? De ce?”"
       ],
-      "gata_cand": "Capacul e pe cutie.",
+      "gata_cand": "A potrivit cel puțin 3 capace cu cutiile lor.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Ordonați cutiile de la cea mai mică la cea mai mare.",
+      "provocare": "Un capac care nu are cutie: „Ce lipsește? Unde o căutăm?”",
+      "siguranta": "Doar recipiente de plastic; fără sticlă."
     },
     {
       "id": "s4-2-3-z1-social",
@@ -1291,18 +1513,23 @@
       "zi": 1,
       "zi_nume": "Luni",
       "pilon": "social",
-      "titlu": "Arată ce ai făcut cu mâna",
-      "durata_min": 3,
+      "titlu": "Arăt și explic ce am făcut",
+      "durata_min": 6,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "După gest, arătați adultului: „Uite mâna mea!”",
-        "Aplauze blânde dacă vrea.",
-        "Dacă vrea: el arată din nou cuiva din casă."
+      "materiale": [
+        "ceva făcut de el azi (un turn, un desen, un aluat)"
       ],
-      "gata_cand": "A arătat gestul adultului.",
+      "pasi": [
+        "Duceți-vă împreună la cineva din familie: „Arată-i ce ai făcut.”",
+        "Întrebați: „Cum l-ai făcut?” El explică pașii.",
+        "Persoana pune o întrebare.",
+        "Încheiați: „Ce ți-a fost cel mai greu?”"
+      ],
+      "gata_cand": "A arătat ce a făcut și a explicat cel puțin 2 pași.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "„Ce ai face altfel data viitoare?”",
+      "provocare": "Îl învață pe celălalt să facă la fel, pas cu pas."
     },
     {
       "id": "s4-2-3-z2-fizic",
@@ -1311,21 +1538,24 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "fizic",
-      "titlu": "Două unelte pe treabă reală",
-      "durata_min": 6,
+      "titlu": "Bucătarul: unelte potrivite pentru treabă",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "lingură de lemn",
-        "cârpă (sau 2 unelte sigure)"
+        "o lingură de lemn, un tel, o lingură mare, un burete; un bol cu făină și apă (sau orez)"
       ],
       "pasi": [
-        "Alegeți două unelte sigure de bucătărie sau casă.",
-        "Amestecați scurt în bol gol sau ștergeți masa: treabă reală 1–2 minute.",
-        "Dacă vrea: alegeți unealta a doua după ce ați terminat cu prima."
+        "Arătați uneltele: „Cu ce amestecăm? Cu ce ștergem? Cu ce mutăm?”",
+        "Face el o treabă reală cu fiecare (amestecă, mută orezul, șterge masa).",
+        "Întrebați: „De ce nu ștergem cu telul?”",
+        "Alege el unealta pentru o treabă nouă."
       ],
-      "gata_cand": "A folosit cel puțin o unealtă pe treabă reală.",
+      "gata_cand": "A folosit cel puțin 3 unelte pentru treaba potrivită și a explicat o alegere.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Ordinea: întâi amestecăm, apoi turnăm, apoi ștergem.",
+      "provocare": "Unealta lipsă: „Nu avem lingură. Cu ce mutăm orezul?” Găsește el o alternativă.",
+      "siguranta": "Fără cuțite; orezul și făina rămân în bol, sub supraveghere."
     },
     {
       "id": "s4-2-3-z2-mental",
@@ -1334,20 +1564,24 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "mental",
-      "titlu": "Ce face mâna? Apasă, trage",
-      "durata_min": 4,
+      "titlu": "Apăs, trag, răsucesc: cum se deschide?",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "sertar sau ușă ușoară"
+        "o placă sau o cutie cu 3–4 închideri (zăvor, buton, capac cu filet, fermoar) sau obiecte din casă"
       ],
       "pasi": [
-        "Arătați: „Apăs.” pe un buton sau întrerupător cu adult.",
-        "„Trag.” pe un sertar ușor.",
-        "Dacă vrea: spuneți: „Deschis.” când deschideți sertarul."
+        "Arătați 3 lucruri care se deschid diferit: sertar (tragi), borcan (răsucești), întrerupător (apeși).",
+        "Întrebați la fiecare: „Cum crezi că se deschide?”",
+        "Încearcă el și spune verbul: „Răsucesc.”",
+        "Întrebați: „Care a fost cel mai greu? De ce?”"
       ],
-      "gata_cand": "A văzut două acțiuni ale mâinii.",
+      "gata_cand": "A deschis cel puțin 3 lucruri și a numit corect cum se deschide fiecare.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Sortați obiectele din casă: „se deschid trăgând” și „se deschid răsucind”.",
+      "provocare": "O ascunzătoare cu încuietoare (o cutie cu zăvor) cu o surpriză înăuntru: „Cum ajungi la ea?” Rezolvă el.",
+      "siguranta": "Fără mecanisme care prind degetele; încuietori mari."
     },
     {
       "id": "s4-2-3-z2-resurse",
@@ -1356,21 +1590,23 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "resurse",
-      "titlu": "Uneltele la loc după",
-      "durata_min": 4,
+      "titlu": "Fiecare unealtă la locul ei",
+      "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "2 unelte",
-        "locul lor"
+        "uneltele de ieri; un suport sau sertar cu loc fix"
       ],
       "pasi": [
-        "După treabă, luați uneltele.",
-        "Puneți-le la loc: „Lingura la loc. Cârpa la loc.”",
-        "Dacă vrea: el alege care unealtă merge prima."
+        "Întrebați: „Unde stă telul? Dar lingura de lemn?”",
+        "Le spală el sub jet (cu voi), le șterge.",
+        "Le pune la loc.",
+        "Întrebați: „De ce le spălăm înainte să le punem la loc?”"
       ],
-      "gata_cand": "Uneltele sunt pe locul lor.",
+      "gata_cand": "A spălat, a șters și a pus la loc cel puțin 2 unelte.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Le așază după mărime.",
+      "provocare": "„Dacă punem telul ud în sertar, ce se întâmplă?” Discutați."
     },
     {
       "id": "s4-2-3-z2-social",
@@ -1379,18 +1615,23 @@
       "zi": 2,
       "zi_nume": "Marți",
       "pilon": "social",
-      "titlu": "Ținem mâna pe rând",
-      "durata_min": 3,
+      "titlu": "Mâna care ajută",
+      "durata_min": 6,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Oferiți mâna: „Vrei să ținem?” — nu forțați.",
-        "Dacă acceptă, țineți 10 secunde, apoi eliberați.",
-        "Dacă vrea: schimbați: acum el „oferă” mâna."
+      "materiale": [
+        "o treabă pentru doi (cărat un coș, întins un cearșaf)"
       ],
-      "gata_cand": "Ați oferit ținerea mâinii fără forțare.",
+      "pasi": [
+        "Spuneți: „Asta nu pot face singur. Mă ajuți?”",
+        "Lucrați împreună: el ține de un capăt, voi de celălalt.",
+        "Întrebați: „Cum ne-am ajutat?”",
+        "Apoi el cere ajutor pentru o treabă a lui, cu propoziția lui."
+      ],
+      "gata_cand": "A ajutat la o treabă în doi și a cerut ajutor cu o propoziție.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Coordonare: „La trei, ridicăm împreună.”",
+      "provocare": "Întrebați: „Cine din casă are nevoie de ajutor acum? Cum îl ajutăm?” El caută și propune."
     },
     {
       "id": "s4-2-3-z3-fizic",
@@ -1399,20 +1640,24 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "fizic",
-      "titlu": "Degete în aluat sau nisip",
-      "durata_min": 6,
+      "titlu": "Aluatul nostru, din rețetă",
+      "durata_min": 15,
       "mod_default": "A",
       "materiale": [
-        "aluat / plastilină / nisip în tavă"
+        "1 cană de făină, ½ cană de sare fină, ½ cană de apă, 1 lingură de ulei; un bol; tavă"
       ],
       "pasi": [
-        "Apăsați degetele în material: „Apăs. Urma degetului.”",
-        "Scoateți mâna: „Deschis.”",
-        "Dacă vrea: faceți două urme și comparați-le."
+        "Spuneți rețeta în 4 pași: „Făina, sarea, apa, frământăm.”",
+        "Toarnă el pe rând ingredientele (le măsurați voi).",
+        "Frământă el aluatul și spune ce simte: „lipicios”, „moale”.",
+        "Faceți urme: deget, palmă, o furculiță."
       ],
-      "gata_cand": "A apăsat cu degetele în material.",
+      "gata_cand": "A pus ingredientele în ordine și a frământat aluatul.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Forme: un șarpe lung, o bilă, o turtă.",
+      "provocare": "„Aluatul e prea lipicios. Ce adăugăm?” (făină). Lăsați-l să încerce soluția.",
+      "siguranta": "Aluatul nu se mănâncă (e foarte sărat); spălați mâinile după."
     },
     {
       "id": "s4-2-3-z3-mental",
@@ -1421,18 +1666,24 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "mental",
-      "titlu": "Degetul mare și celelalte",
-      "durata_min": 4,
+      "titlu": "Degetul mare: ce facem fără el?",
+      "durata_min": 10,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Arătați degetul mare: „Deget mare.”",
-        "Arătați celelalte: „Degete.”",
-        "Dacă vrea: spuneți: „Deget.” pe un deget arătat."
+      "materiale": [
+        "o bandă de hârtie sau un elastic moale; o lingură, un nasture mare, o cană"
       ],
-      "gata_cand": "A diferențiat degetul mare de celelalte.",
+      "pasi": [
+        "Arătați: „Degetul mare stă altfel decât celelalte.”",
+        "Lipiți ușor degetul mare de palmă cu bandă de hârtie (sau îl ține el lipit).",
+        "Încearcă să ia lingura, cana, nasturele: „E mai ușor sau mai greu?”",
+        "Întrebați: „La ce ne ajută degetul mare?”"
+      ],
+      "gata_cand": "A încercat cel puțin 2 apucări fără degetul mare și a spus ce s-a schimbat.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Care lucru a fost cel mai greu de luat fără degetul mare?",
+      "provocare": "„Ce animal n-are degete? Cum ia el mâncarea?” (pasărea cu ciocul, câinele cu gura).",
+      "siguranta": "Banda moale, scoasă imediat după; nasturele mai mare de 3,17 cm."
     },
     {
       "id": "s4-2-3-z3-resurse",
@@ -1441,21 +1692,23 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "resurse",
-      "titlu": "Plastilina în cutie",
-      "durata_min": 3,
+      "titlu": "Aluatul pus la păstrare",
+      "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "plastilină sau aluat",
-        "cutie"
+        "aluat; o cutie cu capac; o pungă"
       ],
       "pasi": [
-        "Strângeți materialul: „Ajunge.”",
-        "În cutie: „La loc.”",
-        "Dacă vrea: alegeți capacul închis sau doar cutia deschisă pe scurt."
+        "Întrebați: „Ce se întâmplă cu aluatul dacă îl lăsăm afară?”",
+        "Lasă el o bucățică pe tavă și pune restul în cutie.",
+        "A doua zi, comparați: „Care e moale? Care e tare?”",
+        "Pune el cutia la loc."
       ],
-      "gata_cand": "Materialul e strâns la loc.",
+      "gata_cand": "A pus aluatul în cutie și a comparat a doua zi cele două bucăți.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Spune el regula: „Aluatul stă în cutie, ca să rămână moale.”",
+      "provocare": "„Cum am putea face o bucată tare intenționat?” (o lăsăm la uscat, o coacem cu adult)."
     },
     {
       "id": "s4-2-3-z3-social",
@@ -1464,20 +1717,23 @@
       "zi": 3,
       "zi_nume": "Miercuri",
       "pilon": "social",
-      "titlu": "Arătăm urma adultului",
-      "durata_min": 4,
+      "titlu": "Expoziția de urme",
+      "durata_min": 6,
       "mod_default": "A",
       "materiale": [
-        "tavă cu urme"
+        "aluatul cu urme de ieri; o tavă"
       ],
       "pasi": [
-        "Arătați urma degetului cuiva din casă.",
-        "„Uite ce am făcut!”",
-        "Dacă vrea: adultul face o urmă lângă a lui — pe rând."
+        "Aranjează el urmele pe tavă.",
+        "Invită pe cineva la „expoziție”.",
+        "Persoana ghicește: „Ce urmă e asta?” El explică.",
+        "Adultul adaugă o urmă, el ghicește."
       ],
-      "gata_cand": "Ați arătat urma făcută.",
+      "gata_cand": "A explicat cel puțin 2 urme unui invitat.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Urmele în ordine: de la cea mai mică la cea mai mare.",
+      "provocare": "Urma misterioasă: o urmă făcută cu un obiect ascuns. „Cu ce am făcut-o?” Încearcă el pe aluat până găsește."
     },
     {
       "id": "s4-2-3-z4-fizic",
@@ -1486,21 +1742,24 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "fizic",
-      "titlu": "Scoatem și punem obiecte mici",
-      "durata_min": 5,
+      "titlu": "Transfer cu clește și lingură",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "bol",
-        "3 obiecte mari-suficient (nu înghițibile)"
+        "două boluri; 8 pomponi mari sau bile de lemn de 4 cm+; un clește de lemn; o lingură"
       ],
       "pasi": [
-        "Scoateți obiectele din bol cu mâna, unul câte unul.",
-        "Puneți-le înapoi: „Înăuntru.”",
-        "Dacă vrea: alegeți să sortați după culoare în două boluri."
+        "Mută el obiectele dintr-un bol în altul cu lingura.",
+        "Apoi cu clește.",
+        "Întrebați: „Cu care e mai repede? Cu care e mai ușor?”",
+        "Sortează la final după culoare, în două boluri."
       ],
-      "gata_cand": "A mutat obiectele cu mâna pe scurt.",
+      "gata_cand": "A mutat obiectele cu ambele unelte și le-a comparat.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Sortare după culoare în timpul transferului.",
+      "provocare": "Două criterii deodată: „Pomponii roșii cu clește în bolul albastru; bilele de lemn cu lingura în cel verde.”",
+      "siguranta": "Toate piesele mai mari de 3,17 cm; număr cunoscut de piese, numărate la final."
     },
     {
       "id": "s4-2-3-z4-mental",
@@ -1509,20 +1768,24 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "mental",
-      "titlu": "Câte degete țin obiectul?",
-      "durata_min": 4,
+      "titlu": "Cu toată mâna, cu două degete, cu clește",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "obiect ușor"
+        "6 obiecte (minge, cub de lemn, pompon mare, lingură, frunză mare, castană mare de 4 cm+); un clește de bucătărie din lemn"
       ],
       "pasi": [
-        "Țineți obiectul cu toată mâna, apoi cu două degete (modelați).",
-        "„Multe degete. Puține degete.”",
-        "Dacă vrea: el alege cum ține — toată mâna sau două degete."
+        "Încearcă el să ia fiecare obiect cu toată mâna, apoi cu două degete.",
+        "Întrebați: „Cu ce merge mai bine? De ce?”",
+        "Încearcă cu clește.",
+        "Sortează el obiectele: „cu toată mâna” și „cu două degete”."
       ],
-      "gata_cand": "A văzut două feluri de a ține.",
+      "gata_cand": "A încercat cel puțin 2 feluri de apucare și a sortat obiectele.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Mută 4 obiecte cu clește, dintr-un bol în altul.",
+      "provocare": "Un obiect alunecos (un cub de gheață mare într-un bol): „Cum îl iei?” Încearcă mai multe metode.",
+      "siguranta": "Obiecte mai mari de 3,17 cm; castanele doar cu adult."
     },
     {
       "id": "s4-2-3-z4-resurse",
@@ -1531,20 +1794,23 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "resurse",
-      "titlu": "Bolul pe raft după joacă",
-      "durata_min": 3,
+      "titlu": "Bolurile pe raft, în turn",
+      "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "bol"
+        "3–4 boluri de plastic de mărimi diferite"
       ],
       "pasi": [
-        "După joacă, duceți bolul la raft.",
-        "„Bolul la loc.”",
-        "Dacă vrea: ștergeți marginea bolului cu o cârpă înainte."
+        "Întrebați: „Cum punem bolurile ca să ocupe puțin loc?”",
+        "Încearcă el să le pună unul în altul.",
+        "Dacă nu merg, întrebați: „Care trebuie să fie dedesubt?”",
+        "Le duce pe raft."
       ],
-      "gata_cand": "Bolul e pe raft.",
+      "gata_cand": "A pus bolurile unul în altul, de la mare la mic, și le-a dus pe raft.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Bolurile și capacele lor potrivite.",
+      "provocare": "Un bol lipsă din serie: „Ce mărime lipsește?”"
     },
     {
       "id": "s4-2-3-z4-social",
@@ -1553,20 +1819,23 @@
       "zi": 4,
       "zi_nume": "Joi",
       "pilon": "social",
-      "titlu": "Dăm obiectul din mână în mână",
-      "durata_min": 4,
+      "titlu": "Ștafeta obiectului",
+      "durata_min": 6,
       "mod_default": "A",
       "materiale": [
-        "obiect ușor"
+        "un obiect ușor (o minge mică moale)"
       ],
       "pasi": [
-        "Dați obiectul: „Acum tu.”",
-        "Primiți înapoi: „Acum eu.” 2–3 schimburi.",
-        "Dacă vrea: inventați regula: „Întâi stânga, apoi dreapta.”"
+        "Dați obiectul din mână în mână, în cerc, cu familia.",
+        "Regula: „Îl dăm doar cu mâna dreaptă” (arătată, nu cerută ca etichetă).",
+        "Schimbați regula: „Acum îl dăm pe la spate.”",
+        "El inventează regula următoare."
       ],
-      "gata_cand": "Ați schimbat obiectul din mână în mână.",
+      "gata_cand": "A respectat cel puțin 2 reguli de transmitere și a inventat una.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Ștafetă cu cântec: când se oprește cântecul, cine are mingea spune un cuvânt.",
+      "provocare": "Două obiecte care circulă în direcții opuse."
     },
     {
       "id": "s4-2-3-z5-fizic",
@@ -1575,20 +1844,24 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "fizic",
-      "titlu": "Ștergem masa cu cârpa",
-      "durata_min": 5,
+      "titlu": "Spălăm masa ca un profesionist",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "cârpă umedă"
+        "o cârpă umedă; un pulverizator mic cu apă; un prosop uscat"
       ],
       "pasi": [
-        "Ștergeți împreună o zonă mică de pe masă.",
-        "Mișcări scurte cu mâna: „Ștergem.”",
-        "Dacă vrea: alegeți zona — colțul lui sau mijlocul."
+        "Spuneți ordinea: „Pulverizăm, ștergem, uscăm.”",
+        "Face el fiecare pas.",
+        "Întrebați: „E curat? Cum verificăm?” (cu palma, cu ochii de aproape).",
+        "Șterge el și scaunele."
       ],
-      "gata_cand": "A șters pe scurt cu cârpa.",
+      "gata_cand": "A făcut cei 3 pași în ordine și a verificat rezultatul.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Ștergere în linii, de la un capăt la altul, ca să nu sară vreo bucată.",
+      "provocare": "O pată lipicioasă (puțină miere): „Nu se ia cu apă. Ce încercăm?” (apă caldă, săpun).",
+      "siguranta": "Doar apă în pulverizator, fără detergenți."
     },
     {
       "id": "s4-2-3-z5-mental",
@@ -1597,18 +1870,23 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "mental",
-      "titlu": "Mâna stângă, mâna dreaptă",
-      "durata_min": 4,
+      "titlu": "Mâna asta și mâna cealaltă",
+      "durata_min": 8,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Arătați: „Mâna asta. Mâna cealaltă.” (fără a forța etichete stânga/dreapta).",
-        "Puneți un obiect pe o mână: „Pe mâna aceasta.”",
-        "Dacă vrea: spuneți: „Mână.” pe ambele pe rând."
+      "materiale": [
+        "un ceas sau o brățară (pentru o mână); o mănușă"
       ],
-      "gata_cand": "A diferențiat cele două mâini pe scurt.",
+      "pasi": [
+        "Puneți brățara pe o mână: „Mâna cu brățara e mâna asta.”",
+        "Jucați: „Ridică mâna cu brățara. Acum cealaltă.”",
+        "Puneți mănușa pe mâna fără brățară.",
+        "Întrebați: „Care mână are brățara și care mănușa?”"
+      ],
+      "gata_cand": "A arătat corect mâna cerută, după semn, de cel puțin 3 ori.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Introducem cuvintele „dreapta” și „stânga”, doar dacă e interesat; fără verificare.",
+      "provocare": "Oglinda: stați față în față. „Ridic mâna cu brățara. Tu care ridici?” (pentru un copil de 2 ani e greu; e un joc, nu un test)."
     },
     {
       "id": "s4-2-3-z5-resurse",
@@ -1617,20 +1895,23 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "resurse",
-      "titlu": "Cârpa la uscat — la loc",
-      "durata_min": 3,
+      "titlu": "Cârpa la uscat: unde se usucă mai repede?",
+      "durata_min": 6,
       "mod_default": "A",
       "materiale": [
-        "cârpă"
+        "două cârpe ude"
       ],
       "pasi": [
-        "După șters, puneți cârpa la uscat pe locul ei.",
-        "„Cârpa la loc.”",
-        "Dacă vrea: alegeți cârligul sau marginea chiuvetei."
+        "Întrebați: „Unde punem cârpa să se usuce?”",
+        "El pune o cârpă la soare și una la umbră (sau una întinsă și una mototolită).",
+        "Verificați după o oră: „Care e mai uscată?”",
+        "Întrebați: „De ce?”"
       ],
-      "gata_cand": "Cârpa e pe locul de uscat.",
+      "gata_cand": "A pus cârpele în două locuri și a comparat după o oră.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Întinsă și mototolită, ambele la soare.",
+      "provocare": "„Cum ar trebui să întindem rufele, ca să se usuce repede?” Spune el regula."
     },
     {
       "id": "s4-2-3-z5-social",
@@ -1639,20 +1920,23 @@
       "zi": 5,
       "zi_nume": "Vineri",
       "pilon": "social",
-      "titlu": "Ajutor: ștergem împreună",
-      "durata_min": 4,
+      "titlu": "Mă ajuți? Te ajut!",
+      "durata_min": 6,
       "mod_default": "A",
       "materiale": [
-        "cârpă"
+        "o treabă din casă"
       ],
       "pasi": [
-        "Spuneți: „Mă ajuți?” și oferiți o parte din cârpă.",
-        "Mulțumiți: „Mulțumesc pentru ajutor.”",
-        "Dacă vrea: el cere ajutorul: modelați „Mă ajuți?”"
+        "Cereți ajutor cu o propoziție întreagă: „Mă ajuți să ștergem masa?”",
+        "Lucrați împreună, apoi mulțumiți.",
+        "Apoi el cere ajutor pentru ceva greu pentru el.",
+        "Întrebați: „Când e bine să ceri ajutor?”"
       ],
-      "gata_cand": "Ați șters împreună pe scurt.",
+      "gata_cand": "A ajutat și a cerut ajutor, folosind propoziții întregi.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Ajutorul pentru o jucărie: „Ursul nu poate să-și pună căciula. Îl ajuți?”",
+      "provocare": "„Cum știi că cineva are nevoie de ajutor, dacă nu-ți spune?” (se chinuie, e supărat). Căutați un exemplu în ziua aceea."
     },
     {
       "id": "s4-2-3-z6-fizic",
@@ -1661,20 +1945,24 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "fizic",
-      "titlu": "Desfacem și închidem o cutie",
-      "durata_min": 5,
+      "titlu": "Șurubul mare și piulița",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "cutie cu capac potrivit vârstei"
+        "un șurub mare de jucărie cu piuliță (cumpărat sau imprimat 3D); o sticlă de plastic cu capac"
       ],
       "pasi": [
-        "Deschideți cutia: „Deschis.”",
-        "Închideți: „Închis.”",
-        "Dacă vrea: alegeți a doua cutie de încercat."
+        "Arătați cum se înșurubează piulița: „Răsucim așa.”",
+        "Încearcă el; voi spuneți ce face.",
+        "Desface și înșurubează din nou.",
+        "Încearcă același gest cu capacul sticlei: „E la fel?”"
       ],
-      "gata_cand": "A deschis și închis cutia cu ajutor.",
+      "gata_cand": "A înșurubat și a deșurubat singur piulița cel puțin o dată.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Două piulițe pe același șurub.",
+      "provocare": "„Într-o parte se strânge, în cealaltă se desface. Care e care?” Descoperă el.",
+      "siguranta": "Piese mari, fără bucăți care se pot rupe; verificați filetul înainte de fiecare joacă."
     },
     {
       "id": "s4-2-3-z6-mental",
@@ -1683,21 +1971,24 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "mental",
-      "titlu": "Ce încape în mână?",
-      "durata_min": 5,
+      "titlu": "Încape în mână? Mare, mic, cât de mare",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "obiect mic",
-        "obiect mai mare (tot ușor)"
+        "6 obiecte de mărimi diferite; o cutie mică; un coș"
       ],
       "pasi": [
-        "Arătați: „Încape în mână.” / „Prea mare pentru o mână.”",
-        "Lăsați-l să încerce ambele.",
-        "Dacă vrea: sortați încă un obiect în cele două categorii."
+        "Încearcă el să țină fiecare obiect într-o mână: „Încape?”",
+        "Sortează: „încape” și „nu încape”.",
+        "Ordonează obiectele de la cel mai mic la cel mai mare.",
+        "Întrebați: „Dar în mâna mea? Încap mai multe?” Verificați."
       ],
-      "gata_cand": "A comparat ce încape în mână.",
+      "gata_cand": "A sortat și a ordonat cel puțin 5 obiecte după mărime.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Prezice înainte de încercare: „Crezi că încape?”",
+      "provocare": "„Ce încape în cutia mică? Dar în coș?” Sortare cu trei categorii: mână, cutie, coș.",
+      "siguranta": "Obiecte mai mari de 3,17 cm."
     },
     {
       "id": "s4-2-3-z6-resurse",
@@ -1706,20 +1997,23 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "resurse",
-      "titlu": "Cutia pe raft — gata",
-      "durata_min": 3,
+      "titlu": "Cutia de unelte a mâinilor",
+      "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "cutie"
+        "o cutie; uneltele din săptămână (clește, lingură, burete, șurubul mare)"
       ],
       "pasi": [
-        "După joacă, cutia pe raft.",
-        "„La loc. Gata.”",
-        "Dacă vrea: verificați dacă mai e o unealtă de pus — alegeți 1 din 2."
+        "Strânge el uneltele săptămânii în cutie.",
+        "Întrebați la fiecare: „La ce ne-a folosit?”",
+        "Hotărăște ordinea în cutie.",
+        "Pune cutia pe raft."
       ],
-      "gata_cand": "Cutia e pe raft.",
+      "gata_cand": "A strâns uneltele și a spus la ce a folosit cel puțin 2.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Etichetă desenată de voi pe cutie, el alege desenul.",
+      "provocare": "„Ce unealtă am mai vrea săptămâna viitoare? Pentru ce?”"
     },
     {
       "id": "s4-2-3-z6-social",
@@ -1728,20 +2022,23 @@
       "zi": 6,
       "zi_nume": "Sâmbătă",
       "pilon": "social",
-      "titlu": "Rândul la deschis cutia",
-      "durata_min": 4,
+      "titlu": "Atelierul cu rândul și cu sfatul",
+      "durata_min": 8,
       "mod_default": "A",
       "materiale": [
-        "cutie"
+        "placa cu încuietori sau cutia cu capace"
       ],
       "pasi": [
-        "Voi deschideți: „Acum eu.”",
-        "El încearcă: „Acum tu.”",
-        "Dacă vrea: încă un schimb, apoi închideți împreună."
+        "Lucrați pe rând: „Acum eu, acum tu.”",
+        "Când unul se blochează, celălalt poate da un sfat, dar nu pune mâna.",
+        "Voi vă blocați intenționat: „Ce să fac?” El vă dă un sfat în cuvinte.",
+        "Mulțumiți pentru sfat."
       ],
-      "gata_cand": "Ați schimbat rândul la cutie.",
+      "gata_cand": "A așteptat rândul și a dat cel puțin un sfat în cuvinte, fără să ia obiectul.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Sfatul spus în 2 pași: „Întâi tragi, apoi răsucești.”",
+      "provocare": "Voi vă blocați din nou, dar acum el trebuie să explice fără să arate cu mâna."
     },
     {
       "id": "s4-2-3-z7-fizic",
@@ -1750,20 +2047,23 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "fizic",
-      "titlu": "Joaca favorită cu mâinile",
-      "durata_min": 6,
+      "titlu": "Jocul favorit cu mâinile, ceva mai greu",
+      "durata_min": 10,
       "mod_default": "A",
       "materiale": [
-        "materialul sau unealta preferată din săptămână"
+        "materialul ales de el"
       ],
       "pasi": [
-        "Reluați pe scurt jocul cu mâinile care i-a plăcut.",
-        "El dictează ritmul; voi urmăriți.",
-        "Dacă vrea: alegeți între două favorita ale săptămânii."
+        "Alege el jocul favorit al săptămânii.",
+        "Îl reia, cât vrea.",
+        "Întrebați: „Cum îl facem puțin mai greu?”",
+        "Încearcă varianta propusă de el."
       ],
-      "gata_cand": "Ați reluat jocul favorit cu mâinile.",
+      "gata_cand": "A reluat jocul favorit și a propus o variantă mai grea.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Varianta propusă de voi, dacă el nu are una.",
+      "provocare": "Îl învață pe altcineva din familie jocul."
     },
     {
       "id": "s4-2-3-z7-mental",
@@ -1772,18 +2072,23 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "mental",
-      "titlu": "Ce ne-a plăcut cu degetele?",
-      "durata_min": 4,
+      "titlu": "Săptămâna mâinilor, povestită",
+      "durata_min": 10,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Arătați 2–3 opțiuni din săptămână (capac, aluat, șters).",
-        "Întrebați: „Care ți-a plăcut?”",
-        "Dacă vrea: spuneți o frază: „Ne-a plăcut că…”"
+      "materiale": [
+        "aluatul, uneltele, placa de încuietori"
       ],
-      "gata_cand": "Ați ales favorita săptămânii.",
+      "pasi": [
+        "Întindeți obiectele săptămânii: „Ce am făcut cu mâinile săptămâna asta?”",
+        "El alege un obiect și povestește.",
+        "Întrebați: „Ce a fost cel mai greu? Cum ai reușit?”",
+        "Încheiați: „Ce ți-a plăcut cel mai mult? De ce?”"
+      ],
+      "gata_cand": "A povestit cel puțin 2 activități și ce a fost greu la una dintre ele.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Activitățile în ordine.",
+      "provocare": "„Ce mai poate face mâna, la care nu ne-am gândit?” (să mângâie, să scrie, să cânte la pian)."
     },
     {
       "id": "s4-2-3-z7-resurse",
@@ -1792,20 +2097,23 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "resurse",
-      "titlu": "Totul la loc — mâini libere",
-      "durata_min": 4,
+      "titlu": "Mâini libere, cameră strânsă",
+      "durata_min": 5,
       "mod_default": "A",
       "materiale": [
-        "1–2 obiecte"
+        "lucrurile rămase"
       ],
       "pasi": [
-        "Strângeți un obiect sau două: „La loc.”",
-        "Arătați mâinile goale: „Mâini libere. Gata.”",
-        "Dacă vrea: păstrați un obiect favorit la vedere."
+        "Întrebați: „Ce mai e de strâns?”",
+        "Strânge el, după un plan spus de el.",
+        "Arată mâinile goale: „Mâini libere!”",
+        "Alege un obiect favorit care rămâne la vedere."
       ],
-      "gata_cand": "Spațiul e strâns; mâinile sunt libere.",
+      "gata_cand": "A strâns după planul lui și a ales obiectul favorit.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Împarte sarcinile cu voi.",
+      "provocare": "Estimează: „Câte lucruri sunt de strâns?” Numărați după."
     },
     {
       "id": "s4-2-3-z7-social",
@@ -1814,18 +2122,23 @@
       "zi": 7,
       "zi_nume": "Duminică",
       "pilon": "social",
-      "titlu": "Ritual: mână pe mână, noapte bună",
-      "durata_min": 3,
+      "titlu": "Mână pe mână: noapte bună",
+      "durata_min": 4,
       "mod_default": "A",
-      "materiale": [],
-      "pasi": [
-        "Atingeți palmele scurt dacă vrea: „Mână pe mână.”",
-        "„Noapte bună.” Calm.",
-        "Dacă vrea: spuneți: „Deschis” pe palmă, apoi odihnă."
+      "materiale": [
+        "niciunul"
       ],
-      "gata_cand": "Ați închis săptămâna cu ritualul blând.",
+      "pasi": [
+        "Atingeți palmele, dacă vrea: „Mână pe mână.”",
+        "Întrebați: „Ce au făcut azi mâinile tale?”",
+        "Spune el un lucru.",
+        "„Noapte bună, mâini.”"
+      ],
+      "gata_cand": "A spus un lucru făcut azi cu mâinile.",
       "tema_saptamana": "Mâini și degete",
-      "nota": "Vârsta 2–3: scurt, fără forțare; el poate refuza. Extensia e opțională."
+      "nota": null,
+      "pas_in_plus": "Mulțumire pentru mâinile cuiva („Mulțumesc, mama, că m-ai ajutat”).",
+      "provocare": "„Ce vor face mâinile mâine?” Plan scurt."
     }
   ]
 }

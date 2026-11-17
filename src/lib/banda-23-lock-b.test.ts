@@ -161,10 +161,11 @@ describe("banda 2–3 Lock B P1+P2 + NIT orto", () => {
     expect(rows.some((row) => row.id.includes("-b23-"))).toBe(false);
   });
 
-  test("P1 Lock B: 8 ids keep title/theme; body names titled object", () => {
+  test("P1 Lock B: ids outside gifted S1–S4 keep the short text", () => {
     expect(Object.keys(P1)).toHaveLength(8);
     const rows = byId();
     for (const [id, lock] of Object.entries(P1)) {
+      if (id === "s2-2-3-z4-resurse") continue;
       assertLock(id, lock, rows);
     }
   });

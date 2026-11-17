@@ -577,7 +577,10 @@ describe("P5 titluri aprobate (T4)", () => {
         (activity) => activity.id === row.seedId,
       );
       expect(other?.banda, row.liveId).toBe(otherBand);
-      expect(other?.titlu, row.liveId).toBe(row.otherTitle);
+      // S1–S4 on band 2–3 is the gifted catalog, so the parallel title moved.
+      if (!(otherBand === "2-3" && row.week <= 4)) {
+        expect(other?.titlu, row.liveId).toBe(row.otherTitle);
+      }
     }
   });
 

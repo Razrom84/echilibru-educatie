@@ -1,5 +1,10 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
+import {
+  PROGRESS_ACTIVITY_COLUMNS,
+  PROGRESS_ACTIVITY_COLUMNS_BASE,
+} from "@/lib/progress";
 import { themesFromActivityRows } from "@/lib/band-preview";
+import { applyGiftedCatalog } from "@/lib/gifted";
 import {
   getSeedActivities,
   hasLocalSeedBand,
@@ -52,6 +57,39 @@ function coerceSeedRow(row: SeedActivity): SeedActivity {
     materiale: row.materiale ?? [],
     pasi: row.pasi ?? [],
     nota: row.nota ?? null,
+  };
+}
+
+function missingTierColumn(error: { message?: string; code?: string } | null): boolean {
+  if (!error) return false;
+  const blob = `${error.code ?? ""} ${error.message ?? ""}`;
+  return blob.includes("42703") || /pas_in_plus|provocare|siguranta/.test(blob);
+}
+
+/**
+ * Real accounts read the week through this list, including the gifted steps.
+ * If the schema migration is not applied yet, the same read falls back to the
+ * columns that already exist, so Azi does not fail with 42703.
+ */
+export async function selectWeekActivities(
+  supabase: SupabaseClient,
+  band: string,
+  week: number,
+): Promise<{ data: SeedActivity[] | null; error: { message: string } | null }> {
+  const query = (columns: string) =>
+    supabase
+      .from("activities")
+      .select(columns)
+      .eq("saptamana", week)
+      .eq("banda", band)
+      .order("zi", { ascending: true });
+  const first = await query(PROGRESS_ACTIVITY_COLUMNS);
+  const chosen = missingTierColumn(first.error)
+    ? await query(PROGRESS_ACTIVITY_COLUMNS_BASE)
+    : first;
+  return {
+    data: (chosen.data ?? null) as unknown as SeedActivity[] | null,
+    error: chosen.error,
   };
 }
 
@@ -113,7 +151,7 @@ export async function readWeekCatalog(
         ? settleCatalog({ ok: false, value: [], fallback, canFallback })
         : settleCatalog({
             ok: true,
-            value: read.rows.map(normalizeActivity),
+            value: applyGiftedCatalog(read.rows, band, week).map(normalizeActivity),
             fallback,
             canFallback,
           });

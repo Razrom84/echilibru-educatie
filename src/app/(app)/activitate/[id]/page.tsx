@@ -13,6 +13,8 @@ import { PILLAR_META } from "@/lib/pillars";
 import { bucharestToday, familyProgramYearStart, programDayCivilDate } from "@/lib/program-week";
 import { activityReadOnlyHint } from "@/lib/view-week";
 import { getDayName } from "@/lib/week";
+import { materialsForActivity, showsActivityNote, visibleActivityExtras } from "@/lib/gifted";
+import { ActivityMaterialsLine } from "@/components/week-materials";
 
 export default function ActivitatePage({
   params,
@@ -29,6 +31,7 @@ export default function ActivitatePage({
     writesAllowed,
     selectedChild,
     selectedWeek,
+    weekMaterials,
   } = useFamily();
   const [busy, setBusy] = useState(false);
   const activity = viewActivities.find((item) => item.id === id);
@@ -71,6 +74,8 @@ export default function ActivitatePage({
   }
 
   const current = activity;
+  const extras = visibleActivityExtras(activity);
+  const showBaseLabel = extras.pasInPlus || extras.provocare;
 
   async function onToggle() {
     if (!canWrite) return;
@@ -113,26 +118,64 @@ export default function ActivitatePage({
         <h1 className="mt-3 font-heading text-3xl leading-tight">{activity.title}</h1>
         <p className="mt-1 text-sm text-muted-foreground">{activity.tema_saptamana}</p>
 
-        {activity.materiale.length > 0 ? (
-          <p className="mt-4 text-sm">
-            <span className="font-medium">Materiale: </span>
-            {activity.materiale.join(", ")}
-          </p>
-        ) : (
-          <p className="mt-4 text-sm text-muted-foreground">Fără materiale extra.</p>
-        )}
+        <ActivityMaterialsLine
+          materiale={activity.materiale}
+          linked={materialsForActivity(weekMaterials, activity.id)}
+          activityIds={new Set(viewActivities.map((item) => item.id))}
+        />
 
-        <ol className="mt-4 list-decimal space-y-2 pl-5 text-base leading-7">
+        {showBaseLabel ? (
+          <p className="mt-4 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+            Bază
+          </p>
+        ) : null}
+        <ol
+          className={
+            showBaseLabel
+              ? "mt-2 list-decimal space-y-2 pl-5 text-base leading-7"
+              : "mt-4 list-decimal space-y-2 pl-5 text-base leading-7"
+          }
+        >
           {activity.pasi.map((step) => (
             <li key={step}>{step}</li>
           ))}
         </ol>
+        {activity.pas_in_plus?.trim() ? (
+          <div
+            className="mt-4 rounded-xl border border-border bg-accent/50 px-3 py-3"
+            data-testid="pas-in-plus"
+          >
+            <p className="text-xs font-medium text-muted-foreground">
+              Pas în plus · după bază, dacă vrea
+            </p>
+            <p className="mt-1 text-base leading-7">{activity.pas_in_plus}</p>
+          </div>
+        ) : null}
+        {activity.provocare?.trim() ? (
+          <div
+            className="mt-3 rounded-xl border border-primary/20 bg-primary/5 px-3 py-3"
+            data-testid="provocare"
+          >
+            <p className="text-xs font-medium text-muted-foreground">
+              Provocare · după bază, dacă cere mai mult
+            </p>
+            <p className="mt-1 text-base leading-7">{activity.provocare}</p>
+          </div>
+        ) : null}
 
-        <p className="mt-5 rounded-xl bg-muted px-3 py-2 text-sm leading-6">
-          <span className="font-medium">Gata când: </span>
-          {activity.gata_cand}
-        </p>
-        {activity.nota ? (
+        {activity.gata_cand?.trim() ? (
+          <p className="mt-5 rounded-xl bg-muted px-3 py-2 text-sm leading-6">
+            <span className="font-medium">Gata când: </span>
+            {activity.gata_cand}
+          </p>
+        ) : null}
+        {activity.siguranta?.trim() ? (
+          <p className="mt-3 text-sm leading-6" data-testid="siguranta">
+            <span className="font-medium">Siguranță: </span>
+            {activity.siguranta}
+          </p>
+        ) : null}
+        {showsActivityNote(activity.nota) ? (
           <p className="mt-3 text-xs leading-5 text-muted-foreground">{activity.nota}</p>
         ) : null}
       </div>

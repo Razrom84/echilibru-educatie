@@ -1,0 +1,882 @@
+{
+  "data_verificare": "2026-11-16",
+  "saptamani": [
+    {
+      "saptamana": 1,
+      "tema": "Casa și curtea",
+      "gratuit": "coșuri și cutii pentru sortat, un săculeț de pânză pentru „detectivul de obiecte”, pernele și pătura pentru traseu."
+    },
+    {
+      "saptamana": 2,
+      "tema": "Apa în casă și afară",
+      "gratuit": "pahare transparente, elastice, burete, cârpe, un lighean, sticle de plastic, colorant alimentar."
+    },
+    {
+      "saptamana": 3,
+      "tema": "Sunete și liniște",
+      "gratuit": "oale și linguri de lemn, hârtie de mototolit, un clopoțel, o panglică pentru vânt."
+    },
+    {
+      "saptamana": 4,
+      "tema": "Mâini și degete",
+      "gratuit": "borcane și cutii cu capace de plastic, linguri și teluri, un pulverizator cu apă, cârpe, sticle cu capac filetat."
+    }
+  ],
+  "materiale": [
+    {
+      "id": "s1-m1",
+      "banda": "2-3",
+      "saptamana": 1,
+      "ordine": 1,
+      "nume": "„Ce facem toamna?”",
+      "producator": "Editura Casa",
+      "magazin": "Editura Casa",
+      "sursa": "(colecția „De ce? De ce? De ce?”), Editura Casa",
+      "link": "https://www.edituracasa.ro/ce-facem-toamna",
+      "pret": "41,44 lei",
+      "moneda": "lei",
+      "data_verificare": "2026-11-16",
+      "stoc": "„în stoc”",
+      "varsta": "2–4 ani",
+      "nota_siguranta": null,
+      "doar_acasa": false,
+      "folosita": "Folosită la: z2 mental (ce s-a schimbat în curte), z7 mental (povestim săptămâna).",
+      "detaliu_pret": "Preț văzut: 41,44 lei. Stoc: „în stoc”. Vârsta: 2–4 ani. Carte cartonată, cu ferestre.",
+      "note": [],
+      "activitati": [
+        "s1-b23-z2-mental",
+        "s1-b23-z7-mental"
+      ],
+      "acasa": [
+        {
+          "id": "s1-m1-acasa-1",
+          "tip": "print",
+          "titlu": null,
+          "pasi": "1) fotografiați 8 locuri din curte și casă; 2) le printați pe carton A5 sau pe hârtie foto; 3) le acoperiți cu folie autoadezivă transparentă; 4) faceți câte două găuri și le prindeți cu inele mari sau cu sfoară groasă.",
+          "materiale_unelte": "imprimantă, carton A5, folie autoadezivă, perforator, 2 inele.",
+          "cost_estimat": "mic dacă aveți imprimantă; nu l-am verificat azi.",
+          "durata": "aproximativ o oră.",
+          "siguranta": "rotunjiți colțurile cu foarfeca; inelele să fie mai mari de 3,17 cm sau înlocuite cu o sfoară scurtă, legată strâns.",
+          "link_model": null,
+          "linii": [
+            "„Cartea curții noastre”.",
+            "Cum: 1) fotografiați 8 locuri din curte și casă; 2) le printați pe carton A5 sau pe hârtie foto; 3) le acoperiți cu folie autoadezivă transparentă; 4) faceți câte două găuri și le prindeți cu inele mari sau cu sfoară groasă.",
+            "Materiale și unelte: imprimantă, carton A5, folie autoadezivă, perforator, 2 inele. Costul e mic dacă aveți imprimantă; nu l-am verificat azi.",
+            "Durată: aproximativ o oră.",
+            "Siguranță: rotunjiți colțurile cu foarfeca; inelele să fie mai mari de 3,17 cm sau înlocuite cu o sfoară scurtă, legată strâns."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s1-m2",
+      "banda": "2-3",
+      "saptamana": 1,
+      "ordine": 2,
+      "nume": "Lupă jumbo cu mânere din lemn, Tickit",
+      "producator": "Tickit",
+      "magazin": "infant.ro",
+      "sursa": "infant.ro",
+      "link": "https://infant.ro/products/lupa-jumbo-manere-lemn-tickit",
+      "pret": "90,99 lei",
+      "moneda": "lei",
+      "data_verificare": "2026-11-16",
+      "stoc": "„în stoc”",
+      "varsta": "1 an+",
+      "nota_siguranta": "lupa nu se lasă la soare (poate concentra căldura).",
+      "doar_acasa": false,
+      "folosita": "Folosită la: z6 fizic (texturile curții), z6 resurse (comorile).",
+      "detaliu_pret": "Preț văzut: 90,99 lei. Stoc: „în stoc”. Vârsta: 1 an+.",
+      "note": [],
+      "activitati": [
+        "s1-b23-z6-fizic",
+        "s1-b23-z6-resurse"
+      ],
+      "acasa": [
+        {
+          "id": "s1-m2-acasa-1",
+          "tip": "nu",
+          "titlu": null,
+          "pasi": "Nu recomand. Contează calitatea lentilei, iar o ramă imprimată 3D fără lentilă bună nu ajută. Alternativa gratuită e o lupă de citit din casă, folosită doar cu adult.",
+          "materiale_unelte": null,
+          "cost_estimat": null,
+          "durata": null,
+          "siguranta": null,
+          "link_model": null,
+          "linii": [
+            "Nu recomand. Contează calitatea lentilei, iar o ramă imprimată 3D fără lentilă bună nu ajută. Alternativa gratuită e o lupă de citit din casă, folosită doar cu adult."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s1-m3",
+      "banda": "2-3",
+      "saptamana": 1,
+      "ordine": 3,
+      "nume": "Tavă de lemn mică (22×16 cm)",
+      "producator": null,
+      "magazin": "Dacart Montessori",
+      "sursa": "Dacart Montessori",
+      "link": "https://www.dacartmontessori.ro/viata-practica/tava-lemn-mica",
+      "pret": "54,00 lei",
+      "moneda": "lei",
+      "data_verificare": "2026-11-16",
+      "stoc": "„precomandă”",
+      "varsta": null,
+      "nota_siguranta": null,
+      "doar_acasa": false,
+      "folosita": "Folosită la: z3 mental (sortare după două reguli), z6 mental (detectivul de obiecte).",
+      "detaliu_pret": "Preț văzut: 54,00 lei. Stoc: „precomandă”. Pagina spune „nerecomandat copiilor sub 3 ani nesupravegheați” (e material didactic, nu jucărie).",
+      "note": [],
+      "activitati": [
+        "s1-b23-z3-mental",
+        "s1-b23-z6-mental"
+      ],
+      "acasa": [
+        {
+          "id": "s1-m3-acasa-1",
+          "tip": "3d",
+          "titlu": null,
+          "pasi": "tava de sortare cu 6 compartimente, „Montessori 6-Slice Sorting Tray”, MakerWorld.",
+          "materiale_unelte": null,
+          "cost_estimat": "aproximativ 16 lei, la 69,99 lei pe kilogram de PLA (preț văzut azi la Optimus Digital: https://www.optimusdigital.ro/filamente-pla/2671-filament-pentru-imprimanta-3d-175-mm-pla-1-kg-extra-alb.html).",
+          "durata": null,
+          "siguranta": "PLA; șlefuiți marginile după imprimare; verificați să nu aibă așchii; nu se folosește pentru mâncare (PLA imprimat are pori în care rămân resturi).",
+          "link_model": "https://makerworld.com/en/models/2453998-montessori-6-slice-sorting-tray",
+          "linii": [
+            "tava de sortare cu 6 compartimente, „Montessori 6-Slice Sorting Tray”, MakerWorld.",
+            "Link (verificat): https://makerworld.com/en/models/2453998-montessori-6-slice-sorting-tray",
+            "Diametru aproximativ 24 cm, 235 g de PLA, cam 5,3 ore de imprimare.",
+            "Cost material: aproximativ 16 lei, la 69,99 lei pe kilogram de PLA (preț văzut azi la Optimus Digital: https://www.optimusdigital.ro/filamente-pla/2671-filament-pentru-imprimanta-3d-175-mm-pla-1-kg-extra-alb.html).",
+            "Siguranță: PLA; șlefuiți marginile după imprimare; verificați să nu aibă așchii; nu se folosește pentru mâncare (PLA imprimat are pori în care rămân resturi)."
+          ]
+        },
+        {
+          "id": "s1-m3-acasa-2",
+          "tip": "diy",
+          "titlu": null,
+          "pasi": "capacul unei cutii de pantofi, împărțit cu două benzi de carton lipite în cruce; sau o tavă de bucătărie cu două boluri. Durează 15 minute și nu costă nimic.",
+          "materiale_unelte": null,
+          "cost_estimat": null,
+          "durata": null,
+          "siguranta": null,
+          "link_model": null,
+          "linii": [
+            "capacul unei cutii de pantofi, împărțit cu două benzi de carton lipite în cruce; sau o tavă de bucătărie cu două boluri. Durează 15 minute și nu costă nimic."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s1-m4",
+      "banda": "2-3",
+      "saptamana": 1,
+      "ordine": 4,
+      "nume": "Harta casei",
+      "producator": null,
+      "magazin": null,
+      "sursa": "(doar acasă, nu se cumpără)",
+      "link": null,
+      "pret": null,
+      "moneda": null,
+      "data_verificare": null,
+      "stoc": null,
+      "varsta": null,
+      "nota_siguranta": null,
+      "doar_acasa": true,
+      "folosita": "Folosită la: z5 mental, z7 mental.",
+      "detaliu_pret": null,
+      "note": [],
+      "activitati": [
+        "s1-b23-z5-mental",
+        "s1-b23-z7-mental"
+      ],
+      "acasa": [
+        {
+          "id": "s1-m4-acasa-1",
+          "tip": "diy",
+          "titlu": null,
+          "pasi": "1) pe o foaie A3 sau pe un carton, desenați în fața lui camerele, ca dreptunghiuri; 2) adăugați un semn simplu pentru fiecare (pat, masă, ușă); 3) o lipiți pe masă cu bandă de hârtie, ca să nu alunece.",
+          "materiale_unelte": "o foaie mare, creioane groase.",
+          "cost_estimat": null,
+          "durata": "10 minute.",
+          "siguranta": null,
+          "link_model": null,
+          "linii": [
+            "Cum: 1) pe o foaie A3 sau pe un carton, desenați în fața lui camerele, ca dreptunghiuri; 2) adăugați un semn simplu pentru fiecare (pat, masă, ușă); 3) o lipiți pe masă cu bandă de hârtie, ca să nu alunece.",
+            "Materiale: o foaie mare, creioane groase. Durată: 10 minute.",
+            "Regula casei: harta e un suport de joc desenat pe loc, nu o fișă de completat."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2-m1",
+      "banda": "2-3",
+      "saptamana": 2,
+      "ordine": 1,
+      "nume": "Carafă mică",
+      "producator": null,
+      "magazin": "Dacart Montessori",
+      "sursa": "Dacart Montessori",
+      "link": "https://www.dacartmontessori.ro/viata-practica/carafa",
+      "pret": "18,00 lei",
+      "moneda": "lei",
+      "data_verificare": "2026-11-16",
+      "stoc": "„în stoc”",
+      "varsta": null,
+      "nota_siguranta": "verificați la primire să nu fie din sticlă.",
+      "doar_acasa": false,
+      "folosita": "Folosită la: z1 social (barmanul familiei), z2 fizic (turnăm până la linie).",
+      "detaliu_pret": "Preț văzut: 18,00 lei. Stoc: „în stoc”. Pagina nu precizează vârsta și nici materialul.",
+      "note": [],
+      "activitati": [
+        "s2-b23-z1-social",
+        "s2-b23-z2-fizic"
+      ],
+      "acasa": [
+        {
+          "id": "s2-m1-acasa-1",
+          "tip": "diy",
+          "titlu": null,
+          "pasi": "O cană gradată mică de plastic din bucătărie. Nu recomand imprimarea 3D pentru vase din care se bea: PLA imprimat nu e sigur pentru alimente, din cauza porilor dintre straturi.",
+          "materiale_unelte": null,
+          "cost_estimat": null,
+          "durata": null,
+          "siguranta": null,
+          "link_model": null,
+          "linii": [
+            "O cană gradată mică de plastic din bucătărie. Nu recomand imprimarea 3D pentru vase din care se bea: PLA imprimat nu e sigur pentru alimente, din cauza porilor dintre straturi."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2-m2",
+      "banda": "2-3",
+      "saptamana": 2,
+      "ordine": 2,
+      "nume": "Bile și pahare Montessori din lemn",
+      "producator": null,
+      "magazin": "Joybex",
+      "sursa": "Joybex",
+      "link": "https://www.joybex.ro/bile-si-pahare-montessori",
+      "pret": "140 lei",
+      "moneda": "lei",
+      "data_verificare": "2026-11-16",
+      "stoc": "„în stoc”",
+      "varsta": "de la 1 an",
+      "nota_siguranta": null,
+      "doar_acasa": false,
+      "folosita": "Folosită la: z2 mental (gol, puțin, jumătate, plin), z4 resurse (paharul fiecăruia); se potrivește și cu S4 (transfer cu lingura).",
+      "detaliu_pret": "Preț văzut: 140 lei. Stoc: „în stoc”. Vârsta: de la 1 an. Pagina nu dă diametrul bilelor.",
+      "note": [],
+      "activitati": [
+        "s2-b23-z2-mental",
+        "s2-b23-z4-resurse"
+      ],
+      "acasa": [
+        {
+          "id": "s2-m2-acasa-1",
+          "tip": "diy",
+          "titlu": null,
+          "pasi": "6 pahare de plastic colorate și pomponi mari sau mingi moi de peste 4 cm, transferate cu o lingură de supă. Durată: 5 minute. Siguranță: tot ce încape printr-un cerc de 3,17 cm nu intră în joc.",
+          "materiale_unelte": null,
+          "cost_estimat": null,
+          "durata": "5 minute.",
+          "siguranta": "tot ce încape printr-un cerc de 3,17 cm nu intră în joc.",
+          "link_model": null,
+          "linii": [
+            "6 pahare de plastic colorate și pomponi mari sau mingi moi de peste 4 cm, transferate cu o lingură de supă. Durată: 5 minute. Siguranță: tot ce încape printr-un cerc de 3,17 cm nu intră în joc."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2-m3",
+      "banda": "2-3",
+      "saptamana": 2,
+      "ordine": 3,
+      "nume": "Set de plajă și grădină din bioplastic (4 jucării), Dantoy",
+      "producator": "Dantoy",
+      "magazin": "JucăriiAltfel",
+      "sursa": "JucăriiAltfel",
+      "link": "https://jucariialtfel.ro/products/set-de-plaja-si-gradina-4-jucarii-bioplastic-dantoy",
+      "pret": "135,00 lei",
+      "moneda": "lei",
+      "data_verificare": "2026-11-16",
+      "stoc": "„în stoc” (după datele paginii)",
+      "varsta": "2 ani+",
+      "nota_siguranta": null,
+      "doar_acasa": false,
+      "folosita": "Folosită la: z4 fizic (cursa cu găletușa), z6 social (atelierul de apă).",
+      "detaliu_pret": "Preț văzut: 135,00 lei. Stoc: „în stoc” (după datele paginii). Vârsta: 2 ani+.",
+      "note": [],
+      "activitati": [
+        "s2-b23-z4-fizic",
+        "s2-b23-z6-social"
+      ],
+      "acasa": [
+        {
+          "id": "s2-m3-acasa-1",
+          "tip": "diy",
+          "titlu": "pâlnie din sticlă",
+          "pasi": "1) tăiați partea de sus a unei sticle de plastic de 1,5 l; 2) acoperiți marginea tăiată cu bandă izolieră, de două ori; 3) faceți o găletușă din partea de jos, cu o sfoară groasă ca mâner.",
+          "materiale_unelte": "cutter, folosit de adult.",
+          "cost_estimat": "nimic.",
+          "durata": "15 minute.",
+          "siguranta": "marginea tăiată e tăioasă până o acoperiți complet; verificați banda înainte de fiecare joacă.",
+          "link_model": null,
+          "linii": [
+            "Cum: 1) tăiați partea de sus a unei sticle de plastic de 1,5 l; 2) acoperiți marginea tăiată cu bandă izolieră, de două ori; 3) faceți o găletușă din partea de jos, cu o sfoară groasă ca mâner.",
+            "Unelte: cutter, folosit de adult. Durată: 15 minute. Cost: nimic.",
+            "Siguranță: marginea tăiată e tăioasă până o acoperiți complet; verificați banda înainte de fiecare joacă."
+          ]
+        },
+        {
+          "id": "s2-m3-acasa-2",
+          "tip": "3d",
+          "titlu": null,
+          "pasi": "roata de apă, găleata basculantă și pâlnia, „water wheel, dumping bucket, funnel water toys”, MakerWorld.",
+          "materiale_unelte": null,
+          "cost_estimat": null,
+          "durata": null,
+          "siguranta": "PLA nu e pentru apă fierbinte (se deformează); lăsați jucăriile să se usuce după folosire.",
+          "link_model": "https://makerworld.com/en/models/2295720-water-wheel-dumping-bucket-funnel-water-toys",
+          "linii": [
+            "roata de apă, găleata basculantă și pâlnia, „water wheel, dumping bucket, funnel water toys”, MakerWorld.",
+            "Link (verificat): https://makerworld.com/en/models/2295720-water-wheel-dumping-bucket-funnel-water-toys",
+            "Cam 142 g de PLA (43 + 52 + 47 g) și 7 ore de imprimare, adică aproximativ 10 lei de material.",
+            "Autorul le prinde cu șuruburi pe țevi. Pentru Cezar, prindeți-le pe un suport fix, cu șuruburile acoperite și piesele mici montate de adult.",
+            "Siguranță: PLA nu e pentru apă fierbinte (se deformează); lăsați jucăriile să se usuce după folosire."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2-m4",
+      "banda": "2-3",
+      "saptamana": 2,
+      "ordine": 4,
+      "nume": "„Aparatele electrice din casă”",
+      "producator": "Editura Casa",
+      "magazin": "Editura Casa",
+      "sursa": "(colecția „De ce? De ce? De ce?”), Editura Casa",
+      "link": "https://www.edituracasa.ro/aparatele-electrice-din-casa",
+      "pret": "41,44 lei",
+      "moneda": "lei",
+      "data_verificare": "2026-11-16",
+      "stoc": "„în stoc”",
+      "varsta": "2–4 ani",
+      "nota_siguranta": null,
+      "doar_acasa": false,
+      "folosita": "Folosită la: z1 mental (drumul apei), z7 mental.",
+      "detaliu_pret": "Preț văzut: 41,44 lei. Stoc: „în stoc”. Vârsta: 2–4 ani. Descrierea întreabă și „Cum ajunge apa în baie?”.",
+      "note": [],
+      "activitati": [
+        "s2-b23-z1-mental",
+        "s2-b23-z7-mental"
+      ],
+      "acasa": [
+        {
+          "id": "s2-m4-acasa-1",
+          "tip": "nu",
+          "titlu": null,
+          "pasi": "Nu se face acasă. Alternativa e turul apei din casă (z4 mental), cu semne desenate pe un carton.",
+          "materiale_unelte": null,
+          "cost_estimat": null,
+          "durata": null,
+          "siguranta": null,
+          "link_model": null,
+          "linii": [
+            "Nu se face acasă. Alternativa e turul apei din casă (z4 mental), cu semne desenate pe un carton."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2-m5",
+      "banda": "2-3",
+      "saptamana": 2,
+      "ordine": 5,
+      "nume": "„Soarele, vântul și ploaia”",
+      "producator": null,
+      "magazin": "Libris",
+      "sursa": "Libris",
+      "link": "https://www.libris.ro/carte/soarele-vantul-si-ploaia-patricia-mennem/28599550",
+      "pret": "51,81 lei",
+      "moneda": "lei",
+      "data_verificare": "2026-11-16",
+      "stoc": "„în stoc”",
+      "varsta": "1–3 ani și 3–5 ani",
+      "nota_siguranta": null,
+      "doar_acasa": false,
+      "folosita": "Folosită la: z6 mental (nori, ploaie, băltoace), z7 mental.",
+      "detaliu_pret": "Preț văzut: 51,81 lei. Stoc: „în stoc”. Vârsta: 1–3 ani și 3–5 ani.",
+      "note": [],
+      "activitati": [
+        "s2-b23-z6-mental",
+        "s2-b23-z7-mental"
+      ],
+      "acasa": [
+        {
+          "id": "s2-m5-acasa-1",
+          "tip": "nu",
+          "titlu": null,
+          "pasi": "Nu se face acasă. Alternativa e „jurnalul vremii” pe o foaie lipită pe frigider, cu trei desene (soare, nor, ploaie) pe care el pune un magnet în fiecare dimineață.",
+          "materiale_unelte": null,
+          "cost_estimat": null,
+          "durata": null,
+          "siguranta": null,
+          "link_model": null,
+          "linii": [
+            "Nu se face acasă. Alternativa e „jurnalul vremii” pe o foaie lipită pe frigider, cu trei desene (soare, nor, ploaie) pe care el pune un magnet în fiecare dimineață."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3-m1",
+      "banda": "2-3",
+      "saptamana": 3,
+      "ordine": 1,
+      "nume": "Set de percuție junior Hape",
+      "producator": null,
+      "magazin": "Eurostoc",
+      "sursa": "(tamburină, maracas, clapetă), Eurostoc",
+      "link": "https://eurostoc.ro/set-de-percutie-junior-hape-din-lemn-3-instrumente-muzicale-1-an.html",
+      "pret": "123,81 lei",
+      "moneda": "lei",
+      "data_verificare": "2026-11-16",
+      "stoc": "„în stoc”",
+      "varsta": "peste 1 an",
+      "nota_siguranta": null,
+      "doar_acasa": false,
+      "folosita": "Folosită la: z2 fizic (ritmul), z6 social (orchestra familiei).",
+      "detaliu_pret": "Preț văzut: 123,81 lei. Stoc: „în stoc”. Vârsta: peste 1 an. Pagina menționează vopsele netoxice și standardul EN71.",
+      "note": [
+        "Alternativă verificată: setul Djeco (tamburină, maracas, guiro), All4Baby, 130 lei, „în stoc”, 18 luni – 3 ani: https://all4baby.ro/products/set-de-intrumente-muzicale-de-percutie-djeco"
+      ],
+      "activitati": [
+        "s3-b23-z2-fizic",
+        "s3-b23-z6-social"
+      ],
+      "acasa": [
+        {
+          "id": "s3-m1-acasa-1",
+          "tip": "diy",
+          "titlu": "maracas și tobă",
+          "pasi": "1) puneți 2 linguri de orez într-o sticlă mică de plastic, de 330 ml; 2) ungeți filetul cu adeziv și înșurubați capacul; 3) acoperiți capacul cu bandă izolieră; 4) toba e o oală întoarsă, cu o lingură de lemn.",
+          "materiale_unelte": null,
+          "cost_estimat": "nimic.",
+          "durata": "10 minute.",
+          "siguranta": "capacul lipit și verificat la fiecare joacă; orezul crud nu trebuie să ajungă în gura copilului.",
+          "link_model": null,
+          "linii": [
+            "Cum: 1) puneți 2 linguri de orez într-o sticlă mică de plastic, de 330 ml; 2) ungeți filetul cu adeziv și înșurubați capacul; 3) acoperiți capacul cu bandă izolieră; 4) toba e o oală întoarsă, cu o lingură de lemn.",
+            "Durată: 10 minute. Cost: nimic.",
+            "Siguranță: capacul lipit și verificat la fiecare joacă; orezul crud nu trebuie să ajungă în gura copilului."
+          ]
+        },
+        {
+          "id": "s3-m1-acasa-2",
+          "tip": "3d",
+          "titlu": "ou sonor",
+          "pasi": "„Excellent Egg Shaker”, MakerWorld.",
+          "materiale_unelte": null,
+          "cost_estimat": null,
+          "durata": null,
+          "siguranta": "verificați că oul e mai mare de 3,17 cm în orice direcție; strângeți-l în mână și încercați să-l rupeți înainte de a-l da copilului, ca să vă asigurați că straturile țin.",
+          "link_model": "https://makerworld.com/en/models/853035-excellent-egg-shaker",
+          "linii": [
+            "„Excellent Egg Shaker”, MakerWorld.",
+            "Link (verificat): https://makerworld.com/en/models/853035-excellent-egg-shaker",
+            "28 g de PLA (cam 2 lei) și 1,8 ore de imprimare. Umplutura e tot din PLA, iar oul se închide complet în timpul imprimării (pauză la stratul 166).",
+            "Siguranță: verificați că oul e mai mare de 3,17 cm în orice direcție; strângeți-l în mână și încercați să-l rupeți înainte de a-l da copilului, ca să vă asigurați că straturile țin."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3-m2",
+      "banda": "2-3",
+      "saptamana": 3,
+      "ordine": 2,
+      "nume": "Joc cu cilindri sonori, „găsește sunetul pereche”",
+      "producator": null,
+      "magazin": "Edudrag",
+      "sursa": "(6 cilindri de 10 cm), Edudrag",
+      "link": "https://www.edudrag.ro/jucarii-educative/tamburina-girafa-719.html",
+      "pret": "59,00 lei",
+      "moneda": "lei",
+      "data_verificare": "2026-11-16",
+      "stoc": "„in stoc”, „limită stoc”",
+      "varsta": "3 ani+, peste vârsta lui Cezar",
+      "nota_siguranta": null,
+      "doar_acasa": false,
+      "folosita": "Folosită la: z5 mental (perechile de sunete).",
+      "detaliu_pret": "Preț văzut: 59,00 lei. Stoc: „in stoc”, „limită stoc”. Vârsta: 3 ani+, peste vârsta lui Cezar. Pagina avertizează că „poate conține piese mici”.",
+      "note": [
+        "Alternativă verificată: „Sound Boxes”, Dacart, 171,00 lei, „precomandă”, „nerecomandat sub 3 ani nesupravegheați”: https://www.dacartmontessori.ro/sound-boxes"
+      ],
+      "activitati": [
+        "s3-b23-z5-mental"
+      ],
+      "acasa": [
+        {
+          "id": "s3-m2-acasa-1",
+          "tip": "diy",
+          "titlu": null,
+          "pasi": "1) 6 recipiente identice și opace (flacoane goale de vitamine sau sticluțe de iaurt de băut); 2) două cu orez, două cu fasole, două goale; 3) capacele lipite cu adeziv și bandă; 4) un punct colorat dedesubt pentru fiecare pereche, ca să verifice singur.",
+          "materiale_unelte": null,
+          "cost_estimat": "nimic.",
+          "durata": "20 de minute.",
+          "siguranta": "capacele lipite; verificați recipientele înainte de fiecare joacă.",
+          "link_model": null,
+          "linii": [
+            "Cum: 1) 6 recipiente identice și opace (flacoane goale de vitamine sau sticluțe de iaurt de băut); 2) două cu orez, două cu fasole, două goale; 3) capacele lipite cu adeziv și bandă; 4) un punct colorat dedesubt pentru fiecare pereche, ca să verifice singur.",
+            "Durată: 20 de minute. Cost: nimic.",
+            "Siguranță: capacele lipite; verificați recipientele înainte de fiecare joacă."
+          ]
+        },
+        {
+          "id": "s3-m2-acasa-2",
+          "tip": "3d",
+          "titlu": null,
+          "pasi": "„Montessori Sound & Smell Cylinders with Trays”, MakerWorld.",
+          "materiale_unelte": null,
+          "cost_estimat": null,
+          "durata": null,
+          "siguranta": "autorul spune că, pentru un copil, capacele trebuie lipite cu adeziv. Umpluturile din descriere (sare, linte, cuie) sunt periculoase dacă se deschide un cilindru. Folosiți doar capacele pline, nu pe cele cu găuri pentru mirosuri, și înlocuiți cuiele cu orez.",
+          "link_model": "https://makerworld.com/en/models/2488536-montessori-sound-smell-cylinders-with-trays",
+          "linii": [
+            "„Montessori Sound & Smell Cylinders with Trays”, MakerWorld.",
+            "Link (verificat): https://makerworld.com/en/models/2488536-montessori-sound-smell-cylinders-with-trays",
+            "6 + 6 cilindri, cu tăvi; în total cam 490 g de PLA (aproximativ 35 de lei) și 12,4 ore de imprimare. Au numere dedesubt, ca să-și verifice singur perechile.",
+            "Siguranță: autorul spune că, pentru un copil, capacele trebuie lipite cu adeziv. Umpluturile din descriere (sare, linte, cuie) sunt periculoase dacă se deschide un cilindru. Folosiți doar capacele pline, nu pe cele cu găuri pentru mirosuri, și înlocuiți cuiele cu orez."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3-m3",
+      "banda": "2-3",
+      "saptamana": 3,
+      "ordine": 3,
+      "nume": "„Mergem la vânătoare de urși”",
+      "producator": null,
+      "magazin": "Libris",
+      "sursa": "Michael Rosen și Helen Oxenbury, Libris",
+      "link": "https://www.libris.ro/carte/mergem-la-vanatoare-de-ursi-michael-rosen-helen-oxenbury/10749668",
+      "pret": "45,00 lei",
+      "moneda": "lei",
+      "data_verificare": "2026-11-16",
+      "stoc": "„în stoc”",
+      "varsta": "0–1, 1–3, 3–5 ani",
+      "nota_siguranta": null,
+      "doar_acasa": false,
+      "folosita": "Folosită la: z7 mental (cartea cu sunete), z3 social.",
+      "detaliu_pret": "Preț văzut: 45,00 lei. Stoc: „în stoc”. Vârsta: 0–1, 1–3, 3–5 ani.",
+      "note": [],
+      "activitati": [
+        "s3-b23-z7-mental",
+        "s3-b23-z3-social"
+      ],
+      "acasa": [
+        {
+          "id": "s3-m3-acasa-1",
+          "tip": "nu",
+          "titlu": null,
+          "pasi": "Nu se face acasă. Alternativa e povestea inventată cu sunetele din curte (z2 social).",
+          "materiale_unelte": null,
+          "cost_estimat": null,
+          "durata": null,
+          "siguranta": null,
+          "link_model": null,
+          "linii": [
+            "Nu se face acasă. Alternativa e povestea inventată cu sunetele din curte (z2 social)."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3-m4",
+      "banda": "2-3",
+      "saptamana": 3,
+      "ordine": 4,
+      "nume": "Cartonașe cu surse de sunet",
+      "producator": null,
+      "magazin": null,
+      "sursa": "(doar acasă, print)",
+      "link": null,
+      "pret": null,
+      "moneda": null,
+      "data_verificare": null,
+      "stoc": null,
+      "varsta": null,
+      "nota_siguranta": null,
+      "doar_acasa": true,
+      "folosita": "Folosite la: z4 mental (sunetele de afară, în categorii).",
+      "detaliu_pret": null,
+      "note": [],
+      "activitati": [
+        "s3-b23-z4-mental"
+      ],
+      "acasa": [
+        {
+          "id": "s3-m4-acasa-1",
+          "tip": "print",
+          "titlu": null,
+          "pasi": "1) desenați sau printați 3 imagini mari (pasăre, mașină, om) pe carton A4; 2) le acoperiți cu folie autoadezivă.",
+          "materiale_unelte": null,
+          "cost_estimat": null,
+          "durata": "15 minute.",
+          "siguranta": null,
+          "link_model": null,
+          "linii": [
+            "Cum: 1) desenați sau printați 3 imagini mari (pasăre, mașină, om) pe carton A4; 2) le acoperiți cu folie autoadezivă.",
+            "Durată: 15 minute.",
+            "Regula casei: sunt suport de sortare, nu fișă."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4-m1",
+      "banda": "2-3",
+      "saptamana": 4,
+      "ordine": 1,
+      "nume": "Ramă mică cu velcro",
+      "producator": null,
+      "magazin": "Licurici Didactic",
+      "sursa": "Licurici Didactic",
+      "link": "https://www.licuricididactic.ro/montessori-rama-mica-cu-velcro",
+      "pret": "96,00 lei",
+      "moneda": "lei",
+      "data_verificare": "2026-11-16",
+      "stoc": "„la comandă”, livrare în 10–30 de zile",
+      "varsta": null,
+      "nota_siguranta": null,
+      "doar_acasa": false,
+      "folosita": "Folosită la: z2 mental (cum se deschide), z1 resurse.",
+      "detaliu_pret": "Preț văzut: 96,00 lei. Stoc: „la comandă”, livrare în 10–30 de zile. Pagina spune „nerecomandat copiilor sub 3 ani nesupravegheați”.",
+      "note": [
+        "Alternativă verificată: rama cu velcro de la Dacart, 108,00 lei, „precomandă”: https://www.dacartmontessori.ro/viata-practica/rama-cu-velcro"
+      ],
+      "activitati": [
+        "s4-b23-z2-mental",
+        "s4-b23-z1-resurse"
+      ],
+      "acasa": [
+        {
+          "id": "s4-m1-acasa-1",
+          "tip": "diy",
+          "titlu": null,
+          "pasi": "1) folosiți o ramă de tablou veche (fără sticlă) sau un carton gros de 30×30 cm; 2) capsați sau lipiți două bucăți de material, care se întâlnesc la mijloc; 3) coaseți sau lipiți 3 benzi de velcro; 4) variantă: nasturi mari, de peste 3,17 cm.",
+          "materiale_unelte": "velcro autoadeziv sau de cusut, material textil vechi, capsator de tapițerie sau adeziv.",
+          "cost_estimat": "mic, nu l-am verificat azi.",
+          "durata": "o oră.",
+          "siguranta": "capsele bătute complet și acoperite cu bandă; fără nasturi mici.",
+          "link_model": null,
+          "linii": [
+            "Cum: 1) folosiți o ramă de tablou veche (fără sticlă) sau un carton gros de 30×30 cm; 2) capsați sau lipiți două bucăți de material, care se întâlnesc la mijloc; 3) coaseți sau lipiți 3 benzi de velcro; 4) variantă: nasturi mari, de peste 3,17 cm.",
+            "Materiale și unelte: velcro autoadeziv sau de cusut, material textil vechi, capsator de tapițerie sau adeziv.",
+            "Durată: o oră. Cost: mic, nu l-am verificat azi.",
+            "Siguranță: capsele bătute complet și acoperite cu bandă; fără nasturi mici."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4-m2",
+      "banda": "2-3",
+      "saptamana": 4,
+      "ordine": 2,
+      "nume": "Placă cu încuietori „Happy Family”, Onshine",
+      "producator": "Onshine",
+      "magazin": "Helgatoys",
+      "sursa": "Helgatoys",
+      "link": "https://www.helgatoys.ro/produs/placa-cu-incuietori-happy-family-onshine/",
+      "pret": "90,00 lei (de la 108,00)",
+      "moneda": "lei",
+      "data_verificare": "2026-11-16",
+      "stoc": "„în stoc”",
+      "varsta": null,
+      "nota_siguranta": null,
+      "doar_acasa": false,
+      "folosita": "Folosită la: z2 mental (ascunzătoarea cu încuietoare), z6 social (atelierul cu sfatul).",
+      "detaliu_pret": "Preț văzut: 90,00 lei (de la 108,00). Stoc: „în stoc”. Pagina spune că și copiii sub 3 ani se pot juca, dar doar sub supravegherea unui adult. Pe placă e și un „mini joc cu bilute din lemn”; verificați la primire că bilele sunt prinse.",
+      "note": [],
+      "activitati": [
+        "s4-b23-z2-mental",
+        "s4-b23-z6-social"
+      ],
+      "acasa": [
+        {
+          "id": "s4-m2-acasa-1",
+          "tip": "diy",
+          "titlu": "placă cu încuietori",
+          "pasi": "1) o placă de lemn de 40×30 cm, șlefuită pe margini; 2) înșurubați pe ea un zăvor, un lănțișor de ușă, un întrerupător vechi, o balama cu ușiță; 3) șuruburile se pun din spate, sau vârfurile se taie și se acoperă.",
+          "materiale_unelte": "autofiletantă, șmirghel, ferăstrău (adult). Cumpărați accesoriile de la un magazin de bricolaj; prețurile nu le-am putut verifica automat.",
+          "cost_estimat": null,
+          "durata": "2–3 ore.",
+          "siguranta": "nimic care poate prinde degetele (fără arcuri puternice); fără piese mai mici de 3,17 cm; lac pe bază de apă sau ulei alimentar, nu vopsea cu solvenți.",
+          "link_model": null,
+          "linii": [
+            "Cum: 1) o placă de lemn de 40×30 cm, șlefuită pe margini; 2) înșurubați pe ea un zăvor, un lănțișor de ușă, un întrerupător vechi, o balama cu ușiță; 3) șuruburile se pun din spate, sau vârfurile se taie și se acoperă.",
+            "Unelte: autofiletantă, șmirghel, ferăstrău (adult). Cumpărați accesoriile de la un magazin de bricolaj; prețurile nu le-am putut verifica automat.",
+            "Durată: 2–3 ore.",
+            "Siguranță: nimic care poate prinde degetele (fără arcuri puternice); fără piese mai mici de 3,17 cm; lac pe bază de apă sau ulei alimentar, nu vopsea cu solvenți."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4-m3",
+      "banda": "2-3",
+      "saptamana": 4,
+      "ordine": 3,
+      "nume": "Set de 12 pensete colorate, Learning Resources",
+      "producator": "Learning Resources",
+      "magazin": "De-a joaca",
+      "sursa": "De-a joaca",
+      "link": "https://www.deajoaca.ro/set-12-pensete-colorate.html",
+      "pret": "102,00 lei",
+      "moneda": "lei",
+      "data_verificare": "2026-11-16",
+      "stoc": "„în stoc”, „stoc limitat”",
+      "varsta": "3–10 ani, peste vârsta lui Cezar; pagina spune „nu este recomandat copiilor sub 3 ani”",
+      "nota_siguranta": null,
+      "doar_acasa": false,
+      "folosita": "Folosită la: z4 mental și z4 fizic, dar doar ca Provocare, cu adult lângă el.",
+      "detaliu_pret": "Preț văzut: 102,00 lei. Stoc: „în stoc”, „stoc limitat”. Vârsta: 3–10 ani, peste vârsta lui Cezar; pagina spune „nu este recomandat copiilor sub 3 ani”.",
+      "note": [],
+      "activitati": [
+        "s4-b23-z4-mental",
+        "s4-b23-z4-fizic"
+      ],
+      "acasa": [
+        {
+          "id": "s4-m3-acasa-1",
+          "tip": "diy",
+          "titlu": null,
+          "pasi": "un clește de salată din lemn, de bucătărie. Nu l-am căutat în magazine; oricare clește de lemn fără arc metalic merge.",
+          "materiale_unelte": null,
+          "cost_estimat": null,
+          "durata": null,
+          "siguranta": null,
+          "link_model": null,
+          "linii": [
+            "un clește de salată din lemn, de bucătărie. Nu l-am căutat în magazine; oricare clește de lemn fără arc metalic merge."
+          ]
+        },
+        {
+          "id": "s4-m3-acasa-2",
+          "tip": "diy",
+          "titlu": null,
+          "pasi": "două bețe de înghețată mari, legate la un capăt cu un pompon mare lipit între ele și bandă textilă. Durată: 10 minute. Siguranță: pomponul să nu se poată desprinde.",
+          "materiale_unelte": null,
+          "cost_estimat": null,
+          "durata": "10 minute.",
+          "siguranta": "pomponul să nu se poată desprinde.",
+          "link_model": null,
+          "linii": [
+            "două bețe de înghețată mari, legate la un capăt cu un pompon mare lipit între ele și bandă textilă. Durată: 10 minute. Siguranță: pomponul să nu se poată desprinde."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4-m4",
+      "banda": "2-3",
+      "saptamana": 4,
+      "ordine": 4,
+      "nume": "Șuruburi și piulițe mari, 32 de piese, Edx Education",
+      "producator": "Edx Education",
+      "magazin": "infant.ro",
+      "sursa": "infant.ro",
+      "link": "https://infant.ro/products/suruburi-piulite-mari-edx-education",
+      "pret": "132,99 lei",
+      "moneda": "lei",
+      "data_verificare": "2026-11-16",
+      "stoc": "„în stoc”",
+      "varsta": "2–5 ani",
+      "nota_siguranta": null,
+      "doar_acasa": false,
+      "folosita": "Folosită la: z6 fizic (șurubul mare și piulița), z6 resurse.",
+      "detaliu_pret": "Preț văzut: 132,99 lei. Stoc: „în stoc”. Vârsta: 2–5 ani.",
+      "note": [
+        "N-am ales setul Viga de la ClickClick (79 de lei): pagina lui spune că are „piese mici care se pot înghiți sau inhala”."
+      ],
+      "activitati": [
+        "s4-b23-z6-fizic",
+        "s4-b23-z6-resurse"
+      ],
+      "acasa": [
+        {
+          "id": "s4-m4-acasa-1",
+          "tip": "3d",
+          "titlu": null,
+          "pasi": "„Toy bolt and nut (child safe) 18 months+”, MakerWorld.",
+          "materiale_unelte": null,
+          "cost_estimat": null,
+          "durata": null,
+          "siguranta": "autorul cere să încercați să rupeți filetul cu mâna după imprimare. Dacă se rupe, retipăriți la temperatură mai mare. Verificați filetul înainte de fiecare joacă.",
+          "link_model": "https://makerworld.com/en/models/1758637-toy-bolt-and-nut-child-safe-18-months",
+          "linii": [
+            "„Toy bolt and nut (child safe) 18 months+”, MakerWorld.",
+            "Link (verificat): https://makerworld.com/en/models/1758637-toy-bolt-and-nut-child-safe-18-months",
+            "Autorul a gândit piesele rotunde și mari, ca să nu poată fi înghițite. Recomandă 8 pereți exteriori, 20% umplutură, strat de 0,2 mm, fără suporturi.",
+            "Pe pagină nu e atașat niciun profil de imprimare (scrie „Print Files (0)”). Verificați la descărcare ce fișiere sunt disponibile.",
+            "Siguranță: autorul cere să încercați să rupeți filetul cu mâna după imprimare. Dacă se rupe, retipăriți la temperatură mai mare. Verificați filetul înainte de fiecare joacă."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4-m5",
+      "banda": "2-3",
+      "saptamana": 4,
+      "ordine": 5,
+      "nume": "Aluat de sare",
+      "producator": null,
+      "magazin": null,
+      "sursa": "(doar acasă)",
+      "link": null,
+      "pret": null,
+      "moneda": null,
+      "data_verificare": null,
+      "stoc": null,
+      "varsta": null,
+      "nota_siguranta": null,
+      "doar_acasa": true,
+      "folosita": "Folosit la: z3 fizic, z3 social, z3 resurse.",
+      "detaliu_pret": null,
+      "note": [],
+      "activitati": [
+        "s4-b23-z3-fizic",
+        "s4-b23-z3-social",
+        "s4-b23-z3-resurse"
+      ],
+      "acasa": [
+        {
+          "id": "s4-m5-acasa-1",
+          "tip": "diy",
+          "titlu": null,
+          "pasi": "Rețeta e în activitatea z3 fizic: 1 cană de făină, ½ cană de sare fină, ½ cană de apă, 1 lingură de ulei.",
+          "materiale_unelte": "1 cană de făină, ½ cană de sare fină, ½ cană de apă, 1 lingură de ulei.",
+          "cost_estimat": "câțiva lei.",
+          "durata": "15 minute, împreună cu el.",
+          "siguranta": "aluatul e foarte sărat și nu se mănâncă; păstrați-l într-o cutie închisă; colorați-l doar cu colorant alimentar.",
+          "link_model": null,
+          "linii": [
+            "Rețeta e în activitatea z3 fizic: 1 cană de făină, ½ cană de sare fină, ½ cană de apă, 1 lingură de ulei.",
+            "Durată: 15 minute, împreună cu el. Cost: câțiva lei.",
+            "Siguranță: aluatul e foarte sărat și nu se mănâncă; păstrați-l într-o cutie închisă; colorați-l doar cu colorant alimentar."
+          ]
+        }
+      ]
+    }
+  ]
+}
