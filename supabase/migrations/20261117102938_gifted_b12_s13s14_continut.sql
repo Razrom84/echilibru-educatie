@@ -1,5 +1,5 @@
 -- Banda 1–2, S13–S14: înlocuiește textele celor 56 activități cu varianta în trepte.
--- Cere întâi 20261117120000_stoc_materiale.sql (coloana materiale.produs_cheie).
+-- Cere întâi 20261117102924_stoc_materiale.sql (coloana materiale.produs_cheie).
 -- 1. Copiază cele 56 rânduri, exact cum sunt, în backup_20261117_b12_s13s14.
 -- 2. UPDATE pe id + banda 1–2, numai dacă titlul, pașii, nota, materialele,
 --    durata și „gata când” sunt cele din backup-ul din 17.11.2026 (sha256 5c9039d9…2076).
@@ -28,7 +28,7 @@ begin
     select 1 from information_schema.columns
     where table_schema = 'public' and table_name = 'materiale' and column_name = 'produs_cheie'
   ) then
-    raise exception 'B12 S13–S14: lipsește materiale.produs_cheie. Aplică întâi 20261117120000_stoc_materiale.sql.';
+    raise exception 'B12 S13–S14: lipsește materiale.produs_cheie. Aplică întâi 20261117102924_stoc_materiale.sql.';
   end if;
 
   create temporary table b12_plan (

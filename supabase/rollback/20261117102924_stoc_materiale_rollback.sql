@@ -1,4 +1,4 @@
--- Revenire pentru 20261117120000_stoc_materiale.sql. NU se rulează automat.
+-- Revenire pentru 20261117102924_stoc_materiale.sql. NU se rulează automat.
 -- Șterge stocul familiei (tabele + bucket). Rulați doar dacă stocul e încă gol sau după export.
 begin;
 -- Familie are triggerul protect_buckets_delete pe storage.buckets; fără asta, rollback-ul cade.
