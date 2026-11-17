@@ -10,6 +10,13 @@ import {
   playfulPilotWeek,
   playfulSurpriseLabel,
 } from "./playful-pilot";
+import { giftedWeek } from "@/lib/gifted";
+/** 1–2 S13–S14 are rewritten by the gifted catalog; their text is locked in stoc.test.ts. */
+function isGiftedB12(id: string): boolean {
+  const week = Number(/^s(\d+)-/.exec(id)?.[1]);
+  return giftedWeek("1-2", week);
+}
+
 
 function svgTitle(filename: string): string {
   const xml = readFileSync(resolve("public/characters", filename), "utf8");
@@ -998,6 +1005,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       ),
     );
     for (const [id, titlu] of Object.entries(expected)) {
+      if (isGiftedB12(id)) continue;
       expect(byId[id]).toBe(titlu);
     }
   });
@@ -1186,6 +1194,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       ),
     );
     for (const [id, titlu] of Object.entries(expected)) {
+      if (isGiftedB12(id)) continue;
       expect(byId[id]).toBe(titlu);
     }
   });
@@ -1284,6 +1293,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       ),
     );
     for (const [id, titlu] of Object.entries(expected)) {
+      if (isGiftedB12(id)) continue;
       expect(byId[id]).toBe(titlu);
     }
   });
@@ -1382,6 +1392,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       ),
     );
     for (const [id, titlu] of Object.entries(expected)) {
+      if (isGiftedB12(id)) continue;
       expect(byId[id]).toBe(titlu);
     }
   });
@@ -1591,6 +1602,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       ),
     );
     for (const [id, titlu] of Object.entries(expected)) {
+      if (isGiftedB12(id)) continue;
       expect(byId[id]).toBe(titlu);
     }
   });
@@ -2500,6 +2512,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       ),
     );
     for (const [id, titlu] of Object.entries(expected)) {
+      if (isGiftedB12(id)) continue;
       expect(byId[id]).toBe(titlu);
     }
   });
@@ -2717,6 +2730,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
     };
     expect(Object.keys(expected)).toHaveLength(12);
     for (const [id, lock] of Object.entries(expected)) {
+      if (isGiftedB12(id)) continue;
       const row = getSeedActivityById(id);
       expect(row?.titlu).toBe(lock.titlu);
       expect(row?.tema_saptamana).toBe(lock.tema);
@@ -3052,6 +3066,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
     const proxy = /prosop|șervețel|lingură/;
     const english = /\b(the|towel|spoon|basket|okay|worksheet)\b/i;
     for (const [id, lock] of Object.entries(expected)) {
+      if (isGiftedB12(id)) continue;
       const row = getSeedActivityById(id);
       expect(row, id).toBeDefined();
       expect(row?.titlu).toBe(lock.titlu);
@@ -3348,6 +3363,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       "s40-2-3-z5-resurse",
     ]);
     for (const [id, lock] of Object.entries(expected)) {
+      if (isGiftedB12(id)) continue;
       const row = getSeedActivityById(id);
       expect(row, id).toBeDefined();
       expect(row?.titlu).toBe(lock.titlu);
@@ -3451,6 +3467,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
     const english = /\b(the|towel|spoon|basket|okay|worksheet|hanger|dustpan)\b/i;
     const leftoverProxy = /cârpă|pahar|prosop|stropitoare|obiect de pe pervaz/;
     for (const [id, lock] of Object.entries(expected)) {
+      if (isGiftedB12(id)) continue;
       const row = getSeedActivityById(id);
       expect(row, id).toBeDefined();
       expect(row?.titlu).toBe(lock.titlu);

@@ -27,6 +27,7 @@ import {
   validateDraft,
   type StocItem,
 } from "@/lib/stoc";
+import { getSeedActivities } from "@/lib/seed/week1";
 import type { SeedActivity } from "@/lib/types";
 
 const item = (over: Partial<StocItem>): StocItem => ({
@@ -105,9 +106,52 @@ describe("gifted config", () => {
     expect(none.materials).toEqual([]);
   });
 
-  it("applyGiftedCatalog leaves 1–2 live rows alone while the seed is not gifted yet", () => {
+  it("applyGiftedCatalog overlays the gifted 1–2 seed on the same live ids, not on S12", () => {
     const row = { id: "s13-2-3-z1-fizic", titlu: "Live", nota: "Vârsta 1–2" } as unknown as SeedActivity;
-    expect(applyGiftedCatalog([row], "1-2", 13)[0]).toBe(row);
+    const out = applyGiftedCatalog([row], "1-2", 13)[0];
+    expect(out.id).toBe("s13-2-3-z1-fizic");
+    expect(out.titlu).toBe("Haina pe umeri, mâna prin mânecă");
+    expect(out.pas_in_plus?.trim()).toBeTruthy();
+    expect(out.nota).toBeNull();
+    const s12 = { id: "s12-2-3-z1-fizic", titlu: "Live" } as unknown as SeedActivity;
+    expect(applyGiftedCatalog([s12], "1-2", 12)[0]).toBe(s12);
+  });
+
+  it("1–2 S13–S14 catalog: 11 materials, b12- ids, Cristina's keys, links to 56 live ids only", () => {
+    const all = allCatalogMaterials("1-2");
+    expect(all).toHaveLength(11);
+    expect(localWeekMaterials("1-2", 13).materials).toHaveLength(5);
+    expect(localWeekMaterials("1-2", 14).materials).toHaveLength(6);
+    const keys = new Set(all.map((m) => m.produs_cheie));
+    for (const key of ["galeata-si-lopatica", "cos-de-la-usa-diy", "cartea-lui-cezar-print", "toba-cratita"]) {
+      expect(keys.has(key)).toBe(true);
+    }
+    for (const material of all) {
+      expect(material.id).toMatch(/^b12-s1[34]-m\d$/);
+      expect(material.activitati.every((id) => /^s1[34]-2-3-z[1-7]-[a-z]+$/.test(id))).toBe(true);
+      expect(material.categorie && STOC_CATEGORII.some((c) => c.key === material.categorie)).toBe(true);
+      expect(JSON.stringify(material)).not.toMatch(/\*\*|[şţŞŢ]/);
+    }
+  });
+
+  it("1–2 seed S13–S14 has tiers on all 56 rows and no age note", () => {
+    const rows = [13, 14].flatMap((week) => getSeedActivities(week, "1-2"));
+    expect(rows).toHaveLength(56);
+    for (const row of rows) {
+      expect(row.pasi).toHaveLength(4);
+      expect(row.pas_in_plus?.trim() && row.provocare?.trim() && row.gata_cand.trim()).toBeTruthy();
+      expect(row.nota).toBeNull();
+    }
+    expect(getSeedActivities(15, "1-2").every((row) => !row.pas_in_plus)).toBe(true);
+  });
+
+  it("starter items share Cristina's keys, so a ticked bucket covers b12-s14-m4", () => {
+    const bucket = STARTER_LIST.find((s) => s.nume === "Găleată și lopățică");
+    expect(bucket?.produs_cheie).toBe("galeata-si-lopatica");
+    expect(STARTER_LIST.find((s) => s.nume === "Păpușă sau ursuleț")?.produs_cheie).toBe("ursulet-papusa");
+    const m4 = allCatalogMaterials("1-2").find((m) => m.id === "b12-s14-m4")!;
+    expect(hasInStock([item({ produs_cheie: bucket!.produs_cheie! })], m4)).toBe(true);
+    expect(categoryForMaterial(m4)).toBe("apa_nisip");
   });
 
   it("mapDbMaterial keeps the band and falls back to the known product key", () => {

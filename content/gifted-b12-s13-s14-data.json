@@ -1,0 +1,3417 @@
+{
+ "banda": "1-2",
+ "generat": "2026-11-17",
+ "copil": "Cezar, născut pe 11.06.2025",
+ "nota_format": "Ca mockup/src/data.json. live_id e id-ul exact din Familie (fără mapare). siguranta goală înseamnă NULL în bază; nota e NULL pe toate rândurile.",
+ "weeks": [
+  {
+   "n": 13,
+   "theme": "Haine pe vreme",
+   "range": "23–29 noiembrie 2026",
+   "info": [
+    [
+     "Cezar în săptămâna asta",
+     "17 luni (luni, 23 noiembrie, are 17 luni și 12 zile). Merge singur și e foarte curios; îi place afară. Înțelege mult peste ce spune: cunoaște aproape toate obiectele și animalele obișnuite, dar încă nu le numește. Spune „mama” și „tata” și gângurește."
+    ],
+    [
+     "Cum vorbim cu el",
+     "îi cerem să arate, să aducă, să pună ceva lângă altceva și să potrivească. Noi numim și extindem; dacă încearcă o silabă sau un sunet de animal, e un bonus, nu o cerință."
+    ],
+    [
+     "Arcul săptămânii",
+     "luni bagă mâna prin mânecă și alege haina de afară; marți trage șoseta și potrivește perechi; miercuri se încalță și alege între papuc și cizmă; joi își pune căciula și o caută când e ascunsă; vineri potrivește mănușile; sâmbătă se îmbracă în ordine și alege haina după vreme; duminică își recunoaște hainele în cartea lui."
+    ],
+    [
+     "Axe principale",
+     "îmbrăcatul cu ajutorul lui, perechi (la fel și diferit), obiectul ascuns, alegerea după vreme și după loc, „la loc” la ușă."
+    ],
+    [
+     "Cum folosiți treptele",
+     "baza e de ajuns; „Pas în plus” și „Provocare” le încercați doar dacă baza iese ușor. Dacă refuză, vă opriți."
+    ]
+   ],
+   "activities": [
+    {
+     "day": 1,
+     "pillar": "fizic",
+     "dur": 6,
+     "mod_default": "A",
+     "title": "Haina pe umeri, mâna prin mânecă",
+     "live_id": "s13-2-3-z1-fizic",
+     "materiale": "haina lui de afară",
+     "materiale_lista": [
+      "haina lui de afară"
+     ],
+     "materiale_surse": [
+      {
+       "text": "haina lui de afară",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "Întindeți haina pe jos, cu gulerul spre el: „Haina ta.”",
+      "Puneți-i-o pe umeri și țineți mâneca deschisă.",
+      "Împinge el mâna prin mânecă până iese palma: „Cucu, mâna!”",
+      "La scos, trage el de mânecă, iar voi țineți haina."
+     ],
+     "gata": "A împins o mână prin mânecă până i-a ieșit palma.",
+     "plus": "Ambele mâini, una după alta, apoi scoate singur o mânecă.",
+     "provocare": "Trucul cu haina pe jos: gulerul la picioarele lui, mâinile în mâneci, haina dată peste cap. Arătați o dată; orice încercare e bună.",
+     "siguranta": "Haina fără șnururi lungi la glugă. Nu închideți fermoarul până sub bărbie în joacă.",
+     "nota": null,
+     "live": {
+      "title": "Haina pe umeri pe scurt",
+      "dur": 5,
+      "materiale": "haină",
+      "pasi": [
+       "Luați haina împreună.",
+       "Puneți-o pe umeri 10–20 de secunde: „Haină. Cald.”"
+      ],
+      "gata": "A ținut sau a simțit haina pe umeri.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: haina pe umeri. Nou: lucrează el cu mâneca, nu doar simte haina.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 1,
+     "pillar": "mental",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Haina de afară și bluza de casă",
+     "live_id": "s13-2-3-z1-mental",
+     "materiale": "haina lui de afară; o bluză subțire de casă",
+     "materiale_lista": [
+      "haina lui de afară",
+      "o bluză subțire de casă"
+     ],
+     "materiale_surse": [
+      {
+       "text": "haina lui de afară",
+       "sursa": "casa"
+      },
+      {
+       "text": "o bluză subțire de casă",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "Puneți-le alături: „Haina de afară. Bluza de casă.”",
+      "Atingeți-le pe rând: „Haina e groasă și caldă. Bluza e subțire.”",
+      "La fereastră: „Afară e frig. Adu-mi haina de afară.”",
+      "Așteptați 5–10 secunde să o aducă sau să o arate."
+     ],
+     "gata": "A adus sau a arătat haina de afară când i-ați cerut-o.",
+     "plus": "Instrucțiune în doi pași: „Ia haina și pune-o lângă ușă.”",
+     "provocare": "Îmbrăcați voi ursulețul cu bluza subțire „pentru afară” și așteptați: protestează sau aduce haina?",
+     "siguranta": "",
+     "nota": null,
+     "live": {
+      "title": "Arătăm haina de afară",
+      "dur": 3,
+      "materiale": "haină",
+      "pasi": [
+       "Arătați haina: „Haină. Afară.”",
+       "Atingeți mâneca împreună pe scurt."
+      ],
+      "gata": "A privit sau a atins haina.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: haina de afară. Nou: alege între două haine după vreme.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 1,
+     "pillar": "resurse",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Haina pe scaunul de la ușă",
+     "live_id": "s13-2-3-z1-resurse",
+     "materiale": "haina lui; scaunul de la ușă",
+     "materiale_lista": [
+      "haina lui",
+      "scaunul de la ușă"
+     ],
+     "materiale_surse": [
+      {
+       "text": "haina lui",
+       "sursa": "casa"
+      },
+      {
+       "text": "scaunul de la ușă",
+       "sursa": "m:b12-s13-m5"
+      }
+     ],
+     "baza": [
+      "După ce scoateți haina, i-o întindeți: „Duci haina la ușă?”",
+      "Merge el cu haina până la scaunul de lângă ușă.",
+      "O lasă pe scaun, cum iese.",
+      "„La loc. Haina stă la ușă.” Bateți palma."
+     ],
+     "gata": "A dus haina până la scaun și a lăsat-o acolo.",
+     "plus": "O împăturiți împreună pe jumătate înainte s-o pună pe scaun.",
+     "provocare": "A doua zi întrebați doar „Unde stă haina?” și vedeți dacă merge singur la scaun.",
+     "siguranta": "Scaunul stă pe podea, nu se cațără pe el. Dacă e un scaun de adult, haina o puneți pe șezut, nu pe spătar.",
+     "nota": null,
+     "live": {
+      "title": "Haina pe cârlig",
+      "dur": 4,
+      "materiale": "haină, cârlig",
+      "pasi": [
+       "Duceți haina la cârlig împreună.",
+       "„La loc. Pe cârlig.”"
+      ],
+      "gata": "A ajutat să pună haina la loc.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Înlocuit: varianta actuală era „Haina pe cârlig”; acasă nu are unde s-o agațe singur, așa că haina stă pe scaunul de la ușă.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 1,
+     "pillar": "social",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Haina mamei, haina tatei",
+     "live_id": "s13-2-3-z1-social",
+     "materiale": "haina mamei sau a tatei",
+     "materiale_lista": [
+      "haina mamei sau a tatei"
+     ],
+     "materiale_surse": [
+      {
+       "text": "haina mamei sau a tatei",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "Luați haina unui părinte: „A cui e?”",
+      "Duce el haina la părintele acela; dacă e grea, o târăște.",
+      "Părintele întinde brațul: „Mă ajuți? Mâneca.” El ține mâneca.",
+      "„Mulțumesc!” Bateți palma sau îmbrățișați-vă."
+     ],
+     "gata": "A dus haina la părintele potrivit și a ținut mâneca o clipă.",
+     "plus": "Două haine, doi oameni: a mamei la mama, a tatei la tata.",
+     "provocare": "Dați voi „din greșeală” haina tatei la mama: o mută el la tata sau arată spre el?",
+     "siguranta": "",
+     "nota": null,
+     "live": {
+      "title": "Arătăm haina mamei / tatei",
+      "dur": 3,
+      "materiale": "haină",
+      "pasi": [
+       "Duceți-l la adult cu haina: „Uite haina.”",
+       "Stați 1 minut, fără grabă."
+      ],
+      "gata": "A participat la arătat.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: arătăm haina adultului. Nou: o duce la omul potrivit și ajută la îmbrăcat.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 2,
+     "pillar": "fizic",
+     "dur": 7,
+     "mod_default": "A",
+     "title": "Șosetele pe picioare",
+     "live_id": "s13-2-3-z2-fizic",
+     "materiale": "2 perechi de șosete: ale lui și ale voastre",
+     "materiale_lista": [
+      "2 perechi de șosete: ale lui și ale voastre"
+     ],
+     "materiale_surse": [
+      {
+       "text": "2 perechi de șosete: ale lui și ale voastre",
+       "sursa": "m:b12-s13-m2"
+      }
+     ],
+     "baza": [
+      "Așezați-vă pe jos, față în față.",
+      "Trageți-i șoseta pe degete până la jumătatea tălpii: „Tragi tu?”",
+      "Trage el de margine în sus; ajutați doar la călcâi.",
+      "„Gata!” Arată el piciorul îmbrăcat."
+     ],
+     "gata": "A tras singur șoseta de la jumătatea tălpii până sus, măcar o dată.",
+     "plus": "O scoate singur, trăgând de vârf, apoi încearcă a doua.",
+     "provocare": "Din 4 șosete amestecate o găsește pe a lui (cea mică) și v-o dă pe a voastră.",
+     "siguranta": "Fără șosete cu buline antiderapante care se desprind. Nu stă în picioare pe pat sau pe canapea.",
+     "nota": null,
+     "live": {
+      "title": "Șosetele pe picioare",
+      "dur": 5,
+      "materiale": "pereche de șosete",
+      "pasi": [
+       "Așezați-vă pe jos. Luați o șosetă.",
+       "Trageți-o pe picior împreună: „Șosetă.”"
+      ],
+      "gata": "A ajutat la o șosetă sau a privit.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: titlul și șoseta trasă împreună. Nou: trage el, cu ajutor doar la călcâi.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 2,
+     "pillar": "mental",
+     "dur": 8,
+     "mod_default": "A",
+     "title": "Perechea de șosete",
+     "live_id": "s13-2-3-z2-mental",
+     "materiale": "coșul cu perechi: 3 perechi de șosete ale lui, în culori diferite",
+     "materiale_lista": [
+      "coșul cu perechi: 3 perechi de șosete ale lui, în culori diferite"
+     ],
+     "materiale_surse": [
+      {
+       "text": "coșul cu perechi: 3 perechi de șosete ale lui, în culori diferite",
+       "sursa": "m:b12-s13-m2"
+      }
+     ],
+     "baza": [
+      "Răsturnați coșul cu cele 3 perechi.",
+      "Luați o șosetă: „Unde e una la fel?”",
+      "Așteptați; dacă nu o găsește, puneți două alături și întrebați „La fel?”",
+      "Puneți perechea împreună: „Pereche!” El o pune în coș."
+     ],
+     "gata": "A găsit singur șoseta la fel pentru cel puțin o pereche.",
+     "plus": "Potrivește toate cele 3 perechi.",
+     "provocare": "Adăugați două șosete mari ale tatei: le pune deoparte sau le duce la tata.",
+     "siguranta": "",
+     "nota": null,
+     "live": {
+      "title": "Șosetă și picior",
+      "dur": 3,
+      "materiale": "șosetă",
+      "pasi": [
+       "Arătați piciorul: „Picior.”",
+       "Arătați șoseta: „Șosetă.”"
+      ],
+      "gata": "A auzit și a văzut ambele.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Înlocuit corpul: varianta actuală era „Șosetă și picior” (arătat și numit). Acum potrivește perechi, ceea ce se poate la 17–18 luni.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 2,
+     "pillar": "resurse",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Șosetele în sertar",
+     "live_id": "s13-2-3-z2-resurse",
+     "materiale": "șosetele lui; sertarul de jos",
+     "materiale_lista": [
+      "șosetele lui",
+      "sertarul de jos"
+     ],
+     "materiale_surse": [
+      {
+       "text": "șosetele lui",
+       "sursa": "m:b12-s13-m2"
+      },
+      {
+       "text": "sertarul de jos",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "Deschideți împreună sertarul de jos: „Aici stau șosetele.”",
+      "Îi dați perechile una câte una.",
+      "Le pune el în sertar.",
+      "Închideți sertarul încet, împreună: „Gata, la loc.”"
+     ],
+     "gata": "A pus cel puțin două perechi în sertar.",
+     "plus": "Duce el perechile din coș până la sertar, 2–3 metri.",
+     "provocare": "În sertar sunt și bluze: îl întrebați „Unde stau șosetele?” și le pune în colțul lor.",
+     "siguranta": "Țineți mâna pe sertar la închis, ca să nu-și prindă degetele. Sertarul nu se trage până iese din șine.",
+     "nota": null,
+     "live": {
+      "title": "Șosetele în sertar",
+      "dur": 4,
+      "materiale": "șosete",
+      "pasi": [
+       "Deschideți sertarul împreună.",
+       "Puneți șosetele: „La loc.”"
+      ],
+      "gata": "A ajutat cu șosetele în sertar.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: titlul și firul „La loc”. Nou: mai multe perechi și locul lor în sertar.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 2,
+     "pillar": "social",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Șoseta pe rând: eu, apoi tu",
+     "live_id": "s13-2-3-z2-social",
+     "materiale": "o pereche de șosete ale lui și una a voastră",
+     "materiale_lista": [
+      "o pereche de șosete ale lui și una a voastră"
+     ],
+     "materiale_surse": [
+      {
+       "text": "o pereche de șosete ale lui și una a voastră",
+       "sursa": "m:b12-s13-m2"
+      }
+     ],
+     "baza": [
+      "Stați amândoi pe jos, desculți.",
+      "Trageți voi o șosetă: „Eu.”",
+      "Îi dați lui una: „Acum tu.” Ajutați la călcâi.",
+      "Arătați picioarele: „Amândoi cu șosete!”"
+     ],
+     "gata": "A așteptat rândul lui și a tras sau a ținut șoseta.",
+     "plus": "Vă dă el șoseta potrivită, pe cea mare.",
+     "provocare": "Vă ajută el: trage șoseta pe piciorul vostru.",
+     "siguranta": "",
+     "nota": null,
+     "live": {
+      "title": "Ajutăm la șosetă pe rând",
+      "dur": 3,
+      "materiale": "șosetă",
+      "pasi": [
+       "Voi țineți șoseta. „Acum tu.”",
+       "Așteptați fără grabă dacă vrea să tragă."
+      ],
+      "gata": "A încercat sau a privit ajutorul.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: pe rând, fără grabă. Nou: rândul are doi pași clari și apoi rolurile se schimbă.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 3,
+     "pillar": "fizic",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Papucii în picioare",
+     "live_id": "s13-2-3-z3-fizic",
+     "materiale": "papucii lui",
+     "materiale_lista": [
+      "papucii lui"
+     ],
+     "materiale_surse": [
+      {
+       "text": "papucii lui",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "Mergeți împreună la papuci.",
+      "Țineți papucul deschis cu degetele în spate: „Piciorul înăuntru.”",
+      "Împinge el piciorul, sprijinit de voi sau de perete.",
+      "Face câțiva pași în papuci: „Papucii merg!”"
+     ],
+     "gata": "A băgat piciorul în papucul ținut de voi și a mers câțiva pași.",
+     "plus": "Al doilea papuc, apoi îi scoate singur.",
+     "provocare": "Din trei perechi (a lui, a mamei, a tatei) își alege papucii lui și îi încalță.",
+     "siguranta": "Se încalță stând pe jos sau sprijinit, nu în picioare pe treaptă.",
+     "nota": null,
+     "live": {
+      "title": "Papucii la ușă",
+      "dur": 4,
+      "materiale": "papuci",
+      "pasi": [
+       "Mergeți la ușă cu papucii.",
+       "Puneți piciorul în papuc: „Papuc.”"
+      ],
+      "gata": "A pus un picior în papuc sau a încercat.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: papucii. Nou: se încalță el, cu papucul ținut de voi.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 3,
+     "pillar": "mental",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Papuc sau cizmă?",
+     "live_id": "s13-2-3-z3-mental",
+     "materiale": "papucii lui; cizmele sau ghetele lui",
+     "materiale_lista": [
+      "papucii lui",
+      "cizmele sau ghetele lui"
+     ],
+     "materiale_surse": [
+      {
+       "text": "papucii lui",
+       "sursa": "casa"
+      },
+      {
+       "text": "cizmele sau ghetele lui",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "Puneți-le alături: „Papucul e pentru casă. Cizma e pentru afară.”",
+      "Atingeți tălpile: cizma e tare, papucul e moale.",
+      "La ușă: „Ieșim afară. Ce încălțăm?”",
+      "Alege el; dacă ia papucul, spuneți blând: „Papucul e de casă. Afară luăm cizma.”"
+     ],
+     "gata": "A ales cizma pentru afară, arătând-o sau aducând-o, măcar o dată.",
+     "plus": "Aceeași alegere pentru voi: papucii sau pantofii voștri?",
+     "provocare": "Ascundeți o cizmă sub pernă cât se uită: „Unde e cizma?” O caută.",
+     "siguranta": "",
+     "nota": null,
+     "live": {
+      "title": "Papuc sau pantof?",
+      "dur": 3,
+      "materiale": "papuc, pantof",
+      "pasi": [
+       "Arătați pe rând: „Papuc. Pantof.”",
+       "Atingeți ambele pe scurt."
+      ],
+      "gata": "A privit ambele încălțări.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: titlul aproape la fel, două încălțări. Nou: alege după loc (casă sau afară).",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 3,
+     "pillar": "resurse",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Încălțările pe preș",
+     "live_id": "s13-2-3-z3-resurse",
+     "materiale": "papucii și cizmele lui; preșul de la ușă",
+     "materiale_lista": [
+      "papucii și cizmele lui",
+      "preșul de la ușă"
+     ],
+     "materiale_surse": [
+      {
+       "text": "papucii și cizmele lui",
+       "sursa": "casa"
+      },
+      {
+       "text": "preșul de la ușă",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "„Unde stau papucii?” Mergeți la ușă.",
+      "Duce el papucii pe preș.",
+      "Îi așezați împreună, unul lângă altul.",
+      "„La loc. Papucii dorm la ușă.”"
+     ],
+     "gata": "A dus papucii pe preș și i-a lăsat acolo, unul lângă altul sau aproape.",
+     "plus": "Duce și cizmele.",
+     "provocare": "Pune papucii lui lângă perechea mamei: cei mici lângă cei mari.",
+     "siguranta": "",
+     "nota": null,
+     "live": {
+      "title": "Papucii la loc lângă ușă",
+      "dur": 4,
+      "materiale": "papuci",
+      "pasi": [
+       "Așezați papucii lângă ușă împreună.",
+       "„La loc. La ușă.”"
+      ],
+      "gata": "A ajutat să așeze papucii.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: papucii la loc lângă ușă. Nou: perechea așezată împreună.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 3,
+     "pillar": "social",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Schimbăm încălțările împreună",
+     "live_id": "s13-2-3-z3-social",
+     "materiale": "cizmele și papucii lui și ai voștri",
+     "materiale_lista": [
+      "cizmele și papucii lui și ai voștri"
+     ],
+     "materiale_surse": [
+      {
+       "text": "cizmele și papucii lui și ai voștri",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "Când veniți de afară, vă așezați amândoi pe treapta joasă sau pe jos.",
+      "„Eu scot cizma. Tu?” Trage el de cizmă, după ce deschideți voi fermoarul.",
+      "Îi dați papucii lui, voi îi luați pe ai voștri.",
+      "„Gata amândoi!”"
+     ],
+     "gata": "A tras de o cizmă sau v-a dat papucii.",
+     "plus": "Desface el ariciul de la cizmă.",
+     "provocare": "Vă aduce el papucii voștri.",
+     "siguranta": "Pe treapta joasă stă așezat, nu în picioare; voi stați lângă el.",
+     "nota": null,
+     "live": {
+      "title": "Schimbăm papucii împreună",
+      "dur": 3,
+      "materiale": "papuci",
+      "pasi": [
+       "Țineți mâna la schimbare.",
+       "„Împreună. Papuci.”"
+      ],
+      "gata": "A schimbat sau a acceptat ajutor.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: titlul și schimbatul împreună. Nou: are partea lui de treabă.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 4,
+     "pillar": "fizic",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Căciula în oglindă",
+     "live_id": "s13-2-3-z4-fizic",
+     "materiale": "căciula lui; oglinda de pe ușa dulapului",
+     "materiale_lista": [
+      "căciula lui",
+      "oglinda de pe ușa dulapului"
+     ],
+     "materiale_surse": [
+      {
+       "text": "căciula lui",
+       "sursa": "casa"
+      },
+      {
+       "text": "oglinda de pe ușa dulapului",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "Stați în fața oglinzii.",
+      "Puneți-vă voi căciula pe cap: „Căciulă!”",
+      "Îi dați căciula lui: și-o pune el pe cap, cum iese.",
+      "Vă uitați amândoi în oglindă: „Cezar cu căciulă!”"
+     ],
+     "gata": "Și-a pus căciula pe cap, măcar pe jumătate, sau v-a pus-o vouă.",
+     "plus": "O trage el în jos, peste urechi.",
+     "provocare": "„Cui mai punem căciulă?” Alege el: ursulețul sau tata.",
+     "siguranta": "Pomponul și ciucurii bine cusuți, fără nimic care se poate rupe și înghiți. Oglinda e fixată și nu e din sticlă la nivelul lui.",
+     "nota": null,
+     "live": {
+      "title": "Căciula pe cap pe scurt",
+      "dur": 4,
+      "materiale": "căciulă",
+      "pasi": [
+       "Puneți căciula pe cap 5–10 secunde dacă vrea.",
+       "„Căciulă. Cap.” Scoateți-o blând."
+      ],
+      "gata": "A simțit căciula sau a refuzat clar.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: căciula pe cap. Nou: și-o pune singur și se recunoaște în oglindă.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 4,
+     "pillar": "mental",
+     "dur": 8,
+     "mod_default": "A",
+     "title": "Unde s-a ascuns căciula?",
+     "live_id": "s13-2-3-z4-mental",
+     "materiale": "căciula lui; un prosop; două cutii sau castroane mari",
+     "materiale_lista": [
+      "căciula lui",
+      "un prosop",
+      "două cutii sau castroane mari"
+     ],
+     "materiale_surse": [
+      {
+       "text": "căciula lui",
+       "sursa": "casa"
+      },
+      {
+       "text": "un prosop",
+       "sursa": "casa"
+      },
+      {
+       "text": "două cutii sau castroane mari",
+       "sursa": "lista:castroane-linguri"
+      }
+     ],
+     "baza": [
+      "Arătați căciula, apoi o acoperiți cu prosopul cât se uită: „Unde e căciula?”",
+      "O descoperă el.",
+      "Acum cu două cutii: o ascundeți sub una, cât vă vede.",
+      "Ridică el cutia potrivită: „Ai găsit-o!”"
+     ],
+     "gata": "A găsit căciula sub cutia potrivită de cel puțin 2 ori din 3.",
+     "plus": "Mutați cutiile între ele o singură dată, încet.",
+     "provocare": "O duceți după ușă cât vă vede mergând, apoi vă întoarceți cu mâna goală: „Unde e?” Merge el s-o caute.",
+     "siguranta": "Castroane de plastic sau cutii, nu de sticlă ori porțelan. Prosopul nu rămâne peste capul lui.",
+     "nota": null,
+     "live": {
+      "title": "Unde e căciula?",
+      "dur": 3,
+      "materiale": "căciulă",
+      "pasi": [
+       "Puneți căciula la vedere pe scaun.",
+       "„Unde e căciula? Uite.”"
+      ],
+      "gata": "A arătat sau a privit căciula.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Înlocuit corpul: varianta actuală era „Unde e căciula?” cu căciula la vedere. Titlul și ideea rămân, dar acum căciula e ascunsă.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 4,
+     "pillar": "resurse",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Căciula în coșul de la ușă",
+     "live_id": "s13-2-3-z4-resurse",
+     "materiale": "căciula lui; coșul de la ușă",
+     "materiale_lista": [
+      "căciula lui",
+      "coșul de la ușă"
+     ],
+     "materiale_surse": [
+      {
+       "text": "căciula lui",
+       "sursa": "casa"
+      },
+      {
+       "text": "coșul de la ușă",
+       "sursa": "m:b12-s13-m1"
+      }
+     ],
+     "baza": [
+      "Arătați coșul cu poza căciulii lipită pe el: „Aici stă căciula.”",
+      "După ce o scoateți, i-o dați lui.",
+      "O duce el și o pune în coș.",
+      "„La loc!” Arată el poza căciulii."
+     ],
+     "gata": "A pus căciula în coșul de la ușă.",
+     "plus": "Instrucțiune în doi pași: „Ia mănușile și pune-le lângă căciulă.”",
+     "provocare": "Înainte de ieșire: „Adu-mi căciula.” O găsește în coș și o aduce.",
+     "siguranta": "",
+     "nota": null,
+     "live": {
+      "title": "Căciula pe cârlig",
+      "dur": 4,
+      "materiale": "căciulă",
+      "pasi": [
+       "Duceți căciula la cârlig.",
+       "„La loc.”"
+      ],
+      "gata": "A ajutat să agățe căciula.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Înlocuit: varianta actuală era „Căciula pe cârlig”; acasă nu are unde s-o agațe singur, așa că stă în coșul de la ușă, la înălțimea lui.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 4,
+     "pillar": "social",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Căciuli pentru toată familia",
+     "live_id": "s13-2-3-z4-social",
+     "materiale": "căciula lui și căciulile părinților",
+     "materiale_lista": [
+      "căciula lui și căciulile părinților"
+     ],
+     "materiale_surse": [
+      {
+       "text": "căciula lui și căciulile părinților",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "Puneți căciulile pe jos.",
+      "„A cui e cea mare?” O duce el la părinte.",
+      "Părintele se apleacă, iar el i-o pune pe cap.",
+      "Părintele i-o pune pe a lui: „Amândoi cu căciulă!”"
+     ],
+     "gata": "A dus căciula la adultul potrivit și a încercat să i-o pună pe cap.",
+     "plus": "Împarte el toate trei căciulile: a lui, a mamei, a tatei.",
+     "provocare": "Tata își pune căciula lui Cezar, prea mică: râde și v-o mută pe cea potrivită?",
+     "siguranta": "",
+     "nota": null,
+     "live": {
+      "title": "Arătăm căciula adultului",
+      "dur": 3,
+      "materiale": "căciulă",
+      "pasi": [
+       "Arătați căciula: „Uite căciula.”",
+       "Stați pe scurt, fără forțare."
+      ],
+      "gata": "A participat la arătat.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: arătăm căciula adultului. Nou: o împarte el și o pune pe capul potrivit.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 5,
+     "pillar": "fizic",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Mâna intră în mănușă",
+     "live_id": "s13-2-3-z5-fizic",
+     "materiale": "mănușile lui cu un deget",
+     "materiale_lista": [
+      "mănușile lui cu un deget"
+     ],
+     "materiale_surse": [
+      {
+       "text": "mănușile lui cu un deget",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "Țineți mănușa deschisă: „Mâna intră în casă!”",
+      "Împinge el mâna; la degetul mare ajutați voi.",
+      "Bate din palme cu mănușa: „Bum, bum!”",
+      "O scoate el, trăgând de vârf cu cealaltă mână."
+     ],
+     "gata": "A împins mâna în mănușă până la încheietură.",
+     "plus": "Și a doua mănușă.",
+     "provocare": "Cu mănușile pe mâini, ia o minge moale și o aruncă în coș.",
+     "siguranta": "Mănuși fără șnur între ele (nu le treceți pe după gât) și fără piese mici cusute.",
+     "nota": null,
+     "live": {
+      "title": "Mănușile pe mâini",
+      "dur": 5,
+      "materiale": "mănuși",
+      "pasi": [
+       "Probați o mănușă pe scurt dacă vrea.",
+       "„Mănușă. Mână.” Apoi scoateți-o."
+      ],
+      "gata": "A simțit mănușa sau a privit.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: mănușile pe mâini. Nou: le pune el și le folosește.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 5,
+     "pillar": "mental",
+     "dur": 6,
+     "mod_default": "A",
+     "title": "Perechea de mănuși",
+     "live_id": "s13-2-3-z5-mental",
+     "materiale": "coșul cu perechi: mănușile lui și o pereche de mănuși de adult",
+     "materiale_lista": [
+      "coșul cu perechi: mănușile lui și o pereche de mănuși de adult"
+     ],
+     "materiale_surse": [
+      {
+       "text": "coșul cu perechi: mănușile lui și o pereche de mănuși de adult",
+       "sursa": "m:b12-s13-m2"
+      }
+     ],
+     "baza": [
+      "Puneți pe jos cele 4 mănuși, amestecate.",
+      "Luați una mică: „Unde e cealaltă? La fel.”",
+      "Caută el; dacă ezită, puneți două alături: „La fel?”",
+      "Perechea merge în coș: „Pereche!”"
+     ],
+     "gata": "A potrivit o pereche de mănuși.",
+     "plus": "Ambele perechi: mică cu mică, mare cu mare.",
+     "provocare": "Amestecați în coș și o lingură și o mașinuță: hainele într-o parte, ce nu e haină în alta.",
+     "siguranta": "Mașinuța e mare, fără roți sau piese care se desprind; lingura e de lemn sau de plastic.",
+     "nota": null,
+     "live": {
+      "title": "Mână cu mănușă, mână fără",
+      "dur": 3,
+      "materiale": "mănușă",
+      "pasi": [
+       "Arătați mâna cu mănușă: „Cu mănușă.”",
+       "Arătați mâna goală: „Fără.”"
+      ],
+      "gata": "A văzut diferența pe scurt.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Înlocuit corpul: varianta actuală era „Mână cu mănușă, mână fără” (privit). Acum potrivește perechi, ca la șosete, și sortează.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 5,
+     "pillar": "resurse",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Mănușile lângă căciulă",
+     "live_id": "s13-2-3-z5-resurse",
+     "materiale": "mănușile lui; coșul de la ușă",
+     "materiale_lista": [
+      "mănușile lui",
+      "coșul de la ușă"
+     ],
+     "materiale_surse": [
+      {
+       "text": "mănușile lui",
+       "sursa": "casa"
+      },
+      {
+       "text": "coșul de la ușă",
+       "sursa": "m:b12-s13-m1"
+      }
+     ],
+     "baza": [
+      "După ieșire, scoateți mănușile împreună.",
+      "„Unde stau mănușile?” Merge el la coșul de la ușă.",
+      "Le pune lângă căciulă.",
+      "Numărați pe degete: „Una, două. Pereche.”"
+     ],
+     "gata": "A dus ambele mănuși în coș.",
+     "plus": "Le pune ținute împreună, ca pereche.",
+     "provocare": "Înainte de ieșire, aduce singur din coș mănușile și căciula.",
+     "siguranta": "",
+     "nota": null,
+     "live": {
+      "title": "Mănușile în sertar",
+      "dur": 4,
+      "materiale": "mănuși",
+      "pasi": [
+       "Puneți mănușile în sertar împreună.",
+       "„La loc.”"
+      ],
+      "gata": "A ajutat cu mănușile.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Schimbat locul: varianta actuală era „Mănușile în sertar”; acum stau în coșul de la ușă, lângă căciulă, ca toate lucrurile de afară să fie într-un loc.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 5,
+     "pillar": "social",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Ținem mâna cu mănușa",
+     "live_id": "s13-2-3-z5-social",
+     "materiale": "mănușile lui și ale voastre",
+     "materiale_lista": [
+      "mănușile lui și ale voastre"
+     ],
+     "materiale_surse": [
+      {
+       "text": "mănușile lui și ale voastre",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "Puneți-vă amândoi mănușile.",
+      "Bateți palma: „Bate, mănușă!”",
+      "Țineți-vă de mână și mergeți câțiva pași prin casă.",
+      "„Cu mănuși ne e cald.”"
+     ],
+     "gata": "A bătut palma cu mănușa sau a mers ținându-vă de mână.",
+     "plus": "Jocul „Unde e mâna?”: mâna se ascunde în mănușă și iese.",
+     "provocare": "Vă pune el mănușa pe mână, iar voi împingeți.",
+     "siguranta": "",
+     "nota": null,
+     "live": {
+      "title": "Ținem mâna cu mănușa",
+      "dur": 3,
+      "materiale": "mănușă",
+      "pasi": [
+       "Țineți mâna lui pe scurt, cu sau fără mănușă.",
+       "„Împreună.”"
+      ],
+      "gata": "A ținut mâna sau a privit.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: titlul și mâna ținută. Nou: joc de bătut palma și de-a v-ați ascunselea cu mâna.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 6,
+     "pillar": "fizic",
+     "dur": 10,
+     "mod_default": "A",
+     "title": "Ieșim îmbrăcați în curte",
+     "live_id": "s13-2-3-z6-fizic",
+     "materiale": "haina, căciula, mănușile și cizmele lui; coșul de la ușă",
+     "materiale_lista": [
+      "haina, căciula, mănușile și cizmele lui",
+      "coșul de la ușă"
+     ],
+     "materiale_surse": [
+      {
+       "text": "haina, căciula, mănușile și cizmele lui",
+       "sursa": "casa"
+      },
+      {
+       "text": "coșul de la ușă",
+       "sursa": "m:b12-s13-m1"
+      }
+     ],
+     "baza": [
+      "Aduce el din coș căciula și mănușile.",
+      "Vă îmbrăcați în ordine și spuneți ce urmează: „Întâi cizmele, apoi haina, apoi căciula.” El ajută la fiecare.",
+      "Ieșiți în curte 5–8 minute; atingeți ceva rece, o bancă sau o frunză udă: „Rece! Bine că avem mănuși.”",
+      "La ușă: „Intrăm la cald.”"
+     ],
+     "gata": "A ajutat la cel puțin două piese și a stat afară îmbrăcat câteva minute.",
+     "plus": "Alege el ce piesă urmează, dintre două pe care i le arătați.",
+     "provocare": "Îmbracă el ursulețul cu o căciulă veche și îl ia afară.",
+     "siguranta": "E frig: ieșire de 5–10 minute, verificați des mâinile și nasul. Poarta curții rămâne închisă. Fără fular lung la gât; un fular scurt se bagă în haină.",
+     "nota": null,
+     "live": {
+      "title": "Ieșim îmbrăcați",
+      "dur": 6,
+      "materiale": "haină",
+      "pasi": [
+       "Îmbrăcați haina și ieșiți 1–2 minute.",
+       "„Haină. Afară. Cald.”"
+      ],
+      "gata": "A ieșit scurt îmbrăcat.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: titlul și ieșirea scurtă. Nou: ordinea la îmbrăcat și ajutorul lui la fiecare piesă.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 6,
+     "pillar": "mental",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Ce purtăm afară azi?",
+     "live_id": "s13-2-3-z6-mental",
+     "materiale": "cartonașele cu vremea: soare, ploaie, frig; căciula și mănușile lui",
+     "materiale_lista": [
+      "cartonașele cu vremea: soare, ploaie, frig",
+      "căciula și mănușile lui"
+     ],
+     "materiale_surse": [
+      {
+       "text": "cartonașele cu vremea: soare, ploaie, frig",
+       "sursa": "m:b12-s13-m3"
+      },
+      {
+       "text": "căciula și mănușile lui",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "La fereastră, numiți voi vremea: „Afară e frig.” sau „Plouă.”",
+      "Puneți jos cartonașul vremii de azi.",
+      "Lângă el aduce o haină adevărată potrivită: căciula sau mănușile.",
+      "„E frig, deci căciulă!”"
+     ],
+     "gata": "A adus măcar o piesă potrivită lângă cartonașul vremii de azi.",
+     "plus": "Două cartonașe, frig și soare: pune căciula la frig.",
+     "provocare": "Arătați cartonașul cu ploaia: alege el ce aduce (cizmele, haina cu glugă).",
+     "siguranta": "Cartonașele au colțurile rotunjite și sunt acoperite cu folie; dacă le mestecă, le luați, ca să nu rupă folia.",
+     "nota": null,
+     "live": {
+      "title": "Afară cu haină, înăuntru fără",
+      "dur": 3,
+      "materiale": "haină",
+      "pasi": [
+       "La ușă cu haina: „Afară. Haină.”",
+       "Intrați și scoateți: „Înăuntru.”"
+      ],
+      "gata": "A trecut pragul cu haina.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Înlocuit corpul: varianta actuală era „Afară cu haină, înăuntru fără”. Ideea de afară și înăuntru rămâne, dar acum alege haina după vremea de azi.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 6,
+     "pillar": "resurse",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Hainele la loc după afară",
+     "live_id": "s13-2-3-z6-resurse",
+     "materiale": "hainele lui de afară; coșul de la ușă; scaunul de la ușă",
+     "materiale_lista": [
+      "hainele lui de afară",
+      "coșul de la ușă",
+      "scaunul de la ușă"
+     ],
+     "materiale_surse": [
+      {
+       "text": "hainele lui de afară",
+       "sursa": "casa"
+      },
+      {
+       "text": "coșul de la ușă",
+       "sursa": "m:b12-s13-m1"
+      },
+      {
+       "text": "scaunul de la ușă",
+       "sursa": "m:b12-s13-m5"
+      }
+     ],
+     "baza": [
+      "La intrare, scoateți pe rând: mănușile, căciula, haina.",
+      "Duce el mănușile și căciula în coșul de la ușă.",
+      "Haina o duce pe scaunul de la ușă sau v-o dă vouă, ca s-o agățați sus.",
+      "„Totul la loc!”"
+     ],
+     "gata": "A dus cel puțin două piese la locul lor: în coș sau pe scaun.",
+     "plus": "Duce și cizmele pe preș.",
+     "provocare": "Lăsați o mănușă pe jos lângă ușă: „Lipsește ceva?” O găsește și o pune la loc.",
+     "siguranta": "",
+     "nota": null,
+     "live": {
+      "title": "Haina pe cârlig după afară",
+      "dur": 4,
+      "materiale": "haină",
+      "pasi": [
+       "Agățați haina împreună după ieșire.",
+       "„La loc.”"
+      ],
+      "gata": "A ajutat la agățat.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Înlocuit: varianta actuală era „Haina pe cârlig după afară”; acasă nu are unde le agăța singur, așa că fiecare piesă are loc în coș sau pe scaunul de la ușă.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 6,
+     "pillar": "social",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Intrăm împreună și ne încălzim",
+     "live_id": "s13-2-3-z6-social",
+     "materiale": "o pătură",
+     "materiale_lista": [
+      "o pătură"
+     ],
+     "materiale_surse": [
+      {
+       "text": "o pătură",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "Intrați ținându-vă de mână.",
+      "Frecați-vă amândoi palmele: „Mâini reci. Frecăm.”",
+      "Pune el palmele pe obrajii voștri: „Reci!” După câteva minute: „Calde!”",
+      "O îmbrățișare sub pătură: „Acum e cald.”"
+     ],
+     "gata": "A frecat palmele cu voi sau v-a pus mâinile pe obraji.",
+     "plus": "Încălzește el mâinile celuilalt părinte.",
+     "provocare": "Jocul „brrr” și „aaah”: tremurați de frig, apoi oftați de cald, iar el vă imită.",
+     "siguranta": "Mâinile reci nu se încălzesc pe calorifer sau sub apă fierbinte; doar frecat și îmbrățișat.",
+     "nota": null,
+     "live": {
+      "title": "Intrăm împreună cu haina",
+      "dur": 3,
+      "materiale": "fără",
+      "pasi": [
+       "Țineți mâna la intrare.",
+       "„Hai înăuntru. Scoatem haina.”"
+      ],
+      "gata": "A intrat cu adultul.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: intrăm împreună. Nou: simte el diferența dintre rece și cald.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 7,
+     "pillar": "fizic",
+     "dur": 8,
+     "mod_default": "A",
+     "title": "Plimbare liberă îmbrăcat",
+     "live_id": "s13-2-3-z7-fizic",
+     "materiale": "hainele lui de afară; coșul de la ușă",
+     "materiale_lista": [
+      "hainele lui de afară",
+      "coșul de la ușă"
+     ],
+     "materiale_surse": [
+      {
+       "text": "hainele lui de afară",
+       "sursa": "casa"
+      },
+      {
+       "text": "coșul de la ușă",
+       "sursa": "m:b12-s13-m1"
+      }
+     ],
+     "baza": [
+      "Se îmbracă cu voi, cum a învățat săptămâna asta; aduce el căciula și mănușile din coș.",
+      "Afară, el alege direcția; voi mergeți după el.",
+      "Numiți doar ce arată el: „Frunză udă.”",
+      "Când îi e frig sau obosește: „Hai acasă.”"
+     ],
+     "gata": "A mers liber câteva minute și a ales el direcția.",
+     "plus": "Aduce acasă un lucru de afară, de exemplu o frunză mare.",
+     "provocare": "La final: „Unde e casa?” Vă duce el înapoi la ușă.",
+     "siguranta": "E frig: ieșire de 5–10 minute, verificați des mâinile și nasul. Poarta curții rămâne închisă. Ce adună de jos nu ajunge în gură; la intrare vă spălați pe mâini.",
+     "nota": null,
+     "live": {
+      "title": "Plimbare liberă cu haine",
+      "dur": 6,
+      "materiale": "fără",
+      "pasi": [
+       "El dictează direcția pe scurt, îmbrăcat cum e nevoie.",
+       "Voi numiți haina doar dacă o arată."
+      ],
+      "gata": "A mers liber câteva minute.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: titlul aproape la fel, el conduce. Nou: se îmbracă cu ajutorul lui și vă duce acasă.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 7,
+     "pillar": "mental",
+     "dur": 8,
+     "mod_default": "A",
+     "title": "Cartea hainelor lui Cezar",
+     "live_id": "s13-2-3-z7-mental",
+     "materiale": "cartea lui Cezar, făcută din pozele lui; o carte cartonată din casă",
+     "materiale_lista": [
+      "cartea lui Cezar, făcută din pozele lui",
+      "o carte cartonată din casă"
+     ],
+     "materiale_surse": [
+      {
+       "text": "cartea lui Cezar, făcută din pozele lui",
+       "sursa": "m:b12-s13-m4"
+      },
+      {
+       "text": "o carte cartonată din casă",
+       "sursa": "lista:carti-cartonate"
+      }
+     ],
+     "baza": [
+      "Răsfoiți cartea făcută din pozele lui îmbrăcat: cu căciulă, cu mănuși, cu cizme.",
+      "La fiecare pagină: „Uite-l pe Cezar! Arată-mi căciula.”",
+      "După ce arată pe poză: „Adu-mi căciula adevărată.” O aduce din coș și o pune lângă poză.",
+      "Întoarce el paginile, în ritmul lui."
+     ],
+     "gata": "A arătat pe poze cel puțin două haine și a pus una adevărată lângă poza ei.",
+     "plus": "În cartea cartonată din casă: „Arată-mi câinele. Ce face câinele?” Faceți voi „ham-ham”; dacă imită, e un bonus.",
+     "provocare": "Puneți pe jos trei pagini (căciula, mănușile, cizmele) și aduce el din casă fiecare haină lângă poza ei.",
+     "siguranta": "Paginile sunt acoperite cu folie și au colțurile rotunjite; inelele sunt mai mari de 3,2 cm sau sunt înlocuite cu o sfoară scurtă, legată strâns.",
+     "nota": null,
+     "live": {
+      "title": "Carte: haine pe vreme",
+      "dur": 4,
+      "materiale": "carte cu imagini",
+      "pasi": [
+       "El întoarce pagina.",
+       "Arătați o haină din imagine dacă e clar: „Haină.”"
+      ],
+      "gata": "A întors pagina sau a privit.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: cartea și întorsul paginii. Nou: cartea e despre el, iar pozele se leagă de hainele adevărate.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 7,
+     "pillar": "resurse",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Coșul de la ușă, pregătit pentru mâine",
+     "live_id": "s13-2-3-z7-resurse",
+     "materiale": "coșul de la ușă; căciula, mănușile și o șosetă rătăcită",
+     "materiale_lista": [
+      "coșul de la ușă",
+      "căciula, mănușile și o șosetă rătăcită"
+     ],
+     "materiale_surse": [
+      {
+       "text": "coșul de la ușă",
+       "sursa": "m:b12-s13-m1"
+      },
+      {
+       "text": "căciula, mănușile și o șosetă rătăcită",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "Duminică seara, mergeți la coșul de la ușă.",
+      "Scoateți totul pe jos: căciula, mănușile și o șosetă pe care ați pus-o voi acolo.",
+      "Pune el la loc doar ce e de afară; șoseta o duce în sertar.",
+      "„Gata pentru mâine!”"
+     ],
+     "gata": "A pus la loc în coș cel puțin o piesă și a scos ce nu era de acolo, cu ajutor.",
+     "plus": "Pune mănușile împreună, ca pereche.",
+     "provocare": "Ascundeți o jucărie în coș: o scoate el și o duce la locul ei.",
+     "siguranta": "",
+     "nota": null,
+     "live": {
+      "title": "Hainele de afară pe cârlig",
+      "dur": 4,
+      "materiale": "haină",
+      "pasi": [
+       "Agățați haina împreună.",
+       "„La loc.”"
+      ],
+      "gata": "A ajutat la agățat.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Înlocuit: varianta actuală era „Hainele de afară pe cârlig”; acasă nu are unde le agăța singur, așa că săptămâna se încheie cu coșul de la ușă pregătit.",
+     "theme_live": "Haine pe vreme"
+    },
+    {
+     "day": 7,
+     "pillar": "social",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Noapte bună",
+     "live_id": "s13-2-3-z7-social",
+     "materiale": "veioza",
+     "materiale_lista": [
+      "veioza"
+     ],
+     "materiale_surse": [
+      {
+       "text": "veioza",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "„Noapte bună, haine!” Treceți pe la coșul de la ușă.",
+      "Lumină mică, fără grabă.",
+      "Stinge el veioza, cu mâna voastră peste a lui.",
+      "„Noapte bună, Cezar.”"
+     ],
+     "gata": "A făcut cu mâna sau a stins lumina cu voi.",
+     "plus": "Face „pa” căciulii și cizmelor.",
+     "provocare": "Alege el, dintre două, cartea sau jucăria cu care merge la culcare.",
+     "siguranta": "Cablul veiozei e prins și departe de pat; becul nu se atinge, e cald.",
+     "nota": null,
+     "live": {
+      "title": "Noapte bună",
+      "dur": 3,
+      "materiale": "fără",
+      "pasi": [
+       "„Noapte bună.”",
+       "Lumină mică, fără grabă."
+      ],
+      "gata": "A auzit ritualul de noapte.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: ritualul și titlul. Nou: un gest al lui, stinsul luminii.",
+     "theme_live": "Haine pe vreme"
+    }
+   ],
+   "materials": [
+    {
+     "n": 1,
+     "title": "Coșul de la ușă",
+     "extra": "făcut acasă",
+     "bullets": [
+      {
+       "text": "Un coș sau o cutie, pe jos lângă ușă, cu pozele căciulii și ale mănușilor lipite pe el. Așa, lucrurile de afară au un loc la înălțimea lui.",
+       "sub": []
+      },
+      {
+       "text": "Categorie: Viață practică. Preț: 0 lei, fără cumpărături.",
+       "sub": []
+      },
+      {
+       "text": "Folosit la: joi resurse, vineri resurse, sâmbătă fizic, sâmbătă resurse, duminică fizic, duminică resurse.",
+       "sub": []
+      },
+      {
+       "text": "Acasă: Coșul de la ușă.",
+       "sub": [
+        "Cum: 1) luați un coș sau o cutie de carton de vreo 30×20 cm; 2) fotografiați sau desenați căciula și mănușile lui; 3) lipiți pozele pe o latură cu bandă adezivă transparentă, lată; 4) puneți coșul pe jos, lângă ușă.",
+        "Materiale și unelte: coș sau cutie, 2 poze sau desene, bandă adezivă transparentă, foarfecă.",
+        "Cost: 0 lei, cu lucruri din casă.",
+        "Durată: 10 minute.",
+        "Siguranță: fără capse; marginile cutiei le îndoiți spre interior sau le acoperiți cu bandă."
+       ]
+      }
+     ],
+     "uses": [
+      [
+       4,
+       "resurse"
+      ],
+      [
+       5,
+       "resurse"
+      ],
+      [
+       6,
+       "fizic"
+      ],
+      [
+       6,
+       "resurse"
+      ],
+      [
+       7,
+       "fizic"
+      ],
+      [
+       7,
+       "resurse"
+      ]
+     ],
+     "uses_text": "Folosit la: joi resurse, vineri resurse, sâmbătă fizic, sâmbătă resurse, duminică fizic, duminică resurse.",
+     "link": null,
+     "price": null,
+     "home_only": true,
+     "id": "b12-s13-m1",
+     "banda": "1-2",
+     "saptamana": 13,
+     "ordine": 1,
+     "nume": "Coșul de la ușă",
+     "produs_cheie": "cos-de-la-usa-diy",
+     "categorie": "viata_practica",
+     "tip": "diy",
+     "pret": null,
+     "moneda": null,
+     "doar_acasa": true,
+     "descriere": "Un coș sau o cutie, pe jos lângă ușă, cu pozele căciulii și ale mănușilor lipite pe el. Așa, lucrurile de afară au un loc la înălțimea lui.",
+     "activitati": [
+      "s13-2-3-z4-resurse",
+      "s13-2-3-z5-resurse",
+      "s13-2-3-z6-fizic",
+      "s13-2-3-z6-resurse",
+      "s13-2-3-z7-fizic",
+      "s13-2-3-z7-resurse"
+     ],
+     "acasa": [
+      {
+       "id": "b12-s13-m1-acasa-1",
+       "tip": "diy",
+       "titlu": "Coșul de la ușă",
+       "pasi": "1) luați un coș sau o cutie de carton de vreo 30×20 cm; 2) fotografiați sau desenați căciula și mănușile lui; 3) lipiți pozele pe o latură cu bandă adezivă transparentă, lată; 4) puneți coșul pe jos, lângă ușă.",
+       "materiale_unelte": "coș sau cutie, 2 poze sau desene, bandă adezivă transparentă, foarfecă.",
+       "cost_estimat": "0 lei, cu lucruri din casă.",
+       "durata": "10 minute.",
+       "siguranta": "fără capse; marginile cutiei le îndoiți spre interior sau le acoperiți cu bandă.",
+       "link_model": null
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "title": "Coșul cu perechi",
+     "extra": "din casă",
+     "bullets": [
+      {
+       "text": "3 perechi de șosete ale lui, în culori diferite, mănușile lui, o pereche de mănuși de adult și două șosete mari ale tatei, într-un coș.",
+       "sub": []
+      },
+      {
+       "text": "Categorie: Sortare și potrivire. Preț: 0 lei, fără cumpărături.",
+       "sub": []
+      },
+      {
+       "text": "Folosit la: marți fizic, marți mental, marți resurse, marți social, vineri mental.",
+       "sub": []
+      },
+      {
+       "text": "Acasă: Coșul cu perechi.",
+       "sub": [
+        "Cum: 1) alegeți 3 perechi de șosete ale lui, cât mai diferite la culoare; 2) adăugați mănușile lui și o pereche de mănuși de adult; 3) puneți totul într-un coș sau într-o cutie.",
+        "Materiale și unelte: șosete și mănuși din casă, un coș.",
+        "Cost: 0 lei.",
+        "Durată: 5 minute.",
+        "Siguranță: fără șosete cu buline antiderapante care se desprind și fără mănuși cu șnur."
+       ]
+      }
+     ],
+     "uses": [
+      [
+       2,
+       "fizic"
+      ],
+      [
+       2,
+       "mental"
+      ],
+      [
+       2,
+       "resurse"
+      ],
+      [
+       2,
+       "social"
+      ],
+      [
+       5,
+       "mental"
+      ]
+     ],
+     "uses_text": "Folosit la: marți fizic, marți mental, marți resurse, marți social, vineri mental.",
+     "link": null,
+     "price": null,
+     "home_only": true,
+     "id": "b12-s13-m2",
+     "banda": "1-2",
+     "saptamana": 13,
+     "ordine": 2,
+     "nume": "Coșul cu perechi",
+     "produs_cheie": "cos-perechi-haine",
+     "categorie": "sortare",
+     "tip": "din_casa",
+     "pret": null,
+     "moneda": null,
+     "doar_acasa": true,
+     "descriere": "3 perechi de șosete ale lui, în culori diferite, mănușile lui, o pereche de mănuși de adult și două șosete mari ale tatei, într-un coș.",
+     "activitati": [
+      "s13-2-3-z2-fizic",
+      "s13-2-3-z2-mental",
+      "s13-2-3-z2-resurse",
+      "s13-2-3-z2-social",
+      "s13-2-3-z5-mental"
+     ],
+     "acasa": [
+      {
+       "id": "b12-s13-m2-acasa-1",
+       "tip": "diy",
+       "titlu": "Coșul cu perechi",
+       "pasi": "1) alegeți 3 perechi de șosete ale lui, cât mai diferite la culoare; 2) adăugați mănușile lui și o pereche de mănuși de adult; 3) puneți totul într-un coș sau într-o cutie.",
+       "materiale_unelte": "șosete și mănuși din casă, un coș.",
+       "cost_estimat": "0 lei.",
+       "durata": "5 minute.",
+       "siguranta": "fără șosete cu buline antiderapante care se desprind și fără mănuși cu șnur.",
+       "link_model": null
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "title": "Cartonașe „Ce purtăm afară?”",
+     "extra": "tipărit acasă",
+     "bullets": [
+      {
+       "text": "3 cartonașe cu vremea: soare, ploaie, frig.",
+       "sub": []
+      },
+      {
+       "text": "Categorie: Sortare și potrivire. Preț: 0 lei, fără cumpărături.",
+       "sub": []
+      },
+      {
+       "text": "Folosit la: sâmbătă mental.",
+       "sub": []
+      },
+      {
+       "text": "Acasă: Cartonașe „Ce purtăm afară?”.",
+       "sub": [
+        "Cum: 1) desenați sau tipăriți trei imagini simple, cât o carte poștală: soare, nor cu ploaie, fulg de zăpadă; 2) lipiți-le pe carton; 3) acoperiți-le pe ambele fețe cu folie autoadezivă sau cu bandă transparentă lată; 4) rotunjiți colțurile cu foarfeca.",
+        "Materiale și unelte: hârtie sau carton, creioane colorate sau imprimantă, folie autoadezivă ori bandă transparentă, foarfecă.",
+        "Cost: 0 lei, cu lucruri din casă.",
+        "Durată: 20 de minute.",
+        "Siguranță: colțuri rotunjite; dacă folia se desprinde, refaceți cartonașul."
+       ]
+      }
+     ],
+     "uses": [
+      [
+       6,
+       "mental"
+      ]
+     ],
+     "uses_text": "Folosit la: sâmbătă mental.",
+     "link": null,
+     "price": null,
+     "home_only": true,
+     "id": "b12-s13-m3",
+     "banda": "1-2",
+     "saptamana": 13,
+     "ordine": 3,
+     "nume": "Cartonașe „Ce purtăm afară?”",
+     "produs_cheie": "cartonase-vreme-print",
+     "categorie": "sortare",
+     "tip": "print",
+     "pret": null,
+     "moneda": null,
+     "doar_acasa": true,
+     "descriere": "3 cartonașe cu vremea: soare, ploaie, frig.",
+     "activitati": [
+      "s13-2-3-z6-mental"
+     ],
+     "acasa": [
+      {
+       "id": "b12-s13-m3-acasa-1",
+       "tip": "print",
+       "titlu": "Cartonașe „Ce purtăm afară?”",
+       "pasi": "1) desenați sau tipăriți trei imagini simple, cât o carte poștală: soare, nor cu ploaie, fulg de zăpadă; 2) lipiți-le pe carton; 3) acoperiți-le pe ambele fețe cu folie autoadezivă sau cu bandă transparentă lată; 4) rotunjiți colțurile cu foarfeca.",
+       "materiale_unelte": "hârtie sau carton, creioane colorate sau imprimantă, folie autoadezivă ori bandă transparentă, foarfecă.",
+       "cost_estimat": "0 lei, cu lucruri din casă.",
+       "durata": "20 de minute.",
+       "siguranta": "colțuri rotunjite; dacă folia se desprinde, refaceți cartonașul.",
+       "link_model": null
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "title": "Cartea lui Cezar: hainele",
+     "extra": "tipărit acasă",
+     "bullets": [
+      {
+       "text": "O carte mică făcută din pozele lui îmbrăcat. Săptămâna viitoare primește paginile drumului.",
+       "sub": []
+      },
+      {
+       "text": "Categorie: Cărți. Preț: 0 lei, fără cumpărături.",
+       "sub": []
+      },
+      {
+       "text": "Folosit la: duminică mental.",
+       "sub": []
+      },
+      {
+       "text": "Acasă: Cartea lui Cezar: hainele.",
+       "sub": [
+        "Cum: 1) fotografiați-l cu căciulă, cu mănuși, cu cizme, cu haina, în papuci și desculț; 2) tipăriți pozele cât o carte poștală sau, fără imprimantă, desenați simplu fiecare haină pe carton; 3) acoperiți paginile cu folie și rotunjiți colțurile; 4) faceți două găuri și prindeți paginile cu inele mari sau cu o sfoară scurtă, legată strâns.",
+        "Materiale și unelte: pozele sau desenele, carton, folie autoadezivă, perforator, 2 inele mari sau sfoară.",
+        "Cost: 0 lei dacă aveți imprimantă sau desenați.",
+        "Durată: aproximativ o oră.",
+        "Siguranță: inelele mai mari de 3,2 cm sau o sfoară scurtă, legată strâns; colțuri rotunjite."
+       ]
+      }
+     ],
+     "uses": [
+      [
+       7,
+       "mental"
+      ]
+     ],
+     "uses_text": "Folosit la: duminică mental.",
+     "link": null,
+     "price": null,
+     "home_only": true,
+     "id": "b12-s13-m4",
+     "banda": "1-2",
+     "saptamana": 13,
+     "ordine": 4,
+     "nume": "Cartea lui Cezar: hainele",
+     "produs_cheie": "cartea-lui-cezar-print",
+     "categorie": "carti",
+     "tip": "print",
+     "pret": null,
+     "moneda": null,
+     "doar_acasa": true,
+     "descriere": "O carte mică făcută din pozele lui îmbrăcat. Săptămâna viitoare primește paginile drumului.",
+     "activitati": [
+      "s13-2-3-z7-mental"
+     ],
+     "acasa": [
+      {
+       "id": "b12-s13-m4-acasa-1",
+       "tip": "print",
+       "titlu": "Cartea lui Cezar: hainele",
+       "pasi": "1) fotografiați-l cu căciulă, cu mănuși, cu cizme, cu haina, în papuci și desculț; 2) tipăriți pozele cât o carte poștală sau, fără imprimantă, desenați simplu fiecare haină pe carton; 3) acoperiți paginile cu folie și rotunjiți colțurile; 4) faceți două găuri și prindeți paginile cu inele mari sau cu o sfoară scurtă, legată strâns.",
+       "materiale_unelte": "pozele sau desenele, carton, folie autoadezivă, perforator, 2 inele mari sau sfoară.",
+       "cost_estimat": "0 lei dacă aveți imprimantă sau desenați.",
+       "durata": "aproximativ o oră.",
+       "siguranta": "inelele mai mari de 3,2 cm sau o sfoară scurtă, legată strâns; colțuri rotunjite.",
+       "link_model": null
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "title": "Scaunul de la ușă",
+     "extra": "din casă",
+     "bullets": [
+      {
+       "text": "Un taburet sau un scaun mic lângă ușă: aici stă haina, ca să o poată duce singur.",
+       "sub": []
+      },
+      {
+       "text": "Categorie: Viață practică. Preț: 0 lei, fără cumpărături.",
+       "sub": []
+      },
+      {
+       "text": "Folosit la: luni resurse, sâmbătă resurse.",
+       "sub": []
+      },
+      {
+       "text": "Acasă: Scaunul de la ușă.",
+       "sub": [
+        "Cum: 1) puneți lângă ușă un taburet sau un scaun mic, stabil; 2) arătați-i: „Aici stă haina.”",
+        "Materiale și unelte: un taburet sau un scaun mic din casă.",
+        "Cost: 0 lei.",
+        "Durată: 2 minute.",
+        "Siguranță: scaunul e stabil și nu se urcă pe el; dacă e scaun de adult, haina stă pe șezut."
+       ]
+      }
+     ],
+     "uses": [
+      [
+       1,
+       "resurse"
+      ],
+      [
+       6,
+       "resurse"
+      ]
+     ],
+     "uses_text": "Folosit la: luni resurse, sâmbătă resurse.",
+     "link": null,
+     "price": null,
+     "home_only": true,
+     "id": "b12-s13-m5",
+     "banda": "1-2",
+     "saptamana": 13,
+     "ordine": 5,
+     "nume": "Scaunul de la ușă",
+     "produs_cheie": "scaun-mic-usa",
+     "categorie": "viata_practica",
+     "tip": "din_casa",
+     "pret": null,
+     "moneda": null,
+     "doar_acasa": true,
+     "descriere": "Un taburet sau un scaun mic lângă ușă: aici stă haina, ca să o poată duce singur.",
+     "activitati": [
+      "s13-2-3-z1-resurse",
+      "s13-2-3-z6-resurse"
+     ],
+     "acasa": [
+      {
+       "id": "b12-s13-m5-acasa-1",
+       "tip": "diy",
+       "titlu": "Scaunul de la ușă",
+       "pasi": "1) puneți lângă ușă un taburet sau un scaun mic, stabil; 2) arătați-i: „Aici stă haina.”",
+       "materiale_unelte": "un taburet sau un scaun mic din casă.",
+       "cost_estimat": "0 lei.",
+       "durata": "2 minute.",
+       "siguranta": "scaunul e stabil și nu se urcă pe el; dacă e scaun de adult, haina stă pe șezut.",
+       "link_model": null
+      }
+     ]
+    }
+   ],
+   "free": "hainele lui de afară, papucii, cizmele, sertarul cu șosete, oglinda, o pătură și veioza.",
+   "materials_heading": "Materialele săptămânii 13 (toate din casă sau făcute acasă, 0 lei)"
+  },
+  {
+   "n": 14,
+   "theme": "Pași pe drumul scurt",
+   "range": "30 noiembrie – 6 decembrie 2026",
+   "info": [
+    [
+     "Cezar în săptămâna asta",
+     "17 luni și jumătate; face 18 luni pe 11 decembrie. Merge sigur pe plat și începe să alerge, să urce și să coboare ținut de mână. Înțelege instrucțiuni în doi pași; nu numește încă obiectele."
+    ],
+    [
+     "Cum vorbim cu el",
+     "îi cerem să arate, să aducă, să pună ceva lângă altceva și să potrivească. Noi numim și extindem; dacă încearcă o silabă sau un sunet de animal, e un bonus, nu o cerință."
+    ],
+    [
+     "Arcul săptămânii",
+     "luni merge pe un drum de bandă până la o țintă; marți drumul ajunge la ușă și învață „aproape” și „departe”; miercuri urcă și coboară treapta; joi merge până la poartă după repere în poze; vineri merge repede, încet și se oprește după tobă; sâmbătă caută comori pe drum; duminică își vede drumul în cartea lui."
+    ],
+    [
+     "Axe principale",
+     "mers cu țintă, sus și jos, oprire la semnal, repere ținute minte, atenție împărțită cu adultul („arată-mi ce vezi”), conducătorul drumului."
+    ],
+    [
+     "Cum folosiți treptele",
+     "baza e de ajuns; „Pas în plus” și „Provocare” le încercați doar dacă baza iese ușor. Dacă refuză, vă opriți."
+    ]
+   ],
+   "activities": [
+    {
+     "day": 1,
+     "pillar": "fizic",
+     "dur": 8,
+     "mod_default": "A",
+     "title": "Pe drumul de bandă",
+     "live_id": "s14-2-3-z1-fizic",
+     "materiale": "drumul de bandă de pe hol; ursulețul",
+     "materiale_lista": [
+      "drumul de bandă de pe hol",
+      "ursulețul"
+     ],
+     "materiale_surse": [
+      {
+       "text": "drumul de bandă de pe hol",
+       "sursa": "m:b12-s14-m1"
+      },
+      {
+       "text": "ursulețul",
+       "sursa": "lista:ursulet-papusa"
+      }
+     ],
+     "baza": [
+      "Lipiți banda pe hol, 3 metri, cu ursulețul la capăt: „Drumul spre urs.”",
+      "Mergeți voi întâi pe bandă, pas cu pas.",
+      "Merge el, iar voi stați lângă el: „Pas, pas, pas.”",
+      "La urs: o îmbrățișare și „Am ajuns!”"
+     ],
+     "gata": "A mers pe bandă sau pe lângă ea până la ursuleț.",
+     "plus": "Duce ursulețul înapoi la început, tot pe bandă.",
+     "provocare": "Banda face o cotitură; urmează el cotitura.",
+     "siguranta": "Banda de hârtie se dezlipește ușor: verificați să nu rămână bucăți pe care să le mestece. Pe hol nu stau covorașe care alunecă.",
+     "nota": null,
+     "live": {
+      "title": "Zece pași pe hol",
+      "dur": 5,
+      "materiale": "fără",
+      "pasi": [
+       "Mergeți pe hol 8–10 pași împreună.",
+       "„Pași. Unu. Doi.” pe scurt."
+      ],
+      "gata": "A făcut câțiva pași pe hol.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: pașii pe hol. Nou: un drum vizibil, cu țintă la capăt.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 1,
+     "pillar": "mental",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Unde duce drumul?",
+     "live_id": "s14-2-3-z1-mental",
+     "materiale": "drumul de bandă; ursulețul și o mașinuță",
+     "materiale_lista": [
+      "drumul de bandă",
+      "ursulețul și o mașinuță"
+     ],
+     "materiale_surse": [
+      {
+       "text": "drumul de bandă",
+       "sursa": "m:b12-s14-m1"
+      },
+      {
+       "text": "ursulețul și o mașinuță",
+       "sursa": "lista:ursulet-papusa"
+      }
+     ],
+     "baza": [
+      "Puneți ursulețul la capătul benzii.",
+      "„Unde duce drumul?” Mergeți cu degetul de-a lungul benzii.",
+      "Arată el sau merge până la urs.",
+      "Mutați ursulețul la celălalt capăt: „Acum unde?”"
+     ],
+     "gata": "A arătat sau a mers spre capătul unde e jucăria, măcar o dată.",
+     "plus": "Două benzi, cu câte o jucărie la capăt: „Unde e mașina?” Alege el drumul.",
+     "provocare": "„Du mașina la urs.” O împinge pe bandă până la ursuleț.",
+     "siguranta": "Mașinuța e mare, fără piese care se desprind. Banda e bine lipită; bucățile desprinse le luați imediat.",
+     "nota": null,
+     "live": {
+      "title": "Unde merge drumul?",
+      "dur": 3,
+      "materiale": "fără",
+      "pasi": [
+       "Arătați înainte: „Drumul. Acolo.”",
+       "Faceți un pas: „Pași.”"
+      ],
+      "gata": "A privit direcția sau a făcut un pas.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: titlul aproape la fel. Nou: drumul se vede și duce undeva.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 1,
+     "pillar": "resurse",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Cizmele la ușă înainte de drum",
+     "live_id": "s14-2-3-z1-resurse",
+     "materiale": "cizmele lui; preșul de la ușă",
+     "materiale_lista": [
+      "cizmele lui",
+      "preșul de la ușă"
+     ],
+     "materiale_surse": [
+      {
+       "text": "cizmele lui",
+       "sursa": "casa"
+      },
+      {
+       "text": "preșul de la ușă",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "„Mergem afară. Unde sunt cizmele?”",
+      "Le caută el; le-ați lăsat în camera lui.",
+      "Le duce pe preșul de la ușă.",
+      "„La ușă. Gata de drum.”"
+     ],
+     "gata": "A găsit cizmele și le-a dus la ușă.",
+     "plus": "Instrucțiune în doi pași: „Ia căciula din coș și pune-o lângă cizme.”",
+     "provocare": "Vă aduce cizmele voastre, mari și grele; le poate târî.",
+     "siguranta": "",
+     "nota": null,
+     "live": {
+      "title": "Pantofii la ușă înainte de pași",
+      "dur": 4,
+      "materiale": "pantofi",
+      "pasi": [
+       "Luați pantofii împreună.",
+       "Puneți-i la ușă: „La loc. La ușă.”"
+      ],
+      "gata": "A ajutat cu pantofii.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: încălțările la ușă înainte de pași. Nou: le caută el și le duce.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 1,
+     "pillar": "social",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Mergem de mână",
+     "live_id": "s14-2-3-z1-social",
+     "materiale": "niciunul",
+     "materiale_lista": [],
+     "materiale_surse": [],
+     "baza": [
+      "Întindeți mâna: „Mână?”",
+      "Mergeți împreună pe drumul de bandă sau prin curte.",
+      "La capăt schimbați: vă conduce el.",
+      "„Mulțumesc că m-ai dus!”"
+     ],
+     "gata": "V-a ținut de mână câțiva pași sau v-a condus el.",
+     "plus": "Vă duce la un loc ales de el în casă.",
+     "provocare": "Conduce doi oameni deodată: o mână la mama, una la tata.",
+     "siguranta": "Afară, poarta curții rămâne închisă și e îmbrăcat după vreme.",
+     "nota": null,
+     "live": {
+      "title": "Mergem de mână pe scurt",
+      "dur": 3,
+      "materiale": "fără",
+      "pasi": [
+       "Oferiți mâna: „Mână?”",
+       "Mergeți 5 pași, fără forțare."
+      ],
+      "gata": "A ținut mâna sau a mers alături.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: mersul de mână. Nou: rolul de conducător.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 2,
+     "pillar": "fizic",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Pe drum până la ușă",
+     "live_id": "s14-2-3-z2-fizic",
+     "materiale": "drumul de bandă, prelungit până la ușa camerei; o pernă",
+     "materiale_lista": [
+      "drumul de bandă, prelungit până la ușa camerei",
+      "o pernă"
+     ],
+     "materiale_surse": [
+      {
+       "text": "drumul de bandă, prelungit până la ușa camerei",
+       "sursa": "m:b12-s14-m1"
+      },
+      {
+       "text": "o pernă",
+       "sursa": "lista:perne-traseu"
+      }
+     ],
+     "baza": [
+      "Prelungiți banda până la ușa camerei.",
+      "Pornește el din celălalt capăt al holului.",
+      "Merge pe drum până la ușă.",
+      "Atinge ușa: „Am ajuns. Ușa!”"
+     ],
+     "gata": "A mers până la ușă și a atins-o.",
+     "plus": "Merge cu o jucărie în brațe, mai greu pentru echilibru.",
+     "provocare": "O pernă pe drum: o ocolește sau o calcă.",
+     "siguranta": "Ușa e fixată, ca să nu se închidă peste degete. Perna e joasă și moale.",
+     "nota": null,
+     "live": {
+      "title": "Pași până la ușă",
+      "dur": 5,
+      "materiale": "fără",
+      "pasi": [
+       "Mergeți împreună până la ușă.",
+       "Atingeți ușa: „Ușa. Gata.”"
+      ],
+      "gata": "A ajuns la ușă.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: pașii până la ușă. Nou: drum mai lung, cu un obstacol mic.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 2,
+     "pillar": "mental",
+     "dur": 6,
+     "mod_default": "A",
+     "title": "Aproape și departe",
+     "live_id": "s14-2-3-z2-mental",
+     "materiale": "mingea moale; drumul de bandă",
+     "materiale_lista": [
+      "mingea moale",
+      "drumul de bandă"
+     ],
+     "materiale_surse": [
+      {
+       "text": "mingea moale",
+       "sursa": "lista:minge-moale-mare"
+      },
+      {
+       "text": "drumul de bandă",
+       "sursa": "m:b12-s14-m1"
+      }
+     ],
+     "baza": [
+      "Puneți mingea lângă el: „Aproape.”",
+      "Duceți mingea la capătul holului: „Departe.”",
+      "„Adu mingea de departe!” Merge el și o aduce.",
+      "Repetați de 2–3 ori, schimbând locurile."
+     ],
+     "gata": "A adus mingea de la capătul holului când i-ați cerut-o pe cea de departe.",
+     "plus": "Două mingi, una aproape și una departe: „Adu-o pe cea de departe.”",
+     "provocare": "Pune el mingea departe și vă trimite pe voi după ea.",
+     "siguranta": "Mingea e moale și mai mare decât pumnul lui.",
+     "nota": null,
+     "live": {
+      "title": "Aproape și departe pe hol",
+      "dur": 3,
+      "materiale": "fără",
+      "pasi": [
+       "Stați aproape de ușă: „Aproape.”",
+       "Faceți câțiva pași înapoi: „Departe.”"
+      ],
+      "gata": "A auzit cuvintele pe scurt.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: aproape și departe pe hol. Nou: le folosește ca să ducă la capăt o cerere.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 2,
+     "pillar": "resurse",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Geanta la loc lângă ușă",
+     "live_id": "s14-2-3-z2-resurse",
+     "materiale": "o geantă mică de pânză, cu baretă scurtă; scaunul de la ușă",
+     "materiale_lista": [
+      "o geantă mică de pânză, cu baretă scurtă",
+      "scaunul de la ușă"
+     ],
+     "materiale_surse": [
+      {
+       "text": "o geantă mică de pânză, cu baretă scurtă",
+       "sursa": "casa"
+      },
+      {
+       "text": "scaunul de la ușă",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "Luați geanta: „Mergem? Luăm geanta.”",
+      "O duce el până la ușă.",
+      "Când vă întoarceți: „Am venit. Geanta la loc.” O pune pe scaunul de la ușă.",
+      "Bateți palma."
+     ],
+     "gata": "A dus geanta la ușă și înapoi la locul ei.",
+     "plus": "Pune el ceva în geantă înainte de plecare, de exemplu ursulețul.",
+     "provocare": "„Ce luăm la drum?” Alege două lucruri din trei și le pune în geantă.",
+     "siguranta": "Geanta nu are baretă lungă care să treacă pe după gât. Cheile rămân la adult.",
+     "nota": null,
+     "live": {
+      "title": "Cheia / geanta la loc după ușă",
+      "dur": 4,
+      "materiale": "cheie sau geantă mică",
+      "pasi": [
+       "Luați obiectul de la ușă pe scurt.",
+       "Puneți-l la loc: „La loc.”"
+      ],
+      "gata": "A ajutat să pună obiectul la loc.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: obiectul pus la loc după ușă. Nou: fără chei, iar el alege ce ia la drum.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 2,
+     "pillar": "social",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Toc, toc la ușă",
+     "live_id": "s14-2-3-z2-social",
+     "materiale": "niciunul",
+     "materiale_lista": [],
+     "materiale_surse": [],
+     "baza": [
+      "Mergeți la o ușă închisă, cu un părinte în spatele ei.",
+      "„Toc, toc!” Bate el.",
+      "Părintele întreabă „Cine e?”, deschide și spune: „Cezar!”",
+      "Schimbați: el se ascunde, voi bateți."
+     ],
+     "gata": "A bătut în ușă și a așteptat să se deschidă.",
+     "plus": "Bate de două ori, ca voi.",
+     "provocare": "Stă el înăuntru și deschide când bateți voi, cu ajutor la clanță.",
+     "siguranta": "Degetele departe de balamale; ușa o deschide încet adultul.",
+     "nota": null,
+     "live": {
+      "title": "Batem ușor în ușă împreună",
+      "dur": 3,
+      "materiale": "fără",
+      "pasi": [
+       "Bateți ușor de două ori: „Toc. Toc.”",
+       "Zâmbiți: „Ușa.”"
+      ],
+      "gata": "A bătut sau a privit.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: bătutul în ușă. Nou: așteptarea și schimbatul rolurilor.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 3,
+     "pillar": "fizic",
+     "dur": 6,
+     "mod_default": "A",
+     "title": "Pași pe treaptă",
+     "live_id": "s14-2-3-z3-fizic",
+     "materiale": "treapta joasă",
+     "materiale_lista": [
+      "treapta joasă"
+     ],
+     "materiale_surse": [
+      {
+       "text": "treapta joasă",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "Stați cu el la baza treptei, voi pe partea fără balustradă.",
+      "„Sus!” Urcă ținându-se de mâna voastră.",
+      "„Jos!” Coboară cu fața spre treaptă sau ținut de mână.",
+      "Repetați de 3 ori; arată el cu mâna „sus” sau „jos”."
+     ],
+     "gata": "A urcat și a coborât de 3 ori, ținut de mână, și a arătat cu mâna în sus sau în jos măcar o dată.",
+     "plus": "Se ține doar de balustradă; mâna voastră e la spatele lui, fără să-l țină.",
+     "provocare": "Dă el comanda, cu un gest sau un sunet, iar voi o faceți; apoi schimbați rolurile.",
+     "siguranta": "Adultul stă la un braț distanță, pe partea de jos. Poarta de siguranță a scării mari e închisă. Desculț sau în papuci care nu alunecă, nu în șosete pe gresie.",
+     "nota": null,
+     "live": {
+      "title": "Pași pe treaptă",
+      "dur": 5,
+      "materiale": "fără",
+      "pasi": [
+       "Urcați sau coborâți o treaptă cu adultul.",
+       "„Treaptă. Pas.”"
+      ],
+      "gata": "A făcut un pas pe treaptă cu ajutor.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: titlul și treapta cu adultul. Nou: sus și jos repetate, cu el la comandă.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 3,
+     "pillar": "mental",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Ursulețul sus, ursulețul jos",
+     "live_id": "s14-2-3-z3-mental",
+     "materiale": "treapta joasă; ursulețul",
+     "materiale_lista": [
+      "treapta joasă",
+      "ursulețul"
+     ],
+     "materiale_surse": [
+      {
+       "text": "treapta joasă",
+       "sursa": "casa"
+      },
+      {
+       "text": "ursulețul",
+       "sursa": "lista:ursulet-papusa"
+      }
+     ],
+     "baza": [
+      "Puneți ursulețul jos, lângă treaptă: „Ursul e jos.”",
+      "Îl puneți sus pe treaptă: „Ursul e sus.”",
+      "„Pune ursul jos!” Îl mută el.",
+      "„Acum sus!”"
+     ],
+     "gata": "A mutat ursulețul sus sau jos când i-ați cerut, măcar o dată.",
+     "plus": "Apoi el: „Tu ești jos. Urcă sus!” Urcă ținut de mână.",
+     "provocare": "Două jucării, una sus și una jos: „Unde e mașina?” Arată el.",
+     "siguranta": "Când mută ursulețul, stă pe podea lângă treaptă, nu pe ea. Adultul e aproape.",
+     "nota": null,
+     "live": {
+      "title": "Sus pe treaptă, jos pe treaptă",
+      "dur": 3,
+      "materiale": "fără",
+      "pasi": [
+       "Arătați: „Sus.” pe treaptă.",
+       "Arătați: „Jos.” pe treaptă."
+      ],
+      "gata": "A auzit sus și jos la treaptă.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: sus și jos la treaptă. Nou: înțelege cuvintele și mută jucăria după ele.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 3,
+     "pillar": "resurse",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Găleata pe treaptă și la loc",
+     "live_id": "s14-2-3-z3-resurse",
+     "materiale": "găleata de comori; 3 jucării mari",
+     "materiale_lista": [
+      "găleata de comori",
+      "3 jucării mari"
+     ],
+     "materiale_surse": [
+      {
+       "text": "găleata de comori",
+       "sursa": "m:b12-s14-m4"
+      },
+      {
+       "text": "3 jucării mari",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "Puneți jucăriile în găleată.",
+      "O duce el până la treaptă și o pune sus, stând jos.",
+      "O ia înapoi: „La loc.”",
+      "Găleata merge în colțul ei."
+     ],
+     "gata": "A dus găleata la treaptă și a adus-o înapoi.",
+     "plus": "O urcă și o coboară de pe treaptă de 2–3 ori, stând pe podea.",
+     "provocare": "Golește găleata sus și o umple jos, mutând jucăriile una câte una.",
+     "siguranta": "Găleata e ușoară; nu urcă treapta cu găleata în mână.",
+     "nota": null,
+     "live": {
+      "title": "Găleata pe treaptă și la loc",
+      "dur": 4,
+      "materiale": "găleată mică",
+      "pasi": [
+       "Puneți găleata pe treaptă pe scurt.",
+       "Luați-o înapoi: „La loc.”"
+      ],
+      "gata": "A ajutat cu găleata.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: titlul. Nou: mută și jucăriile, nu doar găleata.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 3,
+     "pillar": "social",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Ținem mâna pe treaptă",
+     "live_id": "s14-2-3-z3-social",
+     "materiale": "treapta joasă",
+     "materiale_lista": [
+      "treapta joasă"
+     ],
+     "materiale_surse": [
+      {
+       "text": "treapta joasă",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "Stați amândoi la treaptă.",
+      "„Mâna?” Urcați împreună.",
+      "Coborâți împreună: „Împreună, jos.”",
+      "Schimbați: îi dă mâna celuilalt părinte."
+     ],
+     "gata": "A cerut sau a primit mâna la treaptă.",
+     "plus": "Vă întinde el mâna înainte să urce.",
+     "provocare": "Ajută ursulețul să urce: îl ține de lăbuță și îl duce sus.",
+     "siguranta": "Doar treapta joasă; poarta de siguranță a scării mari e închisă.",
+     "nota": null,
+     "live": {
+      "title": "Ținem mâna pe treaptă",
+      "dur": 3,
+      "materiale": "fără",
+      "pasi": [
+       "Țineți mâna la urcat sau coborât.",
+       "„Împreună. Treaptă.”"
+      ],
+      "gata": "A ținut mâna pe treaptă.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: titlul și mâna ținută. Nou: cere el mâna și ajută la rândul lui.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 4,
+     "pillar": "fizic",
+     "dur": 10,
+     "mod_default": "A",
+     "title": "Până la poartă, cu opriri",
+     "live_id": "s14-2-3-z4-fizic",
+     "materiale": "pozele drumului: ușa, copacul, poarta; hainele lui de afară",
+     "materiale_lista": [
+      "pozele drumului: ușa, copacul, poarta",
+      "hainele lui de afară"
+     ],
+     "materiale_surse": [
+      {
+       "text": "pozele drumului: ușa, copacul, poarta",
+       "sursa": "m:b12-s14-m3"
+      },
+      {
+       "text": "hainele lui de afară",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "Înainte de ieșire, arătați cele trei poze: „Ușa, copacul, poarta.”",
+      "Afară, mergeți până la primul reper și arătați poza lui.",
+      "Apoi la copac, apoi la poartă; atinge el fiecare reper.",
+      "La poartă: „Am ajuns! Înapoi acasă.”"
+     ],
+     "gata": "A mers până la poartă și a atins cel puțin două repere pe drum.",
+     "plus": "Ține el pozele și o dă pe cea a reperului următor.",
+     "provocare": "La întoarcere merge în față și vă duce la ușă fără să-i arătați drumul.",
+     "siguranta": "E frig: ieșire de 5–10 minute, verificați des mâinile și nasul. Poarta curții rămâne închisă. Fântâna și orice altă apă din curte sunt acoperite sau rămân departe de drum.",
+     "nota": null,
+     "live": {
+      "title": "Pași până la poartă / gard",
+      "dur": 6,
+      "materiale": "fără",
+      "pasi": [
+       "Ieșiți scurt. Mergeți până la poartă sau gard.",
+       "Atingeți: „Poarta. Gata.”"
+      ],
+      "gata": "A ajuns la poartă sau gard.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: drumul până la poartă. Nou: repere ținute minte, cu poze.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 4,
+     "pillar": "mental",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Drumul în poze",
+     "live_id": "s14-2-3-z4-mental",
+     "materiale": "pozele drumului",
+     "materiale_lista": [
+      "pozele drumului"
+     ],
+     "materiale_surse": [
+      {
+       "text": "pozele drumului",
+       "sursa": "m:b12-s14-m3"
+      }
+     ],
+     "baza": [
+      "Așezați pozele pe jos, în ordinea drumului: ușa, copacul, poarta.",
+      "Treceți cu degetul peste ele: „Întâi ușa, apoi copacul, apoi poarta.”",
+      "„Unde e poarta?” Arată el.",
+      "La fereastră, arătați reperele adevărate."
+     ],
+     "gata": "A arătat poza cerută, poarta sau copacul, măcar o dată.",
+     "plus": "După ce vede poza, arată reperul adevărat pe fereastră.",
+     "provocare": "Ascundeți poza copacului sub pernă: o caută el.",
+     "siguranta": "Pozele sunt acoperite cu folie și au colțurile rotunjite.",
+     "nota": null,
+     "live": {
+      "title": "Drumul e scurt",
+      "dur": 3,
+      "materiale": "fără",
+      "pasi": [
+       "Arătați drumul: „Drumul. Scurt.”",
+       "Faceți 3–5 pași: „Pași.”"
+      ],
+      "gata": "A mers pe drumul scurt.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Înlocuit corpul: varianta actuală era „Drumul e scurt” (arătat și 3–5 pași). Drumul scurt rămâne, dar acum e în poze, în ordine.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 4,
+     "pillar": "resurse",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Piatra mare pe drum",
+     "live_id": "s14-2-3-z4-resurse",
+     "materiale": "o piatră netedă, mai mare decât palma lui; găleata de comori",
+     "materiale_lista": [
+      "o piatră netedă, mai mare decât palma lui",
+      "găleata de comori"
+     ],
+     "materiale_surse": [
+      {
+       "text": "o piatră netedă, mai mare decât palma lui",
+       "sursa": "casa"
+      },
+      {
+       "text": "găleata de comori",
+       "sursa": "m:b12-s14-m4"
+      }
+     ],
+     "baza": [
+      "Alegeți împreună o piatră mare și netedă din curte.",
+      "O pune el în găleată: „Grea!”",
+      "Duce găleata câțiva pași pe drum.",
+      "Pune piatra înapoi la locul ei: „La loc.”"
+     ],
+     "gata": "A cărat piatra câțiva pași, în găleată sau în mâini, și a pus-o la loc.",
+     "plus": "Două pietre, amândouă mai mari decât palma lui: „Care e mai grea?”",
+     "provocare": "Pune 2–3 pietre mari în rând și le ocolește când merge.",
+     "siguranta": "Numai pietre mai mari decât palma lui, fără muchii; pietrele mici din jur le strângeți înainte. Nu se aruncă. După joc vă spălați pe mâini.",
+     "nota": null,
+     "live": {
+      "title": "Pietricica pe drum și la loc",
+      "dur": 4,
+      "materiale": "1 piatră mică",
+      "pasi": [
+       "Luați o pietricică de pe drum.",
+       "Lăsați-o jos: „La loc.”"
+      ],
+      "gata": "A luat și a lăsat piatra.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Înlocuit: varianta actuală era „Pietricica pe drum și la loc”; o pietricică poate ajunge în gură, așa că firul „La loc” rămâne, cu o piatră mare.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 4,
+     "pillar": "social",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Îi arătăm drumul cuiva",
+     "live_id": "s14-2-3-z4-social",
+     "materiale": "niciunul",
+     "materiale_lista": [],
+     "materiale_surse": [],
+     "baza": [
+      "Vine celălalt părinte: „Unde e poarta?”",
+      "Cezar îl ia de mână și îl duce: în casă la ușă, afară la poartă.",
+      "La capăt, părintele spune: „Mulțumesc că m-ai dus!”",
+      "Bateți palma."
+     ],
+     "gata": "A condus un adult până la ușă sau până la poartă.",
+     "plus": "Ia cu el și ursulețul.",
+     "provocare": "Conduce pe drumul din poze: întâi la copac, apoi la poartă.",
+     "siguranta": "Afară, poarta curții rămâne închisă.",
+     "nota": null,
+     "live": {
+      "title": "Arătăm drumul adultului",
+      "dur": 3,
+      "materiale": "fără",
+      "pasi": [
+       "Arătați înainte: „Uite drumul.”",
+       "Stați pe scurt lângă adult."
+      ],
+      "gata": "A participat la arătat.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: arătăm drumul adultului. Nou: îl conduce el, de mână.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 5,
+     "pillar": "fizic",
+     "dur": 6,
+     "mod_default": "A",
+     "title": "Alergăm și ne oprim",
+     "live_id": "s14-2-3-z5-fizic",
+     "materiale": "toba din cratiță",
+     "materiale_lista": [
+      "toba din cratiță"
+     ],
+     "materiale_surse": [
+      {
+       "text": "toba din cratiță",
+       "sursa": "m:b12-s14-m2"
+      }
+     ],
+     "baza": [
+      "Pe loc plat: „Unu, doi, trei, plecăm!” Alergați câțiva pași împreună.",
+      "Bateți o dată în cratiță: „Stop!” Vă opriți.",
+      "Din nou: „Plecăm!”",
+      "La capăt, la poartă sau la capătul holului, bateți palma."
+     ],
+     "gata": "A alergat câțiva pași și s-a oprit la „stop”, măcar o dată.",
+     "plus": "Oprire mai lungă: stați ca statuile 2–3 secunde.",
+     "provocare": "Dă el semnalul, bătând în cratiță, iar voi alergați și vă opriți.",
+     "siguranta": "Loc plat, fără obstacole; în curte, departe de poartă și de apă. Nu aleargă cu ceva în gură.",
+     "nota": null,
+     "live": {
+      "title": "Alergăm până la poartă",
+      "dur": 5,
+      "materiale": "fără",
+      "pasi": [
+       "Alergați 5–10 pași pe loc plat, ținându-l de mână dacă vrea.",
+       "Opriți-vă: „Gata. Pași.”"
+      ],
+      "gata": "A alergat puțin și s-a oprit.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: alergatul până la poartă. Nou: oprirea la semnal.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 5,
+     "pillar": "mental",
+     "dur": 6,
+     "mod_default": "A",
+     "title": "Repede și încet pe pași",
+     "live_id": "s14-2-3-z5-mental",
+     "materiale": "toba din cratiță",
+     "materiale_lista": [
+      "toba din cratiță"
+     ],
+     "materiale_surse": [
+      {
+       "text": "toba din cratiță",
+       "sursa": "m:b12-s14-m2"
+      }
+     ],
+     "baza": [
+      "Bateți rar: „Încet.” Mergeți amândoi cu pași mari și rari.",
+      "Bateți des: „Repede.” Pași mici și repezi.",
+      "Toba tace: „Stop!” Vă opriți amândoi.",
+      "Repetați de 3–4 ori, în altă ordine."
+     ],
+     "gata": "Și-a schimbat mersul sau s-a oprit după tobă, măcar o dată, fără să fie ținut de mână.",
+     "plus": "Fără cuvinte, doar după tobă.",
+     "provocare": "Bate el toba, iar voi mergeți după ritmul lui.",
+     "siguranta": "Pe hol nu stau covorașe care alunecă. Lingura rămâne la adult când mergeți, ca să nu ajungă în gură din mers.",
+     "nota": null,
+     "live": {
+      "title": "Repede și încet pe pași",
+      "dur": 3,
+      "materiale": "fără",
+      "pasi": [
+       "Faceți 2 pași lenți: „Încet.”",
+       "Faceți 2 pași mai rapizi: „Repede.” pe scurt."
+      ],
+      "gata": "A simțit ritmul pe scurt.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: titlul și ritmul. Nou: mersul urmează toba.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 5,
+     "pillar": "resurse",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Cizmele la loc după drum",
+     "live_id": "s14-2-3-z5-resurse",
+     "materiale": "cizmele lui; preșul de la ușă; coșul de la ușă",
+     "materiale_lista": [
+      "cizmele lui",
+      "preșul de la ușă",
+      "coșul de la ușă"
+     ],
+     "materiale_surse": [
+      {
+       "text": "cizmele lui",
+       "sursa": "casa"
+      },
+      {
+       "text": "preșul de la ușă",
+       "sursa": "casa"
+      },
+      {
+       "text": "coșul de la ușă",
+       "sursa": "m:b12-s14-m6"
+      }
+     ],
+     "baza": [
+      "La intrare, vă așezați.",
+      "Scoate el cizmele, cu ajutor la arici sau la fermoar.",
+      "Le duce pe preș, una lângă alta.",
+      "Căciula și mănușile merg în coșul de la ușă."
+     ],
+     "gata": "A dus cizmele pe preș și o piesă în coș.",
+     "plus": "Înainte, își șterge tălpile pe preș, cu pași pe loc.",
+     "provocare": "Le duce și pe ale voastre.",
+     "siguranta": "Noroiul de pe cizme nu ajunge la gură; vă spălați pe mâini după.",
+     "nota": null,
+     "live": {
+      "title": "Pantofii la loc după drum",
+      "dur": 4,
+      "materiale": "pantofi",
+      "pasi": [
+       "Scoateți pantofii la ușă.",
+       "„Pantofi. La loc.”"
+      ],
+      "gata": "A ajutat cu pantofii.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: încălțările la loc după drum. Nou: se leagă de coșul de la ușă din săptămâna trecută.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 5,
+     "pillar": "social",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Pas eu, pas tu",
+     "live_id": "s14-2-3-z5-social",
+     "materiale": "drumul de bandă",
+     "materiale_lista": [
+      "drumul de bandă"
+     ],
+     "materiale_surse": [
+      {
+       "text": "drumul de bandă",
+       "sursa": "m:b12-s14-m1"
+      }
+     ],
+     "baza": [
+      "Stați la începutul benzii.",
+      "Faceți voi un pas: „Eu.”",
+      "„Acum tu.” Așteptați pasul lui.",
+      "Tot așa, până la capăt."
+     ],
+     "gata": "A așteptat cel puțin două rânduri și a făcut pasul lui.",
+     "plus": "Pași de animale pe rând: „Cum merge ursul?” Pași grei. „Cum sare iepurașul?” Sărituri mici. Vă copiază.",
+     "provocare": "E el primul, iar voi îl copiați.",
+     "siguranta": "Banda e bine lipită; bucățile desprinse le luați imediat, ca să nu ajungă în gură.",
+     "nota": null,
+     "live": {
+      "title": "Pași pe rând",
+      "dur": 3,
+      "materiale": "fără",
+      "pasi": [
+       "Voi faceți un pas. „Acum tu.”",
+       "Așteptați fără grabă."
+      ],
+      "gata": "A făcut un pas pe rând.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: pași pe rând. Nou: pe drumul de bandă, cu roluri schimbate.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 6,
+     "pillar": "fizic",
+     "dur": 10,
+     "mod_default": "A",
+     "title": "Plimbare cu găleata de comori",
+     "live_id": "s14-2-3-z6-fizic",
+     "materiale": "găleata de comori; hainele lui de afară",
+     "materiale_lista": [
+      "găleata de comori",
+      "hainele lui de afară"
+     ],
+     "materiale_surse": [
+      {
+       "text": "găleata de comori",
+       "sursa": "m:b12-s14-m4"
+      },
+      {
+       "text": "hainele lui de afară",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "Îmbrăcați-vă și luați găleata: „Căutăm comori.”",
+      "Pe drumul cunoscut, alege el ce adună: o frunză mare, un con mare și întreg de brad, un băț scurt și gros.",
+      "Le pune în găleată, iar voi le numiți: „Frunză. Con.”",
+      "Acasă, le așezați pe o tavă și le priviți."
+     ],
+     "gata": "A adunat cel puțin două lucruri în găleată.",
+     "plus": "Cereri precise: „Adu-mi o frunză.” Apoi: „Acum un con.”",
+     "provocare": "Acasă sortează comorile: frunzele într-o parte, restul în alta.",
+     "siguranta": "E frig: ieșire de 5–10 minute, verificați des mâinile și nasul. Poarta curții rămâne închisă. Fără ciuperci, fructe de pădure sau plante necunoscute; ghindele și pietricelele rămân afară; nimic în gură. Bățul nu are vârf, iar cu el nu se aleargă. După plimbare vă spălați pe mâini.",
+     "nota": null,
+     "live": {
+      "title": "Plimbare scurtă pe drum",
+      "dur": 6,
+      "materiale": "fără",
+      "pasi": [
+       "Ieșiți 2–3 minute pe drumul cunoscut.",
+       "Mergeți liber. Comentați doar dacă arată ceva."
+      ],
+      "gata": "A mers pe drum câteva minute.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: plimbarea scurtă pe drum. Nou: o căutare cu scop.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 6,
+     "pillar": "mental",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Ce vedem pe drum?",
+     "live_id": "s14-2-3-z6-mental",
+     "materiale": "hainele lui de afară",
+     "materiale_lista": [
+      "hainele lui de afară"
+     ],
+     "materiale_surse": [
+      {
+       "text": "hainele lui de afară",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "Pe drum, opriți-vă 10–20 de secunde.",
+      "„Unde e pasărea? Arată-mi.” Sau câinele, pisica, mașina: ce se vede.",
+      "Numiți și extindeți ce arată: „Da, pasărea zboară.”",
+      "„Ce face câinele?” Faceți voi „ham-ham”, „cip-cip” sau „vrum”; dacă imită, e un bonus."
+     ],
+     "gata": "A arătat ce i-ați cerut (o pasăre, un câine, o mașină) măcar o dată sau a arătat el ceva și s-a uitat apoi la voi.",
+     "plus": "Două lucruri pe rând: „Arată-mi copacul. Acum mașina.”",
+     "provocare": "Acasă, într-o carte cartonată, arată animalul pe care l-a văzut pe drum: din realitate, în poză.",
+     "siguranta": "E frig: ieșire de 5–10 minute, verificați des mâinile și nasul. Poarta curții rămâne închisă.",
+     "nota": null,
+     "live": {
+      "title": "Ce vedem pe drum?",
+      "dur": 3,
+      "materiale": "fără",
+      "pasi": [
+       "Arătați un lucru clar: „Copac.” sau „Mașină.”",
+       "Stați și priviți 10–20 de secunde."
+      ],
+      "gata": "A privit ceva de pe drum.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: titlul. Nou: arată el întâi, apoi faceți împreună sunetul.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 6,
+     "pillar": "resurse",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Comorile la loc",
+     "live_id": "s14-2-3-z6-resurse",
+     "materiale": "găleata de comori; o tavă",
+     "materiale_lista": [
+      "găleata de comori",
+      "o tavă"
+     ],
+     "materiale_surse": [
+      {
+       "text": "găleata de comori",
+       "sursa": "m:b12-s14-m4"
+      },
+      {
+       "text": "o tavă",
+       "sursa": "lista:tava"
+      }
+     ],
+     "baza": [
+      "Golește el găleata pe tavă.",
+      "Comorile frumoase merg pe pervaz sau într-o cutie „de afară”.",
+      "Scuturați găleata afară, la ușă.",
+      "Găleata merge la locul ei."
+     ],
+     "gata": "A golit găleata și a dus-o la locul ei.",
+     "plus": "Alege o comoară care stă pe pervaz.",
+     "provocare": "Ce nu păstrați, frunzele ude, le duce el afară și le pune jos în curte.",
+     "siguranta": "După ce atinge comorile vă spălați pe mâini; nimic din ele în gură.",
+     "nota": null,
+     "live": {
+      "title": "Găleata / jucăria după plimbare",
+      "dur": 4,
+      "materiale": "găleată sau jucărie",
+      "pasi": [
+       "Duceți obiectul pe scurt afară dacă vrea.",
+       "Apoi: „La loc.” în casă."
+      ],
+      "gata": "A ajutat să pună obiectul la loc.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: obiectul pus la loc după plimbare. Nou: alege ce păstrăm.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 6,
+     "pillar": "social",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Unul lângă altul",
+     "live_id": "s14-2-3-z6-social",
+     "materiale": "hainele lui de afară",
+     "materiale_lista": [
+      "hainele lui de afară"
+     ],
+     "materiale_surse": [
+      {
+       "text": "hainele lui de afară",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "Mergeți alături, fără să-l țineți de mână.",
+      "Spuneți ce face el: „Te-ai oprit. Te uiți la pisică.”",
+      "Când pornește el, porniți și voi.",
+      "Când se oprește, vă opriți."
+     ],
+     "gata": "A mers alături câteva minute și s-a uitat după voi.",
+     "plus": "Vă așteaptă el când rămâneți puțin în urmă.",
+     "provocare": "Jocul umbrei: îl copiați; dacă sare, săriți. Când observă, o face înadins.",
+     "siguranta": "Afară, poarta curții rămâne închisă.",
+     "nota": null,
+     "live": {
+      "title": "Mergem unul lângă altul",
+      "dur": 3,
+      "materiale": "fără",
+      "pasi": [
+       "Stați lângă el pe drum.",
+       "Comentați ce face el, fără a prelua."
+      ],
+      "gata": "A mers cu adultul alături.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: mersul alături și povestitul a ce face el. Nou: jocul umbrei.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 7,
+     "pillar": "fizic",
+     "dur": 8,
+     "mod_default": "A",
+     "title": "Plimbare liberă pe drumul nostru",
+     "live_id": "s14-2-3-z7-fizic",
+     "materiale": "hainele lui de afară; coșul de la ușă",
+     "materiale_lista": [
+      "hainele lui de afară",
+      "coșul de la ușă"
+     ],
+     "materiale_surse": [
+      {
+       "text": "hainele lui de afară",
+       "sursa": "casa"
+      },
+      {
+       "text": "coșul de la ușă",
+       "sursa": "m:b12-s14-m6"
+      }
+     ],
+     "baza": [
+      "Îmbrăcat, aduce el căciula și mănușile din coș.",
+      "Afară, el alege direcția.",
+      "Dacă trece pe la repere, la copac sau la poartă, le atinge; numiți doar ce arată.",
+      "„Hai acasă” când îi e frig sau obosește."
+     ],
+     "gata": "A mers liber câteva minute și a trecut pe la cel puțin un reper.",
+     "plus": "Vă duce la reperul lui preferat.",
+     "provocare": "Merge pe marginea unei borduri joase, ținut de mână.",
+     "siguranta": "E frig: ieșire de 5–10 minute, verificați des mâinile și nasul. Poarta curții rămâne închisă. Bordura e joasă, iar adultul e lângă el.",
+     "nota": null,
+     "live": {
+      "title": "Plimbare liberă pe drumul scurt",
+      "dur": 6,
+      "materiale": "fără",
+      "pasi": [
+       "El dictează direcția pe scurt.",
+       "Voi numiți „pași” / „drum” doar dacă arată."
+      ],
+      "gata": "A mers liber câteva minute.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: plimbarea liberă, el conduce. Nou: reperele din săptămâna asta.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 7,
+     "pillar": "mental",
+     "dur": 8,
+     "mod_default": "A",
+     "title": "Cartea drumului nostru",
+     "live_id": "s14-2-3-z7-mental",
+     "materiale": "cartea lui Cezar, cu paginile noi ale drumului; o carte cartonată din casă",
+     "materiale_lista": [
+      "cartea lui Cezar, cu paginile noi ale drumului",
+      "o carte cartonată din casă"
+     ],
+     "materiale_surse": [
+      {
+       "text": "cartea lui Cezar, cu paginile noi ale drumului",
+       "sursa": "m:b12-s14-m5"
+      },
+      {
+       "text": "o carte cartonată din casă",
+       "sursa": "lista:carti-cartonate"
+      }
+     ],
+     "baza": [
+      "Adăugați în cartea lui paginile drumului: ușa, copacul, poarta și el pe drum.",
+      "Răsfoiți: „Unde e Cezar? Pe drum!”",
+      "La fiecare pagină: „Arată-mi poarta. Unde e copacul?” Arată el.",
+      "Întoarce el paginile; la final: „Mergem mâine iar?”"
+     ],
+     "gata": "A arătat pe poze cel puțin două repere ale drumului.",
+     "plus": "Într-o carte cartonată cu animale: „Arată-mi pasărea pe care am văzut-o pe drum.” Faceți împreună „cip-cip”.",
+     "provocare": "Răsfoiți și paginile cu haine: „Ce punem când mergem pe drum?” Arată căciula.",
+     "siguranta": "Paginile sunt acoperite cu folie și au colțurile rotunjite; inelele sunt mai mari de 3,2 cm sau sunt înlocuite cu o sfoară scurtă, legată strâns.",
+     "nota": null,
+     "live": {
+      "title": "Carte: drum și pași",
+      "dur": 4,
+      "materiale": "carte cu imagini",
+      "pasi": [
+       "El întoarce pagina.",
+       "Arătați un drum sau picioare din imagine dacă e clar: „Pași.”"
+      ],
+      "gata": "A întors pagina sau a privit.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: cartea despre drum și pași. Nou: e drumul lui, în aceeași carte cu hainele din săptămâna trecută.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 7,
+     "pillar": "resurse",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Hainele și cizmele la loc",
+     "live_id": "s14-2-3-z7-resurse",
+     "materiale": "cizmele, căciula și mănușile lui; coșul de la ușă",
+     "materiale_lista": [
+      "cizmele, căciula și mănușile lui",
+      "coșul de la ușă"
+     ],
+     "materiale_surse": [
+      {
+       "text": "cizmele, căciula și mănușile lui",
+       "sursa": "casa"
+      },
+      {
+       "text": "coșul de la ușă",
+       "sursa": "m:b12-s14-m6"
+      }
+     ],
+     "baza": [
+      "Duminică seara, verificați ușa: cizmele pe preș, căciula și mănușile în coș.",
+      "Lipsește ceva? Caută el prin casă; ați lăsat o mănușă în camera lui.",
+      "Duce totul la loc.",
+      "„Totul e gata pentru mâine.”"
+     ],
+     "gata": "A găsit și a pus la loc cel puțin o piesă.",
+     "plus": "Pune și haina pe scaunul de la ușă.",
+     "provocare": "Caută fără indiciu: „Unde e cealaltă mănușă?”",
+     "siguranta": "",
+     "nota": null,
+     "live": {
+      "title": "Pantofii și haina la loc",
+      "dur": 4,
+      "materiale": "pantofi, haină",
+      "pasi": [
+       "Puneți pantofii și haina la loc.",
+       "„La loc. Gata.”"
+      ],
+      "gata": "A ajutat cu pantofii sau haina.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: pantofii și haina la loc. Nou: caută el ce lipsește.",
+     "theme_live": "Pași pe drumul scurt"
+    },
+    {
+     "day": 7,
+     "pillar": "social",
+     "dur": 5,
+     "mod_default": "A",
+     "title": "Noapte bună",
+     "live_id": "s14-2-3-z7-social",
+     "materiale": "veioza",
+     "materiale_lista": [
+      "veioza"
+     ],
+     "materiale_surse": [
+      {
+       "text": "veioza",
+       "sursa": "casa"
+      }
+     ],
+     "baza": [
+      "La fereastră: „Noapte bună, drum! Noapte bună, poartă!”",
+      "Lumină mică, fără grabă.",
+      "Stinge el veioza, cu voi.",
+      "„Noapte bună, Cezar.”"
+     ],
+     "gata": "A făcut „pa” la fereastră sau a stins lumina cu voi.",
+     "plus": "Face „pa” și ursulețului care merge la culcare.",
+     "provocare": "Pune el ursulețul la culcare și îl învelește.",
+     "siguranta": "Cablul veiozei e prins și departe de pat; becul nu se atinge, e cald.",
+     "nota": null,
+     "live": {
+      "title": "Noapte bună",
+      "dur": 3,
+      "materiale": "fără",
+      "pasi": [
+       "„Noapte bună.”",
+       "Lumină mică, fără grabă."
+      ],
+      "gata": "A auzit ritualul de noapte.",
+      "nota": "Vârsta 1–2: scurt, fără forțare; el poate refuza."
+     },
+     "diferenta": "Păstrat: ritualul și titlul. Nou: își ia la revedere de la drum.",
+     "theme_live": "Pași pe drumul scurt"
+    }
+   ],
+   "materials": [
+    {
+     "n": 1,
+     "title": "Drumul de bandă",
+     "extra": "făcut acasă",
+     "bullets": [
+      {
+       "text": "O bandă de hârtie lipită pe hol, de 3–4 metri, cu ursulețul la capăt. Marți se prelungește până la ușa camerei.",
+       "sub": []
+      },
+      {
+       "text": "Categorie: Mișcare. Preț: 0 lei, fără cumpărături.",
+       "sub": []
+      },
+      {
+       "text": "Folosit la: luni fizic, luni mental, marți fizic, marți mental, vineri social.",
+       "sub": []
+      },
+      {
+       "text": "Acasă: Drumul de bandă.",
+       "sub": [
+        "Cum: 1) lipiți pe hol o bandă de hârtie lată (cea de vopsit), de 3 metri; 2) puneți ursulețul la capăt; 3) marți o prelungiți până la ușa camerei; 4) după fiecare joc verificați marginile și o dezlipiți la sfârșitul săptămânii.",
+        "Materiale și unelte: bandă de hârtie lată, cam 5 cm.",
+        "Cost: 0 lei dacă aveți bandă în casă.",
+        "Durată: 5 minute.",
+        "Siguranță: se dezlipește ușor: nu lăsați bucăți desprinse pe care să le mestece."
+       ]
+      }
+     ],
+     "uses": [
+      [
+       1,
+       "fizic"
+      ],
+      [
+       1,
+       "mental"
+      ],
+      [
+       2,
+       "fizic"
+      ],
+      [
+       2,
+       "mental"
+      ],
+      [
+       5,
+       "social"
+      ]
+     ],
+     "uses_text": "Folosit la: luni fizic, luni mental, marți fizic, marți mental, vineri social.",
+     "link": null,
+     "price": null,
+     "home_only": true,
+     "id": "b12-s14-m1",
+     "banda": "1-2",
+     "saptamana": 14,
+     "ordine": 1,
+     "nume": "Drumul de bandă",
+     "produs_cheie": "drum-de-banda-diy",
+     "categorie": "miscare",
+     "tip": "diy",
+     "pret": null,
+     "moneda": null,
+     "doar_acasa": true,
+     "descriere": "O bandă de hârtie lipită pe hol, de 3–4 metri, cu ursulețul la capăt. Marți se prelungește până la ușa camerei.",
+     "activitati": [
+      "s14-2-3-z1-fizic",
+      "s14-2-3-z1-mental",
+      "s14-2-3-z2-fizic",
+      "s14-2-3-z2-mental",
+      "s14-2-3-z5-social"
+     ],
+     "acasa": [
+      {
+       "id": "b12-s14-m1-acasa-1",
+       "tip": "diy",
+       "titlu": "Drumul de bandă",
+       "pasi": "1) lipiți pe hol o bandă de hârtie lată (cea de vopsit), de 3 metri; 2) puneți ursulețul la capăt; 3) marți o prelungiți până la ușa camerei; 4) după fiecare joc verificați marginile și o dezlipiți la sfârșitul săptămânii.",
+       "materiale_unelte": "bandă de hârtie lată, cam 5 cm.",
+       "cost_estimat": "0 lei dacă aveți bandă în casă.",
+       "durata": "5 minute.",
+       "siguranta": "se dezlipește ușor: nu lăsați bucăți desprinse pe care să le mestece.",
+       "link_model": null
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "title": "Toba din cratiță",
+     "extra": "din casă",
+     "bullets": [
+      {
+       "text": "O cratiță mică și o lingură de lemn.",
+       "sub": []
+      },
+      {
+       "text": "Categorie: Senzorial și sunete. Preț: 0 lei, fără cumpărături.",
+       "sub": []
+      },
+      {
+       "text": "Folosit la: vineri fizic, vineri mental.",
+       "sub": []
+      },
+      {
+       "text": "Acasă: Toba din cratiță.",
+       "sub": [
+        "Cum: 1) alegeți o cratiță mică, întoarsă cu fundul în sus; 2) o lingură de lemn cu coadă scurtă.",
+        "Materiale și unelte: cratiță mică, lingură de lemn.",
+        "Cost: 0 lei.",
+        "Durată: 1 minut.",
+        "Siguranță: lingura rămâne la adult când mergeți; cratița e rece și curată."
+       ]
+      }
+     ],
+     "uses": [
+      [
+       5,
+       "fizic"
+      ],
+      [
+       5,
+       "mental"
+      ]
+     ],
+     "uses_text": "Folosit la: vineri fizic, vineri mental.",
+     "link": null,
+     "price": null,
+     "home_only": true,
+     "id": "b12-s14-m2",
+     "banda": "1-2",
+     "saptamana": 14,
+     "ordine": 2,
+     "nume": "Toba din cratiță",
+     "produs_cheie": "toba-cratita",
+     "categorie": "senzorial",
+     "tip": "din_casa",
+     "pret": null,
+     "moneda": null,
+     "doar_acasa": true,
+     "descriere": "O cratiță mică și o lingură de lemn.",
+     "activitati": [
+      "s14-2-3-z5-fizic",
+      "s14-2-3-z5-mental"
+     ],
+     "acasa": [
+      {
+       "id": "b12-s14-m2-acasa-1",
+       "tip": "diy",
+       "titlu": "Toba din cratiță",
+       "pasi": "1) alegeți o cratiță mică, întoarsă cu fundul în sus; 2) o lingură de lemn cu coadă scurtă.",
+       "materiale_unelte": "cratiță mică, lingură de lemn.",
+       "cost_estimat": "0 lei.",
+       "durata": "1 minut.",
+       "siguranta": "lingura rămâne la adult când mergeți; cratița e rece și curată.",
+       "link_model": null
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "title": "Pozele drumului",
+     "extra": "tipărit acasă",
+     "bullets": [
+      {
+       "text": "3 poze cu reperele din curte: ușa casei, copacul, poarta. Duminică intră în cartea lui Cezar.",
+       "sub": []
+      },
+      {
+       "text": "Categorie: Natură și afară. Preț: 0 lei, fără cumpărături.",
+       "sub": []
+      },
+      {
+       "text": "Folosit la: joi fizic, joi mental.",
+       "sub": []
+      },
+      {
+       "text": "Acasă: Pozele drumului.",
+       "sub": [
+        "Cum: 1) fotografiați ușa casei, copacul din curte și poarta; 2) tipăriți-le cât o carte poștală sau desenați-le simplu; 3) acoperiți-le cu folie și rotunjiți colțurile; 4) faceți găurile ca la cartea lui, ca să le puteți adăuga duminică.",
+        "Materiale și unelte: pozele sau desenele, carton, folie autoadezivă, perforator.",
+        "Cost: 0 lei dacă aveți imprimantă sau desenați.",
+        "Durată: 30 de minute.",
+        "Siguranță: colțuri rotunjite; folia bine lipită."
+       ]
+      }
+     ],
+     "uses": [
+      [
+       4,
+       "fizic"
+      ],
+      [
+       4,
+       "mental"
+      ]
+     ],
+     "uses_text": "Folosit la: joi fizic, joi mental.",
+     "link": null,
+     "price": null,
+     "home_only": true,
+     "id": "b12-s14-m3",
+     "banda": "1-2",
+     "saptamana": 14,
+     "ordine": 3,
+     "nume": "Pozele drumului",
+     "produs_cheie": "pozele-drumului-print",
+     "categorie": "natura",
+     "tip": "print",
+     "pret": null,
+     "moneda": null,
+     "doar_acasa": true,
+     "descriere": "3 poze cu reperele din curte: ușa casei, copacul, poarta. Duminică intră în cartea lui Cezar.",
+     "activitati": [
+      "s14-2-3-z4-fizic",
+      "s14-2-3-z4-mental"
+     ],
+     "acasa": [
+      {
+       "id": "b12-s14-m3-acasa-1",
+       "tip": "print",
+       "titlu": "Pozele drumului",
+       "pasi": "1) fotografiați ușa casei, copacul din curte și poarta; 2) tipăriți-le cât o carte poștală sau desenați-le simplu; 3) acoperiți-le cu folie și rotunjiți colțurile; 4) faceți găurile ca la cartea lui, ca să le puteți adăuga duminică.",
+       "materiale_unelte": "pozele sau desenele, carton, folie autoadezivă, perforator.",
+       "cost_estimat": "0 lei dacă aveți imprimantă sau desenați.",
+       "durata": "30 de minute.",
+       "siguranta": "colțuri rotunjite; folia bine lipită.",
+       "link_model": null
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "title": "Găleata de comori",
+     "extra": "din casă",
+     "bullets": [
+      {
+       "text": "O găleată mică de plastic, din casă sau din jucăriile de nisip.",
+       "sub": []
+      },
+      {
+       "text": "Categorie: Apă și nisip. Preț: 0 lei, fără cumpărături.",
+       "sub": []
+      },
+      {
+       "text": "Folosit la: miercuri resurse, joi resurse, sâmbătă fizic, sâmbătă resurse.",
+       "sub": []
+      },
+      {
+       "text": "Acasă: Găleata de comori.",
+       "sub": [
+        "Cum: 1) luați o găleată mică, ușoară, cu toartă; 2) o țineți la ușă, lângă coș.",
+        "Materiale și unelte: găleată mică de plastic.",
+        "Cost: 0 lei.",
+        "Durată: 1 minut.",
+        "Siguranță: găleata e ușoară; ce intră în ea e mai mare decât palma lui."
+       ]
+      }
+     ],
+     "uses": [
+      [
+       3,
+       "resurse"
+      ],
+      [
+       4,
+       "resurse"
+      ],
+      [
+       6,
+       "fizic"
+      ],
+      [
+       6,
+       "resurse"
+      ]
+     ],
+     "uses_text": "Folosit la: miercuri resurse, joi resurse, sâmbătă fizic, sâmbătă resurse.",
+     "link": null,
+     "price": null,
+     "home_only": true,
+     "id": "b12-s14-m4",
+     "banda": "1-2",
+     "saptamana": 14,
+     "ordine": 4,
+     "nume": "Găleata de comori",
+     "produs_cheie": "galeata-si-lopatica",
+     "categorie": "apa_nisip",
+     "tip": "din_casa",
+     "pret": null,
+     "moneda": null,
+     "doar_acasa": true,
+     "descriere": "O găleată mică de plastic, din casă sau din jucăriile de nisip.",
+     "activitati": [
+      "s14-2-3-z3-resurse",
+      "s14-2-3-z4-resurse",
+      "s14-2-3-z6-fizic",
+      "s14-2-3-z6-resurse"
+     ],
+     "acasa": [
+      {
+       "id": "b12-s14-m4-acasa-1",
+       "tip": "diy",
+       "titlu": "Găleata de comori",
+       "pasi": "1) luați o găleată mică, ușoară, cu toartă; 2) o țineți la ușă, lângă coș.",
+       "materiale_unelte": "găleată mică de plastic.",
+       "cost_estimat": "0 lei.",
+       "durata": "1 minut.",
+       "siguranta": "găleata e ușoară; ce intră în ea e mai mare decât palma lui.",
+       "link_model": null
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "title": "Cartea lui Cezar: drumul",
+     "extra": "tipărit acasă",
+     "bullets": [
+      {
+       "text": "Aceeași carte din săptămâna trecută, cu paginile drumului adăugate.",
+       "sub": []
+      },
+      {
+       "text": "Categorie: Cărți. Preț: 0 lei, fără cumpărături.",
+       "sub": []
+      },
+      {
+       "text": "Folosit la: duminică mental.",
+       "sub": []
+      },
+      {
+       "text": "Acasă: Cartea lui Cezar: drumul.",
+       "sub": [
+        "Cum: 1) luați cartea din săptămâna trecută; 2) adăugați pozele drumului și o poză cu el pe drum; 3) prindeți-le cu aceleași inele.",
+        "Materiale și unelte: cartea din săptămâna trecută, pozele drumului.",
+        "Cost: 0 lei.",
+        "Durată: 10 minute.",
+        "Siguranță: inelele mai mari de 3,2 cm sau o sfoară scurtă, legată strâns."
+       ]
+      }
+     ],
+     "uses": [
+      [
+       7,
+       "mental"
+      ]
+     ],
+     "uses_text": "Folosit la: duminică mental.",
+     "link": null,
+     "price": null,
+     "home_only": true,
+     "id": "b12-s14-m5",
+     "banda": "1-2",
+     "saptamana": 14,
+     "ordine": 5,
+     "nume": "Cartea lui Cezar: drumul",
+     "produs_cheie": "cartea-lui-cezar-print",
+     "categorie": "carti",
+     "tip": "print",
+     "pret": null,
+     "moneda": null,
+     "doar_acasa": true,
+     "descriere": "Aceeași carte din săptămâna trecută, cu paginile drumului adăugate.",
+     "activitati": [
+      "s14-2-3-z7-mental"
+     ],
+     "acasa": [
+      {
+       "id": "b12-s14-m5-acasa-1",
+       "tip": "print",
+       "titlu": "Cartea lui Cezar: drumul",
+       "pasi": "1) luați cartea din săptămâna trecută; 2) adăugați pozele drumului și o poză cu el pe drum; 3) prindeți-le cu aceleași inele.",
+       "materiale_unelte": "cartea din săptămâna trecută, pozele drumului.",
+       "cost_estimat": "0 lei.",
+       "durata": "10 minute.",
+       "siguranta": "inelele mai mari de 3,2 cm sau o sfoară scurtă, legată strâns.",
+       "link_model": null
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "title": "Coșul de la ușă",
+     "extra": "făcut acasă",
+     "bullets": [
+      {
+       "text": "Același coș din săptămâna trecută: căciula și mănușile stau aici și după plimbări.",
+       "sub": []
+      },
+      {
+       "text": "Categorie: Viață practică. Preț: 0 lei, fără cumpărături.",
+       "sub": []
+      },
+      {
+       "text": "Folosit la: vineri resurse, duminică fizic, duminică resurse.",
+       "sub": []
+      },
+      {
+       "text": "Acasă: Coșul de la ușă.",
+       "sub": [
+        "Cum: 1) îl folosiți pe cel din săptămâna trecută; 2) dacă vreți, lipiți și poza cizmelor.",
+        "Materiale și unelte: coșul din săptămâna trecută.",
+        "Cost: 0 lei.",
+        "Durată: nu e nevoie de pregătire.",
+        "Siguranță: fără capse; marginile acoperite cu bandă."
+       ]
+      }
+     ],
+     "uses": [
+      [
+       5,
+       "resurse"
+      ],
+      [
+       7,
+       "fizic"
+      ],
+      [
+       7,
+       "resurse"
+      ]
+     ],
+     "uses_text": "Folosit la: vineri resurse, duminică fizic, duminică resurse.",
+     "link": null,
+     "price": null,
+     "home_only": true,
+     "id": "b12-s14-m6",
+     "banda": "1-2",
+     "saptamana": 14,
+     "ordine": 6,
+     "nume": "Coșul de la ușă",
+     "produs_cheie": "cos-de-la-usa-diy",
+     "categorie": "viata_practica",
+     "tip": "diy",
+     "pret": null,
+     "moneda": null,
+     "doar_acasa": true,
+     "descriere": "Același coș din săptămâna trecută: căciula și mănușile stau aici și după plimbări.",
+     "activitati": [
+      "s14-2-3-z5-resurse",
+      "s14-2-3-z7-fizic",
+      "s14-2-3-z7-resurse"
+     ],
+     "acasa": [
+      {
+       "id": "b12-s14-m6-acasa-1",
+       "tip": "diy",
+       "titlu": "Coșul de la ușă",
+       "pasi": "1) îl folosiți pe cel din săptămâna trecută; 2) dacă vreți, lipiți și poza cizmelor.",
+       "materiale_unelte": "coșul din săptămâna trecută.",
+       "cost_estimat": "0 lei.",
+       "durata": "nu e nevoie de pregătire.",
+       "siguranta": "fără capse; marginile acoperite cu bandă.",
+       "link_model": null
+      }
+     ]
+    }
+   ],
+   "free": "treapta joasă, preșul de la ușă, o geantă mică, mingea moale, ursulețul și curtea.",
+   "materials_heading": "Materialele săptămânii 14 (toate din casă sau făcute acasă, 0 lei)"
+  }
+ ]
+}

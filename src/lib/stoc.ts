@@ -105,6 +105,21 @@ export type StarterItem = {
   banda?: "1-2" | "2-3";
 };
 
+/**
+ * Starter items that the 1–2 S13–S14 content also uses get the same
+ * `produs_cheie` as Cristina's catalog, so ticking them here lights up
+ * „Ai deja în stoc” there.
+ */
+export const STARTER_KEYS: Record<string, string> = {
+  "Cărți cartonate": "carti-cartonate",
+  "Păpușă sau ursuleț": "ursulet-papusa",
+  "Minge moale mare": "minge-moale-mare",
+  "Perne pentru traseu": "perne-traseu",
+  "Castroane și linguri din bucătărie": "castroane-linguri",
+  Tavă: "tava",
+  "Găleată și lopățică": "galeata-si-lopatica",
+};
+
 const starter = (
   categorie: StocCategorie,
   items: [string, StocTip?, number?][],
@@ -115,6 +130,7 @@ const starter = (
     categorie,
     tip,
     varsta_min_luni: varsta,
+    ...(STARTER_KEYS[nume] ? { produs_cheie: STARTER_KEYS[nume] } : {}),
   }));
 
 /** The 33 starter items (plan, section 7.1). Age is prefilled, category comes from the group. */
@@ -255,7 +271,12 @@ export function foldText(text: string): string {
 }
 
 /** Category for a catalog material added from a card. Known products first, then words. */
-export function categoryForMaterial(material: { produs_cheie?: string | null; nume: string }): StocCategorie {
+export function categoryForMaterial(material: {
+  produs_cheie?: string | null;
+  nume: string;
+  categorie?: string | null;
+}): StocCategorie {
+  if (material.categorie && isStocCategorie(material.categorie)) return material.categorie;
   const known = material.produs_cheie ? GIFTED_BY_KEY.get(material.produs_cheie) : undefined;
   if (known) return known.categorie;
   const name = foldText(material.nume);

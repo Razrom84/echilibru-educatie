@@ -47,6 +47,8 @@ export type CatalogMaterial = {
   acasa: HomeVariant[];
   /** Same product across weeks and bands. Stock is matched on this. */
   produs_cheie?: string | null;
+  /** Stock category (one of the 10 fixed keys), when the catalog sets it. */
+  categorie?: string | null;
 };
 
 export type WeekMaterials = {
@@ -263,7 +265,13 @@ type DbMaterial = Omit<CatalogMaterial, "acasa" | "activitati" | "banda"> & {
   materiale_activitati?: { activity_id: string }[] | null;
 };
 
+function localMaterial(banda: string, id: string): CatalogMaterial | undefined {
+  const key = catalogBand(banda);
+  return key ? GIFTED_CONFIG[key].catalog.materiale.find((item) => item.id === id) : undefined;
+}
+
 export function mapDbMaterial(row: DbMaterial): CatalogMaterial {
+  const local = localMaterial(row.banda, row.id);
   const homes = (row.materiale_acasa ?? [])
     .slice()
     .sort((a, b) => (a.ordine ?? 0) - (b.ordine ?? 0));
@@ -271,7 +279,10 @@ export function mapDbMaterial(row: DbMaterial): CatalogMaterial {
     id: row.id,
     banda: (catalogBand(row.banda) ?? "2-3") as LiveAgeBand,
     produs_cheie:
-      row.produs_cheie?.trim() || produsCheieForMaterial(row.banda, row.id),
+      row.produs_cheie?.trim() ||
+      local?.produs_cheie ||
+      produsCheieForMaterial(row.banda, row.id),
+    categorie: local?.categorie ?? null,
     saptamana: row.saptamana,
     ordine: row.ordine,
     nume: row.nume,

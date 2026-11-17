@@ -1,5 +1,555 @@
 {
   "data_verificare": null,
-  "saptamani": [],
-  "materiale": []
+  "saptamani": [
+    {
+      "saptamana": 13,
+      "tema": "Haine pe vreme",
+      "gratuit": "hainele lui de afară, papucii, cizmele, sertarul cu șosete, oglinda, o pătură și veioza."
+    },
+    {
+      "saptamana": 14,
+      "tema": "Pași pe drumul scurt",
+      "gratuit": "treapta joasă, preșul de la ușă, o geantă mică, mingea moale, ursulețul și curtea."
+    }
+  ],
+  "materiale": [
+    {
+      "id": "b12-s13-m1",
+      "banda": "1-2",
+      "saptamana": 13,
+      "ordine": 1,
+      "nume": "Coșul de la ușă",
+      "producator": null,
+      "magazin": null,
+      "sursa": "făcut acasă",
+      "link": null,
+      "pret": null,
+      "moneda": null,
+      "data_verificare": null,
+      "stoc": null,
+      "varsta": null,
+      "nota_siguranta": null,
+      "doar_acasa": true,
+      "folosita": "Folosit la: joi resurse, vineri resurse, sâmbătă fizic, sâmbătă resurse, duminică fizic, duminică resurse.",
+      "detaliu_pret": null,
+      "note": [],
+      "activitati": [
+        "s13-2-3-z4-resurse",
+        "s13-2-3-z5-resurse",
+        "s13-2-3-z6-fizic",
+        "s13-2-3-z6-resurse",
+        "s13-2-3-z7-fizic",
+        "s13-2-3-z7-resurse"
+      ],
+      "acasa": [
+        {
+          "id": "b12-s13-m1-acasa-1",
+          "tip": "diy",
+          "titlu": "Coșul de la ușă",
+          "pasi": "1) luați un coș sau o cutie de carton de vreo 30×20 cm; 2) fotografiați sau desenați căciula și mănușile lui; 3) lipiți pozele pe o latură cu bandă adezivă transparentă, lată; 4) puneți coșul pe jos, lângă ușă.",
+          "materiale_unelte": "coș sau cutie, 2 poze sau desene, bandă adezivă transparentă, foarfecă.",
+          "cost_estimat": "0 lei, cu lucruri din casă.",
+          "durata": "10 minute.",
+          "siguranta": "fără capse; marginile cutiei le îndoiți spre interior sau le acoperiți cu bandă.",
+          "link_model": null,
+          "linii": [
+            "Un coș sau o cutie, pe jos lângă ușă, cu pozele căciulii și ale mănușilor lipite pe el. Așa, lucrurile de afară au un loc la înălțimea lui.",
+            "Cum: 1) luați un coș sau o cutie de carton de vreo 30×20 cm; 2) fotografiați sau desenați căciula și mănușile lui; 3) lipiți pozele pe o latură cu bandă adezivă transparentă, lată; 4) puneți coșul pe jos, lângă ușă.",
+            "Materiale și unelte: coș sau cutie, 2 poze sau desene, bandă adezivă transparentă, foarfecă.",
+            "Cost: 0 lei, cu lucruri din casă.",
+            "Durată: 10 minute.",
+            "Siguranță: fără capse; marginile cutiei le îndoiți spre interior sau le acoperiți cu bandă."
+          ]
+        }
+      ],
+      "produs_cheie": "cos-de-la-usa-diy",
+      "categorie": "viata_practica"
+    },
+    {
+      "id": "b12-s13-m2",
+      "banda": "1-2",
+      "saptamana": 13,
+      "ordine": 2,
+      "nume": "Coșul cu perechi",
+      "producator": null,
+      "magazin": null,
+      "sursa": "din casă",
+      "link": null,
+      "pret": null,
+      "moneda": null,
+      "data_verificare": null,
+      "stoc": null,
+      "varsta": null,
+      "nota_siguranta": null,
+      "doar_acasa": true,
+      "folosita": "Folosit la: marți fizic, marți mental, marți resurse, marți social, vineri mental.",
+      "detaliu_pret": null,
+      "note": [],
+      "activitati": [
+        "s13-2-3-z2-fizic",
+        "s13-2-3-z2-mental",
+        "s13-2-3-z2-resurse",
+        "s13-2-3-z2-social",
+        "s13-2-3-z5-mental"
+      ],
+      "acasa": [
+        {
+          "id": "b12-s13-m2-acasa-1",
+          "tip": "diy",
+          "titlu": "Coșul cu perechi",
+          "pasi": "1) alegeți 3 perechi de șosete ale lui, cât mai diferite la culoare; 2) adăugați mănușile lui și o pereche de mănuși de adult; 3) puneți totul într-un coș sau într-o cutie.",
+          "materiale_unelte": "șosete și mănuși din casă, un coș.",
+          "cost_estimat": "0 lei.",
+          "durata": "5 minute.",
+          "siguranta": "fără șosete cu buline antiderapante care se desprind și fără mănuși cu șnur.",
+          "link_model": null,
+          "linii": [
+            "3 perechi de șosete ale lui, în culori diferite, mănușile lui, o pereche de mănuși de adult și două șosete mari ale tatei, într-un coș.",
+            "Cum: 1) alegeți 3 perechi de șosete ale lui, cât mai diferite la culoare; 2) adăugați mănușile lui și o pereche de mănuși de adult; 3) puneți totul într-un coș sau într-o cutie.",
+            "Materiale și unelte: șosete și mănuși din casă, un coș.",
+            "Cost: 0 lei.",
+            "Durată: 5 minute.",
+            "Siguranță: fără șosete cu buline antiderapante care se desprind și fără mănuși cu șnur."
+          ]
+        }
+      ],
+      "produs_cheie": "cos-perechi-haine",
+      "categorie": "sortare"
+    },
+    {
+      "id": "b12-s13-m3",
+      "banda": "1-2",
+      "saptamana": 13,
+      "ordine": 3,
+      "nume": "Cartonașe „Ce purtăm afară?”",
+      "producator": null,
+      "magazin": null,
+      "sursa": "tipărit acasă",
+      "link": null,
+      "pret": null,
+      "moneda": null,
+      "data_verificare": null,
+      "stoc": null,
+      "varsta": null,
+      "nota_siguranta": null,
+      "doar_acasa": true,
+      "folosita": "Folosit la: sâmbătă mental.",
+      "detaliu_pret": null,
+      "note": [],
+      "activitati": [
+        "s13-2-3-z6-mental"
+      ],
+      "acasa": [
+        {
+          "id": "b12-s13-m3-acasa-1",
+          "tip": "print",
+          "titlu": "Cartonașe „Ce purtăm afară?”",
+          "pasi": "1) desenați sau tipăriți trei imagini simple, cât o carte poștală: soare, nor cu ploaie, fulg de zăpadă; 2) lipiți-le pe carton; 3) acoperiți-le pe ambele fețe cu folie autoadezivă sau cu bandă transparentă lată; 4) rotunjiți colțurile cu foarfeca.",
+          "materiale_unelte": "hârtie sau carton, creioane colorate sau imprimantă, folie autoadezivă ori bandă transparentă, foarfecă.",
+          "cost_estimat": "0 lei, cu lucruri din casă.",
+          "durata": "20 de minute.",
+          "siguranta": "colțuri rotunjite; dacă folia se desprinde, refaceți cartonașul.",
+          "link_model": null,
+          "linii": [
+            "3 cartonașe cu vremea: soare, ploaie, frig.",
+            "Cum: 1) desenați sau tipăriți trei imagini simple, cât o carte poștală: soare, nor cu ploaie, fulg de zăpadă; 2) lipiți-le pe carton; 3) acoperiți-le pe ambele fețe cu folie autoadezivă sau cu bandă transparentă lată; 4) rotunjiți colțurile cu foarfeca.",
+            "Materiale și unelte: hârtie sau carton, creioane colorate sau imprimantă, folie autoadezivă ori bandă transparentă, foarfecă.",
+            "Cost: 0 lei, cu lucruri din casă.",
+            "Durată: 20 de minute.",
+            "Siguranță: colțuri rotunjite; dacă folia se desprinde, refaceți cartonașul."
+          ]
+        }
+      ],
+      "produs_cheie": "cartonase-vreme-print",
+      "categorie": "sortare"
+    },
+    {
+      "id": "b12-s13-m4",
+      "banda": "1-2",
+      "saptamana": 13,
+      "ordine": 4,
+      "nume": "Cartea lui Cezar: hainele",
+      "producator": null,
+      "magazin": null,
+      "sursa": "tipărit acasă",
+      "link": null,
+      "pret": null,
+      "moneda": null,
+      "data_verificare": null,
+      "stoc": null,
+      "varsta": null,
+      "nota_siguranta": null,
+      "doar_acasa": true,
+      "folosita": "Folosit la: duminică mental.",
+      "detaliu_pret": null,
+      "note": [],
+      "activitati": [
+        "s13-2-3-z7-mental"
+      ],
+      "acasa": [
+        {
+          "id": "b12-s13-m4-acasa-1",
+          "tip": "print",
+          "titlu": "Cartea lui Cezar: hainele",
+          "pasi": "1) fotografiați-l cu căciulă, cu mănuși, cu cizme, cu haina, în papuci și desculț; 2) tipăriți pozele cât o carte poștală sau, fără imprimantă, desenați simplu fiecare haină pe carton; 3) acoperiți paginile cu folie și rotunjiți colțurile; 4) faceți două găuri și prindeți paginile cu inele mari sau cu o sfoară scurtă, legată strâns.",
+          "materiale_unelte": "pozele sau desenele, carton, folie autoadezivă, perforator, 2 inele mari sau sfoară.",
+          "cost_estimat": "0 lei dacă aveți imprimantă sau desenați.",
+          "durata": "aproximativ o oră.",
+          "siguranta": "inelele mai mari de 3,2 cm sau o sfoară scurtă, legată strâns; colțuri rotunjite.",
+          "link_model": null,
+          "linii": [
+            "O carte mică făcută din pozele lui îmbrăcat. Săptămâna viitoare primește paginile drumului.",
+            "Cum: 1) fotografiați-l cu căciulă, cu mănuși, cu cizme, cu haina, în papuci și desculț; 2) tipăriți pozele cât o carte poștală sau, fără imprimantă, desenați simplu fiecare haină pe carton; 3) acoperiți paginile cu folie și rotunjiți colțurile; 4) faceți două găuri și prindeți paginile cu inele mari sau cu o sfoară scurtă, legată strâns.",
+            "Materiale și unelte: pozele sau desenele, carton, folie autoadezivă, perforator, 2 inele mari sau sfoară.",
+            "Cost: 0 lei dacă aveți imprimantă sau desenați.",
+            "Durată: aproximativ o oră.",
+            "Siguranță: inelele mai mari de 3,2 cm sau o sfoară scurtă, legată strâns; colțuri rotunjite."
+          ]
+        }
+      ],
+      "produs_cheie": "cartea-lui-cezar-print",
+      "categorie": "carti"
+    },
+    {
+      "id": "b12-s13-m5",
+      "banda": "1-2",
+      "saptamana": 13,
+      "ordine": 5,
+      "nume": "Scaunul de la ușă",
+      "producator": null,
+      "magazin": null,
+      "sursa": "din casă",
+      "link": null,
+      "pret": null,
+      "moneda": null,
+      "data_verificare": null,
+      "stoc": null,
+      "varsta": null,
+      "nota_siguranta": null,
+      "doar_acasa": true,
+      "folosita": "Folosit la: luni resurse, sâmbătă resurse.",
+      "detaliu_pret": null,
+      "note": [],
+      "activitati": [
+        "s13-2-3-z1-resurse",
+        "s13-2-3-z6-resurse"
+      ],
+      "acasa": [
+        {
+          "id": "b12-s13-m5-acasa-1",
+          "tip": "diy",
+          "titlu": "Scaunul de la ușă",
+          "pasi": "1) puneți lângă ușă un taburet sau un scaun mic, stabil; 2) arătați-i: „Aici stă haina.”",
+          "materiale_unelte": "un taburet sau un scaun mic din casă.",
+          "cost_estimat": "0 lei.",
+          "durata": "2 minute.",
+          "siguranta": "scaunul e stabil și nu se urcă pe el; dacă e scaun de adult, haina stă pe șezut.",
+          "link_model": null,
+          "linii": [
+            "Un taburet sau un scaun mic lângă ușă: aici stă haina, ca să o poată duce singur.",
+            "Cum: 1) puneți lângă ușă un taburet sau un scaun mic, stabil; 2) arătați-i: „Aici stă haina.”",
+            "Materiale și unelte: un taburet sau un scaun mic din casă.",
+            "Cost: 0 lei.",
+            "Durată: 2 minute.",
+            "Siguranță: scaunul e stabil și nu se urcă pe el; dacă e scaun de adult, haina stă pe șezut."
+          ]
+        }
+      ],
+      "produs_cheie": "scaun-mic-usa",
+      "categorie": "viata_practica"
+    },
+    {
+      "id": "b12-s14-m1",
+      "banda": "1-2",
+      "saptamana": 14,
+      "ordine": 1,
+      "nume": "Drumul de bandă",
+      "producator": null,
+      "magazin": null,
+      "sursa": "făcut acasă",
+      "link": null,
+      "pret": null,
+      "moneda": null,
+      "data_verificare": null,
+      "stoc": null,
+      "varsta": null,
+      "nota_siguranta": null,
+      "doar_acasa": true,
+      "folosita": "Folosit la: luni fizic, luni mental, marți fizic, marți mental, vineri social.",
+      "detaliu_pret": null,
+      "note": [],
+      "activitati": [
+        "s14-2-3-z1-fizic",
+        "s14-2-3-z1-mental",
+        "s14-2-3-z2-fizic",
+        "s14-2-3-z2-mental",
+        "s14-2-3-z5-social"
+      ],
+      "acasa": [
+        {
+          "id": "b12-s14-m1-acasa-1",
+          "tip": "diy",
+          "titlu": "Drumul de bandă",
+          "pasi": "1) lipiți pe hol o bandă de hârtie lată (cea de vopsit), de 3 metri; 2) puneți ursulețul la capăt; 3) marți o prelungiți până la ușa camerei; 4) după fiecare joc verificați marginile și o dezlipiți la sfârșitul săptămânii.",
+          "materiale_unelte": "bandă de hârtie lată, cam 5 cm.",
+          "cost_estimat": "0 lei dacă aveți bandă în casă.",
+          "durata": "5 minute.",
+          "siguranta": "se dezlipește ușor: nu lăsați bucăți desprinse pe care să le mestece.",
+          "link_model": null,
+          "linii": [
+            "O bandă de hârtie lipită pe hol, de 3–4 metri, cu ursulețul la capăt. Marți se prelungește până la ușa camerei.",
+            "Cum: 1) lipiți pe hol o bandă de hârtie lată (cea de vopsit), de 3 metri; 2) puneți ursulețul la capăt; 3) marți o prelungiți până la ușa camerei; 4) după fiecare joc verificați marginile și o dezlipiți la sfârșitul săptămânii.",
+            "Materiale și unelte: bandă de hârtie lată, cam 5 cm.",
+            "Cost: 0 lei dacă aveți bandă în casă.",
+            "Durată: 5 minute.",
+            "Siguranță: se dezlipește ușor: nu lăsați bucăți desprinse pe care să le mestece."
+          ]
+        }
+      ],
+      "produs_cheie": "drum-de-banda-diy",
+      "categorie": "miscare"
+    },
+    {
+      "id": "b12-s14-m2",
+      "banda": "1-2",
+      "saptamana": 14,
+      "ordine": 2,
+      "nume": "Toba din cratiță",
+      "producator": null,
+      "magazin": null,
+      "sursa": "din casă",
+      "link": null,
+      "pret": null,
+      "moneda": null,
+      "data_verificare": null,
+      "stoc": null,
+      "varsta": null,
+      "nota_siguranta": null,
+      "doar_acasa": true,
+      "folosita": "Folosit la: vineri fizic, vineri mental.",
+      "detaliu_pret": null,
+      "note": [],
+      "activitati": [
+        "s14-2-3-z5-fizic",
+        "s14-2-3-z5-mental"
+      ],
+      "acasa": [
+        {
+          "id": "b12-s14-m2-acasa-1",
+          "tip": "diy",
+          "titlu": "Toba din cratiță",
+          "pasi": "1) alegeți o cratiță mică, întoarsă cu fundul în sus; 2) o lingură de lemn cu coadă scurtă.",
+          "materiale_unelte": "cratiță mică, lingură de lemn.",
+          "cost_estimat": "0 lei.",
+          "durata": "1 minut.",
+          "siguranta": "lingura rămâne la adult când mergeți; cratița e rece și curată.",
+          "link_model": null,
+          "linii": [
+            "O cratiță mică și o lingură de lemn.",
+            "Cum: 1) alegeți o cratiță mică, întoarsă cu fundul în sus; 2) o lingură de lemn cu coadă scurtă.",
+            "Materiale și unelte: cratiță mică, lingură de lemn.",
+            "Cost: 0 lei.",
+            "Durată: 1 minut.",
+            "Siguranță: lingura rămâne la adult când mergeți; cratița e rece și curată."
+          ]
+        }
+      ],
+      "produs_cheie": "toba-cratita",
+      "categorie": "senzorial"
+    },
+    {
+      "id": "b12-s14-m3",
+      "banda": "1-2",
+      "saptamana": 14,
+      "ordine": 3,
+      "nume": "Pozele drumului",
+      "producator": null,
+      "magazin": null,
+      "sursa": "tipărit acasă",
+      "link": null,
+      "pret": null,
+      "moneda": null,
+      "data_verificare": null,
+      "stoc": null,
+      "varsta": null,
+      "nota_siguranta": null,
+      "doar_acasa": true,
+      "folosita": "Folosit la: joi fizic, joi mental.",
+      "detaliu_pret": null,
+      "note": [],
+      "activitati": [
+        "s14-2-3-z4-fizic",
+        "s14-2-3-z4-mental"
+      ],
+      "acasa": [
+        {
+          "id": "b12-s14-m3-acasa-1",
+          "tip": "print",
+          "titlu": "Pozele drumului",
+          "pasi": "1) fotografiați ușa casei, copacul din curte și poarta; 2) tipăriți-le cât o carte poștală sau desenați-le simplu; 3) acoperiți-le cu folie și rotunjiți colțurile; 4) faceți găurile ca la cartea lui, ca să le puteți adăuga duminică.",
+          "materiale_unelte": "pozele sau desenele, carton, folie autoadezivă, perforator.",
+          "cost_estimat": "0 lei dacă aveți imprimantă sau desenați.",
+          "durata": "30 de minute.",
+          "siguranta": "colțuri rotunjite; folia bine lipită.",
+          "link_model": null,
+          "linii": [
+            "3 poze cu reperele din curte: ușa casei, copacul, poarta. Duminică intră în cartea lui Cezar.",
+            "Cum: 1) fotografiați ușa casei, copacul din curte și poarta; 2) tipăriți-le cât o carte poștală sau desenați-le simplu; 3) acoperiți-le cu folie și rotunjiți colțurile; 4) faceți găurile ca la cartea lui, ca să le puteți adăuga duminică.",
+            "Materiale și unelte: pozele sau desenele, carton, folie autoadezivă, perforator.",
+            "Cost: 0 lei dacă aveți imprimantă sau desenați.",
+            "Durată: 30 de minute.",
+            "Siguranță: colțuri rotunjite; folia bine lipită."
+          ]
+        }
+      ],
+      "produs_cheie": "pozele-drumului-print",
+      "categorie": "natura"
+    },
+    {
+      "id": "b12-s14-m4",
+      "banda": "1-2",
+      "saptamana": 14,
+      "ordine": 4,
+      "nume": "Găleata de comori",
+      "producator": null,
+      "magazin": null,
+      "sursa": "din casă",
+      "link": null,
+      "pret": null,
+      "moneda": null,
+      "data_verificare": null,
+      "stoc": null,
+      "varsta": null,
+      "nota_siguranta": null,
+      "doar_acasa": true,
+      "folosita": "Folosit la: miercuri resurse, joi resurse, sâmbătă fizic, sâmbătă resurse.",
+      "detaliu_pret": null,
+      "note": [],
+      "activitati": [
+        "s14-2-3-z3-resurse",
+        "s14-2-3-z4-resurse",
+        "s14-2-3-z6-fizic",
+        "s14-2-3-z6-resurse"
+      ],
+      "acasa": [
+        {
+          "id": "b12-s14-m4-acasa-1",
+          "tip": "diy",
+          "titlu": "Găleata de comori",
+          "pasi": "1) luați o găleată mică, ușoară, cu toartă; 2) o țineți la ușă, lângă coș.",
+          "materiale_unelte": "găleată mică de plastic.",
+          "cost_estimat": "0 lei.",
+          "durata": "1 minut.",
+          "siguranta": "găleata e ușoară; ce intră în ea e mai mare decât palma lui.",
+          "link_model": null,
+          "linii": [
+            "O găleată mică de plastic, din casă sau din jucăriile de nisip.",
+            "Cum: 1) luați o găleată mică, ușoară, cu toartă; 2) o țineți la ușă, lângă coș.",
+            "Materiale și unelte: găleată mică de plastic.",
+            "Cost: 0 lei.",
+            "Durată: 1 minut.",
+            "Siguranță: găleata e ușoară; ce intră în ea e mai mare decât palma lui."
+          ]
+        }
+      ],
+      "produs_cheie": "galeata-si-lopatica",
+      "categorie": "apa_nisip"
+    },
+    {
+      "id": "b12-s14-m5",
+      "banda": "1-2",
+      "saptamana": 14,
+      "ordine": 5,
+      "nume": "Cartea lui Cezar: drumul",
+      "producator": null,
+      "magazin": null,
+      "sursa": "tipărit acasă",
+      "link": null,
+      "pret": null,
+      "moneda": null,
+      "data_verificare": null,
+      "stoc": null,
+      "varsta": null,
+      "nota_siguranta": null,
+      "doar_acasa": true,
+      "folosita": "Folosit la: duminică mental.",
+      "detaliu_pret": null,
+      "note": [],
+      "activitati": [
+        "s14-2-3-z7-mental"
+      ],
+      "acasa": [
+        {
+          "id": "b12-s14-m5-acasa-1",
+          "tip": "print",
+          "titlu": "Cartea lui Cezar: drumul",
+          "pasi": "1) luați cartea din săptămâna trecută; 2) adăugați pozele drumului și o poză cu el pe drum; 3) prindeți-le cu aceleași inele.",
+          "materiale_unelte": "cartea din săptămâna trecută, pozele drumului.",
+          "cost_estimat": "0 lei.",
+          "durata": "10 minute.",
+          "siguranta": "inelele mai mari de 3,2 cm sau o sfoară scurtă, legată strâns.",
+          "link_model": null,
+          "linii": [
+            "Aceeași carte din săptămâna trecută, cu paginile drumului adăugate.",
+            "Cum: 1) luați cartea din săptămâna trecută; 2) adăugați pozele drumului și o poză cu el pe drum; 3) prindeți-le cu aceleași inele.",
+            "Materiale și unelte: cartea din săptămâna trecută, pozele drumului.",
+            "Cost: 0 lei.",
+            "Durată: 10 minute.",
+            "Siguranță: inelele mai mari de 3,2 cm sau o sfoară scurtă, legată strâns."
+          ]
+        }
+      ],
+      "produs_cheie": "cartea-lui-cezar-print",
+      "categorie": "carti"
+    },
+    {
+      "id": "b12-s14-m6",
+      "banda": "1-2",
+      "saptamana": 14,
+      "ordine": 6,
+      "nume": "Coșul de la ușă",
+      "producator": null,
+      "magazin": null,
+      "sursa": "făcut acasă",
+      "link": null,
+      "pret": null,
+      "moneda": null,
+      "data_verificare": null,
+      "stoc": null,
+      "varsta": null,
+      "nota_siguranta": null,
+      "doar_acasa": true,
+      "folosita": "Folosit la: vineri resurse, duminică fizic, duminică resurse.",
+      "detaliu_pret": null,
+      "note": [],
+      "activitati": [
+        "s14-2-3-z5-resurse",
+        "s14-2-3-z7-fizic",
+        "s14-2-3-z7-resurse"
+      ],
+      "acasa": [
+        {
+          "id": "b12-s14-m6-acasa-1",
+          "tip": "diy",
+          "titlu": "Coșul de la ușă",
+          "pasi": "1) îl folosiți pe cel din săptămâna trecută; 2) dacă vreți, lipiți și poza cizmelor.",
+          "materiale_unelte": "coșul din săptămâna trecută.",
+          "cost_estimat": "0 lei.",
+          "durata": "nu e nevoie de pregătire.",
+          "siguranta": "fără capse; marginile acoperite cu bandă.",
+          "link_model": null,
+          "linii": [
+            "Același coș din săptămâna trecută: căciula și mănușile stau aici și după plimbări.",
+            "Cum: 1) îl folosiți pe cel din săptămâna trecută; 2) dacă vreți, lipiți și poza cizmelor.",
+            "Materiale și unelte: coșul din săptămâna trecută.",
+            "Cost: 0 lei.",
+            "Durată: nu e nevoie de pregătire.",
+            "Siguranță: fără capse; marginile acoperite cu bandă."
+          ]
+        }
+      ],
+      "produs_cheie": "cos-de-la-usa-diy",
+      "categorie": "viata_practica"
+    }
+  ]
 }
