@@ -21,6 +21,9 @@ import {
   hasInStock,
   minAgeForMaterial,
   parseMinAgeMonths,
+  saveManualItem,
+  STOC_PHOTO_FAILED,
+  StocPhotoError,
   STOC_SAFETY_NOTE,
   reuseSummary,
   STARTER_LIST,
@@ -226,18 +229,58 @@ describe("stock matching", () => {
 });
 
 describe("catalog age and safety text", () => {
-  it("min age from catalog text, gifted key, then band", () => {
+  it("age text: the lowest number anywhere, in months", () => {
     expect(parseMinAgeMonths("2–4 ani")).toBe(24);
+    expect(parseMinAgeMonths("0–1, 1–3, 3–5 ani")).toBe(0);
+    expect(parseMinAgeMonths("1–3 ani și 3–5 ani")).toBe(12);
     expect(parseMinAgeMonths("1 an+")).toBe(12);
     expect(parseMinAgeMonths("peste 1 an")).toBe(12);
     expect(parseMinAgeMonths("de la 18 luni")).toBe(18);
+    expect(parseMinAgeMonths("1 lună")).toBe(1);
+    expect(parseMinAgeMonths("3–10 ani, peste vârsta lui Cezar; pagina spune „nu este recomandat copiilor sub 3 ani”")).toBe(36);
     expect(parseMinAgeMonths(null)).toBeNull();
-    expect(minAgeForMaterial({ varsta: "3 ani+, peste vârsta lui Cezar", banda: "2-3" })).toBe(36);
-    expect(minAgeForMaterial({ produs_cheie: "set-plaja-dantoy", varsta: null, banda: "2-3" })).toBe(24);
+    expect(parseMinAgeMonths("fără vârstă")).toBeNull();
+  });
+
+  it("explicit catalog ages for the 18 gifted materials; no band guess", () => {
+    const expected: Record<string, number> = {
+      "s1-m1": 24, "s1-m2": 12, "s1-m3": 12, "s1-m4": 12, "s2-m1": 12, "s2-m2": 36,
+      "s2-m3": 24, "s2-m4": 24, "s2-m5": 12, "s3-m1": 12, "s3-m2": 36, "s3-m3": 12,
+      "s3-m4": 12, "s4-m1": 12, "s4-m2": 36, "s4-m3": 36, "s4-m4": 24, "s4-m5": 24,
+    };
+    for (const material of allCatalogMaterials("2-3")) {
+      expect(material.varsta_min_luni, material.id).toBe(expected[material.id]);
+      expect(minAgeForMaterial(material), material.id).toBe(expected[material.id]);
+    }
+    for (const g of GIFTED_STARTER.flatMap((w) => w.items)) {
+      expect(g.varsta_min_luni, g.material_id).toBe(expected[g.material_id!]);
+    }
+    // „Mergem la vânătoare de urși”: 12, not 36 from „3–5 ani”.
+    expect(minAgeForMaterial(allCatalogMaterials("2-3").find((m) => m.id === "s3-m3"))).toBe(12);
+    // 1–2 home materials have no age in the catalog: unknown, not 12 or 24.
     const m4 = allCatalogMaterials("1-2").find((m) => m.id === "b12-s14-m4")!;
-    expect(minAgeForMaterial(m4)).toBe(12);
-    for (const material of [...allCatalogMaterials("2-3"), ...allCatalogMaterials("1-2")]) {
-      expect(minAgeForMaterial(material)).not.toBeNull();
+    expect(minAgeForMaterial(m4)).toBeNull();
+    expect(ageBadge({ varsta_min_luni: minAgeForMaterial(m4) }, 17)?.label).toBe(
+      "Vârstă necunoscută: verificați piesele mici",
+    );
+    expect(minAgeForMaterial({ varsta: null })).toBeNull();
+  });
+
+  it("starter list: no low coat rack, a low step instead; ages per QA", () => {
+    expect(STARTER_LIST).toHaveLength(33);
+    expect(STARTER_LIST.some((s) => /Cuier/.test(s.nume))).toBe(false);
+    const step = STARTER_LIST.find((s) => s.nume === "Treaptă joasă");
+    expect(step).toMatchObject({ categorie: "miscare", varsta_min_luni: 12 });
+    const age = (nume: string) => STARTER_LIST.find((s) => s.nume.startsWith(nume))?.varsta_min_luni;
+    expect(age("Tunel textil")).toBe(18);
+    expect(age("Burete mare")).toBe(18);
+    expect(age("Mătură și făraș")).toBe(18);
+    expect(age("Aluat de jucat")).toBe(24);
+    expect(age("Set de bucătărie")).toBe(36);
+    expect(age("Creioane cerate groase")).toBe(36);
+    const special = ["Tunel", "Burete", "Mătură", "Aluat", "Set de bucătărie", "Creioane"];
+    for (const item of STARTER_LIST.filter((s) => !special.some((p) => s.nume.startsWith(p)))) {
+      expect(item.varsta_min_luni, item.nume).toBe(12);
     }
   });
 
@@ -247,6 +290,52 @@ describe("catalog age and safety text", () => {
 
   it("home-made 1–2 materials have no buy link", () => {
     expect(allCatalogMaterials("1-2").every((m) => m.doar_acasa && !m.link)).toBe(true);
+  });
+});
+
+describe("photo retry", () => {
+  const draft = { nume: "Tobă", tip: "cumparat", categorie: "senzorial", sursa: "manual" } as const;
+  const photo = {} as File;
+
+  it("a failed photo after save leaves one row; retry only re-uploads", async () => {
+    const rows: StocItem[] = [];
+    let uploads = 0;
+    let failPhoto = true;
+    const addItems = async () => {
+      const saved = item({ id: `row-${rows.length + 1}` });
+      rows.push(saved);
+      if (failPhoto) throw new StocPhotoError(saved);
+      return [saved];
+    };
+    const setPhoto = async (id: string) => {
+      expect(id).toBe("row-1");
+      uploads += 1;
+    };
+    const first = await saveManualItem({ savedId: null, draft, photo, addItems, setPhoto });
+    expect(first).toEqual({ savedId: "row-1", error: "Articolul s-a salvat, dar poza nu s-a încărcat. Încercați din nou." });
+    failPhoto = false;
+    const second = await saveManualItem({ savedId: first.savedId, draft, photo, addItems, setPhoto });
+    expect(second).toEqual({ savedId: null, error: null });
+    expect(rows).toHaveLength(1);
+    expect(uploads).toBe(1);
+  });
+
+  it("a failed retry keeps the saved id and still does not insert", async () => {
+    let inserts = 0;
+    const result = await saveManualItem({
+      savedId: "row-1",
+      draft,
+      photo,
+      addItems: async () => {
+        inserts += 1;
+        return [];
+      },
+      setPhoto: async () => {
+        throw new Error(STOC_PHOTO_FAILED);
+      },
+    });
+    expect(result).toEqual({ savedId: "row-1", error: STOC_PHOTO_FAILED });
+    expect(inserts).toBe(0);
   });
 });
 
@@ -278,5 +367,18 @@ describe("age and form", () => {
     ];
     const uses = [{ id: "u", stoc_id: "a", activity_id: "z", family_id: "f", created_at: "2026-11-10T10:00:00Z" }];
     expect(unusedForWeeks(items, uses, now).map((i) => i.id)).toEqual(["b"]);
+  });
+});
+
+describe("stock errors are Romanian", () => {
+  it("stoc-context never shows a raw Supabase message", () => {
+    const source = fs.readFileSync("src/lib/stoc-context.tsx", "utf8");
+    expect(source).not.toMatch(/new Error\((?:error|upload\.error|updated\.error)\.message\)/);
+    expect(source).not.toMatch(/\.message\)/);
+  });
+
+  it("stock rollback allows the bucket delete Familie guards", () => {
+    const sql = fs.readFileSync("supabase/rollback/20261117120000_stoc_materiale_rollback.sql", "utf8");
+    expect(sql.indexOf("set local storage.allow_delete_query = 'true';")).toBeGreaterThan(sql.indexOf("begin;"));
   });
 });

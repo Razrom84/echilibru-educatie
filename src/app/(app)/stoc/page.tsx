@@ -17,6 +17,7 @@ import {
   STOC_STARE_LABEL,
   STOC_TIP_LABEL,
   unusedForWeeks,
+  saveManualItem,
   validateDraft,
   type StarterItem,
   type StocCategorie,
@@ -56,6 +57,8 @@ function ManualForm({ onDone }: { onDone: () => void }) {
   const [photo, setPhoto] = useState<File | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
+  // Set when the row is saved but its photo failed: retry uploads only.
+  const [savedId, setSavedId] = useState<string | null>(null);
 
   async function save(event: React.FormEvent) {
     event.preventDefault();
@@ -70,21 +73,27 @@ function ManualForm({ onDone }: { onDone: () => void }) {
       note,
       sursa: "manual" as const,
     };
-    const problem = validateDraft(draft);
+    const problem = savedId ? null : validateDraft(draft);
     if (problem) {
       setError(problem);
       return;
     }
     setSaving(true);
     setError(null);
-    try {
-      await stoc.addItems([{ ...draft, tip: tip!, categorie: categorie! }], photo);
-      onDone();
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Nu am putut salva.");
-    } finally {
-      setSaving(false);
+    const result = await saveManualItem({
+      savedId,
+      draft: { ...draft, tip: tip!, categorie: categorie! },
+      photo,
+      addItems: stoc.addItems,
+      setPhoto: stoc.setPhoto,
+    });
+    setSaving(false);
+    setSavedId(result.savedId);
+    if (result.error) {
+      setError(result.error);
+      return;
     }
+    onDone();
   }
 
   return (
@@ -195,7 +204,7 @@ function ManualForm({ onDone }: { onDone: () => void }) {
       {error ? <p className="text-sm text-destructive">{error}</p> : null}
       <div className="flex flex-wrap gap-2">
         <button type="submit" disabled={saving} className="rounded-xl bg-primary px-4 py-2 text-sm font-medium text-primary-foreground disabled:opacity-60">
-          {saving ? "Se salvează…" : "Salvează în stoc"}
+          {saving ? "Se salvează…" : savedId ? "Încearcă din nou poza" : "Salvează în stoc"}
         </button>
         <button type="button" onClick={onDone} className="rounded-xl border border-border px-4 py-2 text-sm font-medium">
           Renunță

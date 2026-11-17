@@ -150,8 +150,9 @@ export const STARTER_LIST: StarterItem[] = [
   ...starter("miscare", [
     ["Minge moale mare"],
     ["Jucărie de împins"],
-    ["Tunel textil"],
+    ["Tunel textil", "cumparat", 18],
     ["Perne pentru traseu"],
+    ["Treaptă joasă"],
   ]),
   ...starter("senzorial", [
     ["Saci senzoriali cusuți", "facut_acasa"],
@@ -159,22 +160,21 @@ export const STARTER_LIST: StarterItem[] = [
     ["Maracas mari"],
     ["Xilofon de copii"],
   ]),
-  ...starter("apa_nisip", [["Găleată și lopățică"], ["Pâlnie și pahare"], ["Burete mare"]]),
+  ...starter("apa_nisip", [["Găleată și lopățică"], ["Pâlnie și pahare"], ["Burete mare", "cumparat", 18]]),
   ...starter("arta", [
     ["Pensule mari, cu mâner gros"],
-    ["Creioane cerate groase"],
-    ["Aluat de jucat, cu adult", "facut_acasa"],
+    ["Creioane cerate groase", "cumparat", 36],
+    ["Aluat de jucat, cu adult", "facut_acasa", 24],
   ]),
   ...starter("natura", [["Coș pentru adunat"], ["Stropitoare mică"]]),
   ...starter("viata_practica", [
     ["Castroane și linguri din bucătărie"],
     ["Tavă"],
-    ["Mătură și făraș mici"],
-    ["Cuier jos", "facut_acasa"],
+    ["Mătură și făraș mici", "cumparat", 18],
   ]),
   ...starter("joc_rol", [
     ["Păpușă sau ursuleț"],
-    ["Set de bucătărie sau de ceai din lemn"],
+    ["Set de bucătărie sau de ceai din lemn", "cumparat", 36],
     ["Telefon de jucărie (cu capacul bateriilor înșurubat)"],
   ]),
 ];
@@ -204,15 +204,15 @@ export const GIFTED_STARTER: { saptamana: number; items: StarterItem[] }[] = [
     items: [
       gifted("s1-m1", "carte-ce-facem-toamna", "„Ce facem toamna?”", "carti", "cumparat", 24),
       gifted("s1-m2", "lupa-jumbo-tickit", "Lupă jumbo Tickit", "natura", "cumparat", 12),
-      gifted("s1-m3", "tava-lemn-mica", "Tavă de lemn mică", "viata_practica", "cumparat", null),
-      gifted("s1-m4", "harta-casei-diy", "Harta casei", "joc_rol", "facut_acasa", null),
+      gifted("s1-m3", "tava-lemn-mica", "Tavă de lemn mică", "viata_practica", "cumparat", 12),
+      gifted("s1-m4", "harta-casei-diy", "Harta casei", "joc_rol", "facut_acasa", 12),
     ],
   },
   {
     saptamana: 2,
     items: [
-      gifted("s2-m1", "carafa-mica", "Carafă mică", "viata_practica", "cumparat", null),
-      gifted("s2-m2", "bile-pahare-montessori", "Bile și pahare Montessori", "motricitate_fina", "cumparat", 12),
+      gifted("s2-m1", "carafa-mica", "Carafă mică", "viata_practica", "cumparat", 12),
+      gifted("s2-m2", "bile-pahare-montessori", "Bile și pahare Montessori", "motricitate_fina", "cumparat", 36),
       gifted("s2-m3", "set-plaja-dantoy", "Set de plajă Dantoy", "apa_nisip", "cumparat", 24),
       gifted("s2-m4", "carte-aparate-electrice", "„Aparatele electrice din casă”", "carti", "cumparat", 24),
       gifted("s2-m5", "carte-soare-vant-ploaie", "„Soarele, vântul și ploaia”", "carti", "cumparat", 12),
@@ -224,17 +224,17 @@ export const GIFTED_STARTER: { saptamana: number; items: StarterItem[] }[] = [
       gifted("s3-m1", "percutie-hape", "Set de percuție Hape", "senzorial", "cumparat", 12),
       gifted("s3-m2", "cilindri-sonori", "Cilindri sonori", "senzorial", "cumparat", 36),
       gifted("s3-m3", "carte-vanatoare-ursi", "„Mergem la vânătoare de urși”", "carti", "cumparat", 12),
-      gifted("s3-m4", "cartonase-sunete-diy", "Cartonașe cu surse de sunet", "senzorial", "facut_acasa", null),
+      gifted("s3-m4", "cartonase-sunete-diy", "Cartonașe cu surse de sunet", "senzorial", "facut_acasa", 12),
     ],
   },
   {
     saptamana: 4,
     items: [
-      gifted("s4-m1", "rama-velcro", "Ramă cu velcro", "viata_practica", "cumparat", null),
-      gifted("s4-m2", "placa-incuietori", "Placă cu încuietori", "motricitate_fina", "cumparat", null),
+      gifted("s4-m1", "rama-velcro", "Ramă cu velcro", "viata_practica", "cumparat", 12),
+      gifted("s4-m2", "placa-incuietori", "Placă cu încuietori", "motricitate_fina", "cumparat", 36),
       gifted("s4-m3", "pensete-colorate", "Pensete colorate", "motricitate_fina", "cumparat", 36),
       gifted("s4-m4", "suruburi-piulite-mari", "Șuruburi și piulițe mari", "motricitate_fina", "cumparat", 24),
-      gifted("s4-m5", "aluat-de-sare-diy", "Aluat de sare", "arta", "facut_acasa", null),
+      gifted("s4-m5", "aluat-de-sare-diy", "Aluat de sare", "arta", "facut_acasa", 24),
     ],
   },
 ];
@@ -283,30 +283,39 @@ export function categoryForMaterial(material: {
   return CATEGORY_WORDS.find(([, words]) => words.test(name))?.[0] ?? "viata_practica";
 }
 
-/** Lowest age in months from catalog text: „2–4 ani”, „1 an+”, „peste 1 an”, „de la 18 luni”. */
+/**
+ * Lowest age in months anywhere in catalog text: „2–4 ani” → 24,
+ * „0–1, 1–3, 3–5 ani” → 0, „1 an+” → 12, „de la 18 luni” → 18, „1 lună” → 1.
+ */
 export function parseMinAgeMonths(varsta: string | null | undefined): number | null {
-  const match = /(\d+)\s*(?:[–-]\s*\d+\s*)?(luni|lună|an|ani)\b/i.exec(varsta ?? "");
-  if (!match) return null;
-  const value = Number(match[1]);
-  return /^lun/i.test(match[2]) ? value : value * 12;
+  const text = varsta ?? "";
+  const numbers = [...text.matchAll(/\d+/g)].map((match) => Number(match[0]));
+  if (numbers.length === 0) return null;
+  const months = /lun[ăai]/i.test(text) && !/\ban(i)?\b/i.test(text);
+  if (!months && !/\ban(i)?\b|\bani\b/i.test(text)) return null;
+  const min = Math.min(...numbers);
+  return months ? min : min * 12;
 }
 
-export const BAND_MIN_MONTHS: Record<string, number> = { "1-2": 12, "2-3": 24 };
-
 /**
- * Minimum age for a stock item added from a catalog card: the catalog's age
- * text, then the known gifted product, then the band the material belongs to.
+ * Minimum age for a stock item added from a catalog card: the catalog's
+ * explicit `varsta_min_luni`, then the known gifted product, then the age
+ * text. No band guess: unknown stays unknown („Vârstă necunoscută”).
  */
 export function minAgeForMaterial(
-  material: { produs_cheie?: string | null; varsta?: string | null; banda?: string } | string | null | undefined,
+  material:
+    | { produs_cheie?: string | null; varsta?: string | null; varsta_min_luni?: number | null }
+    | string
+    | null
+    | undefined,
 ): number | null {
   if (material == null || typeof material === "string") {
     return material ? (GIFTED_BY_KEY.get(material)?.varsta_min_luni ?? null) : null;
   }
   return (
-    parseMinAgeMonths(material.varsta) ??
+    material.varsta_min_luni ??
     (material.produs_cheie ? GIFTED_BY_KEY.get(material.produs_cheie)?.varsta_min_luni : undefined) ??
-    (material.banda ? BAND_MIN_MONTHS[material.banda] : undefined) ??
+    parseMinAgeMonths(material.varsta) ??
     null
   );
 }
@@ -401,6 +410,44 @@ export function photoPath(familyId: string, itemId: string): string {
 }
 
 /** Validates the manual form. Returns a Romanian message or null. */
+/** Photo upload failed after the row was saved. Retry only re-uploads for `item`. */
+export class StocPhotoError extends Error {
+  constructor(public item: StocItem) {
+    super("Articolul s-a salvat, dar poza nu s-a încărcat. Încercați din nou.");
+    this.name = "StocPhotoError";
+  }
+}
+
+/**
+ * Manual form save. The first time it inserts; if only the photo failed,
+ * later attempts re-upload for the saved item and never insert again.
+ */
+export async function saveManualItem(input: {
+  savedId: string | null;
+  draft: StocDraft;
+  photo: File | null;
+  addItems: (drafts: StocDraft[], photo?: File | null) => Promise<StocItem[]>;
+  setPhoto: (itemId: string, file: File) => Promise<void>;
+}): Promise<{ savedId: string | null; error: string | null }> {
+  const { savedId, draft, photo, addItems, setPhoto } = input;
+  try {
+    if (savedId) {
+      if (photo) await setPhoto(savedId, photo);
+      return { savedId: null, error: null };
+    }
+    await addItems([draft], photo);
+    return { savedId: null, error: null };
+  } catch (err) {
+    if (err instanceof StocPhotoError) return { savedId: err.item.id, error: err.message };
+    return { savedId, error: err instanceof Error ? err.message : STOC_SAVE_FAILED };
+  }
+}
+
+export const STOC_SAVE_FAILED = "Nu am putut salva. Încercați din nou.";
+export const STOC_LOAD_FAILED = "Nu am putut încărca stocul. Încercați din nou.";
+export const STOC_DELETE_FAILED = "Nu am putut șterge. Încercați din nou.";
+export const STOC_PHOTO_FAILED = "Poza nu s-a încărcat. Încercați din nou.";
+
 export function validateDraft(draft: Partial<StocDraft>): string | null {
   if (!draft.nume?.trim()) return "Scrieți numele articolului.";
   if (draft.tip !== "cumparat" && draft.tip !== "facut_acasa") return "Alegeți dacă e cumpărat sau făcut acasă.";

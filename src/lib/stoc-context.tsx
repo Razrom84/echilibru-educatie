@@ -8,7 +8,11 @@ import {
   ageInMonths,
   photoPath,
   STOC_BUCKET,
+  STOC_DELETE_FAILED,
   STOC_DEMO_KEY,
+  STOC_PHOTO_FAILED,
+  STOC_SAVE_FAILED,
+  StocPhotoError,
   validateDraft,
   type StocDraft,
   type StocFolosire,
@@ -61,6 +65,12 @@ function blobToDataUrl(blob: Blob): Promise<string> {
     reader.onerror = () => reject(reader.error);
     reader.readAsDataURL(blob);
   });
+}
+
+/** Supabase errors are English; log them, show Romanian. */
+function fail(message: string, detail?: unknown): never {
+  if (detail) console.error("[stoc]", detail);
+  throw new Error(message);
 }
 
 function newId(): string {
@@ -155,7 +165,7 @@ export function StocProvider({ children }: { children: React.ReactNode }) {
         return rows;
       }
       const supabase = createBrowserSupabase();
-      if (!supabase) throw new Error("Supabase nu este configurat.");
+      if (!supabase) fail(STOC_SAVE_FAILED, "Supabase nu este configurat.");
       const insert = rows.map((row) => {
         const { created_at: _c, updated_at: _u, ...rest } = row;
         void _c;
@@ -163,24 +173,33 @@ export function StocProvider({ children }: { children: React.ReactNode }) {
         return rest;
       });
       const { data, error } = await supabase.from("stoc_materiale").insert(insert).select(COLUMNS);
-      if (error) throw new Error(error.message);
+      if (error) fail(STOC_SAVE_FAILED, error);
       let saved = (data ?? []) as StocItem[];
-      if (photo && saved.length === 1) {
-        const path = photoPath(familyId, saved[0].id);
-        const jpeg = await compressDayPhoto(photo);
-        const upload = await supabase.storage
-          .from(STOC_BUCKET)
-          .upload(path, jpeg, { upsert: true, contentType: "image/jpeg", cacheControl: "3600" });
-        if (upload.error) throw new Error(upload.error.message);
-        const updated = await supabase
-          .from("stoc_materiale")
-          .update({ poza_url: path })
-          .eq("id", saved[0].id)
-          .select(COLUMNS)
-          .single();
-        if (!updated.error && updated.data) saved = [updated.data as StocItem];
-      }
+      // The rows are saved: show them now, whatever happens with the photo.
       setItems((current) => [...current, ...saved]);
+      if (photo && saved.length === 1) {
+        const item = saved[0];
+        try {
+          const path = photoPath(familyId, item.id);
+          const jpeg = await compressDayPhoto(photo);
+          const upload = await supabase.storage
+            .from(STOC_BUCKET)
+            .upload(path, jpeg, { upsert: true, contentType: "image/jpeg", cacheControl: "3600" });
+          if (upload.error) throw upload.error;
+          const updated = await supabase
+            .from("stoc_materiale")
+            .update({ poza_url: path })
+            .eq("id", item.id)
+            .select(COLUMNS)
+            .single();
+          if (updated.error) throw updated.error;
+          saved = [updated.data as StocItem];
+          setItems((current) => current.map((row) => (row.id === item.id ? saved[0] : row)));
+        } catch (photoError) {
+          console.error("[stoc]", photoError);
+          throw new StocPhotoError(item);
+        }
+      }
       return saved;
     },
     [familyId, isDemo],
@@ -206,9 +225,9 @@ export function StocProvider({ children }: { children: React.ReactNode }) {
       const upload = await supabase.storage
         .from(STOC_BUCKET)
         .upload(path, jpeg, { upsert: true, contentType: "image/jpeg", cacheControl: "3600" });
-      if (upload.error) throw new Error(upload.error.message);
+      if (upload.error) fail(STOC_PHOTO_FAILED, upload.error);
       const { error } = await supabase.from("stoc_materiale").update({ poza_url: path }).eq("id", itemId);
-      if (error) throw new Error(error.message);
+      if (error) fail(STOC_PHOTO_FAILED, error);
       setItems((current) =>
         current.map((item) => (item.id === itemId ? { ...item, poza_url: path } : item)),
       );
@@ -232,7 +251,7 @@ export function StocProvider({ children }: { children: React.ReactNode }) {
       if (!supabase) return;
       const item = items.find((row) => row.id === itemId);
       const { error } = await supabase.from("stoc_materiale").delete().eq("id", itemId);
-      if (error) throw new Error(error.message);
+      if (error) fail(STOC_DELETE_FAILED, error);
       if (item?.poza_url) await supabase.storage.from(STOC_BUCKET).remove([item.poza_url]);
       setItems((current) => current.filter((row) => row.id !== itemId));
       setUses((current) => current.filter((use) => use.stoc_id !== itemId));
@@ -268,7 +287,7 @@ export function StocProvider({ children }: { children: React.ReactNode }) {
         .eq("id", itemId)
         .select(COLUMNS)
         .single();
-      if (error) throw new Error(error.message);
+      if (error) fail(STOC_SAVE_FAILED, error);
       setItems((rows) => rows.map((row) => (row.id === itemId ? (data as StocItem) : row)));
     },
     [isDemo, items],
@@ -300,7 +319,7 @@ export function StocProvider({ children }: { children: React.ReactNode }) {
         .insert({ stoc_id: stocId, activity_id: activityId, family_id: familyId })
         .select("*")
         .single();
-      if (error) throw new Error(error.message);
+      if (error) fail(STOC_SAVE_FAILED, error);
       setUses((current) => [...current, data as StocFolosire]);
     },
     [familyId, isDemo, uses],

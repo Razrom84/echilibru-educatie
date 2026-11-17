@@ -1,6 +1,8 @@
 -- Revenire pentru 20261117120000_stoc_materiale.sql. NU se rulează automat.
 -- Șterge stocul familiei (tabele + bucket). Rulați doar dacă stocul e încă gol sau după export.
 begin;
+-- Familie are triggerul protect_buckets_delete pe storage.buckets; fără asta, rollback-ul cade.
+set local storage.allow_delete_query = 'true';
 drop policy if exists stoc_familie_select_own on storage.objects;
 drop policy if exists stoc_familie_insert_own on storage.objects;
 drop policy if exists stoc_familie_update_own on storage.objects;

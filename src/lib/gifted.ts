@@ -49,6 +49,8 @@ export type CatalogMaterial = {
   produs_cheie?: string | null;
   /** Stock category (one of the 10 fixed keys), when the catalog sets it. */
   categorie?: string | null;
+  /** Explicit minimum age in months for the stock badge; missing = unknown. */
+  varsta_min_luni?: number | null;
 };
 
 export type WeekMaterials = {
@@ -283,6 +285,7 @@ export function mapDbMaterial(row: DbMaterial): CatalogMaterial {
       local?.produs_cheie ||
       produsCheieForMaterial(row.banda, row.id),
     categorie: local?.categorie ?? null,
+    varsta_min_luni: local?.varsta_min_luni ?? null,
     saptamana: row.saptamana,
     ordine: row.ordine,
     nume: row.nume,
