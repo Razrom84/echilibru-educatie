@@ -197,7 +197,13 @@ describe("age and form", () => {
 
   it("unused report skips lost items and recent uses", () => {
     const now = new Date("2026-11-17T12:00:00Z");
-    const items = [item({ id: "a" }), item({ id: "b" }), item({ id: "c", stare: "pierdut" })];
+    const old = "2026-09-01T10:00:00Z";
+    const items = [
+      item({ id: "a", created_at: old }),
+      item({ id: "b", created_at: old }),
+      item({ id: "c", stare: "pierdut", created_at: old }),
+      item({ id: "d" }),
+    ];
     const uses = [{ id: "u", stoc_id: "a", activity_id: "z", family_id: "f", created_at: "2026-11-10T10:00:00Z" }];
     expect(unusedForWeeks(items, uses, now).map((i) => i.id)).toEqual(["b"]);
   });

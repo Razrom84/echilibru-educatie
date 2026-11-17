@@ -329,7 +329,10 @@ export function ageRangeLabel(min: number | null, max: number | null): string | 
   return null;
 }
 
-/** Items not used in the last 28 days (or never), lost ones excluded. Read-only report. */
+/**
+ * Items with no use in the last 28 days, lost ones excluded. An item never
+ * used counts once it has been in stock for 28 days. Read-only report.
+ */
 export function unusedForWeeks(
   items: readonly StocItem[],
   uses: readonly StocFolosire[],
@@ -339,6 +342,7 @@ export function unusedForWeeks(
   const cutoff = now.getTime() - days * 86_400_000;
   return items.filter((item) => {
     if (item.stare === "pierdut") return false;
+    if (new Date(item.created_at).getTime() >= cutoff) return false;
     return !uses.some(
       (use) => use.stoc_id === item.id && new Date(use.created_at).getTime() >= cutoff,
     );

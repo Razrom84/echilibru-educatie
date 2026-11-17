@@ -142,14 +142,19 @@ function ManualForm({ onDone }: { onDone: () => void }) {
             </div>
           </div>
           <div className="space-y-1">
-            <label htmlFor="stoc-poza" className="text-sm">Poză</label>
-            <input
-              id="stoc-poza"
-              type="file"
-              accept="image/*"
-              className="block w-full text-sm"
-              onChange={(event) => setPhoto(event.target.files?.[0] ?? null)}
-            />
+            <p className="text-sm">Poză</p>
+            <label className="inline-flex cursor-pointer items-center gap-2 rounded-xl border border-border bg-background px-3 py-2 text-sm font-medium">
+              <Camera className="size-4" aria-hidden />
+              {photo ? "Schimbă poza" : "Alege o poză"}
+              <input
+                id="stoc-poza"
+                type="file"
+                accept="image/*"
+                className="sr-only"
+                onChange={(event) => setPhoto(event.target.files?.[0] ?? null)}
+              />
+            </label>
+            {photo ? <p className="truncate text-xs text-muted-foreground">{photo.name}</p> : null}
           </div>
           <div className="space-y-1">
             <label htmlFor="stoc-loc" className="text-sm">Unde e ținut</label>
