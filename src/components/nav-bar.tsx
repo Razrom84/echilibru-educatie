@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Archive, CalendarDays, House, Settings2, Sprout } from "lucide-react";
+import { Archive, CalendarDays, House, Package, Settings2, Sprout } from "lucide-react";
 import { MOBILE_WEEK_NAV_LABEL } from "@/lib/saptamana";
 import { cn } from "@/lib/utils";
 
@@ -16,6 +16,7 @@ const ITEMS = [
   },
   { href: "/arhiva", label: "Arhivă", shortLabel: "Arhivă", icon: Archive },
   { href: "/progres", label: "Progres", shortLabel: "Progres", icon: Sprout },
+  { href: "/stoc", label: "Stoc", shortLabel: "Stoc", icon: Package },
   { href: "/setari", label: "Setări", shortLabel: "Setări", icon: Settings2 },
 ];
 
@@ -27,7 +28,7 @@ export function NavBar() {
       aria-label="Navigare principală"
       className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-card/95 backdrop-blur md:hidden"
     >
-      <ul className="mx-auto grid max-w-lg grid-cols-5 px-1 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-1">
+      <ul className="mx-auto grid max-w-lg grid-cols-6 px-0.5 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-1">
         {ITEMS.map((item) => {
           const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
           const Icon = item.icon;

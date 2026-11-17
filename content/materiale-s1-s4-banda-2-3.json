@@ -66,7 +66,8 @@
             "Siguranță: rotunjiți colțurile cu foarfeca; inelele să fie mai mari de 3,17 cm sau înlocuite cu o sfoară scurtă, legată strâns."
           ]
         }
-      ]
+      ],
+      "varsta_min_luni": 24
     },
     {
       "id": "s1-m2",
@@ -107,7 +108,8 @@
             "Nu recomand. Contează calitatea lentilei, iar o ramă imprimată 3D fără lentilă bună nu ajută. Alternativa gratuită e o lupă de citit din casă, folosită doar cu adult."
           ]
         }
-      ]
+      ],
+      "varsta_min_luni": 12
     },
     {
       "id": "s1-m3",
@@ -166,7 +168,8 @@
             "capacul unei cutii de pantofi, împărțit cu două benzi de carton lipite în cruce; sau o tavă de bucătărie cu două boluri. Durează 15 minute și nu costă nimic."
           ]
         }
-      ]
+      ],
+      "varsta_min_luni": 12
     },
     {
       "id": "s1-m4",
@@ -209,7 +212,8 @@
             "Regula casei: harta e un suport de joc desenat pe loc, nu o fișă de completat."
           ]
         }
-      ]
+      ],
+      "varsta_min_luni": 12
     },
     {
       "id": "s2-m1",
@@ -250,7 +254,8 @@
             "O cană gradată mică de plastic din bucătărie. Nu recomand imprimarea 3D pentru vase din care se bea: PLA imprimat nu e sigur pentru alimente, din cauza porilor dintre straturi."
           ]
         }
-      ]
+      ],
+      "varsta_min_luni": 12
     },
     {
       "id": "s2-m2",
@@ -291,7 +296,8 @@
             "6 pahare de plastic colorate și pomponi mari sau mingi moi de peste 4 cm, transferate cu o lingură de supă. Durată: 5 minute. Siguranță: tot ce încape printr-un cerc de 3,17 cm nu intră în joc."
           ]
         }
-      ]
+      ],
+      "varsta_min_luni": 36
     },
     {
       "id": "s2-m3",
@@ -352,7 +358,8 @@
             "Siguranță: PLA nu e pentru apă fierbinte (se deformează); lăsați jucăriile să se usuce după folosire."
           ]
         }
-      ]
+      ],
+      "varsta_min_luni": 24
     },
     {
       "id": "s2-m4",
@@ -393,7 +400,8 @@
             "Nu se face acasă. Alternativa e turul apei din casă (z4 mental), cu semne desenate pe un carton."
           ]
         }
-      ]
+      ],
+      "varsta_min_luni": 24
     },
     {
       "id": "s2-m5",
@@ -434,7 +442,8 @@
             "Nu se face acasă. Alternativa e „jurnalul vremii” pe o foaie lipită pe frigider, cu trei desene (soare, nor, ploaie) pe care el pune un magnet în fiecare dimineață."
           ]
         }
-      ]
+      ],
+      "varsta_min_luni": 12
     },
     {
       "id": "s3-m1",
@@ -496,7 +505,8 @@
             "Siguranță: verificați că oul e mai mare de 3,17 cm în orice direcție; strângeți-l în mână și încercați să-l rupeți înainte de a-l da copilului, ca să vă asigurați că straturile țin."
           ]
         }
-      ]
+      ],
+      "varsta_min_luni": 12
     },
     {
       "id": "s3-m2",
@@ -557,7 +567,8 @@
             "Siguranță: autorul spune că, pentru un copil, capacele trebuie lipite cu adeziv. Umpluturile din descriere (sare, linte, cuie) sunt periculoase dacă se deschide un cilindru. Folosiți doar capacele pline, nu pe cele cu găuri pentru mirosuri, și înlocuiți cuiele cu orez."
           ]
         }
-      ]
+      ],
+      "varsta_min_luni": 36
     },
     {
       "id": "s3-m3",
@@ -598,7 +609,8 @@
             "Nu se face acasă. Alternativa e povestea inventată cu sunetele din curte (z2 social)."
           ]
         }
-      ]
+      ],
+      "varsta_min_luni": 12
     },
     {
       "id": "s3-m4",
@@ -640,7 +652,8 @@
             "Regula casei: sunt suport de sortare, nu fișă."
           ]
         }
-      ]
+      ],
+      "varsta_min_luni": 12
     },
     {
       "id": "s4-m1",
@@ -686,7 +699,8 @@
             "Siguranță: capsele bătute complet și acoperite cu bandă; fără nasturi mici."
           ]
         }
-      ]
+      ],
+      "varsta_min_luni": 12
     },
     {
       "id": "s4-m2",
@@ -730,7 +744,8 @@
             "Siguranță: nimic care poate prinde degetele (fără arcuri puternice); fără piese mai mici de 3,17 cm; lac pe bază de apă sau ulei alimentar, nu vopsea cu solvenți."
           ]
         }
-      ]
+      ],
+      "varsta_min_luni": 36
     },
     {
       "id": "s4-m3",
@@ -785,7 +800,8 @@
             "două bețe de înghețată mari, legate la un capăt cu un pompon mare lipit între ele și bandă textilă. Durată: 10 minute. Siguranță: pomponul să nu se poată desprinde."
           ]
         }
-      ]
+      ],
+      "varsta_min_luni": 36
     },
     {
       "id": "s4-m4",
@@ -832,7 +848,8 @@
             "Siguranță: autorul cere să încercați să rupeți filetul cu mâna după imprimare. Dacă se rupe, retipăriți la temperatură mai mare. Verificați filetul înainte de fiecare joacă."
           ]
         }
-      ]
+      ],
+      "varsta_min_luni": 24
     },
     {
       "id": "s4-m5",
@@ -876,7 +893,8 @@
             "Siguranță: aluatul e foarte sărat și nu se mănâncă; păstrați-l într-o cutie închisă; colorați-l doar cu colorant alimentar."
           ]
         }
-      ]
+      ],
+      "varsta_min_luni": 24
     }
   ]
 }

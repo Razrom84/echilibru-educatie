@@ -46,9 +46,12 @@ describe("live bands 1–2 and 2–3", () => {
     expect(s4FridayFizic?.nota).toBe(
       "Vârsta 1–2: doar mâna, blând; el poate refuza.",
     );
+    // 1–2 S13–S14 are gifted: no age note there (plan, section 3).
+    const gifted = (row: { saptamana: number }) => row.saptamana === 13 || row.saptamana === 14;
+    expect(rows.filter(gifted).every((row) => row.nota === null)).toBe(true);
     expect(
       rows
-        .filter((row) => row.id !== "s4-2-3-z5-fizic")
+        .filter((row) => row.id !== "s4-2-3-z5-fizic" && !gifted(row))
         .every((row) => row.nota === LIVE_BAND_NOTE),
     ).toBe(true);
     expect(rows.some((row) => (row.nota ?? "").includes("2–3"))).toBe(false);

@@ -453,7 +453,7 @@ const WEEK_6: WeekConfig = {
     4: "Ghemuit-jos, apoi sus ca o surpriză",
     5: "O săritură mică împreună",
     6: "Bordură: un pas sus, unul jos",
-    7: "Haina pe cârlig — el „trage” sus",
+    7: "Haina pe scaun — el o întinde",
   },
 };
 
@@ -555,7 +555,7 @@ const WEEK_12: WeekConfig = {
     4: "Haina pe umeri 3 sec",
     5: "Suflăm pe mâini o dată",
     6: "Aer rece pe obraz (doar el îl simte)",
-    7: "Verificăm cârligul: haina la loc",
+    7: "Verificăm coșul de la ușă: haina la loc",
   },
 };
 
@@ -564,15 +564,15 @@ const WEEK_13: WeekConfig = {
   theme: "Haine pe vreme",
   character: PLAYFUL_CHARACTERS.hainuta,
   ritualOpen: "Haine pe vreme.",
-  ritualClose: "Pe cârlig, gata.",
+  ritualClose: "Pe scaun, gata.",
   surprises: {
     1: "Haina pe umeri 2 sec, apoi jos",
     2: "O șosetă „dispare” pe picior",
     3: "Papucul stă 3 sec, apoi piciorul",
     4: "Căciula coboară 2 cm — „pe cap?”",
     5: "El alege: cu mănușă sau fără",
-    6: "Haina pe cârlig — el „trage”",
-    7: "Verificăm cârligul: totul la loc",
+    6: "Haina pe scaun — el o aduce",
+    7: "Verificăm coșul de la ușă: totul la loc",
   },
 };
 
@@ -586,7 +586,7 @@ const WEEK_14: WeekConfig = {
     1: "Trei pași pe hol, apoi stăm",
     2: "Ușa se deschide 2 cm — „ieșim?”",
     3: "O treaptă sus, o treaptă jos",
-    4: "Pietricica „dispare” 2 sec pe drum",
+    4: "Piatra mare „dispare” 2 sec pe drum",
     5: "El alege: repede sau încet",
     6: "Un pas pe drum (doar el îl arată)",
     7: "Ultima pagină: un drum din imagine",

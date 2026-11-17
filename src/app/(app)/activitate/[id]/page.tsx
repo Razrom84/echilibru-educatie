@@ -15,6 +15,7 @@ import { activityReadOnlyHint } from "@/lib/view-week";
 import { getDayName } from "@/lib/week";
 import { materialsForActivity, showsActivityNote, visibleActivityExtras } from "@/lib/gifted";
 import { ActivityMaterialsLine } from "@/components/week-materials";
+import { StocForActivity } from "@/components/stoc-activity";
 
 export default function ActivitatePage({
   params,
@@ -122,6 +123,10 @@ export default function ActivitatePage({
           materiale={activity.materiale}
           linked={materialsForActivity(weekMaterials, activity.id)}
           activityIds={new Set(viewActivities.map((item) => item.id))}
+        />
+        <StocForActivity
+          activityId={activity.id}
+          linked={materialsForActivity(weekMaterials, activity.id)}
         />
 
         {showBaseLabel ? (

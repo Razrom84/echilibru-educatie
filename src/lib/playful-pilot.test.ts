@@ -10,6 +10,13 @@ import {
   playfulPilotWeek,
   playfulSurpriseLabel,
 } from "./playful-pilot";
+import { giftedWeek } from "@/lib/gifted";
+/** 1–2 S13–S14 are rewritten by the gifted catalog; their text is locked in stoc.test.ts. */
+function isGiftedB12(id: string): boolean {
+  const week = Number(/^s(\d+)-/.exec(id)?.[1]);
+  return giftedWeek("1-2", week);
+}
+
 
 function svgTitle(filename: string): string {
   const xml = readFileSync(resolve("public/characters", filename), "utf8");
@@ -136,7 +143,7 @@ describe("PLAYFUL PILOT scope", () => {
     expect(playfulPilotFor(6, 5)?.surprise).toBe("O săritură mică împreună");
     expect(playfulPilotFor(6, 6)?.surprise).toBe("Bordură: un pas sus, unul jos");
     expect(playfulPilotFor(6, 7)?.surprise).toBe(
-      "Haina pe cârlig — el „trage” sus",
+      "Haina pe scaun — el o întinde",
     );
   });
 
@@ -275,7 +282,7 @@ describe("PLAYFUL PILOT scope", () => {
       "Aer rece pe obraz (doar el îl simte)",
     );
     expect(playfulPilotFor(12, 7)?.surprise).toBe(
-      "Verificăm cârligul: haina la loc",
+      "Verificăm coșul de la ușă: haina la loc",
     );
   });
 
@@ -285,7 +292,7 @@ describe("PLAYFUL PILOT scope", () => {
     expect(playfulPilotFor(13, 1)?.character.src).toBe("/characters/hainuta.svg");
     expect(playfulPilotFor(13, 1)?.theme).toBe("Haine pe vreme");
     expect(playfulPilotFor(13, 1)?.ritualOpen).toBe("Haine pe vreme.");
-    expect(playfulPilotFor(13, 7)?.ritualClose).toBe("Pe cârlig, gata.");
+    expect(playfulPilotFor(13, 7)?.ritualClose).toBe("Pe scaun, gata.");
     expect(playfulPilotFor(13, 1)?.ritualOpen).not.toMatch(/\bHai\b/);
     expect(playfulPilotFor(13, 1)?.surprise).toBe("Haina pe umeri 2 sec, apoi jos");
     expect(playfulPilotFor(13, 2)?.surprise).toBe("O șosetă „dispare” pe picior");
@@ -296,9 +303,9 @@ describe("PLAYFUL PILOT scope", () => {
       "Căciula coboară 2 cm — „pe cap?”",
     );
     expect(playfulPilotFor(13, 5)?.surprise).toBe("El alege: cu mănușă sau fără");
-    expect(playfulPilotFor(13, 6)?.surprise).toBe("Haina pe cârlig — el „trage”");
+    expect(playfulPilotFor(13, 6)?.surprise).toBe("Haina pe scaun — el o aduce");
     expect(playfulPilotFor(13, 7)?.surprise).toBe(
-      "Verificăm cârligul: totul la loc",
+      "Verificăm coșul de la ușă: totul la loc",
     );
   });
 
@@ -313,7 +320,7 @@ describe("PLAYFUL PILOT scope", () => {
     expect(playfulPilotFor(14, 1)?.surprise).toBe("Trei pași pe hol, apoi stăm");
     expect(playfulPilotFor(14, 2)?.surprise).toBe("Ușa se deschide 2 cm — „ieșim?”");
     expect(playfulPilotFor(14, 3)?.surprise).toBe("O treaptă sus, o treaptă jos");
-    expect(playfulPilotFor(14, 4)?.surprise).toBe("Pietricica „dispare” 2 sec pe drum");
+    expect(playfulPilotFor(14, 4)?.surprise).toBe("Piatra mare „dispare” 2 sec pe drum");
     expect(playfulPilotFor(14, 5)?.surprise).toBe("El alege: repede sau încet");
     expect(playfulPilotFor(14, 6)?.surprise).toBe("Un pas pe drum (doar el îl arată)");
     expect(playfulPilotFor(14, 7)?.surprise).toBe("Ultima pagină: un drum din imagine");
@@ -998,6 +1005,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       ),
     );
     for (const [id, titlu] of Object.entries(expected)) {
+      if (isGiftedB12(id)) continue;
       expect(byId[id]).toBe(titlu);
     }
   });
@@ -1186,6 +1194,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       ),
     );
     for (const [id, titlu] of Object.entries(expected)) {
+      if (isGiftedB12(id)) continue;
       expect(byId[id]).toBe(titlu);
     }
   });
@@ -1284,6 +1293,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       ),
     );
     for (const [id, titlu] of Object.entries(expected)) {
+      if (isGiftedB12(id)) continue;
       expect(byId[id]).toBe(titlu);
     }
   });
@@ -1382,6 +1392,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       ),
     );
     for (const [id, titlu] of Object.entries(expected)) {
+      if (isGiftedB12(id)) continue;
       expect(byId[id]).toBe(titlu);
     }
   });
@@ -1591,6 +1602,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       ),
     );
     for (const [id, titlu] of Object.entries(expected)) {
+      if (isGiftedB12(id)) continue;
       expect(byId[id]).toBe(titlu);
     }
   });
@@ -2500,6 +2512,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       ),
     );
     for (const [id, titlu] of Object.entries(expected)) {
+      if (isGiftedB12(id)) continue;
       expect(byId[id]).toBe(titlu);
     }
   });
@@ -2717,6 +2730,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
     };
     expect(Object.keys(expected)).toHaveLength(12);
     for (const [id, lock] of Object.entries(expected)) {
+      if (isGiftedB12(id)) continue;
       const row = getSeedActivityById(id);
       expect(row?.titlu).toBe(lock.titlu);
       expect(row?.tema_saptamana).toBe(lock.tema);
@@ -3052,6 +3066,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
     const proxy = /prosop|șervețel|lingură/;
     const english = /\b(the|towel|spoon|basket|okay|worksheet)\b/i;
     for (const [id, lock] of Object.entries(expected)) {
+      if (isGiftedB12(id)) continue;
       const row = getSeedActivityById(id);
       expect(row, id).toBeDefined();
       expect(row?.titlu).toBe(lock.titlu);
@@ -3348,6 +3363,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
       "s40-2-3-z5-resurse",
     ]);
     for (const [id, lock] of Object.entries(expected)) {
+      if (isGiftedB12(id)) continue;
       const row = getSeedActivityById(id);
       expect(row, id).toBeDefined();
       expect(row?.titlu).toBe(lock.titlu);
@@ -3451,6 +3467,7 @@ describe("PLAYFUL PILOT seed titles (invitation voice)", () => {
     const english = /\b(the|towel|spoon|basket|okay|worksheet|hanger|dustpan)\b/i;
     const leftoverProxy = /cârpă|pahar|prosop|stropitoare|obiect de pe pervaz/;
     for (const [id, lock] of Object.entries(expected)) {
+      if (isGiftedB12(id)) continue;
       const row = getSeedActivityById(id);
       expect(row, id).toBeDefined();
       expect(row?.titlu).toBe(lock.titlu);
