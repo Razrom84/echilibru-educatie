@@ -1,10 +1,12 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
-import rawCatalog from "../../content/materiale-s1-s4-banda-2-3.json";
-import { liveIdForSeed } from "@/lib/catalog-parity";
+import rawCatalog23 from "../../content/materiale-s1-s4-banda-2-3.json";
+import rawCatalog12 from "../../content/materiale-s13-s14-banda-1-2.json";
+import { liveIdForSeed, type CatalogBand } from "@/lib/catalog-parity";
 import { PILLAR_META } from "@/lib/pillars";
 import { getSeedActivities } from "@/lib/seed/week1";
+import { produsCheieForMaterial } from "@/lib/stoc";
 import type { Pillar, SeedActivity } from "@/lib/types";
-import { getDayName } from "@/lib/week";
+import { getDayName, type LiveAgeBand } from "@/lib/week";
 
 export type HomeKind = "diy" | "print" | "3d" | "nu";
 
@@ -23,7 +25,7 @@ export type HomeVariant = {
 
 export type CatalogMaterial = {
   id: string;
-  banda: "2-3";
+  banda: LiveAgeBand;
   saptamana: number;
   ordine: number;
   nume: string;
@@ -43,6 +45,8 @@ export type CatalogMaterial = {
   note: string[];
   activitati: string[];
   acasa: HomeVariant[];
+  /** Same product across weeks and bands. Stock is matched on this. */
+  produs_cheie?: string | null;
 };
 
 export type WeekMaterials = {
@@ -51,14 +55,29 @@ export type WeekMaterials = {
 };
 
 type CatalogFile = {
-  data_verificare: string;
+  data_verificare: string | null;
   saptamani: { saptamana: number; tema: string; gratuit: string }[];
   materiale: CatalogMaterial[];
 };
 
-const catalog = rawCatalog as CatalogFile;
+/**
+ * Gifted weeks per band, each with its local catalog. Add a band or a week
+ * here; nothing else in the code is tied to one band.
+ * Band 1–2 material ids start with `b12-` so they never collide with 2–3.
+ */
+export const GIFTED_CONFIG: Record<CatalogBand, { weeks: readonly number[]; catalog: CatalogFile }> = {
+  "2-3": { weeks: [1, 2, 3, 4], catalog: rawCatalog23 as CatalogFile },
+  "1-2": { weeks: [13, 14], catalog: rawCatalog12 as unknown as CatalogFile },
+};
 
-export const GIFTED_WEEKS = [1, 2, 3, 4] as const;
+export const MATERIAL_ID_PREFIX: Record<CatalogBand, string> = { "2-3": "", "1-2": "b12-" };
+
+/** Kept for older callers: the 2–3 gifted weeks. */
+export const GIFTED_WEEKS = GIFTED_CONFIG["2-3"].weeks;
+
+function catalogBand(band: string): CatalogBand | null {
+  return band === "1-2" || band === "2-3" ? band : null;
+}
 
 export const HOME_KIND_LABEL: Record<HomeKind, string> = {
   diy: "Făcut de mână",
@@ -68,7 +87,18 @@ export const HOME_KIND_LABEL: Record<HomeKind, string> = {
 };
 
 export function giftedWeek(band: string, week: number): boolean {
-  return band === "2-3" && week >= 1 && week <= 4;
+  const key = catalogBand(band);
+  return key != null && GIFTED_CONFIG[key].weeks.includes(week);
+}
+
+/** Shown price. `pret` already carries the currency, so `moneda` is never appended twice. */
+export function formatPrice(pret: string | null, moneda?: string | null): string | null {
+  const text = pret?.replace(/\s+/g, " ").trim();
+  if (!text) return null;
+  const currency = moneda?.trim();
+  const deduped = text.replace(/\b(lei)(\s+lei\b)+/gi, "$1");
+  if (!currency || new RegExp(`\\b${currency}\\b`, "i").test(deduped)) return deduped;
+  return `${deduped} ${currency}`;
 }
 
 /** The activity page prints a note only when this is true. */
@@ -110,17 +140,16 @@ export function applyGiftedCatalog(
   band: string,
   week: number,
 ): SeedActivity[] {
-  if (!giftedWeek(band, week) || rows.length === 0) return rows;
+  const key = catalogBand(band);
+  if (!key || !giftedWeek(key, week) || rows.length === 0) return rows;
   const local = new Map(
-    getSeedActivities(week, "2-3").map((row) => [
-      liveIdForSeed(row.id, "2-3"),
-      row,
-    ]),
+    getSeedActivities(week, key).map((row) => [liveIdForSeed(row.id, key), row]),
   );
   return rows.map((row) => {
     if (row.pas_in_plus?.trim()) return row;
     const gift = local.get(row.id);
-    if (!gift) return row;
+    // Only a seed that is already gifted may replace the live text.
+    if (!gift || !gift.pas_in_plus?.trim()) return row;
     return {
       ...row,
       titlu: gift.titlu,
@@ -137,31 +166,42 @@ export function applyGiftedCatalog(
 }
 
 export function localWeekMaterials(band: string, week: number): WeekMaterials {
-  if (!giftedWeek(band, week)) return { materials: [], gratuit: null };
+  const key = catalogBand(band);
+  if (!key || !giftedWeek(key, week)) return { materials: [], gratuit: null };
+  const catalog = GIFTED_CONFIG[key].catalog;
   const meta = catalog.saptamani.find((item) => item.saptamana === week);
   return {
     materials: catalog.materiale
       .filter((item) => item.saptamana === week)
       .slice()
-      .sort((a, b) => a.ordine - b.ordine),
+      .sort((a, b) => a.ordine - b.ordine)
+      .map(withProdusCheie),
     gratuit: meta?.gratuit?.trim() ? meta.gratuit : null,
   };
 }
 
-export function allCatalogMaterials(): CatalogMaterial[] {
-  return catalog.materiale.slice().sort((a, b) => a.saptamana - b.saptamana || a.ordine - b.ordine);
+function withProdusCheie(material: CatalogMaterial): CatalogMaterial {
+  if (material.produs_cheie) return material;
+  return { ...material, produs_cheie: produsCheieForMaterial(material.banda, material.id) };
+}
+
+export function allCatalogMaterials(band: CatalogBand = "2-3"): CatalogMaterial[] {
+  return GIFTED_CONFIG[band].catalog.materiale
+    .slice()
+    .sort((a, b) => a.saptamana - b.saptamana || a.ordine - b.ordine)
+    .map(withProdusCheie);
 }
 
 export function materialsForActivity(
   materials: readonly CatalogMaterial[],
   activityId: string,
 ): CatalogMaterial[] {
-  const liveId = activityId.includes("-b23-")
-    ? activityId
-    : liveIdForSeed(activityId, "2-3");
-  return materials.filter((material) =>
-    material.activitati.some((id) => id === activityId || id === liveId),
-  );
+  return materials.filter((material) => {
+    const liveId = activityId.includes("-b23-")
+      ? activityId
+      : liveIdForSeed(activityId, catalogBand(material.banda) ?? "2-3");
+    return material.activitati.some((id) => id === activityId || id === liveId);
+  });
 }
 
 export function materialUseLabel(activityId: string): string {
@@ -185,9 +225,10 @@ export function materialSubtitle(sursa: string): string {
 }
 
 export function buyCaption(material: CatalogMaterial): string | null {
-  if (!material.pret) return null;
+  const price = formatPrice(material.pret, material.moneda);
+  if (!price) return null;
   const date = seenOn(material.data_verificare);
-  return date ? `${material.pret} · văzut pe ${date}` : material.pret;
+  return date ? `${price} · văzut pe ${date}` : price;
 }
 
 export function priceAmount(pret: string | null): number {
@@ -217,17 +258,20 @@ type DbHome = {
 };
 type DbMaterial = Omit<CatalogMaterial, "acasa" | "activitati" | "banda"> & {
   banda: string;
+  produs_cheie?: string | null;
   materiale_acasa?: DbHome[] | null;
   materiale_activitati?: { activity_id: string }[] | null;
 };
 
-function mapDbMaterial(row: DbMaterial): CatalogMaterial {
+export function mapDbMaterial(row: DbMaterial): CatalogMaterial {
   const homes = (row.materiale_acasa ?? [])
     .slice()
     .sort((a, b) => (a.ordine ?? 0) - (b.ordine ?? 0));
   return {
     id: row.id,
-    banda: "2-3",
+    banda: (catalogBand(row.banda) ?? "2-3") as LiveAgeBand,
+    produs_cheie:
+      row.produs_cheie?.trim() || produsCheieForMaterial(row.banda, row.id),
     saptamana: row.saptamana,
     ordine: row.ordine,
     nume: row.nume,
@@ -276,7 +320,9 @@ export async function readWeekMaterials(
   week: number,
 ): Promise<WeekMaterials> {
   const local = localWeekMaterials(band, week);
-  if (!supabase || local.materials.length === 0) return local;
+  // Only gifted weeks have materials. A missing local catalog no longer
+  // stops the read: Familie may already have the rows for this band.
+  if (!supabase || !giftedWeek(band, week)) return local;
   try {
     const { data, error } = await supabase
       .from("materiale")

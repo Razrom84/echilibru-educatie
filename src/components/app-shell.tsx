@@ -7,6 +7,7 @@ import { LocalCatalogBanner } from "@/components/local-catalog-banner";
 import { NavBar, SideNav } from "@/components/nav-bar";
 import { ErrorState, LoadingState } from "@/components/status-blocks";
 import { FamilyProvider, useFamily } from "@/lib/family-context";
+import { StocProvider } from "@/lib/stoc-context";
 import type { PilotBand } from "@/lib/band-preview";
 
 function Gate({ children }: { children: React.ReactNode }) {
@@ -64,6 +65,7 @@ export function AppShell({
       initialWeek={initialWeek}
       initialPreviewBand={initialPreviewBand}
     >
+      <StocProvider>
       <div className="mx-auto flex min-h-dvh w-full max-w-5xl gap-8 px-4 pb-28 pt-6 md:pb-10">
         <SideNav />
         <div className="min-w-0 flex-1">
@@ -72,6 +74,7 @@ export function AppShell({
         </div>
       </div>
       <NavBar />
+      </StocProvider>
     </FamilyProvider>
   );
 }

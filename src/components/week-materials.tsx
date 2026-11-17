@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ChevronDown, Hammer, Package, ShoppingCart } from "lucide-react";
+import { Check, ChevronDown, Hammer, Package, PackagePlus, ShoppingCart } from "lucide-react";
 import {
   buyCaption,
+  formatPrice,
   HOME_KIND_LABEL,
   listedMaterials,
   materialSubtitle,
@@ -14,7 +15,29 @@ import {
   type CatalogMaterial,
   type HomeVariant,
 } from "@/lib/gifted";
+import {
+  categoryForMaterial,
+  minAgeForMaterial,
+  reuseSummary,
+  stockForMaterial,
+  type StocItem,
+} from "@/lib/stoc";
+import { useStoc } from "@/lib/stoc-context";
 import { cn } from "@/lib/utils";
+
+export function InStockBadge({ owned }: { owned: readonly StocItem[] }) {
+  if (owned.length === 0) return null;
+  const loc = owned.find((item) => item.loc)?.loc;
+  return (
+    <p
+      className="mt-2 inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2 py-1 text-xs font-medium text-emerald-900 dark:bg-emerald-900/40 dark:text-emerald-100"
+      data-testid="in-stoc"
+    >
+      <Check className="size-3.5" aria-hidden />
+      Ai deja în stoc{loc ? ` · ${loc}` : ""}
+    </p>
+  );
+}
 
 function RichLine({ text }: { text: string }) {
   const chunks = text.split(/(https?:\/\/[^\s)]+)/g);
@@ -65,9 +88,59 @@ export function MaterialRow({
   activityIds?: ReadonlySet<string>;
 }) {
   const [panel, setPanel] = useState<"acasa" | "cumparati" | null>(null);
+  const [moreOpen, setMoreOpen] = useState(false);
+  const [adding, setAdding] = useState(false);
+  const [addError, setAddError] = useState<string | null>(null);
+  const stoc = useStoc();
+  const owned = stockForMaterial(stoc.items, material);
+  const inStock = owned.length > 0;
   const caption = buyCaption(material);
+  const price = formatPrice(material.pret, material.moneda);
   const canBuy = Boolean(material.link);
   const store = materialSubtitle(material.sursa);
+
+  async function addToStock() {
+    setAdding(true);
+    setAddError(null);
+    try {
+      const tip = panel === "acasa" || material.doar_acasa ? "facut_acasa" : "cumparat";
+      await stoc.addItems([
+        {
+          nume: material.nume.replace(/^„(.*)”$/, "$1"),
+          tip,
+          categorie: categoryForMaterial(material),
+          produs_cheie: material.produs_cheie ?? null,
+          material_id: material.id,
+          varsta_min_luni: minAgeForMaterial(material.produs_cheie),
+          sursa: "din_activitate",
+        },
+      ]);
+    } catch (error) {
+      setAddError(error instanceof Error ? error.message : "Nu am putut salva.");
+    } finally {
+      setAdding(false);
+    }
+  }
+
+  const buyButton = (
+    <button
+      type="button"
+      className={cn(
+        "inline-flex flex-col items-start rounded-xl border border-border px-3 py-2 text-left text-sm font-medium",
+        panel === "cumparati" ? "bg-primary text-primary-foreground" : "bg-card",
+        !canBuy && "cursor-not-allowed opacity-60",
+      )}
+      aria-expanded={panel === "cumparati"}
+      disabled={!canBuy}
+      onClick={() => setPanel((current) => (current === "cumparati" ? null : "cumparati"))}
+    >
+      <span className="inline-flex items-center gap-2">
+        <ShoppingCart className="size-4" aria-hidden />
+        Cumpărați
+      </span>
+      {caption ? <span className="mt-0.5 text-xs font-normal">{caption}</span> : null}
+    </button>
+  );
 
   function hrefFor(activityId: string) {
     if (!activityIds || activityIds.has(activityId)) return `/activitate/${activityId}`;
@@ -83,12 +156,13 @@ export function MaterialRow({
           <h3 className="text-base font-medium leading-6">{material.nume}</h3>
           <p className="text-sm text-muted-foreground">{store}</p>
         </div>
-        {material.pret ? (
-          <p className="shrink-0 text-sm font-medium">{material.pret}</p>
+        {inStock ? null : price ? (
+          <p className="shrink-0 text-sm font-medium">{price}</p>
         ) : (
           <p className="shrink-0 text-sm text-muted-foreground">gratuit</p>
         )}
       </div>
+      <InStockBadge owned={owned} />
       <div className="mt-2 flex flex-wrap gap-2">
         {material.activitati.map((activityId) => (
           <Link
@@ -113,26 +187,32 @@ export function MaterialRow({
           <Hammer className="size-4" aria-hidden />
           Faceți acasă
         </button>
-        <button
-          type="button"
-          className={cn(
-            "inline-flex flex-col items-start rounded-xl border border-border px-3 py-2 text-left text-sm font-medium",
-            panel === "cumparati" ? "bg-primary text-primary-foreground" : "bg-card",
-            !canBuy && "cursor-not-allowed opacity-60",
-          )}
-          aria-expanded={panel === "cumparati"}
-          disabled={!canBuy}
-          onClick={() => setPanel((current) => (current === "cumparati" ? null : "cumparati"))}
-        >
-          <span className="inline-flex items-center gap-2">
-            <ShoppingCart className="size-4" aria-hidden />
-            Cumpărați
-          </span>
-          {caption ? (
-            <span className="mt-0.5 text-xs font-normal">{caption}</span>
-          ) : null}
-        </button>
+        {inStock ? null : buyButton}
+        {inStock ? null : (
+          <button
+            type="button"
+            className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-3 py-2 text-sm font-medium disabled:opacity-60"
+            disabled={adding || stoc.status !== "ready"}
+            title={stoc.status === "unavailable" ? "Stocul nu e încă disponibil." : undefined}
+            onClick={() => void addToStock()}
+          >
+            <PackagePlus className="size-4" aria-hidden />
+            {adding ? "Se salvează…" : "Adaugă în stoc"}
+          </button>
+        )}
+        {inStock && canBuy ? (
+          <button
+            type="button"
+            className="px-1 py-2 text-sm text-muted-foreground underline"
+            aria-expanded={moreOpen}
+            onClick={() => setMoreOpen((current) => !current)}
+          >
+            Alte opțiuni
+          </button>
+        ) : null}
       </div>
+      {inStock && moreOpen ? <div className="mt-2">{buyButton}</div> : null}
+      {addError ? <p className="mt-2 text-sm text-destructive">{addError}</p> : null}
       {panel === "acasa" ? (
         <div className="mt-3 space-y-2">
           {material.acasa.map((home) => (
@@ -188,8 +268,31 @@ export function WeekMaterialsCard({
   gratuit: string | null;
   activityIds?: ReadonlySet<string>;
 }) {
+  return <WeekMaterialsInner materials={materials} gratuit={gratuit} activityIds={activityIds} />;
+}
+
+function WeekMaterialsInner({
+  materials,
+  gratuit,
+  activityIds,
+}: {
+  materials: CatalogMaterial[];
+  gratuit: string | null;
+  activityIds?: ReadonlySet<string>;
+}) {
+  const stoc = useStoc();
   if (materials.length === 0) return null;
-  const total = Math.round(weekBuyTotal(materials));
+  const missing = materials.filter((material) => stockForMaterial(stoc.items, material).length === 0);
+  const total = Math.round(weekBuyTotal(missing));
+  const reuse = stoc.status === "ready" ? reuseSummary(stoc.items, materials, total) : null;
+  // Stock first, then home-made, then to buy.
+  const ordered = [...materials].sort(
+    (a, b) =>
+      Number(stockForMaterial(stoc.items, b).length > 0) -
+        Number(stockForMaterial(stoc.items, a).length > 0) ||
+      Number(b.doar_acasa) - Number(a.doar_acasa) ||
+      a.ordine - b.ordine,
+  );
   return (
     <details
       className="group rounded-2xl border border-border bg-card p-4"
@@ -200,14 +303,18 @@ export function WeekMaterialsCard({
         <span className="min-w-0 flex-1">
           <span className="block font-heading text-xl">Materiale pentru săptămâna asta</span>
           <span className="mt-1 block text-sm text-muted-foreground">
-            {materials.length} materiale · întâi varianta de făcut acasă
-            {total > 0 ? ` · de cumpărat ~${total} lei în total` : ""}
+            {reuse ?? (
+              <>
+                {materials.length} materiale · întâi varianta de făcut acasă
+                {total > 0 ? ` · de cumpărat ~${total} lei în total` : ""}
+              </>
+            )}
           </span>
         </span>
         <ChevronDown className="mt-1 size-5 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" />
       </summary>
       <div className="mt-4 space-y-3">
-        {materials.map((material) => (
+        {ordered.map((material) => (
           <MaterialRow key={material.id} material={material} activityIds={activityIds} />
         ))}
         {gratuit ? (
