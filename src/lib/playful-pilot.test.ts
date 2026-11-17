@@ -303,9 +303,9 @@ describe("PLAYFUL PILOT scope", () => {
       "Căciula coboară 2 cm — „pe cap?”",
     );
     expect(playfulPilotFor(13, 5)?.surprise).toBe("El alege: cu mănușă sau fără");
-    expect(playfulPilotFor(13, 6)?.surprise).toBe("Haina pe cârlig — el „trage”");
+    expect(playfulPilotFor(13, 6)?.surprise).toBe("Haina pe scaun — el o aduce");
     expect(playfulPilotFor(13, 7)?.surprise).toBe(
-      "Verificăm cârligul: totul la loc",
+      "Verificăm coșul de la ușă: totul la loc",
     );
   });
 
@@ -320,7 +320,7 @@ describe("PLAYFUL PILOT scope", () => {
     expect(playfulPilotFor(14, 1)?.surprise).toBe("Trei pași pe hol, apoi stăm");
     expect(playfulPilotFor(14, 2)?.surprise).toBe("Ușa se deschide 2 cm — „ieșim?”");
     expect(playfulPilotFor(14, 3)?.surprise).toBe("O treaptă sus, o treaptă jos");
-    expect(playfulPilotFor(14, 4)?.surprise).toBe("Pietricica „dispare” 2 sec pe drum");
+    expect(playfulPilotFor(14, 4)?.surprise).toBe("Piatra mare „dispare” 2 sec pe drum");
     expect(playfulPilotFor(14, 5)?.surprise).toBe("El alege: repede sau încet");
     expect(playfulPilotFor(14, 6)?.surprise).toBe("Un pas pe drum (doar el îl arată)");
     expect(playfulPilotFor(14, 7)?.surprise).toBe("Ultima pagină: un drum din imagine");

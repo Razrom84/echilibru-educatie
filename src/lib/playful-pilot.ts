@@ -571,8 +571,8 @@ const WEEK_13: WeekConfig = {
     3: "Papucul stă 3 sec, apoi piciorul",
     4: "Căciula coboară 2 cm — „pe cap?”",
     5: "El alege: cu mănușă sau fără",
-    6: "Haina pe cârlig — el „trage”",
-    7: "Verificăm cârligul: totul la loc",
+    6: "Haina pe scaun — el o aduce",
+    7: "Verificăm coșul de la ușă: totul la loc",
   },
 };
 
@@ -586,7 +586,7 @@ const WEEK_14: WeekConfig = {
     1: "Trei pași pe hol, apoi stăm",
     2: "Ușa se deschide 2 cm — „ieșim?”",
     3: "O treaptă sus, o treaptă jos",
-    4: "Pietricica „dispare” 2 sec pe drum",
+    4: "Piatra mare „dispare” 2 sec pe drum",
     5: "El alege: repede sau încet",
     6: "Un pas pe drum (doar el îl arată)",
     7: "Ultima pagină: un drum din imagine",
