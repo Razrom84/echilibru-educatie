@@ -221,6 +221,7 @@ describe("gifted S1–S4 catalog", () => {
     expect(files.map((file) => file.name)).toEqual([
       "20261116105922_gifted_s1s4_schema.sql",
       "20261116110022_gifted_s1s4_continut.sql",
+      "20261117080500_gifted_s1s4_retusuri.sql",
     ]);
     const names = readdirSync(resolve("supabase/migrations")).sort();
     const previous = names.filter((name) => name < files[0]!.name);
